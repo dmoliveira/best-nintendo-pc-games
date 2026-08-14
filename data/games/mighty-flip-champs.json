@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "slug": "mighty-flip-champs",
+  "title": "Mighty Flip Champs!",
+  "aliases": [],
+  "emoji": "🔄",
+  "shortDescription": "A compact puzzle-platformer that asks you to flip between linked spaces and read two versions of a challenge at once.",
+  "highlights": [
+    "Parallel rooms turn spatial awareness into the central mechanic",
+    "Short stages make experimentation and retrying feel immediate"
+  ],
+  "release": {
+    "year": 2009
+  },
+  "releaseFormat": "digital",
+  "platforms": [
+    "nintendo-dsi"
+  ],
+  "genres": [
+    "puzzle",
+    "platformer"
+  ],
+  "developer": "WayForward",
+  "publisher": "WayForward",
+  "keywords": [
+    "dsiware",
+    "puzzle",
+    "platformer",
+    "wayforward",
+    "flip"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A strong DSiWare seed because its compact, touch-friendly puzzle-platforming structure suits the handheld’s digital-first format.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Nintendo Life DSiWare reference",
+      "url": "https://www.nintendolife.com/games/dsiware/mighty_flip_champs",
+      "kind": "reference"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

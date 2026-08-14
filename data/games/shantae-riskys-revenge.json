@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "shantae-riskys-revenge",
+  "title": "Shantae: Risky’s Revenge",
+  "aliases": [
+    "Risky’s Revenge"
+  ],
+  "emoji": "🧞",
+  "shortDescription": "A colorful action-platformer with expressive animation, open-ended island routes, and a strong sense of character-driven adventure.",
+  "highlights": [
+    "Exploration and upgrades open new routes through a compact world",
+    "Responsive movement gives each short expedition a clear rhythm"
+  ],
+  "release": {
+    "year": 2010
+  },
+  "releaseFormat": "digital",
+  "platforms": [
+    "nintendo-dsi"
+  ],
+  "genres": [
+    "platformer",
+    "action"
+  ],
+  "developer": "WayForward",
+  "publisher": "WayForward",
+  "keywords": [
+    "shantae",
+    "dsiware",
+    "platformer",
+    "wayforward",
+    "adventure"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A durable DSiWare editorial pick whose platforming and exploration show that the digital handheld catalog was not limited to mini-games.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Nintendo Life DSiWare reference",
+      "url": "https://www.nintendolife.com/games/dsiware/shantae_riskys_revenge",
+      "kind": "reference"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

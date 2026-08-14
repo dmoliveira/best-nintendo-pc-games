@@ -21,6 +21,14 @@ const context: CatalogContext = {
   criticRequiredScale: 100,
 };
 
+
+const dsiContext: CatalogContext = {
+  ...context,
+  platformIds: new Set([...context.platformIds, "nintendo-dsi"]),
+  genreIds: new Set([...context.genreIds, "puzzle"]),
+  sourceById: new Map([...context.sourceById, ["nintendo-life-reference", sourcePolicy("nintendo-life-reference", "Nintendo Life", ["individualSourceUrl"], "outbound-only")]]),
+};
+
 const baseGame: GameRecord = {
   schemaVersion: 1,
   slug: "sample-game",
@@ -382,4 +390,30 @@ test("accepts a numeric-free link-only evidence reference", () => {
   } as const;
   assert.deepEqual(validateSignal(signal, "link-only", context), []);
   assert.equal(isEligiblePopularity(signal, context), false);
+});
+
+
+test("requires explicit digital distribution for DSi records", () => {
+  const dsiGame = { ...baseGame, slug: "dsiware-sample", platforms: ["nintendo-dsi"], genres: ["puzzle"] };
+  assert.ok(validateGameRecord(dsiGame, "dsiware-missing-format", dsiContext).some((problem) => problem.message.includes("DSiWare/digital")));
+  assert.ok(validateGameRecord({ ...dsiGame, releaseFormat: "cartridge" }, "dsiware-cartridge", dsiContext).some((problem) => problem.message.includes("DSiWare/digital")));
+  assert.deepEqual(validateGameRecord({ ...dsiGame, releaseFormat: "digital" }, "dsiware-digital", dsiContext), []);
+});
+
+test("does not authorize Nintendo Life numeric signals", () => {
+  const signal = {
+    kind: "critic",
+    evidenceState: "licensed-signal",
+    provider: "Nintendo Life",
+    label: "Critic score",
+    score: 85,
+    scale: 100,
+    scoreType: "average",
+    sourceId: "nintendo-life-reference",
+    sourceUrl: "https://www.nintendolife.com/games/dsiware/mighty_flip_champs",
+    capturedAt: "2026-08-14",
+    verificationStatus: "verified",
+    rightsStatus: "outbound-only",
+  } as const;
+  assert.ok(validateSignal(signal, "nintendo-life-signal", dsiContext).some((problem) => problem.message.includes("approved rights")));
 });

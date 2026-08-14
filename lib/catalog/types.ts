@@ -2,6 +2,7 @@ export type VerificationStatus = "verified" | "unverified";
 export type RightsStatus = "approved" | "outbound-only" | "pending-review" | "prohibited";
 export type SignalKind = "critic" | "user" | "sales" | "popularity" | "editorial";
 export type EvidenceState = "link-only" | "verified-fact" | "licensed-signal" | "original-editorial";
+export type ReleaseFormat = "cartridge" | "digital";
 
 export interface SourcePolicy {
   id: string;
@@ -129,6 +130,7 @@ export interface GameRecord {
   shortDescription: string;
   highlights: string[];
   release: GameRelease;
+  releaseFormat?: ReleaseFormat;
   platforms: string[];
   genres: string[];
   developer?: string;

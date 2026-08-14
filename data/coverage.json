@@ -144,13 +144,13 @@
     },
     {
       "platformId": "nintendo-dsi",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
       "sourceIds": [
         "nintendo-corporate-history",
         "nintendo-ir-dedicated-sales"
       ],
-      "notes": "DSi and DSi XL are model aliases within the DSi revision family; DSi-specific software remains filterable."
+      "notes": "Initial DSi coverage is limited to DSiWare digital releases with explicit releaseFormat metadata; cartridge-compatible DS software is not silently assigned here."
     },
     {
       "platformId": "nintendo-3ds",

@@ -40,4 +40,5 @@ test("game detail pages expose static params, a skip link, and explicit editoria
   assert.match(gamePage, /className="skip-link" href="#main-content"/);
   assert.match(gamePage, /Original editorial/);
   assert.match(gamePage, /Official resources/);
+  assert.match(gamePage, /DSiWare · Digital/);
 });

@@ -193,8 +193,8 @@
         "DSi",
         "DSi XL"
       ],
-      "coverage": "planned",
-      "description": "Nintendo DS revision family with DSi-specific software; DSi XL remains a model alias."
+      "coverage": "populated",
+      "description": "Nintendo’s DSi revision family, represented with an explicit DSiWare digital distribution marker rather than being conflated with DS cartridge software."
     },
     {
       "schemaVersion": 1,
