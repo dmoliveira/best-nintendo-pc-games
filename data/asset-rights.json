@@ -34,6 +34,32 @@
       ]
     },
     {
+      "id": "original-project-vector",
+      "status": "approved-with-conditions",
+      "allowedUses": [
+        "brand-mark",
+        "icon",
+        "og-source-art"
+      ],
+      "conditions": [
+        "authored in the GameAtlas repository",
+        "record the repository path and maintainer review",
+        "provide accessible text alternatives where the asset is meaningful"
+      ]
+    },
+    {
+      "id": "original-project-raster",
+      "status": "approved-with-conditions",
+      "allowedUses": [
+        "og-image"
+      ],
+      "conditions": [
+        "rasterized from an original repository-authored source",
+        "record source path and maintainer review",
+        "provide accessible alt text"
+      ]
+    },
+    {
       "id": "public-domain-or-compatible-license",
       "status": "approved-with-conditions",
       "allowedUses": [
@@ -105,10 +131,34 @@
       "licenseOrPermissionUrl",
       "permissionScope",
       "removalContact"
+    ],
+    "original-project-vector": [
+      "creatorOrSource",
+      "generatedOrAcquiredAt",
+      "notApplicableReason"
+    ],
+    "original-project-raster": [
+      "creatorOrSource",
+      "generatedOrAcquiredAt",
+      "notApplicableReason"
     ]
   },
   "manifestFieldSemantics": {
-    "licenseOrPermissionUrl": "nullable only when assetKind is generated-original-editorial; then notApplicableReason is required",
-    "recheckAt": "required for third-party or time-bounded permissions; generated originals use reviewedAt unless a dependency requires recheck"
-  }
+    "licenseOrPermissionUrl": {
+      "nullableAssetKinds": [
+        "generated-original-editorial",
+        "original-project-vector",
+        "original-project-raster"
+      ],
+      "requiresWhenNull": "notApplicableReason"
+    },
+    "recheckAt": {
+      "required": true,
+      "meaning": "Use null only for original project assets; third-party or time-bounded permissions require a dated recheck."
+    }
+  },
+  "publishableStatuses": [
+    "approved",
+    "approved-with-conditions"
+  ]
 }

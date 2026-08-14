@@ -259,31 +259,31 @@ After the alpha passes its deployed smoke and review gates, expand home consoles
 
 ### Slice A — plan and foundation
 
-Tasks: `task_5890` → (`task_5891` and `task_5911`) → `task_5892` → `task_5893`.
+Sequence: reviewed plan → static shell plus rights gate → typed data/asset validation → accessible visual shell.
 
 Deliver: reviewed plan, public-repo bootstrap, static export contract, source-rights registry, typed data model, asset manifest contract, validator, and design shell. Gate: lint/typecheck/unit/build plus exported artifact smoke. No catalog numeric signal, local image, or support CTA is publishable before the rights gate is resolved.
 
 ### Slice B — Nintendo alpha content and evidence
 
-Tasks: `task_5894` → `task_5897` → `task_5895` (Switch/NES/SNES alpha) → (`task_5899` and `task_5900`).
+Sequence: platform taxonomy → evidence predicate → Switch/NES/SNES alpha → editorial copy and search fixtures.
 
 Deliver: complete platform taxonomy, approved evidence predicates, a small validated alpha seed, original descriptions, and search fixtures. Gate: coverage report shows every canonical Nintendo family and only the alpha platforms are marked populated; all records validate; every numeric signal is dual-approved; unsupported platforms are visible as planned/partial rather than represented by thin pages.
 
 ### Slice C — discovery and indexable pages
 
-Tasks: `task_5901` → `task_5902` → (`task_5903` post-alpha, optional).
+Sequence: filters and URL state → static detail/platform pages → optional local retention features after alpha.
 
 Deliver: alpha filters/sorts/shareable URLs, static detail/platform pages, schema, and internal links. Gate: keyboard/mobile smoke path, all static routes build, search tests cover every alpha field, and no thin/uncurated hub is indexable. Local favorites/compare/surprise-me remain post-MVP.
 
 ### Slice D — media and visual quality
 
-Tasks: `task_5904` → `task_5905` → `task_5906`.
+Sequence: rights manifest → generated/fallback image system → responsive visual QA.
 
 Deliver: rights manifest, generated/fallback image system, polished responsive UI, accessible fallbacks. Gate: asset validator, visual QA at target widths, no high-severity accessibility/performance issue, and no unmanifested local asset.
 
 ### Slice E — Nintendo expansion, PC, and public launch
 
-Tasks: (`task_5896` and the remaining `task_5895` home-console coverage) → `task_5898` → `task_5907` → `task_5908` → `task_5909` → `task_5910`.
+Sequence: full Nintendo home/handheld coverage → PC catalog → Pages deployment → README/support → SEO operations → maintenance automation.
 
 Deliver: full Nintendo home/handheld expansion, curated PC catalog after the Nintendo baseline, Pages deployment, README/support after the support gate, SEO operations, and maintenance automation. Gate: clean PR CI, deployed URL smoke, sitemap/robots/OG checks, coverage report, source/asset policy review, and explicit supported-platform status.
 
@@ -348,16 +348,17 @@ The first planning slice requires `git diff --check`, plan review, and Codememor
 
 ## 14. Immediate next actions
 
-1. Resolve `task_5911` alongside `task_5891`; record the source-rights, asset, and support verdicts before catalog data is published.
-2. Commit this plan in the dedicated `plan/foundation` worktree and create the public GitHub repository only after the plan artifact is validated.
-3. Implement `task_5891` as the first code slice: static app shell, repository metadata, Pages workflow, and local validation scripts.
-4. Implement `task_5892` before bulk content or image generation, including `verificationStatus`/`rightsStatus`, source registry, and asset checks.
-5. Ship the Switch/NES/SNES alpha and validate the real Pages subpath before expanding every Nintendo family and PC.
-6. Reconfirm provider terms and image policy immediately before adding any numeric score or downloaded asset.
+Foundation status: the static shell, source-rights registry, asset manifest, route metadata, and CI validators are encoded in the current implementation slice.
+
+1. Define the canonical Nintendo platform taxonomy and coverage matrix before adding broad catalog content.
+2. Implement the typed game/signal schema and connect its validators to the approved source predicate.
+3. Curate and publish the Switch/NES/SNES alpha, then validate the real Pages subpath.
+4. Expand every Nintendo family before promoting PC coverage.
+5. Reconfirm provider terms and image policy immediately before adding any numeric score or downloaded asset.
 
 ## References consulted
 
-- Next.js/GitHub Pages local pattern: `/Users/diego/Codes/Projects/ai-word-puzzle/next.config.ts` and `.github/workflows/deploy-pages.yml`.
+- Next.js/GitHub Pages local pattern: an adjacent static Next.js project’s `next.config.ts` and `.github/workflows/deploy-pages.yml`.
 - GitHub Pages: <https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages>
 - IGDB API: <https://api-docs.igdb.com/>
 - RAWG API: <https://rawg.io/apidocs> and <https://rawg.io/terms>

@@ -187,8 +187,7 @@
     }
   ],
   "support": {
-    "provider": "Stripe Payment Link supplied by the project owner",
-    "reference": "Codememory memory_244 (owner-supplied destination; withheld from public files until activation)",
+    "provider": "Owner-supplied support destination",
     "status": "pending-launch-disclosure",
     "requiredBeforeCta": [
       "confirm intended recipient/account context",
