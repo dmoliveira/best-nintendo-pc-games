@@ -1,6 +1,7 @@
 export type VerificationStatus = "verified" | "unverified";
 export type RightsStatus = "approved" | "outbound-only" | "pending-review" | "prohibited";
 export type SignalKind = "critic" | "user" | "sales" | "popularity" | "editorial";
+export type EvidenceState = "link-only" | "verified-fact" | "licensed-signal" | "original-editorial";
 
 export interface SourcePolicy {
   id: string;
@@ -15,6 +16,7 @@ export interface SourcePolicy {
 }
 
 export interface SourceRef {
+  evidenceState: EvidenceState;
   sourceId: string;
   sourceUrl: string;
   capturedAt: string;
@@ -26,7 +28,16 @@ export interface SourceRef {
   reviewedBy?: string;
 }
 
-export interface CriticOrUserSignal extends SourceRef {
+export interface LinkOnlyCriticOrUserSignal extends SourceRef {
+  evidenceState: "link-only";
+  kind: "critic" | "user";
+  provider: string;
+  label: string;
+  editionOrPlatform?: string;
+}
+
+export interface LicensedCriticOrUserSignal extends SourceRef {
+  evidenceState: "licensed-signal";
   kind: "critic" | "user";
   provider: string;
   label: string;
@@ -37,7 +48,17 @@ export interface CriticOrUserSignal extends SourceRef {
   editionOrPlatform?: string;
 }
 
-export interface SalesSignal extends SourceRef {
+export type CriticOrUserSignal = LinkOnlyCriticOrUserSignal | LicensedCriticOrUserSignal;
+
+export interface LinkOnlySalesSignal extends SourceRef {
+  evidenceState: "link-only";
+  kind: "sales";
+  provider: string;
+  label: string;
+}
+
+export interface VerifiedFactSalesSignal extends SourceRef {
+  evidenceState: "verified-fact";
   kind: "sales";
   provider: string;
   label: string;
@@ -49,7 +70,17 @@ export interface SalesSignal extends SourceRef {
   asOf: string;
 }
 
-export interface PopularitySignal extends SourceRef {
+export type SalesSignal = LinkOnlySalesSignal | VerifiedFactSalesSignal;
+
+export interface LinkOnlyPopularitySignal extends SourceRef {
+  evidenceState: "link-only";
+  kind: "popularity";
+  provider: string;
+  label: string;
+}
+
+export interface LicensedPopularitySignal extends SourceRef {
+  evidenceState: "licensed-signal";
   kind: "popularity";
   provider: string;
   label: string;
@@ -59,8 +90,11 @@ export interface PopularitySignal extends SourceRef {
   asOf: string;
 }
 
+export type PopularitySignal = LinkOnlyPopularitySignal | LicensedPopularitySignal;
+
 export interface EditorialSignal extends SourceRef {
   kind: "editorial";
+  evidenceState: "original-editorial";
   provider: "GameAtlas";
   label: string;
   rationale: string;
@@ -132,6 +166,8 @@ export interface CatalogContext {
   sourceById: ReadonlyMap<string, SourcePolicy>;
   assetById: ReadonlyMap<string, { path: string }>;
   approvedCriticProviders: ReadonlySet<string>;
+  approvedPopularityProviders: ReadonlySet<string>;
+  popularityPublicMode: "outbound-only" | "numeric-display";
   criticMinimumScore: number;
   criticRequiredScale: number;
   todayKey: string;

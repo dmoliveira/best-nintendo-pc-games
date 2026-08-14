@@ -6,6 +6,7 @@ import { isValidHttpsUrl } from "../lib/url-policy.mjs";
 const root = process.cwd();
 const source = JSON.parse(fs.readFileSync(path.join(root, "data/source-rights.json"), "utf8"));
 const assetPolicy = JSON.parse(fs.readFileSync(path.join(root, "data/asset-rights.json"), "utf8"));
+const evidencePolicy = JSON.parse(fs.readFileSync(path.join(root, "data/evidence-policy.json"), "utf8"));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "data/assets-manifest.json"), "utf8"));
 const allowedStatuses = new Set(["approved", "outbound-only", "pending-review", "prohibited"]);
 const requiredManifestFields = assetPolicy.manifestRequiredFields;
@@ -29,6 +30,27 @@ if (!predicate || !Array.isArray(predicate.all) || !Array.isArray(predicate.requ
 if (predicate?.approvedCriticProviders?.length) fail("no critic provider is authorized in the foundation slice");
 if (predicate?.minimumScore !== 80) fail("critic threshold minimumScore must be 80");
 if (predicate?.requiredScale !== 100) fail("critic threshold requiredScale must be 100");
+const popularityPredicate = source.popularitySignalPolicy?.eligiblePredicate;
+if (!popularityPredicate || !Array.isArray(popularityPredicate.all) || !Array.isArray(popularityPredicate.requiredFields) || !Array.isArray(popularityPredicate.approvedPopularityProviders) || popularityPredicate.publicMode !== "outbound-only") fail("popularity eligibility must be a structured outbound-only predicate with an explicit provider allowlist");
+if (popularityPredicate?.approvedPopularityProviders?.length) fail("no popularity provider is authorized in the foundation slice");
+const expectedEvidenceStates = {
+  "link-only": { publicMode: "outbound-reference", numericDisplay: false, allowedKinds: ["critic", "user", "sales", "popularity"], requiredFields: ["sourceId", "sourceUrl", "capturedAt"] },
+  "verified-fact": { publicMode: "factual-display", numericDisplay: true, allowedKinds: ["sales"], requiredFields: ["sourceId", "sourceUrl", "territory", "period", "asOf", "reviewedBy"] },
+  "licensed-signal": { publicMode: "numeric-display", numericDisplay: true, allowedKinds: ["critic", "user", "popularity"], requiredFields: ["provider", "sourceId", "sourceUrl", "termsUrl", "methodVersionOrScoreType", "capturedAt", "reviewedBy", "rightsReviewedAt", "recheckAt"] },
+  "original-editorial": { publicMode: "editorial-display", numericDisplay: false, allowedKinds: ["editorial"], requiredFields: ["provider", "sourceId", "sourceUrl", "rationale", "reviewedBy"] },
+};
+const evidenceStates = Array.isArray(evidencePolicy.states) ? evidencePolicy.states : [];
+const evidenceStateIds = new Set(evidenceStates.map((state) => state.id));
+if (evidencePolicy.schemaVersion !== 1 || evidenceStates.length !== 4 || evidenceStateIds.size !== 4) fail("evidence policy must define exactly four publishing states");
+for (const [id, expected] of Object.entries(expectedEvidenceStates)) {
+  const actual = evidenceStates.find((state) => state.id === id);
+  const actualKinds = Array.isArray(actual?.allowedKinds) ? [...actual.allowedKinds].sort() : [];
+  const actualFields = Array.isArray(actual?.requiredFields) ? actual.requiredFields : [];
+  if (!actual || actual.publicMode !== expected.publicMode || actual.numericDisplay !== expected.numericDisplay || JSON.stringify(actualKinds) !== JSON.stringify([...expected.allowedKinds].sort()) || JSON.stringify(actualFields) !== JSON.stringify(expected.requiredFields)) fail(`evidence policy state ${id}: definition drifted`);
+}
+const criticThreshold = evidencePolicy.thresholds?.critic80;
+if (!criticThreshold || criticThreshold.kind !== "critic" || criticThreshold.minimumScore !== 80 || criticThreshold.requiredScale !== 100 || criticThreshold.requiresState !== "licensed-signal" || criticThreshold.providerAllowlist !== "approvedCriticProviders" || !Array.isArray(criticThreshold.fallbackKinds) || criticThreshold.fallbackKinds.length) fail("critic threshold must require the licensed-signal state and have no fallbacks");
+if (evidencePolicy.defaults?.allowNumericFallbacks !== false || evidencePolicy.defaults?.allowProviderContentCopy !== false) fail("evidence policy must disable numeric fallbacks and provider-content copying");
 const sourceIds = new Set();
 for (const record of source.sources ?? []) {
   if (typeof record.id !== "string" || record.id.trim() === "") fail("source record: id must be a non-empty string");
@@ -38,6 +60,7 @@ for (const record of source.sources ?? []) {
   for (const field of ["reviewedBy", "rightsReviewedAt", "recheckAt", "decisionEvidence", "coveredProcess"]) if (!(field in record)) fail(`${record.id}: missing ${field}`);
   for (const field of ["reviewedBy", "decisionEvidence", "coveredProcess"]) if (typeof record[field] !== "string" || record[field].trim() === "") fail(`${record.id}.${field}: must be a non-empty string`);
   if (record.termsUrl !== undefined && record.termsUrl !== null && !isValidHttpsUrl(record.termsUrl)) fail(`${record.id}.termsUrl: must be a valid https URL when present`);
+  if (record.allowedFields?.some((field) => ["numericScore", "popularitySignal"].includes(field)) && !isValidHttpsUrl(record.termsUrl)) fail(`${record.id}.termsUrl: required for critic/popularity authorization`);
   requirePastDate(record.rightsReviewedAt, `${record.id}.rightsReviewedAt`);
   if (record.recheckAt === null || record.recheckAt === undefined) fail(`${record.id}.recheckAt: required for source decisions`);
   else requireFutureDate(record.recheckAt, `${record.id}.recheckAt`);
@@ -94,6 +117,7 @@ for (const record of manifest.assets ?? []) if (!localAssets.includes(record.pat
 
 const publicTextFiles = [
   "data/source-rights.json",
+  "data/evidence-policy.json",
   "data/asset-rights.json",
   "data/assets-manifest.json",
   "docs/rights-and-support-policy.md",
@@ -113,4 +137,4 @@ if (failures.length) {
   for (const failure of failures) console.error(`- ${failure}`);
   process.exit(1);
 }
-console.log(`Rights validation passed (${source.sources.length} sources, ${manifest.assets.length} assets, ${predicate.approvedCriticProviders.length} approved critic providers).`);
+console.log(`Rights validation passed (${source.sources.length} sources, ${manifest.assets.length} assets, ${predicate.approvedCriticProviders.length} approved critic providers, ${popularityPredicate.approvedPopularityProviders.length} approved popularity providers).`);

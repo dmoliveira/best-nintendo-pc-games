@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { findCatalogIdentityCollisions, findDuplicateRecordIds, isEligibleCritic80, normalizeCatalogKey, validateGameRecord, validateSignal, type CatalogContext, type GameRecord } from "../lib/catalog/index";
+import { findCatalogIdentityCollisions, findDuplicateRecordIds, isEligibleCritic80, isEligiblePopularity, normalizeCatalogKey, validateGameRecord, validateSignal, type CatalogContext, type GameRecord, type GameSignal } from "../lib/catalog/index";
 
 const sourcePolicy = (id: string, provider: string, allowedFields: string[], status: "approved" | "outbound-only" = "approved") => ({ id, provider, status, allowedFields, termsUrl: "https://example.com/terms", rightsReviewedAt: "2026-08-15", recheckAt: "2026-09-15", decisionEvidence: "fixture", coveredProcess: "fixture" });
 const context: CatalogContext = {
@@ -10,10 +10,13 @@ const context: CatalogContext = {
     ["official-publisher-pages", sourcePolicy("official-publisher-pages", "Official Publisher", ["officialUrl"])],
     ["licensed-critic", sourcePolicy("licensed-critic", "Licensed Critics", ["numericScore"])],
     ["nintendo-ir", sourcePolicy("nintendo-ir", "Nintendo Investor Relations", ["manuallyReviewedSalesFact"])],
+    ["popularity-source", sourcePolicy("popularity-source", "Popularity Provider", ["popularitySignal"])],
   ]),
   todayKey: "2026-08-15",
   assetById: new Map(),
   approvedCriticProviders: new Set(["Licensed Critics"]),
+  approvedPopularityProviders: new Set(),
+  popularityPublicMode: "outbound-only",
   criticMinimumScore: 80,
   criticRequiredScale: 100,
 };
@@ -43,6 +46,7 @@ test("accepts a valid game record with no signals or assets", () => {
 test("rejects a cached score when rights are outbound-only", () => {
   const signal = {
     kind: "critic",
+    evidenceState: "licensed-signal" as const,
     provider: "Licensed Critics",
     label: "Critic score",
     score: 85,
@@ -60,6 +64,7 @@ test("rejects a cached score when rights are outbound-only", () => {
 test("rejects an approved signal when its source registry is not approved", () => {
   const signal = {
     kind: "sales",
+    evidenceState: "verified-fact",
     provider: "Unapproved source",
     label: "Sales",
     sourceId: "licensed-critic",
@@ -84,6 +89,7 @@ test("rejects an approved signal when its source registry is not approved", () =
 test("requires explicit provider authorization for critic 80+", () => {
   const signal = {
     kind: "critic",
+    evidenceState: "licensed-signal",
     provider: "Unknown Critics",
     label: "Critic score",
     score: 85,
@@ -107,6 +113,7 @@ test("requires explicit provider authorization for critic 80+", () => {
 test("requires sales provenance fields", () => {
   const signal = {
     kind: "sales",
+    evidenceState: "verified-fact",
     provider: "Nintendo Investor Relations",
     label: "Worldwide units",
     sourceId: "nintendo-ir",
@@ -129,6 +136,7 @@ test("requires sales provenance fields", () => {
 test("accepts 80 and rejects 79 at the configured critic threshold", () => {
   const signal = (score: number) => ({
     kind: "critic" as const,
+    evidenceState: "licensed-signal" as const,
     provider: "Licensed Critics",
     label: "Critic score",
     score,
@@ -170,6 +178,7 @@ test("rejects normalized cross-record name collisions", () => {
 test("rejects null numeric values even when rank is present", () => {
   const signal = {
     kind: "sales",
+    evidenceState: "verified-fact",
     provider: "Nintendo Investor Relations",
     label: "Sales",
     sourceId: "nintendo-ir",
@@ -191,6 +200,7 @@ test("rejects null numeric values even when rank is present", () => {
 test("rejects timestamp-shaped provenance and expired rechecks by calendar key", () => {
   const timestampSignal = {
     kind: "critic",
+    evidenceState: "licensed-signal",
     provider: "Licensed Critics",
     label: "Critic score",
     score: 80,
@@ -217,6 +227,7 @@ test("rejects timestamp-shaped provenance and expired rechecks by calendar key",
 test("rejects malformed URLs and sales values without units", () => {
   const salesSignal = {
     kind: "sales",
+    evidenceState: "verified-fact",
     provider: "Nintendo Investor Relations",
     label: "Worldwide units",
     sourceId: "nintendo-ir",
@@ -248,6 +259,7 @@ test("finds duplicate source and asset identifiers before map construction", () 
 test("rejects whitespace-only approved signal provenance", () => {
   const signal = {
     kind: "critic",
+    evidenceState: "licensed-signal",
     provider: "Licensed Critics",
     label: "Critic score",
     score: 80,
@@ -265,4 +277,109 @@ test("rejects whitespace-only approved signal provenance", () => {
     recheckAt: "2026-09-15",
   } as const;
   assert.ok(validateSignal(signal, "whitespace", context).some((problem) => problem.message.includes("reviewedBy")));
+});
+
+
+test("requires popularity method and dated asOf provenance", () => {
+  const signal = {
+    kind: "popularity",
+    evidenceState: "licensed-signal",
+    provider: "Popularity Provider",
+    label: "Popularity index",
+    sourceId: "popularity-source",
+    sourceUrl: "https://example.com/popularity",
+    termsUrl: "https://example.com/terms",
+    capturedAt: "2026-08-15",
+    verificationStatus: "verified",
+    rightsStatus: "approved",
+    reviewedBy: "fixture reviewer",
+    rightsReviewedAt: "2026-08-15",
+    recheckAt: "2026-09-15",
+    value: 42,
+    asOf: "not-a-date",
+  } as const;
+  const problems = validateSignal(signal, "popularity", context);
+  assert.ok(problems.some((problem) => problem.path === "popularity.methodVersion"));
+  assert.ok(problems.some((problem) => problem.path === "popularity.asOf"));
+  assert.ok(problems.some((problem) => problem.message.includes("not authorized")));
+});
+
+test("popularity eligibility requires an explicitly authorized provider and stays separate from critic threshold", () => {
+  const signal = {
+    kind: "popularity",
+    evidenceState: "licensed-signal",
+    provider: "Popularity Provider",
+    label: "Popularity index",
+    sourceId: "popularity-source",
+    sourceUrl: "https://example.com/popularity",
+    termsUrl: "https://example.com/terms",
+    capturedAt: "2026-08-15",
+    verificationStatus: "verified",
+    rightsStatus: "approved",
+    reviewedBy: "fixture reviewer",
+    rightsReviewedAt: "2026-08-15",
+    recheckAt: "2026-09-15",
+    value: 42,
+    methodVersion: "fixture-v1",
+    asOf: "2026-08-15",
+  } as const;
+  assert.equal(isEligiblePopularity(signal, context), false);
+  assert.equal(isEligibleCritic80(signal, context), false);
+  const authorizedContext = { ...context, approvedPopularityProviders: new Set(["Popularity Provider"]), popularityPublicMode: "numeric-display" as const };
+  assert.equal(isEligiblePopularity(signal, authorizedContext), true);
+});
+
+
+test("link-only evidence cannot satisfy numeric eligibility", () => {
+  const critic = {
+    kind: "critic",
+    evidenceState: "link-only",
+    provider: "Licensed Critics",
+    label: "Critic score",
+    score: 80,
+    scale: 100,
+    scoreType: "average",
+    editionOrPlatform: "Nintendo Switch",
+    sourceId: "licensed-critic",
+    sourceUrl: "https://example.com/score",
+    termsUrl: "https://example.com/terms",
+    capturedAt: "2026-08-15",
+    verificationStatus: "verified",
+    rightsStatus: "approved",
+    reviewedBy: "fixture reviewer",
+    rightsReviewedAt: "2026-08-15",
+    recheckAt: "2026-09-15",
+  } as const;
+  assert.equal(isEligibleCritic80(critic as unknown as GameSignal, { ...context, approvedCriticProviders: new Set(["Licensed Critics"]) }), false);
+  assert.ok(validateSignal(critic, "link-only", context).some((problem) => problem.message.includes("numeric-display")));
+
+  const scaleOnlyCritic = {
+    kind: "critic",
+    evidenceState: "link-only",
+    provider: "Licensed Critics",
+    label: "Critic score",
+    scale: 100,
+    sourceId: "licensed-critic",
+    sourceUrl: "https://example.com/score",
+    capturedAt: "2026-08-15",
+    verificationStatus: "unverified",
+    rightsStatus: "outbound-only",
+  } as const;
+  assert.ok(validateSignal(scaleOnlyCritic, "scale-only-link-only", context).some((problem) => problem.message.includes("numeric-display")));
+});
+
+test("accepts a numeric-free link-only evidence reference", () => {
+  const signal = {
+    kind: "popularity",
+    evidenceState: "link-only",
+    provider: "Popularity Provider",
+    label: "Popularity page",
+    sourceId: "popularity-source",
+    sourceUrl: "https://example.com/popularity",
+    capturedAt: "2026-08-15",
+    verificationStatus: "unverified",
+    rightsStatus: "outbound-only",
+  } as const;
+  assert.deepEqual(validateSignal(signal, "link-only", context), []);
+  assert.equal(isEligiblePopularity(signal, context), false);
 });

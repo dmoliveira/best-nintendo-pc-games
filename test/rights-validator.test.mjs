@@ -13,7 +13,7 @@ function runRightsValidator(mutator) {
   try {
     fs.mkdirSync(path.join(fixtureRoot, "data"), { recursive: true });
     fs.cpSync(path.join(repoRoot, "public"), path.join(fixtureRoot, "public"), { recursive: true });
-    for (const file of ["source-rights.json", "asset-rights.json", "assets-manifest.json"]) {
+    for (const file of ["source-rights.json", "evidence-policy.json", "asset-rights.json", "assets-manifest.json"]) {
       fs.copyFileSync(path.join(repoRoot, "data", file), path.join(fixtureRoot, "data", file));
     }
     const manifestPath = path.join(fixtureRoot, "data", "assets-manifest.json");

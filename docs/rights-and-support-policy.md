@@ -19,6 +19,17 @@ Before a numeric signal appears in the local search index or rendered HTML, its 
 
 `outbound-only`, `pending-review`, and `prohibited` records may keep an external URL and descriptive label, but they must not emit a cached score. GameAtlas must never scrape Metacritic/OpenCritic, copy review text, or merge critic/user/sales/editorial values into a fake overall rating.
 
+## Evidence states and threshold gate
+
+The machine-readable evidence model is [`data/evidence-policy.json`](../data/evidence-policy.json). Each signal must remain in one explicit state:
+
+- **Link-only:** an outbound reference may be shown, but no provider-controlled numeric value is cached or rendered.
+- **Verified fact:** a manually checked primary-source fact may be displayed with scope, territory, period, and `asOf`; sales facts are not critic scores.
+- **Licensed signal:** critic, user, or popularity numbers require a source-registry decision authorizing the exact field, public display, terms, reviewer, and recheck date.
+- **Original editorial:** GameAtlas rationale and selection only; it is never an aggregate or fallback score.
+
+The `>=80` filter requires a verified, rights-approved, provider-authorized critic signal on a 100-point scale. It cannot fall back to user ratings, sales, popularity, or editorial signals. The initial critic and popularity provider allowlists are empty, so the public catalog currently exposes no cached numeric signal.
+
 ## Current source decisions
 
 The machine-readable registry is [`data/source-rights.json`](../data/source-rights.json).
