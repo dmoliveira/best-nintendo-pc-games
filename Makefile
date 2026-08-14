@@ -22,6 +22,7 @@ validate:
 	npm run lint
 	npm run typecheck
 	npm run validate:rights
+	npm run validate:catalog
 	npm test
 	npm run build
 	test -f out/.nojekyll || touch out/.nojekyll

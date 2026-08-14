@@ -1,5 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
+import { localTodayKey, parseCalendarKey } from "../lib/date-policy.mjs";
+import { isValidHttpsUrl } from "../lib/url-policy.mjs";
 
 const root = process.cwd();
 const source = JSON.parse(fs.readFileSync(path.join(root, "data/source-rights.json"), "utf8"));
@@ -9,34 +11,70 @@ const allowedStatuses = new Set(["approved", "outbound-only", "pending-review", 
 const requiredManifestFields = assetPolicy.manifestRequiredFields;
 const failures = [];
 const fail = (message) => failures.push(message);
+const nonEmpty = (value) => typeof value === "string" && value.trim() !== "";
+const todayKey = localTodayKey();
+function requirePastDate(value, label) {
+  const date = parseCalendarKey(value);
+  if (!date) fail(`${label}: must be a valid YYYY-MM-DD date`);
+  else if (date > todayKey) fail(`${label}: must not be in the future`);
+}
+function requireFutureDate(value, label) {
+  const date = parseCalendarKey(value);
+  if (!date) fail(`${label}: must be a valid YYYY-MM-DD date`);
+  else if (date < todayKey) fail(`${label}: recheck date is expired`);
+}
 
 const predicate = source.publicNumericSignalPolicy?.eligiblePredicate;
 if (!predicate || !Array.isArray(predicate.all) || !Array.isArray(predicate.requiredFields) || !Array.isArray(predicate.approvedCriticProviders)) fail("numeric eligibility must be a structured predicate with an explicit provider allowlist");
 if (predicate?.approvedCriticProviders?.length) fail("no critic provider is authorized in the foundation slice");
+if (predicate?.minimumScore !== 80) fail("critic threshold minimumScore must be 80");
+if (predicate?.requiredScale !== 100) fail("critic threshold requiredScale must be 100");
+const sourceIds = new Set();
 for (const record of source.sources ?? []) {
+  if (typeof record.id !== "string" || record.id.trim() === "") fail("source record: id must be a non-empty string");
+  else if (sourceIds.has(record.id)) fail(`duplicate source ID: ${record.id}`);
+  else sourceIds.add(record.id);
   if (!allowedStatuses.has(record.status)) fail(`${record.id}: unsupported source status`);
   for (const field of ["reviewedBy", "rightsReviewedAt", "recheckAt", "decisionEvidence", "coveredProcess"]) if (!(field in record)) fail(`${record.id}: missing ${field}`);
+  for (const field of ["reviewedBy", "decisionEvidence", "coveredProcess"]) if (typeof record[field] !== "string" || record[field].trim() === "") fail(`${record.id}.${field}: must be a non-empty string`);
+  if (record.termsUrl !== undefined && record.termsUrl !== null && !isValidHttpsUrl(record.termsUrl)) fail(`${record.id}.termsUrl: must be a valid https URL when present`);
+  requirePastDate(record.rightsReviewedAt, `${record.id}.rightsReviewedAt`);
+  if (record.recheckAt === null || record.recheckAt === undefined) fail(`${record.id}.recheckAt: required for source decisions`);
+  else requireFutureDate(record.recheckAt, `${record.id}.recheckAt`);
 }
 if (typeof source.support?.url === "string" || JSON.stringify(source).includes("buy.stripe.com") || JSON.stringify(source).includes("Codememory memory_")) fail("actionable support URL or internal tracker reference is public");
 
 const manifestByPath = new Map();
+const manifestById = new Map();
 for (const record of manifest.assets ?? []) {
   if (manifestByPath.has(record.path)) fail(`duplicate asset path: ${record.path}`);
   manifestByPath.set(record.path, record);
-  for (const field of requiredManifestFields) if (!(field in record) || record[field] === "") fail(`${record.path}: missing ${field}`);
+  if (typeof record.assetId !== "string" || record.assetId.trim() === "") fail(`${record.path}: assetId must be a non-empty string`);
+  else if (manifestById.has(record.assetId)) fail(`duplicate asset ID: ${record.assetId}`);
+  else manifestById.set(record.assetId, record);
+  const manifestTextFields = new Set(["assetId", "path", "assetKind", "creatorOrSource", "attribution", "intendedUse", "altText", "reviewedBy"]);
+  for (const field of requiredManifestFields) if (!(field in record) || (manifestTextFields.has(field) ? !nonEmpty(record[field]) : record[field] === "")) fail(`${record.path}: missing ${field}`);
   if (!("licenseOrPermissionUrl" in record)) fail(`${record.path}: missing licenseOrPermissionUrl field`);
-  if (record.licenseOrPermissionUrl === null && !record.notApplicableReason) fail(`${record.path}: null license URL needs notApplicableReason`);
+  if (record.licenseOrPermissionUrl === null && !nonEmpty(record.notApplicableReason)) fail(`${record.path}: null license URL needs notApplicableReason`);
+  if (record.licenseOrPermissionUrl !== undefined && record.licenseOrPermissionUrl !== null && !isValidHttpsUrl(record.licenseOrPermissionUrl)) fail(`${record.path}: licenseOrPermissionUrl must be a valid https URL when present`);
   const kind = assetPolicy.assetKinds.find((candidate) => candidate.id === record.assetKind);
   if (!kind) fail(`${record.path}: unknown asset kind ${record.assetKind}`);
   else {
     if (!assetPolicy.publishableStatuses.includes(kind.status)) fail(`${record.path}: asset kind is not publishable (${kind.status})`);
     if (!kind.allowedUses.includes(record.intendedUse)) fail(`${record.path}: intended use ${record.intendedUse} is not allowed for ${record.assetKind}`);
-    for (const field of assetPolicy.conditionalManifestFields[record.assetKind] ?? []) if (!(field in record) || record[field] === "") fail(`${record.path}: missing conditional field ${field}`);
+    for (const field of assetPolicy.conditionalManifestFields[record.assetKind] ?? []) if (!(field in record) || !nonEmpty(record[field])) fail(`${record.path}: missing conditional field ${field}`);
   }
   const licenseSemantics = assetPolicy.manifestFieldSemantics.licenseOrPermissionUrl;
   const nullableLicenseKinds = new Set(licenseSemantics.nullableAssetKinds);
   if (record.licenseOrPermissionUrl === null && !nullableLicenseKinds.has(record.assetKind)) fail(`${record.path}: null license URL is not allowed for ${record.assetKind}`);
   if (record.licenseOrPermissionUrl === null && !(licenseSemantics.requiresWhenNull in record)) fail(`${record.path}: null license URL requires ${licenseSemantics.requiresWhenNull}`);
+  const recheckSemantics = assetPolicy.manifestFieldSemantics.recheckAt;
+  const nullableRecheckKinds = new Set(recheckSemantics.nullableAssetKinds);
+  if (record.recheckAt === null || record.recheckAt === undefined) {
+    if (!nullableRecheckKinds.has(record.assetKind)) fail(`${record.path}: recheckAt is required for ${record.assetKind}`);
+  } else requireFutureDate(record.recheckAt, `${record.path}.recheckAt`);
+  requirePastDate(record.rightsReviewedAt, `${record.path}.rightsReviewedAt`);
+  requirePastDate(record.generatedOrAcquiredAt, `${record.path}.generatedOrAcquiredAt`);
   if (!fs.existsSync(path.join(root, record.path))) fail(`${record.path}: manifest target does not exist`);
 }
 

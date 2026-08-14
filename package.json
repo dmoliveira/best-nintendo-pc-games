@@ -15,6 +15,7 @@
     "typecheck": "tsc --noEmit",
     "test": "tsx --test",
     "validate:rights": "node scripts/validate-rights.mjs",
+    "validate:catalog": "tsx scripts/validate-catalog.ts",
     "validate:export": "node scripts/validate-static-export.mjs"
   },
   "dependencies": {

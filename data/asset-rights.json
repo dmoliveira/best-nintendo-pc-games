@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-08-15",
+  "reviewedAt": "2026-08-14",
   "defaultStatus": "blocked-until-manifested",
   "assetKinds": [
     {
@@ -154,7 +154,12 @@
     },
     "recheckAt": {
       "required": true,
-      "meaning": "Use null only for original project assets; third-party or time-bounded permissions require a dated recheck."
+      "nullableAssetKinds": [
+        "generated-original-editorial",
+        "original-project-vector",
+        "original-project-raster"
+      ],
+      "meaning": "Use null only for original project assets; third-party or time-bounded permissions require a dated future recheck."
     }
   },
   "publishableStatuses": [
