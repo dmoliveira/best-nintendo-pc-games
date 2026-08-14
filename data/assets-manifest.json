@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-08-15",
+  "reviewedAt": "2026-08-14",
   "policyRef": "data/asset-rights.json",
   "publishGate": "every referenced local asset must have a matching record here",
   "assets": [
@@ -12,11 +12,11 @@
       "licenseOrPermissionUrl": null,
       "notApplicableReason": "Original repository-authored SVG",
       "attribution": "GameAtlas project",
-      "generatedOrAcquiredAt": "2026-08-15",
+      "generatedOrAcquiredAt": "2026-08-14",
       "intendedUse": "brand-mark",
       "altText": "GameAtlas compass star mark",
       "reviewedBy": "GameAtlas foundation review",
-      "rightsReviewedAt": "2026-08-15",
+      "rightsReviewedAt": "2026-08-14",
       "recheckAt": null
     },
     {
@@ -27,11 +27,11 @@
       "licenseOrPermissionUrl": null,
       "notApplicableReason": "Original repository-authored SVG",
       "attribution": "GameAtlas project",
-      "generatedOrAcquiredAt": "2026-08-15",
+      "generatedOrAcquiredAt": "2026-08-14",
       "intendedUse": "og-source-art",
       "altText": "GameAtlas atlas grid and orbit artwork",
       "reviewedBy": "GameAtlas foundation review",
-      "rightsReviewedAt": "2026-08-15",
+      "rightsReviewedAt": "2026-08-14",
       "recheckAt": null
     },
     {
@@ -42,11 +42,11 @@
       "licenseOrPermissionUrl": null,
       "notApplicableReason": "Original repository-authored social card",
       "attribution": "GameAtlas project",
-      "generatedOrAcquiredAt": "2026-08-15",
+      "generatedOrAcquiredAt": "2026-08-14",
       "intendedUse": "og-image",
       "altText": "GameAtlas — best Nintendo and PC games",
       "reviewedBy": "GameAtlas foundation review",
-      "rightsReviewedAt": "2026-08-15",
+      "rightsReviewedAt": "2026-08-14",
       "recheckAt": null
     },
     {
@@ -57,11 +57,11 @@
       "licenseOrPermissionUrl": null,
       "notApplicableReason": "Original repository-authored SVG",
       "attribution": "GameAtlas project",
-      "generatedOrAcquiredAt": "2026-08-15",
+      "generatedOrAcquiredAt": "2026-08-14",
       "intendedUse": "icon",
       "altText": "GameAtlas compass star mark",
       "reviewedBy": "GameAtlas foundation review",
-      "rightsReviewedAt": "2026-08-15",
+      "rightsReviewedAt": "2026-08-14",
       "recheckAt": null
     }
   ]
