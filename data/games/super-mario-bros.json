@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-mario-bros",
+  "title": "Super Mario Bros.",
+  "aliases": [
+    "SMB",
+    "Super Mario Brothers"
+  ],
+  "emoji": "🍄",
+  "shortDescription": "A foundational side-scrolling platformer that established the Mushroom Kingdom as a defining Nintendo setting.",
+  "highlights": [
+    "Precise running and jumping across readable obstacle courses",
+    "A compact adventure structure built around discovery and momentum"
+  ],
+  "release": {
+    "year": 1985
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "platformer",
+    "action"
+  ],
+  "publisher": "Nintendo",
+  "keywords": [
+    "mario",
+    "mushroom kingdom",
+    "nes",
+    "side-scrolling",
+    "classic"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas alpha selection",
+      "rationale": "A high-confidence NES starting point: its readable movement rules, short feedback loops, and enduring platform design make it an effective first classic for the alpha catalog.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15"
+    }
+  ],
+  "links": [
+    {
+      "label": "Nintendo corporate history",
+      "url": "https://www.nintendo.co.jp/corporate/en/history/index.html",
+      "kind": "reference"
+    },
+    {
+      "label": "Nintendo",
+      "url": "https://www.nintendo.com/us/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

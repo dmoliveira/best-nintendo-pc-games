@@ -1,4 +1,33 @@
 {
   "schemaVersion": 1,
-  "items": []
+  "items": [
+    {
+      "schemaVersion": 1,
+      "id": "action",
+      "name": "Action",
+      "aliases": [
+        "Action games"
+      ],
+      "description": "Games centered on real-time movement, timing, combat, or physical interaction."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "adventure",
+      "name": "Adventure",
+      "aliases": [
+        "Adventure games"
+      ],
+      "description": "Games centered on exploration, discovery, quests, and progression through a world."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "platformer",
+      "name": "Platformer",
+      "aliases": [
+        "Platform games",
+        "Jump-and-run"
+      ],
+      "description": "Games centered on navigating spaces through running, jumping, and precise movement."
+    }
+  ]
 }
