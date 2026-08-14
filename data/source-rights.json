@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-15",
+  "project": {
+    "name": "GameAtlas",
+    "repository": "dmoliveira/best-nintendo-pc-games",
+    "supportPathStatus": "pending-launch-disclosure"
+  },
+  "publicNumericSignalPolicy": {
+    "eligiblePredicate": {
+      "all": [
+        {
+          "field": "verificationStatus",
+          "equals": "verified"
+        },
+        {
+          "field": "rightsStatus",
+          "equals": "approved"
+        },
+        {
+          "field": "kind",
+          "equals": "critic"
+        },
+        {
+          "field": "scale",
+          "equals": 100
+        },
+        {
+          "field": "provider",
+          "in": "approvedCriticProviders"
+        }
+      ],
+      "requiredFields": [
+        "provider",
+        "score",
+        "scale",
+        "scoreType",
+        "editionOrPlatform",
+        "capturedAt",
+        "sourceUrl",
+        "termsUrl",
+        "reviewedBy",
+        "rightsReviewedAt",
+        "recheckAt"
+      ],
+      "approvedCriticProviders": []
+    },
+    "defaultStatus": "outbound-only",
+    "forbidden": [
+      "scraped review-aggregate pages",
+      "unlabeled blended scores",
+      "scores copied from search snippets or cached screenshots",
+      "provider scores rendered without provider, edition/platform, date, and source"
+    ]
+  },
+  "sources": [
+    {
+      "id": "metacritic",
+      "provider": "Metacritic",
+      "role": "review aggregate reference",
+      "status": "outbound-only",
+      "allowedFields": [
+        "individualSourceUrl"
+      ],
+      "numericScores": "do-not-cache-until-authorized",
+      "reviewText": "do-not-copy",
+      "images": "do-not-download",
+      "attribution": "Link to the source page when appropriate; do not imply endorsement.",
+      "termsUrl": "https://www.metacritic.com/legal/terms-of-use/",
+      "recheckBefore": "any score ingestion or image download",
+      "notes": "No public developer API was verified for this project. A link is not a redistribution license.",
+      "reviewedBy": "GameAtlas planning review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "decisionEvidence": "https://www.metacritic.com/legal/terms-of-use/",
+      "coveredProcess": "No local score, review text, or image ingestion; outbound reference only."
+    },
+    {
+      "id": "opencritic",
+      "provider": "OpenCritic",
+      "role": "review aggregate reference",
+      "status": "outbound-only",
+      "allowedFields": [
+        "individualSourceUrl"
+      ],
+      "numericScores": "do-not-cache-until-authorized",
+      "reviewText": "do-not-copy",
+      "images": "do-not-download",
+      "attribution": "Link to the source page when appropriate; do not imply endorsement.",
+      "termsUrl": "https://help.opencritic.com/knowledge-base/articles/6333223-are-there-any-opencritic-api-s",
+      "recheckBefore": "any score ingestion or image download",
+      "notes": "The official FAQ did not establish a public API for bulk data in the planning review.",
+      "reviewedBy": "GameAtlas planning review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "decisionEvidence": "https://help.opencritic.com/knowledge-base/articles/6333223-are-there-any-opencritic-api-s",
+      "coveredProcess": "No local score, review text, or image ingestion; outbound reference only."
+    },
+    {
+      "id": "igdb",
+      "provider": "IGDB / Twitch",
+      "role": "metadata discovery candidate",
+      "status": "pending-review",
+      "allowedFields": [
+        "outboundReferenceAfterTermsReview"
+      ],
+      "numericScores": "not-approved",
+      "reviewText": "not-approved",
+      "images": "not-approved",
+      "attribution": "Must follow the current Twitch/IGDB agreement.",
+      "termsUrl": "https://api-docs.igdb.com/",
+      "recheckBefore": "any API adapter, cache, or public deployment",
+      "notes": "The free-use/non-commercial boundary and image redistribution rights require confirmation, especially with a support path.",
+      "reviewedBy": "GameAtlas planning review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "decisionEvidence": "https://api-docs.igdb.com/",
+      "coveredProcess": "API and public/static redistribution terms require confirmation before any adapter or cache."
+    },
+    {
+      "id": "rawg",
+      "provider": "RAWG",
+      "role": "metadata discovery candidate",
+      "status": "pending-review",
+      "allowedFields": [
+        "outboundReferenceAfterTermsReview"
+      ],
+      "numericScores": "not-approved",
+      "reviewText": "not-approved",
+      "images": "not-approved",
+      "attribution": "Must follow current RAWG API terms and attribution requirements.",
+      "termsUrl": "https://rawg.io/terms",
+      "recheckBefore": "any API adapter, cache, or public deployment",
+      "notes": "Current quota, caching, commercial-use, and image wording must be rechecked at implementation time.",
+      "reviewedBy": "GameAtlas planning review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "decisionEvidence": "https://rawg.io/terms",
+      "coveredProcess": "API quota, caching, commercial-use, and image terms require confirmation before any adapter or cache."
+    },
+    {
+      "id": "nintendo-ir",
+      "provider": "Nintendo Investor Relations",
+      "role": "first-party sales fact reference",
+      "status": "approved",
+      "allowedFields": [
+        "sourceUrl",
+        "manuallyReviewedSalesFact",
+        "asOfDate",
+        "scope",
+        "territory"
+      ],
+      "numericScores": "not-a-critic-score",
+      "reviewText": "do-not-copy",
+      "images": "do-not-reuse-without-permission",
+      "attribution": "Cite the Nintendo IR page, preserve the published scope/date, and do not infer omitted titles.",
+      "termsUrl": "https://www.nintendo.co.jp/ir/en/finance/hard_soft/",
+      "recheckBefore": "each data refresh",
+      "notes": "Sales facts remain a separate signal from critic/user scores and are never converted to a rating.",
+      "reviewedBy": "GameAtlas planning review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "decisionEvidence": "https://www.nintendo.co.jp/ir/en/finance/hard_soft/",
+      "coveredProcess": "Only manually reviewed, attributed sales facts with published scope/date; never a critic score or image license."
+    },
+    {
+      "id": "official-publisher-pages",
+      "provider": "Game publisher/developer official pages",
+      "role": "official game and availability reference",
+      "status": "outbound-only",
+      "allowedFields": [
+        "officialUrl",
+        "storeUrl"
+      ],
+      "numericScores": "not-approved",
+      "reviewText": "do-not-copy",
+      "images": "permission-required",
+      "attribution": "Link clearly to the official destination and avoid implying ownership of its marks/assets.",
+      "termsUrl": null,
+      "recheckBefore": "each link refresh",
+      "notes": "No publisher category-wide approval; a specific permission record is required before storing other fields.",
+      "reviewedBy": "GameAtlas planning review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "decisionEvidence": null,
+      "coveredProcess": "No blanket publisher approval; review each official destination and permission separately."
+    }
+  ],
+  "support": {
+    "provider": "Stripe Payment Link supplied by the project owner",
+    "reference": "Codememory memory_244 (owner-supplied destination; withheld from public files until activation)",
+    "status": "pending-launch-disclosure",
+    "requiredBeforeCta": [
+      "confirm intended recipient/account context",
+      "publish voluntary-support wording",
+      "provide a public contact/correction path",
+      "state any applicable refund/privacy information",
+      "recheck provider terms affected by the support path"
+    ]
+  }
+}
