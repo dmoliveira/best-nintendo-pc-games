@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-mario-land",
+  "title": "Super Mario Land",
+  "aliases": [
+    "Super Mario Land 1",
+    "SML"
+  ],
+  "emoji": "🌼",
+  "shortDescription": "A compact handheld platformer that adapts Mario's movement and pacing to the original Game Boy screen.",
+  "highlights": [
+    "Focused stages designed for short, readable handheld sessions",
+    "A distinct world and enemy set that gives the handheld entry its own identity"
+  ],
+  "release": {
+    "year": 1989
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "platformer",
+    "action"
+  ],
+  "keywords": [
+    "mario",
+    "game boy",
+    "handheld",
+    "classic"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas handheld selection",
+      "rationale": "A high-confidence original Game Boy starting point: its focused stages show how the platform adapted a familiar Nintendo action language to a compact handheld format.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15"
+    }
+  ],
+  "links": [
+    {
+      "label": "Nintendo Game Boy product archive",
+      "url": "https://www.nintendo.co.jp/n02/dmg/mla/index.html",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

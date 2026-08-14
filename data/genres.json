@@ -28,6 +28,34 @@
         "Jump-and-run"
       ],
       "description": "Games centered on navigating spaces through running, jumping, and precise movement."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "simulation",
+      "name": "Simulation",
+      "aliases": [
+        "Simulation games"
+      ],
+      "description": "Games centered on managing, caring for, or inhabiting a system, activity, or relationship."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "racing",
+      "name": "Racing",
+      "aliases": [
+        "Racing games"
+      ],
+      "description": "Games centered on competing through courses, routes, or timed vehicle challenges."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "role-playing",
+      "name": "Role-playing",
+      "aliases": [
+        "RPG",
+        "Role-playing games"
+      ],
+      "description": "Games centered on character progression, party development, and authored or systemic journeys."
     }
   ]
 }

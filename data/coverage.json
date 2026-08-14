@@ -104,7 +104,7 @@
     },
     {
       "platformId": "game-boy",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
       "notes": "Game Boy Pocket and Light remain model aliases; Game Boy Color is tracked separately because its software compatibility boundary differs.",
       "sourceIds": [
@@ -124,7 +124,7 @@
     },
     {
       "platformId": "game-boy-advance",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
       "notes": "GBA, SP, and Micro remain one family for catalog filtering.",
       "sourceIds": [
@@ -134,7 +134,7 @@
     },
     {
       "platformId": "nintendo-ds",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
       "notes": "DS Lite remains a model alias; DSi and DSi XL are tracked under the separate Nintendo DSi compatibility family.",
       "sourceIds": [
@@ -154,7 +154,7 @@
     },
     {
       "platformId": "nintendo-3ds",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
       "notes": "2DS and 3DS XL remain compatible model aliases; New Nintendo 3DS hardware is tracked under the separate New 3DS compatibility family.",
       "sourceIds": [
@@ -164,7 +164,7 @@
     },
     {
       "platformId": "nintendo-new-3ds",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
       "sourceIds": [
         "nintendo-corporate-history",
