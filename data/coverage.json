@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-14",
+  "coveragePolicy": "Populated means at least one validated game record exists for the platform; planned means the taxonomy is canonical but content expansion has not started; partial is reserved for a reviewed slice that is not yet complete. catalogTarget records the alpha or expansion sequencing target independently.",
+  "sources": [
+    {
+      "id": "nintendo-corporate-history",
+      "label": "Nintendo corporate history",
+      "url": "https://www.nintendo.co.jp/corporate/en/history/index.html"
+    },
+    {
+      "id": "nintendo-ir-dedicated-sales",
+      "label": "Nintendo IR dedicated video game sales units",
+      "url": "https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html"
+    },
+    {
+      "id": "nintendo-gaming-systems",
+      "label": "Nintendo gaming systems",
+      "url": "https://www.nintendo.com/us/gaming-systems/"
+    }
+  ],
+  "items": [
+    {
+      "platformId": "nintendo-nes",
+      "coverage": "planned",
+      "catalogTarget": "alpha",
+      "notes": "Famicom and Family Computer are regional aliases, not separate platform IDs.",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ]
+    },
+    {
+      "platformId": "nintendo-snes",
+      "coverage": "planned",
+      "catalogTarget": "alpha",
+      "notes": "Super Famicom and SFC are regional aliases, not separate platform IDs.",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ]
+    },
+    {
+      "platformId": "nintendo-64",
+      "coverage": "planned",
+      "catalogTarget": "expansion",
+      "notes": "N64 is a search alias; 64DD is an add-on and is excluded from the platform family.",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ]
+    },
+    {
+      "platformId": "nintendo-gamecube",
+      "coverage": "planned",
+      "catalogTarget": "expansion",
+      "notes": "GameCube revisions and bundles remain model-level details.",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ]
+    },
+    {
+      "platformId": "nintendo-wii",
+      "coverage": "planned",
+      "catalogTarget": "expansion",
+      "notes": "Wii mini is a model alias, not a separate platform family.",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ]
+    },
+    {
+      "platformId": "nintendo-wii-u",
+      "coverage": "planned",
+      "catalogTarget": "expansion",
+      "notes": "Wii U remains distinct from Wii because it is a separate platform generation.",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ]
+    },
+    {
+      "platformId": "nintendo-switch",
+      "coverage": "planned",
+      "catalogTarget": "alpha",
+      "notes": "Switch Lite and the OLED model are model aliases within the hybrid-console family.",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales",
+        "nintendo-gaming-systems"
+      ]
+    },
+    {
+      "platformId": "nintendo-switch-2",
+      "coverage": "planned",
+      "catalogTarget": "expansion",
+      "notes": "Switch 2 is a separate current successor; no generation ordinal is asserted.",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales",
+        "nintendo-gaming-systems"
+      ]
+    },
+    {
+      "platformId": "game-boy",
+      "coverage": "planned",
+      "catalogTarget": "expansion",
+      "notes": "Game Boy Pocket and Light remain model aliases; Game Boy Color is tracked separately because its software compatibility boundary differs.",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ]
+    },
+    {
+      "platformId": "game-boy-color",
+      "coverage": "planned",
+      "catalogTarget": "expansion",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ],
+      "notes": "Game Boy Color has a distinct software library and is tracked separately from the original Game Boy family."
+    },
+    {
+      "platformId": "game-boy-advance",
+      "coverage": "planned",
+      "catalogTarget": "expansion",
+      "notes": "GBA, SP, and Micro remain one family for catalog filtering.",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ]
+    },
+    {
+      "platformId": "nintendo-ds",
+      "coverage": "planned",
+      "catalogTarget": "expansion",
+      "notes": "DS Lite remains a model alias; DSi and DSi XL are tracked under the separate Nintendo DSi compatibility family.",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ]
+    },
+    {
+      "platformId": "nintendo-dsi",
+      "coverage": "planned",
+      "catalogTarget": "expansion",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ],
+      "notes": "DSi and DSi XL are model aliases within the DSi revision family; DSi-specific software remains filterable."
+    },
+    {
+      "platformId": "nintendo-3ds",
+      "coverage": "planned",
+      "catalogTarget": "expansion",
+      "notes": "2DS and 3DS XL remain compatible model aliases; New Nintendo 3DS hardware is tracked under the separate New 3DS compatibility family.",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ]
+    },
+    {
+      "platformId": "nintendo-new-3ds",
+      "coverage": "planned",
+      "catalogTarget": "expansion",
+      "sourceIds": [
+        "nintendo-corporate-history",
+        "nintendo-ir-dedicated-sales"
+      ],
+      "notes": "New Nintendo 3DS, New 3DS XL, and New 2DS XL are model aliases within the New 3DS revision family."
+    }
+  ],
+  "excludedByDefault": [
+    {
+      "label": "Virtual Boy",
+      "reason": "Dedicated stereoscopic tabletop hardware does not fit the home-console or handheld-family scope; add only with an explicit all-hardware scope decision."
+    },
+    {
+      "label": "Peripheral and add-on hardware",
+      "reason": "Disk systems, 64DD, Game Boy Player, Balance Board, and similar accessories are not independent platform families."
+    },
+    {
+      "label": "Classic Edition and mini reproductions",
+      "reason": "Retro reproductions are model/products of an existing platform family, not new game platforms."
+    }
+  ]
+}
