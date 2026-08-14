@@ -41,6 +41,7 @@ jobs:
           npm run lint
           npm run typecheck
           npm run validate:rights
+          npm run validate:catalog
           npm test
       - name: Build static site
         env:

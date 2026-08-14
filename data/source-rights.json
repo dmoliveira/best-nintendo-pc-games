@@ -43,7 +43,9 @@
         "rightsReviewedAt",
         "recheckAt"
       ],
-      "approvedCriticProviders": []
+      "approvedCriticProviders": [],
+      "minimumScore": 80,
+      "requiredScale": 100
     },
     "defaultStatus": "outbound-only",
     "forbidden": [
@@ -182,8 +184,29 @@
       "reviewedBy": "GameAtlas planning review",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "decisionEvidence": null,
+      "decisionEvidence": "No blanket publisher approval; see the per-destination review requirement in notes.",
       "coveredProcess": "No blanket publisher approval; review each official destination and permission separately."
+    },
+    {
+      "id": "gameatlas-editorial",
+      "provider": "GameAtlas",
+      "role": "original editorial rationale",
+      "status": "approved",
+      "allowedFields": [
+        "editorialRationale"
+      ],
+      "numericScores": "not-a-critic-score",
+      "reviewText": "original-project-copy",
+      "images": "not-applicable",
+      "attribution": "GameAtlas original editorial work.",
+      "termsUrl": null,
+      "recheckBefore": "each editorial refresh",
+      "notes": "This source authorizes original rationale only; it does not authorize third-party review text or scores.",
+      "reviewedBy": "GameAtlas schema review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "decisionEvidence": "docs/rights-and-support-policy.md",
+      "coveredProcess": "Original GameAtlas rationale written and reviewed in the repository."
     }
   ],
   "support": {
