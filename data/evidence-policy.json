@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-14",
+  "states": [
+    {
+      "id": "link-only",
+      "publicMode": "outbound-reference",
+      "allowedKinds": [
+        "critic",
+        "user",
+        "sales",
+        "popularity"
+      ],
+      "numericDisplay": false,
+      "requiredFields": [
+        "sourceId",
+        "sourceUrl",
+        "capturedAt"
+      ],
+      "notes": "Use when a provider page may be linked but no local numeric value is licensed."
+    },
+    {
+      "id": "verified-fact",
+      "publicMode": "factual-display",
+      "allowedKinds": [
+        "sales"
+      ],
+      "numericDisplay": true,
+      "requiredFields": [
+        "sourceId",
+        "sourceUrl",
+        "territory",
+        "period",
+        "asOf",
+        "reviewedBy"
+      ],
+      "notes": "Use only for a manually checked primary-source fact with scope and date; this is not a critic score."
+    },
+    {
+      "id": "licensed-signal",
+      "publicMode": "numeric-display",
+      "allowedKinds": [
+        "critic",
+        "user",
+        "popularity"
+      ],
+      "numericDisplay": true,
+      "requiredFields": [
+        "provider",
+        "sourceId",
+        "sourceUrl",
+        "termsUrl",
+        "methodVersionOrScoreType",
+        "capturedAt",
+        "reviewedBy",
+        "rightsReviewedAt",
+        "recheckAt"
+      ],
+      "notes": "Use only after the provider-specific source registry entry authorizes the exact field and public display."
+    },
+    {
+      "id": "original-editorial",
+      "publicMode": "editorial-display",
+      "allowedKinds": [
+        "editorial"
+      ],
+      "numericDisplay": false,
+      "requiredFields": [
+        "provider",
+        "sourceId",
+        "sourceUrl",
+        "rationale",
+        "reviewedBy"
+      ],
+      "notes": "Original GameAtlas selection and copy; never represent it as an aggregate or provider score."
+    }
+  ],
+  "thresholds": {
+    "critic80": {
+      "kind": "critic",
+      "minimumScore": 80,
+      "requiredScale": 100,
+      "requiresState": "licensed-signal",
+      "providerAllowlist": "approvedCriticProviders",
+      "fallbackKinds": [],
+      "notes": "No editorial, user, popularity, or sales signal can satisfy this threshold."
+    }
+  },
+  "defaults": {
+    "criticProviders": [],
+    "popularityProviders": [],
+    "allowNumericFallbacks": false,
+    "allowProviderContentCopy": false
+  }
+}

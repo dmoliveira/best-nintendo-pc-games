@@ -1,8 +1,10 @@
 import { parseCalendarKey } from "../date-policy.mjs";
 import { isValidHttpsUrl } from "../url-policy.mjs";
+import evidencePolicy from "../../data/evidence-policy.json";
 import type {
   CatalogContext,
-  CriticOrUserSignal,
+  EvidenceState,
+  LicensedCriticOrUserSignal,
   GameRecord,
   GameSignal,
   GenreRecord,
@@ -14,7 +16,7 @@ import type {
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const VALID_VERIFICATION = new Set(["verified", "unverified"]);
 const VALID_RIGHTS = new Set(["approved", "outbound-only", "pending-review", "prohibited"]);
-const BASE_SIGNAL_FIELDS = new Set(["kind", "sourceId", "sourceUrl", "capturedAt", "verificationStatus", "rightsStatus", "rightsReviewedAt", "recheckAt", "termsUrl", "reviewedBy", "provider", "label"]);
+const BASE_SIGNAL_FIELDS = new Set(["kind", "evidenceState", "sourceId", "sourceUrl", "capturedAt", "verificationStatus", "rightsStatus", "rightsReviewedAt", "recheckAt", "termsUrl", "reviewedBy", "provider", "label"]);
 const KIND_FIELDS: Record<GameSignal["kind"], Set<string>> = {
   critic: new Set(["score", "scale", "scoreType", "count", "editionOrPlatform"]),
   user: new Set(["score", "scale", "scoreType", "count", "editionOrPlatform"]),
@@ -30,12 +32,34 @@ const SOURCE_FIELD_BY_KIND: Record<GameSignal["kind"], string> = {
   editorial: "editorialRationale",
 };
 
+type EvidencePolicyState = { id: EvidenceState; allowedKinds: GameSignal["kind"][]; numericDisplay: boolean; requiredFields: string[] };
+const EVIDENCE_STATES = new Map<EvidenceState, EvidencePolicyState>((evidencePolicy.states as EvidencePolicyState[]).map((state) => [state.id, state]));
+const TERMS_BOUND_KINDS = new Set<GameSignal["kind"]>(["critic", "user", "popularity"]);
+
 function issue(path: string, message: string): ValidationIssue {
   return { path, message };
 }
 
 function nonEmpty(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
+}
+
+function validateEvidenceState(signal: GameSignal, path: string, errors: ValidationIssue[]) {
+  const state = EVIDENCE_STATES.get(signal.evidenceState);
+  if (!state) {
+    errors.push(issue(`${path}.evidenceState`, "unsupported evidence state"));
+    return;
+  }
+  if (!state.allowedKinds.includes(signal.kind)) errors.push(issue(`${path}.evidenceState`, `state ${signal.evidenceState} does not allow ${signal.kind} signals`));
+  const record = signal as unknown as Record<string, unknown>;
+  for (const field of state.requiredFields) {
+    const actualField = field === "valueOrRank" ? ["value", "rank"] : field === "methodVersionOrScoreType" ? [signal.kind === "popularity" ? "methodVersion" : "scoreType"] : [field];
+    const present = actualField.some((candidate) => candidate in record && record[candidate] !== null && record[candidate] !== undefined && (typeof record[candidate] !== "string" || nonEmpty(record[candidate])));
+    if (!present) errors.push(issue(`${path}.${field}`, "required by evidence state"));
+  }
+  if (state.numericDisplay && signal.rightsStatus !== "approved") errors.push(issue(`${path}.evidenceState`, "numeric-display evidence requires approved rights"));
+  if (state.numericDisplay && signal.verificationStatus !== "verified") errors.push(issue(`${path}.evidenceState`, "numeric-display evidence requires verified facts"));
+  if (!state.numericDisplay && numericFieldPresent(record)) errors.push(issue(`${path}.evidenceState`, "numeric fields require a numeric-display evidence state"));
 }
 
 function validateDate(value: unknown, path: string, context: CatalogContext, errors: ValidationIssue[], mode: "past-or-today" | "future-or-today" | "any") {
@@ -57,7 +81,7 @@ function validateStringList(value: unknown, path: string, errors: ValidationIssu
 }
 
 function numericFieldPresent(signal: Record<string, unknown>): boolean {
-  return ["score", "value", "rank", "count"].some((field) => field in signal);
+  return ["score", "scale", "value", "rank", "count"].some((field) => field in signal);
 }
 
 function sourceAllowsSignal(source: SourcePolicy | undefined, signal: GameSignal): boolean {
@@ -68,6 +92,7 @@ function sourceAllowsSignal(source: SourcePolicy | undefined, signal: GameSignal
 function validateBaseSignal(signal: GameSignal, path: string, context: CatalogContext, errors: ValidationIssue[]) {
   const record = signal as unknown as Record<string, unknown>;
   const source = context.sourceById.get(signal.sourceId);
+  validateEvidenceState(signal, path, errors);
   if (!source) errors.push(issue(`${path}.sourceId`, `unknown source ${signal.sourceId}`));
   if (!isValidHttpsUrl(signal.sourceUrl)) errors.push(issue(`${path}.sourceUrl`, "must be a valid https URL"));
   if (signal.termsUrl !== undefined && signal.termsUrl !== null && !isValidHttpsUrl(signal.termsUrl)) errors.push(issue(`${path}.termsUrl`, "must be a valid https URL when present"));
@@ -92,7 +117,10 @@ function validateBaseSignal(signal: GameSignal, path: string, context: CatalogCo
     if (!nonEmpty(signal.reviewedBy)) errors.push(issue(path, "approved signals require reviewedBy"));
     if (source?.status !== "approved") errors.push(issue(path, "approved signal requires an approved source registry entry"));
     if (!sourceAllowsSignal(source, signal)) errors.push(issue(path, `source does not authorize ${signal.kind} fields`));
-    if (source?.termsUrl && signal.termsUrl !== source.termsUrl) errors.push(issue(path, "signal termsUrl must match the source registry"));
+    if (TERMS_BOUND_KINDS.has(signal.kind)) {
+      if (!isValidHttpsUrl(source?.termsUrl)) errors.push(issue(`${path}.source.termsUrl`, "numeric source requires a registry terms URL"));
+      if (!isValidHttpsUrl(signal.termsUrl) || signal.termsUrl !== source?.termsUrl) errors.push(issue(path, "signal termsUrl must match the source registry"));
+    } else if (source?.termsUrl && signal.termsUrl !== source.termsUrl) errors.push(issue(path, "signal termsUrl must match the source registry"));
   }
 }
 
@@ -101,7 +129,7 @@ function validateKnownFields(signal: Record<string, unknown>, path: string, kind
   for (const key of Object.keys(signal)) if (!allowed.has(key)) errors.push(issue(`${path}.${key}`, "unknown signal field for this signal kind"));
 }
 
-function validateNumericSignal(signal: CriticOrUserSignal, path: string, context: CatalogContext, errors: ValidationIssue[]) {
+function validateNumericSignal(signal: LicensedCriticOrUserSignal, path: string, context: CatalogContext, errors: ValidationIssue[]) {
   validateBaseSignal(signal, path, context, errors);
   if (!nonEmpty(signal.provider) || !nonEmpty(signal.label) || !nonEmpty(signal.scoreType)) errors.push(issue(path, "numeric signals require provider, label, and scoreType"));
   if (!Number.isFinite(signal.score) || !Number.isFinite(signal.scale) || signal.scale <= 0 || signal.score < 0 || signal.score > signal.scale) errors.push(issue(path, "score must be within its declared scale"));
@@ -158,7 +186,17 @@ export function isEligibleCritic80(signal: GameSignal, context: CatalogContext):
   if (signal.kind !== "critic") return false;
   if (validateSignal(signal, "signal", context).length > 0) return false;
   const source = context.sourceById.get(signal.sourceId);
-  return signal.score >= context.criticMinimumScore && signal.scale === context.criticRequiredScale && signal.verificationStatus === "verified" && signal.rightsStatus === "approved" && context.approvedCriticProviders.has(signal.provider) && nonEmpty(signal.editionOrPlatform) && nonEmpty(signal.termsUrl) && nonEmpty(signal.reviewedBy) && source?.provider === signal.provider;
+  return signal.evidenceState === "licensed-signal" && signal.score >= context.criticMinimumScore && signal.scale === context.criticRequiredScale && signal.verificationStatus === "verified" && signal.rightsStatus === "approved" && context.approvedCriticProviders.has(signal.provider) && nonEmpty(signal.editionOrPlatform) && nonEmpty(signal.termsUrl) && nonEmpty(signal.reviewedBy) && source?.provider === signal.provider;
+}
+
+export function isEligiblePopularity(signal: GameSignal, context: CatalogContext): boolean {
+  if (signal.kind !== "popularity") return false;
+  if (validateSignal(signal, "signal", context).length > 0) return false;
+  const source = context.sourceById.get(signal.sourceId);
+  const record = signal as unknown as Record<string, unknown>;
+  return (typeof record.value === "number" && Number.isFinite(record.value)) || (typeof record.rank === "number" && Number.isInteger(record.rank))
+    ? signal.evidenceState === "licensed-signal" && context.popularityPublicMode === "numeric-display" && signal.verificationStatus === "verified" && signal.rightsStatus === "approved" && context.approvedPopularityProviders.has(signal.provider) && nonEmpty(signal.methodVersion) && nonEmpty(signal.termsUrl) && nonEmpty(signal.reviewedBy) && source?.provider === signal.provider
+    : false;
 }
 
 export function validateSignal(signal: unknown, path: string, context: CatalogContext): ValidationIssue[] {
@@ -171,23 +209,29 @@ export function validateSignal(signal: unknown, path: string, context: CatalogCo
   const typed = signal as GameSignal;
   validateBaseSignal(typed, path, context, errors);
   if (!nonEmpty(typed.provider) || !nonEmpty(typed.label)) errors.push(issue(path, "signals require provider and label"));
-  if (typed.kind === "critic" || typed.kind === "user") validateNumericSignal(typed, path, context, errors);
+  if ((typed.kind === "critic" || typed.kind === "user") && typed.evidenceState !== "link-only") validateNumericSignal(typed, path, context, errors);
   if (typed.kind === "sales") {
-    if ((typed.value === undefined || !Number.isFinite(typed.value)) && (typed.rank === undefined || !Number.isInteger(typed.rank))) errors.push(issue(path, "sales signals require value or rank"));
-    if ("value" in (typed as unknown as Record<string, unknown>) && !Number.isFinite(typed.value)) errors.push(issue(`${path}.value`, "must be a finite number when present"));
-    if (typed.value !== undefined && typeof typed.value === "number" && typed.value < 0) errors.push(issue(`${path}.value`, "must be non-negative"));
-    if (typed.value !== undefined && !nonEmpty(typed.unit)) errors.push(issue(`${path}.unit`, "is required when sales value is present"));
-    if (typed.rank !== undefined && (!Number.isInteger(typed.rank) || typed.rank < 1)) errors.push(issue(`${path}.rank`, "must be a positive integer"));
-    if (!nonEmpty(typed.territory) || !nonEmpty(typed.period)) errors.push(issue(path, "sales signals require territory and period"));
-    validateDate(typed.asOf, `${path}.asOf`, context, errors, "past-or-today");
+    if (typed.evidenceState !== "link-only") {
+      if ((typed.value === undefined || !Number.isFinite(typed.value)) && (typed.rank === undefined || !Number.isInteger(typed.rank))) errors.push(issue(path, "sales signals require value or rank"));
+      if ("value" in (typed as unknown as Record<string, unknown>) && !Number.isFinite(typed.value)) errors.push(issue(`${path}.value`, "must be a finite number when present"));
+      if (typed.value !== undefined && typeof typed.value === "number" && typed.value < 0) errors.push(issue(`${path}.value`, "must be non-negative"));
+      if (typed.value !== undefined && !nonEmpty(typed.unit)) errors.push(issue(`${path}.unit`, "is required when sales value is present"));
+      if (typed.rank !== undefined && (!Number.isInteger(typed.rank) || typed.rank < 1)) errors.push(issue(`${path}.rank`, "must be a positive integer"));
+      if (!nonEmpty(typed.territory) || !nonEmpty(typed.period)) errors.push(issue(path, "sales signals require territory and period"));
+      validateDate(typed.asOf, `${path}.asOf`, context, errors, "past-or-today");
+    }
   }
   if (typed.kind === "popularity") {
-    if ((typed.value === undefined || !Number.isFinite(typed.value)) && (typed.rank === undefined || !Number.isInteger(typed.rank))) errors.push(issue(path, "popularity signals require value or rank"));
-    if ("value" in (typed as unknown as Record<string, unknown>) && !Number.isFinite(typed.value)) errors.push(issue(`${path}.value`, "must be a finite number when present"));
-    if (typed.value !== undefined && typeof typed.value === "number" && typed.value < 0) errors.push(issue(`${path}.value`, "must be non-negative"));
-    if (typed.rank !== undefined && (!Number.isInteger(typed.rank) || typed.rank < 1)) errors.push(issue(`${path}.rank`, "must be a positive integer"));
-    if (!nonEmpty(typed.methodVersion)) errors.push(issue(`${path}.methodVersion`, "is required"));
-    validateDate(typed.asOf, `${path}.asOf`, context, errors, "past-or-today");
+    if (typed.evidenceState !== "link-only") {
+      if ((typed.value === undefined || !Number.isFinite(typed.value)) && (typed.rank === undefined || !Number.isInteger(typed.rank))) errors.push(issue(path, "popularity signals require value or rank"));
+      if (typed.rightsStatus === "approved" && !context.approvedPopularityProviders.has(typed.provider)) errors.push(issue(path, `popularity provider ${typed.provider} is not authorized`));
+      if (typed.rightsStatus === "approved" && context.approvedPopularityProviders.has(typed.provider) && context.popularityPublicMode !== "numeric-display") errors.push(issue(path, "popularity policy is outbound-only"));
+      if ("value" in (typed as unknown as Record<string, unknown>) && !Number.isFinite(typed.value)) errors.push(issue(`${path}.value`, "must be a finite number when present"));
+      if (typed.value !== undefined && typeof typed.value === "number" && typed.value < 0) errors.push(issue(`${path}.value`, "must be non-negative"));
+      if (typed.rank !== undefined && (!Number.isInteger(typed.rank) || typed.rank < 1)) errors.push(issue(`${path}.rank`, "must be a positive integer"));
+      if (!nonEmpty(typed.methodVersion)) errors.push(issue(`${path}.methodVersion`, "is required"));
+      validateDate(typed.asOf, `${path}.asOf`, context, errors, "past-or-today");
+    }
   }
   if (typed.kind === "editorial") {
     if (typed.provider !== "GameAtlas") errors.push(issue(`${path}.provider`, "editorial provider must be GameAtlas"));

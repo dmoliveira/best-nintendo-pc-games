@@ -11,7 +11,7 @@ const nonEmpty = (value: unknown): value is string => typeof value === "string" 
 const errors: string[] = [];
 const platformsDocument = loadJson("data/platforms.json") as { schemaVersion?: number; items?: unknown[] };
 const genresDocument = loadJson("data/genres.json") as { schemaVersion?: number; items?: unknown[] };
-const sourceDocument = loadJson("data/source-rights.json") as { sources?: unknown[]; publicNumericSignalPolicy?: { eligiblePredicate?: { approvedCriticProviders?: string[]; minimumScore?: number; requiredScale?: number } } };
+const sourceDocument = loadJson("data/source-rights.json") as { sources?: unknown[]; publicNumericSignalPolicy?: { eligiblePredicate?: { approvedCriticProviders?: string[]; minimumScore?: number; requiredScale?: number } }; popularitySignalPolicy?: { eligiblePredicate?: { approvedPopularityProviders?: string[]; publicMode?: string } } };
 const assetDocument = loadJson("data/assets-manifest.json") as { assets?: unknown[] };
 const coverageDocument = loadJson("data/coverage.json") as { schemaVersion?: number; coveragePolicy?: string; sources?: unknown[]; items?: unknown[] };
 
@@ -90,6 +90,10 @@ for (const [index, candidate] of sourceCandidates.entries()) {
     errors.push(`${recordPath}.termsUrl: must be a valid https URL when present`);
     valid = false;
   }
+  if (Array.isArray(candidate.allowedFields) && candidate.allowedFields.some((field) => ["numericScore", "popularitySignal"].includes(String(field))) && !isValidHttpsUrl(candidate.termsUrl)) {
+    errors.push(`${recordPath}.termsUrl: required for critic/popularity authorization`);
+    valid = false;
+  }
   if (valid) sourceRecords.push(candidate as unknown as SourcePolicy);
 }
 
@@ -109,7 +113,9 @@ const sourceById = new Map(sourceRecords.map((source) => [source.id, source]));
 const assetById = new Map(assetRecords.map((asset) => [asset.assetId, { path: asset.path }]));
 const predicate = sourceDocument.publicNumericSignalPolicy?.eligiblePredicate;
 const approvedCriticProviders = new Set(predicate?.approvedCriticProviders ?? []);
-const context: CatalogContext = { platformIds, genreIds, sourceById, assetById, approvedCriticProviders, criticMinimumScore: predicate?.minimumScore ?? 80, criticRequiredScale: predicate?.requiredScale ?? 100, todayKey: localTodayKey() };
+const popularityPredicate = sourceDocument.popularitySignalPolicy?.eligiblePredicate;
+const approvedPopularityProviders = new Set(popularityPredicate?.approvedPopularityProviders ?? []);
+const context: CatalogContext = { platformIds, genreIds, sourceById, assetById, approvedCriticProviders, approvedPopularityProviders, popularityPublicMode: popularityPredicate?.publicMode === "numeric-display" ? "numeric-display" : "outbound-only", criticMinimumScore: predicate?.minimumScore ?? 80, criticRequiredScale: predicate?.requiredScale ?? 100, todayKey: localTodayKey() };
 const gamesDirectory = path.join(root, "data/games");
 const gameFiles = fs.existsSync(gamesDirectory) ? fs.readdirSync(gamesDirectory).filter((file) => file.endsWith(".json")).sort() : [];
 const identityRecords: Array<{ file: string; slug: string; title: string; aliases: string[] }> = [];

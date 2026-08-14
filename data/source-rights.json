@@ -55,6 +55,49 @@
       "provider scores rendered without provider, edition/platform, date, and source"
     ]
   },
+  "popularitySignalPolicy": {
+    "eligiblePredicate": {
+      "all": [
+        {
+          "field": "verificationStatus",
+          "equals": "verified"
+        },
+        {
+          "field": "rightsStatus",
+          "equals": "approved"
+        },
+        {
+          "field": "kind",
+          "equals": "popularity"
+        },
+        {
+          "field": "provider",
+          "in": "approvedPopularityProviders"
+        }
+      ],
+      "requiredFields": [
+        "provider",
+        "valueOrRank",
+        "methodVersion",
+        "asOf",
+        "capturedAt",
+        "sourceUrl",
+        "termsUrl",
+        "reviewedBy",
+        "rightsReviewedAt",
+        "recheckAt"
+      ],
+      "approvedPopularityProviders": [],
+      "publicMode": "outbound-only"
+    },
+    "defaultStatus": "outbound-only",
+    "forbidden": [
+      "scraped concurrent-player pages",
+      "cached user-rating averages without a license",
+      "provider rankings copied without methodVersion and asOf",
+      "popularity values substituted for sales or critic scores"
+    ]
+  },
   "sources": [
     {
       "id": "metacritic",
