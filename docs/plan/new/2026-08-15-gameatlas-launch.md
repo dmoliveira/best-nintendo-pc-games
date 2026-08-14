@@ -365,4 +365,4 @@ The first planning slice requires `git diff --check`, plan review, and Codememor
 - Metacritic terms: <https://www.metacritic.com/legal/terms-of-use/>
 - Nintendo sales reporting: <https://www.nintendo.co.jp/ir/en/finance/hard_soft/> and <https://www.nintendo.co.jp/ir/en/finance/software/index.html>
 - Schema.org VideoGame: <https://schema.org/VideoGame>
-- Support link reused from `dmoliveira/master-philosophers`: <https://buy.stripe.com/8x200i8bSgVe3Vl3g8bfO00>
+- Support link supplied from `dmoliveira/master-philosophers`; the live destination is held in Codememory until the support disclosure gate passes.

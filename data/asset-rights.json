@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-15",
+  "defaultStatus": "blocked-until-manifested",
+  "assetKinds": [
+    {
+      "id": "generated-original-editorial",
+      "status": "approved-with-conditions",
+      "allowedUses": [
+        "hero",
+        "og-image",
+        "game-card-thumbnail",
+        "favicon"
+      ],
+      "conditions": [
+        "record prompt/output provenance and generated date",
+        "do not recreate official box art, logos, characters, or screenshots",
+        "provide accessible alt text",
+        "keep generation secrets out of the repository and Pages artifact"
+      ]
+    },
+    {
+      "id": "emoji-and-generic-glyph",
+      "status": "approved-with-conditions",
+      "allowedUses": [
+        "card-accent",
+        "platform-marker",
+        "fallback-thumbnail"
+      ],
+      "conditions": [
+        "always provide a text label",
+        "do not rely on color or emoji alone to convey meaning",
+        "test platform/font fallback"
+      ]
+    },
+    {
+      "id": "public-domain-or-compatible-license",
+      "status": "approved-with-conditions",
+      "allowedUses": [
+        "only-the-recorded-purpose"
+      ],
+      "conditions": [
+        "record the exact asset URL and license",
+        "record creator and attribution requirements",
+        "verify the license permits website redistribution and modification"
+      ]
+    },
+    {
+      "id": "publisher-permission",
+      "status": "pending-review",
+      "allowedUses": [],
+      "conditions": [
+        "retain written permission or a press-kit license",
+        "record scope, territory, duration, attribution, and removal contact",
+        "do not assume a publisher page grants download rights"
+      ]
+    },
+    {
+      "id": "api-cover-or-screenshot",
+      "status": "outbound-only",
+      "allowedUses": [
+        "link-to-source"
+      ],
+      "conditions": [
+        "do not download, crop, commit, mirror, or CDN-host by default",
+        "re-evaluate only after explicit provider and rights approval"
+      ]
+    },
+    {
+      "id": "game-logo-character-or-box-recreation",
+      "status": "prohibited-by-default",
+      "allowedUses": [],
+      "conditions": [
+        "requires a separate written permission/legal decision before publication"
+      ]
+    }
+  ],
+  "manifestRequiredFields": [
+    "assetId",
+    "path",
+    "assetKind",
+    "creatorOrSource",
+    "licenseOrPermissionUrl",
+    "attribution",
+    "generatedOrAcquiredAt",
+    "intendedUse",
+    "altText",
+    "reviewedBy",
+    "rightsReviewedAt",
+    "recheckAt"
+  ],
+  "conditionalManifestFields": {
+    "generated-original-editorial": [
+      "promptOrGenerationBrief",
+      "modelOrTool",
+      "outputOrAssetId",
+      "generatedOrAcquiredAt"
+    ],
+    "public-domain-or-compatible-license": [
+      "licenseOrPermissionUrl",
+      "licenseName",
+      "creatorOrSource"
+    ],
+    "publisher-permission": [
+      "licenseOrPermissionUrl",
+      "permissionScope",
+      "removalContact"
+    ]
+  },
+  "manifestFieldSemantics": {
+    "licenseOrPermissionUrl": "nullable only when assetKind is generated-original-editorial; then notApplicableReason is required",
+    "recheckAt": "required for third-party or time-bounded permissions; generated originals use reviewedAt unless a dependency requires recheck"
+  }
+}
