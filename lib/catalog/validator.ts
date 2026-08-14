@@ -9,6 +9,7 @@ import type {
   GameSignal,
   GenreRecord,
   PlatformRecord,
+  ReleaseFormat,
   SourcePolicy,
   ValidationIssue,
 } from "./types";
@@ -258,6 +259,8 @@ export function validateGameRecord(record: unknown, path: string, context: Catal
   for (const source of game.sources ?? []) if (!context.sourceById.has(source)) errors.push(issue(`${path}.sources`, `unknown source ${source}`));
   if (!game.release || !Number.isInteger(game.release.year) || game.release.year < 1950 || game.release.year > 2100) errors.push(issue(`${path}.release.year`, "must be an integer year from 1950 to 2100"));
   if (game.release?.date) validateDate(game.release.date, `${path}.release.date`, context, errors, "any");
+  if (game.releaseFormat !== undefined && !["cartridge", "digital"].includes(game.releaseFormat as ReleaseFormat)) errors.push(issue(`${path}.releaseFormat`, "must be cartridge or digital when present"));
+  if (game.platforms?.includes("nintendo-dsi") && game.releaseFormat !== "digital") errors.push(issue(`${path}.releaseFormat`, "Nintendo DSi records must identify DSiWare/digital distribution"));
   if (!Array.isArray(game.signals)) errors.push(issue(`${path}.signals`, "must be an array"));
   else game.signals.forEach((signal, index) => errors.push(...validateSignal(signal, `${path}.signals[${index}]`, context)));
   if (!Array.isArray(game.links) || game.links.length < 1) errors.push(issue(`${path}.links`, "must contain at least one official or reference link"));

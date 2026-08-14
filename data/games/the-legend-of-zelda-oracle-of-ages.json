@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-oracle-of-ages",
+  "title": "The Legend of Zelda: Oracle of Ages",
+  "aliases": [
+    "Oracle of Ages",
+    "Zelda Ages"
+  ],
+  "emoji": "⌛",
+  "shortDescription": "A compact Zelda adventure that makes changing eras part of its puzzle language and turns a small world into a layered set of routes.",
+  "highlights": [
+    "Time-shifting puzzles make familiar spaces behave in two distinct states",
+    "A focused dungeon structure rewards observation and item mastery"
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "adventure",
+    "action"
+  ],
+  "developer": "Capcom / Flagship",
+  "publisher": "Nintendo",
+  "keywords": [
+    "zelda",
+    "oracle",
+    "game boy color",
+    "time travel",
+    "adventure"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A Game Boy Color adventure pick that foregrounds the platform’s compact, puzzle-dense format while remaining clearly distinct from its companion game.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Zelda games archive",
+      "url": "https://www.zelda.com/games/",
+      "kind": "reference"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

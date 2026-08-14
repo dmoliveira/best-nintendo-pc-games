@@ -44,8 +44,8 @@
         "Nintendo 64",
         "N64"
       ],
-      "coverage": "planned",
-      "description": "Nintendo's cartridge-based 64-bit home console family, queued for post-alpha catalog expansion."
+      "coverage": "populated",
+      "description": "Nintendo’s cartridge-based 64-bit home console family, now represented by a reviewed expansion set of foundational 3D and multiplayer games."
     },
     {
       "schemaVersion": 1,
@@ -58,8 +58,8 @@
         "Nintendo GameCube",
         "GameCube"
       ],
-      "coverage": "planned",
-      "description": "Nintendo's compact optical-disc home console family, queued for post-alpha catalog expansion."
+      "coverage": "populated",
+      "description": "Nintendo’s compact optical-disc home console family, now represented by a reviewed expansion set of platform, adventure, and multiplayer anchors."
     },
     {
       "schemaVersion": 1,
@@ -72,8 +72,8 @@
         "Wii",
         "Wii mini"
       ],
-      "coverage": "planned",
-      "description": "Nintendo's motion-focused home console family; Wii mini is normalized as a model alias rather than a separate platform."
+      "coverage": "populated",
+      "description": "Nintendo’s motion-focused home console family, now represented by a reviewed expansion set spanning social play, platforming, racing, and role-playing."
     },
     {
       "schemaVersion": 1,
@@ -86,8 +86,8 @@
         "Wii U",
         "Nintendo Wii U"
       ],
-      "coverage": "planned",
-      "description": "Nintendo's home console with a controller display, queued for post-alpha catalog expansion."
+      "coverage": "populated",
+      "description": "Nintendo’s home console with a controller display, now represented by a reviewed expansion set of platform, racing, multiplayer, and role-playing games."
     },
     {
       "schemaVersion": 1,
@@ -118,8 +118,8 @@
         "Nintendo Switch 2",
         "Switch 2"
       ],
-      "coverage": "planned",
-      "description": "Nintendo's current hybrid-console successor, represented separately from the original Nintendo Switch family."
+      "coverage": "populated",
+      "description": "Nintendo’s current hybrid-console successor, represented by native Switch 2 releases with platform-specific official pages."
     },
     {
       "schemaVersion": 1,
@@ -147,8 +147,8 @@
         "Game Boy Color",
         "GBC"
       ],
-      "coverage": "planned",
-      "description": "Nintendo's color handheld platform with a distinct software library; kept separate from the original Game Boy family for compatibility filtering."
+      "coverage": "populated",
+      "description": "Nintendo’s color handheld platform with a distinct software library, now represented by a reviewed expansion set of role-playing, adventure, and platform games."
     },
     {
       "schemaVersion": 1,
@@ -193,8 +193,8 @@
         "DSi",
         "DSi XL"
       ],
-      "coverage": "planned",
-      "description": "Nintendo DS revision family with DSi-specific software; DSi XL remains a model alias."
+      "coverage": "populated",
+      "description": "Nintendo’s DSi revision family, represented with an explicit DSiWare digital distribution marker rather than being conflated with DS cartridge software."
     },
     {
       "schemaVersion": 1,
@@ -227,6 +227,21 @@
       ],
       "coverage": "populated",
       "description": "New Nintendo 3DS revision family with a small exclusive software set; New 3DS XL and New 2DS XL remain model aliases."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "pc-windows",
+      "name": "PC (Windows)",
+      "family": "pc",
+      "generation": "modern desktop PC",
+      "emoji": "🖥️",
+      "aliases": [
+        "PC",
+        "Windows PC",
+        "Computer"
+      ],
+      "coverage": "populated",
+      "description": "The Windows PC platform baseline, represented by a reviewed cross-genre editorial starter set rather than a claim of complete PC coverage."
     }
   ]
 }

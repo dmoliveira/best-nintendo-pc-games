@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "slug": "celeste",
+  "title": "Celeste",
+  "aliases": [],
+  "emoji": "🏔️",
+  "shortDescription": "A precise platformer about climbing a mountain, where compact rooms turn movement practice into an expressive and humane journey.",
+  "highlights": [
+    "Short rooms make failure informative instead of exhausting",
+    "Movement tools combine into a clear language of momentum and control"
+  ],
+  "release": {
+    "year": 2018
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "platformer",
+    "action"
+  ],
+  "developer": "Maddy Makes Games Inc.",
+  "publisher": "Maddy Makes Games Inc.",
+  "keywords": [
+    "celeste",
+    "platformer",
+    "mountain",
+    "precision",
+    "pc"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A high-confidence PC platformer anchor that treats precision, accessibility, and emotional context as parts of the same design.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/504230/Celeste/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

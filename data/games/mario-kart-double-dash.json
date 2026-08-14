@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-kart-double-dash",
+  "title": "Mario Kart: Double Dash!!",
+  "aliases": [
+    "Double Dash"
+  ],
+  "emoji": "🏎️",
+  "shortDescription": "A team-oriented kart racer that gives every race a playful layer of coordination through paired drivers and item swapping.",
+  "highlights": [
+    "Two-character teams create meaningful cooperation in local play",
+    "Distinct character items keep races readable and mischievous"
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "mario kart",
+    "racing",
+    "multiplayer",
+    "gamecube",
+    "co-op"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A focused GameCube multiplayer pick whose paired-driver rule gives the familiar kart formula a clear platform-specific identity.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.co.jp/ngc/gm4j/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

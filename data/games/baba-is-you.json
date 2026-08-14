@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "slug": "baba-is-you",
+  "title": "Baba Is You",
+  "aliases": [],
+  "emoji": "🐑",
+  "shortDescription": "A rule-bending puzzle game where the words on the board become objects that the player can rearrange into new laws.",
+  "highlights": [
+    "Rules are visible, manipulable, and immediately testable",
+    "Later puzzles reward conceptual leaps rather than reflexes"
+  ],
+  "release": {
+    "year": 2019
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "developer": "Hempuli Oy",
+  "publisher": "Hempuli Oy",
+  "keywords": [
+    "baba is you",
+    "puzzle",
+    "logic",
+    "indie",
+    "pc"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A distinctive PC puzzle selection that makes the rules of a game world literal material for experimentation.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/736260/Baba_Is_You/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

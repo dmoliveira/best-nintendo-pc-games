@@ -250,6 +250,27 @@
       "recheckAt": "2026-09-15",
       "decisionEvidence": "docs/rights-and-support-policy.md",
       "coveredProcess": "Original GameAtlas rationale written and reviewed in the repository."
+    },
+    {
+      "id": "nintendo-life-reference",
+      "provider": "Nintendo Life",
+      "role": "historical DSiWare reference",
+      "status": "outbound-only",
+      "allowedFields": [
+        "individualSourceUrl"
+      ],
+      "numericScores": "do-not-cache",
+      "reviewText": "do-not-copy",
+      "images": "do-not-download",
+      "attribution": "Link to the title-specific catalog record as an external reference; do not imply endorsement or ownership.",
+      "termsUrl": null,
+      "recheckBefore": "each link refresh",
+      "notes": "Used only for title/platform/year metadata and outbound reference links when a durable first-party DSiWare page is unavailable.",
+      "reviewedBy": "GameAtlas catalog review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "decisionEvidence": "https://www.nintendolife.com/games/dsiware",
+      "coveredProcess": "Reference-only DSiWare metadata; no scores, review text, images, or local provider content."
     }
   ],
   "support": {

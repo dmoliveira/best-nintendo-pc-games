@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "slug": "star-fox-64",
+  "title": "Star Fox 64",
+  "aliases": [
+    "Lylat Wars"
+  ],
+  "emoji": "🦊",
+  "shortDescription": "A kinetic rail-shooter adventure with branching routes, radio chatter, and compact missions that stay readable at speed.",
+  "highlights": [
+    "Branching mission paths that make repeat runs meaningfully different",
+    "Responsive flight combat with clear arcade feedback"
+  ],
+  "release": {
+    "year": 1997
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "action"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "star fox",
+    "fox mccloud",
+    "rail shooter",
+    "space combat",
+    "n64"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A compact, replayable Nintendo 64 action pick that balances arcade immediacy with route discovery.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.co.jp/n01/n64/software/nus_p_nfxj/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

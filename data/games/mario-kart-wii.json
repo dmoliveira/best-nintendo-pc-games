@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-kart-wii",
+  "title": "Mario Kart Wii",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "A lively kart racer that broadens the series with accessible steering, memorable tracks, and a large local multiplayer footprint.",
+  "highlights": [
+    "Multiple control options welcome casual and practiced players",
+    "Track design supports both item chaos and clean racing lines"
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "mario kart",
+    "racing",
+    "wii wheel",
+    "multiplayer",
+    "wii"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A natural Wii catalog anchor for its broad control support and reliable group-play loop.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.co.jp/wii/rmcj/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

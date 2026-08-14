@@ -31,6 +31,15 @@
     },
     {
       "schemaVersion": 1,
+      "id": "puzzle",
+      "name": "Puzzle",
+      "aliases": [
+        "Puzzle games"
+      ],
+      "description": "Games centered on logic, spatial reasoning, pattern recognition, or problem solving."
+    },
+    {
+      "schemaVersion": 1,
       "id": "simulation",
       "name": "Simulation",
       "aliases": [

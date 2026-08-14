@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-mario-64",
+  "title": "Super Mario 64",
+  "aliases": [
+    "Mario 64"
+  ],
+  "emoji": "⭐",
+  "shortDescription": "A landmark 3D platforming adventure that turns movement, exploration, and playful experimentation into a whole new kind of course.",
+  "highlights": [
+    "Open-ended castle exploration with distinct movement challenges",
+    "A readable 3D design language that rewards curiosity and precision"
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "platformer",
+    "action"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "mario",
+    "3d platformer",
+    "peach castle",
+    "n64",
+    "classic"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A foundational Nintendo 64 selection whose movement vocabulary and exploratory structure make the transition to 3D immediately legible.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.co.jp/n01/n64/software/nus_p_nsmj/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

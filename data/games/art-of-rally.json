@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "slug": "art-of-rally",
+  "title": "art of rally",
+  "aliases": [],
+  "emoji": "🚗",
+  "shortDescription": "A stylized rally game that turns difficult roads, clean lines, and controlled slides into a calm visual road trip.",
+  "highlights": [
+    "Minimalist presentation keeps attention on route and rhythm",
+    "Different eras and surfaces reward careful adaptation"
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "developer": "Funselektor Labs Inc.",
+  "publisher": "Funselektor Labs Inc.",
+  "keywords": [
+    "art of rally",
+    "rally",
+    "racing",
+    "indie",
+    "pc"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A complementary PC racing pick that shows how a focused aesthetic and forgiving learning curve can make motorsport feel contemplative.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/550320/art_of_rally/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

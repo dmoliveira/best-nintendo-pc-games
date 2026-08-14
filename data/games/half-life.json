@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "slug": "half-life",
+  "title": "Half-Life",
+  "aliases": [],
+  "emoji": "🧪",
+  "shortDescription": "A science-fiction action game that uses environmental pacing, authored encounters, and a continuous world to make the player feel inside the experiment.",
+  "highlights": [
+    "Story unfolds through the world instead of constant cutaways",
+    "Combat spaces and traversal keep momentum tightly connected"
+  ],
+  "release": {
+    "year": 1998
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Valve",
+  "publisher": "Valve",
+  "keywords": [
+    "half life",
+    "valve",
+    "science fiction",
+    "shooter",
+    "pc"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A foundational PC action selection whose seamless pacing and environmental storytelling still explain why the platform became a home for immersive first-person worlds.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/70/HalfLife/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

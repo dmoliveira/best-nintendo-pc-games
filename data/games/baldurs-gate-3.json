@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "slug": "baldurs-gate-3",
+  "title": "Baldur’s Gate 3",
+  "aliases": [],
+  "emoji": "🐉",
+  "shortDescription": "A party role-playing adventure where dialogue, exploration, combat, and improvisation continually reshape the path through a reactive world.",
+  "highlights": [
+    "Party abilities and environment create many viable solutions",
+    "Companion stories give long-form choices personal stakes"
+  ],
+  "release": {
+    "year": 2023
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "role-playing",
+    "adventure"
+  ],
+  "developer": "Larian Studios",
+  "publisher": "Larian Studios",
+  "keywords": [
+    "baldurs gate",
+    "rpg",
+    "party",
+    "larian",
+    "pc"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A current PC role-playing anchor for the catalog’s editorial baseline, representing systemic choice and party-driven storytelling.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/1086940/Baldurs_Gate_3/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

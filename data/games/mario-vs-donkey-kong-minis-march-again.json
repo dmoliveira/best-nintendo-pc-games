@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-vs-donkey-kong-minis-march-again",
+  "title": "Mario vs. Donkey Kong: Minis March Again!",
+  "aliases": [
+    "Minis March Again"
+  ],
+  "emoji": "🤖",
+  "shortDescription": "A puzzle game about guiding toy-like mini characters through compact hazards, switches, and carefully staged routes.",
+  "highlights": [
+    "Level construction makes the player think in routes and timing",
+    "Short puzzle rooms support quick handheld sessions and repeated solutions"
+  ],
+  "release": {
+    "year": 2009
+  },
+  "releaseFormat": "digital",
+  "platforms": [
+    "nintendo-dsi"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "developer": "Nintendo Software Technology",
+  "publisher": "Nintendo",
+  "keywords": [
+    "mario",
+    "donkey kong",
+    "dsiware",
+    "puzzle",
+    "minis"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A useful DSiWare example of Nintendo adapting a familiar character pairing into a digital puzzle format built for short sessions.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Nintendo Life DSiWare reference",
+      "url": "https://www.nintendolife.com/games/dsiware/mario_vs_donkey_kong_minis_march_again",
+      "kind": "reference"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

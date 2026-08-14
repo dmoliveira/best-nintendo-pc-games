@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "slug": "stardew-valley",
+  "title": "Stardew Valley",
+  "aliases": [],
+  "emoji": "🌱",
+  "shortDescription": "A gentle farming and community simulation that turns daily routines, relationships, and long-term projects into a welcoming rhythm.",
+  "highlights": [
+    "Flexible days support different definitions of progress",
+    "A detailed community gives routine tasks an authored sense of place"
+  ],
+  "release": {
+    "year": 2016
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "simulation",
+    "role-playing"
+  ],
+  "developer": "ConcernedApe",
+  "publisher": "ConcernedApe",
+  "keywords": [
+    "stardew valley",
+    "farming",
+    "simulation",
+    "indie",
+    "pc"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A strong PC simulation baseline because its systems are approachable in short sessions but deep enough to support long-running personal projects.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/413150/Stardew_Valley/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

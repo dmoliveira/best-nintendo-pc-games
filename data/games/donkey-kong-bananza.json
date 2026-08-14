@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "slug": "donkey-kong-bananza",
+  "title": "Donkey Kong Bananza",
+  "aliases": [
+    "Donkey Kong Bananza Switch 2"
+  ],
+  "emoji": "🍌",
+  "shortDescription": "A 3D action-platformer built around powerful traversal, destructible spaces, and Donkey Kong’s physical sense of momentum.",
+  "highlights": [
+    "Destruction is part of navigation rather than a decorative effect",
+    "Large spaces encourage players to test movement and route-making ideas"
+  ],
+  "release": {
+    "year": 2025
+  },
+  "platforms": [
+    "nintendo-switch-2"
+  ],
+  "genres": [
+    "platformer",
+    "action"
+  ],
+  "developer": "Nintendo EPD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "donkey kong",
+    "switch 2",
+    "3d platformer",
+    "destruction",
+    "nintendo"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A current Switch 2 editorial anchor with an official platform-specific page and a clear physical-design identity.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.com/us/store/products/donkey-kong-bananza-switch-2/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "slug": "assetto-corsa",
+  "title": "Assetto Corsa",
+  "aliases": [],
+  "emoji": "🏎️",
+  "shortDescription": "A track-focused racing simulation that emphasizes car behavior, line choice, and the satisfaction of learning a circuit over time.",
+  "highlights": [
+    "Vehicle handling makes small adjustments feel consequential",
+    "Track repetition turns practice into a readable form of progress"
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "racing",
+    "simulation"
+  ],
+  "developer": "KUNOS Simulazioni",
+  "publisher": "KUNOS Simulazioni",
+  "keywords": [
+    "assetto corsa",
+    "racing",
+    "simulation",
+    "cars",
+    "pc"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A useful PC racing baseline for players who want the catalog to distinguish track learning and vehicle simulation from arcade kart play.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/244210/Assetto_Corsa/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-mario-galaxy",
+  "title": "Super Mario Galaxy",
+  "aliases": [
+    "Mario Galaxy",
+    "Super Mario Galaxy 1"
+  ],
+  "emoji": "🌌",
+  "shortDescription": "A gravity-bending platformer built from compact worlds, inventive movement, and a steady stream of surprising spatial ideas.",
+  "highlights": [
+    "Small planetoids turn gravity into a constant level-design tool",
+    "A generous challenge curve makes experimentation feel safe"
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "platformer",
+    "action"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "mario",
+    "galaxy",
+    "gravity",
+    "3d platformer",
+    "wii"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A Wii design landmark that makes its platform’s pointer and motion affordances feel additive without letting them obscure precise movement.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.co.jp/wii/rmgj/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

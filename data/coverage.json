@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-14",
+  "updatedAt": "2026-08-15",
   "coveragePolicy": "Populated means at least one validated game record exists for the platform; planned means the taxonomy is canonical but content expansion has not started; partial is reserved for a reviewed slice that is not yet complete. catalogTarget records the alpha or expansion sequencing target independently.",
   "sources": [
     {
@@ -17,6 +17,11 @@
       "id": "nintendo-gaming-systems",
       "label": "Nintendo gaming systems",
       "url": "https://www.nintendo.com/us/gaming-systems/"
+    },
+    {
+      "id": "pc-platform-reference",
+      "label": "Official PC storefront references",
+      "url": "https://store.steampowered.com/"
     }
   ],
   "items": [
@@ -42,9 +47,9 @@
     },
     {
       "platformId": "nintendo-64",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
-      "notes": "N64 is a search alias; 64DD is an add-on and is excluded from the platform family.",
+      "notes": "Reviewed expansion anchors now cover the platform’s 3D adventure, action, and multiplayer foundations.",
       "sourceIds": [
         "nintendo-corporate-history",
         "nintendo-ir-dedicated-sales"
@@ -52,9 +57,9 @@
     },
     {
       "platformId": "nintendo-gamecube",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
-      "notes": "GameCube revisions and bundles remain model-level details.",
+      "notes": "Reviewed expansion anchors now cover platforming, adventure, action, and local multiplayer.",
       "sourceIds": [
         "nintendo-corporate-history",
         "nintendo-ir-dedicated-sales"
@@ -62,9 +67,9 @@
     },
     {
       "platformId": "nintendo-wii",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
-      "notes": "Wii mini is a model alias, not a separate platform family.",
+      "notes": "Reviewed expansion anchors now cover motion-led social play, platforming, racing, and role-playing.",
       "sourceIds": [
         "nintendo-corporate-history",
         "nintendo-ir-dedicated-sales"
@@ -72,9 +77,9 @@
     },
     {
       "platformId": "nintendo-wii-u",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
-      "notes": "Wii U remains distinct from Wii because it is a separate platform generation.",
+      "notes": "Reviewed expansion anchors now cover platforming, racing, multiplayer, and role-playing.",
       "sourceIds": [
         "nintendo-corporate-history",
         "nintendo-ir-dedicated-sales"
@@ -93,9 +98,9 @@
     },
     {
       "platformId": "nintendo-switch-2",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
-      "notes": "Switch 2 is a separate current successor; no generation ordinal is asserted.",
+      "notes": "Native Switch 2 editorial anchors are included; edition upgrades and ports remain outside this first slice.",
       "sourceIds": [
         "nintendo-corporate-history",
         "nintendo-ir-dedicated-sales",
@@ -114,13 +119,13 @@
     },
     {
       "platformId": "game-boy-color",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
       "sourceIds": [
         "nintendo-corporate-history",
         "nintendo-ir-dedicated-sales"
       ],
-      "notes": "Game Boy Color has a distinct software library and is tracked separately from the original Game Boy family."
+      "notes": "Reviewed expansion anchors now cover role-playing, adventure, and puzzle-platforming software; compatible original Game Boy distinctions remain noted per title policy."
     },
     {
       "platformId": "game-boy-advance",
@@ -144,13 +149,13 @@
     },
     {
       "platformId": "nintendo-dsi",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "expansion",
       "sourceIds": [
         "nintendo-corporate-history",
         "nintendo-ir-dedicated-sales"
       ],
-      "notes": "DSi and DSi XL are model aliases within the DSi revision family; DSi-specific software remains filterable."
+      "notes": "Initial DSi coverage is limited to DSiWare digital releases with explicit releaseFormat metadata; cartridge-compatible DS software is not silently assigned here."
     },
     {
       "platformId": "nintendo-3ds",
@@ -171,6 +176,15 @@
         "nintendo-ir-dedicated-sales"
       ],
       "notes": "New Nintendo 3DS, New 3DS XL, and New 2DS XL are model aliases within the New 3DS revision family."
+    },
+    {
+      "platformId": "pc-windows",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "notes": "Initial PC coverage is a reviewed cross-genre baseline, not exhaustive Windows catalog coverage.",
+      "sourceIds": [
+        "pc-platform-reference"
+      ]
     }
   ],
   "excludedByDefault": [
