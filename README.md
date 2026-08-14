@@ -17,6 +17,8 @@ GameAtlas is a source-aware, static-first guide to acclaimed and popular games. 
 
 The launch plan and acceptance gates live in [`docs/plan/new/2026-08-15-gameatlas-launch.md`](docs/plan/new/2026-08-15-gameatlas-launch.md). Source, asset, and support constraints live in [`docs/rights-and-support-policy.md`](docs/rights-and-support-policy.md).
 
+The canonical Nintendo platform taxonomy is in [`data/platforms.json`](data/platforms.json), with its checked alpha and expansion coverage matrix in [`data/coverage.json`](data/coverage.json).
+
 ## Trust and rights
 
 GameAtlas does not scrape Metacritic/OpenCritic, copy review text or comments, or assume that an API image URL grants redistribution rights. Numeric signals require separate factual verification and rights approval. See the machine-readable registries under [`data/`](data/).

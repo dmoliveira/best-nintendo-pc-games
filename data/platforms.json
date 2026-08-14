@@ -1,4 +1,232 @@
 {
   "schemaVersion": 1,
-  "items": []
+  "items": [
+    {
+      "schemaVersion": 1,
+      "id": "nintendo-nes",
+      "name": "Nintendo Entertainment System",
+      "family": "nintendo",
+      "generation": "3rd-generation home console",
+      "emoji": "🕹️",
+      "aliases": [
+        "NES",
+        "Nintendo Entertainment System",
+        "Family Computer",
+        "Famicom"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's 8-bit home console family, including the regional Famicom name and compatible platform releases."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nintendo-snes",
+      "name": "Super Nintendo Entertainment System",
+      "family": "nintendo",
+      "generation": "4th-generation home console",
+      "emoji": "🎮",
+      "aliases": [
+        "SNES",
+        "Super Nintendo Entertainment System",
+        "Super Famicom",
+        "SFC"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's 16-bit home console family, including the regional Super Famicom name and compatible platform releases."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nintendo-64",
+      "name": "Nintendo 64",
+      "family": "nintendo",
+      "generation": "5th-generation home console",
+      "emoji": "🧩",
+      "aliases": [
+        "Nintendo 64",
+        "N64"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's cartridge-based 64-bit home console family, queued for post-alpha catalog expansion."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nintendo-gamecube",
+      "name": "Nintendo GameCube",
+      "family": "nintendo",
+      "generation": "6th-generation home console",
+      "emoji": "🟪",
+      "aliases": [
+        "Nintendo GameCube",
+        "GameCube"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's compact optical-disc home console family, queued for post-alpha catalog expansion."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nintendo-wii",
+      "name": "Wii",
+      "family": "nintendo",
+      "generation": "7th-generation home console",
+      "emoji": "📺",
+      "aliases": [
+        "Wii",
+        "Wii mini"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's motion-focused home console family; Wii mini is normalized as a model alias rather than a separate platform."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nintendo-wii-u",
+      "name": "Wii U",
+      "family": "nintendo",
+      "generation": "8th-generation home console",
+      "emoji": "🎛️",
+      "aliases": [
+        "Wii U",
+        "Nintendo Wii U"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's home console with a controller display, queued for post-alpha catalog expansion."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nintendo-switch",
+      "name": "Nintendo Switch",
+      "family": "nintendo",
+      "generation": "9th-generation-era hybrid console",
+      "emoji": "🔴",
+      "aliases": [
+        "Nintendo Switch",
+        "Switch",
+        "Switch Lite",
+        "Nintendo Switch Lite",
+        "Switch OLED",
+        "Nintendo Switch – OLED Model"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's hybrid home-and-portable console family; Switch Lite and the OLED model are normalized as model aliases."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nintendo-switch-2",
+      "name": "Nintendo Switch 2",
+      "family": "nintendo",
+      "generation": "current hybrid-console successor",
+      "emoji": "🟠",
+      "aliases": [
+        "Nintendo Switch 2",
+        "Switch 2"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's current hybrid-console successor, represented separately from the original Nintendo Switch family."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "game-boy",
+      "name": "Game Boy family",
+      "family": "nintendo",
+      "generation": "4th-generation-era handheld",
+      "emoji": "🟩",
+      "aliases": [
+        "Game Boy",
+        "Game Boy Pocket",
+        "Game Boy Light"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's original Game Boy handheld family; Pocket and Light revisions remain model aliases, while Game Boy Color has a separate platform filter for compatibility."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "game-boy-color",
+      "name": "Game Boy Color",
+      "family": "nintendo",
+      "generation": "5th-generation-era handheld",
+      "emoji": "🟨",
+      "aliases": [
+        "Game Boy Color",
+        "GBC"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's color handheld platform with a distinct software library; kept separate from the original Game Boy family for compatibility filtering."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "game-boy-advance",
+      "name": "Game Boy Advance family",
+      "family": "nintendo",
+      "generation": "6th-generation-era handheld",
+      "emoji": "🟦",
+      "aliases": [
+        "Game Boy Advance",
+        "GBA",
+        "Game Boy Advance SP",
+        "Game Boy Micro"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's 32-bit Game Boy Advance handheld family; SP and Micro are model aliases."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nintendo-ds",
+      "name": "Nintendo DS family",
+      "family": "nintendo",
+      "generation": "7th-generation-era handheld",
+      "emoji": "📖",
+      "aliases": [
+        "Nintendo DS",
+        "DS",
+        "DS Lite"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's original dual-screen handheld family; DS Lite remains a model alias, while Nintendo DSi has a separate platform filter for DSi-specific software."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nintendo-dsi",
+      "name": "Nintendo DSi family",
+      "family": "nintendo",
+      "generation": "7th-generation-era handheld revision",
+      "emoji": "📱",
+      "aliases": [
+        "Nintendo DSi",
+        "DSi",
+        "DSi XL"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo DS revision family with DSi-specific software; DSi XL remains a model alias."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nintendo-3ds",
+      "name": "Nintendo 3DS family",
+      "family": "nintendo",
+      "generation": "8th-generation-era handheld",
+      "emoji": "🔷",
+      "aliases": [
+        "Nintendo 3DS",
+        "3DS",
+        "3DS XL",
+        "Nintendo 2DS",
+        "2DS"
+      ],
+      "coverage": "planned",
+      "description": "Nintendo's original stereoscopic handheld family; 2DS and 3DS XL remain compatible model aliases, while New Nintendo 3DS has a separate platform filter for exclusive software."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nintendo-new-3ds",
+      "name": "New Nintendo 3DS family",
+      "family": "nintendo",
+      "generation": "8th-generation-era handheld revision",
+      "emoji": "🟦",
+      "aliases": [
+        "New Nintendo 3DS",
+        "New Nintendo 3DS XL",
+        "New Nintendo 2DS XL"
+      ],
+      "coverage": "planned",
+      "description": "New Nintendo 3DS revision family with a small exclusive software set; New 3DS XL and New 2DS XL remain model aliases."
+    }
+  ]
 }
