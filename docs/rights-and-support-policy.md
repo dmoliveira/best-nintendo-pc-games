@@ -49,7 +49,7 @@ Do not download a cover or screenshot merely because a provider returns an image
 
 ## Support CTA gate
 
-The project owner supplied a Stripe Payment Link for support. Its destination is retained only in Codememory memory `memory_244` and is intentionally absent from this public repository until the later support task completes. This rights slice does **not** publish a payment button. Before enabling it in the README, footer, or `/support/` page, the project must document the intended recipient/account context, voluntary-support wording, public correction/contact path, applicable refund/privacy information, and any provider terms affected by the support path. The payment link must not be described as a subscription, tax-deductible donation, or commercial service unless that is verified.
+A future support destination has been supplied for the later support task. Its live destination is intentionally absent from this public repository until the disclosure gate completes. This rights slice does **not** publish a payment button. Before enabling it in the README, footer, or `/support/` page, the project must document the intended recipient/account context, voluntary-support wording, public correction/contact path, applicable refund/privacy information, and any provider terms affected by the support path. The payment link must not be described as a subscription, tax-deductible donation, or commercial service unless that is verified.
 
 ## Refresh checklist
 
@@ -69,6 +69,6 @@ Corrections should include the game/platform slug, the field in question, the so
 
 ## Downstream handoff
 
-- `task_5892` owns the typed validator and must consume the structured source predicate and per-source freshness fields.
-- `task_5904` owns the asset manifest validator and must consume conditional generated/licensed provenance fields.
-- `task_5908` owns public support activation and must not publish the withheld destination until every support requirement is documented.
+- The typed catalog validator owns the structured source predicate and per-source freshness fields.
+- The asset-manifest validator owns conditional generated/licensed provenance fields.
+- The support activation work owns the withheld destination and must not publish it until every support requirement is documented.

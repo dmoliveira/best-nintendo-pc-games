@@ -1,0 +1,9 @@
+.DS_Store
+.next/
+out/
+node_modules/
+npm-debug.log*
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo

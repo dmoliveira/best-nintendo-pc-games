@@ -1,0 +1,38 @@
+{
+  "name": "best-nintendo-pc-games",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10 <12"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && touch out/.nojekyll",
+    "preview": "python3 -m http.server 4173 --directory out",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test",
+    "validate:rights": "node scripts/validate-rights.mjs",
+    "validate:export": "node scripts/validate-static-export.mjs"
+  },
+  "dependencies": {
+    "next": "16.2.12",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.2.12",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "overrides": {
+    "postcss": "8.5.24",
+    "sharp": "0.35.3"
+  }
+}

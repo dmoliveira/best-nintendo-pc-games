@@ -3,5 +3,66 @@
   "reviewedAt": "2026-08-15",
   "policyRef": "data/asset-rights.json",
   "publishGate": "every referenced local asset must have a matching record here",
-  "assets": []
+  "assets": [
+    {
+      "assetId": "gameatlas-mark",
+      "path": "public/mark.svg",
+      "assetKind": "original-project-vector",
+      "creatorOrSource": "GameAtlas repository authors",
+      "licenseOrPermissionUrl": null,
+      "notApplicableReason": "Original repository-authored SVG",
+      "attribution": "GameAtlas project",
+      "generatedOrAcquiredAt": "2026-08-15",
+      "intendedUse": "brand-mark",
+      "altText": "GameAtlas compass star mark",
+      "reviewedBy": "GameAtlas foundation review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": null
+    },
+    {
+      "assetId": "gameatlas-og-source",
+      "path": "public/og-image.svg",
+      "assetKind": "original-project-vector",
+      "creatorOrSource": "GameAtlas repository authors",
+      "licenseOrPermissionUrl": null,
+      "notApplicableReason": "Original repository-authored SVG",
+      "attribution": "GameAtlas project",
+      "generatedOrAcquiredAt": "2026-08-15",
+      "intendedUse": "og-source-art",
+      "altText": "GameAtlas atlas grid and orbit artwork",
+      "reviewedBy": "GameAtlas foundation review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": null
+    },
+    {
+      "assetId": "gameatlas-og-card",
+      "path": "public/og-image.png",
+      "assetKind": "original-project-raster",
+      "creatorOrSource": "Rasterized from public/og-image.svg by the repository build owner",
+      "licenseOrPermissionUrl": null,
+      "notApplicableReason": "Original repository-authored social card",
+      "attribution": "GameAtlas project",
+      "generatedOrAcquiredAt": "2026-08-15",
+      "intendedUse": "og-image",
+      "altText": "GameAtlas — best Nintendo and PC games",
+      "reviewedBy": "GameAtlas foundation review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": null
+    },
+    {
+      "assetId": "gameatlas-app-icon",
+      "path": "app/icon.svg",
+      "assetKind": "original-project-vector",
+      "creatorOrSource": "GameAtlas repository authors",
+      "licenseOrPermissionUrl": null,
+      "notApplicableReason": "Original repository-authored SVG",
+      "attribution": "GameAtlas project",
+      "generatedOrAcquiredAt": "2026-08-15",
+      "intendedUse": "icon",
+      "altText": "GameAtlas compass star mark",
+      "reviewedBy": "GameAtlas foundation review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": null
+    }
+  ]
 }
