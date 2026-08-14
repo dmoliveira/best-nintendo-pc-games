@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "slug": "portal",
+  "title": "Portal",
+  "aliases": [
+    "Portal 1"
+  ],
+  "emoji": "🌀",
+  "shortDescription": "A compact first-person puzzle game that teaches spatial reasoning through portals, timing, and a sharply controlled sequence of experiments.",
+  "highlights": [
+    "New rules are introduced through elegant, readable test chambers",
+    "A short campaign makes every mechanic feel purposeful and memorable"
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "puzzle",
+    "action"
+  ],
+  "developer": "Valve",
+  "publisher": "Valve",
+  "keywords": [
+    "portal",
+    "puzzle",
+    "valve",
+    "aperture",
+    "pc"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A canonical PC puzzle anchor whose controlled onboarding demonstrates how a mechanic can carry an entire game when every room teaches something new.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/400/Portal/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

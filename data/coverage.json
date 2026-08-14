@@ -17,6 +17,11 @@
       "id": "nintendo-gaming-systems",
       "label": "Nintendo gaming systems",
       "url": "https://www.nintendo.com/us/gaming-systems/"
+    },
+    {
+      "id": "pc-platform-reference",
+      "label": "Official PC storefront references",
+      "url": "https://store.steampowered.com/"
     }
   ],
   "items": [
@@ -171,6 +176,15 @@
         "nintendo-ir-dedicated-sales"
       ],
       "notes": "New Nintendo 3DS, New 3DS XL, and New 2DS XL are model aliases within the New 3DS revision family."
+    },
+    {
+      "platformId": "pc-windows",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "notes": "Initial PC coverage is a reviewed cross-genre baseline, not exhaustive Windows catalog coverage.",
+      "sourceIds": [
+        "pc-platform-reference"
+      ]
     }
   ],
   "excludedByDefault": [

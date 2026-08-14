@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "slug": "microsoft-flight-simulator-2020",
+  "title": "Microsoft Flight Simulator",
+  "aliases": [
+    "Flight Simulator"
+  ],
+  "emoji": "✈️",
+  "shortDescription": "A large-scale flight simulation built around aircraft detail, route planning, and the pleasure of seeing familiar places from above.",
+  "highlights": [
+    "Different aircraft make the same world feel mechanically distinct",
+    "Open-ended routes turn the globe into a calm exploration space"
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "simulation"
+  ],
+  "developer": "Asobo Studio",
+  "publisher": "Xbox Game Studios",
+  "keywords": [
+    "flight simulator",
+    "aviation",
+    "simulation",
+    "xbox game studios",
+    "pc"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A PC simulation anchor for the catalog’s breadth, representing a kind of place-based, systems-first play that consoles do not define as strongly.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/1250410/Microsoft_Flight_Simulator_40th_Anniversary_Edition/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

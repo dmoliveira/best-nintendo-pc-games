@@ -227,6 +227,21 @@
       ],
       "coverage": "populated",
       "description": "New Nintendo 3DS revision family with a small exclusive software set; New 3DS XL and New 2DS XL remain model aliases."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "pc-windows",
+      "name": "PC (Windows)",
+      "family": "pc",
+      "generation": "modern desktop PC",
+      "emoji": "🖥️",
+      "aliases": [
+        "PC",
+        "Windows PC",
+        "Computer"
+      ],
+      "coverage": "populated",
+      "description": "The Windows PC platform baseline, represented by a reviewed cross-genre editorial starter set rather than a claim of complete PC coverage."
     }
   ]
 }

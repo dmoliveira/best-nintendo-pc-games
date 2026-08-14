@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "slug": "undertale",
+  "title": "Undertale",
+  "aliases": [],
+  "emoji": "❤️",
+  "shortDescription": "A compact role-playing adventure that makes mercy, humor, and the player’s memory of past choices part of its mechanical language.",
+  "highlights": [
+    "Combat can be approached through negotiation as well as force",
+    "A small cast makes consequence and tone unusually intimate"
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "role-playing",
+    "adventure"
+  ],
+  "developer": "tobyfox",
+  "publisher": "tobyfox",
+  "keywords": [
+    "undertale",
+    "rpg",
+    "indie",
+    "choice",
+    "pc"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A concise PC role-playing selection that demonstrates how authored voice and player agency can reinforce each other without a large production footprint.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/391540/Undertale/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}
