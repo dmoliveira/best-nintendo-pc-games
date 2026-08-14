@@ -133,7 +133,7 @@
         "Game Boy Pocket",
         "Game Boy Light"
       ],
-      "coverage": "planned",
+      "coverage": "populated",
       "description": "Nintendo's original Game Boy handheld family; Pocket and Light revisions remain model aliases, while Game Boy Color has a separate platform filter for compatibility."
     },
     {
@@ -163,7 +163,7 @@
         "Game Boy Advance SP",
         "Game Boy Micro"
       ],
-      "coverage": "planned",
+      "coverage": "populated",
       "description": "Nintendo's 32-bit Game Boy Advance handheld family; SP and Micro are model aliases."
     },
     {
@@ -178,7 +178,7 @@
         "DS",
         "DS Lite"
       ],
-      "coverage": "planned",
+      "coverage": "populated",
       "description": "Nintendo's original dual-screen handheld family; DS Lite remains a model alias, while Nintendo DSi has a separate platform filter for DSi-specific software."
     },
     {
@@ -210,7 +210,7 @@
         "Nintendo 2DS",
         "2DS"
       ],
-      "coverage": "planned",
+      "coverage": "populated",
       "description": "Nintendo's original stereoscopic handheld family; 2DS and 3DS XL remain compatible model aliases, while New Nintendo 3DS has a separate platform filter for exclusive software."
     },
     {
@@ -225,7 +225,7 @@
         "New Nintendo 3DS XL",
         "New Nintendo 2DS XL"
       ],
-      "coverage": "planned",
+      "coverage": "populated",
       "description": "New Nintendo 3DS revision family with a small exclusive software set; New 3DS XL and New 2DS XL remain model aliases."
     }
   ]

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "slug": "nintendogs",
+  "title": "Nintendogs",
+  "aliases": [
+    "Nintendogs DS"
+  ],
+  "emoji": "🐶",
+  "shortDescription": "A touch-first handheld companion experience built around caring for, training, and spending time with virtual dogs.",
+  "highlights": [
+    "A direct touch interface designed around everyday care activities",
+    "A distinctive social and simulation-focused use of the dual-screen handheld"
+  ],
+  "release": {
+    "year": 2005
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "simulation"
+  ],
+  "keywords": [
+    "nintendogs",
+    "nintendo ds",
+    "dogs",
+    "touchscreen",
+    "companionship"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas handheld selection",
+      "rationale": "A high-confidence Nintendo DS starting point: its touch and microphone-oriented care loop demonstrates a handheld interaction model distinct from traditional button-led action games.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15"
+    }
+  ],
+  "links": [
+    {
+      "label": "Nintendo DS product archive",
+      "url": "https://www.nintendo.co.jp/ds/adgj/index.html",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

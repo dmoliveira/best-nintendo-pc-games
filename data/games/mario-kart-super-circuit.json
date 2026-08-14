@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-kart-super-circuit",
+  "title": "Mario Kart: Super Circuit",
+  "aliases": [
+    "Mario Kart Advance"
+  ],
+  "emoji": "🏎️",
+  "shortDescription": "A handheld kart racer that carries Mario Kart's item-driven competition into a compact Game Boy Advance format.",
+  "highlights": [
+    "Readable racing courses designed around quick handheld sessions",
+    "Item-based competition that rewards route choice and timing"
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "racing",
+    "action"
+  ],
+  "keywords": [
+    "mario kart",
+    "game boy advance",
+    "racing",
+    "multiplayer",
+    "handheld"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas handheld selection",
+      "rationale": "A high-confidence Game Boy Advance starting point: its compact racing courses and item timing show how a console multiplayer formula was adapted for handheld play.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15"
+    }
+  ],
+  "links": [
+    {
+      "label": "Nintendo Game Boy Advance product archive",
+      "url": "https://www.nintendo.co.jp/n08/amkj/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

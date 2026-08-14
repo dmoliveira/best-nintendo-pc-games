@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "slug": "xenoblade-chronicles-3d",
+  "title": "Xenoblade Chronicles 3D",
+  "aliases": [
+    "Xenoblade 3D"
+  ],
+  "emoji": "⚔️",
+  "shortDescription": "A large-scale role-playing adventure adapted for the New Nintendo 3DS family and its expanded handheld capabilities.",
+  "highlights": [
+    "A broad role-playing journey represented in a portable format",
+    "A platform-specific example for New Nintendo 3DS compatibility coverage"
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-new-3ds"
+  ],
+  "genres": [
+    "action",
+    "role-playing"
+  ],
+  "keywords": [
+    "xenoblade",
+    "new nintendo 3ds",
+    "role-playing",
+    "exploration",
+    "jrpg"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas handheld selection",
+      "rationale": "A high-confidence New Nintendo 3DS compatibility example: it demonstrates why the revised hardware deserves its own platform filter rather than being silently folded into the original 3DS family.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15"
+    }
+  ],
+  "links": [
+    {
+      "label": "Nintendo New Nintendo 3DS product page",
+      "url": "https://www.nintendo.com/au/games/nintendo-3ds/xenoblade-chronicles-3d/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

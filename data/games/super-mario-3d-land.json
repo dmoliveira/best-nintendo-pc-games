@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-mario-3d-land",
+  "title": "Super Mario 3D Land",
+  "aliases": [
+    "SM3DL"
+  ],
+  "emoji": "🌟",
+  "shortDescription": "A focused 3D platformer that brings Mario's movement and level rhythm to the Nintendo 3DS handheld family.",
+  "highlights": [
+    "Short, structured stages that work well for handheld play",
+    "A clear bridge between side-scrolling precision and spatial 3D movement"
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "platformer",
+    "action"
+  ],
+  "keywords": [
+    "mario",
+    "nintendo 3ds",
+    "3d platformer",
+    "handheld"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas handheld selection",
+      "rationale": "A high-confidence Nintendo 3DS starting point: its compact stage structure and readable 3D movement make the platform's handheld design goals easy to discover.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15"
+    }
+  ],
+  "links": [
+    {
+      "label": "Nintendo 3DS product page",
+      "url": "https://www.nintendo.com/au/games/nintendo-3ds/super-mario-3d-land/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}
