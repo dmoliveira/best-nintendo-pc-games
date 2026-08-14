@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-oracle-of-seasons",
+  "title": "The Legend of Zelda: Oracle of Seasons",
+  "aliases": [
+    "Oracle of Seasons",
+    "Zelda Seasons"
+  ],
+  "emoji": "🍃",
+  "shortDescription": "A brisk Zelda adventure built around seasonal change, combat-focused challenges, and a world that transforms with the calendar.",
+  "highlights": [
+    "Season changes alter routes, puzzles, and the timing of exploration",
+    "A more action-forward structure complements the companion Oracle adventure"
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "adventure",
+    "action"
+  ],
+  "developer": "Capcom / Flagship",
+  "publisher": "Nintendo",
+  "keywords": [
+    "zelda",
+    "oracle",
+    "game boy color",
+    "seasons",
+    "adventure"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A complementary Game Boy Color selection whose seasonal world state gives a small-screen adventure a strong organizing idea.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Zelda games archive",
+      "url": "https://www.zelda.com/games/",
+      "kind": "reference"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

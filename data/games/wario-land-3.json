@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "wario-land-3",
+  "title": "Wario Land 3",
+  "aliases": [
+    "Wario Land III",
+    "Wario Land 3 GBC"
+  ],
+  "emoji": "🧄",
+  "shortDescription": "A puzzle-platformer where Wario’s unusual durability turns hazards into tools for opening paths through a dense, interconnected map.",
+  "highlights": [
+    "Abilities and hazards are combined into route-based environmental puzzles",
+    "A non-linear map rewards returning with new tools and knowledge"
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "platformer",
+    "adventure"
+  ],
+  "developer": "Nintendo R&D1",
+  "publisher": "Nintendo",
+  "keywords": [
+    "wario",
+    "platformer",
+    "game boy color",
+    "puzzle",
+    "exploration"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A particularly good Game Boy Color fit for players who want platforming organized around exploration and puzzle solving rather than speed alone.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.co.jp/n02/dmg/aw3j/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

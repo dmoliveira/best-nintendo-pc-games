@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "slug": "goldeneye-007",
+  "title": "GoldenEye 007",
+  "aliases": [],
+  "emoji": "🕶️",
+  "shortDescription": "A mission-driven first-person shooter whose objectives, stealth options, and local multiplayer helped define the N64’s social identity.",
+  "highlights": [
+    "Objective-based missions that reward observation and restraint",
+    "Local multiplayer built around readable arenas and asymmetric tactics"
+  ],
+  "release": {
+    "year": 1997
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "action"
+  ],
+  "developer": "Rare",
+  "publisher": "Nintendo",
+  "keywords": [
+    "007",
+    "rare",
+    "first person shooter",
+    "multiplayer",
+    "n64"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A useful N64 multiplayer landmark that shows how the platform’s controller and four-player support shaped shared play.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.co.jp/n01/n64/software/nus_p_ngej/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

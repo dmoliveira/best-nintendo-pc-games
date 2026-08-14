@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "xenoblade-chronicles-x",
+  "title": "Xenoblade Chronicles X",
+  "aliases": [
+    "Xenoblade X",
+    "XCX"
+  ],
+  "emoji": "🤖",
+  "shortDescription": "A science-fiction role-playing expedition built around huge alien landscapes, party customization, and eventual mechanical flight.",
+  "highlights": [
+    "Exploration is organized around a world that feels larger than the player",
+    "Build flexibility lets parties adapt to different combat roles"
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "role-playing",
+    "action"
+  ],
+  "developer": "Monolith Soft",
+  "publisher": "Nintendo",
+  "keywords": [
+    "xenoblade",
+    "mecha",
+    "science fiction",
+    "jrpg",
+    "wii u"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A useful Wii U expansion pick for its unusually ambitious open-world role-playing structure and mechanical exploration hook.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.co.jp/wiiu/ax5j/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

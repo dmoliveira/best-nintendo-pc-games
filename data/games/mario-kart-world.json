@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-kart-world",
+  "title": "Mario Kart World",
+  "aliases": [
+    "Mario Kart World Switch 2"
+  ],
+  "emoji": "🌍",
+  "shortDescription": "A current kart-racing entry designed around a broader connected world, a larger cast, and new ways to carry momentum between races.",
+  "highlights": [
+    "A connected setting expands the sense of place between traditional courses",
+    "New movement options keep the familiar racing language in motion"
+  ],
+  "release": {
+    "year": 2025
+  },
+  "platforms": [
+    "nintendo-switch-2"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "developer": "Nintendo EPD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "mario kart",
+    "switch 2",
+    "racing",
+    "multiplayer",
+    "nintendo"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A safe Switch 2 anchor because Nintendo’s official product page identifies the native Switch 2 release directly.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.com/us/store/products/mario-kart-world-switch-2/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

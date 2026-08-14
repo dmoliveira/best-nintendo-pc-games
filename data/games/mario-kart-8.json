@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-kart-8",
+  "title": "Mario Kart 8",
+  "aliases": [
+    "Mario Kart 8 Wii U"
+  ],
+  "emoji": "🛞",
+  "shortDescription": "A polished kart racer whose anti-gravity tracks, expressive courses, and generous handling make every lap easy to read.",
+  "highlights": [
+    "Anti-gravity sections create visual variety without losing racing clarity",
+    "A broad course mix supports both relaxed and competitive sessions"
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "mario kart",
+    "racing",
+    "anti gravity",
+    "wii u",
+    "multiplayer"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A Wii U catalog staple that shows how the system can deliver a visually rich, immediately social racing experience.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.co.jp/wiiu/amkj/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

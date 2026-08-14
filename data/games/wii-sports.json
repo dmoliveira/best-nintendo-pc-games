@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "slug": "wii-sports",
+  "title": "Wii Sports",
+  "aliases": [],
+  "emoji": "🎳",
+  "shortDescription": "A collection of approachable motion-controlled sports that turns the Wii Remote into an invitation to play together.",
+  "highlights": [
+    "Simple gestures make the collection legible to first-time players",
+    "Short activities support both group play and quick solo sessions"
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "simulation"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "wii",
+    "sports",
+    "motion control",
+    "bowling",
+    "multiplayer"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A clear Wii starting point because its activity-based design explains the hardware’s social and physical premise without a tutorial wall.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.co.jp/wii/rspj/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

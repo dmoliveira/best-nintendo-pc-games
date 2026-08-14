@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-smash-bros-melee",
+  "title": "Super Smash Bros. Melee",
+  "aliases": [
+    "Smash Bros. Melee",
+    "Melee"
+  ],
+  "emoji": "🥊",
+  "shortDescription": "A fast, expressive fighting game that turns Nintendo’s character history into a precise local multiplayer sandbox.",
+  "highlights": [
+    "Large roster with distinct movement and matchup identities",
+    "A responsive ruleset that supports both quick matches and deep mastery"
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "action"
+  ],
+  "developer": "HAL Laboratory",
+  "publisher": "Nintendo",
+  "keywords": [
+    "smash",
+    "fighting",
+    "multiplayer",
+    "gamecube",
+    "nintendo"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A defining GameCube gathering game whose immediacy works for newcomers while its movement system rewards long-term practice.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.co.jp/ngc/galj/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

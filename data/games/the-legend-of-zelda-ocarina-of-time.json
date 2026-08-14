@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-ocarina-of-time",
+  "title": "The Legend of Zelda: Ocarina of Time",
+  "aliases": [
+    "Ocarina of Time",
+    "Zelda OOT"
+  ],
+  "emoji": "🕰️",
+  "shortDescription": "A time-spanning adventure that pairs a memorable world with deliberate dungeon design, tool-based discovery, and a strong sense of place.",
+  "highlights": [
+    "Dungeon tools that reshape how familiar spaces are read",
+    "A wide Hyrule journey framed by a clear coming-of-age arc"
+  ],
+  "release": {
+    "year": 1998
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "adventure",
+    "action"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "zelda",
+    "hyrule",
+    "time travel",
+    "n64",
+    "adventure"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A high-confidence Nintendo 64 adventure anchor: its exploration, dungeon pacing, and contextual tools make the platform’s 3D ambitions easy to understand.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.nintendo.co.jp/n01/n64/software/nus_p_nzsj/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

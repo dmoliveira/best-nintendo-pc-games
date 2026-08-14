@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "slug": "pokemon-crystal-version",
+  "title": "Pokémon Crystal Version",
+  "aliases": [
+    "Pokemon Crystal"
+  ],
+  "emoji": "💎",
+  "shortDescription": "A role-playing journey through Johto and Kanto that adds a stronger sense of time, version identity, and collection to the classic formula.",
+  "highlights": [
+    "A broad creature-collection loop supports long-term planning and discovery",
+    "Johto and Kanto create a satisfying sense of continuity between regions"
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "role-playing"
+  ],
+  "developer": "Game Freak",
+  "publisher": "Nintendo",
+  "keywords": [
+    "pokemon",
+    "johto",
+    "game boy color",
+    "rpg",
+    "crystal"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A strong Game Boy Color anchor with a distinct version identity and a durable role-playing structure.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official game page",
+      "url": "https://www.pokemon.com/us/pokemon-video-games/pokemon-crystal-version/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}
