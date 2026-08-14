@@ -14,7 +14,7 @@
         "Family Computer",
         "Famicom"
       ],
-      "coverage": "planned",
+      "coverage": "populated",
       "description": "Nintendo's 8-bit home console family, including the regional Famicom name and compatible platform releases."
     },
     {
@@ -30,7 +30,7 @@
         "Super Famicom",
         "SFC"
       ],
-      "coverage": "planned",
+      "coverage": "populated",
       "description": "Nintendo's 16-bit home console family, including the regional Super Famicom name and compatible platform releases."
     },
     {
@@ -104,7 +104,7 @@
         "Switch OLED",
         "Nintendo Switch – OLED Model"
       ],
-      "coverage": "planned",
+      "coverage": "populated",
       "description": "Nintendo's hybrid home-and-portable console family; Switch Lite and the OLED model are normalized as model aliases."
     },
     {

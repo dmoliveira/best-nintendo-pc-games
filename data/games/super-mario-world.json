@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-mario-world",
+  "title": "Super Mario World",
+  "aliases": [
+    "SMW"
+  ],
+  "emoji": "🦕",
+  "shortDescription": "A landmark 16-bit platformer built around expansive stages, secret routes, and a dependable sense of movement.",
+  "highlights": [
+    "A broad world map with optional paths and hidden exits",
+    "Responsive platforming that rewards experimentation and route planning"
+  ],
+  "release": {
+    "year": 1990
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "platformer",
+    "adventure"
+  ],
+  "publisher": "Nintendo",
+  "keywords": [
+    "mario",
+    "super famicom",
+    "snes",
+    "yoshi",
+    "secret exits"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas alpha selection",
+      "rationale": "A high-confidence SNES starting point: its layered world map, secret exits, and movement polish demonstrate why the platform remains a useful reference point for 16-bit design.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15"
+    }
+  ],
+  "links": [
+    {
+      "label": "Nintendo product archive",
+      "url": "https://www.nintendo.co.jp/n02/shvc/mw/index.html",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

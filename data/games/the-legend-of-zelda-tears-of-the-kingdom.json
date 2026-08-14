@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-tears-of-the-kingdom",
+  "title": "The Legend of Zelda: Tears of the Kingdom",
+  "aliases": [
+    "TOTK",
+    "Zelda Tears of the Kingdom"
+  ],
+  "emoji": "🗡️",
+  "shortDescription": "An open-world adventure that expands Hyrule with sky, surface, and underground spaces built for experimentation.",
+  "highlights": [
+    "A layered world that supports exploration at multiple elevations",
+    "Flexible object-building systems that reward creative problem solving"
+  ],
+  "release": {
+    "year": 2023
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "adventure",
+    "action"
+  ],
+  "publisher": "Nintendo",
+  "keywords": [
+    "zelda",
+    "hyrule",
+    "switch",
+    "open world",
+    "exploration"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas alpha selection",
+      "rationale": "A high-confidence Nintendo Switch starting point: its multi-layered exploration and open-ended building systems provide a clear modern contrast to the two legacy platforming exemplars.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-14",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-14",
+      "recheckAt": "2026-09-15"
+    }
+  ],
+  "links": [
+    {
+      "label": "Nintendo product page",
+      "url": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-tears-of-the-kingdom-switch/",
+      "kind": "official"
+    }
+  ],
+  "assets": [],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

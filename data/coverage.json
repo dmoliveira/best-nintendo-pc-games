@@ -22,7 +22,7 @@
   "items": [
     {
       "platformId": "nintendo-nes",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "alpha",
       "notes": "Famicom and Family Computer are regional aliases, not separate platform IDs.",
       "sourceIds": [
@@ -32,7 +32,7 @@
     },
     {
       "platformId": "nintendo-snes",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "alpha",
       "notes": "Super Famicom and SFC are regional aliases, not separate platform IDs.",
       "sourceIds": [
@@ -82,7 +82,7 @@
     },
     {
       "platformId": "nintendo-switch",
-      "coverage": "planned",
+      "coverage": "populated",
       "catalogTarget": "alpha",
       "notes": "Switch Lite and the OLED model are model aliases within the hybrid-console family.",
       "sourceIds": [
