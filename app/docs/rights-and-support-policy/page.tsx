@@ -45,9 +45,15 @@ export default function RightsAndSupportPolicyPage() {
           <p>A future support destination has been supplied for the later launch task. It is intentionally not published here while voluntary-support wording, contact/correction details, and applicable payment disclosures are being finalized.</p>
         </section>
 
+        <section className="policy-card" aria-labelledby="correction-policy-heading">
+          <h2 id="correction-policy-heading">Report a catalog correction</h2>
+          <p>Found a wrong platform, genre, release year, source, or asset status? Include the game or platform slug, the field in question, a proposed correction, and a public source URL. Do not attach copied review text or unlicensed artwork.</p>
+          <a className="text-link" href={site.correctionUrl} target="_blank" rel="noreferrer">Open the catalog correction form <span aria-hidden="true">↗</span></a>
+        </section>
+
         <section className="policy-card" aria-labelledby="source-links-heading">
           <h2 id="source-links-heading">Reference links</h2>
-          <ul className="policy-links"><li><a href="https://www.metacritic.com/legal/terms-of-use/" rel="noreferrer">Metacritic terms ↗</a></li><li><a href="https://help.opencritic.com/knowledge-base/articles/6333223-are-there-any-opencritic-api-s" rel="noreferrer">OpenCritic API FAQ ↗</a></li><li><a href="https://api-docs.igdb.com/" rel="noreferrer">IGDB API docs ↗</a></li><li><a href="https://rawg.io/terms" rel="noreferrer">RAWG terms ↗</a></li><li><a href="https://www.nintendo.co.jp/ir/en/finance/hard_soft/" rel="noreferrer">Nintendo IR sales ↗</a></li></ul>
+          <ul className="policy-links"><li><a href="https://www.fandom.com/terms-of-service-pp1" rel="noreferrer">Metacritic/Fandom terms ↗</a></li><li><a href="https://help.opencritic.com/knowledge-base/articles/6333223-are-there-any-opencritic-api-s" rel="noreferrer">OpenCritic API FAQ ↗</a></li><li><a href="https://api-docs.igdb.com/" rel="noreferrer">IGDB API docs ↗</a></li><li><a href="https://rawg.io/terms" rel="noreferrer">RAWG terms ↗</a></li><li><a href="https://www.nintendo.co.jp/ir/en/finance/hard_soft/" rel="noreferrer">Nintendo IR sales ↗</a></li></ul>
         </section>
       </main>
       <SiteFooter />

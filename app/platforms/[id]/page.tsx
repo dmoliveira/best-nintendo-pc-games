@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import JsonLd from "@/app/json-ld";
 import { createSiteConfig } from "@/lib/site-config";
+import { createBreadcrumbStructuredData, createCollectionPageStructuredData } from "@/lib/structured-data";
 import { getPlatformHub, getPlatformHubs, getCatalogSearchRecords } from "@/lib/catalog/site-data";
 import TaxonomyHub from "@/app/taxonomy-hub";
 
@@ -18,7 +20,7 @@ export async function generateMetadata({ params }: PlatformPageProps): Promise<M
   const platform = getPlatformHub(id);
   if (!platform) return {};
   const url = site.publicUrl(`platforms/${platform.id}/`);
-  return { title: `Best ${platform.name} Games`, description: platform.description, alternates: { canonical: url }, openGraph: { type: "website", title: `Best ${platform.name} Games | GameAtlas`, description: platform.description, url } };
+  return { title: `${platform.name} Games`, description: platform.description, alternates: { canonical: url }, openGraph: { type: "website", title: `${platform.name} Games | GameAtlas`, description: platform.description, url } };
 }
 
 export default async function PlatformPage({ params }: PlatformPageProps) {
@@ -26,5 +28,10 @@ export default async function PlatformPage({ params }: PlatformPageProps) {
   const platform = getPlatformHub(id);
   if (!platform) notFound();
   const records = getCatalogSearchRecords().filter((record) => record.platformIds.includes(platform.id));
-  return <TaxonomyHub eyebrow={`${platform.family === "pc" ? "PC" : "Nintendo"} platform guide`} title={platform.name} description={platform.description} records={records} backLabel={`${platform.generation ?? "Platform"} collection`} visual={{ kind: "platform", platformId: platform.id }} />;
+  const url = site.publicUrl(`platforms/${platform.id}/`);
+  return <>
+    <JsonLd data={createCollectionPageStructuredData({ site, url, name: `${platform.name} Games`, description: platform.description })} />
+    <JsonLd data={createBreadcrumbStructuredData([{ name: "GameAtlas", url: site.canonicalUrl }, { name: platform.name, url }])} />
+    <TaxonomyHub eyebrow={`${platform.family === "pc" ? "PC" : "Nintendo"} platform guide`} title={platform.name} description={platform.description} records={records} backLabel={`${platform.generation ?? "Platform"} collection`} visual={{ kind: "platform", platformId: platform.id }} />
+  </>;
 }

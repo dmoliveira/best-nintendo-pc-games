@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "../json-ld";
 import SiteFooter from "../site-footer";
 import SiteHeader from "../site-header";
 import { getPlatformDisplayLabel } from "@/lib/catalog/display";
 import { getCatalogGames, resolveCatalogRecordSemantics } from "@/lib/catalog/site-data";
 import { createSiteConfig } from "@/lib/site-config";
+import { createBreadcrumbStructuredData, createCollectionPageStructuredData } from "@/lib/structured-data";
 
 const site = createSiteConfig(process.env);
 
@@ -16,7 +18,10 @@ export const metadata: Metadata = {
 
 export default function CatalogIndexPage() {
   const games = getCatalogGames();
+  const url = site.publicUrl("catalog/");
   return <div className="site-shell">
+    <JsonLd data={createCollectionPageStructuredData({ site, url, name: "Every game", description: "A lightweight alphabetical index of every GameAtlas catalog entry." })} />
+    <JsonLd data={createBreadcrumbStructuredData([{ name: "GameAtlas", url: site.canonicalUrl }, { name: "Every game", url }])} />
     <a className="skip-link" href="#main-content">Skip to main content</a>
     <SiteHeader active="browse" />
     <main className="catalog-index-page" id="main-content">

@@ -11,6 +11,8 @@ const cards = readFileSync(new URL("../app/catalog-cards.tsx", import.meta.url),
 const packageThumbnail = readFileSync(new URL("../app/package-thumbnail.tsx", import.meta.url), "utf8");
 const taxonomyHub = readFileSync(new URL("../app/taxonomy-hub.tsx", import.meta.url), "utf8");
 const catalogIndex = readFileSync(new URL("../app/catalog/page.tsx", import.meta.url), "utf8");
+const policyPage = readFileSync(new URL("../app/docs/rights-and-support-policy/page.tsx", import.meta.url), "utf8");
+const footer = readFileSync(new URL("../app/site-footer.tsx", import.meta.url), "utf8");
 const staticExportValidator = readFileSync(new URL("../scripts/validate-static-export.mjs", import.meta.url), "utf8");
 
 test("home shell exposes a keyboard bypass and stable main landmark", () => {
@@ -22,6 +24,7 @@ test("home shell exposes a keyboard bypass and stable main landmark", () => {
 
 test("home shell exposes accessible catalog search and filters", () => {
   assert.match(page, /CatalogBrowser/);
+  assert.match(page, /createWebSiteStructuredData/);
   assert.match(page, /getCatalogSearchRecords/);
   assert.doesNotMatch(page, /Catalog search is coming soon/);
   assert.doesNotMatch(page, /Catalog coming soon/);
@@ -103,6 +106,14 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /Retry full catalog/);
   assert.match(browser, /syncPendingState/);
   assert.match(catalogIndex, /Browse every game\./);
+  assert.match(catalogIndex, /createCollectionPageStructuredData/);
+  assert.match(catalogIndex, /createBreadcrumbStructuredData/);
+  assert.match(gamePage, /createVideoGameStructuredData/);
+  assert.match(gamePage, /createBreadcrumbStructuredData/);
+  assert.match(policyPage, /site\.correctionUrl/);
+  assert.match(footer, /Report a correction/);
+  assert.match(staticExportValidator, /structuredDataBlocks/);
+  assert.match(staticExportValidator, /forbiddenStructuredDataKeys/);
   assert.match(catalogIndex, /No-JavaScript catalog/);
   assert.match(staticExportValidator, /const maximumHomePayloadBytes = 400 \* 1024/);
   assert.doesNotMatch(page, /Curated by humans|Thoughtful recommendations|reviewed picks/);

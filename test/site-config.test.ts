@@ -14,4 +14,6 @@ test("builds stable public URLs for a project Pages site", () => {
   assert.equal(site.canonicalUrl, "https://dmoliveira.github.io/best-nintendo-pc-games/");
   assert.equal(site.publicUrl("sitemap.xml"), "https://dmoliveira.github.io/best-nintendo-pc-games/sitemap.xml");
   assert.equal(site.assetPath("og-image.svg"), "/best-nintendo-pc-games/og-image.svg");
+  assert.equal(site.repositoryUrl, "https://github.com/dmoliveira/best-nintendo-pc-games");
+  assert.match(site.correctionUrl, /issues\/new\?template=catalog-correction\.yml&title=GameAtlas%20catalog%20correction/);
 });

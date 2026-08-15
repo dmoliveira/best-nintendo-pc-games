@@ -1,11 +1,21 @@
 import fs from "node:fs";
 import path from "node:path";
 import { validateGameArtExport } from "../lib/box-art/static-export.mjs";
+import { isGenreHubEligible, isPlatformHubEligible, normalizeMinimumHubRecords } from "../lib/catalog/hub-policy.mjs";
 import { publicArtifactCredentialIssue } from "../lib/static-export-security.mjs";
 
 const outDir = path.resolve(process.env.OUT_DIR ?? "out");
 const rootDir = process.cwd();
 const expectedBasePath = (process.env.EXPECTED_BASE_PATH ?? "/best-nintendo-pc-games").replace(/\/$/, "");
+const expectedSiteUrl = process.env.EXPECTED_SITE_URL ?? process.env.SITE_URL ?? `https://dmoliveira.github.io${expectedBasePath}`;
+let expectedOrigin = "";
+try {
+  const parsedExpectedSiteUrl = new URL(expectedSiteUrl);
+  if (parsedExpectedSiteUrl.protocol !== "https:") fail(`expected site URL must use HTTPS: ${expectedSiteUrl}`);
+  expectedOrigin = parsedExpectedSiteUrl.origin;
+} catch {
+  fail(`expected site URL is invalid: ${expectedSiteUrl}`);
+}
 const expectedCatalogGameCount = 1000;
 // App Router static exports include required Flight payloads for every client-navigable route.
 const maximumArtifactBytes = 150 * 1024 * 1024;
@@ -15,10 +25,39 @@ const expectedInitialCatalogCards = 24;
 const requiredFiles = ["index.html", ".nojekyll", "robots.txt", "sitemap.xml", "og-image.png", "mark.svg", "catalog/index.html", "catalog-search-index.json", "docs/rights-and-support-policy/index.html"];
 const forbiddenEvidenceFields = ["sourceUrl", "termsUrl", "rightsStatus", "verificationStatus", "capturedAt", "recheckAt"];
 const forbiddenSearchIndexFields = [...forbiddenEvidenceFields, "rationale", "links", "provenanceId", "score", "scale", "count", "value", "rank"];
+const forbiddenStructuredDataKeys = ["aggregateRating", "review", "reviewRating", "ratingValue", "ratingCount", "bestRating", "worstRating", "contentRating", "sales", "popularity"];
 
 function fail(message) { console.error(`Static export validation failed: ${message}`); process.exitCode = 1; }
 function escapeHtml(value) { return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;").replace(/'/g, "&#x27;"); }
 function checkNoRawEvidence(html, location) { for (const field of forbiddenEvidenceFields) if (html.includes(field)) fail(`${location} leaks raw evidence field ${field}`); }
+function structuredDataBlocks(html, location) {
+  const blocks = [];
+  for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    try { blocks.push(JSON.parse(match[1])); } catch { fail(`${location} contains invalid JSON-LD`); }
+  }
+  return blocks;
+}
+function checkStructuredData(html, location, requiredTypes) {
+  const blocks = structuredDataBlocks(html, location);
+  const types = new Set(blocks.flatMap((block) => Array.isArray(block) ? block : [block]).map((block) => block?.["@type"]).filter((type) => typeof type === "string"));
+  for (const type of requiredTypes) if (!types.has(type)) fail(`${location} is missing JSON-LD type ${type}`);
+  const visit = (value, key = "") => {
+    if (Array.isArray(value)) { value.forEach((item) => visit(item, key)); return; }
+    if (!value || typeof value !== "object") {
+      if (["url", "@id", "item", "target"].includes(key) && typeof value === "string") {
+        try {
+          const parsed = new URL(value);
+          if (parsed.protocol !== "https:" || parsed.origin !== expectedOrigin || (expectedBasePath && !parsed.pathname.startsWith(`${expectedBasePath}/`) && parsed.pathname !== expectedBasePath)) fail(`${location} has an origin or base-path-invalid JSON-LD ${key}: ${value}`);
+        } catch { fail(`${location} has an invalid JSON-LD ${key}: ${value}`); }
+      }
+      return;
+    }
+    for (const [childKey, childValue] of Object.entries(value)) visit(childValue, childKey);
+  };
+  for (const block of blocks) visit(block);
+  const serialized = JSON.stringify(blocks);
+  for (const key of forbiddenStructuredDataKeys) if (new RegExp(`"${key}"\\s*:`).test(serialized)) fail(`${location} exposes forbidden JSON-LD field ${key}`);
+}
 if (!fs.existsSync(outDir)) { fail(`missing output directory ${outDir}`); process.exit(1); }
 for (const file of requiredFiles) if (!fs.existsSync(path.join(outDir, file))) fail(`missing ${file}`);
 const html = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
@@ -35,6 +74,7 @@ if (html.includes("Catalog search is coming soon") || html.includes("Catalog com
 if (/\b(?:score|rating)\s*[:=]\s*\d+(?:\.\d+)?/i.test(html)) fail("home page exposes a numeric score or rating");
 if (html.includes("action=\"/\"")) fail("home page contains a root-relative form action that bypasses the Pages base path");
 checkNoRawEvidence(html, "home page");
+checkStructuredData(html, "home page", ["WebSite"]);
 const sitemap = fs.readFileSync(path.join(outDir, "sitemap.xml"), "utf8");
 if (expectedBasePath && !sitemap.includes(expectedBasePath)) fail(`sitemap does not include ${expectedBasePath || "/"}`);
 const gamesDir = path.join(rootDir, "data/games");
@@ -60,7 +100,10 @@ if (detailLinkCounts.size !== expectedInitialCatalogCards) fail(`home page must 
 const catalogIndexHtml = fs.readFileSync(path.join(outDir, "catalog/index.html"), "utf8");
 if (!catalogIndexHtml.includes("Browse every game.")) fail("no-JavaScript catalog index is missing its heading");
 if (!catalogIndexHtml.includes("Wikidata-listed platforms:")) fail("no-JavaScript catalog index must scope generated platform associations");
+checkStructuredData(catalogIndexHtml, "catalog index", ["CollectionPage", "BreadcrumbList"]);
 for (const game of gameRecords) if (!catalogIndexHtml.includes(`games/${game.slug}/`)) fail(`no-JavaScript catalog index is missing ${game.slug}`);
+const policyHtml = fs.readFileSync(path.join(outDir, "docs/rights-and-support-policy/index.html"), "utf8");
+if (!policyHtml.includes("Report a catalog correction") || !policyHtml.includes("catalog-correction.yml")) fail("policy page is missing the public catalog correction path");
 const assetManifest = JSON.parse(fs.readFileSync(path.join(rootDir, "data/assets-manifest.json"), "utf8"));
 const assetById = new Map((assetManifest.assets ?? []).map((asset) => [asset.assetId, asset]));
 const usedPlatformIds = new Set(gameRecords.flatMap((game) => game.platforms ?? []));
@@ -68,11 +111,11 @@ const usedGenreIds = new Set(gameRecords.flatMap((game) => game.genres ?? []));
 const platformsDocument = JSON.parse(fs.readFileSync(path.join(rootDir, "data/platforms.json"), "utf8"));
 const genresDocument = JSON.parse(fs.readFileSync(path.join(rootDir, "data/genres.json"), "utf8"));
 const coverageDocument = JSON.parse(fs.readFileSync(path.join(rootDir, "data/coverage.json"), "utf8"));
-const minimumHubRecords = Number.isInteger(coverageDocument.minimumHubRecords) && coverageDocument.minimumHubRecords >= 1 ? coverageDocument.minimumHubRecords : 2;
+const minimumHubRecords = normalizeMinimumHubRecords(coverageDocument.minimumHubRecords);
 const platformCounts = new Map([...usedPlatformIds].map((id) => [id, gameRecords.filter((game) => game.platforms?.includes(id)).length]));
 const genreCounts = new Map([...usedGenreIds].map((id) => [id, gameRecords.filter((game) => game.genres?.includes(id)).length]));
-const platformRecords = (platformsDocument.items ?? []).filter((platform) => platform.coverage === "populated" && usedPlatformIds.has(platform.id) && (platformCounts.get(platform.id) ?? 0) >= minimumHubRecords);
-const genreRecords = (genresDocument.items ?? []).filter((genre) => usedGenreIds.has(genre.id) && (genreCounts.get(genre.id) ?? 0) >= minimumHubRecords);
+const platformRecords = (platformsDocument.items ?? []).filter((platform) => usedPlatformIds.has(platform.id) && isPlatformHubEligible(platform, platformCounts.get(platform.id) ?? 0, minimumHubRecords));
+const genreRecords = (genresDocument.items ?? []).filter((genre) => usedGenreIds.has(genre.id) && isGenreHubEligible(genreCounts.get(genre.id) ?? 0, minimumHubRecords));
 for (const game of gameRecords) {
   const route = `games/${game.slug}/index.html`;
   const gamePath = path.join(outDir, route);
@@ -91,6 +134,7 @@ for (const game of gameRecords) {
   for (const link of (game.links ?? []).filter((candidate) => candidate.kind === "critical")) if (!gameHtml.includes(link.url)) fail(`${route} is missing its outbound critical context link`);
   if (gameHtml.includes("80+") || /(?:popularity value|popularity rank)/i.test(gameHtml)) fail(`${route} exposes unauthorized numeric evidence messaging`);
   checkNoRawEvidence(gameHtml, route);
+  checkStructuredData(gameHtml, route, ["VideoGame", "BreadcrumbList"]);
   const boxAssets = Array.isArray(game.assets) ? game.assets.filter((asset) => asset?.role === "box-front") : [];
   const expectedReferenceFallback = game.platformAssociationScope === "source-listed" ? "GameAtlas reference presentation — no platform-specific package is implied" : "GameAtlas reference case";
   if (boxAssets.length === 0 && !gameHtml.includes(expectedReferenceFallback)) fail(`${route} does not retain its safe no-art reference fallback`);
@@ -115,6 +159,7 @@ for (const hub of [...platformRecords.map((record) => ({ type: "platform", recor
   if (!/Original editorial|GameAtlas editorial|Catalog method|GameAtlas catalog entry/.test(hubHtml)) fail(`${route} is missing catalog evidence labeling`);
   if (!sitemap.includes(`${hub.type}s/${hub.record.id}/`)) fail(`sitemap is missing ${route}`);
   checkNoRawEvidence(hubHtml, route);
+  checkStructuredData(hubHtml, route, ["CollectionPage", "BreadcrumbList"]);
 }
 const switch2HubPath = path.join(outDir, "platforms/nintendo-switch-2/index.html");
 if (!fs.existsSync(switch2HubPath)) fail("missing Switch 2 platform hub");

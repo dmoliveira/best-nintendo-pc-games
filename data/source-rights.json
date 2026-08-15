@@ -111,13 +111,13 @@
       "reviewText": "do-not-copy",
       "images": "do-not-download",
       "attribution": "Link to the source page when appropriate; do not imply endorsement.",
-      "termsUrl": "https://www.metacritic.com/legal/terms-of-use/",
+      "termsUrl": "https://www.fandom.com/terms-of-service-pp1",
       "recheckBefore": "any score ingestion or image download",
       "notes": "No public developer API was verified for this project. A link is not a redistribution license.",
       "reviewedBy": "GameAtlas planning review",
       "rightsReviewedAt": "2026-08-14",
       "recheckAt": "2026-09-15",
-      "decisionEvidence": "https://www.metacritic.com/legal/terms-of-use/",
+      "decisionEvidence": "https://www.metacritic.com/about-us/",
       "coveredProcess": "No local score, review text, or image ingestion; outbound reference only."
     },
     {

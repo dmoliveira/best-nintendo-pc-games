@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CatalogBrowser from "./catalog-browser";
 import HeroSearch from "./hero-search";
+import JsonLd from "./json-ld";
 import PlatformGlyph from "./platform-glyph";
 import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
 import { createSiteConfig } from "@/lib/site-config";
 import { catalogFilterHref, DEFAULT_PAGE_SIZE, toCatalogCardRecord } from "@/lib/catalog/search";
+import { createWebSiteStructuredData } from "@/lib/structured-data";
 import { getCatalogSearchIndexDigest } from "@/lib/catalog/search-index";
 import { getCatalogGames, getCatalogSearchRecords, getPlatformHubs, getPopulatedPlatforms } from "@/lib/catalog/site-data";
 
@@ -36,6 +38,7 @@ export default function Home() {
   const catalogIndexUrl = `${site.publicUrl("catalog-search-index.json")}?v=${encodeURIComponent(catalogIndexDigest)}`;
 
   return <div className="site-shell">
+    <JsonLd data={createWebSiteStructuredData(site)} />
     <a className="skip-link" href="#main-content">Skip to main content</a>
     <SiteHeader active="browse" />
 

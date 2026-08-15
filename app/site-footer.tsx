@@ -1,5 +1,8 @@
 import Link from "next/link";
 import GameAtlasMark from "./gameatlas-mark";
+import { createSiteConfig } from "@/lib/site-config";
+
+const site = createSiteConfig(process.env);
 
 export default function SiteFooter() {
   return (
@@ -25,6 +28,7 @@ export default function SiteFooter() {
         <div className="footer-link-group">
           <strong>About</strong>
           <Link href="/docs/rights-and-support-policy/">Sources &amp; rights</Link>
+          <a href={site.correctionUrl} target="_blank" rel="noreferrer">Report a correction ↗</a>
         </div>
       </nav>
       <p className="footer-meta">Built for curious players · 2026 <span aria-hidden="true">/</span> GameAtlas is an independent editorial guide.</p>

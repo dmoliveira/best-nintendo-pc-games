@@ -1,5 +1,6 @@
 export const DEFAULT_BASE_PATH = "/best-nintendo-pc-games";
 export const DEFAULT_SITE_ORIGIN = "https://dmoliveira.github.io";
+export const DEFAULT_REPOSITORY_URL = "https://github.com/dmoliveira/best-nintendo-pc-games";
 
 function stripTrailingSlash(value: string): string {
   return value.replace(/\/+$/, "");
@@ -29,6 +30,8 @@ export function createSiteConfig(env: NodeJS.ProcessEnv = process.env) {
     basePath,
     siteUrl,
     canonicalUrl: `${siteUrl}/`,
+    repositoryUrl: DEFAULT_REPOSITORY_URL,
+    correctionUrl: `${DEFAULT_REPOSITORY_URL}/issues/new?template=catalog-correction.yml&title=GameAtlas%20catalog%20correction`,
     publicUrl(path = ""): string {
       const normalizedPath = path.replace(/^\/+/, "");
       return normalizedPath ? `${siteUrl}/${normalizedPath}` : `${siteUrl}/`;

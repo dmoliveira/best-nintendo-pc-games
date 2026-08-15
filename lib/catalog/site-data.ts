@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { localTodayKey } from "../date-policy.mjs";
+import { isGenreHubEligible, isPlatformHubEligible, normalizeMinimumHubRecords } from "./hub-policy.mjs";
 import { createSiteConfig } from "../site-config";
 import { getPlatformDisplayLabel } from "./display";
 import { getPublicSignalSummaries, type PublicSignalSummaries } from "./public-signals";
@@ -113,7 +114,7 @@ const genreDocument = asDocument(loadJson("data/genres.json"));
 const sourceDocument = asDocument(loadJson("data/source-rights.json"));
 const assetDocument = asDocument(loadJson("data/assets-manifest.json"));
 const coverageDocument = asDocument(loadJson("data/coverage.json"));
-export const MINIMUM_HUB_RECORDS = typeof coverageDocument.minimumHubRecords === "number" ? coverageDocument.minimumHubRecords : 2;
+export const MINIMUM_HUB_RECORDS = normalizeMinimumHubRecords(coverageDocument.minimumHubRecords);
 const platforms = asItems<PlatformRecord>(platformDocument, "data/platforms.json");
 const genres = asItems<GenreRecord>(genreDocument, "data/genres.json");
 const context = createContext(platforms, genres, sourceDocument, assetDocument);
@@ -155,7 +156,7 @@ export function getCatalogPlatform(id: string): PlatformRecord | undefined {
 }
 
 export function getPlatformHubs(): PlatformRecord[] {
-  return getCatalogPlatforms().filter((platform) => (platformRecordCounts.get(platform.id) ?? 0) >= MINIMUM_HUB_RECORDS);
+  return getCatalogPlatforms().filter((platform) => isPlatformHubEligible(platform, platformRecordCounts.get(platform.id) ?? 0, MINIMUM_HUB_RECORDS));
 }
 
 export function getPlatformHub(id: string): PlatformRecord | undefined {
@@ -175,7 +176,7 @@ export function getCatalogGenre(id: string): GenreRecord | undefined {
 }
 
 export function getGenreHubs(): GenreRecord[] {
-  return getCatalogGenres().filter((genre) => (genreRecordCounts.get(genre.id) ?? 0) >= MINIMUM_HUB_RECORDS);
+  return getCatalogGenres().filter((genre) => isGenreHubEligible(genreRecordCounts.get(genre.id) ?? 0, MINIMUM_HUB_RECORDS));
 }
 
 export function getGenreHub(id: string): GenreRecord | undefined {
@@ -272,10 +273,10 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
     platformIds: platforms.map((platform) => platform.id),
     platformLabels: platforms.map((platform) => platform.name),
     platformDisplayLabels: platforms.map((platform) => getPlatformDisplayLabel(platform)),
-    platformHubIds: platforms.filter((platform) => (platformRecordCounts.get(platform.id) ?? 0) >= MINIMUM_HUB_RECORDS).map((platform) => platform.id),
+    platformHubIds: platforms.filter((platform) => isPlatformHubEligible(platform, platformRecordCounts.get(platform.id) ?? 0, MINIMUM_HUB_RECORDS)).map((platform) => platform.id),
     genreIds: genres.map((genre) => genre.id),
     genreLabels: genres.map((genre) => genre.name),
-    genreHubIds: genres.filter((genre) => (genreRecordCounts.get(genre.id) ?? 0) >= MINIMUM_HUB_RECORDS).map((genre) => genre.id),
+    genreHubIds: genres.filter((genre) => isGenreHubEligible(genreRecordCounts.get(genre.id) ?? 0, MINIMUM_HUB_RECORDS)).map((genre) => genre.id),
     evidenceKinds,
     evidenceLabels,
   };
