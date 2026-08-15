@@ -5,6 +5,7 @@ import type {
   CatalogContext,
   EvidenceState,
   LicensedCriticOrUserSignal,
+  VerifiedFactSalesSignal,
   GameRecord,
   GameSignal,
   GenreRecord,
@@ -183,11 +184,22 @@ export function findCatalogIdentityCollisions(records: CatalogIdentityRecord[]):
   return collisions;
 }
 
-export function isEligibleCritic80(signal: GameSignal, context: CatalogContext): boolean {
+export function isEligibleCriticDisplay(signal: GameSignal, context: CatalogContext): signal is LicensedCriticOrUserSignal {
   if (signal.kind !== "critic") return false;
   if (validateSignal(signal, "signal", context).length > 0) return false;
   const source = context.sourceById.get(signal.sourceId);
-  return signal.evidenceState === "licensed-signal" && signal.score >= context.criticMinimumScore && signal.scale === context.criticRequiredScale && signal.verificationStatus === "verified" && signal.rightsStatus === "approved" && context.approvedCriticProviders.has(signal.provider) && nonEmpty(signal.editionOrPlatform) && nonEmpty(signal.termsUrl) && nonEmpty(signal.reviewedBy) && source?.provider === signal.provider;
+  return signal.evidenceState === "licensed-signal" && signal.scale === context.criticRequiredScale && signal.verificationStatus === "verified" && signal.rightsStatus === "approved" && context.approvedCriticProviders.has(signal.provider) && nonEmpty(signal.editionOrPlatform) && nonEmpty(signal.termsUrl) && nonEmpty(signal.reviewedBy) && source?.provider === signal.provider;
+}
+
+export function isEligibleCritic80(signal: GameSignal, context: CatalogContext): boolean {
+  return isEligibleCriticDisplay(signal, context) && signal.score >= context.criticMinimumScore;
+}
+
+export function isEligibleSalesValueDisplay(signal: GameSignal, context: CatalogContext): signal is VerifiedFactSalesSignal {
+  if (signal.kind !== "sales" || signal.evidenceState !== "verified-fact" || typeof signal.value !== "number" || !Number.isFinite(signal.value) || !nonEmpty(signal.unit)) return false;
+  if (validateSignal(signal, "signal", context).length > 0) return false;
+  const source = context.sourceById.get(signal.sourceId);
+  return signal.verificationStatus === "verified" && signal.rightsStatus === "approved" && source?.status === "approved" && source.provider === signal.provider && source.allowedFields.includes("manuallyReviewedSalesFact");
 }
 
 export function isEligiblePopularity(signal: GameSignal, context: CatalogContext): boolean {

@@ -7,6 +7,8 @@ const styles = readFileSync(new URL("../app/globals.css", import.meta.url), "utf
 const gamePage = readFileSync(new URL("../app/games/[slug]/page.tsx", import.meta.url), "utf8");
 const browser = readFileSync(new URL("../app/catalog-browser.tsx", import.meta.url), "utf8");
 const boxViewer = readFileSync(new URL("../app/game-box-viewer.tsx", import.meta.url), "utf8");
+const cards = readFileSync(new URL("../app/catalog-cards.tsx", import.meta.url), "utf8");
+const taxonomyHub = readFileSync(new URL("../app/taxonomy-hub.tsx", import.meta.url), "utf8");
 
 test("home shell exposes a keyboard bypass and stable main landmark", () => {
   assert.match(page, /className="skip-link" href="#main-content"/);
@@ -26,9 +28,13 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /addEventListener\("popstate"/);
   assert.match(browser, /Card layout/);
   assert.match(browser, /columns/);
-  assert.match(browser, /CatalogCards records={displayRecords} columns={state.columns}/);
+  assert.match(browser, /CatalogCards records={displayRecords} columns={state.columns} showResultPosition/);
+  assert.match(browser, /resultPositionOffset/);
   assert.match(browser, /Score \(licensed data only\)/);
   assert.match(browser, /catalog-pagination/);
+  assert.match(cards, /Current result position/);
+  assert.match(cards, /not a quality ranking/);
+  assert.doesNotMatch(taxonomyHub, /showResultPosition/);
 });
 
 test("visual shell protects focus, contrast, and reduced-motion behavior", () => {

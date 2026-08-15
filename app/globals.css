@@ -2599,3 +2599,16 @@ h1 {
     white-space: normal;
   }
 }
+
+.game-card-topline-leading{align-items:center;display:flex;gap:8px;min-width:0}
+.game-card-position{color:var(--coral);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.58rem;letter-spacing:.08em}
+.game-card-position-label{color:var(--muted);font-family:inherit;font-size:.52rem;letter-spacing:.05em;text-transform:uppercase}
+.game-card-signal-stack{align-items:flex-start;display:flex;flex:1;flex-wrap:wrap;gap:5px;min-width:0}
+.score-value,.sales-summary{align-items:baseline;display:inline-flex;gap:6px;line-height:1.2;text-decoration:none}
+.score-value strong,.sales-summary strong{color:var(--paper);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.68rem;font-weight:700}
+.score-value{color:var(--coral)}
+.score-value:hover,.score-value:focus-visible{color:var(--paper)}
+.sales-summary{color:var(--lime)}
+.sales-summary:hover,.sales-summary:focus-visible{color:var(--paper)}
+.game-status-row .score-value,.game-status-row .sales-summary{font-size:.72rem}
+@media(max-width:800px){.game-card-signal-stack{width:100%}}

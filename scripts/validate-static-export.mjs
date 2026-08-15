@@ -15,7 +15,7 @@ function checkNoRawEvidence(html, location) { for (const field of forbiddenEvide
 if (!fs.existsSync(outDir)) { fail(`missing output directory ${outDir}`); process.exit(1); }
 for (const file of requiredFiles) if (!fs.existsSync(path.join(outDir, file))) fail(`missing ${file}`);
 const html = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
-for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth your time.", "Start with a game.", "Search games", "Showing", "GameAtlas pick", "platform-glyph", "data-platform-accent", "data-attribute-glyph", "Score", "Card layout", "game-card-topline-platforms"]) if (!html.includes(expected)) fail(`home page does not contain ${JSON.stringify(expected)}`);
+for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth your time.", "Start with a game.", "Search games", "Showing", "GameAtlas pick", "platform-glyph", "data-platform-accent", "data-attribute-glyph", "Critic score", "Card layout", "game-card-topline-platforms", "Current result position"]) if (!html.includes(expected)) fail(`home page does not contain ${JSON.stringify(expected)}`);
 if (!/<svg[^>]+aria-hidden="true"[^>]+focusable="false"/.test(html)) fail("home page is missing decorative, non-focusable catalog glyph semantics");
 if (!/Showing[\s\S]{0,120}of[\s\S]{0,120}reviewed games/.test(html)) fail("home page is missing the accessible result count");
 if (!html.includes("docs/rights-and-support-policy")) fail("home page is missing the policy link");
@@ -52,7 +52,8 @@ for (const game of gameRecords) {
   if (!gameHtml.includes("Original editorial")) fail(`${route} does not contain explicit editorial evidence labeling`);
   if (!gameHtml.includes('data-attribute-glyph="year"') || !gameHtml.includes("detail-label")) fail(`${route} is missing text-backed metadata glyphs`);
   for (const link of (game.links ?? []).filter((candidate) => candidate.kind === "critical")) if (!gameHtml.includes(link.url)) fail(`${route} is missing its outbound critical context link`);
-  if (gameHtml.includes("80+") || /(?:critic score|popularity value|popularity rank)/i.test(gameHtml)) fail(`${route} exposes unauthorized numeric evidence messaging`);
+  if (gameHtml.includes("80+") || /(?:popularity value|popularity rank)/i.test(gameHtml)) fail(`${route} exposes unauthorized numeric evidence messaging`);
+  checkNoRawEvidence(gameHtml, route);
   const boxAssets = Array.isArray(game.assets) ? game.assets.filter((asset) => asset?.role === "box-front") : [];
   if (boxAssets.length === 0 && !gameHtml.includes("GameAtlas reference case")) fail(`${route} does not retain the no-art reference package fallback`);
   for (const issue of validateGameArtExport({ game, gameHtml, outDir, assetById, expectedBasePath })) fail(`${route} ${issue}`);

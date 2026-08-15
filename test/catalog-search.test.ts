@@ -84,12 +84,13 @@ test("clamps pagination and exposes stable ranges", () => {
 
 test("client search projection excludes raw evidence objects", () => {
   const serialized = JSON.stringify(records);
-  for (const forbidden of ["\"sourceUrl\":", "\"termsUrl\":", "\"rightsStatus\":", "\"verificationStatus\":", "\"capturedAt\":", "\"recheckAt\":", "\"rationale\":", "\"links\":", "\"provenanceId\":", "\"score\":", "\"scale\":", "\"count\":", "\"value\":", "\"rank\":"]) assert.doesNotMatch(serialized, new RegExp(forbidden));
+  for (const forbidden of ["\"sourceUrl\":", "\"termsUrl\":", "\"rightsStatus\":", "\"verificationStatus\":", "\"capturedAt\":", "\"recheckAt\":", "\"rationale\":", "\"links\":", "\"provenanceId\":", "\"signals\":", "\"score\":", "\"scale\":", "\"count\":", "\"value\":", "\"rank\":"]) assert.doesNotMatch(serialized, new RegExp(forbidden));
   assert.match(serialized, /GameAtlas editorial/);
   assert.ok(records.every((record) => record.artPath?.includes("/assets/games/") && record.artAlt));
   assert.ok(records.every((record) => record.platformDisplayLabels.length === record.platformLabels.length));
   assert.equal(records.find((record) => record.platformIds.includes("pc-windows"))?.platformDisplayLabels[0], "PC / Windows");
   assert.ok(records.every((record) => record.editorialLabel === "GameAtlas pick"));
+  assert.ok(records.every((record) => !record.criticSummary && !record.salesSummary));
   assert.equal(records.filter((record) => record.criticalLink).length, 32);
   assert.ok(records.filter((record) => record.criticalLink).every((record) => record.criticalLink?.url.startsWith("https://www.metacritic.com/game/")));
 });

@@ -3,6 +3,7 @@ import path from "node:path";
 import { localTodayKey } from "../date-policy.mjs";
 import { createSiteConfig } from "../site-config";
 import { getPlatformDisplayLabel } from "./display";
+import { getPublicSignalSummaries, type PublicSignalSummaries } from "./public-signals";
 import { normalizeSearchText, type CatalogSearchRecord } from "./search";
 import { selectEditorialAsset } from "../box-art/asset-roles.mjs";
 import { BOX_ART_FORMAT_IDS } from "../box-art/formats";
@@ -181,11 +182,16 @@ export function getGameEditorialArt(game: GameRecord) {
   return selectEditorialAsset(game.assets, context.assetById);
 }
 
+export function getPublicGameSignals(game: GameRecord): PublicSignalSummaries {
+  return getPublicSignalSummaries(game, context);
+}
+
 export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame): CatalogSearchRecord {
   const evidenceKinds = [...new Set(game.signals.map((signal) => signal.kind))];
   const evidenceLabels = evidenceKinds.map((kind) => kind === "editorial" ? "GameAtlas editorial" : kind);
   const criticalLink = game.links.find((link) => link.kind === "critical");
   const editorialLabel = getEditorialSignals(game).length > 0 ? "GameAtlas pick" : undefined;
+  const publicSignals = getPublicSignalSummaries(game, context);
   const searchText = normalizeSearchText([
     game.title,
     ...game.aliases,
@@ -209,6 +215,8 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
     publisher: game.publisher,
     editorialLabel,
     criticalLink: criticalLink ? { label: criticalLink.label, url: criticalLink.url } : undefined,
+    criticSummary: publicSignals.critic,
+    salesSummary: publicSignals.sales,
     shortDescription: game.shortDescription,
     searchText,
     releaseYear: game.release.year,
