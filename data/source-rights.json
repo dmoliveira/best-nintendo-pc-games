@@ -132,13 +132,13 @@
       "reviewText": "do-not-copy",
       "images": "do-not-download",
       "attribution": "Link to the source page when appropriate; do not imply endorsement.",
-      "termsUrl": "https://help.opencritic.com/knowledge-base/articles/6333223-are-there-any-opencritic-api-s",
+      "termsUrl": "https://opencritic.com/terms",
       "recheckBefore": "any score ingestion or image download",
-      "notes": "The official FAQ did not establish a public API for bulk data in the planning review.",
+      "notes": "The former API FAQ was unavailable during the 2026-08-15 recheck. Current terms prohibit obtaining materials through means not intentionally made available; no OpenCritic API is approved for this project.",
       "reviewedBy": "GameAtlas planning review",
-      "rightsReviewedAt": "2026-08-14",
+      "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "decisionEvidence": "https://help.opencritic.com/knowledge-base/articles/6333223-are-there-any-opencritic-api-s",
+      "decisionEvidence": "https://opencritic.com/terms",
       "coveredProcess": "No local score, review text, or image ingestion; outbound reference only."
     },
     {
