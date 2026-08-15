@@ -16,18 +16,18 @@ test("normalizes punctuation, diacritics, and whitespace for search", () => {
 });
 
 test("round-trips canonical URL search state and drops unknown filters", () => {
-  const state = { q: "  mario   kart ", platform: "nintendo-switch", genre: "racing", year: "2023" };
+  const state = { q: "  mario   kart ", platform: "nintendo-switch", genre: "racing", year: "2023", columns: "3" as const };
   const query = serializeSearchState(state);
-  assert.equal(query, "?q=mario+kart&platform=nintendo-switch&genre=racing&year=2023");
-  assert.deepEqual(parseSearchState(new URLSearchParams(query), options), { q: "mario kart", platform: "nintendo-switch", genre: "racing", year: "2023" });
-  assert.deepEqual(parseSearchState(new URLSearchParams("?platform=unknown&genre=nope&year=1900"), options), { q: "", platform: "", genre: "", year: "" });
+  assert.equal(query, "?q=mario+kart&platform=nintendo-switch&genre=racing&year=2023&columns=3");
+  assert.deepEqual(parseSearchState(new URLSearchParams(query), options), { q: "mario kart", platform: "nintendo-switch", genre: "racing", year: "2023", columns: "3" });
+  assert.deepEqual(parseSearchState(new URLSearchParams("?platform=unknown&genre=nope&year=1900&columns=9"), options), { q: "", platform: "", genre: "", year: "", columns: "auto" });
 });
 
 test("applies AND query matching and combined filters deterministically", () => {
-  const marioKart = filterCatalog(records, { q: "mario kart", platform: "", genre: "", year: "" });
+  const marioKart = filterCatalog(records, { q: "mario kart", platform: "", genre: "", year: "", columns: "auto" });
   assert.ok(marioKart.length >= 5);
   assert.ok(marioKart.every((record) => record.searchText.includes("mario") && record.searchText.includes("kart")));
-  const switchAction = filterCatalog(records, { q: "", platform: "nintendo-switch", genre: "action", year: "" });
+  const switchAction = filterCatalog(records, { q: "", platform: "nintendo-switch", genre: "action", year: "", columns: "auto" });
   assert.deepEqual(switchAction.map((record) => record.slug), [
     "kirby-and-the-forgotten-land",
     "metroid-dread",
@@ -35,7 +35,7 @@ test("applies AND query matching and combined filters deterministically", () => 
     "the-legend-of-zelda-breath-of-the-wild",
     "the-legend-of-zelda-tears-of-the-kingdom",
   ]);
-  const pcGames = filterCatalog(records, { q: "", platform: "pc-windows", genre: "", year: "" });
+  const pcGames = filterCatalog(records, { q: "", platform: "pc-windows", genre: "", year: "", columns: "auto" });
   assert.equal(pcGames.length, 17);
   const sortedPcTitles = [...pcGames].sort((left, right) => {
     const leftKey = normalizeSearchText(left.title);
@@ -55,4 +55,13 @@ test("client search projection excludes raw evidence objects", () => {
   assert.ok(records.every((record) => record.editorialLabel === "GameAtlas pick"));
   assert.equal(records.filter((record) => record.criticalLink).length, 32);
   assert.ok(records.filter((record) => record.criticalLink).every((record) => record.criticalLink?.url.startsWith("https://www.metacritic.com/game/")));
+});
+
+test("round-trips the optional layout mode without treating it as a filter", () => {
+  const auto = parseSearchState(new URLSearchParams("?columns=auto"), options);
+  assert.equal(auto.columns, "auto");
+  assert.equal(serializeSearchState({ ...auto, q: "mario" }), "?q=mario");
+  const three = parseSearchState(new URLSearchParams("?columns=3"), options);
+  assert.equal(three.columns, "3");
+  assert.equal(filterCatalog(records, three).length, records.length);
 });

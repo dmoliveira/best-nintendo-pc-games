@@ -4,18 +4,20 @@
 import Link from "next/link";
 import PlatformGlyph from "./platform-glyph";
 import { getGenreTone } from "@/lib/catalog/display";
-import type { CatalogSearchRecord } from "@/lib/catalog/search";
+import type { CatalogColumns, CatalogSearchRecord } from "@/lib/catalog/search";
 
 interface CatalogCardsProps {
   records: readonly CatalogSearchRecord[];
+  columns?: CatalogColumns;
 }
 
 function externalLabel(label: string): string {
   return label.replace(/^External\/reference\s+—\s*/, "");
 }
 
-export default function CatalogCards({ records }: CatalogCardsProps) {
-  return <div className="game-grid">{records.map((record) => {
+export default function CatalogCards({ records, columns = "auto" }: CatalogCardsProps) {
+  const layoutClass = columns === "auto" ? "" : ` game-grid--columns-${columns}`;
+  return <div className={`game-grid${layoutClass}`}>{records.map((record) => {
     const visiblePlatforms = record.platformIds.slice(0, 2);
     const hiddenPlatformCount = Math.max(record.platformIds.length - visiblePlatforms.length, 0);
     const visibleGenres = record.genreIds.slice(0, 3);
@@ -25,24 +27,24 @@ export default function CatalogCards({ records }: CatalogCardsProps) {
     const creditTitle = sameTeam ? `Team: ${record.developer}` : [record.developer ? `Dev: ${record.developer}` : null, record.publisher ? `Pub: ${record.publisher}` : null].filter(Boolean).join(" · ");
 
     return <article className="game-card" key={record.slug}>
-      <div className="game-card-topline"><span>{record.editorialLabel ?? "Editorial pick"}</span><span>{record.releaseYear}</span></div>
+      <div className="game-card-topline">
+        <div className="game-card-topline-platforms" aria-label={`Platforms: ${record.platformLabels.join(", ")}`}>
+          {visiblePlatforms.map((platformId, index) => <span className="game-card-platform" key={platformId} title={record.platformLabels[index]}>
+            <PlatformGlyph platformId={platformId} />
+            {record.platformHubIds.includes(platformId) ? <Link aria-label={`Open ${record.platformLabels[index]} platform guide`} href={`/platforms/${platformId}/`}>{record.platformDisplayLabels[index]}</Link> : <span>{record.platformDisplayLabels[index]}</span>}
+          </span>)}
+          {hiddenPlatformCount > 0 ? <span className="game-card-platform game-card-platform--more">+{hiddenPlatformCount}</span> : null}
+        </div>
+        <span className="game-card-year">{record.releaseYear}</span>
+      </div>
       <Link className="game-card-art" href={`/games/${record.slug}/`} aria-label={`Open ${record.title} game page`}>
         {record.artPath ? <img src={record.artPath} alt="" loading="lazy" /> : <span className="game-card-emoji" aria-hidden="true">{record.emoji}</span>}
-        <span className="game-card-art-rail">{record.editorialLabel ? <span className="editorial-badge"><span className="editorial-dot" aria-hidden="true" />{record.editorialLabel}</span> : null}<span className="game-card-year">{record.releaseYear}</span></span>
+        <span className="game-card-art-rail">{record.editorialLabel ? <span className="editorial-badge"><span className="editorial-dot" aria-hidden="true" />{record.editorialLabel}</span> : null}</span>
         <span className="art-link-label">View guide <span aria-hidden="true">↗</span></span>
       </Link>
       <div className="game-card-body">
         <h3><Link href={`/games/${record.slug}/`}>{record.title}</Link></h3>
-        <div className="game-card-fact-row">
-          <div className="game-card-platforms" aria-label={`Platforms: ${record.platformLabels.join(", ")}`}>
-            {visiblePlatforms.map((platformId, index) => <span className="game-card-platform" key={platformId} title={record.platformLabels[index]}>
-              <PlatformGlyph platformId={platformId} />
-              {record.platformHubIds.includes(platformId) ? <Link aria-label={`Open ${record.platformLabels[index]} platform guide`} href={`/platforms/${platformId}/`}>{record.platformDisplayLabels[index]}</Link> : <span>{record.platformDisplayLabels[index]}</span>}
-            </span>)}
-            {hiddenPlatformCount > 0 ? <span className="game-card-platform game-card-platform--more">+{hiddenPlatformCount}</span> : null}
-          </div>
-          <div className="game-card-fact-aside"><span className="game-card-year">{record.releaseYear}</span>{distributionLabel ? <span className="game-card-distribution">{distributionLabel}</span> : null}</div>
-        </div>
+        {distributionLabel ? <div className="game-card-detail-chips"><span className="game-card-distribution">{distributionLabel}</span></div> : null}
         <p className="game-card-description">{record.shortDescription}</p>
         {record.developer || record.publisher ? <div className="game-card-credits" aria-label="Credits" title={creditTitle}>
           {sameTeam ? <span><b>Team</b>{record.developer}</span> : <span>{record.developer ? <><b>Dev</b>{record.developer}</> : null}{record.developer && record.publisher ? <span className="credit-divider" aria-hidden="true"> · </span> : null}{record.publisher ? <><b>Pub</b>{record.publisher}</> : null}</span>}

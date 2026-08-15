@@ -23,6 +23,9 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.doesNotMatch(page, /80\+/);
   assert.match(browser, /syncUrl\(state, "replace"\)/);
   assert.match(browser, /addEventListener\("popstate"/);
+  assert.match(browser, /Card layout/);
+  assert.match(browser, /columns/);
+  assert.match(browser, /CatalogCards records={filteredRecords} columns={state.columns}/);
 });
 
 test("visual shell protects focus, contrast, and reduced-motion behavior", () => {
@@ -33,6 +36,11 @@ test("visual shell protects focus, contrast, and reduced-motion behavior", () =>
   assert.match(styles, /@keyframes wordmark-orbit-spin/);
   assert.match(styles, /overflow-x:\s*clip/);
   assert.match(styles, /game-box\{transition:none/);
+  assert.match(styles, /game-grid--columns-1/);
+  assert.match(styles, /layout-control/);
+  assert.match(styles, /@media \(max-width:800px\)[\s\S]*game-grid\{grid-template-columns:1fr\}/);
+  assert.match(styles, /layout-options\{grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/);
+  assert.match(styles, /layout-option-copy small\{display:none\}/);
   assert.match(styles, /game-card-credits>span/);
   assert.doesNotMatch(styles, /\.platform-card:hover\s*\{[^}]*transform/);
 });

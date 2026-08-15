@@ -3,6 +3,8 @@ export interface CatalogCardLink {
   url: string;
 }
 
+export type CatalogColumns = "auto" | "1" | "2" | "3";
+
 export interface CatalogSearchRecord {
   slug: string;
   title: string;
@@ -34,6 +36,7 @@ export interface CatalogSearchState {
   platform: string;
   genre: string;
   year: string;
+  columns: CatalogColumns;
 }
 
 export interface SearchStateOptions {
@@ -42,7 +45,7 @@ export interface SearchStateOptions {
   years: ReadonlySet<string>;
 }
 
-export const EMPTY_SEARCH_STATE: CatalogSearchState = { q: "", platform: "", genre: "", year: "" };
+export const EMPTY_SEARCH_STATE: CatalogSearchState = { q: "", platform: "", genre: "", year: "", columns: "auto" };
 export const SEARCH_STATE_EVENT = "gameatlas:search-state";
 
 export function normalizeSearchText(value: string): string {
@@ -65,11 +68,14 @@ function knownOrEmpty(value: string | null, known: ReadonlySet<string>): string 
 
 export function parseSearchState(params: URLSearchParams, options: SearchStateOptions): CatalogSearchState {
   const rawYear = params.get("year") ?? "";
+  const rawColumns = params.get("columns");
+  const columns: CatalogColumns = rawColumns === "1" || rawColumns === "2" || rawColumns === "3" ? rawColumns : "auto";
   return {
     q: cleanQuery(params.get("q") ?? ""),
     platform: knownOrEmpty(params.get("platform"), options.platformIds),
     genre: knownOrEmpty(params.get("genre"), options.genreIds),
     year: /^\d{4}$/.test(rawYear) && options.years.has(rawYear) ? rawYear : "",
+    columns,
   };
 }
 
@@ -80,6 +86,7 @@ export function serializeSearchState(state: CatalogSearchState): string {
   if (state.platform) params.set("platform", state.platform);
   if (state.genre) params.set("genre", state.genre);
   if (state.year) params.set("year", state.year);
+  if (state.columns !== "auto") params.set("columns", state.columns);
   const query = params.toString();
   return query ? `?${query}` : "";
 }

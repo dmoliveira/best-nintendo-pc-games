@@ -9,9 +9,17 @@ import {
   parseSearchState,
   SEARCH_STATE_EVENT,
   serializeSearchState,
+  type CatalogColumns,
   type CatalogSearchRecord,
   type CatalogSearchState,
 } from "@/lib/catalog/search";
+
+const layoutOptions: Array<{ value: CatalogColumns; label: string; description: string }> = [
+  { value: "auto", label: "Auto", description: "Responsive" },
+  { value: "1", label: "1", description: "Focus" },
+  { value: "2", label: "2", description: "Balanced" },
+  { value: "3", label: "3", description: "Dense" },
+];
 
 interface CatalogBrowserProps {
   records: readonly CatalogSearchRecord[];
@@ -55,9 +63,16 @@ export default function CatalogBrowser({ records }: CatalogBrowserProps) {
     syncUrl(nextState, "push");
   }
 
+  function updateColumns(columns: CatalogColumns) {
+    const nextState = { ...state, columns };
+    setState(nextState);
+    syncUrl(nextState, "push");
+  }
+
   function clearFilters() {
-    setState(EMPTY_SEARCH_STATE);
-    syncUrl(EMPTY_SEARCH_STATE, "push");
+    const nextState = { ...EMPTY_SEARCH_STATE, columns: state.columns };
+    setState(nextState);
+    syncUrl(nextState, "push");
   }
 
   return <div className="catalog-browser">
@@ -73,8 +88,19 @@ export default function CatalogBrowser({ records }: CatalogBrowserProps) {
         <label className="browser-field" htmlFor="catalog-year"><span>Year</span><select id="catalog-year" value={state.year} onChange={(event) => updateFilter("year", event.target.value)}><option value="">Any year</option>{yearOptions.map((year) => <option value={year} key={year}>{year}</option>)}</select></label>
         <div className="browser-actions"><button className="browser-button" type="submit">Update results <span aria-hidden="true">↗</span></button></div>
       </div>
+      <div className="browser-layout-row">
+        <fieldset className="layout-control">
+          <legend>Card layout</legend>
+          <div className="layout-options" role="radiogroup" aria-label="Choose card columns">
+            {layoutOptions.map((option) => <label className={`layout-option${state.columns === option.value ? " layout-option--active" : ""}`} key={option.value}>
+              <input type="radio" name="card-columns" value={option.value} checked={state.columns === option.value} onChange={() => updateColumns(option.value)} />
+              <span className="layout-option-copy"><strong>{option.label}</strong><small>{option.description}</small></span>
+            </label>)}
+          </div>
+        </fieldset>
+      </div>
     </form>
     <div className="result-bar"><p className="result-summary" aria-live="polite">Showing <strong>{filteredRecords.length}</strong> of {records.length} reviewed games.</p><span className="result-detail">Editorial picks · signals kept separate</span></div>
-    {filteredRecords.length > 0 ? <CatalogCards records={filteredRecords} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, or year.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
+    {filteredRecords.length > 0 ? <CatalogCards records={filteredRecords} columns={state.columns} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, or year.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
   </div>;
 }
