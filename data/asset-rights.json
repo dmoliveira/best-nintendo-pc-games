@@ -38,6 +38,7 @@
       "allowedUses": [
         "card-accent",
         "platform-marker",
+        "metadata-marker",
         "fallback-thumbnail"
       ],
       "conditions": [

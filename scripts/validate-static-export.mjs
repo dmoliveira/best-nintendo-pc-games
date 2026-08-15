@@ -15,7 +15,8 @@ function checkNoRawEvidence(html, location) { for (const field of forbiddenEvide
 if (!fs.existsSync(outDir)) { fail(`missing output directory ${outDir}`); process.exit(1); }
 for (const file of requiredFiles) if (!fs.existsSync(path.join(outDir, file))) fail(`missing ${file}`);
 const html = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
-for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth your time.", "Start with a game.", "Search games", "Showing", "GameAtlas pick", "platform-glyph", "Score", "Card layout", "game-card-topline-platforms"]) if (!html.includes(expected)) fail(`home page does not contain ${JSON.stringify(expected)}`);
+for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth your time.", "Start with a game.", "Search games", "Showing", "GameAtlas pick", "platform-glyph", "data-platform-accent", "data-attribute-glyph", "Score", "Card layout", "game-card-topline-platforms"]) if (!html.includes(expected)) fail(`home page does not contain ${JSON.stringify(expected)}`);
+if (!/<svg[^>]+aria-hidden="true"[^>]+focusable="false"/.test(html)) fail("home page is missing decorative, non-focusable catalog glyph semantics");
 if (!/Showing[\s\S]{0,120}of[\s\S]{0,120}reviewed games/.test(html)) fail("home page is missing the accessible result count");
 if (!html.includes("docs/rights-and-support-policy")) fail("home page is missing the policy link");
 if (html.includes("Catalog search is coming soon") || html.includes("Catalog coming soon") || html.includes("next discovery layer") || html.includes("discovery tools arrive") || html.includes("80+")) fail("home page exposes stale preview or unauthorized numeric messaging");
@@ -49,6 +50,7 @@ for (const game of gameRecords) {
   const gameHtml = fs.readFileSync(gamePath, "utf8");
   if (![game.title, escapeHtml(game.title)].some((title) => gameHtml.includes(title))) fail(`${route} does not contain its game title`);
   if (!gameHtml.includes("Original editorial")) fail(`${route} does not contain explicit editorial evidence labeling`);
+  if (!gameHtml.includes('data-attribute-glyph="year"') || !gameHtml.includes("detail-label")) fail(`${route} is missing text-backed metadata glyphs`);
   for (const link of (game.links ?? []).filter((candidate) => candidate.kind === "critical")) if (!gameHtml.includes(link.url)) fail(`${route} is missing its outbound critical context link`);
   if (gameHtml.includes("80+") || /(?:critic score|popularity value|popularity rank)/i.test(gameHtml)) fail(`${route} exposes unauthorized numeric evidence messaging`);
   const boxAssets = Array.isArray(game.assets) ? game.assets.filter((asset) => asset?.role === "box-front") : [];
@@ -66,6 +68,7 @@ for (const hub of [...platformRecords.map((record) => ({ type: "platform", recor
   const hubHtml = fs.readFileSync(hubPath, "utf8");
   if (!hubHtml.includes(hub.record.name)) fail(`${route} does not contain its taxonomy name`);
   if (!hubHtml.includes("reviewed games")) fail(`${route} does not contain a reviewed game count`);
+  if (!hubHtml.includes(`data-taxonomy-visual="${hub.type}"`)) fail(`${route} is missing its text-backed taxonomy visual`);
   if (!hubHtml.includes('class="skip-link"') || !hubHtml.includes('<main') || !hubHtml.includes('<h1')) fail(`${route} is missing accessible page landmarks`);
   if (!hubHtml.includes(`${hub.type}s/${hub.record.id}/`)) fail(`${route} is missing its canonical/internal path`);
   const representedGame = gameRecords.find((game) => hub.type === "platform" ? game.platforms?.includes(hub.record.id) : game.genres?.includes(hub.record.id));

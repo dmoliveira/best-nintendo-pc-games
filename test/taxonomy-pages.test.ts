@@ -18,6 +18,10 @@ test("platform and genre hubs are static, bounded, and metadata-aware", () => {
   assert.match(hub, /<main className="hub-page" id="main-content">/);
   assert.match(hub, /CatalogCards/);
   assert.match(hub, /reviewed games/);
-  assert.match(platformPage, /getPlatformHubs/);
-  assert.match(genrePage, /getGenreHubs/);
+  assert.match(hub, /type TaxonomyVisual/);
+  assert.match(hub, /visual: TaxonomyVisual/);
+  assert.match(hub, /data-taxonomy-visual/);
+  assert.match(platformPage, /visual=\{\{ kind: "platform", platformId: platform.id \}\}/);
+  assert.match(genrePage, /visual=\{\{ kind: "genre", genreId: genre.id \}\}/);
+  assert.match(genrePage, /visual=\{\{ kind: "genre"/);
 });

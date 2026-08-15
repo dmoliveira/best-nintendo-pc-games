@@ -1,6 +1,7 @@
 import type { PlatformRecord } from "./types";
 
 export type PlatformIconKind = "console" | "handheld" | "hybrid" | "pc";
+export type PlatformAccentKind = "signal" | "orbit" | "prism" | "wave" | "frame" | "bridge" | "spark" | "grid";
 export type GenreTone = "amber" | "coral" | "cyan" | "lime" | "violet";
 
 const platformIconKinds: Record<string, PlatformIconKind> = {
@@ -22,6 +23,34 @@ const platformIconKinds: Record<string, PlatformIconKind> = {
   "pc-windows": "pc",
 };
 
+// These marks are intentionally abstract accents applied to a generic device
+// glyph. They identify a catalog category without copying hardware silhouettes,
+// logos, controller layouts, or other third-party trade dress.
+const platformAccentKinds: Record<string, PlatformAccentKind> = {
+  "nintendo-nes": "signal",
+  "nintendo-snes": "orbit",
+  "nintendo-64": "prism",
+  "nintendo-gamecube": "prism",
+  "nintendo-wii": "wave",
+  "nintendo-wii-u": "frame",
+  "nintendo-switch": "bridge",
+  "nintendo-switch-2": "bridge",
+  "game-boy": "signal",
+  "game-boy-color": "orbit",
+  "game-boy-advance": "spark",
+  "nintendo-ds": "frame",
+  "nintendo-dsi": "grid",
+  "nintendo-3ds": "prism",
+  "nintendo-new-3ds": "spark",
+  "pc-windows": "grid",
+};
+
+const fallbackAccentByIconKind: Record<PlatformIconKind, PlatformAccentKind> = {
+  console: "signal",
+  handheld: "orbit",
+  hybrid: "bridge",
+  pc: "grid",
+};
 
 const platformDisplayLabels: Record<string, string> = {
   "nintendo-nes": "NES",
@@ -58,6 +87,10 @@ export function getPlatformDisplayLabel(platform: Pick<PlatformRecord, "id" | "n
 
 export function getPlatformIconKind(platformId: string): PlatformIconKind {
   return platformIconKinds[platformId] ?? (platformId.startsWith("pc-") ? "pc" : "console");
+}
+
+export function getPlatformAccentKind(platformId: string): PlatformAccentKind {
+  return platformAccentKinds[platformId] ?? fallbackAccentByIconKind[getPlatformIconKind(platformId)];
 }
 
 export function getGenreTone(genreId: string): GenreTone {
