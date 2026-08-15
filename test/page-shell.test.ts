@@ -55,7 +55,13 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(page, /initialRecords=/);
   assert.match(page, /catalogIndexDigest=/);
   assert.match(page, /catalogIndexUrl=/);
-  assert.match(browser, /fetch\(catalogIndexUrl\)/);
+  assert.match(browser, /fetch\(catalogIndexUrl, \{ signal: controller\.signal \}\)/);
+  assert.match(browser, /indexRequestRef\.current = null;\s*setIndexStatus\("error"\)/);
+  assert.match(browser, /hasCatalogQuery/);
+  assert.match(browser, /IntersectionObserver/);
+  assert.match(browser, /rootMargin: "800px 0px"/);
+  assert.match(browser, /data-catalog-index-status=\{indexStatus\}/);
+  assert.match(browser, /Browse or use filters to load the full catalog/);
   assert.match(catalogIndex, /Browse every game\./);
   assert.match(catalogIndex, /No-JavaScript catalog/);
   assert.doesNotMatch(page, /Curated by humans|Thoughtful recommendations|reviewed picks/);

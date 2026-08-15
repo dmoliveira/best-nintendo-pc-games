@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import CatalogCards from "./catalog-cards";
 import {
   CATALOG_SORT_OPTIONS,
@@ -28,6 +28,8 @@ const layoutOptions: Array<{ value: CatalogColumns; label: string; description: 
   { value: "2", label: "2", description: "Balanced", accessibleLabel: "Two-column card layout" },
   { value: "3", label: "3", description: "Dense", accessibleLabel: "Three-column card layout" },
 ];
+
+const catalogQueryKeys = new Set(["q", "platform", "genre", "year", "from", "to", "developer", "publisher", "sort", "page", "perPage", "columns"]);
 
 interface CatalogBrowserProps {
   initialRecords: readonly CatalogSearchRecord[];
@@ -62,6 +64,10 @@ function selectedValues(value: string | undefined): string[] {
   return value?.split(",").map((item) => item.trim()).filter(Boolean) ?? [];
 }
 
+function hasCatalogQuery(search: string): boolean {
+  return [...new URLSearchParams(search).keys()].some((key) => catalogQueryKeys.has(key));
+}
+
 function nameOptions(records: readonly CatalogSearchRecord[], field: "developer" | "publisher"): FilterOption[] {
   const options = new Map<string, string>();
   for (const record of records) {
@@ -73,7 +79,10 @@ function nameOptions(records: readonly CatalogSearchRecord[], field: "developer"
 
 export default function CatalogBrowser({ initialRecords, catalogEntryCount, catalogIndexDigest, catalogIndexUrl, catalogIndexHref }: CatalogBrowserProps) {
   const [records, setRecords] = useState<readonly CatalogSearchRecord[]>(initialRecords);
-  const [indexStatus, setIndexStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [indexStatus, setIndexStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const catalogBrowserRef = useRef<HTMLDivElement>(null);
+  const indexRequestRef = useRef<Promise<void> | null>(null);
+  const indexAbortRef = useRef<AbortController | null>(null);
   const catalogReady = indexStatus === "ready";
   const platformOptions = useMemo(() => {
     const options = new Map<string, string>();
@@ -112,9 +121,12 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   const developerLabel = state.developer ? developerOptions.find((option) => option.id === state.developer)?.label ?? state.developer : "";
   const publisherLabel = state.publisher ? publisherOptions.find((option) => option.id === state.publisher)?.label ?? state.publisher : "";
 
-  useEffect(() => {
-    let active = true;
-    void fetch(catalogIndexUrl)
+  const loadCatalogIndex = useCallback(() => {
+    if (indexRequestRef.current) return;
+    const controller = new AbortController();
+    indexAbortRef.current = controller;
+    setIndexStatus("loading");
+    const request = fetch(catalogIndexUrl, { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error(`catalog index request failed with ${response.status}`);
         const value: unknown = await response.json();
@@ -123,15 +135,42 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
         return catalogRecords;
       })
       .then((catalogRecords) => {
-        if (!active) return;
+        if (controller.signal.aborted) return;
         setRecords(catalogRecords);
         setIndexStatus("ready");
       })
-      .catch(() => {
-        if (active) setIndexStatus("error");
+      .catch((error: unknown) => {
+        if (controller.signal.aborted || (error instanceof DOMException && error.name === "AbortError")) return;
+        indexRequestRef.current = null;
+        setIndexStatus("error");
       });
-    return () => { active = false; };
+    indexRequestRef.current = request;
   }, [catalogEntryCount, catalogIndexDigest, catalogIndexUrl]);
+
+  useEffect(() => () => { indexAbortRef.current?.abort(); }, []);
+
+  useEffect(() => {
+    if (hasCatalogQuery(window.location.search) || !("IntersectionObserver" in window)) {
+      loadCatalogIndex();
+      return;
+    }
+    const target = catalogBrowserRef.current;
+    if (!target) {
+      loadCatalogIndex();
+      return;
+    }
+    try {
+      const observer = new IntersectionObserver((entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        observer.disconnect();
+        loadCatalogIndex();
+      }, { rootMargin: "800px 0px" });
+      observer.observe(target);
+      return () => observer.disconnect();
+    } catch {
+      loadCatalogIndex();
+    }
+  }, [loadCatalogIndex]);
 
   useEffect(() => {
     if (!catalogReady) return;
@@ -221,10 +260,10 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   const resultSummary = !hydrated
     ? `Showing 1–${initialRecords.length} of ${catalogEntryCount} catalog games.`
     : !catalogReady
-      ? indexStatus === "error" ? `Showing the first ${initialRecords.length} of ${catalogEntryCount} catalog games.` : `Loading ${catalogEntryCount} catalog games.`
+      ? indexStatus === "error" ? `Showing the first ${initialRecords.length} of ${catalogEntryCount} catalog games.` : indexStatus === "idle" ? `Showing the first ${initialRecords.length} of ${catalogEntryCount} catalog games. Browse or use filters to load the full catalog.` : `Loading ${catalogEntryCount} catalog games.`
       : filteredRecords.length > 0 ? `Showing ${page.startIndex + 1}–${page.endIndex} of ${filteredRecords.length} matching games.` : "Showing 0 matching games.";
 
-  return <div className="catalog-browser">
+  return <div className="catalog-browser" ref={catalogBrowserRef} data-catalog-index-status={indexStatus} onFocusCapture={loadCatalogIndex} onPointerDownCapture={loadCatalogIndex} onKeyDownCapture={loadCatalogIndex}>
     <form className="browser-panel" id="catalog-search" role="search" aria-label="Catalog search and filters" onSubmit={(event) => event.preventDefault()}>
       <div className="browser-panel-heading">
         <div><p className="eyebrow">Find your next favorite</p><h3>Filter the atlas.</h3></div>
