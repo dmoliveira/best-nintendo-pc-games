@@ -10,8 +10,10 @@
     "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
-    "year": 1980
+    "year": 1980,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "game-boy-color"
   ],

@@ -10,8 +10,10 @@
     "Uses structured metadata as provenance rather than imported review copy."
   ],
   "release": {
-    "year": 1999
+    "year": 1999,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-gamecube"
   ],

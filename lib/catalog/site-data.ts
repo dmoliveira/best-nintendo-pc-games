@@ -14,7 +14,9 @@ import type {
   EditorialSignal,
   GameRecord,
   GenreRecord,
+  PlatformAssociationScope,
   PlatformRecord,
+  ReleaseScope,
   SourcePolicy,
 } from "./types";
 
@@ -24,6 +26,11 @@ export interface CatalogGame {
   game: GameRecord;
   platforms: PlatformRecord[];
   genres: GenreRecord[];
+}
+
+export interface CatalogRecordSemantics {
+  releaseScope: ReleaseScope;
+  platformAssociationScope: PlatformAssociationScope;
 }
 
 const root = process.cwd();
@@ -191,6 +198,18 @@ export function getGameBoxFront(game: GameRecord) {
   return selectApprovedBoxFrontAsset(game.assets, context.assetById);
 }
 
+export function resolveCatalogRecordSemantics(game: GameRecord): CatalogRecordSemantics {
+  const isWikidataGenerated = game.sources.includes("wikidata-fact-reference");
+  if (isWikidataGenerated) {
+    if (game.release.scope !== "earliest-title-release" || game.platformAssociationScope !== "source-listed") throw new Error(`${game.slug}: Wikidata-generated records require explicit title-release and source-listed platform semantics`);
+    return { releaseScope: game.release.scope, platformAssociationScope: game.platformAssociationScope };
+  }
+  return {
+    releaseScope: game.release.scope ?? "platform-release",
+    platformAssociationScope: game.platformAssociationScope ?? "verified-release",
+  };
+}
+
 export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame): CatalogSearchRecord {
   const evidenceKinds = [...new Set(game.signals.map((signal) => signal.kind))];
   const editorialSignals = getEditorialSignals(game);
@@ -200,6 +219,7 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
   const criticalLink = game.links.find((link) => link.kind === "critical");
   const editorialLabel = editorialSignals.length > 0 ? editorialSignals.some((signal) => signal.evidenceState === "catalog-method") ? "GameAtlas catalog entry" : "GameAtlas pick" : undefined;
   const publicSignals = getPublicSignalSummaries(game, context);
+  const semantics = resolveCatalogRecordSemantics(game);
   const searchText = normalizeSearchText([
     game.title,
     ...game.aliases,
@@ -217,6 +237,7 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
     title: game.title,
     platformIds: game.platforms,
     platformLabel: platforms.map((platform) => getPlatformDisplayLabel(platform)).join(" · "),
+    platformAssociationScope: semantics.platformAssociationScope,
     releaseFormat: game.releaseFormat,
     editorialThumbnail: catalogArtPath && catalogArt?.alt ? { src: catalogArtPath, alt: catalogArt.alt } : undefined,
   });
@@ -246,6 +267,8 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
     releaseYear: game.release.year,
     releaseDate: game.release.date,
     releaseFormat: game.releaseFormat,
+    releaseScope: semantics.releaseScope,
+    platformAssociationScope: semantics.platformAssociationScope,
     platformIds: platforms.map((platform) => platform.id),
     platformLabels: platforms.map((platform) => platform.name),
     platformDisplayLabels: platforms.map((platform) => getPlatformDisplayLabel(platform)),

@@ -15,6 +15,7 @@ export interface PackageEngineInput {
   title: string;
   platformIds: readonly string[];
   platformLabel: string;
+  platformAssociationScope?: "source-listed" | "verified-release";
   releaseFormat?: "cartridge" | "digital";
   governedFront?: GovernedPackageFront;
   editorialThumbnail?: EditorialThumbnail;
@@ -25,6 +26,7 @@ export interface PackagePresentation {
   platformLabel: string;
   formatId: string;
   formatKind: BoxArtFormatKind;
+  presentationMode: "platform-package" | "source-listed-reference";
   profile: PlatformPackageProfile;
   viewer: {
     widthPx: number;
@@ -45,6 +47,21 @@ export interface PackagePresentation {
   governedFront?: GovernedPackageFront;
 }
 
+const sourceListedReferenceProfile: PlatformPackageProfile = {
+  id: "source-listed-reference",
+  formatId: "catalog-reference",
+  kind: "digital",
+  category: "source-listed catalog reference",
+  material: "digital",
+  openingSide: "none",
+  dimensions: { width: 720, height: 960, depth: 0 },
+  sourceId: "gameatlas-editorial",
+  basis: "representative-estimate",
+  confidence: "high",
+  scope: "Neutral GameAtlas reference presentation for a source-listed platform association.",
+  caveat: "Does not represent platform-specific packaging, distribution, or a verified platform release.",
+};
+
 function clamp(value: number, minimum: number, maximum: number): number {
   return Math.min(maximum, Math.max(minimum, value));
 }
@@ -58,6 +75,32 @@ function viewerSize(dimensions: PackageDimensions, kind: BoxArtFormatKind) {
 }
 
 export function createPackagePresentation(input: PackageEngineInput): PackagePresentation {
+  if (input.platformAssociationScope === "source-listed") {
+    const dimensions = viewerSize(sourceListedReferenceProfile.dimensions, "digital");
+    return {
+      title: input.title,
+      platformLabel: input.platformLabel,
+      formatId: sourceListedReferenceProfile.formatId,
+      formatKind: "digital",
+      presentationMode: "source-listed-reference",
+      profile: sourceListedReferenceProfile,
+      viewer: {
+        ...dimensions,
+        restAngle: 0,
+        tiltAngle: 0,
+        canRotate: false,
+      },
+      thumbnail: {
+        frontSrc: input.editorialThumbnail?.src,
+        frontAlt: input.editorialThumbnail?.alt,
+        aspectRatio: sourceListedReferenceProfile.dimensions.width / sourceListedReferenceProfile.dimensions.height,
+        depthRatio: 0,
+        isPhysical: false,
+      },
+      editorialThumbnail: input.editorialThumbnail,
+      governedFront: undefined,
+    };
+  }
   const resolution = resolvePackageProfile(input.platformIds, input.releaseFormat);
   if (resolution.status !== "resolved") throw new Error(`cannot create package presentation: ${resolution.reason}`);
   const { format, profile } = resolution;
@@ -68,6 +111,7 @@ export function createPackagePresentation(input: PackageEngineInput): PackagePre
     platformLabel: input.platformLabel,
     formatId: format.id,
     formatKind: profile.kind,
+    presentationMode: "platform-package",
     profile,
     viewer: {
       ...dimensions,

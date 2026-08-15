@@ -10,8 +10,10 @@
     "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
   ],
   "release": {
-    "year": 1997
+    "year": 1997,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "game-boy"
   ],

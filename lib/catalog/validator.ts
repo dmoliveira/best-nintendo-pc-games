@@ -272,6 +272,13 @@ export function validateGameRecord(record: unknown, path: string, context: Catal
   for (const source of game.sources ?? []) if (!context.sourceById.has(source)) errors.push(issue(`${path}.sources`, `unknown source ${source}`));
   if (!game.release || !Number.isInteger(game.release.year) || game.release.year < 1950 || game.release.year > 2100) errors.push(issue(`${path}.release.year`, "must be an integer year from 1950 to 2100"));
   if (game.release?.date) validateDate(game.release.date, `${path}.release.date`, context, errors, "any");
+  if (game.release?.scope !== undefined && game.release.scope !== "earliest-title-release" && game.release.scope !== "platform-release") errors.push(issue(`${path}.release.scope`, "must be an approved release scope when present"));
+  if (game.platformAssociationScope !== undefined && game.platformAssociationScope !== "source-listed" && game.platformAssociationScope !== "verified-release") errors.push(issue(`${path}.platformAssociationScope`, "must be an approved platform association scope when present"));
+  const isWikidataGenerated = Array.isArray(game.sources) && game.sources.includes("wikidata-fact-reference");
+  if (isWikidataGenerated && game.release?.scope !== "earliest-title-release") errors.push(issue(`${path}.release.scope`, "Wikidata-generated records must scope release year as earliest-title-release"));
+  if (isWikidataGenerated && game.platformAssociationScope !== "source-listed") errors.push(issue(`${path}.platformAssociationScope`, "Wikidata-generated records must scope platforms as source-listed"));
+  if (!isWikidataGenerated && game.release?.scope === "earliest-title-release") errors.push(issue(`${path}.release.scope`, "curated records cannot claim an earliest-title-release scope without Wikidata provenance"));
+  if (!isWikidataGenerated && game.platformAssociationScope === "source-listed") errors.push(issue(`${path}.platformAssociationScope`, "curated records cannot claim a source-listed platform association without Wikidata provenance"));
   if (game.releaseFormat !== undefined && !["cartridge", "digital"].includes(game.releaseFormat as ReleaseFormat)) errors.push(issue(`${path}.releaseFormat`, "must be cartridge or digital when present"));
   if (game.platforms?.includes("nintendo-dsi") && game.releaseFormat !== "digital") errors.push(issue(`${path}.releaseFormat`, "Nintendo DSi records must identify DSiWare/digital distribution"));
   const packageResolution = resolvePackageProfile(Array.isArray(game.platforms) ? game.platforms : [], game.releaseFormat);

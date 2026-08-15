@@ -45,10 +45,13 @@ const sitemapGameLocations = [...sitemap.matchAll(/<loc>[^<]*\/games\/[^/<]+\/<\
 if (sitemapGameLocations.length !== expectedCatalogGameCount) fail(`sitemap must contain exactly ${expectedCatalogGameCount} game entries, found ${sitemapGameLocations.length}`);
 const catalogSearchIndex = JSON.parse(fs.readFileSync(path.join(outDir, "catalog-search-index.json"), "utf8"));
 const catalogSearchIndexKeys = ["projectionDigest", "recordCount", "records", "schemaVersion"];
-if (!catalogSearchIndex || typeof catalogSearchIndex !== "object" || Array.isArray(catalogSearchIndex) || JSON.stringify(Object.keys(catalogSearchIndex).sort()) !== JSON.stringify(catalogSearchIndexKeys) || catalogSearchIndex.schemaVersion !== 1 || catalogSearchIndex.recordCount !== expectedCatalogGameCount || !/^sha256:[a-f0-9]{64}$/.test(catalogSearchIndex.projectionDigest ?? "") || !Array.isArray(catalogSearchIndex.records) || catalogSearchIndex.records.length !== expectedCatalogGameCount) fail(`catalog search index must contain exactly ${expectedCatalogGameCount} digest-bound records`);
+if (!catalogSearchIndex || typeof catalogSearchIndex !== "object" || Array.isArray(catalogSearchIndex) || JSON.stringify(Object.keys(catalogSearchIndex).sort()) !== JSON.stringify(catalogSearchIndexKeys) || catalogSearchIndex.schemaVersion !== 2 || catalogSearchIndex.recordCount !== expectedCatalogGameCount || !/^sha256:[a-f0-9]{64}$/.test(catalogSearchIndex.projectionDigest ?? "") || !Array.isArray(catalogSearchIndex.records) || catalogSearchIndex.records.length !== expectedCatalogGameCount) fail(`catalog search index must contain exactly ${expectedCatalogGameCount} digest-bound records`);
 if (fs.statSync(path.join(outDir, "catalog-search-index.json")).size > maximumCatalogSearchIndexBytes) fail(`catalog search index exceeds ${maximumCatalogSearchIndexBytes} bytes`);
 for (const field of forbiddenSearchIndexFields) if (JSON.stringify(catalogSearchIndex.records ?? []).includes(`"${field}":`)) fail(`catalog search index leaks raw evidence field ${field}`);
+if (!(catalogSearchIndex.records ?? []).every((record) => (record?.releaseScope === "earliest-title-release" && record?.platformAssociationScope === "source-listed" && record?.packageThumbnail?.kind === "digital" && record?.packageThumbnail?.formatId === "catalog-reference" && record?.packageThumbnail?.depthRatio === 0) || (record?.releaseScope === "platform-release" && record?.platformAssociationScope === "verified-release"))) fail("catalog search index must retain explicit aligned semantics and flat reference presentation for source-listed records");
 const initialCatalogSlugs = new Set(catalogSearchIndex.records.slice(0, expectedInitialCatalogCards).map((record) => record?.slug).filter((slug) => typeof slug === "string"));
+const initialSourceListedRecords = catalogSearchIndex.records.slice(0, expectedInitialCatalogCards).filter((record) => record?.platformAssociationScope === "source-listed");
+if (initialSourceListedRecords.length > 0 && (!html.includes("Wikidata-listed platforms") || !html.includes("Title year"))) fail("home cards must visibly scope generated Wikidata platform associations and title years");
 const detailLinkCounts = new Map();
 for (const match of html.matchAll(/<a[^>]+href="[^"]*\/games\/([^/"?]+)\/[^"]*"/g)) detailLinkCounts.set(match[1], (detailLinkCounts.get(match[1]) ?? 0) + 1);
 if (initialCatalogSlugs.size !== expectedInitialCatalogCards) fail(`catalog search index must expose ${expectedInitialCatalogCards} unique initial slugs`);
@@ -56,6 +59,7 @@ for (const slug of initialCatalogSlugs) if (detailLinkCounts.get(slug) !== 1) fa
 if (detailLinkCounts.size !== expectedInitialCatalogCards) fail(`home page must expose exactly ${expectedInitialCatalogCards} primary detail links, found ${detailLinkCounts.size}`);
 const catalogIndexHtml = fs.readFileSync(path.join(outDir, "catalog/index.html"), "utf8");
 if (!catalogIndexHtml.includes("Browse every game.")) fail("no-JavaScript catalog index is missing its heading");
+if (!catalogIndexHtml.includes("Wikidata-listed platforms:")) fail("no-JavaScript catalog index must scope generated platform associations");
 for (const game of gameRecords) if (!catalogIndexHtml.includes(`games/${game.slug}/`)) fail(`no-JavaScript catalog index is missing ${game.slug}`);
 const assetManifest = JSON.parse(fs.readFileSync(path.join(rootDir, "data/assets-manifest.json"), "utf8"));
 const assetById = new Map((assetManifest.assets ?? []).map((asset) => [asset.assetId, asset]));
@@ -81,11 +85,15 @@ for (const game of gameRecords) {
   const expectedEvidenceLabel = game.signals?.some((signal) => signal?.kind === "editorial" && signal?.evidenceState === "catalog-method") ? "Catalog method" : "Original editorial";
   if (!gameHtml.includes(expectedEvidenceLabel)) fail(`${route} does not contain ${expectedEvidenceLabel} evidence labeling`);
   if (!gameHtml.includes('data-attribute-glyph="year"') || !gameHtml.includes("detail-label")) fail(`${route} is missing text-backed metadata glyphs`);
+  if (game.release?.scope === "earliest-title-release" || game.platformAssociationScope === "source-listed") {
+    if (game.release?.scope !== "earliest-title-release" || game.platformAssociationScope !== "source-listed" || !gameHtml.includes("Earliest documented title release") || !gameHtml.includes("Title year") || !gameHtml.includes("Wikidata-listed platform") || !gameHtml.includes("do not establish a platform-specific release date") || !gameHtml.includes("no platform-specific package is implied")) fail(`${route} must visibly distinguish a title year and Wikidata-listed platform from a platform release date or package`);
+  }
   for (const link of (game.links ?? []).filter((candidate) => candidate.kind === "critical")) if (!gameHtml.includes(link.url)) fail(`${route} is missing its outbound critical context link`);
   if (gameHtml.includes("80+") || /(?:popularity value|popularity rank)/i.test(gameHtml)) fail(`${route} exposes unauthorized numeric evidence messaging`);
   checkNoRawEvidence(gameHtml, route);
   const boxAssets = Array.isArray(game.assets) ? game.assets.filter((asset) => asset?.role === "box-front") : [];
-  if (boxAssets.length === 0 && !gameHtml.includes("GameAtlas reference case")) fail(`${route} does not retain the no-art reference package fallback`);
+  const expectedReferenceFallback = game.platformAssociationScope === "source-listed" ? "GameAtlas reference presentation — no platform-specific package is implied" : "GameAtlas reference case";
+  if (boxAssets.length === 0 && !gameHtml.includes(expectedReferenceFallback)) fail(`${route} does not retain its safe no-art reference fallback`);
   for (const issue of validateGameArtExport({ game, gameHtml, outDir, assetById, expectedBasePath })) fail(`${route} ${issue}`);
   if (!sitemap.includes(`games/${game.slug}/`)) fail(`sitemap is missing ${game.slug}`);
 }
@@ -107,6 +115,12 @@ for (const hub of [...platformRecords.map((record) => ({ type: "platform", recor
   if (!/Original editorial|GameAtlas editorial|Catalog method|GameAtlas catalog entry/.test(hubHtml)) fail(`${route} is missing catalog evidence labeling`);
   if (!sitemap.includes(`${hub.type}s/${hub.record.id}/`)) fail(`sitemap is missing ${route}`);
   checkNoRawEvidence(hubHtml, route);
+}
+const switch2HubPath = path.join(outDir, "platforms/nintendo-switch-2/index.html");
+if (!fs.existsSync(switch2HubPath)) fail("missing Switch 2 platform hub");
+else {
+  const switch2HubHtml = fs.readFileSync(switch2HubPath, "utf8");
+  if (!switch2HubHtml.includes("Source-listed catalog associations do not establish an individual platform release date.") || /native Switch 2 releases|platform-specific official pages/.test(switch2HubHtml)) fail("Switch 2 platform hub must retain neutral source-listed chronology wording");
 }
 const allFiles = [];
 function walk(directory) { for (const entry of fs.readdirSync(directory, { withFileTypes: true })) { const fullPath = path.join(directory, entry.name); if (entry.isDirectory()) walk(fullPath); else allFiles.push(fullPath); } }

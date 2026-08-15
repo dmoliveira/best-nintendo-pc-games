@@ -280,6 +280,7 @@
       "allowedFields": [
         "wikidataTitleLabel",
         "wikidataReleaseYear",
+        "wikidataPlatformDebutYear",
         "wikidataListedPlatform",
         "wikidataListedGenre",
         "individualSourceUrl"
@@ -294,12 +295,38 @@
       "dataAccessUrl": "https://www.wikidata.org/wiki/Wikidata:Data_access",
       "queryServiceUrl": "https://query.wikidata.org/",
       "recheckBefore": "each frozen inventory refresh",
-      "notes": "Approved only for Wikidata structured data: title label, an earliest documented P577 release year, Wikidata-listed platform and genre statements, QID, and a direct item URL. Not all Wikidata website content is CC0. Do not copy prose, scores, sitelink counts, images, rankings, or other provider content.",
+      "notes": "Approved only for Wikidata structured data: title label, an earliest documented P577 release year, Wikidata-listed platform and genre statements, an earliest known platform-debut year used only as a chronology audit guard, QID, and a direct item URL. Not all Wikidata website content is CC0. Do not copy prose, scores, sitelink counts, images, rankings, or other provider content.",
       "reviewedBy": "GameAtlas catalog-1000 source review",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
       "decisionEvidence": "https://www.wikidata.org/wiki/Wikidata:Copyright",
       "coveredProcess": "Frozen local import through the Wikidata Query Service. Structured statements are retained with QID provenance; all editorial copy and art are authored in GameAtlas and no provider prose, media, ratings, or popularity metrics are copied."
+    },
+    {
+      "id": "nintendo-platform-history",
+      "provider": "Nintendo",
+      "role": "first-party platform debut chronology reference",
+      "status": "approved",
+      "allowedFields": [
+        "platformDebutYear",
+        "individualSourceUrl"
+      ],
+      "numericScores": "not-authorized",
+      "reviewText": "do-not-copy",
+      "images": "do-not-download",
+      "attribution": "Nintendo corporate history and release announcements are linked as platform-debut evidence; no prose or media is copied.",
+      "termsUrl": null,
+      "recheckBefore": "each chronology refresh",
+      "notes": "Approved only for earliest known platform debut years used as a chronology audit guard. It does not establish an individual title release, availability, native status, port status, or re-release date.",
+      "reviewedBy": "GameAtlas catalog chronology review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "decisionEvidence": "https://www.nintendo.co.jp/corporate/history/index.html",
+      "coveredProcess": "Retain cited Nintendo platform debut years in the local chronology registry solely to flag title-year/platform-association ambiguity; do not copy prose, media, reviews, scores, or title availability claims.",
+      "evidenceUrls": [
+        "https://www.nintendo.co.jp/corporate/history/index.html",
+        "https://www.nintendo.co.jp/corporate/release/en/2025/250402.html"
+      ]
     }
   ],
   "support": {

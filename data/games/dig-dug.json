@@ -10,8 +10,10 @@
     "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
-    "year": 1982
+    "year": 1982,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "game-boy"
   ],

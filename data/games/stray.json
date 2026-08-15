@@ -10,8 +10,10 @@
     "Uses structured metadata as provenance rather than imported review copy."
   ],
   "release": {
-    "year": 2022
+    "year": 2022,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-switch"
   ],

@@ -10,8 +10,10 @@
     "Links the catalog entry to a source record without presenting a rating."
   ],
   "release": {
-    "year": 1996
+    "year": 1996,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-snes"
   ],

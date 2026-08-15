@@ -10,8 +10,10 @@
     "Preserves a direct source trail without copying provider prose or media."
   ],
   "release": {
-    "year": 1991
+    "year": 1991,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "game-boy"
   ],

@@ -10,8 +10,10 @@
     "Uses structured metadata as provenance rather than imported review copy."
   ],
   "release": {
-    "year": 2004
+    "year": 2004,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "pc-windows"
   ],

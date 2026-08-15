@@ -47,7 +47,7 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /showImages=\{state\.images !== "hide"\}/);
   assert.match(browser, /name="card-images" value="hide"/);
   assert.match(browser, /columns/);
-  assert.match(browser, /CatalogCards records={displayRecords} basePath={basePath} columns={state.columns} showImages=\{state\.images !== "hide"\} showResultPosition/);
+  assert.match(browser, /CatalogCards records={displayRecords} basePath={basePath} columns={state.columns} showImages=\{state\.images !== "hide"\} sourceListedByDefault=\{!loadedRecords && initialSourceListed\} showResultPosition/);
   assert.match(browser, /resultPositionOffset/);
   assert.match(browser, /Score \(licensed data only\)/);
   assert.match(browser, /catalog-pagination/);
@@ -63,6 +63,8 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(cards, /data-platform-overflow/);
   assert.match(cards, /data-genre-overflow/);
   assert.match(cards, /<ul className="game-card-topline-platforms"/);
+  assert.match(cards, /Wikidata-listed platforms/);
+  assert.match(cards, /Title year/);
   assert.match(cards, /function filterHref\(basePath: string, key: CatalogFilterKey/);
   assert.match(cards, /filterHref\(basePath, "platform", platformId\)/);
   assert.match(cards, /filterHref\(basePath, "genre", genreId\)/);
@@ -77,7 +79,8 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /getCatalogPaginationItems/);
   assert.match(browser, /pagination-ellipsis/);
   assert.match(page, /initialRecords=/);
-  assert.match(page, /map\(toCatalogCardRecord\)/);
+  assert.match(page, /initialSourceListed/);
+  assert.match(page, /map\(\(record\) => toCatalogCardRecord\(record, !initialSourceListed\)\)/);
   assert.match(page, /catalogIndexDigest=/);
   assert.match(page, /catalogIndexUrl=/);
   assert.match(browser, /fetch\(catalogIndexUrl, \{ signal: controller\.signal \}\)/);
@@ -149,6 +152,14 @@ test("game detail pages expose static params, a skip link, and explicit editoria
   assert.match(gamePage, /Official &amp; external resources/);
   assert.match(gamePage, /DSiWare · Digital/);
   assert.match(gamePage, /First documented release/);
+  assert.match(gamePage, /Earliest documented title release/);
+  assert.match(gamePage, /Wikidata-listed platforms/);
+  assert.match(gamePage, /Title year \$\{game\.release\.year\}/);
+  assert.match(gamePage, /do not establish a platform-specific release date/);
+  assert.match(browser, /From catalog year/);
+  assert.match(browser, /To catalog year/);
+  assert.match(browser, /not a platform release date/);
+  assert.match(catalogIndex, /Wikidata-listed platforms:/);
 });
 
 test("game pages retain governed package views and a visible reference fallback", () => {
@@ -156,6 +167,8 @@ test("game pages retain governed package views and a visible reference fallback"
   assert.match(gamePage, /site\.assetPath\(boxAsset\.path\.replace/);
   assert.match(gamePage, /Catalog method/);
   assert.match(boxViewer, /GameAtlas reference case/);
+  assert.match(boxViewer, /source-listed-reference/);
+  assert.match(boxViewer, /no platform-specific package is implied/);
   assert.match(boxViewer, /data-game-box-stage/);
   assert.match(boxViewer, /aria-live="polite"/);
   assert.match(boxViewer, /requestFullscreen/);

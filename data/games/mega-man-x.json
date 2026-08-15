@@ -10,8 +10,10 @@
     "Uses structured metadata as provenance rather than imported review copy."
   ],
   "release": {
-    "year": 1993
+    "year": 1993,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-snes"
   ],

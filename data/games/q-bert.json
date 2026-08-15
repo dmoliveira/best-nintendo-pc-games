@@ -10,8 +10,10 @@
     "Links the catalog entry to a source record without presenting a rating."
   ],
   "release": {
-    "year": 1982
+    "year": 1982,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "game-boy-color"
   ],

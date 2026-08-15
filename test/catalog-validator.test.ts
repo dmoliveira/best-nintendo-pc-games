@@ -53,6 +53,26 @@ test("accepts a valid game record with no signals or assets", () => {
   assert.deepEqual(validateGameRecord(baseGame, "fixture", context), []);
 });
 
+test("requires explicit title-year and source-listed platform semantics for Wikidata-generated records", () => {
+  const wikidataContext: CatalogContext = {
+    ...context,
+    sourceById: new Map([
+      ...context.sourceById,
+      ["wikidata-fact-reference", sourcePolicy("wikidata-fact-reference", "Wikidata contributors", ["wikidataReleaseYear", "wikidataListedPlatform"])],
+    ]),
+  };
+  const generated = {
+    ...baseGame,
+    sources: ["wikidata-fact-reference"],
+    release: { year: 2013, scope: "earliest-title-release" as const },
+    platformAssociationScope: "source-listed" as const,
+  };
+  assert.deepEqual(validateGameRecord(generated, "generated", wikidataContext), []);
+  assert.ok(validateGameRecord({ ...generated, release: { year: 2013 } }, "missing-release-scope", wikidataContext).some((problem) => problem.path.endsWith("release.scope")));
+  assert.ok(validateGameRecord({ ...generated, platformAssociationScope: undefined }, "missing-platform-scope", wikidataContext).some((problem) => problem.path.endsWith("platformAssociationScope")));
+  assert.ok(validateGameRecord({ ...baseGame, release: { year: 2013, scope: "earliest-title-release" as const } }, "curated-title-scope", context).some((problem) => problem.message.includes("curated records")));
+});
+
 test("distinguishes deterministic catalog-method signals from original editorial", () => {
   const catalogMethod = {
     kind: "editorial",

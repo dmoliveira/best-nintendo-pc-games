@@ -13,6 +13,7 @@ test("keeps the public search index aligned with the validated client projection
   const content = readFileSync(indexPath, "utf8");
   const envelope = JSON.parse(content);
   assert.equal(content, serializeCatalogSearchIndex(records));
+  assert.equal(envelope.schemaVersion, 2);
   assert.equal(envelope.recordCount, 1000);
   assert.equal(envelope.records.length, 1000);
   assert.equal((await parseCatalogSearchIndex(envelope, 1000, envelope.projectionDigest, catalogIndexUrl))?.length, 1000);
@@ -43,7 +44,19 @@ test("fails closed when a fetched search index has unsafe or misaligned records"
   leakedField[0].rationale = "unexpected";
   assert.equal(await parseEnvelope(leakedField), undefined);
 
+  const missingSemantics = cloneRecords();
+  delete missingSemantics[0].releaseScope;
+  assert.equal(await parseEnvelope(missingSemantics), undefined);
+
+  const mismatchedSemantics = cloneRecords();
+  mismatchedSemantics[0].releaseScope = "earliest-title-release";
+  mismatchedSemantics[0].platformAssociationScope = "verified-release";
+  assert.equal(await parseEnvelope(mismatchedSemantics), undefined);
+
   const stale = JSON.parse(JSON.stringify(envelope));
   stale.records[0].title = "Stale title";
   assert.equal(await parseCatalogSearchIndex(stale, 1000, envelope.projectionDigest, catalogIndexUrl), undefined);
+
+  const versionOne = { ...envelope, schemaVersion: 1 };
+  assert.equal(await parseCatalogSearchIndex(versionOne, 1000, envelope.projectionDigest, catalogIndexUrl), undefined);
 });

@@ -12,6 +12,7 @@ interface CatalogCardsProps {
   basePath: string;
   columns?: CatalogColumns;
   showImages?: boolean;
+  sourceListedByDefault?: boolean;
   showResultPosition?: boolean;
   resultPositionOffset?: number;
   resultPositionTotal?: number;
@@ -32,7 +33,7 @@ function filterHref(basePath: string, key: CatalogFilterKey, value: string | num
   return `${basePath}${catalogFilterHref(key, value)}`;
 }
 
-export default function CatalogCards({ records, basePath, columns = "auto", showImages = true, showResultPosition = false, resultPositionOffset = 0, resultPositionTotal = records.length }: CatalogCardsProps) {
+export default function CatalogCards({ records, basePath, columns = "auto", showImages = true, sourceListedByDefault = false, showResultPosition = false, resultPositionOffset = 0, resultPositionTotal = records.length }: CatalogCardsProps) {
   const layoutClass = columns === "auto" ? "" : ` game-grid--columns-${columns}`;
   return <div className={`game-grid${layoutClass}`}>{records.map((record, index) => {
     const visiblePlatforms = record.platformIds.slice(0, 2);
@@ -42,6 +43,8 @@ export default function CatalogCards({ records, basePath, columns = "auto", show
     const hiddenGenreLabels = record.genreLabels.slice(visibleGenres.length);
     const hiddenGenreCount = hiddenGenreLabels.length;
     const distributionLabel = record.releaseFormat === "digital" ? "Digital" : record.releaseFormat === "cartridge" ? "Cartridge" : undefined;
+    const isSourceListed = record.sourceListed ?? sourceListedByDefault;
+    const isEarliestTitleRelease = isSourceListed;
     const credits: CardCredit[] = [
       ...(record.developer ? [{ label: "Dev", value: record.developer, glyph: "studio" as const, filterKey: "developer" as const }] : []),
       ...(record.publisher ? [{ label: "Pub", value: record.publisher, glyph: "publisher" as const, filterKey: "publisher" as const }] : []),
@@ -54,16 +57,19 @@ export default function CatalogCards({ records, basePath, columns = "auto", show
       <div className="game-card-topline">
         <div className="game-card-topline-leading">
           {showResultPosition ? <span className="game-card-position" aria-label={positionLabel} title="Current catalog order, not a quality ranking"><span className="game-card-position-label">Item</span> {String(resultPosition).padStart(2, "0")} <span className="game-card-position-total">/ {resultPositionTotal}</span></span> : null}
-          <ul className="game-card-topline-platforms" aria-label="Platforms">
-            {visiblePlatforms.map((platformId, platformIndex) => <li className="game-card-platform" key={platformId} title={record.platformLabels[platformIndex]}>
-              <PlatformGlyph platformId={platformId} />
-              <a className="game-card-filter-link" data-catalog-filter="platform" aria-label={`Show games for ${record.platformLabels[platformIndex]}`} href={filterHref(basePath, "platform", platformId)}>{record.platformDisplayLabels[platformIndex]}</a>
-              {record.platformHubIds.includes(platformId) ? <Link className="game-card-guide-link" data-catalog-guide="platform" aria-label={`Open ${record.platformLabels[platformIndex]} platform guide`} href={`/platforms/${platformId}/`}>Guide</Link> : null}
-            </li>)}
-            {hiddenPlatformCount > 0 ? <li className="game-card-platform game-card-platform--more" data-platform-overflow={hiddenPlatformCount}><span aria-hidden="true">+{hiddenPlatformCount}</span> platforms<span className="visually-hidden">: {hiddenPlatformLabels.join(", ")}</span></li> : null}
-          </ul>
+          <div className="game-card-platform-group">
+            {isSourceListed ? <span className="game-card-platform-scope">Wikidata-listed platforms</span> : null}
+            <ul className="game-card-topline-platforms" aria-label={isSourceListed ? "Wikidata-listed platforms" : "Platforms"}>
+              {visiblePlatforms.map((platformId, platformIndex) => <li className="game-card-platform" key={platformId} title={record.platformLabels[platformIndex]}>
+                <PlatformGlyph platformId={platformId} />
+                <a className="game-card-filter-link" data-catalog-filter="platform" aria-label={isSourceListed ? `Show Wikidata-listed catalog entries associated with ${record.platformLabels[platformIndex]}` : `Show catalog entries associated with ${record.platformLabels[platformIndex]}`} href={filterHref(basePath, "platform", platformId)}>{record.platformDisplayLabels[platformIndex]}</a>
+                {record.platformHubIds.includes(platformId) ? <Link className="game-card-guide-link" data-catalog-guide="platform" aria-label={`Open ${record.platformLabels[platformIndex]} platform guide`} href={`/platforms/${platformId}/`}>Guide</Link> : null}
+              </li>)}
+              {hiddenPlatformCount > 0 ? <li className="game-card-platform game-card-platform--more" data-platform-overflow={hiddenPlatformCount}><span aria-hidden="true">+{hiddenPlatformCount}</span> platforms<span className="visually-hidden">: {hiddenPlatformLabels.join(", ")}</span></li> : null}
+            </ul>
+          </div>
         </div>
-        <a className="game-card-year game-card-filter-link" data-catalog-filter="year" aria-label={`Show games first released in ${record.releaseYear}`} href={filterHref(basePath, "year", record.releaseYear)}><AttributeGlyph kind="year" />{record.releaseYear}</a>
+        <a className="game-card-year game-card-filter-link" data-catalog-filter="year" aria-label={`Show catalog entries with catalog year ${record.releaseYear}`} href={filterHref(basePath, "year", record.releaseYear)}><AttributeGlyph kind="year" /><span className="game-card-year-label">{isEarliestTitleRelease ? "Title year" : "Release year"}</span>{record.releaseYear}</a>
       </div>
       {showImages ? <div className="game-card-art">
         <PackageThumbnail thumbnail={record.packageThumbnail} emoji={record.emoji} />

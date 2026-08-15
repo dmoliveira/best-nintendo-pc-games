@@ -10,8 +10,10 @@
     "Uses a factual reference path instead of an aggregate score or review."
   ],
   "release": {
-    "year": 2019
+    "year": 2019,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-switch"
   ],

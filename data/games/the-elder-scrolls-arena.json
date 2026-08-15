@@ -10,8 +10,10 @@
     "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
-    "year": 1994
+    "year": 1994,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "pc-windows"
   ],

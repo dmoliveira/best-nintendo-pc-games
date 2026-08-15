@@ -18,6 +18,7 @@
     "validate:catalog": "tsx scripts/validate-catalog.ts",
     "validate:catalog-search-index": "tsx scripts/generate-catalog-search-index.ts --check",
     "validate:catalog-1000": "node scripts/generate-catalog-1000.mjs --check && node scripts/validate-catalog-1000.mjs",
+    "validate:catalog-chronology": "node scripts/generate-catalog-platform-chronology.mjs --check && node scripts/validate-catalog-platform-chronology.mjs",
     "validate:catalog-expansion": "node scripts/generate-curated-catalog-expansion.mjs --check",
     "validate:export": "node scripts/validate-static-export.mjs",
     "build:catalog-1000": "node scripts/build-catalog-1000.mjs",

@@ -10,8 +10,10 @@
     "Preserves a direct source trail without copying provider prose or media."
   ],
   "release": {
-    "year": 2007
+    "year": 2007,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "game-boy-advance"
   ],

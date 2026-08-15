@@ -10,8 +10,10 @@
     "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
   ],
   "release": {
-    "year": 1998
+    "year": 1998,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-64"
   ],

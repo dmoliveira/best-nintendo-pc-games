@@ -10,8 +10,10 @@
     "Uses structured metadata as provenance rather than imported review copy."
   ],
   "release": {
-    "year": 1994
+    "year": 1994,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "game-boy"
   ],

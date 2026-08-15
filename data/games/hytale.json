@@ -10,8 +10,10 @@
     "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
-    "year": 2026
+    "year": 2026,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "pc-windows"
   ],

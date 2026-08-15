@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import type { CatalogSearchRecord } from "./search";
 
-export const CATALOG_SEARCH_INDEX_SCHEMA_VERSION = 1;
+export const CATALOG_SEARCH_INDEX_SCHEMA_VERSION = 2;
 
 export interface CatalogSearchIndexEnvelope {
   schemaVersion: typeof CATALOG_SEARCH_INDEX_SCHEMA_VERSION;

@@ -10,8 +10,10 @@
     "Labels the source relationship without treating it as a popularity signal."
   ],
   "release": {
-    "year": 1996
+    "year": 1996,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "game-boy-advance"
   ],

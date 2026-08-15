@@ -49,6 +49,8 @@ export interface CatalogSearchRecord {
   releaseYear: number;
   releaseDate?: string;
   releaseFormat?: "cartridge" | "digital";
+  releaseScope: "earliest-title-release" | "platform-release";
+  platformAssociationScope: "source-listed" | "verified-release";
   platformIds: string[];
   platformLabels: string[];
   platformDisplayLabels: string[];
@@ -81,14 +83,23 @@ export type CatalogCardRecord = Pick<CatalogSearchRecord,
   | "genreIds"
   | "genreLabels"
   | "genreHubIds"
->;
+> & {
+  sourceListed?: true;
+};
 
-export function toCatalogCardRecord(record: CatalogSearchRecord): CatalogCardRecord {
+export function toCatalogCardRecord(record: CatalogSearchRecord, includeSourceListed = true): CatalogCardRecord {
+  const packageThumbnail: CatalogPackageThumbnail = {
+    formatId: record.packageThumbnail.formatId,
+    kind: record.packageThumbnail.kind,
+    aspectRatio: record.packageThumbnail.aspectRatio,
+    depthRatio: record.packageThumbnail.depthRatio,
+    ...(record.packageThumbnail.frontPath ? { frontPath: record.packageThumbnail.frontPath } : {}),
+  };
   const card: CatalogCardRecord = {
     slug: record.slug,
     title: record.title,
     emoji: record.emoji,
-    packageThumbnail: record.packageThumbnail,
+    packageThumbnail,
     shortDescription: record.shortDescription,
     releaseYear: record.releaseYear,
     platformIds: record.platformIds,
@@ -106,11 +117,12 @@ export function toCatalogCardRecord(record: CatalogSearchRecord): CatalogCardRec
   if (record.criticSummary) card.criticSummary = record.criticSummary;
   if (record.salesSummary) card.salesSummary = record.salesSummary;
   if (record.releaseFormat) card.releaseFormat = record.releaseFormat;
+  if (includeSourceListed && record.platformAssociationScope === "source-listed") card.sourceListed = true;
   return card;
 }
 
 const catalogSearchRecordKeys = new Set([
-  "slug", "title", "aliases", "emoji", "artPath", "artAlt", "packageThumbnail", "developer", "publisher", "editorialLabel", "criticalLink", "criticSummary", "salesSummary", "shortDescription", "searchText", "releaseYear", "releaseDate", "releaseFormat", "platformIds", "platformLabels", "platformDisplayLabels", "platformHubIds", "genreIds", "genreLabels", "genreHubIds", "evidenceKinds", "evidenceLabels",
+  "slug", "title", "aliases", "emoji", "artPath", "artAlt", "packageThumbnail", "developer", "publisher", "editorialLabel", "criticalLink", "criticSummary", "salesSummary", "shortDescription", "searchText", "releaseYear", "releaseDate", "releaseFormat", "releaseScope", "platformAssociationScope", "platformIds", "platformLabels", "platformDisplayLabels", "platformHubIds", "genreIds", "genreLabels", "genreHubIds", "evidenceKinds", "evidenceLabels",
 ]);
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -185,6 +197,7 @@ function isCatalogSearchRecord(value: unknown, catalogIndexUrl: string): value i
   if (typeof releaseYear !== "number" || !Number.isInteger(releaseYear) || releaseYear < 1950 || releaseYear > 2100) return false;
   if (value.releaseDate !== undefined && (!isNonEmptyString(value.releaseDate, 10) || !/^\d{4}-\d{2}-\d{2}$/.test(value.releaseDate))) return false;
   if (value.releaseFormat !== undefined && value.releaseFormat !== "cartridge" && value.releaseFormat !== "digital") return false;
+  if ((value.releaseScope !== "earliest-title-release" || value.platformAssociationScope !== "source-listed") && (value.releaseScope !== "platform-release" || value.platformAssociationScope !== "verified-release")) return false;
   if (!isStringArray(value.platformIds, 1) || !isStringArray(value.platformLabels, 1) || !isStringArray(value.platformDisplayLabels, 1) || !isStringArray(value.genreIds, 1) || !isStringArray(value.genreLabels, 1)) return false;
   const platformIds = value.platformIds;
   const platformLabels = value.platformLabels;
@@ -209,7 +222,7 @@ async function digestCatalogSearchRecords(records: readonly CatalogSearchRecord[
 }
 
 export async function parseCatalogSearchIndex(value: unknown, expectedCount: number, expectedDigest: string, catalogIndexUrl: string): Promise<CatalogSearchRecord[] | undefined> {
-  if (!isRecord(value) || Object.keys(value).sort().join(",") !== "projectionDigest,recordCount,records,schemaVersion" || value.schemaVersion !== 1 || value.recordCount !== expectedCount || value.projectionDigest !== expectedDigest || !/^sha256:[a-f0-9]{64}$/.test(expectedDigest) || !Array.isArray(value.records) || value.records.length !== expectedCount) return undefined;
+  if (!isRecord(value) || Object.keys(value).sort().join(",") !== "projectionDigest,recordCount,records,schemaVersion" || value.schemaVersion !== 2 || value.recordCount !== expectedCount || value.projectionDigest !== expectedDigest || !/^sha256:[a-f0-9]{64}$/.test(expectedDigest) || !Array.isArray(value.records) || value.records.length !== expectedCount) return undefined;
   const slugs = new Set<string>();
   for (const record of value.records) {
     if (!isCatalogSearchRecord(record, catalogIndexUrl) || slugs.has(record.slug)) return undefined;
@@ -248,14 +261,16 @@ export interface SearchStateOptions {
   yearMax?: number;
 }
 
+export type CatalogSearchFacetRecord = Pick<CatalogSearchRecord, "platformIds" | "genreIds" | "releaseYear" | "developer" | "publisher">;
+
 export const DEFAULT_PAGE_SIZE = 24;
 export const PAGE_SIZE_OPTIONS = [12, 24, 48] as const;
 export type CatalogPageSize = typeof PAGE_SIZE_OPTIONS[number];
 
 export const CATALOG_SORT_OPTIONS: ReadonlyArray<{ value: CatalogSort; label: string }> = [
   { value: "relevance", label: "Relevance" },
-  { value: "newest", label: "Newest release" },
-  { value: "oldest", label: "Oldest release" },
+  { value: "newest", label: "Newest catalog year" },
+  { value: "oldest", label: "Oldest catalog year" },
   { value: "platform", label: "Platform" },
   { value: "title", label: "Title A–Z" },
 ];
@@ -296,7 +311,7 @@ export function getEffectiveCatalogSort(state: Pick<CatalogSearchState, "q" | "s
   return requestedSort === "relevance" && !normalizeSearchText(state.q) ? "title" : requestedSort;
 }
 
-export function createSearchStateOptions(records: readonly CatalogCardRecord[]): SearchStateOptions {
+export function createSearchStateOptions(records: readonly CatalogSearchFacetRecord[]): SearchStateOptions {
   const platformIds = new Set<string>();
   const genreIds = new Set<string>();
   const years = new Set<string>();

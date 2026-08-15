@@ -10,8 +10,10 @@
     "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
-    "year": 1996
+    "year": 1996,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "game-boy-color"
   ],

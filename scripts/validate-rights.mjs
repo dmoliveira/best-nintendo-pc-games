@@ -11,6 +11,9 @@ const assetPolicy = JSON.parse(fs.readFileSync(path.join(root, "data/asset-right
 const evidencePolicy = JSON.parse(fs.readFileSync(path.join(root, "data/evidence-policy.json"), "utf8"));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "data/assets-manifest.json"), "utf8"));
 const boxArtFormats = JSON.parse(fs.readFileSync(path.join(root, "data/box-art-formats.json"), "utf8"));
+const platformChronology = JSON.parse(fs.readFileSync(path.join(root, "data/platform-chronology.json"), "utf8"));
+const catalogInventory = JSON.parse(fs.readFileSync(path.join(root, "data/curation/2026-08-15-wikidata-catalog-1000.json"), "utf8"));
+const platformTaxonomy = JSON.parse(fs.readFileSync(path.join(root, "data/platforms.json"), "utf8"));
 const allowedStatuses = new Set(["approved", "outbound-only", "pending-review", "prohibited"]);
 const requiredManifestFields = assetPolicy.manifestRequiredFields;
 const failures = [];
@@ -145,12 +148,47 @@ if (!wikidata) {
 } else {
   const required = { provider: "Wikidata contributors", role: "CC0 structured-data catalog reference", status: "approved", numericScores: "not-authorized", reviewText: "do-not-copy", images: "do-not-download", termsUrl: "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/en", licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/legalcode", structuredDataPolicyUrl: "https://www.wikidata.org/wiki/Wikidata:Copyright", dataAccessUrl: "https://www.wikidata.org/wiki/Wikidata:Data_access", queryServiceUrl: "https://query.wikidata.org/" };
   for (const [field, expected] of Object.entries(required)) if (wikidata[field] !== expected) fail("wikidata-fact-reference." + field + " must equal the approved source contract");
-  const allowedFields = ["wikidataTitleLabel", "wikidataReleaseYear", "wikidataListedPlatform", "wikidataListedGenre", "individualSourceUrl"];
+  const allowedFields = ["wikidataTitleLabel", "wikidataReleaseYear", "wikidataPlatformDebutYear", "wikidataListedPlatform", "wikidataListedGenre", "individualSourceUrl"];
   if (JSON.stringify(wikidata.allowedFields) !== JSON.stringify(allowedFields)) fail("wikidata-fact-reference.allowedFields must be the structured-data whitelist");
   for (const field of ["attribution", "notes", "coveredProcess"]) if (!nonEmpty(wikidata[field])) fail("wikidata-fact-reference." + field + " must be non-empty");
-  if (!String(wikidata.notes).includes("Not all Wikidata website content is CC0") || !String(wikidata.notes).includes("Do not copy prose") || !String(wikidata.coveredProcess).includes("Frozen local import")) fail("wikidata-fact-reference must scope CC0 to structured data, prohibit copied provider content, and require frozen imports");
+  if (!String(wikidata.notes).includes("Not all Wikidata website content is CC0") || !String(wikidata.notes).includes("Do not copy prose") || !String(wikidata.notes).includes("platform-debut year") || !String(wikidata.coveredProcess).includes("Frozen local import")) fail("wikidata-fact-reference must scope CC0 to structured data, prohibit copied provider content, and constrain platform-debut facts to the chronology audit");
   for (const field of ["termsUrl", "licenseUrl", "structuredDataPolicyUrl", "dataAccessUrl", "queryServiceUrl"]) if (!isValidHttpsUrl(wikidata[field])) fail("wikidata-fact-reference." + field + " must be a valid https URL");
 }
+const nintendoHistory = (source.sources ?? []).find((record) => record.id === "nintendo-platform-history");
+if (!nintendoHistory) {
+  fail("missing approved nintendo-platform-history source contract");
+} else {
+  const required = { provider: "Nintendo", role: "first-party platform debut chronology reference", status: "approved", numericScores: "not-authorized", reviewText: "do-not-copy", images: "do-not-download", decisionEvidence: "https://www.nintendo.co.jp/corporate/history/index.html" };
+  for (const [field, expected] of Object.entries(required)) if (nintendoHistory[field] !== expected) fail("nintendo-platform-history." + field + " must equal the approved source contract");
+  if (JSON.stringify(nintendoHistory.allowedFields) !== JSON.stringify(["platformDebutYear", "individualSourceUrl"])) fail("nintendo-platform-history.allowedFields must be the chronology whitelist");
+  if (JSON.stringify(nintendoHistory.evidenceUrls) !== JSON.stringify(["https://www.nintendo.co.jp/corporate/history/index.html", "https://www.nintendo.co.jp/corporate/release/en/2025/250402.html"])) fail("nintendo-platform-history.evidenceUrls must retain the reviewed corporate-history and Switch 2 announcement links");
+  for (const field of ["attribution", "notes", "coveredProcess"]) if (!nonEmpty(nintendoHistory[field])) fail("nintendo-platform-history." + field + " must be non-empty");
+  if (!String(nintendoHistory.notes).includes("does not establish an individual title release") || !String(nintendoHistory.coveredProcess).includes("chronology registry")) fail("nintendo-platform-history must limit debut years to chronology audit use");
+}
+
+const chronologyEntries = Array.isArray(platformChronology.platforms) ? platformChronology.platforms : [];
+const taxonomyPlatformIds = new Set((platformTaxonomy.items ?? []).map((platform) => platform.id));
+const chronologyPlatformIds = new Set();
+if (platformChronology.schemaVersion !== 1 || platformChronology.reviewedAt !== "2026-08-15" || !nonEmpty(platformChronology.policy) || chronologyEntries.length !== taxonomyPlatformIds.size || taxonomyPlatformIds.size !== 16) fail("platform chronology registry must retain 16 reviewed platform entries");
+for (const [index, entry] of chronologyEntries.entries()) {
+  const label = `platform chronology registry entry ${index}`;
+  if (!entry || !nonEmpty(entry.platformId) || chronologyPlatformIds.has(entry.platformId) || !taxonomyPlatformIds.has(entry.platformId)) {
+    fail(`${label}: must reference one unique catalog platform`);
+    continue;
+  }
+  chronologyPlatformIds.add(entry.platformId);
+  if (entry.wikidataPlatformId !== catalogInventory.platformQids?.[entry.platformId]) fail(`${label}: Wikidata platform QID must match the frozen catalog inventory`);
+  if (!Number.isInteger(entry.debutYear) || entry.debutYear < 1950 || entry.debutYear > 2100 || entry.reviewedAt !== platformChronology.reviewedAt || entry.scope !== "earliest-known-market-debut" || !nonEmpty(entry.caveat) || !isValidHttpsUrl(entry.sourceUrl)) fail(`${label}: must retain valid debut-year evidence, review date, scope, and caveat`);
+  if (entry.sourceId === "nintendo-platform-history") {
+    if (!nintendoHistory?.allowedFields?.includes("platformDebutYear") || !nintendoHistory.evidenceUrls?.includes(entry.sourceUrl)) fail(`${label}: Nintendo chronology evidence must use an approved recorded URL`);
+  } else if (entry.sourceId === "wikidata-fact-reference") {
+    if (!wikidata?.allowedFields?.includes("wikidataPlatformDebutYear") || entry.sourceUrl !== `https://www.wikidata.org/wiki/${entry.wikidataPlatformId}`) fail(`${label}: Wikidata chronology evidence must use its approved structured-data item URL`);
+  } else {
+    fail(`${label}: must use an approved chronology source`);
+  }
+}
+if (chronologyPlatformIds.size !== taxonomyPlatformIds.size || [...taxonomyPlatformIds].some((id) => !chronologyPlatformIds.has(id))) fail("platform chronology registry must cover every catalog platform exactly once");
+
 if (typeof source.support?.url === "string" || JSON.stringify(source).includes("buy.stripe.com") || JSON.stringify(source).includes("Codememory memory_")) fail("actionable support URL or internal tracker reference is public");
 
 const manifestByPath = new Map();
@@ -229,6 +267,7 @@ const publicTextFiles = [
   "data/asset-rights.json",
   "data/assets-manifest.json",
   "data/box-art-formats.json",
+  "data/platform-chronology.json",
   "public/catalog-search-index.json",
   "docs/rights-and-support-policy.md",
   "docs/guides/game-box-art-workflow.md",
