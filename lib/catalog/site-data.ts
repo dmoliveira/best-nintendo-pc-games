@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { localTodayKey } from "../date-policy.mjs";
+import { normalizeSearchText, type CatalogSearchRecord } from "./search";
 import { validateGameRecord } from "./validator";
 import type {
   CatalogContext,
@@ -85,7 +86,11 @@ function loadGames(context: CatalogContext): GameRecord[] {
   }
 
   if (errors.length > 0) throw new Error(`Catalog data is invalid:\n${errors.map((error) => `- ${error}`).join("\n")}`);
-  return games.sort((left, right) => left.title.localeCompare(right.title));
+  return games.sort((left, right) => {
+    const leftKey = normalizeSearchText(left.title);
+    const rightKey = normalizeSearchText(right.title);
+    return leftKey < rightKey ? -1 : leftKey > rightKey ? 1 : left.slug < right.slug ? -1 : left.slug > right.slug ? 1 : 0;
+  });
 }
 
 const platformDocument = asDocument(loadJson("data/platforms.json"));
@@ -125,4 +130,41 @@ export function getPopulatedPlatforms(): PlatformRecord[] {
 
 export function getEditorialSignals(game: GameRecord): EditorialSignal[] {
   return game.signals.filter((signal): signal is EditorialSignal => signal.kind === "editorial");
+}
+
+
+export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame): CatalogSearchRecord {
+  const evidenceKinds = [...new Set(game.signals.map((signal) => signal.kind))];
+  const evidenceLabels = evidenceKinds.map((kind) => kind === "editorial" ? "GameAtlas editorial" : kind);
+  const searchText = normalizeSearchText([
+    game.title,
+    ...game.aliases,
+    game.shortDescription,
+    ...game.highlights,
+    ...game.keywords,
+    game.developer,
+    game.publisher,
+    ...platforms.map((platform) => platform.name),
+    ...genres.map((genre) => genre.name),
+  ].filter((value): value is string => Boolean(value)).join(" "));
+  return {
+    slug: game.slug,
+    title: game.title,
+    aliases: [...game.aliases],
+    emoji: game.emoji,
+    shortDescription: game.shortDescription,
+    searchText,
+    releaseYear: game.release.year,
+    releaseFormat: game.releaseFormat,
+    platformIds: platforms.map((platform) => platform.id),
+    platformLabels: platforms.map((platform) => platform.name),
+    genreIds: genres.map((genre) => genre.id),
+    genreLabels: genres.map((genre) => genre.name),
+    evidenceKinds,
+    evidenceLabels,
+  };
+}
+
+export function getCatalogSearchRecords(): readonly CatalogSearchRecord[] {
+  return catalogGames.map(toCatalogSearchRecord);
 }
