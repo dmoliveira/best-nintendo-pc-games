@@ -57,6 +57,7 @@ interface CatalogBrowserProps {
   catalogIndexDigest: string;
   catalogIndexUrl: string;
   catalogIndexHref: string;
+  basePath: string;
 }
 
 interface FilterOption {
@@ -107,7 +108,7 @@ function nameOptions(records: readonly CatalogCardRecord[], field: "developer" |
   return [...options.entries()].map(([id, label]) => ({ id, label })).sort(compareLabels);
 }
 
-export default function CatalogBrowser({ initialRecords, catalogEntryCount, catalogIndexDigest, catalogIndexUrl, catalogIndexHref }: CatalogBrowserProps) {
+export default function CatalogBrowser({ initialRecords, catalogEntryCount, catalogIndexDigest, catalogIndexUrl, catalogIndexHref, basePath }: CatalogBrowserProps) {
   const [loadedRecords, setLoadedRecords] = useState<readonly CatalogSearchRecord[] | undefined>();
   const [indexStatus, setIndexStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const indexStatusRef = useRef(indexStatus);
@@ -429,7 +430,7 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
     {!catalogReady ? <div className={`catalog-index-status catalog-index-status--${indexStatus}`}><span role="status" aria-live="polite">{indexStatusMessage}</span>{indexStatus === "error" ? <button className="browser-button browser-button--retry" type="button" onClick={retryCatalogIndex}>Retry full catalog</button> : null}</div> : null}
     <div className="result-bar"><p className="result-summary" ref={resultSummaryRef} tabIndex={-1} aria-live={catalogReady ? "polite" : "off"}>{resultSummary}</p><div className="result-tools"><span className="result-detail">Signals kept separate</span><label className="page-size-field" htmlFor="catalog-page-size"><span>Cards</span><select id="catalog-page-size" value={state.pageSize ?? DEFAULT_PAGE_SIZE} onChange={(event) => updatePageSize(event.target.value)}>{PAGE_SIZE_OPTIONS.map((size) => <option value={size} key={size}>{size} / page</option>)}</select></label></div></div>
     {indexStatus === "error" ? <p className="catalog-index-error" role="status">The full catalog index could not load.{hasRecognizedUrlQuery ? " The filters in this link have not been applied." : ""} <button className="text-link" type="button" onClick={retryCatalogIndex}>Retry the full catalog</button> or <a href={catalogIndexHref}>browse every game instead.</a></p> : null}
-    {!catalogReady || filteredRecords.length > 0 ? <CatalogCards records={displayRecords} columns={state.columns} showImages={state.images !== "hide"} showResultPosition resultPositionOffset={resultPositionOffset} resultPositionTotal={resultPositionTotal} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, year, developer, or publisher.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
+    {!catalogReady || filteredRecords.length > 0 ? <CatalogCards records={displayRecords} basePath={basePath} columns={state.columns} showImages={state.images !== "hide"} showResultPosition resultPositionOffset={resultPositionOffset} resultPositionTotal={resultPositionTotal} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, year, developer, or publisher.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
     {hydrated && catalogReady && page.pageCount > 1 ? <nav className="catalog-pagination" aria-label="Catalog pages"><button type="button" className="pagination-button" disabled={page.page === 1} onClick={() => updatePage(page.page - 1)}>Previous</button><div className="pagination-pages">{paginationItems.map((item) => item.type === "ellipsis" ? <span className="pagination-ellipsis" aria-hidden="true" key={`ellipsis-${item.before}-${item.after}`}>…</span> : <button type="button" className={`pagination-button${item.page === page.page ? " pagination-button--current" : ""}`} aria-current={item.page === page.page ? "page" : undefined} aria-label={`Go to page ${item.page}`} key={item.page} onClick={() => updatePage(item.page)}>{item.page}</button>)}</div><button type="button" className="pagination-button" disabled={page.page === page.pageCount} onClick={() => updatePage(page.page + 1)}>Next</button></nav> : null}
   </div>;
 }

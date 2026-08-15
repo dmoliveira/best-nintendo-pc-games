@@ -5,10 +5,11 @@ import AttributeGlyph, { type AttributeGlyphKind } from "./attribute-glyph";
 import PlatformGlyph from "./platform-glyph";
 import PackageThumbnail from "./package-thumbnail";
 import { getGenreTone } from "@/lib/catalog/display";
-import type { CatalogCardRecord, CatalogColumns } from "@/lib/catalog/search";
+import { catalogFilterHref, type CatalogCardRecord, type CatalogColumns, type CatalogFilterKey } from "@/lib/catalog/search";
 
 interface CatalogCardsProps {
   records: readonly CatalogCardRecord[];
+  basePath: string;
   columns?: CatalogColumns;
   showImages?: boolean;
   showResultPosition?: boolean;
@@ -20,13 +21,18 @@ interface CardCredit {
   label: string;
   value: string;
   glyph: AttributeGlyphKind;
+  filterKey: CatalogFilterKey;
 }
 
 function externalLabel(label: string): string {
   return label.replace(/^External\/reference\s+—\s*/, "");
 }
 
-export default function CatalogCards({ records, columns = "auto", showImages = true, showResultPosition = false, resultPositionOffset = 0, resultPositionTotal = records.length }: CatalogCardsProps) {
+function filterHref(basePath: string, key: CatalogFilterKey, value: string | number): string {
+  return `${basePath}${catalogFilterHref(key, value)}`;
+}
+
+export default function CatalogCards({ records, basePath, columns = "auto", showImages = true, showResultPosition = false, resultPositionOffset = 0, resultPositionTotal = records.length }: CatalogCardsProps) {
   const layoutClass = columns === "auto" ? "" : ` game-grid--columns-${columns}`;
   return <div className={`game-grid${layoutClass}`}>{records.map((record, index) => {
     const visiblePlatforms = record.platformIds.slice(0, 2);
@@ -35,14 +41,11 @@ export default function CatalogCards({ records, columns = "auto", showImages = t
     const visibleGenres = record.genreIds.slice(0, 3);
     const hiddenGenreLabels = record.genreLabels.slice(visibleGenres.length);
     const hiddenGenreCount = hiddenGenreLabels.length;
-    const sameTeam = record.developer && record.publisher && record.developer === record.publisher;
     const distributionLabel = record.releaseFormat === "digital" ? "Digital" : record.releaseFormat === "cartridge" ? "Cartridge" : undefined;
-    const credits: CardCredit[] = sameTeam && record.developer
-      ? [{ label: "Team", value: record.developer, glyph: "studio" }]
-      : [
-        ...(record.developer ? [{ label: "Dev", value: record.developer, glyph: "studio" as const }] : []),
-        ...(record.publisher ? [{ label: "Pub", value: record.publisher, glyph: "publisher" as const }] : []),
-      ];
+    const credits: CardCredit[] = [
+      ...(record.developer ? [{ label: "Dev", value: record.developer, glyph: "studio" as const, filterKey: "developer" as const }] : []),
+      ...(record.publisher ? [{ label: "Pub", value: record.publisher, glyph: "publisher" as const, filterKey: "publisher" as const }] : []),
+    ];
     const creditTitle = credits.map(({ label, value }) => `${label}: ${value}`).join(" · ");
     const resultPosition = resultPositionOffset + index + 1;
     const positionLabel = `Current result position ${resultPosition} of ${resultPositionTotal}`;
@@ -54,12 +57,13 @@ export default function CatalogCards({ records, columns = "auto", showImages = t
           <ul className="game-card-topline-platforms" aria-label="Platforms">
             {visiblePlatforms.map((platformId, platformIndex) => <li className="game-card-platform" key={platformId} title={record.platformLabels[platformIndex]}>
               <PlatformGlyph platformId={platformId} />
-              {record.platformHubIds.includes(platformId) ? <Link aria-label={`Open ${record.platformLabels[platformIndex]} platform guide`} href={`/platforms/${platformId}/`}>{record.platformDisplayLabels[platformIndex]}</Link> : <span>{record.platformDisplayLabels[platformIndex]}</span>}
+              <a className="game-card-filter-link" data-catalog-filter="platform" aria-label={`Show games for ${record.platformLabels[platformIndex]}`} href={filterHref(basePath, "platform", platformId)}>{record.platformDisplayLabels[platformIndex]}</a>
+              {record.platformHubIds.includes(platformId) ? <Link className="game-card-guide-link" data-catalog-guide="platform" aria-label={`Open ${record.platformLabels[platformIndex]} platform guide`} href={`/platforms/${platformId}/`}>Guide</Link> : null}
             </li>)}
             {hiddenPlatformCount > 0 ? <li className="game-card-platform game-card-platform--more" data-platform-overflow={hiddenPlatformCount}><span aria-hidden="true">+{hiddenPlatformCount}</span> platforms<span className="visually-hidden">: {hiddenPlatformLabels.join(", ")}</span></li> : null}
           </ul>
         </div>
-        <span className="game-card-year"><AttributeGlyph kind="year" />{record.releaseYear}</span>
+        <a className="game-card-year game-card-filter-link" data-catalog-filter="year" aria-label={`Show games first released in ${record.releaseYear}`} href={filterHref(basePath, "year", record.releaseYear)}><AttributeGlyph kind="year" />{record.releaseYear}</a>
       </div>
       {showImages ? <div className="game-card-art">
         <PackageThumbnail thumbnail={record.packageThumbnail} emoji={record.emoji} />
@@ -70,9 +74,12 @@ export default function CatalogCards({ records, columns = "auto", showImages = t
         <h3><Link className="game-card-title-link" href={`/games/${record.slug}/`}>{record.title}</Link></h3>
         {distributionLabel ? <div className="game-card-detail-chips"><span className="game-card-distribution"><AttributeGlyph kind={record.releaseFormat === "digital" ? "digital" : "physical"} />{distributionLabel}</span></div> : null}
         <p className="game-card-description">{record.shortDescription}</p>
-        {credits.length > 0 ? <div className="game-card-credits" aria-label="Credits" title={creditTitle}>{credits.map(({ label, value, glyph }) => <span className="game-card-credit" key={label}><AttributeGlyph kind={glyph} /><b>{label}</b><span>{value}</span></span>)}</div> : null}
+        {credits.length > 0 ? <div className="game-card-credits" aria-label="Credits" title={creditTitle}>{credits.map(({ label, value, glyph, filterKey }) => <span className="game-card-credit" key={label}><AttributeGlyph kind={glyph} /><b>{label}</b><a className="game-card-filter-link" data-catalog-filter={filterKey} aria-label={`Show games by ${filterKey}: ${value}`} href={filterHref(basePath, filterKey, value)}>{value}</a></span>)}</div> : null}
         <div className="tag-list" aria-label="Genres">
-          {visibleGenres.map((genreId, genreIndex) => record.genreHubIds.includes(genreId) ? <Link className={`tag tag--${getGenreTone(genreId)}`} href={`/genres/${genreId}/`} key={genreId}><AttributeGlyph kind="genre" />{record.genreLabels[genreIndex]}</Link> : <span className={`tag tag--${getGenreTone(genreId)}`} key={genreId}><AttributeGlyph kind="genre" />{record.genreLabels[genreIndex]}</span>)}
+          {visibleGenres.map((genreId, genreIndex) => <span className="game-card-taxonomy" key={genreId}>
+            <a className={`tag tag--${getGenreTone(genreId)} game-card-filter-link`} data-catalog-filter="genre" aria-label={`Show ${record.genreLabels[genreIndex]} games`} href={filterHref(basePath, "genre", genreId)}><AttributeGlyph kind="genre" />{record.genreLabels[genreIndex]}</a>
+            {record.genreHubIds.includes(genreId) ? <Link className="game-card-guide-link" data-catalog-guide="genre" aria-label={`Open ${record.genreLabels[genreIndex]} genre guide`} href={`/genres/${genreId}/`}>Guide</Link> : null}
+          </span>)}
           {hiddenGenreCount > 0 ? <span className="tag tag--more" data-genre-overflow={hiddenGenreCount}><span aria-hidden="true">+{hiddenGenreCount}</span> more genres<span className="visually-hidden">: {hiddenGenreLabels.join(", ")}</span></span> : null}
         </div>
         <div className="game-card-footer">

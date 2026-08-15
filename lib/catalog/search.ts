@@ -400,6 +400,17 @@ function parsePageSize(value: string | null, fallback: CatalogPageSize): Catalog
   return Number.isInteger(parsed) && isPageSize(parsed) ? parsed : fallback;
 }
 
+export type CatalogFilterKey = "platform" | "genre" | "year" | "developer" | "publisher";
+
+export function catalogFilterHref(key: CatalogFilterKey, rawValue: string | number): string {
+  const raw = String(rawValue).trim();
+  const value = key === "developer" || key === "publisher" ? normalizeSearchText(raw) : raw;
+  if (!value) return "/#games";
+  const state: CatalogSearchState = { ...EMPTY_SEARCH_STATE };
+  state[key] = value;
+  return `/${serializeSearchState(state)}#games`;
+}
+
 export function serializeSearchState(state: CatalogSearchState): string {
   const params = new URLSearchParams();
   const q = cleanQuery(state.q);
