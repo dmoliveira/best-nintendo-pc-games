@@ -14,6 +14,7 @@ const PROCESS_SHUTDOWN_TIMEOUT_MS = 5_000;
 const BROWSER_START_TIMEOUT_MS = 30_000;
 const PROFILE_CLEANUP_RETRIES = 20;
 const POINTER_EVENT_SETTLE_MS = 50;
+const HYDRATION_SETTLE_MS = 350;
 
 function fail(message) {
   throw new Error(`Box-art browser validation failed: ${message}`);
@@ -262,6 +263,7 @@ async function catalogIndexRequestCount(client) {
 
 async function waitForCatalogShell(client) {
   await waitFor(() => client.evaluate('Boolean(document.querySelector("#catalog-query")) && document.querySelectorAll(".game-card").length === 24'));
+  await new Promise((resolve) => setTimeout(resolve, HYDRATION_SETTLE_MS));
 }
 
 async function waitForCatalogReady(client) {
