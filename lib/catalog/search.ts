@@ -27,7 +27,6 @@ export interface CatalogPackageThumbnail {
   frontPath?: string;
   frontAlt?: string;
 }
-}
 
 export type CatalogColumns = "auto" | "1" | "2" | "3";
 

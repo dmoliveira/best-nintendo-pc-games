@@ -8,6 +8,7 @@ const gamePage = readFileSync(new URL("../app/games/[slug]/page.tsx", import.met
 const browser = readFileSync(new URL("../app/catalog-browser.tsx", import.meta.url), "utf8");
 const boxViewer = readFileSync(new URL("../app/game-box-viewer.tsx", import.meta.url), "utf8");
 const cards = readFileSync(new URL("../app/catalog-cards.tsx", import.meta.url), "utf8");
+const packageThumbnail = readFileSync(new URL("../app/package-thumbnail.tsx", import.meta.url), "utf8");
 const taxonomyHub = readFileSync(new URL("../app/taxonomy-hub.tsx", import.meta.url), "utf8");
 
 test("home shell exposes a keyboard bypass and stable main landmark", () => {
@@ -76,4 +77,18 @@ test("game pages expose an honest, keyboard-operable package-view fallback", () 
   assert.match(boxViewer, /requestFullscreen/);
   assert.match(styles, /game-box-viewer--fallback-fullscreen/);
   assert.match(styles, /forced-colors:active/);
+});
+
+test("package UI consumes profile geometry and preserves card-safe thumbnail art", () => {
+  assert.match(gamePage, /createPackagePresentation/);
+  assert.match(gamePage, /getGameBoxFront/);
+  assert.match(boxViewer, /data-package-profile/);
+  assert.match(boxViewer, /viewer\.restAngle/);
+  assert.match(boxViewer, /presentation\.formatKind === "physical"/);
+  assert.match(boxViewer, /onError=\{\(\) => setFailedSource/);
+  assert.match(cards, /PackageThumbnail thumbnail=\{record\.packageThumbnail\}/);
+  assert.match(packageThumbnail, /data-package-thumbnail="true"/);
+  assert.match(packageThumbnail, /thumbnail\.kind === "physical"/);
+  assert.match(styles, /package-thumbnail__spine/);
+  assert.match(styles, /rotateY\(-23deg\)/);
 });

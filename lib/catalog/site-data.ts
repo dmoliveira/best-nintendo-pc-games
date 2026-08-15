@@ -190,7 +190,6 @@ export function getPublicGameSignals(game: GameRecord): PublicSignalSummaries {
 export function getGameBoxFront(game: GameRecord) {
   return selectApprovedBoxFrontAsset(game.assets, context.assetById);
 }
-}
 
 export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame): CatalogSearchRecord {
   const evidenceKinds = [...new Set(game.signals.map((signal) => signal.kind))];

@@ -46,6 +46,7 @@ test("creates a visibly dimensional physical presentation and rejects a mismatch
   assert.equal(presentation.viewer.canRotate, true);
   assert.equal(presentation.governedFront?.src, "/assets/games/celeste/front-pc-big-box.png");
   assert.equal(presentation.thumbnail.frontSrc, "/assets/games/celeste.svg");
+  assert.equal(presentation.editorialThumbnail?.src, "/assets/games/celeste.svg");
 
   const mismatched = createPackagePresentation({
     title: "Celeste",

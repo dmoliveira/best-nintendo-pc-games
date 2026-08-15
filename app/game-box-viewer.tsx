@@ -1,24 +1,17 @@
 "use client";
-/* eslint-disable @next/next/no-img-element -- image optimization is disabled for this static GitHub Pages export; this source is manifest-governed. */
+/* eslint-disable @next/next/no-img-element -- static export uses locally governed, base-prefixed asset URLs. */
 
 import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
-import { getBoxArtFormat } from "@/lib/box-art/formats";
 import { BOX_VIEW_ZOOMS, describeBoxView, INITIAL_BOX_VIEW_STATE, reduceBoxView, type BoxViewAction, type BoxViewState } from "@/lib/box-art/view-state";
-
-interface GameBoxViewerProps {
-  title: string;
-  platformLabel: string;
-  formatId: string;
-  frontSrc?: string;
-  frontAlt?: string;
-  editorialArtSrc?: string;
-  editorialArtAlt?: string;
-}
+import type { PackagePresentation } from "@/lib/box-art/package-engine";
 
 type BoxStyle = CSSProperties & Record<"--box-width" | "--box-height" | "--box-depth", string>;
 
-export default function GameBoxViewer({ title, platformLabel, formatId, frontSrc, frontAlt, editorialArtSrc, editorialArtAlt }: GameBoxViewerProps) {
-  const format = getBoxArtFormat(formatId);
+function readableProfileCategory(value: string): string {
+  return value.replace(/-/g, " ");
+}
+
+export default function GameBoxViewer({ presentation }: { presentation: PackagePresentation }) {
   const [view, setView] = useState<BoxViewState>(INITIAL_BOX_VIEW_STATE);
   const [nativeFullscreen, setNativeFullscreen] = useState(false);
   const [fallbackFullscreen, setFallbackFullscreen] = useState(false);
@@ -27,6 +20,11 @@ export default function GameBoxViewer({ title, platformLabel, formatId, frontSrc
   const fullscreenControlRef = useRef<HTMLButtonElement>(null);
   const returnFocusRef = useRef<HTMLElement | null>(null);
   const wasNativeFullscreenRef = useRef(false);
+  const [failedSource, setFailedSource] = useState<string | null>(null);
+  const { viewer, profile, governedFront } = presentation;
+  const approvedFrontSrc = governedFront?.src;
+  const frontSrc = failedSource === approvedFrontSrc ? undefined : approvedFrontSrc;
+  const canRotate = viewer.canRotate;
 
   useEffect(() => {
     const onFullscreenChange = () => {
@@ -68,19 +66,20 @@ export default function GameBoxViewer({ title, platformLabel, formatId, frontSrc
     };
   }, [fallbackFullscreen]);
 
-  if (!format) return null;
-
   const isExpanded = nativeFullscreen || fallbackFullscreen;
   const isAtMinimumZoom = view.zoom === BOX_VIEW_ZOOMS[0];
   const isAtMaximumZoom = view.zoom === BOX_VIEW_ZOOMS[BOX_VIEW_ZOOMS.length - 1];
   const isInitialView = view.angle === INITIAL_BOX_VIEW_STATE.angle && view.zoom === INITIAL_BOX_VIEW_STATE.zoom;
   const boxStyle: BoxStyle = {
-    "--box-width": `${Math.round(format.dimensions.width * 1.68)}px`,
-    "--box-height": `${Math.round(format.dimensions.height * 1.68)}px`,
-    "--box-depth": `${Math.max(1, Math.round(format.dimensions.depth * 1.68))}px`,
+    "--box-width": `${viewer.widthPx}px`,
+    "--box-height": `${viewer.heightPx}px`,
+    "--box-depth": `${viewer.depthPx}px`,
   };
 
-  const applyAction = (action: BoxViewAction) => setView((current) => reduceBoxView(current, action));
+  const applyAction = (action: BoxViewAction) => {
+    if (!canRotate && (action === "rotate-left" || action === "rotate-right")) return;
+    setView((current) => reduceBoxView(current, action));
+  };
   const exitFallbackFullscreen = () => {
     setFallbackFullscreen(false);
     requestAnimationFrame(() => returnFocusRef.current?.focus());
@@ -104,13 +103,12 @@ export default function GameBoxViewer({ title, platformLabel, formatId, frontSrc
   };
   const onStageKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     const actionByKey: Record<string, BoxViewAction | undefined> = {
-      ArrowLeft: "rotate-left",
-      ArrowRight: "rotate-right",
       "+": "zoom-in",
       "=": "zoom-in",
       "-": "zoom-out",
       Home: "reset",
       "0": "reset",
+      ...(canRotate ? { ArrowLeft: "rotate-left" as const, ArrowRight: "rotate-right" as const } : {}),
     };
     if (event.key === "Escape" && fallbackFullscreen) {
       event.preventDefault();
@@ -138,42 +136,66 @@ export default function GameBoxViewer({ title, platformLabel, formatId, frontSrc
     focusable[nextIndex]?.focus();
   };
 
+  const statusText = frontSrc
+    ? "Published AI-generated GameAtlas editorial art on a governed package front"
+    : approvedFrontSrc
+      ? "Approved package front unavailable — GameAtlas reference case shown"
+      : "GameAtlas reference case — a package front has not been published";
+  const profileCategory = readableProfileCategory(profile.category);
+  const viewerDescription = presentation.formatKind === "physical"
+    ? `${profileCategory} model with a visible spine and proportional package depth.`
+    : "Flat digital presentation with no invented physical package.";
+  const renderedAngle = viewer.restAngle + (canRotate ? view.angle : 0);
+
   return <section
-    className={`game-box-viewer game-box-viewer--${format.kind}${fallbackFullscreen ? " game-box-viewer--fallback-fullscreen" : ""}`}
+    className={`game-box-viewer game-box-viewer--${presentation.formatKind}${fallbackFullscreen ? " game-box-viewer--fallback-fullscreen" : ""}`}
     ref={viewerRef}
     aria-labelledby="package-view-heading"
     role={fallbackFullscreen ? "dialog" : undefined}
     aria-modal={fallbackFullscreen || undefined}
     onKeyDownCapture={onDialogKeyDown}
   >
-    <div className="game-box-viewer-heading"><p className="eyebrow">Interactive package view</p><h2 id="package-view-heading">Explore the GameAtlas edition.</h2><p>{frontSrc ? "AI-generated GameAtlas editorial art, displayed on a neutral reference package." : "GameAtlas reference case — AI-generated editorial art can be added after it passes generation and rights review."}</p></div>
+    <div className="game-box-viewer-heading">
+      <p className="eyebrow">Interactive package view</p>
+      <h2 id="package-view-heading">{presentation.platformLabel}</h2>
+      <p>{viewerDescription}</p>
+      <p className="game-box-viewer-status" data-art-state={frontSrc ? "approved" : approvedFrontSrc ? "fallback" : "reference"}><span className="game-box-viewer-status-dot" aria-hidden="true" />{statusText}</p>
+      <p className="game-box-viewer-note">Only approved AI-generated fronts appear as package art. Editorial images remain separate reference art and never become package faces.</p>
+    </div>
     <div
-      className={`game-box-stage game-box-stage--${format.accent}`}
+      className="game-box-stage"
       ref={stageRef}
       data-game-box-stage="true"
+      data-package-profile={profile.id}
+      data-package-kind={presentation.formatKind}
+      data-package-depth={viewer.depthPx}
+      data-package-rest-angle={viewer.restAngle}
       data-box-angle={view.angle}
       data-box-zoom={view.zoom}
       tabIndex={0}
       role="group"
-      aria-label={`Interactive package view for ${title}`}
+      aria-label={`Interactive package view for ${presentation.title}`}
       aria-describedby="package-view-instructions"
       onKeyDown={onStageKeyDown}
     >
-      {editorialArtSrc ? <img className="game-box-stage__editorial-art" src={editorialArtSrc} alt={editorialArtAlt ?? `Abstract GameAtlas editorial art for ${title}`} /> : null}
-      <div className="game-box" style={{ ...boxStyle, transform: `rotateX(-6deg) rotateY(${view.angle}deg) scale(${view.zoom})` }}>
+      {presentation.editorialThumbnail ? <img className="game-box-stage__editorial-art" src={presentation.editorialThumbnail.src} alt={presentation.editorialThumbnail.alt} /> : null}
+      <div className="game-box" style={{ ...boxStyle, transform: `rotateX(${viewer.tiltAngle}deg) rotateY(${renderedAngle}deg) scale(${view.zoom})` }}>
         <div className="game-box__face game-box__front">
-          {frontSrc ? <img src={frontSrc} alt={frontAlt ?? `AI-generated GameAtlas editorial front artwork for ${title}`} /> : <div className="game-box__reference-art" aria-label={`GameAtlas reference front for ${title}`}><span aria-hidden="true">✦</span></div>}
-          <div className="game-box__front-label"><span>GameAtlas edition</span><strong>{title}</strong><small>{platformLabel}</small></div>
+          {frontSrc ? <img src={frontSrc} alt={governedFront?.alt ?? `AI-generated GameAtlas package front for ${presentation.title}`} onError={() => setFailedSource(frontSrc)} /> : <div className="game-box__reference-art" aria-label={`GameAtlas reference front for ${presentation.title}`}><span aria-hidden="true">✦</span></div>}
         </div>
-        <div className="game-box__face game-box__spine" aria-hidden="true"><span>GameAtlas</span><strong>{title}</strong></div>
-        <div className="game-box__face game-box__back" aria-hidden="true"><span>GameAtlas editorial package view</span><strong>{format.label}</strong><small>Labels are HTML/CSS, not copied packaging.</small></div>
-        <div className="game-box__face game-box__base" aria-hidden="true" />
+        {presentation.formatKind === "physical" ? <>
+          <div className="game-box__face game-box__spine" aria-hidden="true"><span>{presentation.platformLabel}</span></div>
+          <div className="game-box__face game-box__back" aria-hidden="true"><span>GAMEATLAS PACKAGE VIEW</span><strong>{profileCategory}</strong><small>Geometry is modeled from a cited platform profile, not copied packaging.</small></div>
+          <div className="game-box__face game-box__base" aria-hidden="true" />
+        </> : null}
       </div>
     </div>
-    <p className="game-box-instructions" id="package-view-instructions">Use the controls, or focus the package and press Left/Right to rotate, plus/minus to zoom, and Home or 0 to reset.</p>
-    <div className="game-box-controls" aria-label="Package view controls">
-      <button type="button" data-box-action="rotate-left" onClick={() => applyAction("rotate-left")}>Rotate left</button>
-      <button type="button" data-box-action="rotate-right" onClick={() => applyAction("rotate-right")}>Rotate right</button>
+    <p className="game-box-instructions" id="package-view-instructions">{canRotate ? "Use the controls, or focus the package and press Left/Right to rotate, plus/minus to zoom, and Home or 0 to reset." : "Use plus/minus to zoom and Home or 0 to reset. Digital profiles stay flat."}</p>
+    <div className={`game-box-controls${canRotate ? "" : " game-box-controls--flat"}`} aria-label="Package view controls">
+      {canRotate ? <>
+        <button type="button" data-box-action="rotate-left" onClick={() => applyAction("rotate-left")}>Rotate left</button>
+        <button type="button" data-box-action="rotate-right" onClick={() => applyAction("rotate-right")}>Rotate right</button>
+      </> : null}
       <button type="button" data-box-action="zoom-out" onClick={() => applyAction("zoom-out")} disabled={isAtMinimumZoom}>Zoom out</button>
       <button type="button" data-box-action="zoom-in" onClick={() => applyAction("zoom-in")} disabled={isAtMaximumZoom}>Zoom in</button>
       <button type="button" data-box-action="reset" onClick={() => applyAction("reset")} disabled={isInitialView}>Reset view</button>

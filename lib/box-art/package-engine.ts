@@ -41,6 +41,7 @@ export interface PackagePresentation {
     depthRatio: number;
     isPhysical: boolean;
   };
+  editorialThumbnail?: EditorialThumbnail;
   governedFront?: GovernedPackageFront;
 }
 
@@ -81,6 +82,7 @@ export function createPackagePresentation(input: PackageEngineInput): PackagePre
       depthRatio: profile.kind === "physical" ? profile.dimensions.depth / profile.dimensions.width : 0,
       isPhysical: profile.kind === "physical",
     },
+    editorialThumbnail: input.editorialThumbnail,
     governedFront,
   };
 }
