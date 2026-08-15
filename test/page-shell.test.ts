@@ -37,6 +37,12 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /resultPositionOffset/);
   assert.match(browser, /Score \(licensed data only\)/);
   assert.match(browser, /catalog-pagination/);
+  assert.match(browser, /className="filter-chip" aria-label=\{`Remove search filter: \$\{state\.q\}`\}/);
+  assert.match(browser, /className="filter-chip" aria-label=\{`Remove platform filter: \$\{option\.label\}`\}/);
+  assert.match(browser, /className="filter-chip" aria-label=\{`Remove genre filter: \$\{option\.label\}`\}/);
+  assert.match(browser, /className="filter-chip" aria-label=\{`Remove year filter: \$\{yearFrom \|\| "Any"\}–\$\{yearTo \|\| "Any"\}`\}/);
+  assert.match(browser, /className="filter-chip" aria-label=\{`Remove developer filter: \$\{developerLabel\}`\}/);
+  assert.match(browser, /className="filter-chip" aria-label=\{`Remove publisher filter: \$\{publisherLabel\}`\}/);
   assert.match(cards, /Current result position/);
   assert.match(cards, /not a quality ranking/);
   assert.match(cards, /game-card-title-link/);

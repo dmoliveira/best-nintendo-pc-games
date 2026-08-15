@@ -14,6 +14,12 @@ function fail(message) {
   throw new Error(`Box-art browser validation failed: ${message}`);
 }
 
+function catalogResultTotal(summary) {
+  const match = summary.match(/\bof\s+([0-9][0-9,\u00a0\u202f ]*)\s+matching games\b/i);
+  const normalized = match?.[1].replace(/[,\u00a0\u202f ]/g, "");
+  return normalized && /^\d+$/.test(normalized) ? Number(normalized) : undefined;
+}
+
 function mimeType(filePath) {
   if (filePath.endsWith(".html")) return "text/html; charset=utf-8";
   if (filePath.endsWith(".js")) return "application/javascript; charset=utf-8";
@@ -144,22 +150,19 @@ async function press(client, key, code, keyCode) {
 
 const desktopMetrics = { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false };
 
-async function validateCatalogBrowser(client, catalogUrl) {
+async function validateCatalogBrowser(client, catalogUrl, representativeGame) {
   await client.send("Emulation.setDeviceMetricsOverride", desktopMetrics);
   await client.send("Emulation.setEmulatedMedia", { features: [] });
-  await client.send("Page.navigate", { url: catalogUrl });
-  await waitFor(() => client.evaluate('Boolean(document.querySelector("#catalog-query")) && document.querySelectorAll(".game-card").length > 0'));
-  await waitFor(() => client.evaluate('document.querySelector(".result-summary")?.textContent?.includes("matching games")'));
+  const representativeUrl = new URL(catalogUrl);
+  representativeUrl.searchParams.set("q", representativeGame.title);
+  const representativeSelector = `.game-card-title-link[href="${basePath}/games/${representativeGame.slug}/"]`;
+  await client.send("Page.navigate", { url: representativeUrl.toString() });
+  await waitFor(() => client.evaluate(`Boolean(document.querySelector(${JSON.stringify(representativeSelector)}))`));
 
-  const baseline = await client.evaluate(String.raw`
+  const representative = await client.evaluate(String.raw`
     (() => {
-      const card = [...document.querySelectorAll(".game-card")].find(
-        (candidate) => candidate.querySelector('.game-card-topline a[href*="/platforms/"]')
-          && candidate.querySelector('a.tag[href*="/genres/"]')
-          && candidate.querySelector('.game-card-footer a[href^="http"]')
-      );
+      const card = document.querySelector(${JSON.stringify(representativeSelector)})?.closest(".game-card");
       return {
-        cardCount: document.querySelectorAll(".game-card").length,
         foundRepresentativeCard: Boolean(card),
         gameDetailLinks: card ? [...card.querySelectorAll('a[href*="/games/"]')].length : 0,
         titleLink: Boolean(card?.querySelector(".game-card-title-link")),
@@ -168,10 +171,10 @@ async function validateCatalogBrowser(client, catalogUrl) {
       };
     })()
   `);
-  if (!baseline.foundRepresentativeCard || !baseline.titleLink || baseline.gameDetailLinks !== 1 || baseline.artLink || baseline.platformList !== "UL") fail(`catalog card semantics are incomplete: ${JSON.stringify(baseline)}`);
+  if (!representative.foundRepresentativeCard || !representative.titleLink || representative.gameDetailLinks !== 1 || representative.artLink || representative.platformList !== "UL") fail(`catalog card semantics are incomplete: ${JSON.stringify(representative)}`);
   const pointerTargets = await client.evaluate(String.raw`
     (() => {
-      const card = [...document.querySelectorAll(".game-card")].find((candidate) => candidate.querySelector('.game-card-topline a[href*="/platforms/"]') && candidate.querySelector('a.tag[href*="/genres/"]') && candidate.querySelector('.game-card-footer a[href^="http"]'));
+      const card = document.querySelector(${JSON.stringify(representativeSelector)})?.closest(".game-card");
       const art = card?.querySelector(".game-card-art");
       const titleLink = card?.querySelector("a.game-card-title-link");
       const platformLink = card?.querySelector('.game-card-topline a[href*="/platforms/"]');
@@ -193,14 +196,22 @@ async function validateCatalogBrowser(client, catalogUrl) {
   `);
   if (!pointerTargets.artUsesPrimaryLink || !pointerTargets.platformStaysIndependent || !pointerTargets.genreStaysIndependent || !pointerTargets.evidenceStaysIndependent) fail(`catalog card pointer targets are not layered safely: ${JSON.stringify(pointerTargets)}`);
 
+  await client.send("Page.navigate", { url: catalogUrl });
+  await waitFor(() => client.evaluate('Boolean(document.querySelector("#catalog-query")) && document.querySelectorAll(".game-card").length > 0'));
+  await waitFor(() => client.evaluate('document.querySelector(".result-summary")?.textContent?.includes("matching games")'));
+  const baselineSnapshot = await client.evaluate('(() => ({ cardCount: document.querySelectorAll(".game-card").length, summary: document.querySelector(".result-summary")?.textContent ?? "" }))()');
+  const baseline = { ...baselineSnapshot, total: catalogResultTotal(baselineSnapshot.summary) };
+  if (!(baseline.cardCount > 0) || !Number.isFinite(baseline.total) || baseline.total < baseline.cardCount) fail(`catalog baseline did not expose a bounded result total: ${JSON.stringify(baseline)}`);
+
   await client.evaluate('document.querySelector(\'input[name="card-columns"][value="3"]\')?.click()');
   await waitFor(() => client.evaluate('new URL(window.location.href).searchParams.get("columns") === "3" && document.querySelector(".game-grid")?.classList.contains("game-grid--columns-3")'));
 
   const foundPlatform = await client.evaluate('(() => { const disclosure = [...document.querySelectorAll(".browser-disclosure")].find((candidate) => candidate.querySelector("summary")?.textContent?.trim().startsWith("Platforms")); if (!disclosure) return false; disclosure.open = true; const label = [...disclosure.querySelectorAll("label.browser-check")].find((candidate) => candidate.textContent?.includes("PC / Windows")); const input = label?.querySelector("input"); input?.click(); return Boolean(input); })()');
   if (!foundPlatform) fail("catalog browser did not expose the PC platform facet");
-  await waitFor(() => client.evaluate('new URL(window.location.href).searchParams.get("platform") === "pc-windows" && document.querySelectorAll(".game-card").length > 0'));
-  const filtered = await client.evaluate('(() => ({ cardCount: document.querySelectorAll(".game-card").length, layout: document.querySelector(".game-grid")?.className, summary: document.querySelector(".result-summary")?.textContent }))()');
-  if (!(filtered.cardCount > 0 && filtered.cardCount < baseline.cardCount) || !filtered.layout?.includes("game-grid--columns-3") || !filtered.summary?.includes("matching games")) fail(`catalog filtering did not update the visible state: ${JSON.stringify(filtered)}`);
+  await waitFor(() => client.evaluate('(() => { const chip = [...document.querySelectorAll(".filter-chip")].find((candidate) => candidate.getAttribute("aria-label") === "Remove platform filter: PC / Windows"); return new URL(window.location.href).searchParams.get("platform") === "pc-windows" && document.querySelectorAll(".game-card").length > 0 && chip && document.querySelector(".result-summary")?.textContent?.includes("matching games"); })()'));
+  const filteredSnapshot = await client.evaluate('(() => { const chip = [...document.querySelectorAll(".filter-chip")].find((candidate) => candidate.getAttribute("aria-label") === "Remove platform filter: PC / Windows"); return { cardCount: document.querySelectorAll(".game-card").length, layout: document.querySelector(".game-grid")?.className, summary: document.querySelector(".result-summary")?.textContent ?? "", chipLabel: chip?.getAttribute("aria-label") }; })()');
+  const filtered = { ...filteredSnapshot, total: catalogResultTotal(filteredSnapshot.summary) };
+  if (!(filtered.cardCount > 0) || !Number.isFinite(filtered.total) || filtered.total < filtered.cardCount || filtered.total >= baseline.total || !filtered.layout?.includes("game-grid--columns-3") || !filtered.summary.includes("matching games") || filtered.chipLabel !== "Remove platform filter: PC / Windows") fail(`catalog filtering did not update the visible state or expose a clear removal action: ${JSON.stringify({ baseline, filtered })}`);
 
   await client.evaluate('(() => { const select = document.querySelector("#catalog-page-size"); if (!select) return; select.value = "12"; select.dispatchEvent(new Event("change", { bubbles: true })); })()');
   await waitFor(() => client.evaluate('new URL(window.location.href).searchParams.get("perPage") === "12" && document.querySelectorAll(".game-card").length === 12'));
@@ -222,9 +233,13 @@ async function validateCatalogBrowser(client, catalogUrl) {
   await waitFor(() => client.evaluate('getComputedStyle(document.querySelector(".layout-control")).display !== "none" && document.querySelector(\'input[name="card-columns"][value="3"]\')?.checked'));
 
   await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }, { name: "forced-colors", value: "active" }] });
-  const accessibilityState = await client.evaluate('(() => { const layout = document.querySelector(".layout-option--active"); const page = document.querySelector(".pagination-button--current"); const chip = document.querySelector(".filter-chip"); chip?.focus(); const duration = getComputedStyle(document.querySelector(".game-card")).transitionDuration; const durationMs = duration.endsWith("ms") ? Number.parseFloat(duration) : Number.parseFloat(duration) * 1000; return { layoutChecked: document.querySelector(\'input[name="card-columns"][value="3"]\')?.checked, layoutOutline: getComputedStyle(layout).outlineStyle, pageCurrent: page?.getAttribute("aria-current"), pageOutline: getComputedStyle(page).outlineStyle, chipTag: chip?.tagName, chipText: chip?.textContent?.trim(), chipOutline: getComputedStyle(chip).outlineStyle, cardTransitionMs: durationMs }; })()');
-  if (!accessibilityState.layoutChecked || accessibilityState.layoutOutline === "none" || accessibilityState.pageCurrent !== "page" || accessibilityState.pageOutline === "none" || accessibilityState.chipTag !== "BUTTON" || !accessibilityState.chipText || accessibilityState.chipOutline === "none" || accessibilityState.cardTransitionMs > 1) fail(`catalog reduced-motion or forced-colors treatment is incomplete: ${JSON.stringify(accessibilityState)}`);
+  const accessibilityState = await client.evaluate('(() => { const layout = document.querySelector(".layout-option--active"); const page = document.querySelector(".pagination-button--current"); const chip = [...document.querySelectorAll(".filter-chip")].find((candidate) => candidate.getAttribute("aria-label") === "Remove platform filter: PC / Windows"); chip?.focus(); const duration = getComputedStyle(document.querySelector(".game-card")).transitionDuration; const durationMs = duration.endsWith("ms") ? Number.parseFloat(duration) : Number.parseFloat(duration) * 1000; return { layoutChecked: document.querySelector(\'input[name="card-columns"][value="3"]\')?.checked, layoutOutline: getComputedStyle(layout).outlineStyle, pageCurrent: page?.getAttribute("aria-current"), pageOutline: getComputedStyle(page).outlineStyle, chipTag: chip?.tagName, chipLabel: chip?.getAttribute("aria-label"), chipOutline: chip ? getComputedStyle(chip).outlineStyle : "none", cardTransitionMs: durationMs }; })()');
+  if (!accessibilityState.layoutChecked || accessibilityState.layoutOutline === "none" || accessibilityState.pageCurrent !== "page" || accessibilityState.pageOutline === "none" || accessibilityState.chipTag !== "BUTTON" || accessibilityState.chipLabel !== "Remove platform filter: PC / Windows" || accessibilityState.chipOutline === "none" || accessibilityState.cardTransitionMs > 1) fail(`catalog reduced-motion or forced-colors treatment is incomplete: ${JSON.stringify(accessibilityState)}`);
   await client.send("Emulation.setEmulatedMedia", { features: [] });
+  const removalActivated = await client.evaluate('(() => { const chip = [...document.querySelectorAll(".filter-chip")].find((candidate) => candidate.getAttribute("aria-label") === "Remove platform filter: PC / Windows"); chip?.click(); return Boolean(chip); })()');
+  if (!removalActivated) fail("catalog browser did not retain the platform filter removal action");
+  await waitFor(() => client.evaluate('(() => { const url = new URL(window.location.href); const platformDisclosure = [...document.querySelectorAll(".browser-disclosure")].find((candidate) => candidate.querySelector("summary")?.textContent?.trim().startsWith("Platforms")); const platformInput = [...(platformDisclosure?.querySelectorAll("label.browser-check") ?? [])].find((candidate) => candidate.textContent?.includes("PC / Windows"))?.querySelector("input"); const chip = [...document.querySelectorAll(".filter-chip")].find((candidate) => candidate.getAttribute("aria-label") === "Remove platform filter: PC / Windows"); const page = url.searchParams.get("page"); return !url.searchParams.has("platform") && !chip && !platformInput?.checked && url.searchParams.get("columns") === "3" && url.searchParams.get("perPage") === "12" && (!page || page === "1"); })()'));
+
 }
 
 async function main() {
@@ -252,6 +267,8 @@ async function main() {
   const catalogThumbnailGame = games.find((game) => approvedEditorialAsset(game));
   if (!catalogThumbnailGame) fail("no approved editorial-thumbnail fixture is available for browser validation");
   const catalogThumbnailAsset = approvedEditorialAsset(catalogThumbnailGame);
+  const catalogRepresentativeGame = games.find((game) => game.slug === "art-of-rally");
+  if (!catalogRepresentativeGame) fail("the curated art-of-rally catalog fixture is required for card interaction validation");
   const chrome = chromeCandidates.find((candidate) => candidate && fs.existsSync(candidate));
   if (!chrome) fail("Google Chrome was not found; set CHROME_BIN to a local Chrome executable");
 
@@ -325,7 +342,7 @@ async function main() {
     const expectedThumbnailSuffix = `/${catalogThumbnailAsset.path.replace(/^public\//, "")}`;
     if (!thumbnailState.format || thumbnailState.kind !== "physical" || !thumbnailState.hasSpine || thumbnailState.transform === "none" || !thumbnailState.source?.endsWith(expectedThumbnailSuffix) || thumbnailState.loading !== "lazy" || thumbnailState.decoding !== "async" || thumbnailState.priority === "high") fail(`catalog package thumbnail did not retain approved low-impact loading behavior: ${JSON.stringify(thumbnailState)}`);
 
-    await validateCatalogBrowser(client, `http://127.0.0.1:${preview.port}${basePath}/`);
+    await validateCatalogBrowser(client, `http://127.0.0.1:${preview.port}${basePath}/`, catalogRepresentativeGame);
 
     await client.send("Page.navigate", { url: pageUrl });
     await waitFor(() => client.evaluate('Boolean(document.querySelector("[data-game-box-stage]"))'));
