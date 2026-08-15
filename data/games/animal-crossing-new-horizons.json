@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "animal-crossing-new-horizons",
+  "title": "Animal Crossing: New Horizons",
+  "aliases": [],
+  "emoji": "🏝️",
+  "shortDescription": "An island-life simulation that gives players generous room to decorate, collect, visit, and build routines around their own goals.",
+  "highlights": [
+    "Island layout makes long-term planning feel tangible",
+    "Small seasonal changes reward returning at a relaxed pace"
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "adventure",
+    "simulation"
+  ],
+  "developer": "Nintendo EPD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Animal Crossing: New Horizons",
+    "island",
+    "decorating",
+    "neighbors",
+    "real time",
+    "nintendo-switch"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A major Switch simulation choice for its accessible creativity and calming social routines.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Nintendo store page",
+      "url": "https://www.nintendo.com/us/store/products/animal-crossing-new-horizons-switch/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/animal-crossing-new-horizons.svg",
+      "alt": "Abstract GameAtlas art tile for Animal Crossing: New Horizons",
+      "provenanceId": "gameatlas-art-animal-crossing-new-horizons"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

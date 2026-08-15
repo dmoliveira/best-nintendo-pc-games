@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-phantom-hourglass",
+  "title": "The Legend of Zelda: Phantom Hourglass",
+  "aliases": [
+    "Zelda: Phantom Hourglass"
+  ],
+  "emoji": "⛵",
+  "shortDescription": "A touch-led adventure that turns map notes, stylus gestures, and compact sailing routes into direct puzzle-solving tools.",
+  "highlights": [
+    "Writing on maps makes player observations part of the solution",
+    "Touch interactions give familiar adventure tools a playful new rhythm"
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "adventure",
+    "puzzle"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "The Legend of Zelda: Phantom Hourglass",
+    "touch controls",
+    "sailing",
+    "dungeons",
+    "map notes",
+    "nintendo-ds"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A Nintendo DS adventure pick that makes unusually good use of the system's defining input methods.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/ds/legend_of_zelda_phantom_hourglass",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/the-legend-of-zelda-phantom-hourglass.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: Phantom Hourglass",
+      "provenanceId": "gameatlas-art-the-legend-of-zelda-phantom-hourglass"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

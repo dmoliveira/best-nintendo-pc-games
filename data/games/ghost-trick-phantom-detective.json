@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "ghost-trick-phantom-detective",
+  "title": "Ghost Trick: Phantom Detective",
+  "aliases": [
+    "Ghost Trick"
+  ],
+  "emoji": "👻",
+  "shortDescription": "A clever mystery puzzle adventure where manipulating objects and revisiting crucial moments turns investigation into a chain of playful experiments.",
+  "highlights": [
+    "Object interactions create compact cause-and-effect puzzles",
+    "The mystery structure gives every solved scene a strong reason to continue"
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "adventure",
+    "puzzle"
+  ],
+  "developer": "Capcom",
+  "publisher": "Capcom",
+  "keywords": [
+    "Ghost Trick: Phantom Detective",
+    "mystery",
+    "time travel",
+    "objects",
+    "detective",
+    "nintendo-ds"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A standout Nintendo DS puzzle-adventure addition for its inventive premise and tightly paced problem solving.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/ds/ghost_trick_phantom_detective",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/ghost-trick-phantom-detective.svg",
+      "alt": "Abstract GameAtlas art tile for Ghost Trick: Phantom Detective",
+      "provenanceId": "gameatlas-art-ghost-trick-phantom-detective"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

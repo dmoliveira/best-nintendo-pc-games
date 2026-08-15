@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-links-awakening",
+  "title": "The Legend of Zelda: Link’s Awakening",
+  "aliases": [
+    "Zelda: Link's Awakening"
+  ],
+  "emoji": "🌊",
+  "shortDescription": "A compact island adventure that gives its dungeons, side characters, and strange dreamlike premise a remarkable sense of place.",
+  "highlights": [
+    "A tightly connected island makes every new tool feel immediately useful",
+    "Surreal details lend the quest an emotional character all its own"
+  ],
+  "release": {
+    "year": 1993
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "The Legend of Zelda: Link’s Awakening",
+    "island",
+    "dungeons",
+    "dream",
+    "top-down",
+    "game-boy"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "An essential Game Boy adventure pick for showing how much atmosphere and structure a handheld quest can hold.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/gameboy/legend_of_zelda_links_awakening",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/the-legend-of-zelda-links-awakening.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: Link’s Awakening",
+      "provenanceId": "gameatlas-art-the-legend-of-zelda-links-awakening"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

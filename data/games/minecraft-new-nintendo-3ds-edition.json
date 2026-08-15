@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "minecraft-new-nintendo-3ds-edition",
+  "title": "Minecraft: New Nintendo 3DS Edition",
+  "aliases": [],
+  "emoji": "🧱",
+  "shortDescription": "A portable sandbox edition that lets players gather, build, explore, and define their own projects within a shared set of simple systems.",
+  "highlights": [
+    "Building goals can be as open-ended or structured as the player prefers",
+    "Survival and creative play provide complementary ways to inhabit the world"
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-new-3ds"
+  ],
+  "genres": [
+    "adventure",
+    "simulation"
+  ],
+  "developer": "4J Studios",
+  "publisher": "Mojang",
+  "keywords": [
+    "Minecraft: New Nintendo 3DS Edition",
+    "building",
+    "survival",
+    "sandbox",
+    "crafting",
+    "nintendo-new-3ds"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A New Nintendo 3DS-specific simulation and adventure addition that represents the limited exclusive library without padding it.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Nintendo product page",
+      "url": "https://www.nintendo.com/en-gb/Games/Nintendo-3DS-games/Minecraft-New-Nintendo-3DS-Edition-1119025.html",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/minecraft-new-nintendo-3ds-edition.svg",
+      "alt": "Abstract GameAtlas art tile for Minecraft: New Nintendo 3DS Edition",
+      "provenanceId": "gameatlas-art-minecraft-new-nintendo-3ds-edition"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

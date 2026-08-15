@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "fire-emblem-awakening",
+  "title": "Fire Emblem Awakening",
+  "aliases": [],
+  "emoji": "🛡️",
+  "shortDescription": "A character-driven tactical role-playing campaign that makes positioning, long-term party growth, and relationships feel mutually reinforcing.",
+  "highlights": [
+    "Pairing units gives map decisions an immediate interpersonal dimension",
+    "Persistent growth makes each player's party feel distinct"
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "role-playing"
+  ],
+  "developer": "Intelligent Systems",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Fire Emblem Awakening",
+    "tactical",
+    "relationships",
+    "turn-based",
+    "campaign",
+    "nintendo-3ds"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A Nintendo 3DS role-playing addition that earns its place through approachable tactics and meaningful character investment.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Nintendo store page",
+      "url": "https://www.nintendo.com/us/store/products/fire-emblem-awakening-3ds/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/fire-emblem-awakening.svg",
+      "alt": "Abstract GameAtlas art tile for Fire Emblem Awakening",
+      "provenanceId": "gameatlas-art-fire-emblem-awakening"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-a-link-between-worlds",
+  "title": "The Legend of Zelda: A Link Between Worlds",
+  "aliases": [
+    "Zelda: A Link Between Worlds"
+  ],
+  "emoji": "🖼️",
+  "shortDescription": "A nimble top-down adventure that uses wall merging and flexible item access to make every dungeon invite creative routes.",
+  "highlights": [
+    "The wall ability reframes maps as layered puzzles",
+    "Flexible item order lets players approach challenges with agency"
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "The Legend of Zelda: A Link Between Worlds",
+    "wall merging",
+    "dungeons",
+    "top-down",
+    "rental items",
+    "nintendo-3ds"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A leading Nintendo 3DS adventure selection for its elegant spatial design and approachable freedom.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Nintendo store page",
+      "url": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-a-link-between-worlds-3ds/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/the-legend-of-zelda-a-link-between-worlds.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: A Link Between Worlds",
+      "provenanceId": "gameatlas-art-the-legend-of-zelda-a-link-between-worlds"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

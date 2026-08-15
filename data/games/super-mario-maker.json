@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-mario-maker",
+  "title": "Super Mario Maker",
+  "aliases": [],
+  "emoji": "🛠️",
+  "shortDescription": "A creation-focused platformer that turns classic course vocabulary into an approachable toolkit for building, testing, and sharing ideas.",
+  "highlights": [
+    "Rapid iteration makes cause and effect easy to learn",
+    "Community courses reveal how familiar rules can support wildly different challenges"
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "platformer",
+    "puzzle"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Super Mario Maker",
+    "level editor",
+    "creation",
+    "courses",
+    "sharing",
+    "nintendo-wii-u"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A key Wii U platforming selection because it expands discovery into hands-on design literacy.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/wiiu/super_mario_maker",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/super-mario-maker.svg",
+      "alt": "Abstract GameAtlas art tile for Super Mario Maker",
+      "provenanceId": "gameatlas-art-super-mario-maker"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

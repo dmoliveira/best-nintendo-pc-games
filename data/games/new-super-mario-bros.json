@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "new-super-mario-bros",
+  "title": "New Super Mario Bros.",
+  "aliases": [],
+  "emoji": "🍄",
+  "shortDescription": "A brisk side-scrolling platformer that refreshes familiar movement, power-ups, and secrets for a handheld-friendly pace.",
+  "highlights": [
+    "Short stages make experimentation and replay easy",
+    "Hidden routes reward careful observation without blocking progress"
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "New Super Mario Bros.",
+    "side-scroller",
+    "power-ups",
+    "coins",
+    "handheld",
+    "nintendo-ds"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A broadly useful Nintendo DS platforming pick for its accessible controls and satisfying route discovery.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/ds/new_super_mario_bros",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/new-super-mario-bros.svg",
+      "alt": "Abstract GameAtlas art tile for New Super Mario Bros.",
+      "provenanceId": "gameatlas-art-new-super-mario-bros"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

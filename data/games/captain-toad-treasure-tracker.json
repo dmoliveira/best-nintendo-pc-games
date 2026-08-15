@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "captain-toad-treasure-tracker",
+  "title": "Captain Toad: Treasure Tracker",
+  "aliases": [],
+  "emoji": "💎",
+  "shortDescription": "A diorama puzzle adventure where rotating the view, spotting hidden routes, and accepting limited movement make every tiny stage feel tactile.",
+  "highlights": [
+    "Camera changes reveal routes rather than merely hiding them",
+    "Short stages make experimentation satisfying and low-friction"
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "adventure",
+    "puzzle"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Captain Toad: Treasure Tracker",
+    "diorama",
+    "puzzle boxes",
+    "camera",
+    "treasure",
+    "nintendo-wii-u"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A compact Wii U puzzle pick that gives the catalog a distinct spatial-thinking experience.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/wiiu/captain_toad_treasure_tracker",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/captain-toad-treasure-tracker.svg",
+      "alt": "Abstract GameAtlas art tile for Captain Toad: Treasure Tracker",
+      "provenanceId": "gameatlas-art-captain-toad-treasure-tracker"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-skyward-sword",
+  "title": "The Legend of Zelda: Skyward Sword",
+  "aliases": [
+    "Zelda: Skyward Sword"
+  ],
+  "emoji": "☁️",
+  "shortDescription": "An aerial fantasy adventure that uses deliberate swordplay and puzzle-heavy dungeons to give its journeys a hands-on rhythm.",
+  "highlights": [
+    "Enemy encounters reward reading angles and timing",
+    "Dungeons build satisfying chains of spatial and tool-based puzzles"
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "The Legend of Zelda: Skyward Sword",
+    "sky islands",
+    "swordplay",
+    "dungeons",
+    "motion controls",
+    "nintendo-wii"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A Wii adventure recommendation for its considered dungeon design and distinctive use of the platform's controls.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/wii/legend_of_zelda_skyward_sword",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/the-legend-of-zelda-skyward-sword.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: Skyward Sword",
+      "provenanceId": "gameatlas-art-the-legend-of-zelda-skyward-sword"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

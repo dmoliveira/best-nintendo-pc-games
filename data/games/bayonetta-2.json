@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "bayonetta-2",
+  "title": "Bayonetta 2",
+  "aliases": [],
+  "emoji": "🪽",
+  "shortDescription": "A fast character-action game that makes timing, dodge windows, and flamboyant combo expression central to every encounter.",
+  "highlights": [
+    "Defensive timing opens space for satisfying counterattacks",
+    "Combat systems reward both experimentation and repeated practice"
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "action"
+  ],
+  "developer": "PlatinumGames",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Bayonetta 2",
+    "character action",
+    "combos",
+    "witch time",
+    "combat",
+    "nintendo-wii-u"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A necessary Wii U action addition for its exceptional responsiveness and expressive combat vocabulary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/wiiu/bayonetta_2",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/bayonetta-2.svg",
+      "alt": "Abstract GameAtlas art tile for Bayonetta 2",
+      "provenanceId": "gameatlas-art-bayonetta-2"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

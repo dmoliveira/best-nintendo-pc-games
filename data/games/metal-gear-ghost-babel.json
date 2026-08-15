@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "metal-gear-ghost-babel",
+  "title": "Metal Gear: Ghost Babel",
+  "aliases": [
+    "Metal Gear Solid"
+  ],
+  "emoji": "📡",
+  "shortDescription": "A stealth-focused handheld adventure that turns small spaces, guard patterns, and limited tools into satisfying tactical problems.",
+  "highlights": [
+    "Compact levels make observation and experimentation easy to read",
+    "Mission structure gives stealth a steady sense of forward momentum"
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Konami",
+  "publisher": "Konami",
+  "keywords": [
+    "Metal Gear: Ghost Babel",
+    "stealth",
+    "tactical",
+    "handheld",
+    "missions",
+    "game-boy-color"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A standout Game Boy Color action pick that demonstrates how much tactical stealth can fit into a handheld format.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive (Metal Gear Solid / Ghost Babel)",
+      "url": "https://www.nintendolife.com/games/gbc/metal_gear_solid",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/metal-gear-ghost-babel.svg",
+      "alt": "Abstract GameAtlas art tile for Metal Gear: Ghost Babel",
+      "provenanceId": "gameatlas-art-metal-gear-ghost-babel"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

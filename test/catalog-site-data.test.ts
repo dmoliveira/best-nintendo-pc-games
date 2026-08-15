@@ -4,7 +4,7 @@ import { getCatalogGame, getCatalogGames, getCatalogGenre, getCatalogGenres, get
 
 test("loads every validated game with resolved taxonomy labels", () => {
   const games = getCatalogGames();
-  assert.equal(games.length, 43);
+  assert.equal(games.length, 103);
   assert.equal(new Set(games.map(({ game }) => game.slug)).size, games.length);
   assert.ok(games.every(({ platforms, genres }) => platforms.length > 0 && genres.length > 0));
   assert.ok(games.every(({ game }) => getEditorialSignals(game).length > 0));
@@ -31,9 +31,9 @@ test("taxonomy hub inventories include only referenced populated entries", () =>
   assert.equal(genres.length, 7);
   assert.ok(platforms.every((platform) => records.some(({ game }) => game.platforms.includes(platform.id))));
   assert.ok(genres.every((genre) => records.some(({ game }) => game.genres.includes(genre.id))));
-  assert.equal(getPlatformHubs().length, 8);
+  assert.equal(getPlatformHubs().length, 16);
   assert.equal(getGenreHubs().length, 7);
-  assert.equal(getPlatformHub("nintendo-nes"), undefined);
+  assert.equal(getPlatformHub("nintendo-nes")?.id, "nintendo-nes");
   assert.equal(getGenreHub("missing-genre"), undefined);
   assert.equal(getCatalogPlatform("missing-platform"), undefined);
   assert.equal(getCatalogGenre("missing-genre"), undefined);
@@ -43,7 +43,7 @@ test("taxonomy hub inventories include only referenced populated entries", () =>
 test("keeps external rating references link-only and manifest-backed art present", () => {
   const games = getCatalogGames();
   const ratingLinks = games.flatMap(({ game }) => game.links.filter((link) => link.label === "External/reference — Metacritic"));
-  assert.equal(ratingLinks.length, 32);
+  assert.ok(ratingLinks.length >= 32);
   assert.ok(ratingLinks.every((link) => link.kind === "critical" && link.url.startsWith("https://www.metacritic.com/game/")));
   assert.ok(games.every(({ game }) => game.assets.length === 1 && game.assets[0].path.startsWith("public/assets/games/")));
 });

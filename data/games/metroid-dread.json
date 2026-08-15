@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "metroid-dread",
+  "title": "Metroid Dread",
+  "aliases": [],
+  "emoji": "🧪",
+  "shortDescription": "A swift 2D action adventure that combines clean exploration routes, expressive upgrades, and moments of high-pressure pursuit.",
+  "highlights": [
+    "Movement upgrades create satisfying new traversal options",
+    "Focused encounter design keeps the pace tense without losing clarity"
+  ],
+  "release": {
+    "year": 2021
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "MercurySteam",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Metroid Dread",
+    "exploration",
+    "upgrades",
+    "2D action",
+    "evasion",
+    "nintendo-switch"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A modern Switch action-adventure anchor for players who value precision, momentum, and compact world design.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Nintendo store page",
+      "url": "https://www.nintendo.com/us/store/products/metroid-dread-switch/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/metroid-dread.svg",
+      "alt": "Abstract GameAtlas art tile for Metroid Dread",
+      "provenanceId": "gameatlas-art-metroid-dread"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

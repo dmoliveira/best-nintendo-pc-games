@@ -28,8 +28,8 @@
     {
       "platformId": "nintendo-nes",
       "coverage": "populated",
-      "catalogTarget": "alpha",
-      "notes": "Famicom and Family Computer are regional aliases, not separate platform IDs.",
+      "catalogTarget": "expansion",
+      "notes": "Reviewed expansion anchors now cover foundational adventure, action-platforming, and puzzle play.",
       "sourceIds": [
         "nintendo-corporate-history",
         "nintendo-ir-dedicated-sales"
@@ -38,8 +38,8 @@
     {
       "platformId": "nintendo-snes",
       "coverage": "populated",
-      "catalogTarget": "alpha",
-      "notes": "Super Famicom and SFC are regional aliases, not separate platform IDs.",
+      "catalogTarget": "expansion",
+      "notes": "Reviewed expansion anchors now cover platforming, action-adventure, and role-playing foundations.",
       "sourceIds": [
         "nintendo-corporate-history",
         "nintendo-ir-dedicated-sales"
@@ -88,8 +88,8 @@
     {
       "platformId": "nintendo-switch",
       "coverage": "populated",
-      "catalogTarget": "alpha",
-      "notes": "Switch Lite and the OLED model are model aliases within the hybrid-console family.",
+      "catalogTarget": "expansion",
+      "notes": "Reviewed expansion anchors now cover open-world adventure, platforming, action, and life simulation.",
       "sourceIds": [
         "nintendo-corporate-history",
         "nintendo-ir-dedicated-sales",
@@ -201,5 +201,5 @@
       "reason": "Retro reproductions are model/products of an existing platform family, not new game platforms."
     }
   ],
-  "minimumHubRecords": 2
+  "minimumHubRecords": 3
 }

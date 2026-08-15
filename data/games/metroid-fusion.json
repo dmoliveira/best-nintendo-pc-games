@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "metroid-fusion",
+  "title": "Metroid Fusion",
+  "aliases": [],
+  "emoji": "🧬",
+  "shortDescription": "A focused handheld action adventure that uses a compact station, quick upgrades, and mounting suspense to keep exploration urgent.",
+  "highlights": [
+    "Clear objectives make a dense world approachable on a small screen",
+    "New abilities refresh both traversal and combat at a brisk pace"
+  ],
+  "release": {
+    "year": 2002
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Nintendo R&D1",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Metroid Fusion",
+    "space station",
+    "exploration",
+    "upgrades",
+    "suspense",
+    "game-boy-advance"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A central Game Boy Advance action-adventure pick for its polished pacing and atmospheric confidence.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/gba/metroid_fusion",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/metroid-fusion.svg",
+      "alt": "Abstract GameAtlas art tile for Metroid Fusion",
+      "provenanceId": "gameatlas-art-metroid-fusion"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

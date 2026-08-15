@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-kart-ds",
+  "title": "Mario Kart DS",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "A feature-rich handheld kart racer that gives its tracks, drifting, missions, and local competition a crisp, immediate feel.",
+  "highlights": [
+    "Drifting and item timing make races rewarding to revisit",
+    "The mission mode offers focused challenges beyond standard cups"
+  ],
+  "release": {
+    "year": 2005
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Mario Kart DS",
+    "kart racing",
+    "dual screen",
+    "courses",
+    "multiplayer",
+    "nintendo-ds"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A key Nintendo DS racing addition for its depth, clean handling, and broad solo-to-social appeal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/ds/mario_kart_ds",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/mario-kart-ds.svg",
+      "alt": "Abstract GameAtlas art tile for Mario Kart DS",
+      "provenanceId": "gameatlas-art-mario-kart-ds"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

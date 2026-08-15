@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "slug": "final-fantasy-vi",
+  "title": "Final Fantasy VI",
+  "aliases": [
+    "Final Fantasy III"
+  ],
+  "emoji": "🎭",
+  "shortDescription": "An ensemble role-playing epic that gives a wide cast distinct emotional stakes while keeping its world rich in surprises.",
+  "highlights": [
+    "Character-focused scenes make a large party feel purposeful",
+    "Flexible abilities invite experimentation without erasing each hero's identity"
+  ],
+  "release": {
+    "year": 1994
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "role-playing"
+  ],
+  "developer": "Square",
+  "publisher": "Square",
+  "keywords": [
+    "Final Fantasy VI",
+    "ensemble cast",
+    "fantasy",
+    "espers",
+    "turn-based",
+    "nintendo-snes"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A major SNES RPG recommendation for its ambitious ensemble storytelling and adaptable party systems.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/snes/final_fantasy_iii",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/final-fantasy-vi.svg",
+      "alt": "Abstract GameAtlas art tile for Final Fantasy VI",
+      "provenanceId": "gameatlas-art-final-fantasy-vi"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

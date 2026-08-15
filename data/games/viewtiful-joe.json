@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "viewtiful-joe",
+  "title": "Viewtiful Joe",
+  "aliases": [],
+  "emoji": "🎬",
+  "shortDescription": "A stylish side-scrolling action game that makes slow motion, speed, and zoom effects into tools for reading fights and platform hazards.",
+  "highlights": [
+    "Power effects change both combat timing and environmental puzzles",
+    "Short stages reward learning enemy patterns with precision"
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "developer": "Capcom",
+  "publisher": "Capcom",
+  "keywords": [
+    "Viewtiful Joe",
+    "side-scroller",
+    "VFX powers",
+    "comic-book",
+    "combat",
+    "nintendo-gamecube"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A distinctive GameCube action pick for its mechanical imagination and high-energy visual language.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/gamecube/viewtiful_joe",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/viewtiful-joe.svg",
+      "alt": "Abstract GameAtlas art tile for Viewtiful Joe",
+      "provenanceId": "gameatlas-art-viewtiful-joe"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

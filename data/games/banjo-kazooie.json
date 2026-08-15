@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "banjo-kazooie",
+  "title": "Banjo-Kazooie",
+  "aliases": [],
+  "emoji": "🎒",
+  "shortDescription": "A cheerful 3D platforming adventure where each compact world folds collectible goals, new moves, and visual jokes into a memorable loop.",
+  "highlights": [
+    "Move unlocks make revisits feel like fresh exploration",
+    "Worlds have distinct navigational identities rather than interchangeable routes"
+  ],
+  "release": {
+    "year": 1998
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "adventure",
+    "platformer"
+  ],
+  "developer": "Rare",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Banjo-Kazooie",
+    "collectathon",
+    "3D platformer",
+    "worlds",
+    "moves",
+    "nintendo-64"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A valuable Nintendo 64 platforming complement to Super Mario 64 with a denser collect-and-return rhythm.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/n64/banjo-kazooie",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/banjo-kazooie.svg",
+      "alt": "Abstract GameAtlas art tile for Banjo-Kazooie",
+      "provenanceId": "gameatlas-art-banjo-kazooie"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

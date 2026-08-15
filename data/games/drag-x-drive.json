@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "drag-x-drive",
+  "title": "Drag x Drive",
+  "aliases": [],
+  "emoji": "🏀",
+  "shortDescription": "A quick, team-based wheelchair basketball game built around immediate movement decisions, passing lanes, and energetic competitive play.",
+  "highlights": [
+    "Positioning and momentum matter as much as scoring chances",
+    "Short matches make it easy to learn through repeated play"
+  ],
+  "release": {
+    "year": 2025
+  },
+  "platforms": [
+    "nintendo-switch-2"
+  ],
+  "genres": [
+    "action",
+    "racing"
+  ],
+  "developer": "Nintendo",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Drag x Drive",
+    "wheelchair basketball",
+    "online",
+    "motion",
+    "team play",
+    "nintendo-switch-2"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A native Switch 2 action selection that adds a distinct team-sport-like competitive rhythm without creating a new taxonomy.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Nintendo store page",
+      "url": "https://www.nintendo.com/us/store/products/drag-x-drive-switch-2/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/drag-x-drive.svg",
+      "alt": "Abstract GameAtlas art tile for Drag x Drive",
+      "provenanceId": "gameatlas-art-drag-x-drive"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

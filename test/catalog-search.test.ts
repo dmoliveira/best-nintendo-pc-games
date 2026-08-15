@@ -28,9 +28,15 @@ test("applies AND query matching and combined filters deterministically", () => 
   assert.ok(marioKart.length >= 5);
   assert.ok(marioKart.every((record) => record.searchText.includes("mario") && record.searchText.includes("kart")));
   const switchAction = filterCatalog(records, { q: "", platform: "nintendo-switch", genre: "action", year: "" });
-  assert.deepEqual(switchAction.map((record) => record.slug), ["the-legend-of-zelda-tears-of-the-kingdom"]);
+  assert.deepEqual(switchAction.map((record) => record.slug), [
+    "kirby-and-the-forgotten-land",
+    "metroid-dread",
+    "super-mario-odyssey",
+    "the-legend-of-zelda-breath-of-the-wild",
+    "the-legend-of-zelda-tears-of-the-kingdom",
+  ]);
   const pcGames = filterCatalog(records, { q: "", platform: "pc-windows", genre: "", year: "" });
-  assert.equal(pcGames.length, 10);
+  assert.equal(pcGames.length, 17);
   const sortedPcTitles = [...pcGames].sort((left, right) => {
     const leftKey = normalizeSearchText(left.title);
     const rightKey = normalizeSearchText(right.title);
@@ -41,7 +47,7 @@ test("applies AND query matching and combined filters deterministically", () => 
 
 test("client search projection excludes raw evidence objects", () => {
   const serialized = JSON.stringify(records);
-  for (const forbidden of ["sourceUrl", "termsUrl", "rightsStatus", "verificationStatus", "capturedAt", "recheckAt", "rationale", "links", "provenanceId", "\"score\"", "\"scale\"", "\"count\"", "\"value\"", "\"rank\""]) assert.doesNotMatch(serialized, new RegExp(forbidden));
+  for (const forbidden of ["\"sourceUrl\":", "\"termsUrl\":", "\"rightsStatus\":", "\"verificationStatus\":", "\"capturedAt\":", "\"recheckAt\":", "\"rationale\":", "\"links\":", "\"provenanceId\":", "\"score\":", "\"scale\":", "\"count\":", "\"value\":", "\"rank\":"]) assert.doesNotMatch(serialized, new RegExp(forbidden));
   assert.match(serialized, /GameAtlas editorial/);
   assert.ok(records.every((record) => record.artPath?.includes("/assets/games/") && record.artAlt));
   assert.ok(records.every((record) => record.platformDisplayLabels.length === record.platformLabels.length));

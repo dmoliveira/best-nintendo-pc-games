@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "disco-elysium-the-final-cut",
+  "title": "Disco Elysium – The Final Cut",
+  "aliases": [],
+  "emoji": "🎲",
+  "shortDescription": "A dialogue-driven detective role-playing game where competing inner skills make investigation, failure, and self-definition part of the same experience.",
+  "highlights": [
+    "Skill voices turn character building into an active narrative lens",
+    "Choices make even a stalled investigation feel revealing rather than wasted"
+  ],
+  "release": {
+    "year": 2021
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "adventure",
+    "role-playing"
+  ],
+  "developer": "ZA/UM",
+  "publisher": "ZA/UM",
+  "keywords": [
+    "Disco Elysium – The Final Cut",
+    "detective",
+    "dialogue",
+    "skills",
+    "role-playing",
+    "pc-windows"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A major PC role-playing recommendation for players who want expressive choices and dense investigative writing without combat-first structure.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/disco-elysium-the-final-cut.svg",
+      "alt": "Abstract GameAtlas art tile for Disco Elysium – The Final Cut",
+      "provenanceId": "gameatlas-art-disco-elysium-the-final-cut"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

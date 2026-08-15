@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "pokemon-red-and-blue",
+  "title": "Pokémon Red and Blue",
+  "aliases": [],
+  "emoji": "🔴",
+  "shortDescription": "A creature-collecting role-playing journey whose simple turn-based systems become richer through discovery, trading, and personal team building.",
+  "highlights": [
+    "Team composition makes progress feel individual even along a shared route",
+    "Trading turns collection into a social reason to keep exploring"
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "role-playing"
+  ],
+  "developer": "Game Freak",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Pokémon Red and Blue",
+    "monster collecting",
+    "trading",
+    "turn-based",
+    "Kanto",
+    "game-boy"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A foundational Game Boy RPG pick for its enduring loop of exploration, collecting, and player-defined teams.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Pokémon page",
+      "url": "https://www.pokemon.com/us/pokemon-video-games/pokemon-red-version-and-pokemon-blue-version",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/pokemon-red-and-blue.svg",
+      "alt": "Abstract GameAtlas art tile for Pokémon Red and Blue",
+      "provenanceId": "gameatlas-art-pokemon-red-and-blue"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

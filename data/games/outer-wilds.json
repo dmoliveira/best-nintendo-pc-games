@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "outer-wilds",
+  "title": "Outer Wilds",
+  "aliases": [],
+  "emoji": "🪐",
+  "shortDescription": "An exploration mystery where learning how a small solar system behaves is the real key to reaching its most elusive places.",
+  "highlights": [
+    "Knowledge, not inventory, becomes the enduring form of progression",
+    "Each location has a distinct physical rule worth understanding"
+  ],
+  "release": {
+    "year": 2019
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "adventure",
+    "puzzle"
+  ],
+  "developer": "Mobius Digital",
+  "publisher": "Annapurna Interactive",
+  "keywords": [
+    "Outer Wilds",
+    "solar system",
+    "exploration",
+    "time loop",
+    "mystery",
+    "pc-windows"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A defining PC adventure-puzzle pick for its trust in observation, curiosity, and player-led reasoning.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/753640/Outer_Wilds/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/outer-wilds.svg",
+      "alt": "Abstract GameAtlas art tile for Outer Wilds",
+      "provenanceId": "gameatlas-art-outer-wilds"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

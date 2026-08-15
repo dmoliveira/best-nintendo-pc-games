@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "hollow-knight",
+  "title": "Hollow Knight",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "A hand-drawn action platformer that rewards patient exploration, careful combat, and the gradual construction of a mental map.",
+  "highlights": [
+    "A broad underground world supports both directed goals and quiet detours",
+    "Combat demands attention while leaving room for different charm setups"
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "developer": "Team Cherry",
+  "publisher": "Team Cherry",
+  "keywords": [
+    "Hollow Knight",
+    "exploration",
+    "metroidvania",
+    "bosses",
+    "underground",
+    "pc-windows"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A strong PC platforming and exploration anchor for players seeking rich atmosphere and sustained mechanical growth.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/367520/Hollow_Knight/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/hollow-knight.svg",
+      "alt": "Abstract GameAtlas art tile for Hollow Knight",
+      "provenanceId": "gameatlas-art-hollow-knight"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-mario-galaxy-2",
+  "title": "Super Mario Galaxy 2",
+  "aliases": [],
+  "emoji": "✨",
+  "shortDescription": "A compact 3D platforming showcase that continually finds new uses for gravity, tiny planets, and expressive movement tools.",
+  "highlights": [
+    "Each galaxy introduces a clear idea before twisting it in surprising ways",
+    "Movement stays responsive even as the camera and gravity change"
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Super Mario Galaxy 2",
+    "gravity",
+    "planets",
+    "3D platformer",
+    "power-ups",
+    "nintendo-wii"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A high-confidence Wii platforming selection for its density of inventive, well-explained ideas.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/wii/super_mario_galaxy_2",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/super-mario-galaxy-2.svg",
+      "alt": "Abstract GameAtlas art tile for Super Mario Galaxy 2",
+      "provenanceId": "gameatlas-art-super-mario-galaxy-2"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "resident-evil-4",
+  "title": "Resident Evil 4",
+  "aliases": [],
+  "emoji": "🔦",
+  "shortDescription": "A tense third-person action adventure that turns its changing encounters, inventory choices, and escalating locations into constant forward motion.",
+  "highlights": [
+    "Encounters ask for positioning and quick adaptation rather than simple aim",
+    "A compact inventory creates meaningful pressure between fights"
+  ],
+  "release": {
+    "year": 2005
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Capcom Production Studio 4",
+  "publisher": "Capcom",
+  "keywords": [
+    "Resident Evil 4",
+    "survival horror",
+    "village",
+    "inventory",
+    "third-person",
+    "nintendo-gamecube"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A GameCube action cornerstone whose pacing and encounter design remain exceptionally influential.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/gamecube/resident_evil_4",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/resident-evil-4.svg",
+      "alt": "Abstract GameAtlas art tile for Resident Evil 4",
+      "provenanceId": "gameatlas-art-resident-evil-4"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

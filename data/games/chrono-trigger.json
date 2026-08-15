@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "chrono-trigger",
+  "title": "Chrono Trigger",
+  "aliases": [],
+  "emoji": "⏳",
+  "shortDescription": "A brisk role-playing adventure that uses time travel to make its worlds, party relationships, and choices feel unusually connected.",
+  "highlights": [
+    "Time periods make small discoveries echo across the whole journey",
+    "Combat keeps party coordination lively without slowing the pace"
+  ],
+  "release": {
+    "year": 1995
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "role-playing"
+  ],
+  "developer": "Square",
+  "publisher": "Square",
+  "keywords": [
+    "Chrono Trigger",
+    "time travel",
+    "party",
+    "turn-based",
+    "multiple endings",
+    "nintendo-snes"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A defining SNES role-playing entry for players who want a compact, imaginative party adventure with momentum.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/snes/chrono_trigger",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/chrono-trigger.svg",
+      "alt": "Abstract GameAtlas art tile for Chrono Trigger",
+      "provenanceId": "gameatlas-art-chrono-trigger"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}
