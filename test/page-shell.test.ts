@@ -29,6 +29,7 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(page, /browse every game in the no-JavaScript index/);
   assert.match(browser, /onSubmit=\{\(event\) => event\.preventDefault\(\)\}/);
   assert.match(browser, /addEventListener\("popstate"/);
+  assert.doesNotMatch(browser, /CatalogRouteStateSync|useSearchParams|Suspense/);
   assert.doesNotMatch(browser, /Update results/);
   assert.match(browser, /browser-panel-count/);
   assert.match(browser, /htmlFor="catalog-sort"/);
@@ -44,7 +45,7 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /showImages=\{state\.images !== "hide"\}/);
   assert.match(browser, /name="card-images" value="hide"/);
   assert.match(browser, /columns/);
-  assert.match(browser, /CatalogCards records={displayRecords} columns={state.columns} showImages=\{state\.images !== "hide"\} showResultPosition/);
+  assert.match(browser, /CatalogCards records={displayRecords} basePath={basePath} columns={state.columns} showImages=\{state\.images !== "hide"\} showResultPosition/);
   assert.match(browser, /resultPositionOffset/);
   assert.match(browser, /Score \(licensed data only\)/);
   assert.match(browser, /catalog-pagination/);
@@ -60,6 +61,16 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(cards, /data-platform-overflow/);
   assert.match(cards, /data-genre-overflow/);
   assert.match(cards, /<ul className="game-card-topline-platforms"/);
+  assert.match(cards, /function filterHref\(basePath: string, key: CatalogFilterKey/);
+  assert.match(cards, /filterHref\(basePath, "platform", platformId\)/);
+  assert.match(cards, /filterHref\(basePath, "genre", genreId\)/);
+  assert.match(cards, /filterHref\(basePath, "year", record\.releaseYear\)/);
+  assert.match(cards, /game-card-guide-link/);
+  assert.match(page, /catalogFilterHref\("platform", platform\.id\)/);
+  assert.match(page, /href=\{`\$\{site\.basePath\}\$\{catalogFilterHref\("platform", platform\.id\)\}`\}/);
+  assert.match(taxonomyHub, /createSiteConfig\(process\.env\)/);
+  assert.match(taxonomyHub, /<a href=\{catalogHref\}>Show matching catalog games/);
+  assert.doesNotMatch(taxonomyHub, /<Link href=\{catalogHref\}/);
   assert.doesNotMatch(taxonomyHub, /showResultPosition/);
   assert.match(browser, /getCatalogPaginationItems/);
   assert.match(browser, /pagination-ellipsis/);
@@ -113,6 +124,8 @@ test("visual shell protects focus, contrast, and reduced-motion behavior", () =>
   assert.match(styles, /catalog-index-status/);
   assert.match(styles, /browser-check-list/);
   assert.match(styles, /game-card-title-link::before/);
+  assert.match(styles, /game-card-filter-link/);
+  assert.match(styles, /game-card-guide-link/);
   assert.match(styles, /\.tag-list a/);
   assert.match(styles, /forced-colors: active[\s\S]*layout-option--active/);
   assert.match(styles, /game-card-credits>span/);

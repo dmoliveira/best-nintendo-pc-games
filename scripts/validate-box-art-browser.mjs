@@ -173,6 +173,17 @@ async function validateCatalogBrowser(client, catalogUrl, representativeGame, de
   const idleRequests = await catalogIndexRequestCount(client);
   if (idle.status !== "idle" || idle.cards !== 24 || idleRequests !== 0 || !idle.summary?.includes("Browse or use filters to load the full catalog")) fail(`catalog index loaded before intent or viewport proximity: ${JSON.stringify({ idle, idleRequests })}`);
 
+  const representativePlatformId = representativeGame.platforms?.[0];
+  const representativeGenreId = representativeGame.genres?.[0];
+  if (!representativePlatformId || !representativeGenreId) fail("the catalog interaction fixture needs a platform and genre");
+  const tileActivated = await client.evaluate(`(() => { const tile = [...document.querySelectorAll(".platform-card-main")].find((candidate) => new URL(candidate.href).searchParams.get("platform") === ${JSON.stringify(representativePlatformId)}); tile?.click(); return Boolean(tile); })()`);
+  if (!tileActivated) fail(`catalog did not expose a platform tile for ${representativePlatformId}`);
+  await waitFor(() => client.evaluate(`(() => { const url = new URL(window.location.href); const disclosure = [...document.querySelectorAll(".browser-disclosure")].find((candidate) => candidate.querySelector("summary")?.textContent?.trim().startsWith("Platforms")); const cards = [...document.querySelectorAll(".game-card")]; return url.searchParams.get("platform") === ${JSON.stringify(representativePlatformId)} && url.hash === "#games" && document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready" && Boolean(disclosure?.querySelector("input:checked")) && Boolean(document.querySelector('.filter-chip[aria-label^="Remove platform filter:"]')) && document.querySelector("#catalog-query")?.value === "" && cards.length > 0 && cards.every((card) => [...card.querySelectorAll('[data-catalog-filter="platform"]')].some((link) => new URL(link.href).searchParams.get("platform") === ${JSON.stringify(representativePlatformId)})); })()`));
+  const tileRequests = await catalogIndexRequestCount(client);
+  if (tileRequests !== 1) fail(`same-route platform tile navigation did not issue exactly one index request: ${tileRequests}`);
+
+  await client.send("Page.navigate", { url: catalogUrl });
+  await waitForCatalogShell(client);
   await client.evaluate('document.querySelector("#catalog-query")?.focus()');
   await client.send("Input.insertText", { text: "celeste" });
   await waitFor(() => client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready" && document.activeElement === document.querySelector("#catalog-query") && document.querySelector("#catalog-query")?.value === "celeste" && new URL(window.location.href).searchParams.get("q") === "celeste" && document.querySelector(".result-summary")?.textContent?.includes("matching games")'));
@@ -208,24 +219,33 @@ async function validateCatalogBrowser(client, catalogUrl, representativeGame, de
       const card = document.querySelector(${JSON.stringify(representativeSelector)})?.closest(".game-card");
       const art = card?.querySelector(".game-card-art");
       const titleLink = card?.querySelector("a.game-card-title-link");
-      const platformLink = card?.querySelector('.game-card-topline a[href*="/platforms/"]');
-      const genreLink = card?.querySelector('a.tag[href*="/genres/"]');
-      const evidenceLink = card?.querySelector('.game-card-footer a[href^="http"]');
-      card?.scrollIntoView({ block: "center" });
       const anchorAtCenter = (element) => {
         if (!element) return null;
         const rect = element.getBoundingClientRect();
         return document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2)?.closest("a");
       };
+      const filters = ["platform", "genre", "year", "developer", "publisher"].map((filter) => card?.querySelector('[data-catalog-filter="' + filter + '"]'));
+      const guides = ["platform", "genre"].map((guide) => card?.querySelector('[data-catalog-guide="' + guide + '"]'));
+      card?.scrollIntoView({ block: "center" });
       return {
         artUsesPrimaryLink: anchorAtCenter(art) === titleLink,
-        platformStaysIndependent: anchorAtCenter(platformLink) === platformLink,
-        genreStaysIndependent: anchorAtCenter(genreLink) === genreLink,
-        evidenceStaysIndependent: anchorAtCenter(evidenceLink) === evidenceLink,
+        filtersStayIndependent: filters.every((link) => anchorAtCenter(link) === link),
+        guidesStayIndependent: guides.every((link) => anchorAtCenter(link) === link),
       };
     })()
   `);
-  if (!pointerTargets.artUsesPrimaryLink || !pointerTargets.platformStaysIndependent || !pointerTargets.genreStaysIndependent || !pointerTargets.evidenceStaysIndependent) fail(`catalog card pointer targets are not layered safely: ${JSON.stringify(pointerTargets)}`);
+  if (!pointerTargets.artUsesPrimaryLink || !pointerTargets.filtersStayIndependent || !pointerTargets.guidesStayIndependent) fail(`catalog card pointer targets are not layered safely: ${JSON.stringify(pointerTargets)}`);
+
+  async function activateRepresentativeFilter(filter) {
+    await client.send("Page.navigate", { url: representativeUrl.toString() });
+    await waitFor(() => client.evaluate(`Boolean(document.querySelector(${JSON.stringify(representativeSelector)}))`));
+    await waitForCatalogReady(client);
+    const target = await client.evaluate(`(() => { const link = document.querySelector(${JSON.stringify(representativeSelector)})?.closest(".game-card")?.querySelector(${JSON.stringify(`[data-catalog-filter="${filter}"]`)}); if (!link) return null; const url = new URL(link.href); const value = url.searchParams.get(${JSON.stringify(filter)}); link.click(); return value ? { value, href: link.getAttribute("href") } : null; })()`);
+    if (!target) fail(`representative card did not expose a ${filter} filter link`);
+    await waitFor(() => client.evaluate(`new URL(window.location.href).searchParams.get(${JSON.stringify(filter)}) === ${JSON.stringify(target.value)} && window.location.hash === "#games" && document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready" && document.querySelector(".result-summary")?.textContent?.includes("matching games")`));
+  }
+
+  for (const filter of ["platform", "genre", "year", "developer", "publisher"]) await activateRepresentativeFilter(filter);
 
   await client.send("Page.navigate", { url: catalogUrl });
   await waitForCatalogShell(client);
@@ -300,6 +320,17 @@ async function validateCatalogBrowser(client, catalogUrl, representativeGame, de
   const unrelatedQueryRequests = await catalogIndexRequestCount(client);
   if (unrelatedQueryState.status !== "idle" || unrelatedQueryRequests !== 0 || !unrelatedQueryState.summary?.includes("Browse or use filters to load the full catalog")) fail(`unrelated URL parameters triggered a catalog index request: ${JSON.stringify({ unrelatedQueryState, unrelatedQueryRequests })}`);
 
+  async function validateTaxonomyReturn(kind, id) {
+    const section = kind === "platform" ? "platforms" : "genres";
+    await client.send("Page.navigate", { url: new URL(`${basePath}/${section}/${id}/`, catalogUrl).toString() });
+    await waitFor(() => client.evaluate('Boolean(document.querySelector(".hub-meta a"))'));
+    const target = await client.evaluate(`(() => { const link = [...document.querySelectorAll(".hub-meta a")].find((candidate) => new URL(candidate.href).searchParams.get(${JSON.stringify(kind)}) === ${JSON.stringify(id)}); link?.click(); return Boolean(link); })()`);
+    if (!target) fail(`${kind} hub did not expose a filtered catalog return link`);
+    await waitFor(() => client.evaluate(`new URL(window.location.href).searchParams.get(${JSON.stringify(kind)}) === ${JSON.stringify(id)} && window.location.hash === "#games" && document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready" && document.querySelector(".result-summary")?.textContent?.includes("matching games")`));
+  }
+
+  await validateTaxonomyReturn("platform", representativePlatformId);
+  await validateTaxonomyReturn("genre", representativeGenreId);
 }
 
 async function main() {

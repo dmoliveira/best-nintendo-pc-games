@@ -6,7 +6,7 @@ import PlatformGlyph from "./platform-glyph";
 import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
 import { createSiteConfig } from "@/lib/site-config";
-import { DEFAULT_PAGE_SIZE, toCatalogCardRecord } from "@/lib/catalog/search";
+import { catalogFilterHref, DEFAULT_PAGE_SIZE, toCatalogCardRecord } from "@/lib/catalog/search";
 import { getCatalogSearchIndexDigest } from "@/lib/catalog/search-index";
 import { getCatalogGames, getCatalogSearchRecords, getPlatformHubs, getPopulatedPlatforms } from "@/lib/catalog/site-data";
 
@@ -72,11 +72,11 @@ export default function Home() {
         </div>
         <div className="platform-grid">
           {populatedPlatforms.map((platform, index) => <article className={`platform-card platform-card--${platformTones[index % platformTones.length]}`} key={platform.id}>
-            <Link className="platform-card-main" href={`/?platform=${platform.id}#games`} aria-label={`Filter games by ${platform.name}`}>
+            <a className="platform-card-main" href={`${site.basePath}${catalogFilterHref("platform", platform.id)}`} aria-label={`Filter games by ${platform.name}`}>
               <span className="card-topline">{platform.family === "pc" ? "PC" : "NINTENDO"}<span aria-hidden="true">↗</span></span>
               <span className="platform-card-icon" aria-hidden="true"><PlatformGlyph platformId={platform.id} /></span>
               <span className="platform-card-copy"><strong>{platform.name}</strong><small>{platformCounts.get(platform.id) ?? 0} catalog {platformCounts.get(platform.id) === 1 ? "entry" : "entries"}</small></span>
-            </Link>
+            </a>
             {platformHubIds.has(platform.id) ? <div className="platform-card-footer"><Link className="platform-guide" href={`/platforms/${platform.id}/`}>Open guide <span aria-hidden="true">↗</span></Link></div> : null}
           </article>)}
         </div>
@@ -88,7 +88,7 @@ export default function Home() {
           <p className="section-aside">Search by title, person, platform, genre, year, or creator. Sort the results without turning editorial context into a blended rating.</p>
         </div>
         <noscript><style>{".browser-panel, .result-tools .page-size-field, .hero-search { display: none; }"}</style><p className="noscript-note">Interactive filters and pagination require JavaScript. The first catalog entries remain available below; <Link href="/catalog/">browse every game in the no-JavaScript index</Link>.</p></noscript>
-        <CatalogBrowser initialRecords={initialSearchRecords} catalogEntryCount={games.length} catalogIndexDigest={catalogIndexDigest} catalogIndexUrl={catalogIndexUrl} catalogIndexHref={site.publicUrl("catalog/")} />
+        <CatalogBrowser initialRecords={initialSearchRecords} catalogEntryCount={games.length} catalogIndexDigest={catalogIndexDigest} catalogIndexUrl={catalogIndexUrl} catalogIndexHref={site.publicUrl("catalog/")} basePath={site.basePath} />
       </section>
 
       <section className="section-block section-block--method" id="method" aria-labelledby="method-heading">
