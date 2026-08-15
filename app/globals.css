@@ -3228,3 +3228,10 @@ h1 {
 .display-page-size select{background:transparent;border:0;color:var(--paper);cursor:pointer;font-size:.64rem;padding:2px 0}
 .display-page-size select:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 @media(max-width:800px){.display-panel{left:0;right:auto;max-width:calc(100vw - 32px);min-width:255px}.display-panel .layout-control--images{border-left:0;margin-left:0;padding-left:0}}
+
+.browser-facet-search{align-items:center;background:rgba(5,10,18,.35);border:1px solid var(--line);border-radius:5px;color:var(--faint);display:flex;gap:6px;height:40px;margin:0 0 9px;padding:0 9px}
+.browser-facet-search:focus-within{border-color:var(--cyan);outline:2px solid var(--cyan);outline-offset:2px}
+.browser-facet-search input{background:transparent;border:0;color:var(--paper);font-size:.69rem;min-width:0;outline:0;width:100%}
+.browser-facet-search input::placeholder{color:var(--faint)}
+.browser-facet-empty{color:var(--faint);font-size:.65rem;margin:0;padding:4px 0}
+@media (max-width: 720px){.browser-facet-search{height:44px}}
