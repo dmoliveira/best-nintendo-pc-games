@@ -22,7 +22,7 @@ const maximumArtifactBytes = 150 * 1024 * 1024;
 const maximumHomePayloadBytes = 400 * 1024;
 const maximumCatalogSearchIndexBytes = 2 * 1024 * 1024;
 const expectedInitialCatalogCards = 24;
-const requiredFiles = ["index.html", ".nojekyll", "robots.txt", "sitemap.xml", "og-image.png", "mark.svg", "catalog/index.html", "catalog-search-index.json", "docs/rights-and-support-policy/index.html"];
+const requiredFiles = ["index.html", ".nojekyll", "robots.txt", "sitemap.xml", "manifest.webmanifest", "og-image.png", "mark.svg", "catalog/index.html", "catalog-search-index.json", "docs/rights-and-support-policy/index.html"];
 const forbiddenEvidenceFields = ["sourceUrl", "termsUrl", "rightsStatus", "verificationStatus", "capturedAt", "recheckAt"];
 const forbiddenSearchIndexFields = [...forbiddenEvidenceFields, "rationale", "links", "provenanceId", "score", "scale", "count", "value", "rank"];
 const forbiddenStructuredDataKeys = ["aggregateRating", "review", "reviewRating", "ratingValue", "ratingCount", "bestRating", "worstRating", "contentRating", "sales", "popularity"];
@@ -61,6 +61,9 @@ function checkStructuredData(html, location, requiredTypes) {
 if (!fs.existsSync(outDir)) { fail(`missing output directory ${outDir}`); process.exit(1); }
 for (const file of requiredFiles) if (!fs.existsSync(path.join(outDir, file))) fail(`missing ${file}`);
 const html = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
+const webManifest = JSON.parse(fs.readFileSync(path.join(outDir, "manifest.webmanifest"), "utf8"));
+const expectedManifestStartUrl = `${expectedBasePath}/`.replace(/^\/$/, "/");
+if (webManifest?.start_url !== expectedManifestStartUrl) fail(`manifest start URL must stay within the Pages scope: expected ${expectedManifestStartUrl}, received ${webManifest?.start_url}`);
 const homePayloadFiles = ["index.html", "index.txt", "__next._full.txt", "__next.__PAGE__.txt"];
 const homePayloadBytes = homePayloadFiles.reduce((total, file) => total + (fs.existsSync(path.join(outDir, file)) ? fs.statSync(path.join(outDir, file)).size : 0), 0);
 if (homePayloadBytes > maximumHomePayloadBytes) fail(`home HTML and Flight payload exceed ${maximumHomePayloadBytes} bytes (${homePayloadBytes} bytes)`);
