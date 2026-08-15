@@ -2784,7 +2784,8 @@ h1 {
   min-width: 0;
 }
 
-.game-card-credits .game-card-credit > span {
+.game-card-credits .game-card-credit > span,
+.game-card-credits .game-card-credit > a {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3088,9 +3089,44 @@ h1 {
 
 .game-card-topline a,
 .tag-list a,
-.game-card-footer a {
+.game-card-footer a,
+.game-card-filter-link,
+.game-card-guide-link {
   position: relative;
   z-index: 2;
+}
+
+.game-card-filter-link:hover,
+.game-card-filter-link:focus-visible {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.game-card-guide-link {
+  color: var(--faint);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .52rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.game-card-guide-link:hover,
+.game-card-guide-link:focus-visible {
+  color: var(--paper);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.game-card-taxonomy {
+  align-items: center;
+  display: inline-flex;
+  gap: 4px;
+  max-width: 100%;
+}
+
+.game-card-credits .game-card-credit > a {
+  color: var(--paper);
 }
 
 .game-card:hover .art-link-label,

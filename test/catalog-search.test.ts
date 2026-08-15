@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { getCatalogSearchRecords } from "../lib/catalog/site-data";
-import { clearCatalogFilters, createSearchStateOptions, filterCatalog, getCatalogPaginationItems, normalizeSearchText, paginateCatalog, parseSearchState, serializeSearchState, toCatalogCardRecord, type SearchStateOptions } from "../lib/catalog/search";
+import { catalogFilterHref, clearCatalogFilters, createSearchStateOptions, filterCatalog, getCatalogPaginationItems, normalizeSearchText, paginateCatalog, parseSearchState, serializeSearchState, toCatalogCardRecord, type SearchStateOptions } from "../lib/catalog/search";
 
 const records = getCatalogSearchRecords();
 const options: SearchStateOptions = {
@@ -26,6 +26,15 @@ test("round-trips canonical URL search state and drops unknown filters", () => {
   assert.deepEqual(parseSearchState(new URLSearchParams(query), options), { ...state, q: "mario kart", platform: "nintendo-switch,pc-windows", genre: "action,racing" });
   assert.deepEqual(parseSearchState(new URLSearchParams("?platform=unknown%2Cnintendo-switch&platform=pc-windows&genre=nope&year=1900&sort=score&page=0&perPage=13&columns=9"), options), { q: "", platform: "nintendo-switch,pc-windows", genre: "", year: "", columns: "auto", yearFrom: "", yearTo: "", developer: "", publisher: "", sort: "relevance", page: 1, pageSize: 24, images: "show" });
   assert.deepEqual(parseSearchState(new URLSearchParams("?year=2023"), options), { q: "", platform: "", genre: "", year: "2023", columns: "auto", yearFrom: "", yearTo: "", developer: "", publisher: "", sort: "relevance", page: 1, pageSize: 24, images: "show" });
+});
+
+test("builds canonical catalog filter links", () => {
+  assert.equal(catalogFilterHref("platform", "pc-windows"), "/?platform=pc-windows#games");
+  assert.equal(catalogFilterHref("genre", "action"), "/?genre=action#games");
+  assert.equal(catalogFilterHref("year", 2020), "/?year=2020#games");
+  assert.equal(catalogFilterHref("developer", "  Maddy Makes Games Inc.  "), "/?developer=maddy+makes+games+inc#games");
+  assert.equal(catalogFilterHref("publisher", "Nintendo"), "/?publisher=nintendo#games");
+  assert.equal(catalogFilterHref("genre", "   "), "/#games");
 });
 
 test("applies AND query matching and combined filters deterministically", () => {
