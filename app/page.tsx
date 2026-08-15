@@ -79,8 +79,9 @@ export default function Home() {
       <section className="section-block section-block--catalog" id="games" aria-labelledby="games-heading">
         <div className="section-heading section-heading--catalog">
           <div><p className="eyebrow">The reviewed catalog</p><h2 id="games-heading">Start with a game.</h2></div>
-          <p className="section-aside">Search by title, person, platform, genre, or year. Every card is an original GameAtlas selection, not a blended rating.</p>
+          <p className="section-aside">Search by title, person, platform, genre, year, or creator. Sort the results without turning editorial context into a blended rating.</p>
         </div>
+        <noscript><style>{".browser-panel, .result-tools .page-size-field, .hero-search { display: none; }"}</style><p className="noscript-note">Interactive filters and pagination require JavaScript; all reviewed game cards remain available below.</p></noscript>
         <CatalogBrowser records={getCatalogSearchRecords()} />
       </section>
 
@@ -103,6 +104,5 @@ export default function Home() {
     </main>
 
     <SiteFooter />
-    <noscript><p className="noscript-note">All reviewed game cards remain available without JavaScript; interactive search and filters require JavaScript.</p></noscript>
   </div>;
 }

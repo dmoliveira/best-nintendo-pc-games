@@ -21,11 +21,14 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.doesNotMatch(page, /Catalog search is coming soon/);
   assert.doesNotMatch(page, /Catalog coming soon/);
   assert.doesNotMatch(page, /80\+/);
+  assert.match(page, /Interactive filters and pagination require JavaScript/);
   assert.match(browser, /syncUrl\(state, "replace"\)/);
   assert.match(browser, /addEventListener\("popstate"/);
   assert.match(browser, /Card layout/);
   assert.match(browser, /columns/);
-  assert.match(browser, /CatalogCards records={filteredRecords} columns={state.columns}/);
+  assert.match(browser, /CatalogCards records={displayRecords} columns={state.columns}/);
+  assert.match(browser, /Score \(licensed data only\)/);
+  assert.match(browser, /catalog-pagination/);
 });
 
 test("visual shell protects focus, contrast, and reduced-motion behavior", () => {

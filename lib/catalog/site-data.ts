@@ -212,6 +212,7 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
     shortDescription: game.shortDescription,
     searchText,
     releaseYear: game.release.year,
+    releaseDate: game.release.date,
     releaseFormat: game.releaseFormat,
     platformIds: platforms.map((platform) => platform.id),
     platformLabels: platforms.map((platform) => platform.name),

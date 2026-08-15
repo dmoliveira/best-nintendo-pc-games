@@ -27,6 +27,7 @@ export default function HeroSearch() {
     const nextQuery = cleanQuery(query);
     if (nextQuery) params.set("q", nextQuery);
     else params.delete("q");
+    params.delete("page");
     const serialized = params.toString();
     const nextUrl = `${window.location.pathname}${serialized ? `?${serialized}` : ""}#games`;
     window.history.pushState({}, "", nextUrl);
