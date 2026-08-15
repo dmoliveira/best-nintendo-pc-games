@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "policy": "These are neutral GameAtlas display proportions for original editorial package views. They are not manufacturer measurements, official package templates, trade dress, logos, or a license to recreate retail packaging.",
+  "formats": [
+    {
+      "id": "cartridge-portrait",
+      "label": "Portrait cartridge case",
+      "kind": "physical",
+      "dimensions": { "width": 105, "height": 165, "depth": 10 },
+      "image": { "width": 1024, "height": 1536 },
+      "accent": "coral"
+    },
+    {
+      "id": "cartridge-landscape",
+      "label": "Landscape cartridge box",
+      "kind": "physical",
+      "dimensions": { "width": 175, "height": 125, "depth": 20 },
+      "image": { "width": 1536, "height": 1024 },
+      "accent": "lime"
+    },
+    {
+      "id": "optical-disc-case",
+      "label": "Optical-disc case",
+      "kind": "physical",
+      "dimensions": { "width": 135, "height": 190, "depth": 14 },
+      "image": { "width": 1024, "height": 1536 },
+      "accent": "cyan"
+    },
+    {
+      "id": "handheld-wide-case",
+      "label": "Wide handheld case",
+      "kind": "physical",
+      "dimensions": { "width": 135, "height": 125, "depth": 15 },
+      "image": { "width": 1536, "height": 1024 },
+      "accent": "violet"
+    },
+    {
+      "id": "handheld-tall-box",
+      "label": "Tall handheld box",
+      "kind": "physical",
+      "dimensions": { "width": 92, "height": 126, "depth": 14 },
+      "image": { "width": 1024, "height": 1536 },
+      "accent": "lime"
+    },
+    {
+      "id": "pc-big-box",
+      "label": "PC big-box edition",
+      "kind": "physical",
+      "dimensions": { "width": 190, "height": 240, "depth": 25 },
+      "image": { "width": 1024, "height": 1536 },
+      "accent": "cyan"
+    },
+    {
+      "id": "digital-edition",
+      "label": "Digital edition card",
+      "kind": "digital",
+      "dimensions": { "width": 150, "height": 150, "depth": 0 },
+      "image": { "width": 1024, "height": 1024 },
+      "accent": "violet"
+    }
+  ],
+  "platformFormatMap": {
+    "nintendo-nes": "cartridge-landscape",
+    "nintendo-snes": "cartridge-landscape",
+    "nintendo-64": "cartridge-landscape",
+    "nintendo-gamecube": "optical-disc-case",
+    "nintendo-wii": "optical-disc-case",
+    "nintendo-wii-u": "optical-disc-case",
+    "nintendo-switch": "cartridge-portrait",
+    "nintendo-switch-2": "cartridge-portrait",
+    "game-boy": "handheld-tall-box",
+    "game-boy-color": "handheld-tall-box",
+    "game-boy-advance": "handheld-tall-box",
+    "nintendo-ds": "handheld-wide-case",
+    "nintendo-dsi": "digital-edition",
+    "nintendo-3ds": "handheld-wide-case",
+    "nintendo-new-3ds": "handheld-wide-case",
+    "pc-windows": "pc-big-box"
+  }
+}

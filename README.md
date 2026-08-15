@@ -32,6 +32,10 @@ npm ci
 make validate
 ```
 
+## Game box art
+
+Original editorial box-art drafts and the interactive package viewer are documented in [`docs/guides/game-box-art-workflow.md`](docs/guides/game-box-art-workflow.md). The tool stages first, requires a checksum-bound review attestation before publication, and deploys approved `public/` assets through the existing GitHub Pages workflow.
+
 ## License
 
 Source code will be released under a code license in a later launch slice. Third-party names, marks, provider content, and assets remain owned by their respective owners; the rights policy is part of the project contract.

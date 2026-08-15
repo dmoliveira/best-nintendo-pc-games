@@ -3,6 +3,7 @@ import path from "node:path";
 import { localTodayKey } from "../lib/date-policy.mjs";
 import { isValidHttpsUrl } from "../lib/url-policy.mjs";
 import { findCatalogIdentityCollisions, findDuplicateRecordIds, validateGameRecord, validateGenreRecord, validatePlatformRecord, type CatalogContext, type GenreRecord, type PlatformRecord, type SourcePolicy } from "../lib/catalog/index";
+import { BOX_ART_FORMAT_IDS, validateBoxArtFormatDocument } from "../lib/box-art/formats";
 
 const root = process.cwd();
 const loadJson = (relativePath: string) => JSON.parse(fs.readFileSync(path.join(root, relativePath), "utf8")) as unknown;
@@ -14,9 +15,11 @@ const genresDocument = loadJson("data/genres.json") as { schemaVersion?: number;
 const sourceDocument = loadJson("data/source-rights.json") as { sources?: unknown[]; publicNumericSignalPolicy?: { eligiblePredicate?: { approvedCriticProviders?: string[]; minimumScore?: number; requiredScale?: number } }; popularitySignalPolicy?: { eligiblePredicate?: { approvedPopularityProviders?: string[]; publicMode?: string } } };
 const assetDocument = loadJson("data/assets-manifest.json") as { assets?: unknown[] };
 const coverageDocument = loadJson("data/coverage.json") as { schemaVersion?: number; coveragePolicy?: string; minimumHubRecords?: number; sources?: unknown[]; items?: unknown[] };
+const boxArtFormatDocument = loadJson("data/box-art-formats.json") as { platformFormatMap?: Record<string, string> };
 
 if (platformsDocument.schemaVersion !== 1 || !Array.isArray(platformsDocument.items)) errors.push("data/platforms.json: expected schemaVersion 1 and items array");
 if (genresDocument.schemaVersion !== 1 || !Array.isArray(genresDocument.items)) errors.push("data/genres.json: expected schemaVersion 1 and items array");
+errors.push(...validateBoxArtFormatDocument(boxArtFormatDocument));
 
 const platformItems = (platformsDocument.items ?? []) as PlatformRecord[];
 const genreItems = (genresDocument.items ?? []) as GenreRecord[];
@@ -61,6 +64,7 @@ for (const [index, coverage] of (coverageDocument.items ?? []).entries()) {
   if (nonEmpty(platformId)) coverageById.set(platformId, coverage);
 }
 for (const platform of platformItems) if (nonEmpty(platform.id) && !coverageById.has(platform.id)) errors.push(`data/coverage.json: missing coverage entry for ${platform.id}`);
+for (const platform of platformItems) if (nonEmpty(platform.id) && !boxArtFormatDocument.platformFormatMap?.[platform.id]) errors.push(`data/box-art-formats.json: missing format mapping for ${platform.id}`);
 
 const sourceCandidates = sourceDocument.sources ?? [];
 for (const id of findDuplicateRecordIds(sourceCandidates, "id")) errors.push(`data/source-rights.json: duplicate source ${id}`);
@@ -99,23 +103,23 @@ for (const [index, candidate] of sourceCandidates.entries()) {
 
 const assetCandidates = assetDocument.assets ?? [];
 for (const id of findDuplicateRecordIds(assetCandidates, "assetId")) errors.push(`data/assets-manifest.json: duplicate asset ${id}`);
-const assetRecords: Array<{ assetId: string; path: string }> = [];
+const assetRecords: Array<{ assetId: string; path: string; altText?: string; assetKind?: string; intendedUse?: string; boxFormatId?: string }> = [];
 for (const [index, candidate] of assetCandidates.entries()) {
   const recordPath = `data/assets-manifest.json.assets[${index}]`;
   if (!isRecord(candidate) || !nonEmpty(candidate.assetId) || !nonEmpty(candidate.path)) {
     errors.push(`${recordPath}: assetId and path must be non-empty strings`);
     continue;
   }
-  assetRecords.push({ assetId: candidate.assetId, path: candidate.path });
+  assetRecords.push({ assetId: candidate.assetId, path: candidate.path, altText: nonEmpty(candidate.altText) ? candidate.altText : undefined, assetKind: nonEmpty(candidate.assetKind) ? candidate.assetKind : undefined, intendedUse: nonEmpty(candidate.intendedUse) ? candidate.intendedUse : undefined, boxFormatId: nonEmpty(candidate.boxFormatId) ? candidate.boxFormatId : undefined });
 }
 
 const sourceById = new Map(sourceRecords.map((source) => [source.id, source]));
-const assetById = new Map(assetRecords.map((asset) => [asset.assetId, { path: asset.path }]));
+const assetById = new Map(assetRecords.map((asset) => [asset.assetId, { path: asset.path, altText: asset.altText, assetKind: asset.assetKind, intendedUse: asset.intendedUse, boxFormatId: asset.boxFormatId }]));
 const predicate = sourceDocument.publicNumericSignalPolicy?.eligiblePredicate;
 const approvedCriticProviders = new Set(predicate?.approvedCriticProviders ?? []);
 const popularityPredicate = sourceDocument.popularitySignalPolicy?.eligiblePredicate;
 const approvedPopularityProviders = new Set(popularityPredicate?.approvedPopularityProviders ?? []);
-const context: CatalogContext = { platformIds, genreIds, sourceById, assetById, approvedCriticProviders, approvedPopularityProviders, popularityPublicMode: popularityPredicate?.publicMode === "numeric-display" ? "numeric-display" : "outbound-only", criticMinimumScore: predicate?.minimumScore ?? 80, criticRequiredScale: predicate?.requiredScale ?? 100, todayKey: localTodayKey() };
+const context: CatalogContext = { platformIds, genreIds, sourceById, assetById, boxArtFormatIds: BOX_ART_FORMAT_IDS, approvedCriticProviders, approvedPopularityProviders, popularityPublicMode: popularityPredicate?.publicMode === "numeric-display" ? "numeric-display" : "outbound-only", criticMinimumScore: predicate?.minimumScore ?? 80, criticRequiredScale: predicate?.requiredScale ?? 100, todayKey: localTodayKey() };
 const gamesDirectory = path.join(root, "data/games");
 const gameFiles = fs.existsSync(gamesDirectory) ? fs.readdirSync(gamesDirectory).filter((file) => file.endsWith(".json")).sort() : [];
 const identityRecords: Array<{ file: string; slug: string; title: string; aliases: string[] }> = [];

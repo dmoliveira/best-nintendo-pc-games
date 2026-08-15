@@ -60,6 +60,8 @@ The default launch path is:
 
 Do not download a cover or screenshot merely because a provider returns an image URL. Do not recreate official boxes, logos, characters, or screenshots as generated “fan art” for a card.
 
+For interactive package views, only a reviewed `generated-game-box-front` manifest record may supply the front image. The image must have a checksum, declared neutral format profile, exact PNG dimensions, and an affirmative review attestation. The front is original editorial art; existing approved generic editorial tiles may appear only as separate scene art, never as the package front. The 2.5D spine, back, base, and labels are GameAtlas UI layers rather than reconstructed product packaging. See [`docs/guides/game-box-art-workflow.md`](guides/game-box-art-workflow.md).
+
 ## Support CTA gate
 
 A future support destination has been supplied for the later support task. Its live destination is intentionally absent from this public repository until the disclosure gate completes. This rights slice does **not** publish a payment button. Before enabling it in the README, footer, or `/support/` page, the project must document the intended recipient/account context, voluntary-support wording, public correction/contact path, applicable refund/privacy information, and any provider terms affected by the support path. The payment link must not be described as a subscription, tax-deductible donation, or commercial service unless that is verified.
