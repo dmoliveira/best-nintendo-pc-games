@@ -11,6 +11,7 @@ test("home shell exposes a keyboard bypass and stable main landmark", () => {
   assert.match(page, /className="skip-link" href="#main-content"/);
   assert.match(page, /<main id="main-content">/);
   assert.match(page, /<header className="topbar">[\s\S]*<\/header>/);
+  assert.match(page, /GameAtlasMark/);
   assert.match(page, /<footer className="footer">/);
 });
 
@@ -28,6 +29,8 @@ test("visual shell protects focus, contrast, and reduced-motion behavior", () =>
   assert.match(styles, /--faint:#718194/);
   assert.match(styles, /\.skip-link\{/);
   assert.match(styles, /prefers-reduced-motion:reduce/);
+  assert.match(styles, /wordmark-orbit/);
+  assert.match(styles, /@keyframes wordmark-orbit-spin/);
   assert.match(styles, /overflow-x:clip/);
   assert.doesNotMatch(styles, /\.platform-card:hover\{[^}]*transform/);
 });
@@ -38,6 +41,8 @@ test("game detail pages expose static params, a skip link, and explicit editoria
   assert.match(gamePage, /generateStaticParams/);
   assert.match(gamePage, /className="skip-link" href="#main-content"/);
   assert.match(gamePage, /Original editorial/);
+  assert.match(gamePage, /PlatformGlyph/);
+  assert.match(gamePage, /game-status-row/);
   assert.match(gamePage, /Official &amp; external resources/);
   assert.match(gamePage, /DSiWare · Digital/);
 });

@@ -12,10 +12,11 @@ function checkNoRawEvidence(html, location) { for (const field of forbiddenEvide
 if (!fs.existsSync(outDir)) { fail(`missing output directory ${outDir}`); process.exit(1); }
 for (const file of requiredFiles) if (!fs.existsSync(path.join(outDir, file))) fail(`missing ${file}`);
 const html = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
-for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth your time.", "Start with a game.", "Search games", "Showing"]) if (!html.includes(expected)) fail(`home page does not contain ${JSON.stringify(expected)}`);
+for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth your time.", "Start with a game.", "Search games", "Showing", "GameAtlas pick", "platform-glyph", "Score"]) if (!html.includes(expected)) fail(`home page does not contain ${JSON.stringify(expected)}`);
 if (!/Showing[\s\S]{0,120}of[\s\S]{0,120}reviewed games/.test(html)) fail("home page is missing the accessible result count");
 if (!html.includes("docs/rights-and-support-policy")) fail("home page is missing the policy link");
 if (html.includes("Catalog search is coming soon") || html.includes("Catalog coming soon") || html.includes("next discovery layer") || html.includes("discovery tools arrive") || html.includes("80+")) fail("home page exposes stale preview or unauthorized numeric messaging");
+if (/\b(?:score|rating)\s*[:=]\s*\d+(?:\.\d+)?/i.test(html)) fail("home page exposes a numeric score or rating");
 if (html.includes("action=\"/\"")) fail("home page contains a root-relative form action that bypasses the Pages base path");
 checkNoRawEvidence(html, "home page");
 const sitemap = fs.readFileSync(path.join(outDir, "sitemap.xml"), "utf8");
@@ -43,6 +44,7 @@ for (const game of gameRecords) {
   const gameHtml = fs.readFileSync(gamePath, "utf8");
   if (!gameHtml.includes(game.title)) fail(`${route} does not contain its game title`);
   if (!gameHtml.includes("Original editorial")) fail(`${route} does not contain explicit editorial evidence labeling`);
+  for (const link of (game.links ?? []).filter((candidate) => candidate.kind === "critical")) if (!gameHtml.includes(link.url)) fail(`${route} is missing its outbound critical context link`);
   if (Array.isArray(game.assets) && game.assets.length > 0 && !gameHtml.includes("game-hero-art")) fail(`${route} does not render its manifested art asset`);
   if (gameHtml.includes("80+") || /(?:critic score|popularity value|popularity rank)/i.test(gameHtml)) fail(`${route} exposes unauthorized numeric evidence messaging`);
   if (!sitemap.includes(`games/${game.slug}/`)) fail(`sitemap is missing ${game.slug}`);
