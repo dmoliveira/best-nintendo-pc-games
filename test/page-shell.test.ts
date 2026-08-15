@@ -88,9 +88,14 @@ test("package UI consumes profile geometry and preserves card-safe thumbnail art
   assert.match(boxViewer, /viewer\.restAngle/);
   assert.match(boxViewer, /presentation\.formatKind === "physical"/);
   assert.match(boxViewer, /onError=\{\(\) => setFailedSource/);
+  assert.match(boxViewer, /loading="eager" decoding="async" fetchPriority="high"/);
+  assert.match(boxViewer, /loading="lazy" decoding="async" fetchPriority="low"/);
+  assert.match(boxViewer, /role="img" aria-label=\{`GameAtlas reference front/);
   assert.match(cards, /PackageThumbnail thumbnail=\{record\.packageThumbnail\}/);
   assert.match(packageThumbnail, /data-package-thumbnail="true"/);
   assert.match(packageThumbnail, /thumbnail\.kind === "physical"/);
+  assert.match(packageThumbnail, /loading="lazy" decoding="async"/);
   assert.match(styles, /package-thumbnail__spine/);
   assert.match(styles, /rotateY\(-23deg\)/);
+  assert.doesNotMatch(styles, /will-change:\s*transform/);
 });

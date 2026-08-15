@@ -2683,7 +2683,6 @@ h1 {
 
 .game-box {
   filter: drop-shadow(17px 24px 18px rgba(0, 0, 0, .48));
-  will-change: transform;
 }
 
 .game-box-viewer--digital .game-box {

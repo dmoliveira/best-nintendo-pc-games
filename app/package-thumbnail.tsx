@@ -22,7 +22,7 @@ export default function PackageThumbnail({ thumbnail, emoji }: { thumbnail: Cata
     <span className="package-thumbnail__object">
       {thumbnail.kind === "physical" ? <span className="package-thumbnail__spine" /> : null}
       <span className="package-thumbnail__front">
-        {source ? <img src={source} alt="" loading="lazy" onError={() => setFailed(true)} /> : <span className="package-thumbnail__fallback">{emoji}</span>}
+        {source ? <img src={source} alt="" loading="lazy" decoding="async" onError={() => setFailed(true)} /> : <span className="package-thumbnail__fallback">{emoji}</span>}
       </span>
     </span>
   </span>;

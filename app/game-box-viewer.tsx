@@ -178,10 +178,9 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
       aria-describedby="package-view-instructions"
       onKeyDown={onStageKeyDown}
     >
-      {presentation.editorialThumbnail ? <img className="game-box-stage__editorial-art" src={presentation.editorialThumbnail.src} alt={presentation.editorialThumbnail.alt} /> : null}
       <div className="game-box" style={{ ...boxStyle, transform: `rotateX(${viewer.tiltAngle}deg) rotateY(${renderedAngle}deg) scale(${view.zoom})` }}>
         <div className="game-box__face game-box__front">
-          {frontSrc ? <img src={frontSrc} alt={governedFront?.alt ?? `AI-generated GameAtlas package front for ${presentation.title}`} onError={() => setFailedSource(frontSrc)} /> : <div className="game-box__reference-art" aria-label={`GameAtlas reference front for ${presentation.title}`}><span aria-hidden="true">✦</span></div>}
+          {frontSrc ? <img src={frontSrc} alt={governedFront?.alt ?? `AI-generated GameAtlas package front for ${presentation.title}`} loading="eager" decoding="async" fetchPriority="high" onError={() => setFailedSource(frontSrc)} /> : <div className="game-box__reference-art" role="img" aria-label={`GameAtlas reference front for ${presentation.title}`}><span aria-hidden="true">✦</span></div>}
         </div>
         {presentation.formatKind === "physical" ? <>
           <div className="game-box__face game-box__spine" aria-hidden="true"><span>{presentation.platformLabel}</span></div>
@@ -189,6 +188,7 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
           <div className="game-box__face game-box__base" aria-hidden="true" />
         </> : null}
       </div>
+      {presentation.editorialThumbnail ? <img className="game-box-stage__editorial-art" src={presentation.editorialThumbnail.src} alt={presentation.editorialThumbnail.alt} loading="lazy" decoding="async" fetchPriority="low" /> : null}
     </div>
     <p className="game-box-instructions" id="package-view-instructions">{canRotate ? "Use the controls, or focus the package and press Left/Right to rotate, plus/minus to zoom, and Home or 0 to reset." : "Use plus/minus to zoom and Home or 0 to reset. Digital profiles stay flat."}</p>
     <div className={`game-box-controls${canRotate ? "" : " game-box-controls--flat"}`} aria-label="Package view controls">
