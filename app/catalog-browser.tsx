@@ -358,6 +358,8 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
 
   function clearFilters() {
     const nextState = clearCatalogFilters(state);
+    setPlatformQuery("");
+    setGenreQuery("");
     setState(nextState);
     syncUrl(nextState, "push", [...catalogQueryKeys]);
   }
