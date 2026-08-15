@@ -2251,11 +2251,103 @@ h1 {
   .game-grid--columns-1 .game-card-body{padding:15px 15px 14px}
 }
 
-
 @media (max-width:800px){
   .game-grid{grid-template-columns:1fr}
   .layout-control{align-items:flex-start;flex-direction:column;gap:8px;width:100%}
   .layout-options{grid-template-columns:repeat(4,minmax(0,1fr));display:grid;width:100%}
   .layout-option{min-width:0}
   .layout-option-copy small{display:none}
+}
+
+/* Original, category-generic SVG markers. */
+.platform-glyph__accent {
+  stroke-width: 1.3;
+}
+
+.attribute-glyph {
+  display: inline-block;
+  flex: 0 0 auto;
+  height: 1em;
+  vertical-align: -0.14em;
+  width: 1em;
+}
+
+.hub-eyebrow,
+.detail-label,
+.game-card-credit,
+.game-card-distribution,
+.game-card-year,
+.tag {
+  align-items: center;
+  display: inline-flex;
+}
+
+.hub-visual {
+  color: var(--cyan);
+  display: inline-flex;
+  margin-right: 7px;
+}
+
+.hub-visual .platform-glyph,
+.hub-visual .attribute-glyph {
+  height: 1.05rem;
+  width: 1.05rem;
+}
+
+.game-card-year,
+.game-card-distribution,
+.tag,
+.detail-label {
+  gap: 5px;
+}
+
+.game-card-year .attribute-glyph,
+.game-card-distribution .attribute-glyph {
+  height: .78rem;
+  width: .78rem;
+}
+
+.game-card-credits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+}
+
+.game-card-credits .game-card-credit {
+  color: var(--muted);
+  gap: 4px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.game-card-credits .game-card-credit > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.game-card-credits .attribute-glyph,
+.detail-label .attribute-glyph,
+.detail-label .platform-glyph,
+.tag .attribute-glyph {
+  color: var(--cyan);
+  height: .78rem;
+  width: .78rem;
+}
+
+.detail-label {
+  gap: 6px;
+}
+
+.game-meta > span {
+  align-items: center;
+  display: inline-flex;
+  gap: 5px;
+}
+
+@media (max-width: 800px) {
+  .game-card-credits .game-card-credit > span {
+    white-space: normal;
+  }
 }

@@ -26,5 +26,5 @@ export default async function PlatformPage({ params }: PlatformPageProps) {
   const platform = getPlatformHub(id);
   if (!platform) notFound();
   const records = getCatalogSearchRecords().filter((record) => record.platformIds.includes(platform.id));
-  return <TaxonomyHub eyebrow={`${platform.family === "pc" ? "PC" : "Nintendo"} platform guide`} title={platform.name} description={platform.description} records={records} backLabel={`${platform.generation ?? "Platform"} collection`} />;
+  return <TaxonomyHub eyebrow={`${platform.family === "pc" ? "PC" : "Nintendo"} platform guide`} title={platform.name} description={platform.description} records={records} backLabel={`${platform.generation ?? "Platform"} collection`} visual={{ kind: "platform", platformId: platform.id }} />;
 }

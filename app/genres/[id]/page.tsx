@@ -26,5 +26,5 @@ export default async function GenrePage({ params }: GenrePageProps) {
   const genre = getGenreHub(id);
   if (!genre) notFound();
   const records = getCatalogSearchRecords().filter((record) => record.genreIds.includes(genre.id));
-  return <TaxonomyHub eyebrow="Genre guide" title={genre.name} description={genre.description} records={records} backLabel="Genre collection" />;
+  return <TaxonomyHub eyebrow="Genre guide" title={genre.name} description={genre.description} records={records} backLabel="Genre collection" visual={{ kind: "genre", genreId: genre.id }} />;
 }
