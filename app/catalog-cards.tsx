@@ -47,7 +47,7 @@ export default function CatalogCards({ records, columns = "auto", showResultPosi
     return <article className="game-card" key={record.slug}>
       <div className="game-card-topline">
         <div className="game-card-topline-leading">
-          {showResultPosition ? <span className="game-card-position" aria-label={positionLabel} title="Current catalog order, not a quality ranking"><span className="game-card-position-label">Result</span> {String(resultPosition).padStart(2, "0")}</span> : null}
+            {showResultPosition ? <span className="game-card-position" aria-label={positionLabel} title="Current catalog order, not a quality ranking"><span className="game-card-position-label">Item</span> {String(resultPosition).padStart(2, "0")} <span className="game-card-position-total">/ {resultPositionTotal}</span></span> : null}
           <div className="game-card-topline-platforms" aria-label={`Platforms: ${record.platformLabels.join(", ")}`}>
           {visiblePlatforms.map((platformId, platformIndex) => <span className="game-card-platform" key={platformId} title={record.platformLabels[platformIndex]}>
             <PlatformGlyph platformId={platformId} />
@@ -70,7 +70,8 @@ export default function CatalogCards({ records, columns = "auto", showResultPosi
         {credits.length > 0 ? <div className="game-card-credits" aria-label="Credits" title={creditTitle}>{credits.map(({ label, value, glyph }) => <span className="game-card-credit" key={label}><AttributeGlyph kind={glyph} /><b>{label}</b><span>{value}</span></span>)}</div> : null}
         <div className="tag-list" aria-label="Genres">
           {visibleGenres.map((genreId, genreIndex) => record.genreHubIds.includes(genreId) ? <Link className={`tag tag--${getGenreTone(genreId)}`} href={`/genres/${genreId}/`} key={genreId}><AttributeGlyph kind="genre" />{record.genreLabels[genreIndex]}</Link> : <span className={`tag tag--${getGenreTone(genreId)}`} key={genreId}><AttributeGlyph kind="genre" />{record.genreLabels[genreIndex]}</span>)}
-          {hiddenGenreCount > 0 ? <span className="tag tag--more">+{hiddenGenreCount} more</span> : null}
+          {hiddenGenreCount > 0 ? <span className="visually-hidden">Additional genres: {record.genreLabels.slice(visibleGenres.length).join(", ")}</span> : null}
+          {hiddenGenreCount > 0 ? <span className="tag tag--more" aria-hidden="true">+{hiddenGenreCount} more</span> : null}
         </div>
         <div className="game-card-footer">
           <div className="game-card-signal-stack" aria-label="Published signals">

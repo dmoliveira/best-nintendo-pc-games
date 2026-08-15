@@ -24,9 +24,10 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.doesNotMatch(page, /Catalog search is coming soon/);
   assert.doesNotMatch(page, /Catalog coming soon/);
   assert.doesNotMatch(page, /80\+/);
-  assert.match(page, /Interactive filters and pagination require JavaScript/);
-  assert.match(browser, /syncUrl\(state, "replace"\)/);
+  assert.match(page, /URL filters cannot be applied without it/);
+  assert.match(browser, /onSubmit=\{\(event\) => event\.preventDefault\(\)\}/);
   assert.match(browser, /addEventListener\("popstate"/);
+  assert.doesNotMatch(browser, /Update results/);
   assert.match(browser, /Card layout/);
   assert.match(browser, /columns/);
   assert.match(browser, /CatalogCards records={displayRecords} columns={state.columns} showResultPosition/);
@@ -35,6 +36,8 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /catalog-pagination/);
   assert.match(cards, /Current result position/);
   assert.match(cards, /not a quality ranking/);
+  assert.match(cards, /Additional genres:/);
+  assert.match(cards, /aria-hidden="true">\+\{hiddenGenreCount\} more/);
   assert.doesNotMatch(taxonomyHub, /showResultPosition/);
 });
 
@@ -49,8 +52,7 @@ test("visual shell protects focus, contrast, and reduced-motion behavior", () =>
   assert.match(styles, /game-grid--columns-1/);
   assert.match(styles, /layout-control/);
   assert.match(styles, /@media \(max-width:800px\)[\s\S]*game-grid\{grid-template-columns:1fr\}/);
-  assert.match(styles, /layout-options\{grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/);
-  assert.match(styles, /layout-option-copy small\{display:none\}/);
+  assert.match(styles, /browser-layout-row\{display:none\}/);
   assert.match(styles, /game-card-credits>span/);
   assert.doesNotMatch(styles, /\.platform-card:hover\s*\{[^}]*transform/);
 });
