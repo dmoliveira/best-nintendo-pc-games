@@ -269,7 +269,43 @@ export function validateGameRecord(record: unknown, path: string, context: Catal
     game.links.forEach((link, index) => { if (!link || !nonEmpty(link.label) || !isValidHttpsUrl(link.url) || !["official", "store", "critical", "community", "reference"].includes(link.kind)) errors.push(issue(`${path}.links[${index}]`, "requires label, valid https URL, and supported kind")); });
   }
   if (!Array.isArray(game.assets)) errors.push(issue(`${path}.assets`, "must be an array"));
-  else game.assets.forEach((asset, index) => { const known = asset && context.assetById.get(asset.provenanceId); if (!known || known.path !== asset.path) errors.push(issue(`${path}.assets[${index}]`, "asset provenance does not match the approved manifest")); if (!nonEmpty(asset.alt)) errors.push(issue(`${path}.assets[${index}].alt`, "must be non-empty")); });
+  else {
+    const boxAssetKeys = new Set<string>();
+    game.assets.forEach((asset, index) => {
+      const assetPath = `${path}.assets[${index}]`;
+      const assetRecord = asset as unknown as Record<string, unknown>;
+      if (!asset || typeof asset !== "object" || Array.isArray(asset)) {
+        errors.push(issue(assetPath, "must be an object"));
+        return;
+      }
+      const known = nonEmpty(asset.provenanceId) ? context.assetById.get(asset.provenanceId) : undefined;
+      if (!known || known.path !== asset.path) errors.push(issue(assetPath, "asset provenance does not match the approved manifest"));
+      if (!nonEmpty(asset.alt)) errors.push(issue(`${assetPath}.alt`, "must be non-empty"));
+      const role = assetRecord.role;
+      const boxFormatId = assetRecord.boxFormatId;
+      if (role === undefined) {
+        if (boxFormatId !== undefined) errors.push(issue(`${assetPath}.boxFormatId`, "is only allowed for a box-front asset"));
+        if (!known || known.assetKind !== "generated-original-editorial" || known.intendedUse !== "game-card-thumbnail") errors.push(issue(assetPath, "generic game assets require an approved generated-original-editorial game-card-thumbnail manifest record"));
+        if (known?.altText !== asset.alt) errors.push(issue(`${assetPath}.alt`, "must match the approved manifest alt text"));
+        return;
+      }
+      if (role !== "box-front") {
+        errors.push(issue(`${assetPath}.role`, "must be box-front when present"));
+        return;
+      }
+      if (!nonEmpty(boxFormatId)) {
+        errors.push(issue(`${assetPath}.boxFormatId`, "is required for a box-front asset"));
+        return;
+      }
+      if (!context.boxArtFormatIds.has(boxFormatId)) errors.push(issue(`${assetPath}.boxFormatId`, "references an unknown box-art format"));
+      const key = `box-front:${boxFormatId}`;
+      if (boxAssetKeys.has(key)) errors.push(issue(assetPath, "duplicates a box-front asset for this format"));
+      else boxAssetKeys.add(key);
+      if (!known || known.assetKind !== "generated-game-box-front" || known.intendedUse !== "game-box-front") errors.push(issue(assetPath, "box-front assets require an approved generated game-box-front manifest record"));
+      if (known?.boxFormatId !== boxFormatId) errors.push(issue(assetPath, "box-front format does not match the approved manifest"));
+      if (known?.altText !== asset.alt) errors.push(issue(`${assetPath}.alt`, "must match the approved manifest alt text"));
+    });
+  }
   return errors;
 }
 

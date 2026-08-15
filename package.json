@@ -16,7 +16,11 @@
     "test": "tsx --test",
     "validate:rights": "node scripts/validate-rights.mjs",
     "validate:catalog": "tsx scripts/validate-catalog.ts",
-    "validate:export": "node scripts/validate-static-export.mjs"
+    "validate:export": "node scripts/validate-static-export.mjs",
+    "art:doctor": "codex-image doctor --json",
+    "art:generate": "tsx scripts/generate-box-art.ts",
+    "art:publish": "tsx scripts/publish-box-art.ts",
+    "validate:box-art-browser": "node scripts/validate-box-art-browser.mjs"
   },
   "dependencies": {
     "next": "16.2.12",

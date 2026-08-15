@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-08-14",
+  "reviewedAt": "2026-08-15",
   "defaultStatus": "blocked-until-manifested",
   "assetKinds": [
     {
@@ -17,6 +17,19 @@
         "do not recreate official box art, logos, characters, or screenshots",
         "provide accessible alt text",
         "keep generation secrets out of the repository and Pages artifact"
+      ]
+    },
+    {
+      "id": "generated-game-box-front",
+      "status": "approved-with-conditions",
+      "allowedUses": [
+        "game-box-front"
+      ],
+      "conditions": [
+        "create original editorial art only; do not recreate official box art, logos, characters, screenshots, or trade dress",
+        "record the exact generated-art brief, tool, output checksum, format profile, dimensions, and review attestation",
+        "keep generation secrets out of the repository and Pages artifact",
+        "publish only after a reviewer attests that the checksum-bound output contains no recreated official artwork or trademarks"
       ]
     },
     {
@@ -141,6 +154,17 @@
       "creatorOrSource",
       "generatedOrAcquiredAt",
       "notApplicableReason"
+    ],
+    "generated-game-box-front": [
+      "promptOrGenerationBrief",
+      "modelOrTool",
+      "outputOrAssetId",
+      "generatedOrAcquiredAt",
+      "contentChecksum",
+      "boxFormatId",
+      "pixelWidth",
+      "pixelHeight",
+      "approvalNote"
     ]
   },
   "manifestFieldSemantics": {
@@ -148,7 +172,8 @@
       "nullableAssetKinds": [
         "generated-original-editorial",
         "original-project-vector",
-        "original-project-raster"
+        "original-project-raster",
+        "generated-game-box-front"
       ],
       "requiresWhenNull": "notApplicableReason"
     },
@@ -157,7 +182,8 @@
       "nullableAssetKinds": [
         "generated-original-editorial",
         "original-project-vector",
-        "original-project-raster"
+        "original-project-raster",
+        "generated-game-box-front"
       ],
       "meaning": "Use null only for original project assets; third-party or time-bounded permissions require a dated future recheck."
     }

@@ -3,6 +3,8 @@ import path from "node:path";
 import { localTodayKey } from "../date-policy.mjs";
 import { createSiteConfig } from "../site-config";
 import { normalizeSearchText, type CatalogSearchRecord } from "./search";
+import { selectEditorialAsset } from "../box-art/asset-roles.mjs";
+import { BOX_ART_FORMAT_IDS } from "../box-art/formats";
 import { validateGameRecord } from "./validator";
 import type {
   CatalogContext,
@@ -40,7 +42,7 @@ function asItems<T>(document: Document, relativePath: string): T[] {
 
 function createContext(platforms: PlatformRecord[], genres: GenreRecord[], sourceDocument: Document, assetDocument: Document): CatalogContext {
   const sourceRecords = (sourceDocument.sources ?? []) as SourcePolicy[];
-  const assets = (assetDocument.assets ?? []) as Array<{ assetId: string; path: string }>;
+  const assets = (assetDocument.assets ?? []) as Array<{ assetId: string; path: string; altText?: string; assetKind?: string; intendedUse?: string; boxFormatId?: string }>;
   const predicate = sourceDocument.publicNumericSignalPolicy && typeof sourceDocument.publicNumericSignalPolicy === "object"
     ? sourceDocument.publicNumericSignalPolicy as { eligiblePredicate?: { approvedCriticProviders?: string[]; minimumScore?: number; requiredScale?: number } }
     : undefined;
@@ -54,7 +56,8 @@ function createContext(platforms: PlatformRecord[], genres: GenreRecord[], sourc
     platformIds: new Set(platforms.map((platform) => platform.id)),
     genreIds: new Set(genres.map((genre) => genre.id)),
     sourceById: new Map(sourceRecords.map((source) => [source.id, source])),
-    assetById: new Map(assets.map((asset) => [asset.assetId, { path: asset.path }])),
+    assetById: new Map(assets.map((asset) => [asset.assetId, { path: asset.path, altText: asset.altText, assetKind: asset.assetKind, intendedUse: asset.intendedUse, boxFormatId: asset.boxFormatId }])),
+    boxArtFormatIds: BOX_ART_FORMAT_IDS,
     approvedCriticProviders,
     approvedPopularityProviders,
     popularityPublicMode: popularityPolicy?.eligiblePredicate?.publicMode === "numeric-display" ? "numeric-display" : "outbound-only",
@@ -173,6 +176,9 @@ export function getEditorialSignals(game: GameRecord): EditorialSignal[] {
   return game.signals.filter((signal): signal is EditorialSignal => signal.kind === "editorial");
 }
 
+export function getGameEditorialArt(game: GameRecord) {
+  return selectEditorialAsset(game.assets, context.assetById);
+}
 
 export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame): CatalogSearchRecord {
   const evidenceKinds = [...new Set(game.signals.map((signal) => signal.kind))];
@@ -190,13 +196,14 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
     ...platforms.map((platform) => platform.name),
     ...genres.map((genre) => genre.name),
   ].filter((value): value is string => Boolean(value)).join(" "));
+  const catalogArt = getGameEditorialArt(game);
   return {
     slug: game.slug,
     title: game.title,
     aliases: [...game.aliases],
     emoji: game.emoji,
-    artPath: game.assets[0] ? site.publicUrl(game.assets[0].path.replace(/^public\//, "")) : undefined,
-    artAlt: game.assets[0]?.alt,
+    artPath: catalogArt ? site.publicUrl(catalogArt.path.replace(/^public\//, "")) : undefined,
+    artAlt: catalogArt?.alt,
     developer: game.developer,
     publisher: game.publisher,
     editorialLabel,

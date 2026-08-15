@@ -14,6 +14,7 @@ const context: CatalogContext = {
   ]),
   todayKey: "2026-08-15",
   assetById: new Map(),
+  boxArtFormatIds: new Set(["cartridge-portrait"]),
   approvedCriticProviders: new Set(["Licensed Critics"]),
   approvedPopularityProviders: new Set(),
   popularityPublicMode: "outbound-only",
@@ -416,4 +417,53 @@ test("does not authorize Nintendo Life numeric signals", () => {
     rightsStatus: "outbound-only",
   } as const;
   assert.ok(validateSignal(signal, "nintendo-life-signal", dsiContext).some((problem) => problem.message.includes("approved rights")));
+});
+
+
+test("requires a checksum-governed manifest record for box-front assets", () => {
+  const boxContext: CatalogContext = {
+    ...context,
+    assetById: new Map([["game-sample-game-box-front-cartridge-portrait", {
+      path: "public/assets/games/sample-game/front-cartridge-portrait.png",
+      altText: "Original GameAtlas editorial front artwork for Sample Game.",
+      assetKind: "generated-game-box-front",
+      intendedUse: "game-box-front",
+      boxFormatId: "cartridge-portrait",
+    }]]),
+  };
+  const valid = {
+    ...baseGame,
+    assets: [{
+      path: "public/assets/games/sample-game/front-cartridge-portrait.png",
+      alt: "Original GameAtlas editorial front artwork for Sample Game.",
+      provenanceId: "game-sample-game-box-front-cartridge-portrait",
+      role: "box-front" as const,
+      boxFormatId: "cartridge-portrait",
+    }],
+  };
+  assert.deepEqual(validateGameRecord(valid, "fixture", boxContext), []);
+  const wrongManifest = { ...valid, assets: [{ ...valid.assets[0], boxFormatId: "unknown-format" }] };
+  assert.ok(validateGameRecord(wrongManifest, "fixture", boxContext).some((problem) => problem.message.includes("unknown box-art format") || problem.message.includes("does not match the approved manifest")));
+  const duplicate = { ...valid, assets: [...valid.assets, valid.assets[0]] };
+  assert.ok(validateGameRecord(duplicate, "fixture", boxContext).some((problem) => problem.message.includes("duplicates a box-front asset")));
+});
+
+test("rejects box metadata on non-box assets", () => {
+  const misplaced = { ...baseGame, assets: [{ path: "public/mark.svg", alt: "mark", provenanceId: "unknown", boxFormatId: "cartridge-portrait" }] };
+  assert.ok(validateGameRecord(misplaced, "fixture", context).some((problem) => problem.message.includes("only allowed for a box-front asset")));
+});
+
+
+test("rejects a generic game asset unless its manifest grants the editorial thumbnail use", () => {
+  const nonEditorialContext: CatalogContext = {
+    ...context,
+    assetById: new Map([["project-mark", {
+      path: "public/mark.svg",
+      altText: "Project mark",
+      assetKind: "original-project-vector",
+      intendedUse: "brand-mark",
+    }]]),
+  };
+  const game = { ...baseGame, assets: [{ path: "public/mark.svg", alt: "Project mark", provenanceId: "project-mark" }] };
+  assert.ok(validateGameRecord(game, "fixture", nonEditorialContext).some((problem) => problem.message.includes("generic game assets require")));
 });

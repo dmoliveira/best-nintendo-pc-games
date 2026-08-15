@@ -1,6 +1,8 @@
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { localTodayKey, parseCalendarKey } from "../lib/date-policy.mjs";
+import { readPng } from "../lib/box-art/png.mjs";
 import { isValidHttpsUrl } from "../lib/url-policy.mjs";
 
 const root = process.cwd();
@@ -8,12 +10,18 @@ const source = JSON.parse(fs.readFileSync(path.join(root, "data/source-rights.js
 const assetPolicy = JSON.parse(fs.readFileSync(path.join(root, "data/asset-rights.json"), "utf8"));
 const evidencePolicy = JSON.parse(fs.readFileSync(path.join(root, "data/evidence-policy.json"), "utf8"));
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "data/assets-manifest.json"), "utf8"));
+const boxArtFormats = JSON.parse(fs.readFileSync(path.join(root, "data/box-art-formats.json"), "utf8"));
 const allowedStatuses = new Set(["approved", "outbound-only", "pending-review", "prohibited"]);
 const requiredManifestFields = assetPolicy.manifestRequiredFields;
 const failures = [];
 const fail = (message) => failures.push(message);
 const nonEmpty = (value) => typeof value === "string" && value.trim() !== "";
 const todayKey = localTodayKey();
+const boxFormatById = new Map();
+const maxGeneratedBoxFrontBytes = 12 * 1024 * 1024;
+const boxArtApprovalAttestation = "I reviewed this exact asset and confirm it contains no recreated official box art, no logos, no characters, and no screenshots.";
+const publicSecretPattern = /(?:\bsk-[A-Za-z0-9_-]{20,}\b|\b(?:ghp|gho|ghu|ghs)_[A-Za-z0-9_]{20,}\b|\bgithub_pat_[A-Za-z0-9_]{20,}\b|-----BEGIN(?: [A-Z]+)? PRIVATE KEY-----|\b(?:api[_-]?key|authorization|bearer)\s*[:=]\s*[A-Za-z0-9._~+\/-]{12,})/i;
+
 function requirePastDate(value, label) {
   const date = parseCalendarKey(value);
   if (!date) fail(`${label}: must be a valid YYYY-MM-DD date`);
@@ -24,6 +32,37 @@ function requireFutureDate(value, label) {
   if (!date) fail(`${label}: must be a valid YYYY-MM-DD date`);
   else if (date < todayKey) fail(`${label}: recheck date is expired`);
 }
+function sha256(filePath) {
+  return `sha256:${crypto.createHash("sha256").update(fs.readFileSync(filePath)).digest("hex")}`;
+}
+function validBoxAttestation(value) {
+  return typeof value === "string" && value.trim() === boxArtApprovalAttestation;
+}
+function hasConditionalValue(record, field) {
+  if (field === "pixelWidth" || field === "pixelHeight") return Number.isInteger(record[field]) && record[field] > 0;
+  return nonEmpty(record[field]);
+}
+function validateBoxArtFormats() {
+  if (boxArtFormats.schemaVersion !== 1 || !nonEmpty(boxArtFormats.policy) || !Array.isArray(boxArtFormats.formats) || !boxArtFormats.formats.length || !boxArtFormats.platformFormatMap || typeof boxArtFormats.platformFormatMap !== "object" || Array.isArray(boxArtFormats.platformFormatMap)) {
+    fail("data/box-art-formats.json: requires schemaVersion 1, policy, formats, and platformFormatMap");
+    return;
+  }
+  for (const [index, format] of boxArtFormats.formats.entries()) {
+    const label = `data/box-art-formats.json.formats[${index}]`;
+    if (!format || !nonEmpty(format.id) || boxFormatById.has(format.id)) {
+      fail(`${label}: requires a unique non-empty id`);
+      continue;
+    }
+    if (!nonEmpty(format.label) || !["physical", "digital"].includes(format.kind) || !format.dimensions || !Number.isFinite(format.dimensions.width) || !Number.isFinite(format.dimensions.height) || !Number.isFinite(format.dimensions.depth) || format.dimensions.width <= 0 || format.dimensions.height <= 0 || format.dimensions.depth < 0 || !format.image || !Number.isInteger(format.image.width) || !Number.isInteger(format.image.height) || format.image.width < 1 || format.image.height < 1) {
+      fail(`${label}: has invalid label, kind, dimensions, or image dimensions`);
+      continue;
+    }
+    boxFormatById.set(format.id, format);
+  }
+  for (const [platformId, formatId] of Object.entries(boxArtFormats.platformFormatMap)) if (!nonEmpty(platformId) || !nonEmpty(formatId) || !boxFormatById.has(formatId)) fail(`data/box-art-formats.json.platformFormatMap.${platformId}: must reference a declared format`);
+}
+
+validateBoxArtFormats();
 
 const predicate = source.publicNumericSignalPolicy?.eligiblePredicate;
 if (!predicate || !Array.isArray(predicate.all) || !Array.isArray(predicate.requiredFields) || !Array.isArray(predicate.approvedCriticProviders)) fail("numeric eligibility must be a structured predicate with an explicit provider allowlist");
@@ -85,7 +124,7 @@ for (const record of manifest.assets ?? []) {
   else {
     if (!assetPolicy.publishableStatuses.includes(kind.status)) fail(`${record.path}: asset kind is not publishable (${kind.status})`);
     if (!kind.allowedUses.includes(record.intendedUse)) fail(`${record.path}: intended use ${record.intendedUse} is not allowed for ${record.assetKind}`);
-    for (const field of assetPolicy.conditionalManifestFields[record.assetKind] ?? []) if (!(field in record) || !nonEmpty(record[field])) fail(`${record.path}: missing conditional field ${field}`);
+    for (const field of assetPolicy.conditionalManifestFields[record.assetKind] ?? []) if (!(field in record) || !hasConditionalValue(record, field)) fail(`${record.path}: missing conditional field ${field}`);
   }
   const licenseSemantics = assetPolicy.manifestFieldSemantics.licenseOrPermissionUrl;
   const nullableLicenseKinds = new Set(licenseSemantics.nullableAssetKinds);
@@ -98,7 +137,26 @@ for (const record of manifest.assets ?? []) {
   } else requireFutureDate(record.recheckAt, `${record.path}.recheckAt`);
   requirePastDate(record.rightsReviewedAt, `${record.path}.rightsReviewedAt`);
   requirePastDate(record.generatedOrAcquiredAt, `${record.path}.generatedOrAcquiredAt`);
-  if (!fs.existsSync(path.join(root, record.path))) fail(`${record.path}: manifest target does not exist`);
+  const assetPath = path.join(root, record.path);
+  if (!fs.existsSync(assetPath)) {
+    fail(`${record.path}: manifest target does not exist`);
+    continue;
+  }
+  if (record.assetKind === "generated-game-box-front") {
+    const format = boxFormatById.get(record.boxFormatId);
+    if (!format) fail(`${record.path}: boxFormatId must reference a declared format`);
+    if (!record.path.startsWith("public/assets/games/") || !record.path.endsWith(`/front-${record.boxFormatId}.png`)) fail(`${record.path}: generated box-front path must use public/assets/games/<slug>/front-<format>.png`);
+    if (!/^sha256:[a-f0-9]{64}$/.test(record.contentChecksum ?? "")) fail(`${record.path}: contentChecksum must be a sha256 digest`);
+    else if (sha256(assetPath) !== record.contentChecksum) fail(`${record.path}: contentChecksum does not match file bytes`);
+    if (record.outputOrAssetId !== record.contentChecksum) fail(`${record.path}: outputOrAssetId must match the checksum-bound output`);
+    if (!validBoxAttestation(record.approvalNote)) fail(`${record.path}: approvalNote must attest to review and no recreated official box art, logos, characters, or screenshots`);
+    try {
+      const image = readPng(assetPath, maxGeneratedBoxFrontBytes);
+      if (!format || image.width !== format.image.width || image.height !== format.image.height || record.pixelWidth !== image.width || record.pixelHeight !== image.height) fail(`${record.path}: PNG dimensions must match the selected format and recorded dimensions`);
+    } catch (error) {
+      fail(`${record.path}: invalid generated box-front PNG (${error.message})`);
+    }
+  }
 }
 
 function walk(directory) {
@@ -120,7 +178,9 @@ const publicTextFiles = [
   "data/evidence-policy.json",
   "data/asset-rights.json",
   "data/assets-manifest.json",
+  "data/box-art-formats.json",
   "docs/rights-and-support-policy.md",
+  "docs/guides/game-box-art-workflow.md",
   "README.md",
   "app/page.tsx",
   "app/docs/rights-and-support-policy/page.tsx",
@@ -130,6 +190,7 @@ const publicTextFiles = [
 for (const file of publicTextFiles) {
   const text = fs.readFileSync(path.join(root, file), "utf8");
   if (/buy\.stripe\.com|\b(?:task|session|epic|memory|doc)_[0-9]+\b/i.test(text)) fail(`${file}: public support/tracker detail found`);
+  if (publicSecretPattern.test(text)) fail(`${file}: credential-like value found in public content`);
 }
 
 if (failures.length) {

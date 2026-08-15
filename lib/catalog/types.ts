@@ -113,6 +113,8 @@ export interface GameAssetRef {
   path: string;
   alt: string;
   provenanceId: string;
+  role?: "box-front";
+  boxFormatId?: string;
 }
 
 export interface GameRelease {
@@ -166,7 +168,14 @@ export interface CatalogContext {
   platformIds: ReadonlySet<string>;
   genreIds: ReadonlySet<string>;
   sourceById: ReadonlyMap<string, SourcePolicy>;
-  assetById: ReadonlyMap<string, { path: string }>;
+  assetById: ReadonlyMap<string, {
+    path: string;
+    altText?: string;
+    assetKind?: string;
+    intendedUse?: string;
+    boxFormatId?: string;
+  }>;
+  boxArtFormatIds: ReadonlySet<string>;
   approvedCriticProviders: ReadonlySet<string>;
   approvedPopularityProviders: ReadonlySet<string>;
   popularityPublicMode: "outbound-only" | "numeric-display";

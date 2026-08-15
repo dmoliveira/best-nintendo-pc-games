@@ -6,6 +6,7 @@ const page = readFileSync(new URL("../app/page.tsx", import.meta.url), "utf8");
 const styles = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
 const gamePage = readFileSync(new URL("../app/games/[slug]/page.tsx", import.meta.url), "utf8");
 const browser = readFileSync(new URL("../app/catalog-browser.tsx", import.meta.url), "utf8");
+const boxViewer = readFileSync(new URL("../app/game-box-viewer.tsx", import.meta.url), "utf8");
 
 test("home shell exposes a keyboard bypass and stable main landmark", () => {
   assert.match(page, /className="skip-link" href="#main-content"/);
@@ -45,4 +46,16 @@ test("game detail pages expose static params, a skip link, and explicit editoria
   assert.match(gamePage, /game-status-row/);
   assert.match(gamePage, /Official &amp; external resources/);
   assert.match(gamePage, /DSiWare · Digital/);
+});
+
+
+test("game pages expose an honest, keyboard-operable package-view fallback", () => {
+  assert.match(gamePage, /GameBoxViewer/);
+  assert.match(gamePage, /site\.assetPath\(boxAsset\.path\.replace/);
+  assert.match(boxViewer, /GameAtlas reference case/);
+  assert.match(boxViewer, /data-game-box-stage/);
+  assert.match(boxViewer, /aria-live="polite"/);
+  assert.match(boxViewer, /requestFullscreen/);
+  assert.match(styles, /game-box-viewer--fallback-fullscreen/);
+  assert.match(styles, /forced-colors:active/);
 });

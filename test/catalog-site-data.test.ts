@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { getCatalogGame, getCatalogGames, getCatalogGenre, getCatalogGenres, getCatalogPlatform, getCatalogPlatforms, getEditorialSignals, getGenreHub, getGenreHubs, getPlatformHub, getPlatformHubs, getPopulatedPlatforms } from "../lib/catalog/site-data";
+import { getCatalogGame, getCatalogGames, getCatalogGenre, getCatalogGenres, getCatalogPlatform, getCatalogPlatforms, getEditorialSignals, getGenreHub, getGenreHubs, getPlatformHub, getPlatformHubs, getPopulatedPlatforms, toCatalogSearchRecord } from "../lib/catalog/site-data";
 
 test("loads every validated game with resolved taxonomy labels", () => {
   const games = getCatalogGames();
@@ -46,4 +46,23 @@ test("keeps external rating references link-only and manifest-backed art present
   assert.equal(ratingLinks.length, 32);
   assert.ok(ratingLinks.every((link) => link.kind === "critical" && link.url.startsWith("https://www.metacritic.com/game/")));
   assert.ok(games.every(({ game }) => game.assets.length === 1 && game.assets[0].path.startsWith("public/assets/games/")));
+});
+
+
+test("excludes governed package fronts from catalog-card artwork", () => {
+  const entry = getCatalogGame("art-of-rally");
+  if (!entry) throw new Error("missing art-of-rally fixture");
+  const packageFront = {
+    path: "public/assets/games/art-of-rally/front-pc-big-box.png",
+    alt: "Original GameAtlas editorial front artwork for art of rally.",
+    provenanceId: "game-art-of-rally-box-front-pc-big-box",
+    role: "box-front" as const,
+    boxFormatId: "pc-big-box",
+  };
+  const record = toCatalogSearchRecord({ ...entry, game: { ...entry.game, assets: [packageFront, ...entry.game.assets] } });
+  assert.ok(record.artPath?.endsWith("/assets/games/art-of-rally.svg"));
+  assert.equal(record.artAlt, entry.game.assets[0]?.alt);
+  const boxOnly = toCatalogSearchRecord({ ...entry, game: { ...entry.game, assets: [packageFront] } });
+  assert.equal(boxOnly.artPath, undefined);
+  assert.equal(boxOnly.artAlt, undefined);
 });

@@ -1,11 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
+import { validateGameArtExport } from "../lib/box-art/static-export.mjs";
 
 const outDir = path.resolve(process.env.OUT_DIR ?? "out");
 const rootDir = process.cwd();
 const expectedBasePath = (process.env.EXPECTED_BASE_PATH ?? "/best-nintendo-pc-games").replace(/\/$/, "");
 const requiredFiles = ["index.html", ".nojekyll", "robots.txt", "sitemap.xml", "og-image.png", "mark.svg", "docs/rights-and-support-policy/index.html"];
 const forbiddenEvidenceFields = ["sourceUrl", "termsUrl", "rightsStatus", "verificationStatus", "capturedAt", "recheckAt"];
+const publicSecretPattern = /(?:\bsk-[A-Za-z0-9_-]{20,}\b|\b(?:ghp|gho|ghu|ghs)_[A-Za-z0-9_]{20,}\b|\bgithub_pat_[A-Za-z0-9_]{20,}\b|-----BEGIN(?: [A-Z]+)? PRIVATE KEY-----|\b(?:api[_-]?key|authorization|bearer)\s*[:=]\s*[A-Za-z0-9._~+\/-]{12,})/i;
 
 function fail(message) { console.error(`Static export validation failed: ${message}`); process.exitCode = 1; }
 function checkNoRawEvidence(html, location) { for (const field of forbiddenEvidenceFields) if (html.includes(field)) fail(`${location} leaks raw evidence field ${field}`); }
@@ -24,6 +26,8 @@ if (expectedBasePath && !sitemap.includes(expectedBasePath)) fail(`sitemap does 
 const gamesDir = path.join(rootDir, "data/games");
 const gameFiles = fs.existsSync(gamesDir) ? fs.readdirSync(gamesDir).filter((file) => file.endsWith(".json")).sort() : [];
 const gameRecords = gameFiles.map((file) => JSON.parse(fs.readFileSync(path.join(gamesDir, file), "utf8")));
+const assetManifest = JSON.parse(fs.readFileSync(path.join(rootDir, "data/assets-manifest.json"), "utf8"));
+const assetById = new Map((assetManifest.assets ?? []).map((asset) => [asset.assetId, asset]));
 const usedPlatformIds = new Set(gameRecords.flatMap((game) => game.platforms ?? []));
 const usedGenreIds = new Set(gameRecords.flatMap((game) => game.genres ?? []));
 const platformsDocument = JSON.parse(fs.readFileSync(path.join(rootDir, "data/platforms.json"), "utf8"));
@@ -45,8 +49,10 @@ for (const game of gameRecords) {
   if (!gameHtml.includes(game.title)) fail(`${route} does not contain its game title`);
   if (!gameHtml.includes("Original editorial")) fail(`${route} does not contain explicit editorial evidence labeling`);
   for (const link of (game.links ?? []).filter((candidate) => candidate.kind === "critical")) if (!gameHtml.includes(link.url)) fail(`${route} is missing its outbound critical context link`);
-  if (Array.isArray(game.assets) && game.assets.length > 0 && !gameHtml.includes("game-hero-art")) fail(`${route} does not render its manifested art asset`);
   if (gameHtml.includes("80+") || /(?:critic score|popularity value|popularity rank)/i.test(gameHtml)) fail(`${route} exposes unauthorized numeric evidence messaging`);
+  const boxAssets = Array.isArray(game.assets) ? game.assets.filter((asset) => asset?.role === "box-front") : [];
+  if (boxAssets.length === 0 && !gameHtml.includes("GameAtlas reference case")) fail(`${route} does not retain the no-art reference package fallback`);
+  for (const issue of validateGameArtExport({ game, gameHtml, outDir, assetById, expectedBasePath })) fail(`${route} ${issue}`);
   if (!sitemap.includes(`games/${game.slug}/`)) fail(`sitemap is missing ${game.slug}`);
 }
 for (const hub of [...platformRecords.map((record) => ({ type: "platform", record })), ...genreRecords.map((record) => ({ type: "genre", record }))]) {
@@ -70,5 +76,9 @@ for (const hub of [...platformRecords.map((record) => ({ type: "platform", recor
 const allFiles = [];
 function walk(directory) { for (const entry of fs.readdirSync(directory, { withFileTypes: true })) { const fullPath = path.join(directory, entry.name); if (entry.isDirectory()) walk(fullPath); else allFiles.push(fullPath); } }
 walk(outDir);
-for (const file of allFiles.filter((candidate) => /\.(html|js|css|xml|txt)$/.test(candidate))) if (/buy\.stripe\.com|\b(?:task|session|epic|memory|doc)_[0-9]+\b/i.test(fs.readFileSync(file, "utf8"))) fail(`public support/tracker detail found in ${path.relative(outDir, file)}`);
+for (const file of allFiles.filter((candidate) => /\.(html|js|css|xml|txt)$/.test(candidate))) {
+  const text = fs.readFileSync(file, "utf8");
+  if (/buy\.stripe\.com|\b(?:task|session|epic|memory|doc)_[0-9]+\b/i.test(text)) fail(`public support/tracker detail found in ${path.relative(outDir, file)}`);
+  if (publicSecretPattern.test(text)) fail(`credential-like value found in ${path.relative(outDir, file)}`);
+}
 if (!process.exitCode) console.log(`Static export validation passed (${allFiles.length} files, ${platformRecords.length} platform hubs (min ${minimumHubRecords}), ${genreRecords.length} genre hubs (min ${minimumHubRecords}), ${gameFiles.length} game routes, base path ${expectedBasePath || "/"}).`);
