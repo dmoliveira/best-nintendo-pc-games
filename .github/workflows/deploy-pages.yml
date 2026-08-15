@@ -55,6 +55,14 @@ jobs:
         run: npm run build
       - name: Prepare Pages artifact
         run: touch out/.nojekyll
+      - name: Validate browser behavior
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: |
+          export CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || true)"
+          test -n "$CHROME_BIN"
+          test -x "$CHROME_BIN"
+          npm run validate:box-art-browser
       - name: Validate Pages artifact
         env:
           EXPECTED_BASE_PATH: ${{ steps.pages.outputs.base_path }}

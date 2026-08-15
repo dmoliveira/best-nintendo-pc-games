@@ -34,6 +34,17 @@ The inventory covers committed game records, source/rights registries, taxonomy 
 
 Warnings do not fail the command because external providers commonly block automated requests. The checker uses bounded concurrency, timeouts, HTTPS-only redirects, and a HEAD-to-GET fallback. It is not part of `make validate` or Pages CI; run it from a trusted maintenance environment and review warnings before changing catalog data.
 
+## Browser smoke
+
+The static export has a local Chrome/CDP smoke suite for package views, catalog interactions, responsive behavior, accessibility media states, and base-path navigation. Run it after a build:
+
+```bash
+npm run build
+make browser-e2e
+```
+
+The Pages workflow resolves the runner's installed Chrome binary and runs the same suite before artifact validation.
+
 ## Correction workflow
 
 Use the public [catalog correction issue form](https://github.com/dmoliveira/best-nintendo-pc-games/issues/new?template=catalog-correction.yml&title=GameAtlas%20catalog%20correction). Include a slug, field, proposed correction, and authoritative source URL. Do not attach copied review text or unlicensed images. After review, update the source record, regenerate any governed output, run `make validate`, refresh the coverage report, and record the recheck date when a source or asset policy changes.
