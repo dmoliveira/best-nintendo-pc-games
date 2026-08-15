@@ -6,7 +6,7 @@ import PlatformGlyph from "./platform-glyph";
 import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
 import { createSiteConfig } from "@/lib/site-config";
-import { DEFAULT_PAGE_SIZE } from "@/lib/catalog/search";
+import { DEFAULT_PAGE_SIZE, toCatalogCardRecord } from "@/lib/catalog/search";
 import { getCatalogSearchIndexDigest } from "@/lib/catalog/search-index";
 import { getCatalogGames, getCatalogSearchRecords, getPlatformHubs, getPopulatedPlatforms } from "@/lib/catalog/site-data";
 
@@ -30,7 +30,7 @@ export default function Home() {
   const platformCounts = new Map(populatedPlatforms.map((platform) => [platform.id, games.filter(({ game }) => game.platforms.includes(platform.id)).length]));
   const catalogSearchRecords = getCatalogSearchRecords();
   const catalogIndexDigest = getCatalogSearchIndexDigest(catalogSearchRecords);
-  const initialSearchRecords = catalogSearchRecords.slice(0, DEFAULT_PAGE_SIZE);
+  const initialSearchRecords = catalogSearchRecords.slice(0, DEFAULT_PAGE_SIZE).map(toCatalogCardRecord);
   const catalogIndexUrl = `${site.publicUrl("catalog-search-index.json")}?v=${encodeURIComponent(catalogIndexDigest)}`;
 
   return <div className="site-shell">

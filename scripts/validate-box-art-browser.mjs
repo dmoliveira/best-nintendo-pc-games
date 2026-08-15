@@ -162,7 +162,7 @@ async function waitForCatalogReady(client) {
   await waitFor(() => client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready" && document.querySelector(".result-summary")?.textContent?.includes("matching games")'));
 }
 
-async function validateCatalogBrowser(client, catalogUrl, representativeGame, deferredPlatformId) {
+async function validateCatalogBrowser(client, catalogUrl, representativeGame, deferredPlatformId, deferredPlatformCount) {
   await client.send("Emulation.setDeviceMetricsOverride", desktopMetrics);
   await client.send("Emulation.setEmulatedMedia", { features: [] });
 
@@ -282,12 +282,16 @@ async function validateCatalogBrowser(client, catalogUrl, representativeGame, de
   const intersectionRequests = await catalogIndexRequestCount(client);
   if (intersectionRequests !== 1) fail(`catalog intersection trigger did not issue exactly one index request: ${intersectionRequests}`);
 
+  const summaryObserver = await client.send("Page.addScriptToEvaluateOnNewDocument", { source: `(() => { const summaries = []; const collect = () => { const summary = document.querySelector(".result-summary")?.textContent?.replace(/\\s+/g, " ").trim(); if (summary && summaries.at(-1) !== summary) summaries.push(summary); }; window.__catalogSummaryHistory = summaries; new MutationObserver(collect).observe(document, { childList: true, subtree: true, characterData: true }); document.addEventListener("DOMContentLoaded", collect, { once: true }); })();` });
   await client.send("Page.navigate", { url: `${catalogUrl}?platform=${encodeURIComponent(deferredPlatformId)}` });
   await waitFor(() => client.evaluate('Boolean(document.querySelector("#catalog-query"))'));
   await waitFor(() => client.evaluate(`document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready" && new URL(window.location.href).searchParams.get("platform") === ${JSON.stringify(deferredPlatformId)} && document.querySelector(".result-summary")?.textContent?.includes("matching games")`));
-  const queryState = await client.evaluate('(() => ({ platform: new URL(window.location.href).searchParams.get("platform"), cards: document.querySelectorAll(".game-card").length, summary: document.querySelector(".result-summary")?.textContent }))()');
+  const queryState = await client.evaluate('(() => ({ platform: new URL(window.location.href).searchParams.get("platform"), cards: document.querySelectorAll(".game-card").length, summary: document.querySelector(".result-summary")?.textContent, summaries: window.__catalogSummaryHistory ?? [] }))()');
+  await client.send("Page.removeScriptToEvaluateOnNewDocument", { identifier: summaryObserver.identifier });
   const queryRequests = await catalogIndexRequestCount(client);
-  if (queryRequests !== 1 || queryState.platform !== deferredPlatformId || !(queryState.cards > 0) || !queryState.summary?.includes("matching games")) fail(`catalog full-index-only query route did not retain its filter: ${JSON.stringify({ deferredPlatformId, queryRequests, queryState })}`);
+  const expectedQuerySummary = `Showing 1–${Math.min(24, deferredPlatformCount)} of ${deferredPlatformCount} matching games.`;
+  const unexpectedMatchingSummaries = queryState.summaries.filter((summary) => /^Showing \d+–\d+ of \d+ matching games\.$/.test(summary) && summary !== expectedQuerySummary);
+  if (queryRequests !== 1 || queryState.platform !== deferredPlatformId || !(queryState.cards > 0) || queryState.summary !== expectedQuerySummary || unexpectedMatchingSummaries.length > 0) fail(`catalog full-index-only query route did not retain its filter before the first matching result announcement: ${JSON.stringify({ deferredPlatformId, deferredPlatformCount, queryRequests, queryState, unexpectedMatchingSummaries })}`);
 
   await client.send("Page.navigate", { url: `${catalogUrl}?utm_source=browser-validation` });
   await waitForCatalogShell(client);
@@ -329,6 +333,8 @@ async function main() {
   const initialCatalogPlatformIds = new Set(catalogSearchRecords.slice(0, 24).flatMap((record) => record.platformIds));
   const deferredCatalogPlatformId = catalogSearchRecords.flatMap((record) => record.platformIds).find((platformId) => !initialCatalogPlatformIds.has(platformId));
   if (!deferredCatalogPlatformId) fail("the catalog index needs a platform absent from the first 24 records for deferred query validation");
+  const deferredCatalogPlatformCount = catalogSearchRecords.filter((record) => record.platformIds.includes(deferredCatalogPlatformId)).length;
+  if (deferredCatalogPlatformCount < 1) fail("the deferred catalog platform fixture must match at least one record");
   const chrome = chromeCandidates.find((candidate) => candidate && fs.existsSync(candidate));
   if (!chrome) fail("Google Chrome was not found; set CHROME_BIN to a local Chrome executable");
 
@@ -402,7 +408,7 @@ async function main() {
     const expectedThumbnailSuffix = `/${catalogThumbnailAsset.path.replace(/^public\//, "")}`;
     if (!thumbnailState.format || thumbnailState.kind !== "physical" || !thumbnailState.hasSpine || thumbnailState.transform === "none" || !thumbnailState.source?.endsWith(expectedThumbnailSuffix) || thumbnailState.loading !== "lazy" || thumbnailState.decoding !== "async" || thumbnailState.priority === "high") fail(`catalog package thumbnail did not retain approved low-impact loading behavior: ${JSON.stringify(thumbnailState)}`);
 
-    await validateCatalogBrowser(client, `http://127.0.0.1:${preview.port}${basePath}/`, catalogRepresentativeGame, deferredCatalogPlatformId);
+    await validateCatalogBrowser(client, `http://127.0.0.1:${preview.port}${basePath}/`, catalogRepresentativeGame, deferredCatalogPlatformId, deferredCatalogPlatformCount);
 
     await client.send("Page.navigate", { url: pageUrl });
     await waitFor(() => client.evaluate('Boolean(document.querySelector("[data-game-box-stage]"))'));

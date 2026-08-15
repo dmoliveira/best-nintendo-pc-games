@@ -60,6 +60,55 @@ export interface CatalogSearchRecord {
   evidenceLabels: string[];
 }
 
+export type CatalogCardRecord = Pick<CatalogSearchRecord,
+  | "slug"
+  | "title"
+  | "emoji"
+  | "packageThumbnail"
+  | "developer"
+  | "publisher"
+  | "editorialLabel"
+  | "criticalLink"
+  | "criticSummary"
+  | "salesSummary"
+  | "shortDescription"
+  | "releaseYear"
+  | "releaseFormat"
+  | "platformIds"
+  | "platformLabels"
+  | "platformDisplayLabels"
+  | "platformHubIds"
+  | "genreIds"
+  | "genreLabels"
+  | "genreHubIds"
+>;
+
+export function toCatalogCardRecord(record: CatalogSearchRecord): CatalogCardRecord {
+  const card: CatalogCardRecord = {
+    slug: record.slug,
+    title: record.title,
+    emoji: record.emoji,
+    packageThumbnail: record.packageThumbnail,
+    shortDescription: record.shortDescription,
+    releaseYear: record.releaseYear,
+    platformIds: record.platformIds,
+    platformLabels: record.platformLabels,
+    platformDisplayLabels: record.platformDisplayLabels,
+    platformHubIds: record.platformHubIds,
+    genreIds: record.genreIds,
+    genreLabels: record.genreLabels,
+    genreHubIds: record.genreHubIds,
+  };
+  if (record.developer) card.developer = record.developer;
+  if (record.publisher) card.publisher = record.publisher;
+  if (record.editorialLabel) card.editorialLabel = record.editorialLabel;
+  if (record.criticalLink) card.criticalLink = record.criticalLink;
+  if (record.criticSummary) card.criticSummary = record.criticSummary;
+  if (record.salesSummary) card.salesSummary = record.salesSummary;
+  if (record.releaseFormat) card.releaseFormat = record.releaseFormat;
+  return card;
+}
+
 const catalogSearchRecordKeys = new Set([
   "slug", "title", "aliases", "emoji", "artPath", "artAlt", "packageThumbnail", "developer", "publisher", "editorialLabel", "criticalLink", "criticSummary", "salesSummary", "shortDescription", "searchText", "releaseYear", "releaseDate", "releaseFormat", "platformIds", "platformLabels", "platformDisplayLabels", "platformHubIds", "genreIds", "genreLabels", "genreHubIds", "evidenceKinds", "evidenceLabels",
 ]);
@@ -237,6 +286,32 @@ export function normalizeSearchText(value: string): string {
     .replace(/[^a-z0-9]+/g, " ")
     .trim()
     .replace(/\s+/g, " ");
+}
+
+export function createSearchStateOptions(records: readonly CatalogCardRecord[]): SearchStateOptions {
+  const platformIds = new Set<string>();
+  const genreIds = new Set<string>();
+  const years = new Set<string>();
+  const developerValues = new Set<string>();
+  const publisherValues = new Set<string>();
+  for (const record of records) {
+    record.platformIds.forEach((platform) => platformIds.add(platform));
+    record.genreIds.forEach((genre) => genreIds.add(genre));
+    years.add(String(record.releaseYear));
+    if (record.developer) developerValues.add(normalizeSearchText(record.developer));
+    if (record.publisher) publisherValues.add(normalizeSearchText(record.publisher));
+  }
+  const numericYears = [...years].map(Number);
+  const yearBounds = numericYears.length > 0 ? { min: Math.min(...numericYears), max: Math.max(...numericYears) } : undefined;
+  return {
+    platformIds,
+    genreIds,
+    years,
+    developerValues,
+    publisherValues,
+    yearMin: yearBounds?.min,
+    yearMax: yearBounds?.max,
+  };
 }
 
 function cleanQuery(value: string): string {
