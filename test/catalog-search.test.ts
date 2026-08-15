@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { getCatalogSearchRecords } from "../lib/catalog/site-data";
-import { clearCatalogFilters, filterCatalog, getCatalogPaginationItems, normalizeSearchText, paginateCatalog, parseSearchState, serializeSearchState, type SearchStateOptions } from "../lib/catalog/search";
+import { clearCatalogFilters, createSearchStateOptions, filterCatalog, getCatalogPaginationItems, normalizeSearchText, paginateCatalog, parseSearchState, serializeSearchState, toCatalogCardRecord, type SearchStateOptions } from "../lib/catalog/search";
 
 const records = getCatalogSearchRecords();
 const options: SearchStateOptions = {
@@ -106,6 +106,31 @@ test("client search projection excludes raw evidence objects", () => {
   assert.ok(records.every((record) => !record.criticSummary && !record.salesSummary));
   assert.equal(records.filter((record) => record.criticalLink).length, 32);
   assert.ok(records.filter((record) => record.criticalLink).every((record) => record.criticalLink?.url.startsWith("https://www.metacritic.com/game/")));
+});
+
+test("initial card projection excludes search-only catalog fields", () => {
+  const card = toCatalogCardRecord(records[0]);
+  const cardFields = new Set(["slug", "title", "emoji", "packageThumbnail", "developer", "publisher", "editorialLabel", "criticalLink", "criticSummary", "salesSummary", "shortDescription", "releaseYear", "releaseFormat", "platformIds", "platformLabels", "platformDisplayLabels", "platformHubIds", "genreIds", "genreLabels", "genreHubIds"]);
+  assert.deepEqual(Object.keys(card).sort(), Object.entries(records[0]).filter(([field, value]) => cardFields.has(field) && value !== undefined).map(([field]) => field).sort());
+  assert.equal("aliases" in card, false);
+  assert.equal("artPath" in card, false);
+  assert.equal("artAlt" in card, false);
+  assert.equal("searchText" in card, false);
+  assert.equal("releaseDate" in card, false);
+  assert.equal("evidenceKinds" in card, false);
+  assert.equal("evidenceLabels" in card, false);
+  assert.equal(card.slug, records[0].slug);
+  assert.deepEqual(card.packageThumbnail, records[0].packageThumbnail);
+});
+
+test("card-safe projection retains every value needed to normalize full catalog URL state", () => {
+  const initialCards = records.slice(0, 24).map(toCatalogCardRecord);
+  const options = createSearchStateOptions(initialCards);
+  assert.deepEqual([...options.platformIds].sort(), [...new Set(initialCards.flatMap((record) => record.platformIds))].sort());
+  assert.deepEqual([...options.genreIds].sort(), [...new Set(initialCards.flatMap((record) => record.genreIds))].sort());
+  assert.deepEqual([...options.years].sort(), [...new Set(initialCards.map((record) => String(record.releaseYear)))].sort());
+  assert.deepEqual([...options.developerValues ?? []].sort(), [...new Set(initialCards.flatMap((record) => record.developer ? [normalizeSearchText(record.developer)] : []))].sort());
+  assert.deepEqual([...options.publisherValues ?? []].sort(), [...new Set(initialCards.flatMap((record) => record.publisher ? [normalizeSearchText(record.publisher)] : []))].sort());
 });
 
 test("round-trips the optional layout mode without treating it as a filter", () => {

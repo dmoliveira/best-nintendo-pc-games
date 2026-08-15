@@ -5,10 +5,10 @@ import AttributeGlyph, { type AttributeGlyphKind } from "./attribute-glyph";
 import PlatformGlyph from "./platform-glyph";
 import PackageThumbnail from "./package-thumbnail";
 import { getGenreTone } from "@/lib/catalog/display";
-import type { CatalogColumns, CatalogSearchRecord } from "@/lib/catalog/search";
+import type { CatalogCardRecord, CatalogColumns } from "@/lib/catalog/search";
 
 interface CatalogCardsProps {
-  records: readonly CatalogSearchRecord[];
+  records: readonly CatalogCardRecord[];
   columns?: CatalogColumns;
   showResultPosition?: boolean;
   resultPositionOffset?: number;

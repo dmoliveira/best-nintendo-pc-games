@@ -11,6 +11,7 @@ const cards = readFileSync(new URL("../app/catalog-cards.tsx", import.meta.url),
 const packageThumbnail = readFileSync(new URL("../app/package-thumbnail.tsx", import.meta.url), "utf8");
 const taxonomyHub = readFileSync(new URL("../app/taxonomy-hub.tsx", import.meta.url), "utf8");
 const catalogIndex = readFileSync(new URL("../app/catalog/page.tsx", import.meta.url), "utf8");
+const staticExportValidator = readFileSync(new URL("../scripts/validate-static-export.mjs", import.meta.url), "utf8");
 
 test("home shell exposes a keyboard bypass and stable main landmark", () => {
   assert.match(page, /className="skip-link" href="#main-content"/);
@@ -58,6 +59,7 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /getCatalogPaginationItems/);
   assert.match(browser, /pagination-ellipsis/);
   assert.match(page, /initialRecords=/);
+  assert.match(page, /map\(toCatalogCardRecord\)/);
   assert.match(page, /catalogIndexDigest=/);
   assert.match(page, /catalogIndexUrl=/);
   assert.match(browser, /fetch\(catalogIndexUrl, \{ signal: controller\.signal \}\)/);
@@ -67,6 +69,8 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /catalogQueryParamGroups/);
   assert.match(browser, /changedFields/);
   assert.match(browser, /catalog-index-status/);
+  assert.match(browser, /searchStateFromUrl\(catalogRecords, new URLSearchParams\(window\.location\.search\)\)/);
+  assert.match(browser, /Retry the full catalog/);
   assert.match(browser, /hasCatalogQuery/);
   assert.match(browser, /hasCatalogFilterQuery/);
   assert.match(browser, /Pending filters/);
@@ -79,6 +83,7 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /syncPendingState/);
   assert.match(catalogIndex, /Browse every game\./);
   assert.match(catalogIndex, /No-JavaScript catalog/);
+  assert.match(staticExportValidator, /const maximumHomePayloadBytes = 400 \* 1024/);
   assert.doesNotMatch(page, /Curated by humans|Thoughtful recommendations|reviewed picks/);
 });
 

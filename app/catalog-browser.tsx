@@ -5,6 +5,7 @@ import CatalogCards from "./catalog-cards";
 import {
   CATALOG_SORT_OPTIONS,
   clearCatalogFilters,
+  createSearchStateOptions,
   DEFAULT_PAGE_SIZE,
   EMPTY_SEARCH_STATE,
   filterCatalog,
@@ -17,10 +18,10 @@ import {
   SEARCH_STATE_EVENT,
   serializeSearchState,
   type CatalogColumns,
+  type CatalogCardRecord,
   type CatalogPageSize,
   type CatalogSearchRecord,
   type CatalogSearchState,
-  type SearchStateOptions,
 } from "@/lib/catalog/search";
 
 const layoutOptions: Array<{ value: CatalogColumns; label: string; description: string; accessibleLabel: string }> = [
@@ -48,7 +49,7 @@ const catalogQueryParamGroups: Record<string, readonly string[]> = {
 };
 
 interface CatalogBrowserProps {
-  initialRecords: readonly CatalogSearchRecord[];
+  initialRecords: readonly CatalogCardRecord[];
   catalogEntryCount: number;
   catalogIndexDigest: string;
   catalogIndexUrl: string;
@@ -88,7 +89,13 @@ function hasCatalogFilterQuery(search: string): boolean {
   return [...new URLSearchParams(search).keys()].some((key) => catalogFilterKeys.has(key));
 }
 
-function nameOptions(records: readonly CatalogSearchRecord[], field: "developer" | "publisher"): FilterOption[] {
+function searchStateFromUrl(records: readonly CatalogSearchRecord[], search: URLSearchParams): CatalogSearchState {
+  const parsedState = parseSearchState(search, createSearchStateOptions(records));
+  const parsedRecords = filterCatalog(records, parsedState);
+  return { ...parsedState, page: paginateCatalog(parsedRecords, parsedState.page, parsedState.pageSize).page };
+}
+
+function nameOptions(records: readonly CatalogCardRecord[], field: "developer" | "publisher"): FilterOption[] {
   const options = new Map<string, string>();
   for (const record of records) {
     const label = record[field];
@@ -98,14 +105,16 @@ function nameOptions(records: readonly CatalogSearchRecord[], field: "developer"
 }
 
 export default function CatalogBrowser({ initialRecords, catalogEntryCount, catalogIndexDigest, catalogIndexUrl, catalogIndexHref }: CatalogBrowserProps) {
-  const [records, setRecords] = useState<readonly CatalogSearchRecord[]>(initialRecords);
+  const [loadedRecords, setLoadedRecords] = useState<readonly CatalogSearchRecord[] | undefined>();
   const [indexStatus, setIndexStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const indexStatusRef = useRef(indexStatus);
   const mountedRef = useRef(false);
+  const [hasRecognizedUrlQuery, setHasRecognizedUrlQuery] = useState(false);
   const catalogBrowserRef = useRef<HTMLDivElement>(null);
   const indexRequestRef = useRef<Promise<void> | null>(null);
   const indexAbortRef = useRef<AbortController | null>(null);
-  const catalogReady = indexStatus === "ready";
+  const catalogReady = loadedRecords !== undefined;
+  const records: readonly CatalogCardRecord[] = loadedRecords ?? initialRecords;
   const platformOptions = useMemo(() => {
     const options = new Map<string, string>();
     for (const record of records) record.platformIds.forEach((id, index) => options.set(id, record.platformDisplayLabels[index]));
@@ -119,19 +128,11 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   const developerOptions = useMemo(() => nameOptions(records, "developer"), [records]);
   const publisherOptions = useMemo(() => nameOptions(records, "publisher"), [records]);
   const yearOptions = useMemo(() => [...new Set(records.map((record) => record.releaseYear))].sort((left, right) => right - left), [records]);
-  const options = useMemo<SearchStateOptions>(() => ({
-    platformIds: new Set(platformOptions.map((option) => option.id)),
-    genreIds: new Set(genreOptions.map((option) => option.id)),
-    years: new Set(yearOptions.map(String)),
-    developerValues: new Set(developerOptions.map((option) => option.id)),
-    publisherValues: new Set(publisherOptions.map((option) => option.id)),
-    yearMin: Math.min(...yearOptions),
-    yearMax: Math.max(...yearOptions),
-  }), [developerOptions, genreOptions, platformOptions, publisherOptions, yearOptions]);
+  const options = useMemo(() => createSearchStateOptions(records), [records]);
   const [state, setState] = useState<CatalogSearchState>(EMPTY_SEARCH_STATE);
   const hydrated = useSyncExternalStore(subscribeToHydration, getHydratedSnapshot, getServerHydratedSnapshot);
   const resultSummaryRef = useRef<HTMLParagraphElement>(null);
-  const filteredRecords = useMemo(() => catalogReady ? filterCatalog(records, state) : [...records], [catalogReady, records, state]);
+  const filteredRecords = useMemo(() => loadedRecords ? filterCatalog(loadedRecords, state) : [], [loadedRecords, state]);
   const page = useMemo(() => paginateCatalog(filteredRecords, catalogReady ? state.page : 1, state.pageSize), [catalogReady, filteredRecords, state.page, state.pageSize]);
   const paginationItems = useMemo(() => getCatalogPaginationItems(page.pageCount, page.page), [page.page, page.pageCount]);
   const platforms = selectedValues(state.platform);
@@ -164,7 +165,8 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
         indexAbortRef.current = null;
         indexStatusRef.current = "ready";
         if (!mountedRef.current) return;
-        setRecords(catalogRecords);
+        setState(searchStateFromUrl(catalogRecords, new URLSearchParams(window.location.search)));
+        setLoadedRecords(catalogRecords);
         setIndexStatus("ready");
       })
       .catch((error: unknown) => {
@@ -212,6 +214,17 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   }, []);
 
   useEffect(() => {
+    const syncRecognizedUrlQuery = () => setHasRecognizedUrlQuery(hasCatalogQuery(window.location.search));
+    syncRecognizedUrlQuery();
+    window.addEventListener("popstate", syncRecognizedUrlQuery);
+    window.addEventListener(SEARCH_STATE_EVENT, syncRecognizedUrlQuery);
+    return () => {
+      window.removeEventListener("popstate", syncRecognizedUrlQuery);
+      window.removeEventListener(SEARCH_STATE_EVENT, syncRecognizedUrlQuery);
+    };
+  }, []);
+
+  useEffect(() => {
     if (hasCatalogQuery(window.location.search) || !("IntersectionObserver" in window)) {
       loadCatalogIndex();
       return;
@@ -235,26 +248,27 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   }, [loadCatalogIndex]);
 
   useEffect(() => {
-    if (!catalogReady) return;
+    if (!loadedRecords) return;
     const syncFromUrl = () => {
-      const parsedState = parseSearchState(new URLSearchParams(window.location.search), options);
-      const parsedRecords = filterCatalog(records, parsedState);
-      const parsedPage = paginateCatalog(parsedRecords, parsedState.page, parsedState.pageSize).page;
-      const nextState = { ...parsedState, page: parsedPage };
+      const nextState = searchStateFromUrl(loadedRecords, new URLSearchParams(window.location.search));
       setState(nextState);
       if (window.location.search !== serializeSearchState(nextState)) syncUrl(nextState, "replace");
     };
     syncFromUrl();
     window.addEventListener("popstate", syncFromUrl);
     return () => window.removeEventListener("popstate", syncFromUrl);
-  }, [catalogReady, options, records, syncUrl]);
+  }, [loadedRecords, syncUrl]);
 
   useEffect(() => {
     if (catalogReady) return;
     const syncPendingState = () => setState(parseSearchState(new URLSearchParams(window.location.search), options));
     syncPendingState();
     window.addEventListener("popstate", syncPendingState);
-    return () => window.removeEventListener("popstate", syncPendingState);
+    window.addEventListener(SEARCH_STATE_EVENT, syncPendingState);
+    return () => {
+      window.removeEventListener("popstate", syncPendingState);
+      window.removeEventListener(SEARCH_STATE_EVENT, syncPendingState);
+    };
   }, [catalogReady, options]);
 
   function updateState(patch: Partial<CatalogSearchState>, mode: "push" | "replace" = "push") {
@@ -325,7 +339,7 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
     syncUrl(nextState, "push", [...catalogQueryKeys]);
   }
 
-  const displayRecords = hydrated ? page.records : initialRecords;
+  const displayRecords = hydrated && loadedRecords ? page.records : initialRecords;
   const resultPositionOffset = hydrated && catalogReady ? page.startIndex : 0;
   const resultPositionTotal = catalogReady ? filteredRecords.length : catalogEntryCount;
   const resultSummary = !hydrated
@@ -392,8 +406,9 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
     </form>
     {!catalogReady ? <div className={`catalog-index-status catalog-index-status--${indexStatus}`}><span role="status" aria-live="polite">{indexStatusMessage}</span>{indexStatus === "error" ? <button className="browser-button browser-button--retry" type="button" onClick={retryCatalogIndex}>Retry full catalog</button> : null}</div> : null}
     <div className="result-bar"><p className="result-summary" ref={resultSummaryRef} tabIndex={-1} aria-live={catalogReady ? "polite" : "off"}>{resultSummary}</p><div className="result-tools"><span className="result-detail">Signals kept separate</span><label className="page-size-field" htmlFor="catalog-page-size"><span>Cards</span><select id="catalog-page-size" value={state.pageSize ?? DEFAULT_PAGE_SIZE} onChange={(event) => updatePageSize(event.target.value)}>{PAGE_SIZE_OPTIONS.map((size) => <option value={size} key={size}>{size} / page</option>)}</select></label></div></div>
-    {indexStatus === "error" ? <p className="catalog-index-error">The full catalog index could not load. <a href={catalogIndexHref}>Browse every game instead.</a></p> : null}
-    {filteredRecords.length > 0 ? <CatalogCards records={displayRecords} columns={state.columns} showResultPosition resultPositionOffset={resultPositionOffset} resultPositionTotal={resultPositionTotal} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, year, developer, or publisher.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
+    <div className="result-bar"><p className="result-summary" ref={resultSummaryRef} tabIndex={-1} aria-live="polite">{resultSummary}</p><div className="result-tools"><span className="result-detail">Signals kept separate</span><label className="page-size-field" htmlFor="catalog-page-size"><span>Cards</span><select id="catalog-page-size" value={state.pageSize ?? DEFAULT_PAGE_SIZE} onChange={(event) => updatePageSize(event.target.value)}>{PAGE_SIZE_OPTIONS.map((size) => <option value={size} key={size}>{size} / page</option>)}</select></label></div></div>
+    {indexStatus === "error" ? <p className="catalog-index-error" role="status">The full catalog index could not load.{hasRecognizedUrlQuery ? " The filters in this link have not been applied." : ""} <button className="text-link" type="button" onClick={retryCatalogIndex}>Retry the full catalog</button> or <a href={catalogIndexHref}>browse every game instead.</a></p> : null}
+    {!catalogReady || filteredRecords.length > 0 ? <CatalogCards records={displayRecords} columns={state.columns} showResultPosition resultPositionOffset={resultPositionOffset} resultPositionTotal={resultPositionTotal} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, year, developer, or publisher.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
     {hydrated && catalogReady && page.pageCount > 1 ? <nav className="catalog-pagination" aria-label="Catalog pages"><button type="button" className="pagination-button" disabled={page.page === 1} onClick={() => updatePage(page.page - 1)}>Previous</button><div className="pagination-pages">{paginationItems.map((item) => item.type === "ellipsis" ? <span className="pagination-ellipsis" aria-hidden="true" key={`ellipsis-${item.before}-${item.after}`}>…</span> : <button type="button" className={`pagination-button${item.page === page.page ? " pagination-button--current" : ""}`} aria-current={item.page === page.page ? "page" : undefined} aria-label={`Go to page ${item.page}`} key={item.page} onClick={() => updatePage(item.page)}>{item.page}</button>)}</div><button type="button" className="pagination-button" disabled={page.page === page.pageCount} onClick={() => updatePage(page.page + 1)}>Next</button></nav> : null}
   </div>;
 }
