@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "zack-and-wiki-quest-for-barbaros-treasure",
+  "title": "Zack & Wiki: Quest for Barbaros’ Treasure",
+  "aliases": [
+    "Zack and Wiki"
+  ],
+  "emoji": "🏴‍☠️",
+  "shortDescription": "A playful pirate puzzle adventure whose compact scenes ask players to notice objects, consequences, and unusual tool combinations.",
+  "highlights": [
+    "Each puzzle room communicates a self-contained mechanical idea",
+    "Failure encourages experimentation rather than long repetition"
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "adventure",
+    "puzzle"
+  ],
+  "developer": "Capcom",
+  "publisher": "Capcom",
+  "keywords": [
+    "Zack & Wiki: Quest for Barbaros’ Treasure",
+    "pirates",
+    "point and click",
+    "puzzles",
+    "motion controls",
+    "nintendo-wii"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A valuable Wii puzzle-adventure pick that highlights the system's less obvious strengths beyond action games.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/wii/zack_and_wiki_quest_for_barbaros_treasure",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/zack-and-wiki-quest-for-barbaros-treasure.svg",
+      "alt": "Abstract GameAtlas art tile for Zack & Wiki: Quest for Barbaros’ Treasure",
+      "provenanceId": "gameatlas-art-zack-and-wiki-quest-for-barbaros-treasure"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

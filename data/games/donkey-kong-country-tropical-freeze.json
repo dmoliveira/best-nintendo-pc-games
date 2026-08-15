@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "donkey-kong-country-tropical-freeze",
+  "title": "Donkey Kong Country: Tropical Freeze",
+  "aliases": [],
+  "emoji": "❄️",
+  "shortDescription": "A richly paced platformer that layers momentum, partner abilities, and environmental surprises into demanding but readable levels.",
+  "highlights": [
+    "Levels build rhythm through escalating movement challenges",
+    "Partner abilities add useful variation without weakening the core controls"
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "developer": "Retro Studios",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Donkey Kong Country: Tropical Freeze",
+    "jungle",
+    "platforming",
+    "co-op",
+    "secrets",
+    "nintendo-wii-u"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A Wii U platforming highlight for its precise level craft and unusually expressive environments.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/wiiu/donkey_kong_country_tropical_freeze",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/donkey-kong-country-tropical-freeze.svg",
+      "alt": "Abstract GameAtlas art tile for Donkey Kong Country: Tropical Freeze",
+      "provenanceId": "gameatlas-art-donkey-kong-country-tropical-freeze"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

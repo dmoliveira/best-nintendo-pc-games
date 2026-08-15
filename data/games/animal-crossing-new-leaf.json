@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "animal-crossing-new-leaf",
+  "title": "Animal Crossing: New Leaf",
+  "aliases": [],
+  "emoji": "🌳",
+  "shortDescription": "A warm town-life simulation that makes civic projects, neighbor relationships, and changing seasons feel like parts of a personal routine.",
+  "highlights": [
+    "Town projects give everyday play a visible, long-term effect",
+    "Flexible routines make it easy to set a comfortable personal pace"
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "adventure",
+    "simulation"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Animal Crossing: New Leaf",
+    "village",
+    "mayor",
+    "neighbors",
+    "real time",
+    "nintendo-3ds"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A key Nintendo 3DS simulation selection for its approachable sense of community and long-term ownership.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Nintendo store page",
+      "url": "https://www.nintendo.com/us/store/products/animal-crossing-new-leaf-3ds/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/animal-crossing-new-leaf.svg",
+      "alt": "Abstract GameAtlas art tile for Animal Crossing: New Leaf",
+      "provenanceId": "gameatlas-art-animal-crossing-new-leaf"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "kid-icarus-uprising",
+  "title": "Kid Icarus: Uprising",
+  "aliases": [],
+  "emoji": "🏹",
+  "shortDescription": "A lively action adventure that shifts between aerial shooting, ground combat, and a deep weapon-combination system.",
+  "highlights": [
+    "Stage variety keeps its high-energy action from settling into one rhythm",
+    "Weapon fusion gives experimentation a useful long-term payoff"
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Project Sora",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Kid Icarus: Uprising",
+    "rail shooter",
+    "action",
+    "weapons",
+    "mythology",
+    "nintendo-3ds"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A distinctive Nintendo 3DS action pick for its ambitious mix of arcade immediacy and build experimentation.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Nintendo store page",
+      "url": "https://www.nintendo.com/us/store/products/kid-icarus-uprising-3ds/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/kid-icarus-uprising.svg",
+      "alt": "Abstract GameAtlas art tile for Kid Icarus: Uprising",
+      "provenanceId": "gameatlas-art-kid-icarus-uprising"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

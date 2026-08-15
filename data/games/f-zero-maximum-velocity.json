@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "f-zero-maximum-velocity",
+  "title": "F-Zero: Maximum Velocity",
+  "aliases": [],
+  "emoji": "💨",
+  "shortDescription": "A portable futuristic racer that distills fast lines, sharp turns, and vehicle choice into short, demanding course runs.",
+  "highlights": [
+    "Quick restarts make precision practice easy to fit into handheld sessions",
+    "Vehicle handling gives route learning real texture"
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "F-Zero: Maximum Velocity",
+    "futuristic racing",
+    "speed",
+    "handheld",
+    "courses",
+    "game-boy-advance"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A useful Game Boy Advance racing anchor that expands the platform beyond the existing kart-racing representation.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/gba/f-zero_maximum_velocity",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/f-zero-maximum-velocity.svg",
+      "alt": "Abstract GameAtlas art tile for F-Zero: Maximum Velocity",
+      "provenanceId": "gameatlas-art-f-zero-maximum-velocity"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

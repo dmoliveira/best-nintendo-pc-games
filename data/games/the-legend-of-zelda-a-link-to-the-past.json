@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-a-link-to-the-past",
+  "title": "The Legend of Zelda: A Link to the Past",
+  "aliases": [
+    "Zelda: A Link to the Past"
+  ],
+  "emoji": "🗺️",
+  "shortDescription": "A top-down adventure that turns parallel worlds, tools, and carefully paced dungeons into one exceptionally coherent quest.",
+  "highlights": [
+    "The two-world structure gives exploration a strong sense of consequence",
+    "Dungeon tools reward observation instead of brute-force guessing"
+  ],
+  "release": {
+    "year": 1991
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "The Legend of Zelda: A Link to the Past",
+    "light world",
+    "dark world",
+    "dungeons",
+    "top-down",
+    "nintendo-snes"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A high-confidence SNES adventure anchor whose design remains welcoming without losing a sense of scale.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/snes/the_legend_of_zelda_a_link_to_the_past",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/the-legend-of-zelda-a-link-to-the-past.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: A Link to the Past",
+      "provenanceId": "gameatlas-art-the-legend-of-zelda-a-link-to-the-past"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

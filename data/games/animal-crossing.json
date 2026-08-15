@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "animal-crossing",
+  "title": "Animal Crossing",
+  "aliases": [],
+  "emoji": "🏡",
+  "shortDescription": "A gentle village simulation where real-time routines, collecting, and neighbor relationships make small daily choices feel personal.",
+  "highlights": [
+    "The calendar gives seasonal details and routines a sense of place",
+    "Open-ended goals let players set their own pace"
+  ],
+  "release": {
+    "year": 2002
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "adventure",
+    "simulation"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Animal Crossing",
+    "village",
+    "real time",
+    "neighbors",
+    "collecting",
+    "nintendo-gamecube"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "An important GameCube simulation anchor that demonstrates the series' original daily-life appeal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/gamecube/animal_crossing",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/animal-crossing.svg",
+      "alt": "Abstract GameAtlas art tile for Animal Crossing",
+      "provenanceId": "gameatlas-art-animal-crossing"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

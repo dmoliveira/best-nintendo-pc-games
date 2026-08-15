@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "tetris",
+  "title": "Tetris",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "A pure falling-block puzzle whose simple pieces produce an endlessly changing conversation between planning, speed, and recovery.",
+  "highlights": [
+    "Every placement balances immediate safety against future shape options",
+    "The rules stay understandable while the pressure keeps evolving"
+  ],
+  "release": {
+    "year": 1989
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "developer": "Nintendo",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Tetris",
+    "falling blocks",
+    "line clears",
+    "planning",
+    "arcade",
+    "nintendo-nes"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A foundational puzzle pick that makes the NES catalog useful beyond action and platforming classics.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/nes/tetris",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/tetris.svg",
+      "alt": "Abstract GameAtlas art tile for Tetris",
+      "provenanceId": "gameatlas-art-tetris"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "kirby-and-the-forgotten-land",
+  "title": "Kirby and the Forgotten Land",
+  "aliases": [],
+  "emoji": "⭐",
+  "shortDescription": "A generous 3D platforming adventure that keeps experimentation inviting through copy abilities, secrets, and approachable cooperative play.",
+  "highlights": [
+    "Abilities encourage low-stakes experimentation with every arena",
+    "Objectives add texture to levels without obscuring the main route"
+  ],
+  "release": {
+    "year": 2022
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "developer": "HAL Laboratory",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Kirby and the Forgotten Land",
+    "3D platformer",
+    "copy abilities",
+    "co-op",
+    "rescue",
+    "nintendo-switch"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A welcoming Switch platforming pick that balances polish, discovery, and accessibility.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Nintendo store page",
+      "url": "https://www.nintendo.com/us/store/products/kirby-and-the-forgotten-land-switch/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/kirby-and-the-forgotten-land.svg",
+      "alt": "Abstract GameAtlas art tile for Kirby and the Forgotten Land",
+      "provenanceId": "gameatlas-art-kirby-and-the-forgotten-land"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "kirbys-dream-land",
+  "title": "Kirby’s Dream Land",
+  "aliases": [],
+  "emoji": "🌟",
+  "shortDescription": "A compact, approachable platformer that makes simple movement and an unusual inhale ability feel immediately expressive on handheld hardware.",
+  "highlights": [
+    "Short stages make it a friendly entry point for new players",
+    "The central ability creates playful interactions without complicated inputs"
+  ],
+  "release": {
+    "year": 1992
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "developer": "HAL Laboratory",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Kirby’s Dream Land",
+    "platforming",
+    "inhaling",
+    "handheld",
+    "beginner-friendly",
+    "game-boy"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A useful Game Boy platforming addition for its clarity, charm, and historical importance to a long-running series.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/gameboy/kirbys_dream_land",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/kirbys-dream-land.svg",
+      "alt": "Abstract GameAtlas art tile for Kirby’s Dream Land",
+      "provenanceId": "gameatlas-art-kirbys-dream-land"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

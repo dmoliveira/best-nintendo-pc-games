@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "donkey-kong-country-returns",
+  "title": "Donkey Kong Country Returns",
+  "aliases": [],
+  "emoji": "🌋",
+  "shortDescription": "A lively platformer that pairs chunky momentum with carefully placed hazards, secrets, and cooperative chaos.",
+  "highlights": [
+    "Rolling and bouncing give levels a satisfying forward rhythm",
+    "Secret routes reward replay without obscuring the main path"
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "developer": "Retro Studios",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Donkey Kong Country Returns",
+    "jungle",
+    "barrels",
+    "co-op",
+    "precision",
+    "nintendo-wii"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A strong Wii platforming option for players who want more exacting movement after the console's social-play classics.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/wii/donkey_kong_country_returns",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/donkey-kong-country-returns.svg",
+      "alt": "Abstract GameAtlas art tile for Donkey Kong Country Returns",
+      "provenanceId": "gameatlas-art-donkey-kong-country-returns"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

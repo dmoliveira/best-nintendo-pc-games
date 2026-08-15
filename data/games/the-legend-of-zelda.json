@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda",
+  "title": "The Legend of Zelda",
+  "aliases": [
+    "Zelda"
+  ],
+  "emoji": "🧭",
+  "shortDescription": "An open-ended fantasy quest whose compact overworld makes curiosity, mapping, and dungeon discovery feel equally important.",
+  "highlights": [
+    "The overworld rewards attention before it explains itself",
+    "Items reframe familiar spaces as a connected adventure"
+  ],
+  "release": {
+    "year": 1986
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "The Legend of Zelda",
+    "overworld",
+    "dungeons",
+    "exploration",
+    "fantasy",
+    "nintendo-nes"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A foundational adventure pick whose emphasis on self-directed discovery still gives the NES catalog a clear place to begin.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/nes/legend_of_zelda",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/the-legend-of-zelda.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda",
+      "provenanceId": "gameatlas-art-the-legend-of-zelda"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

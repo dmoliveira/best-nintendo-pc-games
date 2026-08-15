@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "fast-fusion",
+  "title": "FAST Fusion",
+  "aliases": [],
+  "emoji": "🚀",
+  "shortDescription": "A futuristic racer that pairs high-speed tracks with a focused color-switching mechanic and clean arcade feedback.",
+  "highlights": [
+    "Speed remains readable because courses telegraph their demands clearly",
+    "The central switching rule adds a satisfying layer of racing rhythm"
+  ],
+  "release": {
+    "year": 2025
+  },
+  "platforms": [
+    "nintendo-switch-2"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "developer": "Shin’en Multimedia",
+  "publisher": "Shin’en Multimedia",
+  "keywords": [
+    "FAST Fusion",
+    "futuristic racing",
+    "speed",
+    "anti-gravity",
+    "arcade",
+    "nintendo-switch-2"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A native Switch 2 racing anchor for players who want concentrated arcade speed and repeatable track mastery.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Nintendo store page",
+      "url": "https://www.nintendo.com/us/store/products/fast-fusion-switch-2/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/fast-fusion.svg",
+      "alt": "Abstract GameAtlas art tile for FAST Fusion",
+      "provenanceId": "gameatlas-art-fast-fusion"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "paper-mario",
+  "title": "Paper Mario",
+  "aliases": [],
+  "emoji": "📜",
+  "shortDescription": "A storybook role-playing adventure whose timed actions and expressive partners make turn-based battles feel light on their feet.",
+  "highlights": [
+    "Action commands keep simple battles attentive and readable",
+    "Partner abilities turn exploration into a series of small collaborative puzzles"
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "adventure",
+    "role-playing"
+  ],
+  "developer": "Intelligent Systems",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Paper Mario",
+    "partners",
+    "timed actions",
+    "storybook",
+    "turn-based",
+    "nintendo-64"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "An accessible Nintendo 64 RPG gateway with a strong visual identity and unusually friendly combat pacing.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/n64/paper_mario",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/paper-mario.svg",
+      "alt": "Abstract GameAtlas art tile for Paper Mario",
+      "provenanceId": "gameatlas-art-paper-mario"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-08-14",
+  "reviewedAt": "2026-08-15",
   "project": {
     "name": "GameAtlas",
     "repository": "dmoliveira/best-nintendo-pc-games",
@@ -254,7 +254,7 @@
     {
       "id": "nintendo-life-reference",
       "provider": "Nintendo Life",
-      "role": "historical DSiWare reference",
+      "role": "historical Nintendo catalog reference",
       "status": "outbound-only",
       "allowedFields": [
         "individualSourceUrl"
@@ -265,12 +265,12 @@
       "attribution": "Link to the title-specific catalog record as an external reference; do not imply endorsement or ownership.",
       "termsUrl": null,
       "recheckBefore": "each link refresh",
-      "notes": "Used only for title/platform/year metadata and outbound reference links when a durable first-party DSiWare page is unavailable.",
-      "reviewedBy": "GameAtlas catalog review",
-      "rightsReviewedAt": "2026-08-14",
+      "notes": "Used only as a title-specific outbound reference when a durable first-party historical page is unavailable. It does not authorize score, review-text, image, or local provider-content ingestion.",
+      "reviewedBy": "GameAtlas catalog expansion review",
+      "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "decisionEvidence": "https://www.nintendolife.com/games/dsiware",
-      "coveredProcess": "Reference-only DSiWare metadata; no scores, review text, images, or local provider content."
+      "decisionEvidence": "https://www.nintendolife.com/games",
+      "coveredProcess": "Outbound title-link only for historical Nintendo catalog references; no scores, review text, images, or provider content is copied or cached."
     }
   ],
   "support": {

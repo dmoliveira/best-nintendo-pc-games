@@ -1,0 +1,1949 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-08-15-curated-catalog-expansion",
+  "review": {
+    "authoredBy": "GameAtlas editorial review",
+    "reviewedAt": "2026-08-15",
+    "copyPolicy": "Descriptions, highlights, and rationales are original GameAtlas editorial copy. Linked destinations were used only as outbound references; no provider review text, scores, images, or product copy was copied."
+  },
+  "candidates": [
+    {
+      "slug": "the-legend-of-zelda",
+      "title": "The Legend of Zelda",
+      "aliases": [
+        "Zelda"
+      ],
+      "emoji": "🧭",
+      "releaseYear": 1986,
+      "platformId": "nintendo-nes",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "overworld",
+        "dungeons",
+        "exploration",
+        "fantasy"
+      ],
+      "shortDescription": "An open-ended fantasy quest whose compact overworld makes curiosity, mapping, and dungeon discovery feel equally important.",
+      "highlights": [
+        "The overworld rewards attention before it explains itself",
+        "Items reframe familiar spaces as a connected adventure"
+      ],
+      "rationale": "A foundational adventure pick whose emphasis on self-directed discovery still gives the NES catalog a clear place to begin.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/nes/legend_of_zelda",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "metroid",
+      "title": "Metroid",
+      "aliases": [],
+      "emoji": "🛰️",
+      "releaseYear": 1986,
+      "platformId": "nintendo-nes",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Nintendo R&D1",
+      "publisher": "Nintendo",
+      "keywords": [
+        "alien world",
+        "exploration",
+        "upgrades",
+        "atmosphere"
+      ],
+      "shortDescription": "A lonely science-fiction exploration game built around gradual power growth and a world that becomes legible through return visits.",
+      "highlights": [
+        "Upgrades turn prior obstacles into useful landmarks",
+        "Sparse direction creates an unusually tense exploratory mood"
+      ],
+      "rationale": "A durable action-adventure anchor that shows how progression and world knowledge can be the same reward.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/nes/metroid",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "mega-man-2",
+      "title": "Mega Man 2",
+      "aliases": [
+        "Megaman 2"
+      ],
+      "emoji": "⚙️",
+      "releaseYear": 1988,
+      "platformId": "nintendo-nes",
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "keywords": [
+        "robot masters",
+        "boss order",
+        "weapons",
+        "precision"
+      ],
+      "shortDescription": "A focused action platformer where choosing a stage, learning a boss, and repurposing its tool create a satisfying loop of mastery.",
+      "highlights": [
+        "Stage choice gives a short campaign real route-planning texture",
+        "Acquired weapons make later challenges feel newly solvable"
+      ],
+      "rationale": "An essential NES action selection for its readable controls, memorable stage structure, and inventive tool progression.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/nes/mega_man_2",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "tetris",
+      "title": "Tetris",
+      "aliases": [],
+      "emoji": "🧩",
+      "releaseYear": 1989,
+      "platformId": "nintendo-nes",
+      "genres": [
+        "puzzle"
+      ],
+      "developer": "Nintendo",
+      "publisher": "Nintendo",
+      "keywords": [
+        "falling blocks",
+        "line clears",
+        "planning",
+        "arcade"
+      ],
+      "shortDescription": "A pure falling-block puzzle whose simple pieces produce an endlessly changing conversation between planning, speed, and recovery.",
+      "highlights": [
+        "Every placement balances immediate safety against future shape options",
+        "The rules stay understandable while the pressure keeps evolving"
+      ],
+      "rationale": "A foundational puzzle pick that makes the NES catalog useful beyond action and platforming classics.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/nes/tetris",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "the-legend-of-zelda-a-link-to-the-past",
+      "title": "The Legend of Zelda: A Link to the Past",
+      "aliases": [
+        "Zelda: A Link to the Past"
+      ],
+      "emoji": "🗺️",
+      "releaseYear": 1991,
+      "platformId": "nintendo-snes",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "light world",
+        "dark world",
+        "dungeons",
+        "top-down"
+      ],
+      "shortDescription": "A top-down adventure that turns parallel worlds, tools, and carefully paced dungeons into one exceptionally coherent quest.",
+      "highlights": [
+        "The two-world structure gives exploration a strong sense of consequence",
+        "Dungeon tools reward observation instead of brute-force guessing"
+      ],
+      "rationale": "A high-confidence SNES adventure anchor whose design remains welcoming without losing a sense of scale.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/snes/the_legend_of_zelda_a_link_to_the_past",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "super-metroid",
+      "title": "Super Metroid",
+      "aliases": [],
+      "emoji": "🌌",
+      "releaseYear": 1994,
+      "platformId": "nintendo-snes",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Nintendo R&D1",
+      "publisher": "Nintendo",
+      "keywords": [
+        "space station",
+        "exploration",
+        "movement",
+        "atmosphere"
+      ],
+      "shortDescription": "A precise exploration game where movement upgrades, environmental clues, and a tense alien setting continually reinforce one another.",
+      "highlights": [
+        "The map is dense with routes that reward new movement abilities",
+        "Visual storytelling keeps the world expressive with very little exposition"
+      ],
+      "rationale": "An indispensable SNES action-adventure pick for its confident use of space, movement, and player-led discovery.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/snes/super_metroid",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "chrono-trigger",
+      "title": "Chrono Trigger",
+      "aliases": [],
+      "emoji": "⏳",
+      "releaseYear": 1995,
+      "platformId": "nintendo-snes",
+      "genres": [
+        "role-playing"
+      ],
+      "developer": "Square",
+      "publisher": "Square",
+      "keywords": [
+        "time travel",
+        "party",
+        "turn-based",
+        "multiple endings"
+      ],
+      "shortDescription": "A brisk role-playing adventure that uses time travel to make its worlds, party relationships, and choices feel unusually connected.",
+      "highlights": [
+        "Time periods make small discoveries echo across the whole journey",
+        "Combat keeps party coordination lively without slowing the pace"
+      ],
+      "rationale": "A defining SNES role-playing entry for players who want a compact, imaginative party adventure with momentum.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/snes/chrono_trigger",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "final-fantasy-vi",
+      "title": "Final Fantasy VI",
+      "aliases": [
+        "Final Fantasy III"
+      ],
+      "emoji": "🎭",
+      "releaseYear": 1994,
+      "platformId": "nintendo-snes",
+      "genres": [
+        "role-playing"
+      ],
+      "developer": "Square",
+      "publisher": "Square",
+      "keywords": [
+        "ensemble cast",
+        "fantasy",
+        "espers",
+        "turn-based"
+      ],
+      "shortDescription": "An ensemble role-playing epic that gives a wide cast distinct emotional stakes while keeping its world rich in surprises.",
+      "highlights": [
+        "Character-focused scenes make a large party feel purposeful",
+        "Flexible abilities invite experimentation without erasing each hero's identity"
+      ],
+      "rationale": "A major SNES RPG recommendation for its ambitious ensemble storytelling and adaptable party systems.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/snes/final_fantasy_iii",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "donkey-kong-country",
+      "title": "Donkey Kong Country",
+      "aliases": [],
+      "emoji": "🌴",
+      "releaseYear": 1994,
+      "platformId": "nintendo-snes",
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "developer": "Rare",
+      "publisher": "Nintendo",
+      "keywords": [
+        "jungle",
+        "barrels",
+        "co-op",
+        "secrets"
+      ],
+      "shortDescription": "A fast, secret-filled platformer that makes its tag-team characters and rolling momentum feel immediately playful.",
+      "highlights": [
+        "Levels reward both clean movement and patient secret hunting",
+        "Two playable leads create small but useful changes in how obstacles read"
+      ],
+      "rationale": "A strong SNES platforming addition that broadens the catalog's movement styles beyond Mario.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/snes/donkey_kong_country",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "banjo-kazooie",
+      "title": "Banjo-Kazooie",
+      "aliases": [],
+      "emoji": "🎒",
+      "releaseYear": 1998,
+      "platformId": "nintendo-64",
+      "genres": [
+        "adventure",
+        "platformer"
+      ],
+      "developer": "Rare",
+      "publisher": "Nintendo",
+      "keywords": [
+        "collectathon",
+        "3D platformer",
+        "worlds",
+        "moves"
+      ],
+      "shortDescription": "A cheerful 3D platforming adventure where each compact world folds collectible goals, new moves, and visual jokes into a memorable loop.",
+      "highlights": [
+        "Move unlocks make revisits feel like fresh exploration",
+        "Worlds have distinct navigational identities rather than interchangeable routes"
+      ],
+      "rationale": "A valuable Nintendo 64 platforming complement to Super Mario 64 with a denser collect-and-return rhythm.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/n64/banjo-kazooie",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "the-legend-of-zelda-majoras-mask",
+      "title": "The Legend of Zelda: Majora’s Mask",
+      "aliases": [
+        "Zelda: Majora's Mask"
+      ],
+      "emoji": "🌙",
+      "releaseYear": 2000,
+      "platformId": "nintendo-64",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "three-day cycle",
+        "masks",
+        "side quests",
+        "time"
+      ],
+      "shortDescription": "A compact, surreal adventure that uses a repeating three-day cycle to make schedules, side stories, and transformation tools matter.",
+      "highlights": [
+        "The clock turns local details into puzzles with human stakes",
+        "Masks create distinctive ways to move through and understand the world"
+      ],
+      "rationale": "A Nintendo 64 adventure pick for players drawn to inventive structure and densely interconnected side stories.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/n64/legend_of_zelda_majoras_mask",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "paper-mario",
+      "title": "Paper Mario",
+      "aliases": [],
+      "emoji": "📜",
+      "releaseYear": 2000,
+      "platformId": "nintendo-64",
+      "genres": [
+        "adventure",
+        "role-playing"
+      ],
+      "developer": "Intelligent Systems",
+      "publisher": "Nintendo",
+      "keywords": [
+        "partners",
+        "timed actions",
+        "storybook",
+        "turn-based"
+      ],
+      "shortDescription": "A storybook role-playing adventure whose timed actions and expressive partners make turn-based battles feel light on their feet.",
+      "highlights": [
+        "Action commands keep simple battles attentive and readable",
+        "Partner abilities turn exploration into a series of small collaborative puzzles"
+      ],
+      "rationale": "An accessible Nintendo 64 RPG gateway with a strong visual identity and unusually friendly combat pacing.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/n64/paper_mario",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "resident-evil-4",
+      "title": "Resident Evil 4",
+      "aliases": [],
+      "emoji": "🔦",
+      "releaseYear": 2005,
+      "platformId": "nintendo-gamecube",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Capcom Production Studio 4",
+      "publisher": "Capcom",
+      "keywords": [
+        "survival horror",
+        "village",
+        "inventory",
+        "third-person"
+      ],
+      "shortDescription": "A tense third-person action adventure that turns its changing encounters, inventory choices, and escalating locations into constant forward motion.",
+      "highlights": [
+        "Encounters ask for positioning and quick adaptation rather than simple aim",
+        "A compact inventory creates meaningful pressure between fights"
+      ],
+      "rationale": "A GameCube action cornerstone whose pacing and encounter design remain exceptionally influential.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/gamecube/resident_evil_4",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "viewtiful-joe",
+      "title": "Viewtiful Joe",
+      "aliases": [],
+      "emoji": "🎬",
+      "releaseYear": 2003,
+      "platformId": "nintendo-gamecube",
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "keywords": [
+        "side-scroller",
+        "VFX powers",
+        "comic-book",
+        "combat"
+      ],
+      "shortDescription": "A stylish side-scrolling action game that makes slow motion, speed, and zoom effects into tools for reading fights and platform hazards.",
+      "highlights": [
+        "Power effects change both combat timing and environmental puzzles",
+        "Short stages reward learning enemy patterns with precision"
+      ],
+      "rationale": "A distinctive GameCube action pick for its mechanical imagination and high-energy visual language.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/gamecube/viewtiful_joe",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "f-zero-gx",
+      "title": "F-Zero GX",
+      "aliases": [],
+      "emoji": "🏎️",
+      "releaseYear": 2003,
+      "platformId": "nintendo-gamecube",
+      "genres": [
+        "racing"
+      ],
+      "developer": "Amusement Vision",
+      "publisher": "Nintendo",
+      "keywords": [
+        "futuristic racing",
+        "speed",
+        "time trial",
+        "courses"
+      ],
+      "shortDescription": "A futuristic racing game that makes extreme speed legible through demanding tracks, sharp controls, and clear risk-reward decisions.",
+      "highlights": [
+        "Energy management makes aggression a tactical choice",
+        "Course design rewards repeated practice without hiding its rules"
+      ],
+      "rationale": "A definitive GameCube racing selection for players seeking precise handling and a demanding skill ceiling.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/gamecube/f-zero_gx",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "animal-crossing",
+      "title": "Animal Crossing",
+      "aliases": [],
+      "emoji": "🏡",
+      "releaseYear": 2002,
+      "platformId": "nintendo-gamecube",
+      "genres": [
+        "adventure",
+        "simulation"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "village",
+        "real time",
+        "neighbors",
+        "collecting"
+      ],
+      "shortDescription": "A gentle village simulation where real-time routines, collecting, and neighbor relationships make small daily choices feel personal.",
+      "highlights": [
+        "The calendar gives seasonal details and routines a sense of place",
+        "Open-ended goals let players set their own pace"
+      ],
+      "rationale": "An important GameCube simulation anchor that demonstrates the series' original daily-life appeal.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/gamecube/animal_crossing",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "super-mario-galaxy-2",
+      "title": "Super Mario Galaxy 2",
+      "aliases": [],
+      "emoji": "✨",
+      "releaseYear": 2010,
+      "platformId": "nintendo-wii",
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "gravity",
+        "planets",
+        "3D platformer",
+        "power-ups"
+      ],
+      "shortDescription": "A compact 3D platforming showcase that continually finds new uses for gravity, tiny planets, and expressive movement tools.",
+      "highlights": [
+        "Each galaxy introduces a clear idea before twisting it in surprising ways",
+        "Movement stays responsive even as the camera and gravity change"
+      ],
+      "rationale": "A high-confidence Wii platforming selection for its density of inventive, well-explained ideas.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/wii/super_mario_galaxy_2",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "donkey-kong-country-returns",
+      "title": "Donkey Kong Country Returns",
+      "aliases": [],
+      "emoji": "🌋",
+      "releaseYear": 2010,
+      "platformId": "nintendo-wii",
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "developer": "Retro Studios",
+      "publisher": "Nintendo",
+      "keywords": [
+        "jungle",
+        "barrels",
+        "co-op",
+        "precision"
+      ],
+      "shortDescription": "A lively platformer that pairs chunky momentum with carefully placed hazards, secrets, and cooperative chaos.",
+      "highlights": [
+        "Rolling and bouncing give levels a satisfying forward rhythm",
+        "Secret routes reward replay without obscuring the main path"
+      ],
+      "rationale": "A strong Wii platforming option for players who want more exacting movement after the console's social-play classics.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/wii/donkey_kong_country_returns",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "the-legend-of-zelda-skyward-sword",
+      "title": "The Legend of Zelda: Skyward Sword",
+      "aliases": [
+        "Zelda: Skyward Sword"
+      ],
+      "emoji": "☁️",
+      "releaseYear": 2011,
+      "platformId": "nintendo-wii",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "sky islands",
+        "swordplay",
+        "dungeons",
+        "motion controls"
+      ],
+      "shortDescription": "An aerial fantasy adventure that uses deliberate swordplay and puzzle-heavy dungeons to give its journeys a hands-on rhythm.",
+      "highlights": [
+        "Enemy encounters reward reading angles and timing",
+        "Dungeons build satisfying chains of spatial and tool-based puzzles"
+      ],
+      "rationale": "A Wii adventure recommendation for its considered dungeon design and distinctive use of the platform's controls.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/wii/legend_of_zelda_skyward_sword",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "zack-and-wiki-quest-for-barbaros-treasure",
+      "title": "Zack & Wiki: Quest for Barbaros’ Treasure",
+      "aliases": [
+        "Zack and Wiki"
+      ],
+      "emoji": "🏴‍☠️",
+      "releaseYear": 2007,
+      "platformId": "nintendo-wii",
+      "genres": [
+        "adventure",
+        "puzzle"
+      ],
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "keywords": [
+        "pirates",
+        "point and click",
+        "puzzles",
+        "motion controls"
+      ],
+      "shortDescription": "A playful pirate puzzle adventure whose compact scenes ask players to notice objects, consequences, and unusual tool combinations.",
+      "highlights": [
+        "Each puzzle room communicates a self-contained mechanical idea",
+        "Failure encourages experimentation rather than long repetition"
+      ],
+      "rationale": "A valuable Wii puzzle-adventure pick that highlights the system's less obvious strengths beyond action games.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/wii/zack_and_wiki_quest_for_barbaros_treasure",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "super-mario-maker",
+      "title": "Super Mario Maker",
+      "aliases": [],
+      "emoji": "🛠️",
+      "releaseYear": 2015,
+      "platformId": "nintendo-wii-u",
+      "genres": [
+        "platformer",
+        "puzzle"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "level editor",
+        "creation",
+        "courses",
+        "sharing"
+      ],
+      "shortDescription": "A creation-focused platformer that turns classic course vocabulary into an approachable toolkit for building, testing, and sharing ideas.",
+      "highlights": [
+        "Rapid iteration makes cause and effect easy to learn",
+        "Community courses reveal how familiar rules can support wildly different challenges"
+      ],
+      "rationale": "A key Wii U platforming selection because it expands discovery into hands-on design literacy.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/wiiu/super_mario_maker",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "donkey-kong-country-tropical-freeze",
+      "title": "Donkey Kong Country: Tropical Freeze",
+      "aliases": [],
+      "emoji": "❄️",
+      "releaseYear": 2014,
+      "platformId": "nintendo-wii-u",
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "developer": "Retro Studios",
+      "publisher": "Nintendo",
+      "keywords": [
+        "jungle",
+        "platforming",
+        "co-op",
+        "secrets"
+      ],
+      "shortDescription": "A richly paced platformer that layers momentum, partner abilities, and environmental surprises into demanding but readable levels.",
+      "highlights": [
+        "Levels build rhythm through escalating movement challenges",
+        "Partner abilities add useful variation without weakening the core controls"
+      ],
+      "rationale": "A Wii U platforming highlight for its precise level craft and unusually expressive environments.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/wiiu/donkey_kong_country_tropical_freeze",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "captain-toad-treasure-tracker",
+      "title": "Captain Toad: Treasure Tracker",
+      "aliases": [],
+      "emoji": "💎",
+      "releaseYear": 2014,
+      "platformId": "nintendo-wii-u",
+      "genres": [
+        "adventure",
+        "puzzle"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "diorama",
+        "puzzle boxes",
+        "camera",
+        "treasure"
+      ],
+      "shortDescription": "A diorama puzzle adventure where rotating the view, spotting hidden routes, and accepting limited movement make every tiny stage feel tactile.",
+      "highlights": [
+        "Camera changes reveal routes rather than merely hiding them",
+        "Short stages make experimentation satisfying and low-friction"
+      ],
+      "rationale": "A compact Wii U puzzle pick that gives the catalog a distinct spatial-thinking experience.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/wiiu/captain_toad_treasure_tracker",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "bayonetta-2",
+      "title": "Bayonetta 2",
+      "aliases": [],
+      "emoji": "🪽",
+      "releaseYear": 2014,
+      "platformId": "nintendo-wii-u",
+      "genres": [
+        "action"
+      ],
+      "developer": "PlatinumGames",
+      "publisher": "Nintendo",
+      "keywords": [
+        "character action",
+        "combos",
+        "witch time",
+        "combat"
+      ],
+      "shortDescription": "A fast character-action game that makes timing, dodge windows, and flamboyant combo expression central to every encounter.",
+      "highlights": [
+        "Defensive timing opens space for satisfying counterattacks",
+        "Combat systems reward both experimentation and repeated practice"
+      ],
+      "rationale": "A necessary Wii U action addition for its exceptional responsiveness and expressive combat vocabulary.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/wiiu/bayonetta_2",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "the-legend-of-zelda-breath-of-the-wild",
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "aliases": [
+        "Zelda: Breath of the Wild",
+        "BOTW"
+      ],
+      "emoji": "🏔️",
+      "releaseYear": 2017,
+      "platformId": "nintendo-switch",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Nintendo EPD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "open world",
+        "climbing",
+        "physics",
+        "shrines"
+      ],
+      "shortDescription": "An open-world adventure that makes weather, tools, terrain, and curiosity into flexible ways of approaching nearly every problem.",
+      "highlights": [
+        "Movement systems turn the landscape into an invitation rather than a checklist",
+        "Physics-driven solutions make experiments feel genuinely player-owned"
+      ],
+      "rationale": "A core Switch adventure pick for its unusually generous approach to exploration and problem solving.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo store page",
+        "url": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-breath-of-the-wild-switch/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "super-mario-odyssey",
+      "title": "Super Mario Odyssey",
+      "aliases": [],
+      "emoji": "🌍",
+      "releaseYear": 2017,
+      "platformId": "nintendo-switch",
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "developer": "Nintendo EPD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "3D platformer",
+        "capture",
+        "kingdoms",
+        "moons"
+      ],
+      "shortDescription": "A globe-trotting 3D platformer that uses a versatile companion move to make each kingdom full of surprising movement possibilities.",
+      "highlights": [
+        "Capture abilities transform familiar platforming questions into fresh ones",
+        "Dense kingdoms reward both direct goals and playful detours"
+      ],
+      "rationale": "A principal Switch platformer whose joyful movement and discovery suit almost any starting point in the catalog.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo store page",
+        "url": "https://www.nintendo.com/us/store/products/super-mario-odyssey-switch/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "metroid-dread",
+      "title": "Metroid Dread",
+      "aliases": [],
+      "emoji": "🧪",
+      "releaseYear": 2021,
+      "platformId": "nintendo-switch",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "MercurySteam",
+      "publisher": "Nintendo",
+      "keywords": [
+        "exploration",
+        "upgrades",
+        "2D action",
+        "evasion"
+      ],
+      "shortDescription": "A swift 2D action adventure that combines clean exploration routes, expressive upgrades, and moments of high-pressure pursuit.",
+      "highlights": [
+        "Movement upgrades create satisfying new traversal options",
+        "Focused encounter design keeps the pace tense without losing clarity"
+      ],
+      "rationale": "A modern Switch action-adventure anchor for players who value precision, momentum, and compact world design.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo store page",
+        "url": "https://www.nintendo.com/us/store/products/metroid-dread-switch/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "animal-crossing-new-horizons",
+      "title": "Animal Crossing: New Horizons",
+      "aliases": [],
+      "emoji": "🏝️",
+      "releaseYear": 2020,
+      "platformId": "nintendo-switch",
+      "genres": [
+        "adventure",
+        "simulation"
+      ],
+      "developer": "Nintendo EPD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "island",
+        "decorating",
+        "neighbors",
+        "real time"
+      ],
+      "shortDescription": "An island-life simulation that gives players generous room to decorate, collect, visit, and build routines around their own goals.",
+      "highlights": [
+        "Island layout makes long-term planning feel tangible",
+        "Small seasonal changes reward returning at a relaxed pace"
+      ],
+      "rationale": "A major Switch simulation choice for its accessible creativity and calming social routines.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo store page",
+        "url": "https://www.nintendo.com/us/store/products/animal-crossing-new-horizons-switch/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "kirby-and-the-forgotten-land",
+      "title": "Kirby and the Forgotten Land",
+      "aliases": [],
+      "emoji": "⭐",
+      "releaseYear": 2022,
+      "platformId": "nintendo-switch",
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "developer": "HAL Laboratory",
+      "publisher": "Nintendo",
+      "keywords": [
+        "3D platformer",
+        "copy abilities",
+        "co-op",
+        "rescue"
+      ],
+      "shortDescription": "A generous 3D platforming adventure that keeps experimentation inviting through copy abilities, secrets, and approachable cooperative play.",
+      "highlights": [
+        "Abilities encourage low-stakes experimentation with every arena",
+        "Objectives add texture to levels without obscuring the main route"
+      ],
+      "rationale": "A welcoming Switch platforming pick that balances polish, discovery, and accessibility.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo store page",
+        "url": "https://www.nintendo.com/us/store/products/kirby-and-the-forgotten-land-switch/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "drag-x-drive",
+      "title": "Drag x Drive",
+      "aliases": [],
+      "emoji": "🏀",
+      "releaseYear": 2025,
+      "platformId": "nintendo-switch-2",
+      "genres": [
+        "action",
+        "racing"
+      ],
+      "developer": "Nintendo",
+      "publisher": "Nintendo",
+      "keywords": [
+        "wheelchair basketball",
+        "online",
+        "motion",
+        "team play"
+      ],
+      "shortDescription": "A quick, team-based wheelchair basketball game built around immediate movement decisions, passing lanes, and energetic competitive play.",
+      "highlights": [
+        "Positioning and momentum matter as much as scoring chances",
+        "Short matches make it easy to learn through repeated play"
+      ],
+      "rationale": "A native Switch 2 action selection that adds a distinct team-sport-like competitive rhythm without creating a new taxonomy.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo store page",
+        "url": "https://www.nintendo.com/us/store/products/drag-x-drive-switch-2/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "fast-fusion",
+      "title": "FAST Fusion",
+      "aliases": [],
+      "emoji": "🚀",
+      "releaseYear": 2025,
+      "platformId": "nintendo-switch-2",
+      "genres": [
+        "racing"
+      ],
+      "developer": "Shin’en Multimedia",
+      "publisher": "Shin’en Multimedia",
+      "keywords": [
+        "futuristic racing",
+        "speed",
+        "anti-gravity",
+        "arcade"
+      ],
+      "shortDescription": "A futuristic racer that pairs high-speed tracks with a focused color-switching mechanic and clean arcade feedback.",
+      "highlights": [
+        "Speed remains readable because courses telegraph their demands clearly",
+        "The central switching rule adds a satisfying layer of racing rhythm"
+      ],
+      "rationale": "A native Switch 2 racing anchor for players who want concentrated arcade speed and repeatable track mastery.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo store page",
+        "url": "https://www.nintendo.com/us/store/products/fast-fusion-switch-2/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "the-legend-of-zelda-links-awakening",
+      "title": "The Legend of Zelda: Link’s Awakening",
+      "aliases": [
+        "Zelda: Link's Awakening"
+      ],
+      "emoji": "🌊",
+      "releaseYear": 1993,
+      "platformId": "game-boy",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "island",
+        "dungeons",
+        "dream",
+        "top-down"
+      ],
+      "shortDescription": "A compact island adventure that gives its dungeons, side characters, and strange dreamlike premise a remarkable sense of place.",
+      "highlights": [
+        "A tightly connected island makes every new tool feel immediately useful",
+        "Surreal details lend the quest an emotional character all its own"
+      ],
+      "rationale": "An essential Game Boy adventure pick for showing how much atmosphere and structure a handheld quest can hold.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/gameboy/legend_of_zelda_links_awakening",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "pokemon-red-and-blue",
+      "title": "Pokémon Red and Blue",
+      "aliases": [],
+      "emoji": "🔴",
+      "releaseYear": 1996,
+      "platformId": "game-boy",
+      "genres": [
+        "role-playing"
+      ],
+      "developer": "Game Freak",
+      "publisher": "Nintendo",
+      "keywords": [
+        "monster collecting",
+        "trading",
+        "turn-based",
+        "Kanto"
+      ],
+      "shortDescription": "A creature-collecting role-playing journey whose simple turn-based systems become richer through discovery, trading, and personal team building.",
+      "highlights": [
+        "Team composition makes progress feel individual even along a shared route",
+        "Trading turns collection into a social reason to keep exploring"
+      ],
+      "rationale": "A foundational Game Boy RPG pick for its enduring loop of exploration, collecting, and player-defined teams.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Pokémon page",
+        "url": "https://www.pokemon.com/us/pokemon-video-games/pokemon-red-version-and-pokemon-blue-version",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "kirbys-dream-land",
+      "title": "Kirby’s Dream Land",
+      "aliases": [],
+      "emoji": "🌟",
+      "releaseYear": 1992,
+      "platformId": "game-boy",
+      "genres": [
+        "platformer"
+      ],
+      "developer": "HAL Laboratory",
+      "publisher": "Nintendo",
+      "keywords": [
+        "platforming",
+        "inhaling",
+        "handheld",
+        "beginner-friendly"
+      ],
+      "shortDescription": "A compact, approachable platformer that makes simple movement and an unusual inhale ability feel immediately expressive on handheld hardware.",
+      "highlights": [
+        "Short stages make it a friendly entry point for new players",
+        "The central ability creates playful interactions without complicated inputs"
+      ],
+      "rationale": "A useful Game Boy platforming addition for its clarity, charm, and historical importance to a long-running series.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/gameboy/kirbys_dream_land",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "pokemon-gold-and-silver",
+      "title": "Pokémon Gold and Silver",
+      "aliases": [],
+      "emoji": "🟡",
+      "releaseYear": 1999,
+      "platformId": "game-boy-color",
+      "genres": [
+        "role-playing"
+      ],
+      "developer": "Game Freak",
+      "publisher": "Nintendo",
+      "keywords": [
+        "monster collecting",
+        "day night",
+        "Johto",
+        "trading"
+      ],
+      "shortDescription": "A creature-collecting RPG that makes time of day, an expanded world, and long-term team building feel closely linked.",
+      "highlights": [
+        "The day-night cycle gives ordinary exploration useful variation",
+        "The wider journey rewards sustained curiosity after its first major goal"
+      ],
+      "rationale": "A strong Game Boy Color role-playing selection for its scope and its thoughtful additions to the original formula.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/gbc/pokemon_gold_and_silver",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "metal-gear-ghost-babel",
+      "title": "Metal Gear: Ghost Babel",
+      "aliases": [
+        "Metal Gear Solid"
+      ],
+      "emoji": "📡",
+      "releaseYear": 2000,
+      "platformId": "game-boy-color",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Konami",
+      "publisher": "Konami",
+      "keywords": [
+        "stealth",
+        "tactical",
+        "handheld",
+        "missions"
+      ],
+      "shortDescription": "A stealth-focused handheld adventure that turns small spaces, guard patterns, and limited tools into satisfying tactical problems.",
+      "highlights": [
+        "Compact levels make observation and experimentation easy to read",
+        "Mission structure gives stealth a steady sense of forward momentum"
+      ],
+      "rationale": "A standout Game Boy Color action pick that demonstrates how much tactical stealth can fit into a handheld format.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive (Metal Gear Solid / Ghost Babel)",
+        "url": "https://www.nintendolife.com/games/gbc/metal_gear_solid",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "metroid-fusion",
+      "title": "Metroid Fusion",
+      "aliases": [],
+      "emoji": "🧬",
+      "releaseYear": 2002,
+      "platformId": "game-boy-advance",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Nintendo R&D1",
+      "publisher": "Nintendo",
+      "keywords": [
+        "space station",
+        "exploration",
+        "upgrades",
+        "suspense"
+      ],
+      "shortDescription": "A focused handheld action adventure that uses a compact station, quick upgrades, and mounting suspense to keep exploration urgent.",
+      "highlights": [
+        "Clear objectives make a dense world approachable on a small screen",
+        "New abilities refresh both traversal and combat at a brisk pace"
+      ],
+      "rationale": "A central Game Boy Advance action-adventure pick for its polished pacing and atmospheric confidence.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/gba/metroid_fusion",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "the-legend-of-zelda-the-minish-cap",
+      "title": "The Legend of Zelda: The Minish Cap",
+      "aliases": [
+        "Zelda: The Minish Cap"
+      ],
+      "emoji": "🔍",
+      "releaseYear": 2004,
+      "platformId": "game-boy-advance",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Capcom",
+      "publisher": "Nintendo",
+      "keywords": [
+        "shrinking",
+        "dungeons",
+        "top-down",
+        "puzzles"
+      ],
+      "shortDescription": "A top-down adventure that uses changes in scale to make familiar rooms, towns, and dungeon spaces feel newly surprising.",
+      "highlights": [
+        "Shrinking transforms ordinary scenery into readable exploratory puzzles",
+        "Dungeons pair clear action with a steady stream of spatial discoveries"
+      ],
+      "rationale": "A high-value Game Boy Advance adventure selection for its inventive scale mechanic and friendly pacing.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/gba/legend_of_zelda_the_minish_cap",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "mario-and-luigi-superstar-saga",
+      "title": "Mario & Luigi: Superstar Saga",
+      "aliases": [],
+      "emoji": "👬",
+      "releaseYear": 2003,
+      "platformId": "game-boy-advance",
+      "genres": [
+        "adventure",
+        "role-playing"
+      ],
+      "developer": "AlphaDream",
+      "publisher": "Nintendo",
+      "keywords": [
+        "brothers",
+        "timed actions",
+        "comedy",
+        "turn-based"
+      ],
+      "shortDescription": "A comic role-playing road trip where coordinated button timing makes two heroes feel involved in every move and puzzle.",
+      "highlights": [
+        "Timed inputs make attacks and defense more active than a typical menu battle",
+        "Brother-specific field moves create light, readable exploration puzzles"
+      ],
+      "rationale": "A lively Game Boy Advance RPG choice for players who want humor and interaction woven into turn-based systems.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/gba/mario_and_luigi_superstar_saga",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "f-zero-maximum-velocity",
+      "title": "F-Zero: Maximum Velocity",
+      "aliases": [],
+      "emoji": "💨",
+      "releaseYear": 2001,
+      "platformId": "game-boy-advance",
+      "genres": [
+        "racing"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "futuristic racing",
+        "speed",
+        "handheld",
+        "courses"
+      ],
+      "shortDescription": "A portable futuristic racer that distills fast lines, sharp turns, and vehicle choice into short, demanding course runs.",
+      "highlights": [
+        "Quick restarts make precision practice easy to fit into handheld sessions",
+        "Vehicle handling gives route learning real texture"
+      ],
+      "rationale": "A useful Game Boy Advance racing anchor that expands the platform beyond the existing kart-racing representation.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/gba/f-zero_maximum_velocity",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "mario-kart-ds",
+      "title": "Mario Kart DS",
+      "aliases": [],
+      "emoji": "🏁",
+      "releaseYear": 2005,
+      "platformId": "nintendo-ds",
+      "genres": [
+        "racing"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "kart racing",
+        "dual screen",
+        "courses",
+        "multiplayer"
+      ],
+      "shortDescription": "A feature-rich handheld kart racer that gives its tracks, drifting, missions, and local competition a crisp, immediate feel.",
+      "highlights": [
+        "Drifting and item timing make races rewarding to revisit",
+        "The mission mode offers focused challenges beyond standard cups"
+      ],
+      "rationale": "A key Nintendo DS racing addition for its depth, clean handling, and broad solo-to-social appeal.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/ds/mario_kart_ds",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "new-super-mario-bros",
+      "title": "New Super Mario Bros.",
+      "aliases": [],
+      "emoji": "🍄",
+      "releaseYear": 2006,
+      "platformId": "nintendo-ds",
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "side-scroller",
+        "power-ups",
+        "coins",
+        "handheld"
+      ],
+      "shortDescription": "A brisk side-scrolling platformer that refreshes familiar movement, power-ups, and secrets for a handheld-friendly pace.",
+      "highlights": [
+        "Short stages make experimentation and replay easy",
+        "Hidden routes reward careful observation without blocking progress"
+      ],
+      "rationale": "A broadly useful Nintendo DS platforming pick for its accessible controls and satisfying route discovery.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/ds/new_super_mario_bros",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "the-legend-of-zelda-phantom-hourglass",
+      "title": "The Legend of Zelda: Phantom Hourglass",
+      "aliases": [
+        "Zelda: Phantom Hourglass"
+      ],
+      "emoji": "⛵",
+      "releaseYear": 2007,
+      "platformId": "nintendo-ds",
+      "genres": [
+        "adventure",
+        "puzzle"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "touch controls",
+        "sailing",
+        "dungeons",
+        "map notes"
+      ],
+      "shortDescription": "A touch-led adventure that turns map notes, stylus gestures, and compact sailing routes into direct puzzle-solving tools.",
+      "highlights": [
+        "Writing on maps makes player observations part of the solution",
+        "Touch interactions give familiar adventure tools a playful new rhythm"
+      ],
+      "rationale": "A Nintendo DS adventure pick that makes unusually good use of the system's defining input methods.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/ds/legend_of_zelda_phantom_hourglass",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "ghost-trick-phantom-detective",
+      "title": "Ghost Trick: Phantom Detective",
+      "aliases": [
+        "Ghost Trick"
+      ],
+      "emoji": "👻",
+      "releaseYear": 2010,
+      "platformId": "nintendo-ds",
+      "genres": [
+        "adventure",
+        "puzzle"
+      ],
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "keywords": [
+        "mystery",
+        "time travel",
+        "objects",
+        "detective"
+      ],
+      "shortDescription": "A clever mystery puzzle adventure where manipulating objects and revisiting crucial moments turns investigation into a chain of playful experiments.",
+      "highlights": [
+        "Object interactions create compact cause-and-effect puzzles",
+        "The mystery structure gives every solved scene a strong reason to continue"
+      ],
+      "rationale": "A standout Nintendo DS puzzle-adventure addition for its inventive premise and tightly paced problem solving.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/ds/ghost_trick_phantom_detective",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "pokemon-black-and-white",
+      "title": "Pokémon Black and White",
+      "aliases": [],
+      "emoji": "⚫",
+      "releaseYear": 2010,
+      "platformId": "nintendo-ds",
+      "genres": [
+        "role-playing"
+      ],
+      "developer": "Game Freak",
+      "publisher": "Nintendo",
+      "keywords": [
+        "monster collecting",
+        "Unova",
+        "turn-based",
+        "online"
+      ],
+      "shortDescription": "A creature-collecting RPG that gives a new region and a fresh starting roster enough focus to make discovery feel renewed.",
+      "highlights": [
+        "A largely new early roster restores the pleasure of learning matchups",
+        "City-to-route pacing gives the journey a strong sense of travel"
+      ],
+      "rationale": "A major Nintendo DS RPG recommendation for players seeking a self-contained, discovery-first team-building adventure.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/ds/pokemon_black_and_white",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "art-style-pictobits",
+      "title": "Art Style: PiCTOBITS",
+      "aliases": [
+        "PiCTOBITS"
+      ],
+      "emoji": "🔢",
+      "releaseYear": 2009,
+      "platformId": "nintendo-dsi",
+      "genres": [
+        "puzzle"
+      ],
+      "developer": "Skip Ltd.",
+      "publisher": "Nintendo",
+      "keywords": [
+        "DSiWare",
+        "numbers",
+        "patterns",
+        "arcade puzzle"
+      ],
+      "shortDescription": "A compact DSiWare puzzle game that turns number patterns, quick recognition, and escalating boards into a focused arcade-like challenge.",
+      "highlights": [
+        "Simple numerical rules support satisfying chains of quick decisions",
+        "Short sessions make progress and practice easy to return to"
+      ],
+      "rationale": "A strong DSi puzzle expansion pick that preserves the platform's distinctive digital-only identity.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/dsiware/art_style_pictobits",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "cave-story",
+      "title": "Cave Story",
+      "aliases": [],
+      "emoji": "⛏️",
+      "releaseYear": 2010,
+      "platformId": "nintendo-dsi",
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "developer": "Studio Pixel",
+      "publisher": "Nicalis",
+      "keywords": [
+        "DSiWare",
+        "exploration",
+        "weapons",
+        "platforming"
+      ],
+      "shortDescription": "A compact action platformer whose branching routes, weapon choices, and secret-filled caverns make repeated exploration feel worthwhile.",
+      "highlights": [
+        "Weapon behavior changes the texture of both combat and movement",
+        "Optional discoveries give a focused world surprising replay value"
+      ],
+      "rationale": "A DSiWare platforming pick that brings deeper exploration and route choice to the digital handheld catalog.",
+      "linkSourceId": "nintendo-life-reference",
+      "link": {
+        "label": "External/reference — Nintendo Life archive",
+        "url": "https://www.nintendolife.com/games/dsiware/cave_story",
+        "kind": "reference"
+      }
+    },
+    {
+      "slug": "the-legend-of-zelda-a-link-between-worlds",
+      "title": "The Legend of Zelda: A Link Between Worlds",
+      "aliases": [
+        "Zelda: A Link Between Worlds"
+      ],
+      "emoji": "🖼️",
+      "releaseYear": 2013,
+      "platformId": "nintendo-3ds",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "wall merging",
+        "dungeons",
+        "top-down",
+        "rental items"
+      ],
+      "shortDescription": "A nimble top-down adventure that uses wall merging and flexible item access to make every dungeon invite creative routes.",
+      "highlights": [
+        "The wall ability reframes maps as layered puzzles",
+        "Flexible item order lets players approach challenges with agency"
+      ],
+      "rationale": "A leading Nintendo 3DS adventure selection for its elegant spatial design and approachable freedom.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo store page",
+        "url": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-a-link-between-worlds-3ds/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "fire-emblem-awakening",
+      "title": "Fire Emblem Awakening",
+      "aliases": [],
+      "emoji": "🛡️",
+      "releaseYear": 2012,
+      "platformId": "nintendo-3ds",
+      "genres": [
+        "role-playing"
+      ],
+      "developer": "Intelligent Systems",
+      "publisher": "Nintendo",
+      "keywords": [
+        "tactical",
+        "relationships",
+        "turn-based",
+        "campaign"
+      ],
+      "shortDescription": "A character-driven tactical role-playing campaign that makes positioning, long-term party growth, and relationships feel mutually reinforcing.",
+      "highlights": [
+        "Pairing units gives map decisions an immediate interpersonal dimension",
+        "Persistent growth makes each player's party feel distinct"
+      ],
+      "rationale": "A Nintendo 3DS role-playing addition that earns its place through approachable tactics and meaningful character investment.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo store page",
+        "url": "https://www.nintendo.com/us/store/products/fire-emblem-awakening-3ds/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "kid-icarus-uprising",
+      "title": "Kid Icarus: Uprising",
+      "aliases": [],
+      "emoji": "🏹",
+      "releaseYear": 2012,
+      "platformId": "nintendo-3ds",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Project Sora",
+      "publisher": "Nintendo",
+      "keywords": [
+        "rail shooter",
+        "action",
+        "weapons",
+        "mythology"
+      ],
+      "shortDescription": "A lively action adventure that shifts between aerial shooting, ground combat, and a deep weapon-combination system.",
+      "highlights": [
+        "Stage variety keeps its high-energy action from settling into one rhythm",
+        "Weapon fusion gives experimentation a useful long-term payoff"
+      ],
+      "rationale": "A distinctive Nintendo 3DS action pick for its ambitious mix of arcade immediacy and build experimentation.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo store page",
+        "url": "https://www.nintendo.com/us/store/products/kid-icarus-uprising-3ds/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "animal-crossing-new-leaf",
+      "title": "Animal Crossing: New Leaf",
+      "aliases": [],
+      "emoji": "🌳",
+      "releaseYear": 2012,
+      "platformId": "nintendo-3ds",
+      "genres": [
+        "adventure",
+        "simulation"
+      ],
+      "developer": "Nintendo EAD",
+      "publisher": "Nintendo",
+      "keywords": [
+        "village",
+        "mayor",
+        "neighbors",
+        "real time"
+      ],
+      "shortDescription": "A warm town-life simulation that makes civic projects, neighbor relationships, and changing seasons feel like parts of a personal routine.",
+      "highlights": [
+        "Town projects give everyday play a visible, long-term effect",
+        "Flexible routines make it easy to set a comfortable personal pace"
+      ],
+      "rationale": "A key Nintendo 3DS simulation selection for its approachable sense of community and long-term ownership.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo store page",
+        "url": "https://www.nintendo.com/us/store/products/animal-crossing-new-leaf-3ds/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "the-binding-of-isaac-rebirth",
+      "title": "The Binding of Isaac: Rebirth",
+      "aliases": [],
+      "emoji": "🗝️",
+      "releaseYear": 2015,
+      "platformId": "nintendo-new-3ds",
+      "genres": [
+        "action"
+      ],
+      "developer": "Nicalis",
+      "publisher": "Nicalis",
+      "keywords": [
+        "dungeon runs",
+        "items",
+        "procedural",
+        "action"
+      ],
+      "shortDescription": "A run-based action game where changing item combinations and room layouts make each attempt a fresh exercise in adaptation.",
+      "highlights": [
+        "Item interactions continually reshape how a run can unfold",
+        "Short attempts make experimentation and recovery central to the appeal"
+      ],
+      "rationale": "A New Nintendo 3DS-exclusive action anchor chosen for the platform-specific edition and its deep replayable systems.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo product page",
+        "url": "https://www.nintendo.com/en-gb/Games/Nintendo-3DS-download-software/The-Binding-of-Isaac-Rebirth-1046143.html",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "minecraft-new-nintendo-3ds-edition",
+      "title": "Minecraft: New Nintendo 3DS Edition",
+      "aliases": [],
+      "emoji": "🧱",
+      "releaseYear": 2017,
+      "platformId": "nintendo-new-3ds",
+      "genres": [
+        "adventure",
+        "simulation"
+      ],
+      "developer": "4J Studios",
+      "publisher": "Mojang",
+      "keywords": [
+        "building",
+        "survival",
+        "sandbox",
+        "crafting"
+      ],
+      "shortDescription": "A portable sandbox edition that lets players gather, build, explore, and define their own projects within a shared set of simple systems.",
+      "highlights": [
+        "Building goals can be as open-ended or structured as the player prefers",
+        "Survival and creative play provide complementary ways to inhabit the world"
+      ],
+      "rationale": "A New Nintendo 3DS-specific simulation and adventure addition that represents the limited exclusive library without padding it.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Nintendo product page",
+        "url": "https://www.nintendo.com/en-gb/Games/Nintendo-3DS-games/Minecraft-New-Nintendo-3DS-Edition-1119025.html",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "hades",
+      "title": "Hades",
+      "aliases": [],
+      "emoji": "🔥",
+      "releaseYear": 2020,
+      "platformId": "pc-windows",
+      "genres": [
+        "action",
+        "role-playing"
+      ],
+      "developer": "Supergiant Games",
+      "publisher": "Supergiant Games",
+      "keywords": [
+        "roguelike",
+        "Greek myth",
+        "action",
+        "builds"
+      ],
+      "shortDescription": "A rapid action game that makes repeated escape attempts feel meaningful through flexible builds, sharp combat, and evolving character conversations.",
+      "highlights": [
+        "Weapon aspects and boons support distinct combat approaches",
+        "Story progression gives failed attempts a rewarding sense of continuity"
+      ],
+      "rationale": "A central PC action-RPG selection for combining immediate combat feedback with unusually generous run-to-run storytelling.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Steam store page",
+        "url": "https://store.steampowered.com/app/1145360/Hades/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium – The Final Cut",
+      "aliases": [],
+      "emoji": "🎲",
+      "releaseYear": 2021,
+      "platformId": "pc-windows",
+      "genres": [
+        "adventure",
+        "role-playing"
+      ],
+      "developer": "ZA/UM",
+      "publisher": "ZA/UM",
+      "keywords": [
+        "detective",
+        "dialogue",
+        "skills",
+        "role-playing"
+      ],
+      "shortDescription": "A dialogue-driven detective role-playing game where competing inner skills make investigation, failure, and self-definition part of the same experience.",
+      "highlights": [
+        "Skill voices turn character building into an active narrative lens",
+        "Choices make even a stalled investigation feel revealing rather than wasted"
+      ],
+      "rationale": "A major PC role-playing recommendation for players who want expressive choices and dense investigative writing without combat-first structure.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Steam store page",
+        "url": "https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "hollow-knight",
+      "title": "Hollow Knight",
+      "aliases": [],
+      "emoji": "🕯️",
+      "releaseYear": 2017,
+      "platformId": "pc-windows",
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "developer": "Team Cherry",
+      "publisher": "Team Cherry",
+      "keywords": [
+        "exploration",
+        "metroidvania",
+        "bosses",
+        "underground"
+      ],
+      "shortDescription": "A hand-drawn action platformer that rewards patient exploration, careful combat, and the gradual construction of a mental map.",
+      "highlights": [
+        "A broad underground world supports both directed goals and quiet detours",
+        "Combat demands attention while leaving room for different charm setups"
+      ],
+      "rationale": "A strong PC platforming and exploration anchor for players seeking rich atmosphere and sustained mechanical growth.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Steam store page",
+        "url": "https://store.steampowered.com/app/367520/Hollow_Knight/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "outer-wilds",
+      "title": "Outer Wilds",
+      "aliases": [],
+      "emoji": "🪐",
+      "releaseYear": 2019,
+      "platformId": "pc-windows",
+      "genres": [
+        "adventure",
+        "puzzle"
+      ],
+      "developer": "Mobius Digital",
+      "publisher": "Annapurna Interactive",
+      "keywords": [
+        "solar system",
+        "exploration",
+        "time loop",
+        "mystery"
+      ],
+      "shortDescription": "An exploration mystery where learning how a small solar system behaves is the real key to reaching its most elusive places.",
+      "highlights": [
+        "Knowledge, not inventory, becomes the enduring form of progression",
+        "Each location has a distinct physical rule worth understanding"
+      ],
+      "rationale": "A defining PC adventure-puzzle pick for its trust in observation, curiosity, and player-led reasoning.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Steam store page",
+        "url": "https://store.steampowered.com/app/753640/Outer_Wilds/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "control-ultimate-edition",
+      "title": "Control Ultimate Edition",
+      "aliases": [
+        "Control"
+      ],
+      "emoji": "🌀",
+      "releaseYear": 2020,
+      "platformId": "pc-windows",
+      "genres": [
+        "action",
+        "adventure"
+      ],
+      "developer": "Remedy Entertainment",
+      "publisher": "505 Games",
+      "keywords": [
+        "telekinesis",
+        "mystery",
+        "third-person",
+        "abilities"
+      ],
+      "shortDescription": "A surreal third-person action adventure that makes telekinetic tools, changing spaces, and an unsettling workplace mystery work in concert.",
+      "highlights": [
+        "Destructible objects make combat powers feel weighty and legible",
+        "A shifting building rewards exploration with focused environmental storytelling"
+      ],
+      "rationale": "A PC action-adventure choice for its satisfying abilities, unusual setting, and strong sense of spatial mystery.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Steam store page",
+        "url": "https://store.steampowered.com/app/870780/Control_Ultimate_Edition/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "return-of-the-obra-dinn",
+      "title": "Return of the Obra Dinn",
+      "aliases": [],
+      "emoji": "⚓",
+      "releaseYear": 2018,
+      "platformId": "pc-windows",
+      "genres": [
+        "adventure",
+        "puzzle"
+      ],
+      "developer": "Lucas Pope",
+      "publisher": "3909 LLC",
+      "keywords": [
+        "deduction",
+        "ship",
+        "insurance",
+        "mystery"
+      ],
+      "shortDescription": "A deduction mystery that asks players to identify the fate of a ship's crew by turning small observations into a coherent account.",
+      "highlights": [
+        "Evidence rewards careful attention instead of arbitrary item use",
+        "The casebook makes complex deductions feel organized but never automatic"
+      ],
+      "rationale": "An exceptional PC puzzle-adventure selection for players who want reasoning itself to drive the experience.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Steam store page",
+        "url": "https://store.steampowered.com/app/653530/Return_of_the_Obra_Dinn/",
+        "kind": "official"
+      }
+    },
+    {
+      "slug": "factorio",
+      "title": "Factorio",
+      "aliases": [],
+      "emoji": "🏭",
+      "releaseYear": 2020,
+      "platformId": "pc-windows",
+      "genres": [
+        "puzzle",
+        "simulation"
+      ],
+      "developer": "Wube Software",
+      "publisher": "Wube Software",
+      "keywords": [
+        "automation",
+        "factory",
+        "logistics",
+        "optimization"
+      ],
+      "shortDescription": "A factory-building simulation where each new automation goal turns layout, logistics, and efficiency into an absorbing systems puzzle.",
+      "highlights": [
+        "Small production bottlenecks naturally suggest the next useful improvement",
+        "Automation scales from satisfying local fixes to ambitious long-term plans"
+      ],
+      "rationale": "A core PC simulation-puzzle addition for players who enjoy designing clear systems and refining them over time.",
+      "linkSourceId": "official-publisher-pages",
+      "link": {
+        "label": "Official Steam store page",
+        "url": "https://store.steampowered.com/app/427520/Factorio/",
+        "kind": "official"
+      }
+    }
+  ]
+}

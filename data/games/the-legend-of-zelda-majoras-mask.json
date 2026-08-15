@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-majoras-mask",
+  "title": "The Legend of Zelda: Majora’s Mask",
+  "aliases": [
+    "Zelda: Majora's Mask"
+  ],
+  "emoji": "🌙",
+  "shortDescription": "A compact, surreal adventure that uses a repeating three-day cycle to make schedules, side stories, and transformation tools matter.",
+  "highlights": [
+    "The clock turns local details into puzzles with human stakes",
+    "Masks create distinctive ways to move through and understand the world"
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Nintendo EAD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "The Legend of Zelda: Majora’s Mask",
+    "three-day cycle",
+    "masks",
+    "side quests",
+    "time",
+    "nintendo-64"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A Nintendo 64 adventure pick for players drawn to inventive structure and densely interconnected side stories.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/n64/legend_of_zelda_majoras_mask",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/the-legend-of-zelda-majoras-mask.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: Majora’s Mask",
+      "provenanceId": "gameatlas-art-the-legend-of-zelda-majoras-mask"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

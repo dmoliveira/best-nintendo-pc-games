@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-the-minish-cap",
+  "title": "The Legend of Zelda: The Minish Cap",
+  "aliases": [
+    "Zelda: The Minish Cap"
+  ],
+  "emoji": "🔍",
+  "shortDescription": "A top-down adventure that uses changes in scale to make familiar rooms, towns, and dungeon spaces feel newly surprising.",
+  "highlights": [
+    "Shrinking transforms ordinary scenery into readable exploratory puzzles",
+    "Dungeons pair clear action with a steady stream of spatial discoveries"
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Capcom",
+  "publisher": "Nintendo",
+  "keywords": [
+    "The Legend of Zelda: The Minish Cap",
+    "shrinking",
+    "dungeons",
+    "top-down",
+    "puzzles",
+    "game-boy-advance"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A high-value Game Boy Advance adventure selection for its inventive scale mechanic and friendly pacing.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/gba/legend_of_zelda_the_minish_cap",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/the-legend-of-zelda-the-minish-cap.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: The Minish Cap",
+      "provenanceId": "gameatlas-art-the-legend-of-zelda-the-minish-cap"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

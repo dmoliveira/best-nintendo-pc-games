@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-and-luigi-superstar-saga",
+  "title": "Mario & Luigi: Superstar Saga",
+  "aliases": [],
+  "emoji": "👬",
+  "shortDescription": "A comic role-playing road trip where coordinated button timing makes two heroes feel involved in every move and puzzle.",
+  "highlights": [
+    "Timed inputs make attacks and defense more active than a typical menu battle",
+    "Brother-specific field moves create light, readable exploration puzzles"
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "adventure",
+    "role-playing"
+  ],
+  "developer": "AlphaDream",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Mario & Luigi: Superstar Saga",
+    "brothers",
+    "timed actions",
+    "comedy",
+    "turn-based",
+    "game-boy-advance"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A lively Game Boy Advance RPG choice for players who want humor and interaction woven into turn-based systems.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/gba/mario_and_luigi_superstar_saga",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/mario-and-luigi-superstar-saga.svg",
+      "alt": "Abstract GameAtlas art tile for Mario & Luigi: Superstar Saga",
+      "provenanceId": "gameatlas-art-mario-and-luigi-superstar-saga"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-binding-of-isaac-rebirth",
+  "title": "The Binding of Isaac: Rebirth",
+  "aliases": [],
+  "emoji": "🗝️",
+  "shortDescription": "A run-based action game where changing item combinations and room layouts make each attempt a fresh exercise in adaptation.",
+  "highlights": [
+    "Item interactions continually reshape how a run can unfold",
+    "Short attempts make experimentation and recovery central to the appeal"
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-new-3ds"
+  ],
+  "genres": [
+    "action"
+  ],
+  "developer": "Nicalis",
+  "publisher": "Nicalis",
+  "keywords": [
+    "The Binding of Isaac: Rebirth",
+    "dungeon runs",
+    "items",
+    "procedural",
+    "action",
+    "nintendo-new-3ds"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A New Nintendo 3DS-exclusive action anchor chosen for the platform-specific edition and its deep replayable systems.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Nintendo product page",
+      "url": "https://www.nintendo.com/en-gb/Games/Nintendo-3DS-download-software/The-Binding-of-Isaac-Rebirth-1046143.html",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/the-binding-of-isaac-rebirth.svg",
+      "alt": "Abstract GameAtlas art tile for The Binding of Isaac: Rebirth",
+      "provenanceId": "gameatlas-art-the-binding-of-isaac-rebirth"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

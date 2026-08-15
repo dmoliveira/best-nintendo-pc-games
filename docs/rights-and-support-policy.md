@@ -42,6 +42,7 @@ The machine-readable registry is [`data/source-rights.json`](../data/source-righ
 | RAWG | Discovery candidate only | Not approved | Not approved |
 | Nintendo Investor Relations | Dated, attributed first-party sales facts where published | Not a critic score | Do not reuse images without permission |
 | Official publisher/developer pages | Official/store/availability links | Not approved | A link is not image permission |
+| Nintendo Life | Title-specific historical outbound references only | Outbound-only; do not copy | Do not download or reuse |
 
 The registry deliberately does not claim that an API response or a public web page grants redistribution rights. Any future provider adapter must update the registry first, include the terms URL and recheck date, and add tests proving that unauthorized fields are omitted from the static artifact.
 

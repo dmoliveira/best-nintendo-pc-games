@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "control-ultimate-edition",
+  "title": "Control Ultimate Edition",
+  "aliases": [
+    "Control"
+  ],
+  "emoji": "🌀",
+  "shortDescription": "A surreal third-person action adventure that makes telekinetic tools, changing spaces, and an unsettling workplace mystery work in concert.",
+  "highlights": [
+    "Destructible objects make combat powers feel weighty and legible",
+    "A shifting building rewards exploration with focused environmental storytelling"
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Remedy Entertainment",
+  "publisher": "505 Games",
+  "keywords": [
+    "Control Ultimate Edition",
+    "telekinesis",
+    "mystery",
+    "third-person",
+    "abilities",
+    "pc-windows"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A PC action-adventure choice for its satisfying abilities, unusual setting, and strong sense of spatial mystery.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/870780/Control_Ultimate_Edition/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/control-ultimate-edition.svg",
+      "alt": "Abstract GameAtlas art tile for Control Ultimate Edition",
+      "provenanceId": "gameatlas-art-control-ultimate-edition"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

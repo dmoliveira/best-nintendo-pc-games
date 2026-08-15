@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "pokemon-gold-and-silver",
+  "title": "Pokémon Gold and Silver",
+  "aliases": [],
+  "emoji": "🟡",
+  "shortDescription": "A creature-collecting RPG that makes time of day, an expanded world, and long-term team building feel closely linked.",
+  "highlights": [
+    "The day-night cycle gives ordinary exploration useful variation",
+    "The wider journey rewards sustained curiosity after its first major goal"
+  ],
+  "release": {
+    "year": 1999
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "role-playing"
+  ],
+  "developer": "Game Freak",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Pokémon Gold and Silver",
+    "monster collecting",
+    "day night",
+    "Johto",
+    "trading",
+    "game-boy-color"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A strong Game Boy Color role-playing selection for its scope and its thoughtful additions to the original formula.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/gbc/pokemon_gold_and_silver",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/pokemon-gold-and-silver.svg",
+      "alt": "Abstract GameAtlas art tile for Pokémon Gold and Silver",
+      "provenanceId": "gameatlas-art-pokemon-gold-and-silver"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

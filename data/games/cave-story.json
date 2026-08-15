@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "slug": "cave-story",
+  "title": "Cave Story",
+  "aliases": [],
+  "emoji": "⛏️",
+  "shortDescription": "A compact action platformer whose branching routes, weapon choices, and secret-filled caverns make repeated exploration feel worthwhile.",
+  "highlights": [
+    "Weapon behavior changes the texture of both combat and movement",
+    "Optional discoveries give a focused world surprising replay value"
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-dsi"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "developer": "Studio Pixel",
+  "publisher": "Nicalis",
+  "keywords": [
+    "Cave Story",
+    "DSiWare",
+    "exploration",
+    "weapons",
+    "platforming",
+    "nintendo-dsi"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A DSiWare platforming pick that brings deeper exploration and route choice to the digital handheld catalog.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/dsiware/cave_story",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/cave-story.svg",
+      "alt": "Abstract GameAtlas art tile for Cave Story",
+      "provenanceId": "gameatlas-art-cave-story"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ],
+  "releaseFormat": "digital"
+}

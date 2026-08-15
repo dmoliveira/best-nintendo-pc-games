@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "factorio",
+  "title": "Factorio",
+  "aliases": [],
+  "emoji": "🏭",
+  "shortDescription": "A factory-building simulation where each new automation goal turns layout, logistics, and efficiency into an absorbing systems puzzle.",
+  "highlights": [
+    "Small production bottlenecks naturally suggest the next useful improvement",
+    "Automation scales from satisfying local fixes to ambitious long-term plans"
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "puzzle",
+    "simulation"
+  ],
+  "developer": "Wube Software",
+  "publisher": "Wube Software",
+  "keywords": [
+    "Factorio",
+    "automation",
+    "factory",
+    "logistics",
+    "optimization",
+    "pc-windows"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A core PC simulation-puzzle addition for players who enjoy designing clear systems and refining them over time.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/427520/Factorio/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/factorio.svg",
+      "alt": "Abstract GameAtlas art tile for Factorio",
+      "provenanceId": "gameatlas-art-factorio"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

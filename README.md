@@ -19,6 +19,8 @@ The launch plan and acceptance gates live in [`docs/plan/new/2026-08-15-gameatla
 
 The canonical Nintendo platform taxonomy is in [`data/platforms.json`](data/platforms.json), with its checked alpha and expansion coverage matrix in [`data/coverage.json`](data/coverage.json).
 
+**Catalog snapshot (2026-08-15):** 103 reviewed GameAtlas editorial picks across all 16 supported Nintendo and Windows PC platform families.
+
 ## Trust and rights
 
 GameAtlas does not scrape Metacritic/OpenCritic, copy review text or comments, or assume that an API image URL grants redistribution rights. Numeric signals require separate factual verification and rights approval. See the machine-readable registries under [`data/`](data/).

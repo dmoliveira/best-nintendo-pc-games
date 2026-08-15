@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "hades",
+  "title": "Hades",
+  "aliases": [],
+  "emoji": "🔥",
+  "shortDescription": "A rapid action game that makes repeated escape attempts feel meaningful through flexible builds, sharp combat, and evolving character conversations.",
+  "highlights": [
+    "Weapon aspects and boons support distinct combat approaches",
+    "Story progression gives failed attempts a rewarding sense of continuity"
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "role-playing"
+  ],
+  "developer": "Supergiant Games",
+  "publisher": "Supergiant Games",
+  "keywords": [
+    "Hades",
+    "roguelike",
+    "Greek myth",
+    "action",
+    "builds",
+    "pc-windows"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A central PC action-RPG selection for combining immediate combat feedback with unusually generous run-to-run storytelling.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/1145360/Hades/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/hades.svg",
+      "alt": "Abstract GameAtlas art tile for Hades",
+      "provenanceId": "gameatlas-art-hades"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

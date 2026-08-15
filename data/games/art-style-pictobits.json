@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "art-style-pictobits",
+  "title": "Art Style: PiCTOBITS",
+  "aliases": [
+    "PiCTOBITS"
+  ],
+  "emoji": "🔢",
+  "shortDescription": "A compact DSiWare puzzle game that turns number patterns, quick recognition, and escalating boards into a focused arcade-like challenge.",
+  "highlights": [
+    "Simple numerical rules support satisfying chains of quick decisions",
+    "Short sessions make progress and practice easy to return to"
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-dsi"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "developer": "Skip Ltd.",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Art Style: PiCTOBITS",
+    "DSiWare",
+    "numbers",
+    "patterns",
+    "arcade puzzle",
+    "nintendo-dsi"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A strong DSi puzzle expansion pick that preserves the platform's distinctive digital-only identity.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/dsiware/art_style_pictobits",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/art-style-pictobits.svg",
+      "alt": "Abstract GameAtlas art tile for Art Style: PiCTOBITS",
+      "provenanceId": "gameatlas-art-art-style-pictobits"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ],
+  "releaseFormat": "digital"
+}

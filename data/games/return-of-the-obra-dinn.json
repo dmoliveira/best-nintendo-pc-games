@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "return-of-the-obra-dinn",
+  "title": "Return of the Obra Dinn",
+  "aliases": [],
+  "emoji": "⚓",
+  "shortDescription": "A deduction mystery that asks players to identify the fate of a ship's crew by turning small observations into a coherent account.",
+  "highlights": [
+    "Evidence rewards careful attention instead of arbitrary item use",
+    "The casebook makes complex deductions feel organized but never automatic"
+  ],
+  "release": {
+    "year": 2018
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "adventure",
+    "puzzle"
+  ],
+  "developer": "Lucas Pope",
+  "publisher": "3909 LLC",
+  "keywords": [
+    "Return of the Obra Dinn",
+    "deduction",
+    "ship",
+    "insurance",
+    "mystery",
+    "pc-windows"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "An exceptional PC puzzle-adventure selection for players who want reasoning itself to drive the experience.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Steam store page",
+      "url": "https://store.steampowered.com/app/653530/Return_of_the_Obra_Dinn/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/return-of-the-obra-dinn.svg",
+      "alt": "Abstract GameAtlas art tile for Return of the Obra Dinn",
+      "provenanceId": "gameatlas-art-return-of-the-obra-dinn"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

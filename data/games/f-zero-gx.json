@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "f-zero-gx",
+  "title": "F-Zero GX",
+  "aliases": [],
+  "emoji": "🏎️",
+  "shortDescription": "A futuristic racing game that makes extreme speed legible through demanding tracks, sharp controls, and clear risk-reward decisions.",
+  "highlights": [
+    "Energy management makes aggression a tactical choice",
+    "Course design rewards repeated practice without hiding its rules"
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "developer": "Amusement Vision",
+  "publisher": "Nintendo",
+  "keywords": [
+    "F-Zero GX",
+    "futuristic racing",
+    "speed",
+    "time trial",
+    "courses",
+    "nintendo-gamecube"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A definitive GameCube racing selection for players seeking precise handling and a demanding skill ceiling.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/gamecube/f-zero_gx",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/f-zero-gx.svg",
+      "alt": "Abstract GameAtlas art tile for F-Zero GX",
+      "provenanceId": "gameatlas-art-f-zero-gx"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

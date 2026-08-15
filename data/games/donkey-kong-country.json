@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "donkey-kong-country",
+  "title": "Donkey Kong Country",
+  "aliases": [],
+  "emoji": "🌴",
+  "shortDescription": "A fast, secret-filled platformer that makes its tag-team characters and rolling momentum feel immediately playful.",
+  "highlights": [
+    "Levels reward both clean movement and patient secret hunting",
+    "Two playable leads create small but useful changes in how obstacles read"
+  ],
+  "release": {
+    "year": 1994
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "developer": "Rare",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Donkey Kong Country",
+    "jungle",
+    "barrels",
+    "co-op",
+    "secrets",
+    "nintendo-snes"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A strong SNES platforming addition that broadens the catalog's movement styles beyond Mario.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/snes/donkey_kong_country",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/donkey-kong-country.svg",
+      "alt": "Abstract GameAtlas art tile for Donkey Kong Country",
+      "provenanceId": "gameatlas-art-donkey-kong-country"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

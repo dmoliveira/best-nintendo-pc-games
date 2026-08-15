@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-breath-of-the-wild",
+  "title": "The Legend of Zelda: Breath of the Wild",
+  "aliases": [
+    "Zelda: Breath of the Wild",
+    "BOTW"
+  ],
+  "emoji": "🏔️",
+  "shortDescription": "An open-world adventure that makes weather, tools, terrain, and curiosity into flexible ways of approaching nearly every problem.",
+  "highlights": [
+    "Movement systems turn the landscape into an invitation rather than a checklist",
+    "Physics-driven solutions make experiments feel genuinely player-owned"
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "developer": "Nintendo EPD",
+  "publisher": "Nintendo",
+  "keywords": [
+    "The Legend of Zelda: Breath of the Wild",
+    "open world",
+    "climbing",
+    "physics",
+    "shrines",
+    "nintendo-switch"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A core Switch adventure pick for its unusually generous approach to exploration and problem solving.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "Official Nintendo store page",
+      "url": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-breath-of-the-wild-switch/",
+      "kind": "official"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/the-legend-of-zelda-breath-of-the-wild.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: Breath of the Wild",
+      "provenanceId": "gameatlas-art-the-legend-of-zelda-breath-of-the-wild"
+    }
+  ],
+  "sources": [
+    "official-publisher-pages",
+    "gameatlas-editorial"
+  ]
+}

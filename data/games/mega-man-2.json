@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "mega-man-2",
+  "title": "Mega Man 2",
+  "aliases": [
+    "Megaman 2"
+  ],
+  "emoji": "⚙️",
+  "shortDescription": "A focused action platformer where choosing a stage, learning a boss, and repurposing its tool create a satisfying loop of mastery.",
+  "highlights": [
+    "Stage choice gives a short campaign real route-planning texture",
+    "Acquired weapons make later challenges feel newly solvable"
+  ],
+  "release": {
+    "year": 1988
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "developer": "Capcom",
+  "publisher": "Capcom",
+  "keywords": [
+    "Mega Man 2",
+    "robot masters",
+    "boss order",
+    "weapons",
+    "precision",
+    "nintendo-nes"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "An essential NES action selection for its readable controls, memorable stage structure, and inventive tool progression.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/nes/mega_man_2",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/mega-man-2.svg",
+      "alt": "Abstract GameAtlas art tile for Mega Man 2",
+      "provenanceId": "gameatlas-art-mega-man-2"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}

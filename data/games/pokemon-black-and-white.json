@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "pokemon-black-and-white",
+  "title": "Pokémon Black and White",
+  "aliases": [],
+  "emoji": "⚫",
+  "shortDescription": "A creature-collecting RPG that gives a new region and a fresh starting roster enough focus to make discovery feel renewed.",
+  "highlights": [
+    "A largely new early roster restores the pleasure of learning matchups",
+    "City-to-route pacing gives the journey a strong sense of travel"
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "role-playing"
+  ],
+  "developer": "Game Freak",
+  "publisher": "Nintendo",
+  "keywords": [
+    "Pokémon Black and White",
+    "monster collecting",
+    "Unova",
+    "turn-based",
+    "online",
+    "nintendo-ds"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas editorial selection",
+      "rationale": "A major Nintendo DS RPG recommendation for players seeking a self-contained, discovery-first team-building adventure.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas editorial review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Nintendo Life archive",
+      "url": "https://www.nintendolife.com/games/ds/pokemon_black_and_white",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/pokemon-black-and-white.svg",
+      "alt": "Abstract GameAtlas art tile for Pokémon Black and White",
+      "provenanceId": "gameatlas-art-pokemon-black-and-white"
+    }
+  ],
+  "sources": [
+    "nintendo-life-reference",
+    "gameatlas-editorial"
+  ]
+}
