@@ -108,6 +108,13 @@ function nameOptions(records: readonly CatalogCardRecord[], field: "developer" |
   return [...options.entries()].map(([id, label]) => ({ id, label })).sort(compareLabels);
 }
 
+export function facetOptions(options: readonly FilterOption[], selected: readonly string[], query: string): FilterOption[] {
+  const normalizedQuery = normalizeSearchText(query);
+  return options
+    .filter((option) => !normalizedQuery || selected.includes(option.id) || normalizeSearchText(option.label).includes(normalizedQuery))
+    .sort((left, right) => Number(selected.includes(right.id)) - Number(selected.includes(left.id)) || compareLabels(left, right));
+}
+
 export default function CatalogBrowser({ initialRecords, catalogEntryCount, catalogIndexDigest, catalogIndexUrl, catalogIndexHref, basePath }: CatalogBrowserProps) {
   const [loadedRecords, setLoadedRecords] = useState<readonly CatalogSearchRecord[] | undefined>();
   const [indexStatus, setIndexStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
@@ -134,13 +141,17 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   const yearOptions = useMemo(() => [...new Set(records.map((record) => record.releaseYear))].sort((left, right) => right - left), [records]);
   const options = useMemo(() => createSearchStateOptions(records), [records]);
   const [state, setState] = useState<CatalogSearchState>(EMPTY_SEARCH_STATE);
+  const [platformQuery, setPlatformQuery] = useState("");
+  const [genreQuery, setGenreQuery] = useState("");
   const hydrated = useSyncExternalStore(subscribeToHydration, getHydratedSnapshot, getServerHydratedSnapshot);
   const resultSummaryRef = useRef<HTMLParagraphElement>(null);
   const filteredRecords = useMemo(() => loadedRecords ? filterCatalog(loadedRecords, state) : [], [loadedRecords, state]);
   const page = useMemo(() => paginateCatalog(filteredRecords, catalogReady ? state.page : 1, state.pageSize), [catalogReady, filteredRecords, state.page, state.pageSize]);
   const paginationItems = useMemo(() => getCatalogPaginationItems(page.pageCount, page.page), [page.page, page.pageCount]);
-  const platforms = selectedValues(state.platform);
-  const genres = selectedValues(state.genre);
+  const platforms = useMemo(() => selectedValues(state.platform), [state.platform]);
+  const genres = useMemo(() => selectedValues(state.genre), [state.genre]);
+  const visiblePlatformOptions = useMemo(() => facetOptions(platformOptions, platforms, platformQuery), [platformOptions, platformQuery, platforms]);
+  const visibleGenreOptions = useMemo(() => facetOptions(genreOptions, genres, genreQuery), [genreOptions, genreQuery, genres]);
   const yearFrom = state.yearFrom || state.year;
   const yearTo = state.yearTo || state.year;
   const activeFilterCount = platforms.length + genres.length + [state.q, yearFrom || yearTo, state.developer, state.publisher].filter(Boolean).length;
@@ -373,14 +384,22 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
         <label className="browser-field browser-field--query" htmlFor="catalog-query"><span>Search games</span><span className="browser-input"><span className="field-icon" aria-hidden="true">⌕</span><input id="catalog-query" type="search" value={state.q} onChange={(event) => updateQuery(event.target.value)} placeholder="Title, person, platform, or keyword" /></span></label>
         <label className="browser-field" htmlFor="catalog-sort"><span>Sort by</span><select id="catalog-sort" value={getEffectiveCatalogSort(state)} onChange={(event) => updateSort(event.target.value)}><option value="score" disabled>Score (licensed data only)</option>{CATALOG_SORT_OPTIONS.map((option) => <option value={option.value} disabled={option.value === "relevance" && !normalizeSearchText(state.q)} key={option.value}>{option.label}</option>)}</select></label>
       </div>
+      {activeFilterCount > 0 ? <div className="browser-filter-summary" aria-label="Active filters">
+        {state.q ? <button type="button" className="filter-chip" aria-label={`Remove search filter: ${state.q}`} onClick={() => updateQuery("")}>Search: {state.q} <span aria-hidden="true">×</span></button> : null}
+        {platformOptions.filter((option) => platforms.includes(option.id)).map((option) => <button type="button" className="filter-chip" aria-label={`Remove platform filter: ${option.label}`} key={`platform-${option.id}`} onClick={() => updateFacet("platform", option.id, false)}>{option.label} <span aria-hidden="true">×</span></button>)}
+        {genreOptions.filter((option) => genres.includes(option.id)).map((option) => <button type="button" className="filter-chip" aria-label={`Remove genre filter: ${option.label}`} key={`genre-${option.id}`} onClick={() => updateFacet("genre", option.id, false)}>{option.label} <span aria-hidden="true">×</span></button>)}
+        {yearFrom || yearTo ? <button type="button" className="filter-chip" aria-label={`Remove year filter: ${yearFrom || "Any"}–${yearTo || "Any"}`} onClick={() => updateState({ year: "", yearFrom: "", yearTo: "" })}>Years: {yearFrom || "Any"}–{yearTo || "Any"} <span aria-hidden="true">×</span></button> : null}
+        {state.developer ? <button type="button" className="filter-chip" aria-label={`Remove developer filter: ${developerLabel}`} onClick={() => updateAdvancedFilter("developer", "")}>Dev: {developerLabel} <span aria-hidden="true">×</span></button> : null}
+        {state.publisher ? <button type="button" className="filter-chip" aria-label={`Remove publisher filter: ${publisherLabel}`} onClick={() => updateAdvancedFilter("publisher", "")}>Pub: {publisherLabel} <span aria-hidden="true">×</span></button> : null}
+      </div> : null}
       <div className="browser-facet-grid">
         <details className="browser-disclosure">
           <summary>Platforms <span>{platforms.length ? `${platforms.length} selected` : "All"}</span></summary>
-          <fieldset className="browser-check-fieldset"><legend className="visually-hidden">Platforms</legend><div className="browser-check-list">{platformOptions.map((option) => <label className="browser-check" key={option.id}><input type="checkbox" checked={platforms.includes(option.id)} onChange={(event) => updateFacet("platform", option.id, event.target.checked)} /><span>{option.label}</span></label>)}</div></fieldset>
+          <fieldset className="browser-check-fieldset"><legend className="visually-hidden">Platforms</legend><label className="browser-facet-search"><span className="visually-hidden">Find a platform</span><span aria-hidden="true">⌕</span><input type="search" value={platformQuery} onChange={(event) => setPlatformQuery(event.target.value)} placeholder="Find a platform" /></label><div className="browser-check-list">{visiblePlatformOptions.map((option) => <label className="browser-check" key={option.id}><input type="checkbox" checked={platforms.includes(option.id)} onChange={(event) => updateFacet("platform", option.id, event.target.checked)} /><span>{option.label}</span></label>)}</div>{visiblePlatformOptions.length === 0 ? <p className="browser-facet-empty" role="status">No matching platforms.</p> : null}</fieldset>
         </details>
         <details className="browser-disclosure">
           <summary>Genres <span>{genres.length ? `${genres.length} selected` : "All"}</span></summary>
-          <fieldset className="browser-check-fieldset"><legend className="visually-hidden">Genres</legend><div className="browser-check-list">{genreOptions.map((option) => <label className="browser-check" key={option.id}><input type="checkbox" checked={genres.includes(option.id)} onChange={(event) => updateFacet("genre", option.id, event.target.checked)} /><span>{option.label}</span></label>)}</div></fieldset>
+          <fieldset className="browser-check-fieldset"><legend className="visually-hidden">Genres</legend><label className="browser-facet-search"><span className="visually-hidden">Find a genre</span><span aria-hidden="true">⌕</span><input type="search" value={genreQuery} onChange={(event) => setGenreQuery(event.target.value)} placeholder="Find a genre" /></label><div className="browser-check-list">{visibleGenreOptions.map((option) => <label className="browser-check" key={option.id}><input type="checkbox" checked={genres.includes(option.id)} onChange={(event) => updateFacet("genre", option.id, event.target.checked)} /><span>{option.label}</span></label>)}</div>{visibleGenreOptions.length === 0 ? <p className="browser-facet-empty" role="status">No matching genres.</p> : null}</fieldset>
         </details>
         <label className="browser-field browser-facet-field" htmlFor="catalog-year-from"><span>From first release</span><select id="catalog-year-from" value={yearFrom} onChange={(event) => updateYear("yearFrom", event.target.value)}><option value="">Any year</option>{yearOptions.map((year) => <option value={year} key={year}>{year}</option>)}</select></label>
         <label className="browser-field browser-facet-field" htmlFor="catalog-year-to"><span>To first release</span><select id="catalog-year-to" value={yearTo} onChange={(event) => updateYear("yearTo", event.target.value)}><option value="">Any year</option>{yearOptions.map((year) => <option value={year} key={year}>{year}</option>)}</select></label>
@@ -392,14 +411,6 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
           </div>
         </details>
       </div>
-      {activeFilterCount > 0 ? <div className="browser-filter-summary" aria-label="Active filters">
-        {state.q ? <button type="button" className="filter-chip" aria-label={`Remove search filter: ${state.q}`} onClick={() => updateQuery("")}>Search: {state.q} <span aria-hidden="true">×</span></button> : null}
-        {platformOptions.filter((option) => platforms.includes(option.id)).map((option) => <button type="button" className="filter-chip" aria-label={`Remove platform filter: ${option.label}`} key={`platform-${option.id}`} onClick={() => updateFacet("platform", option.id, false)}>{option.label} <span aria-hidden="true">×</span></button>)}
-        {genreOptions.filter((option) => genres.includes(option.id)).map((option) => <button type="button" className="filter-chip" aria-label={`Remove genre filter: ${option.label}`} key={`genre-${option.id}`} onClick={() => updateFacet("genre", option.id, false)}>{option.label} <span aria-hidden="true">×</span></button>)}
-        {yearFrom || yearTo ? <button type="button" className="filter-chip" aria-label={`Remove year filter: ${yearFrom || "Any"}–${yearTo || "Any"}`} onClick={() => updateState({ year: "", yearFrom: "", yearTo: "" })}>Years: {yearFrom || "Any"}–{yearTo || "Any"} <span aria-hidden="true">×</span></button> : null}
-        {state.developer ? <button type="button" className="filter-chip" aria-label={`Remove developer filter: ${developerLabel}`} onClick={() => updateAdvancedFilter("developer", "")}>Dev: {developerLabel} <span aria-hidden="true">×</span></button> : null}
-        {state.publisher ? <button type="button" className="filter-chip" aria-label={`Remove publisher filter: ${publisherLabel}`} onClick={() => updateAdvancedFilter("publisher", "")}>Pub: {publisherLabel} <span aria-hidden="true">×</span></button> : null}
-      </div> : null}
       <p className="visually-hidden">Updates apply instantly. Multiple platforms or genres broaden that facet. Years use each title&apos;s first documented release.</p>
     </form>
     {!catalogReady ? <div className={`catalog-index-status catalog-index-status--${indexStatus}`}><span role="status" aria-live="polite">{indexStatusMessage}</span>{indexStatus === "error" ? <button className="browser-button browser-button--retry" type="button" onClick={retryCatalogIndex}>Retry full catalog</button> : null}</div> : null}

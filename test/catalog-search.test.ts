@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
+import { facetOptions } from "../app/catalog-browser";
 import { getCatalogSearchRecords } from "../lib/catalog/site-data";
 import { catalogFilterHref, clearCatalogFilters, createSearchStateOptions, filterCatalog, getEffectiveCatalogSort, getCatalogPaginationItems, normalizeSearchText, paginateCatalog, parseSearchState, serializeSearchState, toCatalogCardRecord, type SearchStateOptions } from "../lib/catalog/search";
 
@@ -13,6 +14,13 @@ const options: SearchStateOptions = {
   yearMin: Math.min(...records.map((record) => record.releaseYear)),
   yearMax: Math.max(...records.map((record) => record.releaseYear)),
 };
+
+test("keeps selected facet options visible while searching", () => {
+  const values = [{ id: "switch", label: "Nintendo Switch" }, { id: "nes", label: "Nintendo Entertainment System" }, { id: "pc", label: "PC Windows" }];
+  assert.deepEqual(facetOptions(values, ["nes"], "windows"), [values[1], values[2]]);
+  assert.deepEqual(facetOptions(values, ["pc"], ""), [values[2], values[1], values[0]]);
+  assert.deepEqual(facetOptions(values, [], "handheld"), []);
+});
 
 test("normalizes punctuation, diacritics, and whitespace for search", () => {
   assert.equal(normalizeSearchText("  Pokémon: Crystal  "), "pokemon crystal");
