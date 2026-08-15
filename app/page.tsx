@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CatalogBrowser from "./catalog-browser";
+import PlatformGlyph from "./platform-glyph";
 import { createSiteConfig } from "@/lib/site-config";
 import { getCatalogGames, getCatalogSearchRecords, getPlatformHubs, getPopulatedPlatforms } from "@/lib/catalog/site-data";
 
+import GameAtlasMark from "@/app/gameatlas-mark";
 const site = createSiteConfig(process.env);
 
 export const metadata: Metadata = {
@@ -25,7 +27,7 @@ export default function Home() {
   return <div className="site-shell">
     <a className="skip-link" href="#main-content">Skip to main content</a>
     <header className="topbar">
-      <Link className="wordmark" href="/" aria-label="GameAtlas home"><span className="wordmark-mark" aria-hidden="true">✦</span>Game<span className="wordmark-accent">Atlas</span></Link>
+      <Link className="wordmark" href="/" aria-label="GameAtlas home"><GameAtlasMark />Game<span className="wordmark-accent">Atlas</span></Link>
       <nav className="topnav" aria-label="Primary navigation"><a href="#platforms">Platforms</a><a href="#games">Games</a><a href="#method">How it works</a><Link href="/docs/rights-and-support-policy/">Sources &amp; rights</Link></nav>
     </header>
 
@@ -47,7 +49,7 @@ export default function Home() {
 
       <section className="signal-strip" aria-label="Catalog facts"><div><b>{games.length}</b><span>reviewed games<br />in this slice</span></div><div><b>{populatedPlatforms.length}</b><span>platform families<br />with records</span></div><div><b>⌁</b><span>context over<br />hype</span></div></section>
 
-      <section className="section-block" id="platforms" aria-labelledby="platform-heading"><div className="section-heading"><div><p className="eyebrow">Your starting point</p><h2 id="platform-heading">Choose an era.</h2></div><p className="section-aside">The taxonomy maps every supported Nintendo family. Populated platforms have reviewed records; planned families stay visible without pretending to be complete.</p></div><div className="platform-grid">{populatedPlatforms.map((platform, index) => <article className={`platform-card platform-card--${platformTones[index % platformTones.length]}`} key={platform.id}><div className="card-topline">RECORDS LIVE</div><div className="platform-emoji" aria-hidden="true">{platform.emoji}</div><h3>{platformHubIds.has(platform.id) ? <Link href={`/platforms/${platform.id}/`}>{platform.name}</Link> : platform.name}</h3><p>{platform.description}</p><span className="card-status">Browse the games below</span></article>)}</div></section>
+      <section className="section-block" id="platforms" aria-labelledby="platform-heading"><div className="section-heading"><div><p className="eyebrow">Your starting point</p><h2 id="platform-heading">Choose an era.</h2></div><p className="section-aside">The taxonomy maps every supported Nintendo family. Populated platforms have reviewed records; planned families stay visible without pretending to be complete.</p></div><div className="platform-grid">{populatedPlatforms.map((platform, index) => <article className={`platform-card platform-card--${platformTones[index % platformTones.length]}`} key={platform.id}><div className="card-topline">RECORDS LIVE</div><div className="platform-emoji" aria-hidden="true"><PlatformGlyph platformId={platform.id} /></div><h3>{platformHubIds.has(platform.id) ? <Link href={`/platforms/${platform.id}/`}>{platform.name}</Link> : platform.name}</h3><p>{platform.description}</p><span className="card-status">Browse the games below</span></article>)}</div></section>
 
       <section className="section-block section-block--catalog" id="games" aria-labelledby="games-heading"><div className="section-heading"><div><p className="eyebrow">The reviewed catalog</p><h2 id="games-heading">Start with a game.</h2></div><p className="section-aside">Search across titles, people, platforms, genres, and years. These are original GameAtlas selections, not blended ratings.</p></div><CatalogBrowser records={getCatalogSearchRecords()} /></section>
 
@@ -56,7 +58,7 @@ export default function Home() {
       <section className="closing-panel" aria-labelledby="closing-heading"><div><p className="eyebrow">The atlas is opening</p><h2 id="closing-heading">Good games are<br /><em>worth finding.</em></h2></div><div className="closing-copy"><p>GameAtlas is a free, source-aware guide for players who want the right game for the right machine — without the endless scroll.</p><Link className="text-link" href="/docs/rights-and-support-policy/">Read the source &amp; rights policy ↗</Link></div></section>
     </main>
 
-    <footer className="footer"><div className="wordmark wordmark--footer"><span className="wordmark-mark" aria-hidden="true">✦</span>Game<span className="wordmark-accent">Atlas</span></div><p>Best Nintendo &amp; PC games, with context.</p><p className="footer-meta">Built for curious players · 2026</p></footer>
+    <footer className="footer"><div className="wordmark wordmark--footer"><GameAtlasMark />Game<span className="wordmark-accent">Atlas</span></div><p>Best Nintendo &amp; PC games, with context.</p><p className="footer-meta">Built for curious players · 2026</p></footer>
     <noscript><p className="noscript-note">All reviewed game cards remain available without JavaScript; interactive search and filters require JavaScript.</p></noscript>
   </div>;
 }

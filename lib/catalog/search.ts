@@ -1,3 +1,8 @@
+export interface CatalogCardLink {
+  label: string;
+  url: string;
+}
+
 export interface CatalogSearchRecord {
   slug: string;
   title: string;
@@ -5,6 +10,10 @@ export interface CatalogSearchRecord {
   emoji: string;
   artPath?: string;
   artAlt?: string;
+  developer?: string;
+  publisher?: string;
+  editorialLabel?: string;
+  criticalLink?: CatalogCardLink;
   shortDescription: string;
   searchText: string;
   releaseYear: number;

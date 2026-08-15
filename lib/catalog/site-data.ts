@@ -177,6 +177,8 @@ export function getEditorialSignals(game: GameRecord): EditorialSignal[] {
 export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame): CatalogSearchRecord {
   const evidenceKinds = [...new Set(game.signals.map((signal) => signal.kind))];
   const evidenceLabels = evidenceKinds.map((kind) => kind === "editorial" ? "GameAtlas editorial" : kind);
+  const criticalLink = game.links.find((link) => link.kind === "critical");
+  const editorialLabel = getEditorialSignals(game).length > 0 ? "GameAtlas pick" : undefined;
   const searchText = normalizeSearchText([
     game.title,
     ...game.aliases,
@@ -195,6 +197,10 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
     emoji: game.emoji,
     artPath: game.assets[0] ? site.publicUrl(game.assets[0].path.replace(/^public\//, "")) : undefined,
     artAlt: game.assets[0]?.alt,
+    developer: game.developer,
+    publisher: game.publisher,
+    editorialLabel,
+    criticalLink: criticalLink ? { label: criticalLink.label, url: criticalLink.url } : undefined,
     shortDescription: game.shortDescription,
     searchText,
     releaseYear: game.release.year,

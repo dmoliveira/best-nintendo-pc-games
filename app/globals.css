@@ -13,3 +13,59 @@
 @media(max-width:800px){.hub-page{padding-inline:16px}.hub-hero{padding-bottom:48px}.hub-games{padding-top:48px}}
 
 .game-card-art{align-items:center;background:linear-gradient(135deg,rgba(115,232,226,.12),rgba(166,140,255,.12));border:1px solid var(--line);border-radius:6px;display:flex;height:150px;justify-content:center;margin:25px 0 22px;overflow:hidden;position:relative}.game-card-art img{height:100%;object-fit:cover;width:100%}.game-card-art .game-card-emoji{font-size:3.2rem;margin:0}.game-hero-art img{height:100%;object-fit:cover;width:100%}
+
+
+:root{--amber:#ffc56e}
+.wordmark-mark{background:transparent;height:24px;overflow:visible;width:30px}
+.wordmark-mark svg{height:24px;overflow:visible;width:32px}
+.wordmark-orbit{fill:none;stroke:var(--cyan);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:wordmark-orbit-spin 14s linear infinite}
+.wordmark-star{fill:var(--paper);transform-box:fill-box;transform-origin:center;animation:wordmark-star-drift 5s ease-in-out infinite alternate}
+.wordmark-spark{fill:var(--coral);animation:wordmark-spark-pulse 3.5s ease-in-out infinite alternate}
+.wordmark:hover .wordmark-orbit,.wordmark:focus-visible .wordmark-orbit{animation-duration:5s}
+.wordmark--footer .wordmark-mark{height:22px;width:28px}
+.wordmark--footer .wordmark-mark svg{height:22px;width:30px}
+@keyframes wordmark-orbit-spin{to{transform:rotate(360deg)}}
+@keyframes wordmark-star-drift{to{transform:translateY(-1px) rotate(5deg)}}
+@keyframes wordmark-spark-pulse{to{opacity:.45;transform:scale(.7)}}
+
+.game-card{min-height:0;padding:16px}
+.game-card-art{height:150px;margin:0 0 18px}
+.game-card-art img{transition:filter .35s ease,transform .45s ease}
+.game-card:hover .game-card-art img,.game-card:focus-within .game-card-art img{filter:saturate(1.08);transform:scale(1.035)}
+.game-card-art-rail{align-items:center;background:linear-gradient(180deg,transparent,rgba(5,10,18,.9));bottom:0;display:flex;gap:8px;justify-content:space-between;left:0;padding:24px 10px 9px;position:absolute;right:0}
+.editorial-badge{align-items:center;background:rgba(213,242,123,.13);border:1px solid rgba(213,242,123,.35);border-radius:99px;color:var(--lime);display:inline-flex;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.57rem;gap:5px;letter-spacing:.06em;line-height:1.2;padding:5px 8px;text-transform:uppercase;white-space:nowrap}
+.editorial-dot{background:currentColor;border-radius:50%;display:inline-block;height:5px;width:5px}
+.game-card-year{color:var(--paper);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.62rem;letter-spacing:.08em}
+.game-card h3{font-size:1.28rem;margin-bottom:10px}
+.game-card-platforms{align-items:center;display:flex;flex-wrap:wrap;gap:7px;margin:0 0 12px;position:relative}
+.game-card-platform{align-items:center;color:var(--muted);display:inline-flex;font-size:.66rem;gap:5px;line-height:1.3;min-width:0}
+.game-card-platform a{color:var(--paper);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.game-card-platform a:hover,.game-card-platform a:focus-visible{color:var(--cyan);text-decoration:underline;text-underline-offset:3px}
+.game-card-platform--more{color:var(--faint);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.platform-glyph{display:inline-block;flex:none;height:16px;width:16px}
+.platform-emoji .platform-glyph{color:var(--cyan);height:3rem;width:3rem}
+.game-card-description{display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-bottom:14px!important;overflow:hidden}
+.game-card-credits{color:var(--muted);display:grid;font-size:.65rem;gap:3px;line-height:1.35;margin:0 0 14px;min-width:0}
+.game-card-credits span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.game-card-credits b{color:var(--faint);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.56rem;font-weight:600;letter-spacing:.06em;margin-right:6px;text-transform:uppercase}
+.tag-list{gap:6px;margin-bottom:2px}
+.tag{align-items:center;min-height:28px;padding:4px 8px}
+.tag--coral{background:rgba(255,143,120,.08);border-color:rgba(255,143,120,.4);color:var(--coral)}
+.tag--cyan{background:rgba(115,232,226,.08);border-color:rgba(115,232,226,.4);color:var(--cyan)}
+.tag--lime{background:rgba(213,242,123,.08);border-color:rgba(213,242,123,.4);color:var(--lime)}
+.tag--violet{background:rgba(166,140,255,.1);border-color:rgba(166,140,255,.42);color:var(--violet)}
+.tag--amber{background:rgba(255,198,110,.08);border-color:rgba(255,198,110,.42);color:var(--amber)}
+.tag--more{border-style:dashed;color:var(--faint)}
+.game-card-footer{align-items:flex-end;flex-wrap:wrap;gap:8px;padding-top:14px}
+.score-link{align-items:center;color:var(--cyan);display:inline-flex;font-size:.65rem;font-weight:700;gap:5px;line-height:1.2}
+.score-link:hover,.score-link:focus-visible{color:var(--paper)}
+.score-link-label{color:var(--faint);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.56rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.score-link--pending{color:var(--faint);font-weight:500}
+.game-card a:focus-visible,.wordmark:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.game-platform-list{flex-wrap:wrap;gap:8px}
+.game-platform-item{align-items:center;display:inline-flex;gap:6px}
+.game-platform-item .platform-glyph{height:18px;width:18px}
+.game-status-row{align-items:center;display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 4px}
+.game-status-row .score-link{font-size:.72rem}
+@media(max-width:800px){.game-card-art{height:128px}.game-card-footer{align-items:flex-start;flex-direction:column}.game-card-footer .card-link{align-self:flex-end}.wordmark-mark{width:28px}}
+@media(prefers-reduced-motion:reduce){.wordmark-orbit,.wordmark-star,.wordmark-spark{animation:none!important}.game-card-art img{transform:none!important;transition:none!important}.game-card:hover .game-card-art img,.game-card:focus-within .game-card-art img{filter:none;transform:none}}
