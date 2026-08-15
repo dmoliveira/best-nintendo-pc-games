@@ -644,7 +644,7 @@ async function main() {
     if (wrappedLeftState.angle !== "270" || wrappedLeftState.dragAngle !== "-90.0" || !wrappedLeftState.transform?.includes("rotateY(-90deg)")) fail(`left rotation did not preserve the short visual wrap from the front rest pose to the left spine: ${JSON.stringify(wrappedLeftState)}`);
     await client.evaluate('document.querySelector("[data-box-action=reset]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "0"'));
-    const dragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); const rect = stage?.getBoundingClientRect(); if (!rect) return null; const centerX = rect.left + rect.width / 2; return { startX: centerX - 75, endX: centerX + 75, y: rect.top + rect.height / 2 }; })()');
+    const dragCoordinates = await client.evaluate('(async () => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))); const rect = stage?.getBoundingClientRect(); if (!rect) return null; const centerX = rect.left + rect.width / 2; return { startX: centerX - 75, endX: centerX + 75, y: rect.top + rect.height / 2 }; })()');
     if (!dragCoordinates) fail("physical package stage did not expose drag coordinates");
     await drag(client, dragCoordinates);
     await waitForDragStart(client, dragCoordinates);
