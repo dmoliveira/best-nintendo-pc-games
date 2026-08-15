@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element -- static export uses locally governed, base-prefixed asset URLs. */
 
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type KeyboardEvent, type PointerEvent } from "react";
-import { BOX_VIEW_ZOOMS, describeBoxView, INITIAL_BOX_VIEW_STATE, nearestEquivalentBoxAngle, reduceBoxView, renderBoxAngle, snapBoxAngle, type BoxViewAction, type BoxViewState } from "@/lib/box-art/view-state";
+import { BOX_VIEW_ZOOMS, describeBoxFace, describeBoxView, INITIAL_BOX_VIEW_STATE, nearestEquivalentBoxAngle, reduceBoxView, renderBoxAngle, snapBoxAngle, type BoxViewAction, type BoxViewState } from "@/lib/box-art/view-state";
 import type { PackagePresentation } from "@/lib/box-art/package-engine";
 
 type BoxStyle = CSSProperties & Record<"--box-width" | "--box-height" | "--box-depth", string>;
@@ -245,6 +245,9 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
       ? `${profileCategory} model with a visible spine and proportional package depth.`
       : "Flat digital presentation with no invented physical package.";
   const renderedAngle = canRotate ? renderBoxAngle(visualAngle, viewer.restAngle) : 0;
+  const visibleStatusAngle = isDragging ? snapBoxAngle(visualAngle) : view.angle;
+  const visibleStatusFace = describeBoxFace(visibleStatusAngle);
+  const visibleStatusLabel = isDragging ? "Rotating toward" : "Viewing";
 
   return <section
     className={`game-box-viewer game-box-viewer--${presentation.formatKind}${isSourceListedReference ? " game-box-viewer--reference" : ""}${fallbackFullscreen ? " game-box-viewer--fallback-fullscreen" : ""}`}
@@ -311,6 +314,7 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
         </div>
       {presentation.editorialThumbnail ? <img className="game-box-stage__editorial-art" src={presentation.editorialThumbnail.src} alt={presentation.editorialThumbnail.alt} loading="lazy" decoding="async" fetchPriority="low" /> : null}
     </div>
+    <p className="game-box-view-status" id="package-view-status" data-box-view-status="true" data-box-view-angle={visibleStatusAngle} data-box-view-dragging={isDragging ? "true" : "false"}><span>{`${visibleStatusLabel}: `}</span><strong>{visibleStatusFace}</strong><small>{` · ${Math.round(view.zoom * 100)}% zoom`}</small></p>
     <p className="game-box-instructions" id="package-view-instructions">{canRotate ? "Drag the package horizontally, use the controls, or focus it and press Left/Right to rotate. Use plus/minus to zoom and Home or 0 to reset." : "Use plus/minus to zoom and Home or 0 to reset. Digital profiles stay flat."}</p>
     <div className={`game-box-controls${canRotate ? "" : " game-box-controls--flat"}`} aria-label="Package view controls">
       {canRotate ? <>
