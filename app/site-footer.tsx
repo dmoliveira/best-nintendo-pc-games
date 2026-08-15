@@ -28,7 +28,7 @@ export default function SiteFooter() {
         <div className="footer-link-group">
           <strong>About</strong>
           <Link href="/docs/rights-and-support-policy/">Sources &amp; rights</Link>
-          <a href={site.correctionUrl} target="_blank" rel="noreferrer">Report a correction ↗</a>
+          <a href={site.correctionUrl} target="_blank" rel="noreferrer" aria-label="Report a correction; opens in a new tab">Report a correction <span aria-hidden="true">↗</span></a>
         </div>
       </nav>
       <p className="footer-meta">Built for curious players · 2026 <span aria-hidden="true">/</span> GameAtlas is an independent source-aware catalog.</p>
