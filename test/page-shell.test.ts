@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { test } from "node:test";
 
 const page = readFileSync(new URL("../app/page.tsx", import.meta.url), "utf8");
+const manifest = readFileSync(new URL("../app/manifest.ts", import.meta.url), "utf8");
 const styles = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
 const gamePage = readFileSync(new URL("../app/games/[slug]/page.tsx", import.meta.url), "utf8");
 const browser = readFileSync(new URL("../app/catalog-browser.tsx", import.meta.url), "utf8");
@@ -11,6 +12,8 @@ const cards = readFileSync(new URL("../app/catalog-cards.tsx", import.meta.url),
 const packageThumbnail = readFileSync(new URL("../app/package-thumbnail.tsx", import.meta.url), "utf8");
 const taxonomyHub = readFileSync(new URL("../app/taxonomy-hub.tsx", import.meta.url), "utf8");
 const catalogIndex = readFileSync(new URL("../app/catalog/page.tsx", import.meta.url), "utf8");
+const policyPage = readFileSync(new URL("../app/docs/rights-and-support-policy/page.tsx", import.meta.url), "utf8");
+const footer = readFileSync(new URL("../app/site-footer.tsx", import.meta.url), "utf8");
 const staticExportValidator = readFileSync(new URL("../scripts/validate-static-export.mjs", import.meta.url), "utf8");
 
 test("home shell exposes a keyboard bypass and stable main landmark", () => {
@@ -22,6 +25,7 @@ test("home shell exposes a keyboard bypass and stable main landmark", () => {
 
 test("home shell exposes accessible catalog search and filters", () => {
   assert.match(page, /CatalogBrowser/);
+  assert.match(page, /createWebSiteStructuredData/);
   assert.match(page, /getCatalogSearchRecords/);
   assert.doesNotMatch(page, /Catalog search is coming soon/);
   assert.doesNotMatch(page, /Catalog coming soon/);
@@ -86,6 +90,9 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(page, /map\(\(record\) => toCatalogCardRecord\(record, !initialSourceListed\)\)/);
   assert.match(page, /catalogIndexDigest=/);
   assert.match(page, /catalogIndexUrl=/);
+  assert.match(page, /const catalogIndexUrl = `\$\{site\.assetPath\("catalog-search-index\.json"\)\}\?v=/);
+  assert.match(page, /catalogIndexHref=\{site\.assetPath\("catalog\/"\)\}/);
+  assert.doesNotMatch(page, /site\.publicUrl\("catalog-search-index\.json"\)/);
   assert.match(browser, /fetch\(catalogIndexUrl, \{ signal: controller\.signal \}\)/);
   assert.match(browser, /indexRequestRef\.current = null;[\s\S]*indexStatusRef\.current = "error";[\s\S]*setIndexStatus\("error"\)/);
   assert.match(browser, /indexStatusRef\.current === "error" && !force/);
@@ -106,6 +113,20 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /Retry full catalog/);
   assert.match(browser, /syncPendingState/);
   assert.match(catalogIndex, /Browse every game\./);
+  assert.match(catalogIndex, /createCollectionPageStructuredData/);
+  assert.match(catalogIndex, /createBreadcrumbStructuredData/);
+  assert.match(gamePage, /createVideoGameStructuredData/);
+  assert.match(gamePage, /createBreadcrumbStructuredData/);
+  assert.match(policyPage, /site\.correctionUrl/);
+  assert.match(footer, /Report a correction/);
+  assert.match(page, /source-aware Nintendo and PC game catalog/);
+  assert.doesNotMatch(page, /Best Nintendo|games worth your time/);
+  assert.match(manifest, /source-aware Nintendo and PC game catalog/);
+  assert.doesNotMatch(manifest, /Best Nintendo|games worth your time/);
+  assert.match(footer, /Source-aware entries|source-aware catalog/);
+  assert.doesNotMatch(footer, /Curated picks|next great game|independent editorial guide/);
+  assert.match(staticExportValidator, /structuredDataBlocks/);
+  assert.match(staticExportValidator, /forbiddenStructuredDataKeys/);
   assert.match(catalogIndex, /No-JavaScript catalog/);
   assert.match(staticExportValidator, /const maximumHomePayloadBytes = 400 \* 1024/);
   assert.doesNotMatch(page, /Curated by humans|Thoughtful recommendations|reviewed picks/);
@@ -126,6 +147,7 @@ test("visual shell protects focus, contrast, and reduced-motion behavior", () =>
   assert.match(styles, /display-disclosure/);
   assert.match(styles, /display-panel/);
   assert.match(styles, /layout-control:not\(.layout-control--images\)/);
+  assert.match(styles, /\.display-panel \.layout-control:not\(\.layout-control--images\)\{display:none\}/);
   assert.match(styles, /game-grid--columns-1 \.game-card--no-image \.game-card-body/);
   assert.match(styles, /browser-panel-count/);
   assert.match(styles, /grid-template-columns: minmax\(0, 1fr\) minmax\(170px, \.28fr\)/);

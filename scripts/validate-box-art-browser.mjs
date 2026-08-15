@@ -148,10 +148,23 @@ async function press(client, key, code, keyCode) {
   await client.send("Input.dispatchKeyEvent", { type: "keyUp", key, code, windowsVirtualKeyCode: keyCode, nativeVirtualKeyCode: keyCode });
 }
 
+async function drag(client, { startX, endX, y }) {
+  await client.send("Input.dispatchMouseEvent", { type: "mousePressed", x: startX, y, button: "left", buttons: 1, clickCount: 1 });
+  await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: (startX + endX) / 2, y, button: "left", buttons: 1 });
+  await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: endX, y, button: "left", buttons: 1 });
+}
+
+async function releaseDrag(client, { endX, y }) {
+  await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: endX, y, button: "left", buttons: 0, clickCount: 1 });
+}
+
 const desktopMetrics = { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false };
 
 async function catalogIndexRequestCount(client) {
-  return client.evaluate('performance.getEntriesByType("resource").filter((entry) => new URL(entry.name).pathname.endsWith("/catalog-search-index.json")).length');
+  const requestDetails = await client.evaluate('(() => ({ origin: window.location.origin, urls: performance.getEntriesByType("resource").filter((entry) => new URL(entry.name).pathname.endsWith("/catalog-search-index.json")).map((entry) => entry.name) }))()');
+  const remoteRequest = requestDetails.urls.find((url) => new URL(url).origin !== requestDetails.origin);
+  if (remoteRequest) fail(`catalog index request escaped the local preview origin: ${remoteRequest}`);
+  return requestDetails.urls.length;
 }
 
 async function waitForCatalogShell(client) {
@@ -273,16 +286,17 @@ async function validateCatalogBrowser(client, catalogUrl, representativeGame, de
   const pageTwo = await client.evaluate('(() => ({ position: document.querySelector(".game-card-position")?.textContent?.replace(/\\s+/g, " ").trim(), current: document.querySelector(".pagination-button--current")?.getAttribute("aria-current") }))()');
   if (!pageTwo.position?.includes("13") || pageTwo.current !== "page") fail(`catalog pagination did not expose the second-page result state: ${JSON.stringify(pageTwo)}`);
 
-  await client.evaluate('history.back()');
-  await waitFor(() => client.evaluate('new URL(window.location.href).searchParams.get("page") !== "2" && document.querySelector(".game-grid")?.classList.contains("game-grid--columns-3") && document.querySelector(\'input[name="card-columns"][value="3"]\')?.checked'));
+    await client.evaluate('history.back()');
+    await waitFor(() => client.evaluate('new URL(window.location.href).searchParams.get("page") !== "2" && document.querySelector(".game-grid")?.classList.contains("game-grid--columns-3") && document.querySelector(\'input[name="card-columns"][value="3"]\')?.checked'));
 
-  await client.send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: false });
-  await waitFor(() => client.evaluate('getComputedStyle(document.querySelector(".layout-control")).display === "none" && getComputedStyle(document.querySelector(".layout-mobile-note")).display !== "none"'));
-  const mobile = await client.evaluate('(() => { const grid = document.querySelector(".game-grid"); const columns = getComputedStyle(grid).gridTemplateColumns.trim().split(/\\s+/).filter(Boolean).length; return { columns, urlColumns: new URL(window.location.href).searchParams.get("columns"), overflow: document.documentElement.scrollWidth > window.innerWidth }; })()');
-  if (mobile.columns !== 1 || mobile.urlColumns !== "3" || mobile.overflow) fail(`mobile catalog layout is not honest or contained: ${JSON.stringify(mobile)}`);
+    await client.send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: false });
+    await waitFor(() => client.evaluate('getComputedStyle(document.querySelector(".display-disclosure")).display !== "none"'));
+    const mobile = await client.evaluate('(() => { const grid = document.querySelector(".game-grid"); const summary = document.querySelector(".display-disclosure summary")?.textContent; const columns = getComputedStyle(grid).gridTemplateColumns.trim().split(/\\s+/).filter(Boolean).length; return { columns, urlColumns: new URL(window.location.href).searchParams.get("columns"), summary, overflow: document.documentElement.scrollWidth > window.innerWidth }; })()');
+    if (mobile.columns !== 1 || mobile.urlColumns !== "3" || !mobile.summary?.includes("3 columns") || mobile.overflow) fail(`mobile catalog layout is not honest or contained: ${JSON.stringify(mobile)}`);
 
-  await client.send("Emulation.setDeviceMetricsOverride", desktopMetrics);
-  await waitFor(() => client.evaluate('getComputedStyle(document.querySelector(".layout-control")).display !== "none" && document.querySelector(\'input[name="card-columns"][value="3"]\')?.checked'));
+    await client.send("Emulation.setDeviceMetricsOverride", desktopMetrics);
+    await client.evaluate('document.querySelector(".display-disclosure").open = true');
+    await waitFor(() => client.evaluate('getComputedStyle(document.querySelector(".layout-control")).display !== "none" && document.querySelector(\'input[name="card-columns"][value="3"]\')?.checked'));
 
   await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }, { name: "forced-colors", value: "active" }] });
   const accessibilityState = await client.evaluate('(() => { const layout = document.querySelector(".layout-option--active"); const page = document.querySelector(".pagination-button--current"); const chip = [...document.querySelectorAll(".filter-chip")].find((candidate) => candidate.getAttribute("aria-label") === "Remove platform filter: PC / Windows"); chip?.focus(); const duration = getComputedStyle(document.querySelector(".game-card")).transitionDuration; const durationMs = duration.endsWith("ms") ? Number.parseFloat(duration) : Number.parseFloat(duration) * 1000; return { layoutChecked: document.querySelector(\'input[name="card-columns"][value="3"]\')?.checked, layoutOutline: getComputedStyle(layout).outlineStyle, pageCurrent: page?.getAttribute("aria-current"), pageOutline: getComputedStyle(page).outlineStyle, chipTag: chip?.tagName, chipLabel: chip?.getAttribute("aria-label"), chipOutline: chip ? getComputedStyle(chip).outlineStyle : "none", cardTransitionMs: durationMs }; })()');
@@ -341,7 +355,13 @@ async function main() {
     .sort()
     .map((file) => JSON.parse(fs.readFileSync(path.join(gameDirectory, file), "utf8")));
   const assets = JSON.parse(fs.readFileSync(path.join(root, "data/assets-manifest.json"), "utf8")).assets ?? [];
+  const packageProfiles = JSON.parse(fs.readFileSync(path.join(root, "data/box-art-formats.json"), "utf8")).platformPackageProfiles ?? {};
   const assetById = new Map(assets.map((asset) => [asset.assetId, asset]));
+  const hasPublishedBoxFront = (game) => game.assets?.some((asset) => asset?.role === "box-front");
+  const isSourceListedReference = (game) => game.sources?.includes("wikidata-fact-reference")
+    && game.release?.scope === "earliest-title-release"
+    && game.platformAssociationScope === "source-listed";
+  const packageProfileFor = (game) => game.platforms?.length === 1 ? packageProfiles[game.platforms[0]] : undefined;
   const approvedEditorialAsset = (game) => game.assets?.find((asset) => {
     const manifest = assetById.get(asset?.provenanceId);
     return asset?.role !== "box-front" && manifest
@@ -349,18 +369,21 @@ async function main() {
       && manifest.assetKind === "generated-original-editorial"
       && manifest.intendedUse === "game-card-thumbnail";
   });
-  const fallbackGame = games.find((game) => !game.assets?.some((asset) => asset?.role === "box-front"));
-  if (!fallbackGame) fail("no game without a published box front is available for fallback validation");
-  const publishedBoxGame = games.find((game) => game.assets?.some((asset) => asset?.role === "box-front"));
+  const physicalFallbackGame = games.find((game) => !isSourceListedReference(game) && !hasPublishedBoxFront(game) && packageProfileFor(game)?.kind === "physical");
+  if (!physicalFallbackGame) fail("no verified physical game without a published box front is available for fallback validation");
+  const sourceListedReferenceGame = games.find(isSourceListedReference);
+  if (!sourceListedReferenceGame) fail("no source-listed title-year reference game is available for validation");
+  const publishedBoxGame = games.find(hasPublishedBoxFront);
   if (!publishedBoxGame) fail("no approved published box-front fixture is available for browser validation");
-  const digitalGame = games.find((game) => game.releaseFormat === "digital");
-  if (!digitalGame) fail("no digital package fixture is available for browser validation");
-  const catalogThumbnailGame = games.find((game) => approvedEditorialAsset(game));
-  if (!catalogThumbnailGame) fail("no approved editorial-thumbnail fixture is available for browser validation");
+  const digitalGame = games.find((game) => !isSourceListedReference(game) && packageProfileFor(game)?.kind === "digital");
+  if (!digitalGame) fail("no verified digital package fixture is available for browser validation");
+  const catalogSearchRecords = JSON.parse(fs.readFileSync(path.join(root, "public/catalog-search-index.json"), "utf8")).records ?? [];
+  const initialCatalogSlugs = new Set(catalogSearchRecords.slice(0, 24).map((record) => record.slug));
+  const catalogThumbnailGame = games.find((game) => initialCatalogSlugs.has(game.slug) && isSourceListedReference(game) && approvedEditorialAsset(game));
+  if (!catalogThumbnailGame) fail("no initial source-listed editorial-thumbnail fixture is available for browser validation");
   const catalogThumbnailAsset = approvedEditorialAsset(catalogThumbnailGame);
   const catalogRepresentativeGame = games.find((game) => game.slug === "art-of-rally");
   if (!catalogRepresentativeGame) fail("the curated art-of-rally catalog fixture is required for card interaction validation");
-  const catalogSearchRecords = JSON.parse(fs.readFileSync(path.join(root, "public/catalog-search-index.json"), "utf8")).records ?? [];
   const initialCatalogPlatformIds = new Set(catalogSearchRecords.slice(0, 24).flatMap((record) => record.platformIds));
   const deferredCatalogPlatformId = catalogSearchRecords.flatMap((record) => record.platformIds).find((platformId) => !initialCatalogPlatformIds.has(platformId));
   if (!deferredCatalogPlatformId) fail("the catalog index needs a platform absent from the first 24 records for deferred query validation");
@@ -380,7 +403,7 @@ async function main() {
       const response = await fetch(`http://127.0.0.1:${debugPort}/json/version`);
       return response.ok;
     });
-    const pageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${fallbackGame.slug}/`;
+    const pageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${physicalFallbackGame.slug}/`;
     const targetResponse = await fetch(`http://127.0.0.1:${debugPort}/json/new?${encodeURIComponent(pageUrl)}`, { method: "PUT" });
     if (!targetResponse.ok) fail("Chrome did not create a debugging target");
     const target = await targetResponse.json();
@@ -392,14 +415,45 @@ async function main() {
 
     const semantics = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); return { role: stage?.getAttribute("role"), label: stage?.getAttribute("aria-label"), describedBy: stage?.getAttribute("aria-describedby"), fallback: document.body.textContent.includes("GameAtlas reference case"), fallbackRole: fallback?.getAttribute("role") }; })()');
     if (semantics.role !== "group" || !semantics.label?.includes("Interactive package view") || !semantics.describedBy || !semantics.fallback || semantics.fallbackRole !== "img") fail("viewer baseline semantics or fallback copy is missing");
-    const physicalGeometry = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { kind: stage?.dataset.packageKind, depth: Number(stage?.dataset.packageDepth), restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), transform: box?.style.transform }; })()');
-    if (physicalGeometry.kind !== "physical" || physicalGeometry.depth < 8 || physicalGeometry.restAngle !== "-24" || !physicalGeometry.hasSpine || !physicalGeometry.transform?.includes("rotateY(-24deg)")) fail(`physical profile did not render a visible dimensional rest pose: ${JSON.stringify(physicalGeometry)}`);
+    const physicalGeometry = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { kind: stage?.dataset.packageKind, depth: Number(stage?.dataset.packageDepth), restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), dimensions: ["--box-width", "--box-height", "--box-depth"].map((name) => box?.style.getPropertyValue(name)), transform: box?.style.transform }; })()');
+    if (physicalGeometry.kind !== "physical" || physicalGeometry.depth < 8 || physicalGeometry.restAngle !== "-24" || !physicalGeometry.hasSpine || physicalGeometry.dimensions.some((value) => !value) || !physicalGeometry.transform?.includes("rotateY(-24deg)")) fail(`physical profile did not render a visible dimensional rest pose: ${JSON.stringify(physicalGeometry)}`);
 
     await client.evaluate('document.querySelector("[data-game-box-stage]").focus()');
     await press(client, "ArrowRight", "ArrowRight", 39);
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "90"'));
     await client.evaluate('document.querySelector("[data-box-action=reset]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "0"'));
+    const dragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); const rect = stage?.getBoundingClientRect(); if (!rect) return null; const startX = Math.max(rect.left + 10, Math.min(rect.right - 10, window.innerWidth - 160)); return { startX, endX: startX + 150, y: rect.top + rect.height / 2 }; })()');
+    if (!dragCoordinates) fail("physical package stage did not expose drag coordinates");
+    await drag(client, dragCoordinates);
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "true" && Number(document.querySelector("[data-game-box-stage]")?.dataset.boxDragAngle) > 0'));
+    const draggingState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { cursor: stage?.style.cursor, touchAction: stage?.style.touchAction, transition: box?.style.transition, willChange: box?.style.willChange, angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle }; })()');
+    if (draggingState.cursor !== "grabbing" || draggingState.touchAction !== "pan-y" || draggingState.transition !== "none" || draggingState.willChange !== "transform" || draggingState.angle !== "0") fail(`physical package drag did not enter a smooth transient rotation state: ${JSON.stringify(draggingState)}`);
+    await releaseDrag(client, dragCoordinates);
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "90" && document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "false"'));
+    const draggedState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle, dimensions: ["--box-width", "--box-height", "--box-depth"].map((name) => box?.style.getPropertyValue(name)), transform: box?.style.transform, transition: box?.style.transition, willChange: box?.style.willChange }; })()');
+    if (draggedState.angle !== "90" || draggedState.dragAngle !== "90.0" || JSON.stringify(draggedState.dimensions) !== JSON.stringify(physicalGeometry.dimensions) || !draggedState.transform?.includes("rotateY(66deg)") || draggedState.transition || draggedState.willChange) fail(`physical package drag did not commit a snapped cardinal view while retaining profile geometry: ${JSON.stringify(draggedState)}`);
+    await client.evaluate('document.querySelector("[data-box-action=reset]").click()');
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "0"'));
+    await drag(client, dragCoordinates);
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "true"'));
+    const releasedCapture = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); if (!stage?.hasPointerCapture(1)) return false; stage.releasePointerCapture(1); return true; })()');
+    if (!releasedCapture) fail("physical package drag did not capture the active pointer before cancellation validation");
+    const dispatchedLostPointerCapture = await client.evaluate(`(() => { const stage = document.querySelector("[data-game-box-stage]"); if (!stage) return false; stage.dispatchEvent(new PointerEvent("lostpointercapture", { bubbles: true, cancelable: true, pointerId: 1, pointerType: "mouse", isPrimary: true, clientX: ${dragCoordinates.endX}, clientY: ${dragCoordinates.y} })); return true; })()`);
+    if (!dispatchedLostPointerCapture) fail("physical package drag stage did not accept lost-pointer-capture validation");
+    await waitFor(() => client.evaluate('new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => { const stage = document.querySelector("[data-game-box-stage]"); resolve(stage?.dataset.boxDragging === "false" && stage?.dataset.boxAngle === "0" && stage?.dataset.boxDragAngle === "0.0"); })))'));
+    await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: dragCoordinates.endX, y: dragCoordinates.y, button: "left", buttons: 0, clickCount: 1 });
+    await drag(client, dragCoordinates);
+    await releaseDrag(client, dragCoordinates);
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "90" && document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "false"'));
+    await client.evaluate('document.querySelector("[data-box-action=reset]").click()');
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "0"'));
+    await drag(client, dragCoordinates);
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "true"'));
+    const dispatchedPointerCancel = await client.evaluate(`(() => { const stage = document.querySelector("[data-game-box-stage]"); if (!stage) return false; stage.dispatchEvent(new PointerEvent("pointercancel", { bubbles: true, cancelable: true, pointerId: 1, pointerType: "mouse", isPrimary: true, clientX: ${dragCoordinates.endX}, clientY: ${dragCoordinates.y} })); return true; })()`);
+    if (!dispatchedPointerCancel) fail("physical package drag stage did not accept pointer-cancellation validation");
+    await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: dragCoordinates.endX, y: dragCoordinates.y, button: "left", buttons: 0, clickCount: 1 });
+    await waitFor(() => client.evaluate('new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => { const stage = document.querySelector("[data-game-box-stage]"); resolve(stage?.dataset.boxDragging === "false" && stage?.dataset.boxAngle === "0" && stage?.dataset.boxDragAngle === "0.0"); })))'));
     for (let index = 0; index < 4; index += 1) await client.evaluate('document.querySelector("[data-box-action=zoom-in]").click()');
     const zoomState = await client.evaluate('(() => { const button = document.querySelector("[data-box-action=zoom-in]"); return { zoom: document.querySelector("[data-game-box-stage]").dataset.boxZoom, disabled: button.disabled }; })()');
     if (zoomState.zoom !== "1.45" || !zoomState.disabled) fail("zoom did not reach its bounded maximum");
@@ -429,15 +483,31 @@ async function main() {
     const digitalPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${digitalGame.slug}/`;
     await client.send("Page.navigate", { url: digitalPageUrl });
     await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(digitalGame.title)}`));
-    const digitalState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); return { kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")) }; })()');
-    if (digitalState.kind !== "digital" || digitalState.depth !== "0" || digitalState.restAngle !== "0" || digitalState.hasSpine || digitalState.hasRotate) fail(`digital profile implied a physical package: ${JSON.stringify(digitalState)}`);
+    const digitalDragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const rect = stage?.getBoundingClientRect(); return rect ? { startX: rect.left + 20, endX: rect.left + 170, y: rect.top + rect.height / 2 } : null; })()');
+    if (!digitalDragCoordinates) fail("digital package stage did not expose drag coordinates");
+    await drag(client, digitalDragCoordinates);
+    await releaseDrag(client, digitalDragCoordinates);
+    const digitalState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); return { kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor }; })()');
+    if (digitalState.kind !== "digital" || digitalState.depth !== "0" || digitalState.restAngle !== "0" || digitalState.hasSpine || digitalState.hasRotate || digitalState.angle !== "0" || digitalState.dragging !== "false" || digitalState.cursor) fail(`digital profile implied a physical package or accepted drag rotation: ${JSON.stringify(digitalState)}`);
 
-    await client.send("Page.navigate", { url: `http://127.0.0.1:${preview.port}${basePath}/` });
+    const sourceListedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${sourceListedReferenceGame.slug}/`;
+    await client.send("Page.navigate", { url: sourceListedPageUrl });
+    await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(sourceListedReferenceGame.title)}`));
+    const sourceListedDragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); const rect = stage?.getBoundingClientRect(); return rect ? { startX: rect.left + 20, endX: rect.left + 170, y: rect.top + rect.height / 2 } : null; })()');
+    if (!sourceListedDragCoordinates) fail("source-listed reference stage did not expose drag coordinates");
+    await drag(client, sourceListedDragCoordinates);
+    await releaseDrag(client, sourceListedDragCoordinates);
+    const sourceListedState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); return { label: stage?.getAttribute("aria-label"), mode: stage?.dataset.presentationMode, kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasFront: Boolean(document.querySelector(".game-box__front img")), hasSpine: Boolean(document.querySelector(".game-box__spine")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor, reference: document.body.textContent.includes("GameAtlas reference presentation"), scope: document.body.textContent.includes("do not establish a platform-specific release date"), copy: document.body.textContent.includes("no platform-specific package is implied"), fallbackRole: fallback?.getAttribute("role") }; })()');
+    if (!sourceListedState.label?.includes("Catalog reference view") || sourceListedState.mode !== "source-listed-reference" || sourceListedState.kind !== "digital" || sourceListedState.depth !== "0" || sourceListedState.restAngle !== "0" || sourceListedState.hasFront || sourceListedState.hasSpine || sourceListedState.hasRotate || sourceListedState.angle !== "0" || sourceListedState.dragging !== "false" || sourceListedState.cursor || !sourceListedState.reference || !sourceListedState.scope || !sourceListedState.copy || sourceListedState.fallbackRole !== "img") fail(`source-listed title-year record implied a platform package or accepted drag rotation: ${JSON.stringify(sourceListedState)}`);
+
+    const catalogThumbnailUrl = new URL(`http://127.0.0.1:${preview.port}${basePath}/`);
+    catalogThumbnailUrl.searchParams.set("q", catalogThumbnailGame.title);
+    await client.send("Page.navigate", { url: catalogThumbnailUrl.toString() });
     const catalogSelector = `.game-card-title-link[href="${basePath}/games/${catalogThumbnailGame.slug}/"]`;
     await waitFor(() => client.evaluate(`Boolean(document.querySelector(${JSON.stringify(catalogSelector)})?.closest(".game-card")?.querySelector(".package-thumbnail"))`));
     const thumbnailState = await client.evaluate(`(() => { const titleLink = document.querySelector(${JSON.stringify(catalogSelector)}); const thumbnail = titleLink?.closest(".game-card")?.querySelector(".package-thumbnail"); const object = thumbnail?.querySelector(".package-thumbnail__object"); const image = thumbnail?.querySelector(".package-thumbnail__front img"); return { format: thumbnail?.dataset.packageFormat, kind: thumbnail?.dataset.packageKind, hasSpine: Boolean(thumbnail?.querySelector(".package-thumbnail__spine")), source: image?.getAttribute("src"), loading: image?.getAttribute("loading"), decoding: image?.getAttribute("decoding"), priority: image?.getAttribute("fetchpriority"), transform: object ? getComputedStyle(object).transform : "" }; })()`);
     const expectedThumbnailSuffix = `/${catalogThumbnailAsset.path.replace(/^public\//, "")}`;
-    if (!thumbnailState.format || thumbnailState.kind !== "physical" || !thumbnailState.hasSpine || thumbnailState.transform === "none" || !thumbnailState.source?.endsWith(expectedThumbnailSuffix) || thumbnailState.loading !== "lazy" || thumbnailState.decoding !== "async" || thumbnailState.priority === "high") fail(`catalog package thumbnail did not retain approved low-impact loading behavior: ${JSON.stringify(thumbnailState)}`);
+    if (thumbnailState.format !== "catalog-reference" || thumbnailState.kind !== "digital" || thumbnailState.hasSpine || thumbnailState.transform !== "none" || !thumbnailState.source?.endsWith(expectedThumbnailSuffix) || thumbnailState.loading !== "lazy" || thumbnailState.decoding !== "async" || thumbnailState.priority === "high") fail(`source-listed catalog thumbnail implied a physical package or lost its low-impact loading behavior: ${JSON.stringify(thumbnailState)}`);
 
     await validateCatalogBrowser(client, `http://127.0.0.1:${preview.port}${basePath}/`, catalogRepresentativeGame, deferredCatalogPlatformId, deferredCatalogPlatformCount);
 
@@ -446,7 +516,7 @@ async function main() {
     await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }, { name: "forced-colors", value: "active" }] });
     const mediaState = await client.evaluate('(() => ({ reduce: matchMedia("(prefers-reduced-motion: reduce)").matches, forced: matchMedia("(forced-colors: active)").matches, duration: getComputedStyle(document.querySelector(".game-box")).transitionDuration, willChange: getComputedStyle(document.querySelector(".game-box")).willChange }))()');
     if (!mediaState.reduce || !mediaState.forced || Number.parseFloat(mediaState.duration) > 0.001 || mediaState.willChange !== "auto") fail(`reduced-motion, forced-colors, or compositor fallback is not active: ${JSON.stringify(mediaState)}`);
-    console.log(`Browser validation passed (${fallbackGame.slug} fallback, ${publishedBoxGame ? `${publishedBoxGame.slug} published front` : "no published front"}, front-first image scheduling, package profiles, catalog filters/layout/pagination, mobile layout, keyboard, zoom, fullscreen fallback, focus restoration, background isolation, reduced motion, forced colors).`);
+    console.log(`Browser validation passed (${physicalFallbackGame.slug} physical fallback, ${sourceListedReferenceGame.slug} source-listed reference, ${publishedBoxGame ? `${publishedBoxGame.slug} published front` : "no published front"}, front-first image scheduling, package profiles, catalog filters/layout/pagination, mobile layout, keyboard, zoom, fullscreen fallback, focus restoration, background isolation, reduced motion, forced colors).`);
   } finally {
     client?.close();
     if (browser && browser.exitCode === null && browser.signalCode === null) {

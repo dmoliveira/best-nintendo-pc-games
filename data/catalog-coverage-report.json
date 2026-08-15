@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "catalog": {
+    "games": 1000,
+    "gamesWithAssets": 1000,
+    "gamesWithEditorialContext": 1000
+  },
+  "platforms": [
+    {
+      "id": "game-boy",
+      "name": "Game Boy family",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 49,
+      "hubEligible": true
+    },
+    {
+      "id": "game-boy-advance",
+      "name": "Game Boy Advance family",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 60,
+      "hubEligible": true
+    },
+    {
+      "id": "game-boy-color",
+      "name": "Game Boy Color",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 26,
+      "hubEligible": true
+    },
+    {
+      "id": "nintendo-3ds",
+      "name": "Nintendo 3DS family",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 55,
+      "hubEligible": true
+    },
+    {
+      "id": "nintendo-64",
+      "name": "Nintendo 64",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 42,
+      "hubEligible": true
+    },
+    {
+      "id": "nintendo-ds",
+      "name": "Nintendo DS family",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 71,
+      "hubEligible": true
+    },
+    {
+      "id": "nintendo-dsi",
+      "name": "Nintendo DSi family",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 17,
+      "hubEligible": true
+    },
+    {
+      "id": "nintendo-gamecube",
+      "name": "Nintendo GameCube",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 53,
+      "hubEligible": true
+    },
+    {
+      "id": "nintendo-nes",
+      "name": "Nintendo Entertainment System",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 55,
+      "hubEligible": true
+    },
+    {
+      "id": "nintendo-new-3ds",
+      "name": "New Nintendo 3DS family",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 6,
+      "hubEligible": true
+    },
+    {
+      "id": "nintendo-snes",
+      "name": "Super Nintendo Entertainment System",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 61,
+      "hubEligible": true
+    },
+    {
+      "id": "nintendo-switch",
+      "name": "Nintendo Switch",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 96,
+      "hubEligible": true
+    },
+    {
+      "id": "nintendo-switch-2",
+      "name": "Nintendo Switch 2",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 8,
+      "hubEligible": true
+    },
+    {
+      "id": "nintendo-wii",
+      "name": "Wii",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 63,
+      "hubEligible": true
+    },
+    {
+      "id": "nintendo-wii-u",
+      "name": "Wii U",
+      "family": "nintendo",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 48,
+      "hubEligible": true
+    },
+    {
+      "id": "pc-windows",
+      "name": "PC (Windows)",
+      "family": "pc",
+      "coverage": "populated",
+      "catalogTarget": "expansion",
+      "records": 290,
+      "hubEligible": true
+    }
+  ],
+  "genres": [
+    {
+      "id": "action",
+      "name": "Action",
+      "records": 339,
+      "hubEligible": true
+    },
+    {
+      "id": "adventure",
+      "name": "Adventure",
+      "records": 243,
+      "hubEligible": true
+    },
+    {
+      "id": "arcade",
+      "name": "Arcade",
+      "records": 8,
+      "hubEligible": true
+    },
+    {
+      "id": "educational",
+      "name": "Educational",
+      "records": 1,
+      "hubEligible": false
+    },
+    {
+      "id": "fighting",
+      "name": "Fighting",
+      "records": 45,
+      "hubEligible": true
+    },
+    {
+      "id": "horror",
+      "name": "Horror",
+      "records": 52,
+      "hubEligible": true
+    },
+    {
+      "id": "party",
+      "name": "Party",
+      "records": 1,
+      "hubEligible": false
+    },
+    {
+      "id": "platformer",
+      "name": "Platformer",
+      "records": 163,
+      "hubEligible": true
+    },
+    {
+      "id": "puzzle",
+      "name": "Puzzle",
+      "records": 61,
+      "hubEligible": true
+    },
+    {
+      "id": "racing",
+      "name": "Racing",
+      "records": 63,
+      "hubEligible": true
+    },
+    {
+      "id": "rhythm",
+      "name": "Rhythm",
+      "records": 5,
+      "hubEligible": true
+    },
+    {
+      "id": "role-playing",
+      "name": "Role-playing",
+      "records": 17,
+      "hubEligible": true
+    },
+    {
+      "id": "sandbox",
+      "name": "Sandbox",
+      "records": 5,
+      "hubEligible": true
+    },
+    {
+      "id": "shooter",
+      "name": "Shooter",
+      "records": 174,
+      "hubEligible": true
+    },
+    {
+      "id": "simulation",
+      "name": "Simulation",
+      "records": 57,
+      "hubEligible": true
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "records": 55,
+      "hubEligible": true
+    },
+    {
+      "id": "stealth",
+      "name": "Stealth",
+      "records": 28,
+      "hubEligible": true
+    },
+    {
+      "id": "strategy",
+      "name": "Strategy",
+      "records": 91,
+      "hubEligible": true
+    },
+    {
+      "id": "survival",
+      "name": "Survival",
+      "records": 44,
+      "hubEligible": true
+    },
+    {
+      "id": "visual-novel",
+      "name": "Visual novel",
+      "records": 15,
+      "hubEligible": true
+    }
+  ],
+  "links": {
+    "uniquePublishedUrls": 1055,
+    "catalogLinks": 1033,
+    "byKind": {
+      "critical": 32,
+      "official": 59,
+      "reference": 942
+    }
+  },
+  "signals": {
+    "byKind": {
+      "editorial": 1000
+    },
+    "byEvidenceState": {
+      "catalog-method": 897,
+      "original-editorial": 103
+    },
+    "licensedNumericSignals": 0
+  },
+  "optionalFields": {
+    "developer": 905,
+    "publisher": 902,
+    "officialLink": 941,
+    "storeLink": 1000
+  }
+}

@@ -363,7 +363,7 @@ Foundation status: the static shell, source-rights registry, asset manifest, rou
 - IGDB API: <https://api-docs.igdb.com/>
 - RAWG API: <https://rawg.io/apidocs> and <https://rawg.io/terms>
 - OpenCritic API FAQ: <https://help.opencritic.com/knowledge-base/articles/6333223-are-there-any-opencritic-api-s>
-- Metacritic terms: <https://www.metacritic.com/legal/terms-of-use/>
+- Metacritic/Fandom terms: <https://www.fandom.com/terms-of-service-pp1>
 - Nintendo sales reporting: <https://www.nintendo.co.jp/ir/en/finance/hard_soft/> and <https://www.nintendo.co.jp/ir/en/finance/software/index.html>
 - Schema.org VideoGame: <https://schema.org/VideoGame>
 - Support link supplied from `dmoliveira/master-philosophers`; the live destination is held in Codememory until the support disclosure gate passes.

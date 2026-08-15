@@ -87,7 +87,7 @@ Before each catalog or asset refresh:
 
 ## Reporting corrections
 
-Corrections should include the game/platform slug, the field in question, the source URL, and why the current value or asset status is wrong. Do not attach unlicensed screenshots or copied review text to an issue.
+Corrections should include the game/platform slug, the field in question, the proposed correction, a public source URL, and why the current value or asset status is wrong. Use the [catalog correction issue form](https://github.com/dmoliveira/best-nintendo-pc-games/issues/new?template=catalog-correction.yml&title=GameAtlas%20catalog%20correction). Do not attach unlicensed screenshots or copied review text to an issue.
 
 ## Downstream handoff
 

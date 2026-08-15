@@ -2,22 +2,24 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CatalogBrowser from "./catalog-browser";
 import HeroSearch from "./hero-search";
+import JsonLd from "./json-ld";
 import PlatformGlyph from "./platform-glyph";
 import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
 import { createSiteConfig } from "@/lib/site-config";
 import { catalogFilterHref, DEFAULT_PAGE_SIZE, toCatalogCardRecord } from "@/lib/catalog/search";
+import { createWebSiteStructuredData } from "@/lib/structured-data";
 import { getCatalogSearchIndexDigest } from "@/lib/catalog/search-index";
 import { getCatalogGames, getCatalogSearchRecords, getPlatformHubs, getPopulatedPlatforms } from "@/lib/catalog/site-data";
 
 const site = createSiteConfig(process.env);
 
 export const metadata: Metadata = {
-  title: "Best Nintendo & PC Games",
-  description: "Find the games worth your time across Nintendo consoles and PC, with platform context and transparent signals.",
+  title: "Nintendo & PC Games",
+  description: "Browse a source-aware catalog across Nintendo consoles and PC, with platform context and transparent signals.",
   alternates: { canonical: site.canonicalUrl },
-  openGraph: { type: "website", title: "Best Nintendo & PC Games | GameAtlas", description: "Find the games worth your time.", url: site.canonicalUrl, images: [{ url: site.publicUrl("og-image.png"), width: 1200, height: 630, alt: "GameAtlas — best Nintendo and PC games" }] },
-  twitter: { card: "summary_large_image", title: "Best Nintendo & PC Games | GameAtlas", description: "Find the games worth your time.", images: [site.publicUrl("og-image.png")] },
+  openGraph: { type: "website", title: "Nintendo & PC Games | GameAtlas", description: "Browse a source-aware Nintendo and PC game catalog.", url: site.canonicalUrl, images: [{ url: site.publicUrl("og-image.png"), width: 1200, height: 630, alt: "GameAtlas — source-aware Nintendo and PC game catalog" }] },
+  twitter: { card: "summary_large_image", title: "Nintendo & PC Games | GameAtlas", description: "Browse a source-aware Nintendo and PC game catalog.", images: [site.publicUrl("og-image.png")] },
   robots: { index: true, follow: true },
 };
 
@@ -33,9 +35,10 @@ export default function Home() {
   const initialCatalogRecords = catalogSearchRecords.slice(0, DEFAULT_PAGE_SIZE);
   const initialSourceListed = initialCatalogRecords.length > 0 && initialCatalogRecords.every((record) => record.platformAssociationScope === "source-listed");
   const initialSearchRecords = initialCatalogRecords.map((record) => toCatalogCardRecord(record, !initialSourceListed));
-  const catalogIndexUrl = `${site.publicUrl("catalog-search-index.json")}?v=${encodeURIComponent(catalogIndexDigest)}`;
+  const catalogIndexUrl = `${site.assetPath("catalog-search-index.json")}?v=${encodeURIComponent(catalogIndexDigest)}`;
 
   return <div className="site-shell">
+    <JsonLd data={createWebSiteStructuredData(site)} />
     <a className="skip-link" href="#main-content">Skip to main content</a>
     <SiteHeader active="browse" />
 
@@ -90,7 +93,7 @@ export default function Home() {
           <p className="section-aside">Search by title, person, platform, genre, year, or creator. Sort the results without turning editorial context into a blended rating.</p>
         </div>
         <noscript><style>{".browser-panel, .result-tools .page-size-field, .hero-search { display: none; }"}</style><p className="noscript-note">Interactive filters and pagination require JavaScript. The first catalog entries remain available below; <Link href="/catalog/">browse every game in the no-JavaScript index</Link>.</p></noscript>
-        <CatalogBrowser initialRecords={initialSearchRecords} initialSourceListed={initialSourceListed} catalogEntryCount={games.length} catalogIndexDigest={catalogIndexDigest} catalogIndexUrl={catalogIndexUrl} catalogIndexHref={site.publicUrl("catalog/")} basePath={site.basePath} />
+        <CatalogBrowser initialRecords={initialSearchRecords} initialSourceListed={initialSourceListed} catalogEntryCount={games.length} catalogIndexDigest={catalogIndexDigest} catalogIndexUrl={catalogIndexUrl} catalogIndexHref={site.assetPath("catalog/")} basePath={site.basePath} />
       </section>
 
       <section className="section-block section-block--method" id="method" aria-labelledby="method-heading">

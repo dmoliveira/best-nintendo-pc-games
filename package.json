@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && touch out/.nojekyll",
+    "build": "npm run generate:catalog-search-index && next build && touch out/.nojekyll",
     "preview": "python3 -m http.server 4173 --directory out",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -21,6 +21,8 @@
     "validate:catalog-chronology": "node scripts/generate-catalog-platform-chronology.mjs --check && node scripts/validate-catalog-platform-chronology.mjs",
     "validate:catalog-expansion": "node scripts/generate-curated-catalog-expansion.mjs --check",
     "validate:export": "node scripts/validate-static-export.mjs",
+    "report:coverage": "node scripts/report-catalog-coverage.mjs",
+    "check:links": "node scripts/check-links.mjs",
     "build:catalog-1000": "node scripts/build-catalog-1000.mjs",
     "generate:catalog-search-index": "tsx scripts/generate-catalog-search-index.ts --write",
     "art:doctor": "codex-image doctor --json",

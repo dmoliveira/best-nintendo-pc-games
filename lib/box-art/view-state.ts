@@ -1,14 +1,24 @@
 export const BOX_VIEW_ANGLES = [0, 90, 180, 270] as const;
 export const BOX_VIEW_ZOOMS = [1, 1.15, 1.3, 1.45] as const;
+export type BoxViewAngle = (typeof BOX_VIEW_ANGLES)[number];
 
 export interface BoxViewState {
-  angle: (typeof BOX_VIEW_ANGLES)[number];
+  angle: BoxViewAngle;
   zoom: (typeof BOX_VIEW_ZOOMS)[number];
 }
 
 export type BoxViewAction = "rotate-left" | "rotate-right" | "zoom-in" | "zoom-out" | "reset";
 
 export const INITIAL_BOX_VIEW_STATE: BoxViewState = { angle: 0, zoom: 1 };
+
+export function normalizeBoxAngle(angle: number): number {
+  return ((angle % 360) + 360) % 360;
+}
+
+export function snapBoxAngle(angle: number): BoxViewAngle {
+  const normalized = normalizeBoxAngle(angle);
+  return BOX_VIEW_ANGLES[Math.floor((normalized + 45) / 90) % BOX_VIEW_ANGLES.length];
+}
 
 function moveIn<T>(values: readonly T[], value: T, direction: -1 | 1): T {
   const index = Math.max(0, values.indexOf(value));

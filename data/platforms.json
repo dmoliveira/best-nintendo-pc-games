@@ -45,7 +45,7 @@
         "N64"
       ],
       "coverage": "populated",
-      "description": "Nintendo’s cartridge-based 64-bit home console family, now represented by a reviewed expansion set of foundational 3D and multiplayer games."
+      "description": "Nintendo’s cartridge-based 64-bit home console family, represented by catalog entries spanning 3D platforming, adventure, and multiplayer."
     },
     {
       "schemaVersion": 1,
@@ -59,7 +59,7 @@
         "GameCube"
       ],
       "coverage": "populated",
-      "description": "Nintendo’s compact optical-disc home console family, now represented by a reviewed expansion set of platform, adventure, and multiplayer anchors."
+      "description": "Nintendo’s compact optical-disc home console family, represented by catalog entries spanning platforming, adventure, and multiplayer."
     },
     {
       "schemaVersion": 1,
@@ -73,7 +73,7 @@
         "Wii mini"
       ],
       "coverage": "populated",
-      "description": "Nintendo’s motion-focused home console family, now represented by a reviewed expansion set spanning social play, platforming, racing, and role-playing."
+      "description": "Nintendo’s motion-focused home console family, represented by catalog entries spanning social play, platforming, racing, and role-playing."
     },
     {
       "schemaVersion": 1,
@@ -87,7 +87,7 @@
         "Nintendo Wii U"
       ],
       "coverage": "populated",
-      "description": "Nintendo’s home console with a controller display, now represented by a reviewed expansion set of platform, racing, multiplayer, and role-playing games."
+      "description": "Nintendo’s home console with a controller display, represented by catalog entries spanning platforming, racing, multiplayer, and role-playing."
     },
     {
       "schemaVersion": 1,
@@ -148,7 +148,7 @@
         "GBC"
       ],
       "coverage": "populated",
-      "description": "Nintendo’s color handheld platform with a distinct software library, now represented by a reviewed expansion set of role-playing, adventure, and platform games."
+      "description": "Nintendo’s color handheld platform with a distinct software library, represented by catalog entries spanning role-playing, adventure, and platform games."
     },
     {
       "schemaVersion": 1,
@@ -241,7 +241,7 @@
         "Computer"
       ],
       "coverage": "populated",
-      "description": "The Windows PC platform baseline, represented by a reviewed cross-genre editorial starter set rather than a claim of complete PC coverage."
+      "description": "The Windows PC platform baseline, represented by a cross-genre catalog subset rather than a claim of complete PC coverage."
     }
   ]
 }
