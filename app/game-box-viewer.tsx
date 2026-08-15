@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element -- static export uses locally governed, base-prefixed asset URLs. */
 
-import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent, type PointerEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties, type KeyboardEvent, type PointerEvent } from "react";
 import { BOX_VIEW_ZOOMS, describeBoxView, INITIAL_BOX_VIEW_STATE, nearestEquivalentBoxAngle, reduceBoxView, renderBoxAngle, snapBoxAngle, type BoxViewAction, type BoxViewState } from "@/lib/box-art/view-state";
 import type { PackagePresentation } from "@/lib/box-art/package-engine";
 
@@ -39,6 +39,10 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
   const frontSrc = failedSource === approvedFrontSrc ? undefined : approvedFrontSrc;
   const isSourceListedReference = presentation.presentationMode === "source-listed-reference";
   const canRotate = viewer.canRotate && presentation.formatKind === "physical" && !isSourceListedReference;
+  const setStageRef = useCallback((node: HTMLDivElement | null) => {
+    stageRef.current = node;
+    if (node) node.dataset.boxHydrated = "true";
+  }, []);
 
   useEffect(() => {
     const onFullscreenChange = () => {
@@ -259,7 +263,7 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
     </div>
     <div
       className="game-box-stage"
-      ref={stageRef}
+      ref={setStageRef}
       data-game-box-stage="true"
       data-package-profile={profile.id}
       data-package-kind={presentation.formatKind}

@@ -77,7 +77,7 @@ async function unusedPort() {
   return port;
 }
 
-async function waitFor(check, timeoutMs = 30_000) {
+async function waitFor(check, timeoutMs = 30_000, label = "condition") {
   const deadline = Date.now() + timeoutMs;
   let lastError;
   while (Date.now() < deadline) {
@@ -89,7 +89,8 @@ async function waitFor(check, timeoutMs = 30_000) {
     }
     await new Promise((resolve) => setTimeout(resolve, 80));
   }
-  throw lastError ?? new Error("timed out");
+  const detail = lastError instanceof Error ? `: ${lastError.message}` : "";
+  throw new Error(`timed out waiting for ${label}${detail}`);
 }
 
 class CdpClient {
@@ -163,6 +164,14 @@ async function releaseDrag(client, { endX, y }) {
 }
 
 const desktopMetrics = { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false };
+
+async function waitForGameBoxReady(client, title, { rotate = false } = {}) {
+  await waitFor(
+    () => client.evaluate(`(() => { const stage = document.querySelector("[data-game-box-stage]"); return document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(title)} && stage?.dataset.boxHydrated === "true" && ${rotate ? 'Boolean(document.querySelector("[data-box-action=rotate-right]"))' : "true"}; })()`),
+    30_000,
+    `hydrated package viewer for ${title}`,
+  );
+}
 
 async function catalogIndexRequestCount(client) {
   const requestDetails = await client.evaluate('(() => ({ origin: window.location.origin, urls: performance.getEntriesByType("resource").filter((entry) => new URL(entry.name).pathname.endsWith("/catalog-search-index.json")).map((entry) => entry.name) }))()');
@@ -433,7 +442,7 @@ async function main() {
     await client.open();
     await client.send("Page.enable");
     await client.send("Runtime.enable");
-    await waitFor(() => client.evaluate('Boolean(document.querySelector("[data-game-box-stage]"))'));
+    await waitForGameBoxReady(client, physicalFallbackGame.title, { rotate: true });
 
     const semantics = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); const note = document.querySelector(".game-box-viewer-note"); return { role: stage?.getAttribute("role"), label: stage?.getAttribute("aria-label"), describedBy: stage?.getAttribute("aria-describedby"), fallback: document.body.textContent.includes("GameAtlas reference case"), fallbackRole: fallback?.getAttribute("role"), panelPolicy: note?.textContent?.includes("original GameAtlas editorial panels") }; })()');
     if (semantics.role !== "group" || !semantics.label?.includes("Interactive package view") || !semantics.describedBy || !semantics.fallback || semantics.fallbackRole !== "img" || !semantics.panelPolicy) fail("viewer baseline semantics, original-panel policy, or fallback copy is missing");
@@ -522,7 +531,7 @@ async function main() {
 
     const panelStressPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${panelStressGame.slug}/`;
     await client.send("Page.navigate", { url: panelStressPageUrl });
-    await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(panelStressGame.title)}`));
+    await waitForGameBoxReady(client, panelStressGame.title, { rotate: true });
     await client.send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: false });
     await client.evaluate('document.querySelector("[data-game-box-stage]").focus()');
     await client.evaluate('document.querySelector("[data-box-action=rotate-right]").click()');
@@ -539,7 +548,7 @@ async function main() {
     const expectedFrontSrc = `${basePath}/${publishedFront.path.replace(/^public\//, "")}`;
     const publishedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${publishedBoxGame.slug}/`;
     await client.send("Page.navigate", { url: publishedPageUrl });
-    await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(publishedBoxGame.title)}`));
+    await waitForGameBoxReady(client, publishedBoxGame.title);
     const publishedState = await waitFor(async () => {
       const state = await client.evaluate('(() => { const front = document.querySelector(".game-box__front img"); const editorial = document.querySelector(".game-box-stage__editorial-art"); if (!front || !editorial) return null; const resources = performance.getEntriesByType("resource"); const startFor = (element) => { const pathname = new URL(element.src, document.baseURI).pathname; return resources.find((entry) => new URL(entry.name).pathname === pathname)?.startTime; }; return { src: front.getAttribute("src"), loaded: front.complete && front.naturalWidth > 0 && front.naturalHeight > 0, disclosure: document.body.textContent.includes("AI-generated GameAtlas editorial art"), frontLoading: front.getAttribute("loading"), frontDecoding: front.getAttribute("decoding"), frontPriority: front.getAttribute("fetchpriority"), editorialLoading: editorial.getAttribute("loading"), editorialDecoding: editorial.getAttribute("decoding"), editorialPriority: editorial.getAttribute("fetchpriority"), frontBeforeEditorial: Boolean(front.compareDocumentPosition(editorial) & Node.DOCUMENT_POSITION_FOLLOWING), frontStart: startFor(front), editorialStart: startFor(editorial) }; })()');
       return state?.loaded ? state : null;
@@ -549,7 +558,7 @@ async function main() {
 
     const digitalPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${digitalGame.slug}/`;
     await client.send("Page.navigate", { url: digitalPageUrl });
-    await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(digitalGame.title)}`));
+    await waitForGameBoxReady(client, digitalGame.title);
     const digitalDragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const rect = stage?.getBoundingClientRect(); return rect ? { startX: rect.left + 20, endX: rect.left + 170, y: rect.top + rect.height / 2 } : null; })()');
     if (!digitalDragCoordinates) fail("digital package stage did not expose drag coordinates");
     await drag(client, digitalDragCoordinates);
@@ -559,7 +568,7 @@ async function main() {
 
     const sourceListedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${sourceListedReferenceGame.slug}/`;
     await client.send("Page.navigate", { url: sourceListedPageUrl });
-    await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(sourceListedReferenceGame.title)}`));
+    await waitForGameBoxReady(client, sourceListedReferenceGame.title);
     const sourceListedDragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); const rect = stage?.getBoundingClientRect(); return rect ? { startX: rect.left + 20, endX: rect.left + 170, y: rect.top + rect.height / 2 } : null; })()');
     if (!sourceListedDragCoordinates) fail("source-listed reference stage did not expose drag coordinates");
     await drag(client, sourceListedDragCoordinates);
@@ -579,7 +588,7 @@ async function main() {
     await validateCatalogBrowser(client, `http://127.0.0.1:${preview.port}${basePath}/`, catalogRepresentativeGame, deferredCatalogPlatformId, deferredCatalogPlatformCount);
 
     await client.send("Page.navigate", { url: pageUrl });
-    await waitFor(() => client.evaluate('Boolean(document.querySelector("[data-game-box-stage]"))'));
+    await waitForGameBoxReady(client, physicalFallbackGame.title, { rotate: true });
     await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }, { name: "forced-colors", value: "active" }] });
     const mediaState = await client.evaluate('(() => { const panelStyle = (selector) => { const style = getComputedStyle(document.querySelector(selector)); return { background: style.backgroundColor, border: style.borderTopColor, color: style.color }; }; return { reduce: matchMedia("(prefers-reduced-motion: reduce)").matches, forced: matchMedia("(forced-colors: active)").matches, duration: getComputedStyle(document.querySelector(".game-box")).transitionDuration, willChange: getComputedStyle(document.querySelector(".game-box")).willChange, spine: panelStyle(".game-box__spine"), back: panelStyle(".game-box__back") }; })()');
     const panelsHaveForcedContrast = [mediaState.spine, mediaState.back].every((panel) => panel.background && panel.border && panel.color && panel.background !== panel.color && panel.border === panel.color);
