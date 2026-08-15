@@ -157,10 +157,11 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   const yearFrom = state.yearFrom || state.year;
   const yearTo = state.yearTo || state.year;
   const activeFilterCount = platforms.length + genres.length + [state.q, yearFrom || yearTo, state.developer, state.publisher].filter(Boolean).length;
+  const hasFacetQueries = Boolean(platformQuery || genreQuery);
   const developerLabel = state.developer ? developerOptions.find((option) => option.id === state.developer)?.label ?? state.developer : "";
   const publisherLabel = state.publisher ? publisherOptions.find((option) => option.id === state.publisher)?.label ?? state.publisher : "";
   const pendingFilterQuery = hydrated && !catalogReady && hasCatalogFilterQuery(window.location.search);
-  const hasVisibleFilters = activeFilterCount > 0 || pendingFilterQuery;
+  const hasVisibleFilters = activeFilterCount > 0 || pendingFilterQuery || hasFacetQueries;
 
   const loadCatalogIndex = useCallback((force = false) => {
     if (indexRequestRef.current || indexStatusRef.current === "loading" || indexStatusRef.current === "ready" || (indexStatusRef.current === "error" && !force)) return;
@@ -382,7 +383,7 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
     <form className="browser-panel" id="catalog-search" role="search" aria-label="Catalog search and filters" onSubmit={(event) => event.preventDefault()}>
       <div className="browser-panel-heading">
         <div><p className="eyebrow">Find your next favorite</p><h3>Filter the atlas. <span className="browser-panel-count">{catalogReady ? filteredRecords.length : catalogEntryCount} games</span></h3></div>
-        <div className="browser-panel-status"><span>{activeFilterCount ? `${activeFilterCount} active` : pendingFilterQuery ? "Pending filters" : "All picks"}</span>{hasVisibleFilters ? <button className="browser-button browser-button--clear" type="button" onClick={clearFilters}>Clear all</button> : null}</div>
+        <div className="browser-panel-status"><span>{activeFilterCount ? `${activeFilterCount} active` : pendingFilterQuery ? "Pending filters" : hasFacetQueries ? "Facet search" : "All picks"}</span>{hasVisibleFilters ? <button className="browser-button browser-button--clear" type="button" onClick={clearFilters}>Clear all</button> : null}</div>
       </div>
       <div className="browser-controls">
         <label className="browser-field browser-field--query" htmlFor="catalog-query"><span>Search games</span><span className="browser-input"><span className="field-icon" aria-hidden="true">⌕</span><input id="catalog-query" type="search" value={state.q} onChange={(event) => updateQuery(event.target.value)} placeholder="Title, person, platform, or keyword" /></span></label>
