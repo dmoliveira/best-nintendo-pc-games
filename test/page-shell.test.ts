@@ -68,6 +68,8 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /changedFields/);
   assert.match(browser, /catalog-index-status/);
   assert.match(browser, /hasCatalogQuery/);
+  assert.match(browser, /hasCatalogFilterQuery/);
+  assert.match(browser, /Pending filters/);
   assert.match(browser, /IntersectionObserver/);
   assert.match(browser, /rootMargin: "800px 0px"/);
   assert.match(browser, /data-catalog-index-status=\{indexStatus\}/);

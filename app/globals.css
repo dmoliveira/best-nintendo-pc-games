@@ -2278,6 +2278,26 @@ h1 {
   .footer-links {
     grid-column: 1 / -1;
   }
+
+  .browser-check-list {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .browser-check {
+    min-height: 44px;
+  }
+
+  .browser-check span {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  .browser-check input {
+    height: 18px;
+    width: 18px;
+  }
 }
 
 @media (max-width: 620px) {
