@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { getCatalogSearchRecords } from "../lib/catalog/site-data";
-import { clearCatalogFilters, createSearchStateOptions, filterCatalog, getCatalogPaginationItems, normalizeSearchText, paginateCatalog, parseSearchState, serializeSearchState, toCatalogCardRecord, type SearchStateOptions } from "../lib/catalog/search";
+import { clearCatalogFilters, createSearchStateOptions, filterCatalog, getEffectiveCatalogSort, getCatalogPaginationItems, normalizeSearchText, paginateCatalog, parseSearchState, serializeSearchState, toCatalogCardRecord, type SearchStateOptions } from "../lib/catalog/search";
 
 const records = getCatalogSearchRecords();
 const options: SearchStateOptions = {
@@ -71,6 +71,14 @@ test("sorts by release, platform, title, and query relevance with stable ties", 
 
   const mario = filterCatalog(records, { q: "mario", platform: "", genre: "", year: "", sort: "relevance" });
   assert.match(mario[0]?.title ?? "", /mario/i);
+});
+
+test("uses title order until a query makes relevance meaningful", () => {
+  assert.equal(getEffectiveCatalogSort({ q: "", sort: "relevance" }), "title");
+  assert.equal(getEffectiveCatalogSort({ q: "mario", sort: "relevance" }), "relevance");
+  assert.equal(getEffectiveCatalogSort({ q: "", sort: "newest" }), "newest");
+  const defaultResults = filterCatalog(records, { q: "", platform: "", genre: "", year: "", sort: "relevance" });
+  assert.deepEqual(defaultResults.map((record) => normalizeSearchText(record.title)), [...defaultResults].map((record) => normalizeSearchText(record.title)).sort());
 });
 
 test("clamps pagination and exposes stable ranges", () => {
