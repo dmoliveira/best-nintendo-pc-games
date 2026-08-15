@@ -281,6 +281,10 @@ async function waitForCatalogReady(client) {
   await waitFor(() => client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready" && document.querySelector(".result-summary")?.textContent?.includes("matching games")'));
 }
 
+async function waitForAnimationFrames(client) {
+  await client.evaluate('new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
+}
+
 async function validateCatalogBrowser(client, preview, catalogUrl, representativeGame, deferredPlatformId, deferredPlatformCount) {
   await client.send("Emulation.setDeviceMetricsOverride", desktopMetrics);
   await client.send("Emulation.setEmulatedMedia", { features: [] });
@@ -462,7 +466,7 @@ async function validateCatalogBrowser(client, preview, catalogUrl, representativ
 
   await client.send("Page.navigate", { url: catalogUrl });
   await waitForCatalogShell(client);
-  await new Promise((resolve) => setTimeout(resolve, 350));
+  await waitForAnimationFrames(client);
   const beforeIntersectionRequests = await catalogIndexRequestCount(client);
   if (beforeIntersectionRequests !== 0 || await client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus !== "idle"')) fail(`catalog index did not remain deferred before intersection: ${JSON.stringify({ beforeIntersectionRequests })}`);
   await client.evaluate('document.querySelector(".catalog-browser")?.scrollIntoView({ block: "start" })');
@@ -483,7 +487,7 @@ async function validateCatalogBrowser(client, preview, catalogUrl, representativ
 
   await client.send("Page.navigate", { url: `${catalogUrl}?utm_source=browser-validation` });
   await waitForCatalogShell(client);
-  await new Promise((resolve) => setTimeout(resolve, 350));
+  await waitForAnimationFrames(client);
   const unrelatedQueryState = await client.evaluate('(() => ({ status: document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus, summary: document.querySelector(".result-summary")?.textContent }))()');
   const unrelatedQueryRequests = await catalogIndexRequestCount(client);
   if (unrelatedQueryState.status !== "idle" || unrelatedQueryRequests !== 0 || !unrelatedQueryState.summary?.includes("Browse or use filters to load the full catalog")) fail(`unrelated URL parameters triggered a catalog index request: ${JSON.stringify({ unrelatedQueryState, unrelatedQueryRequests })}`);
