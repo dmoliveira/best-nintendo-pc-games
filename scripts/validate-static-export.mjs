@@ -10,9 +10,11 @@ function fail(message) { console.error(`Static export validation failed: ${messa
 if (!fs.existsSync(outDir)) { fail(`missing output directory ${outDir}`); process.exit(1); }
 for (const file of requiredFiles) if (!fs.existsSync(path.join(outDir, file))) fail(`missing ${file}`);
 const html = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
-for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth your time.", "Start with a game."]) if (!html.includes(expected)) fail(`home page does not contain ${JSON.stringify(expected)}`);
+for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth your time.", "Start with a game.", "Search games", "Showing"]) if (!html.includes(expected)) fail(`home page does not contain ${JSON.stringify(expected)}`);
+if (!/Showing[\s\S]{0,120}of[\s\S]{0,120}reviewed games/.test(html)) fail("home page is missing the accessible result count");
 if (!html.includes("docs/rights-and-support-policy")) fail("home page is missing the policy link");
-if (html.includes("Catalog search is coming soon") || html.includes("Catalog coming soon") || html.includes("80+")) fail("home page exposes stale preview or unauthorized numeric messaging");
+if (html.includes("Catalog search is coming soon") || html.includes("Catalog coming soon") || html.includes("next discovery layer") || html.includes("discovery tools arrive") || html.includes("80+")) fail("home page exposes stale preview or unauthorized numeric messaging");
+for (const forbidden of ["sourceUrl", "termsUrl", "rightsStatus", "verificationStatus", "capturedAt", "recheckAt"]) if (html.includes(forbidden)) fail(`home page leaks raw evidence field ${forbidden}`);
 if (html.includes("action=\"/\"")) fail("home page contains a root-relative form action that bypasses the Pages base path");
 const sitemap = fs.readFileSync(path.join(outDir, "sitemap.xml"), "utf8");
 if (expectedBasePath && !sitemap.includes(expectedBasePath)) fail(`sitemap does not include ${expectedBasePath || "/"}`);
