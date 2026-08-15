@@ -42,6 +42,7 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /browser-facet-search/);
   assert.match(browser, /visiblePlatformOptions/);
   assert.match(browser, /visibleGenreOptions/);
+  assert.match(browser, /function clearFilters\(\) \{\s+const nextState = clearCatalogFilters\(state\);\s+setPlatformQuery\(""\);\s+setGenreQuery\(""\);/);
   assert.doesNotMatch(browser, /activeSortLabel/);
   assert.match(browser, /Display/);
   assert.match(browser, /display-disclosure/);
