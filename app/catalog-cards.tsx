@@ -23,38 +23,38 @@ export default function CatalogCards({ records }: CatalogCardsProps) {
     const sameTeam = record.developer && record.publisher && record.developer === record.publisher;
     const distributionLabel = record.releaseFormat === "digital" ? "Digital" : record.releaseFormat === "cartridge" ? "Cartridge" : undefined;
     const creditTitle = sameTeam ? `Team: ${record.developer}` : [record.developer ? `Dev: ${record.developer}` : null, record.publisher ? `Pub: ${record.publisher}` : null].filter(Boolean).join(" · ");
+
     return <article className="game-card" key={record.slug}>
-      <div className="game-card-art">
+      <div className="game-card-topline"><span>{record.editorialLabel ?? "Editorial pick"}</span><span>{record.releaseYear}</span></div>
+      <Link className="game-card-art" href={`/games/${record.slug}/`} aria-label={`Open ${record.title} game page`}>
         {record.artPath ? <img src={record.artPath} alt="" loading="lazy" /> : <span className="game-card-emoji" aria-hidden="true">{record.emoji}</span>}
-        <div className="game-card-art-rail">
-          {record.editorialLabel ? <span className="editorial-badge"><span className="editorial-dot" aria-hidden="true" />{record.editorialLabel}</span> : null}
+        <span className="game-card-art-rail">{record.editorialLabel ? <span className="editorial-badge"><span className="editorial-dot" aria-hidden="true" />{record.editorialLabel}</span> : null}<span className="game-card-year">{record.releaseYear}</span></span>
+        <span className="art-link-label">View guide <span aria-hidden="true">↗</span></span>
+      </Link>
+      <div className="game-card-body">
+        <h3><Link href={`/games/${record.slug}/`}>{record.title}</Link></h3>
+        <div className="game-card-fact-row">
+          <div className="game-card-platforms" aria-label={`Platforms: ${record.platformLabels.join(", ")}`}>
+            {visiblePlatforms.map((platformId, index) => <span className="game-card-platform" key={platformId} title={record.platformLabels[index]}>
+              <PlatformGlyph platformId={platformId} />
+              {record.platformHubIds.includes(platformId) ? <Link aria-label={`Open ${record.platformLabels[index]} platform guide`} href={`/platforms/${platformId}/`}>{record.platformDisplayLabels[index]}</Link> : <span>{record.platformDisplayLabels[index]}</span>}
+            </span>)}
+            {hiddenPlatformCount > 0 ? <span className="game-card-platform game-card-platform--more">+{hiddenPlatformCount}</span> : null}
+          </div>
+          <div className="game-card-fact-aside"><span className="game-card-year">{record.releaseYear}</span>{distributionLabel ? <span className="game-card-distribution">{distributionLabel}</span> : null}</div>
         </div>
-      </div>
-      <h3><Link href={`/games/${record.slug}/`}>{record.title}</Link></h3>
-      <div className="game-card-fact-row">
-        <div className="game-card-platforms" aria-label={`Platforms: ${record.platformLabels.join(", ")}`}>
-          {visiblePlatforms.map((platformId, index) => <span className="game-card-platform" key={platformId} title={record.platformLabels[index]}>
-            <PlatformGlyph platformId={platformId} />
-            {record.platformHubIds.includes(platformId) ? <Link aria-label={`Open ${record.platformLabels[index]} platform guide`} href={`/platforms/${platformId}/`}>{record.platformDisplayLabels[index]}</Link> : <span>{record.platformDisplayLabels[index]}</span>}
-          </span>)}
-          {hiddenPlatformCount > 0 ? <span className="game-card-platform game-card-platform--more">+{hiddenPlatformCount}</span> : null}
+        <p className="game-card-description">{record.shortDescription}</p>
+        {record.developer || record.publisher ? <div className="game-card-credits" aria-label="Credits" title={creditTitle}>
+          {sameTeam ? <span><b>Team</b>{record.developer}</span> : <span>{record.developer ? <><b>Dev</b>{record.developer}</> : null}{record.developer && record.publisher ? <span className="credit-divider" aria-hidden="true"> · </span> : null}{record.publisher ? <><b>Pub</b>{record.publisher}</> : null}</span>}
+        </div> : null}
+        <div className="tag-list" aria-label="Genres">
+          {visibleGenres.map((genreId, index) => record.genreHubIds.includes(genreId) ? <Link className={`tag tag--${getGenreTone(genreId)}`} href={`/genres/${genreId}/`} key={genreId}>{record.genreLabels[index]}</Link> : <span className={`tag tag--${getGenreTone(genreId)}`} key={genreId}>{record.genreLabels[index]}</span>)}
+          {hiddenGenreCount > 0 ? <span className="tag tag--more">+{hiddenGenreCount} more</span> : null}
         </div>
-        <div className="game-card-fact-aside">
-          <span className="game-card-year">{record.releaseYear}</span>
-          {distributionLabel ? <span className="game-card-distribution">{distributionLabel}</span> : null}
+        <div className="game-card-footer">
+          {record.criticalLink ? <a className="score-link" href={record.criticalLink.url} target="_blank" rel="noreferrer" aria-label={`Open ${externalLabel(record.criticalLink.label)} critical context for ${record.title} in a new tab`}><span className="score-link-label">Score</span><span>{externalLabel(record.criticalLink.label)} ↗</span></a> : <span className="score-link score-link--pending"><span className="score-link-label">Score</span><span>Context pending</span></span>}
+          <Link className="card-link" href={`/games/${record.slug}/`}>Read the game page <span aria-hidden="true">↗</span></Link>
         </div>
-      </div>
-      <p className="game-card-description">{record.shortDescription}</p>
-      {record.developer || record.publisher ? <div className="game-card-credits" aria-label="Credits" title={creditTitle}>
-        {sameTeam ? <span><b>Team</b>{record.developer}</span> : <span>{record.developer ? <><b>Dev</b>{record.developer}</> : null}{record.developer && record.publisher ? <span className="credit-divider" aria-hidden="true"> · </span> : null}{record.publisher ? <><b>Pub</b>{record.publisher}</> : null}</span>}
-      </div> : null}
-      <div className="tag-list" aria-label="Genres">
-        {visibleGenres.map((genreId, index) => record.genreHubIds.includes(genreId) ? <Link className={`tag tag--${getGenreTone(genreId)}`} href={`/genres/${genreId}/`} key={genreId}>{record.genreLabels[index]}</Link> : <span className={`tag tag--${getGenreTone(genreId)}`} key={genreId}>{record.genreLabels[index]}</span>)}
-        {hiddenGenreCount > 0 ? <span className="tag tag--more">+{hiddenGenreCount} more</span> : null}
-      </div>
-      <div className="game-card-footer">
-        {record.criticalLink ? <a className="score-link" href={record.criticalLink.url} target="_blank" rel="noreferrer" aria-label={`Open ${externalLabel(record.criticalLink.label)} critical context for ${record.title} in a new tab`}><span className="score-link-label">Score</span><span>{externalLabel(record.criticalLink.label)} ↗</span></a> : <span className="score-link score-link--pending"><span className="score-link-label">Score</span><span>Context pending</span></span>}
-        <Link className="card-link" href={`/games/${record.slug}/`}>Read the game page <span aria-hidden="true">↗</span></Link>
       </div>
     </article>;
   })}</div>;

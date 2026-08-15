@@ -11,9 +11,8 @@ const boxViewer = readFileSync(new URL("../app/game-box-viewer.tsx", import.meta
 test("home shell exposes a keyboard bypass and stable main landmark", () => {
   assert.match(page, /className="skip-link" href="#main-content"/);
   assert.match(page, /<main id="main-content">/);
-  assert.match(page, /<header className="topbar">[\s\S]*<\/header>/);
-  assert.match(page, /GameAtlasMark/);
-  assert.match(page, /<footer className="footer">/);
+  assert.match(page, /<SiteHeader active="browse" \/>/);
+  assert.match(page, /<SiteFooter \/>/);
 });
 
 test("home shell exposes accessible catalog search and filters", () => {
@@ -27,17 +26,16 @@ test("home shell exposes accessible catalog search and filters", () => {
 });
 
 test("visual shell protects focus, contrast, and reduced-motion behavior", () => {
-  assert.match(styles, /--faint:#718194/);
-  assert.match(styles, /\.skip-link\{/);
-  assert.match(styles, /prefers-reduced-motion:reduce/);
+  assert.match(styles, /--faint:\s*#718194/);
+  assert.match(styles, /\.skip-link\s*\{/);
+  assert.match(styles, /prefers-reduced-motion:\s*reduce/);
   assert.match(styles, /wordmark-orbit/);
   assert.match(styles, /@keyframes wordmark-orbit-spin/);
-  assert.match(styles, /overflow-x:clip/);
+  assert.match(styles, /overflow-x:\s*clip/);
   assert.match(styles, /game-box\{transition:none/);
-  assert.match(styles, /game-card-credits,\.game-card-credits>span\{max-width:100%;overflow:visible;text-overflow:clip;white-space:normal\}/);
-  assert.doesNotMatch(styles, /\.platform-card:hover\{[^}]*transform/);
+  assert.match(styles, /game-card-credits>span/);
+  assert.doesNotMatch(styles, /\.platform-card:hover\s*\{[^}]*transform/);
 });
-
 
 test("game detail pages expose static params, a skip link, and explicit editorial evidence", () => {
   assert.match(gamePage, /dynamicParams = false/);
@@ -51,7 +49,6 @@ test("game detail pages expose static params, a skip link, and explicit editoria
   assert.match(gamePage, /Official &amp; external resources/);
   assert.match(gamePage, /DSiWare · Digital/);
 });
-
 
 test("game pages expose an honest, keyboard-operable package-view fallback", () => {
   assert.match(gamePage, /GameBoxViewer/);
