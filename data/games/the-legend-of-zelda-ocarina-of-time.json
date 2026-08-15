@@ -55,7 +55,13 @@
       "kind": "official"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/the-legend-of-zelda-ocarina-of-time.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: Ocarina of Time",
+      "provenanceId": "gameatlas-art-the-legend-of-zelda-ocarina-of-time"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
     "gameatlas-editorial"

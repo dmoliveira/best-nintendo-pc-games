@@ -50,11 +50,23 @@
       "label": "Official Steam store page",
       "url": "https://store.steampowered.com/app/391540/Undertale/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/undertale/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/undertale.svg",
+      "alt": "Abstract GameAtlas art tile for Undertale",
+      "provenanceId": "gameatlas-art-undertale"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

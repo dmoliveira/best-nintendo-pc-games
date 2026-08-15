@@ -52,11 +52,23 @@
       "label": "Nintendo product page",
       "url": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-tears-of-the-kingdom-switch/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/the-legend-of-zelda-tears-of-the-kingdom/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/the-legend-of-zelda-tears-of-the-kingdom.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: Tears of the Kingdom",
+      "provenanceId": "gameatlas-art-the-legend-of-zelda-tears-of-the-kingdom"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

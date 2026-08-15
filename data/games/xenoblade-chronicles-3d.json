@@ -52,7 +52,13 @@
       "kind": "official"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/xenoblade-chronicles-3d.svg",
+      "alt": "Abstract GameAtlas art tile for Xenoblade Chronicles 3D",
+      "provenanceId": "gameatlas-art-xenoblade-chronicles-3d"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
     "gameatlas-editorial"

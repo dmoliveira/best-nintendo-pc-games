@@ -55,7 +55,13 @@
       "kind": "reference"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/the-legend-of-zelda-oracle-of-ages.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: Oracle of Ages",
+      "provenanceId": "gameatlas-art-the-legend-of-zelda-oracle-of-ages"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
     "gameatlas-editorial"

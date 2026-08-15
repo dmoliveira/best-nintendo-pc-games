@@ -51,11 +51,23 @@
       "label": "Official game page",
       "url": "https://www.nintendo.co.jp/wiiu/agmj/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/splatoon/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/splatoon.svg",
+      "alt": "Abstract GameAtlas art tile for Splatoon",
+      "provenanceId": "gameatlas-art-splatoon"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

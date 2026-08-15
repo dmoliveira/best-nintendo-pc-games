@@ -50,11 +50,23 @@
       "label": "Official Steam store page",
       "url": "https://store.steampowered.com/app/413150/Stardew_Valley/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/stardew-valley/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/stardew-valley.svg",
+      "alt": "Abstract GameAtlas art tile for Stardew Valley",
+      "provenanceId": "gameatlas-art-stardew-valley"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

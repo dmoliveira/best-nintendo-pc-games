@@ -53,11 +53,23 @@
       "label": "Nintendo Life DSiWare reference",
       "url": "https://www.nintendolife.com/games/dsiware/shantae_riskys_revenge",
       "kind": "reference"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/shantae-riskys-revenge/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/shantae-riskys-revenge.svg",
+      "alt": "Abstract GameAtlas art tile for Shantae: Risky’s Revenge",
+      "provenanceId": "gameatlas-art-shantae-riskys-revenge"
+    }
+  ],
   "sources": [
     "nintendo-life-reference",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

@@ -49,11 +49,23 @@
       "label": "Nintendo 3DS product page",
       "url": "https://www.nintendo.com/au/games/nintendo-3ds/super-mario-3d-land/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/super-mario-3d-land/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/super-mario-3d-land.svg",
+      "alt": "Abstract GameAtlas art tile for Super Mario 3D Land",
+      "provenanceId": "gameatlas-art-super-mario-3d-land"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

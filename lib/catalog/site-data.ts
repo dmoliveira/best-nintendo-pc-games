@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { localTodayKey } from "../date-policy.mjs";
+import { createSiteConfig } from "../site-config";
 import { normalizeSearchText, type CatalogSearchRecord } from "./search";
 import { validateGameRecord } from "./validator";
 import type {
@@ -21,6 +22,7 @@ export interface CatalogGame {
 }
 
 const root = process.cwd();
+const site = createSiteConfig(process.env);
 
 function loadJson(relativePath: string): unknown {
   return JSON.parse(fs.readFileSync(path.join(/* turbopackIgnore: true */ root, relativePath), "utf8")) as unknown;
@@ -191,6 +193,8 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
     title: game.title,
     aliases: [...game.aliases],
     emoji: game.emoji,
+    artPath: game.assets[0] ? site.publicUrl(game.assets[0].path.replace(/^public\//, "")) : undefined,
+    artAlt: game.assets[0]?.alt,
     shortDescription: game.shortDescription,
     searchText,
     releaseYear: game.release.year,

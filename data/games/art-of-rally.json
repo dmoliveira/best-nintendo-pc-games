@@ -49,11 +49,23 @@
       "label": "Official Steam store page",
       "url": "https://store.steampowered.com/app/550320/art_of_rally/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/art-of-rally/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/art-of-rally.svg",
+      "alt": "Abstract GameAtlas art tile for art of rally",
+      "provenanceId": "gameatlas-art-art-of-rally"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

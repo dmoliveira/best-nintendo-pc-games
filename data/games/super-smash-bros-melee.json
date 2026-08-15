@@ -52,11 +52,23 @@
       "label": "Official game page",
       "url": "https://www.nintendo.co.jp/ngc/galj/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/super-smash-bros-melee/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/super-smash-bros-melee.svg",
+      "alt": "Abstract GameAtlas art tile for Super Smash Bros. Melee",
+      "provenanceId": "gameatlas-art-super-smash-bros-melee"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

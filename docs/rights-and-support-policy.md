@@ -49,6 +49,8 @@ The registry deliberately does not claim that an API response or a public web pa
 
 The machine-readable asset policy is [`data/asset-rights.json`](../data/asset-rights.json). Every local image needs a manifest record before it is referenced by a game or page. The record must identify its source/creator, license or permission, intended use, attribution, alt text, reviewer, and recheck date.
 
+Generated GameAtlas art tiles are original abstract editorial vectors and are not box-art, screenshots, logos, or character recreations. Official screenshots and box art remain outbound-only until a title-specific redistribution permission is recorded in the asset manifest.
+
 The default launch path is:
 
 - original abstract editorial artwork generated for GameAtlas;

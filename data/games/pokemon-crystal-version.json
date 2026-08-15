@@ -53,7 +53,13 @@
       "kind": "official"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/pokemon-crystal-version.svg",
+      "alt": "Abstract GameAtlas art tile for Pokémon Crystal Version",
+      "provenanceId": "gameatlas-art-pokemon-crystal-version"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
     "gameatlas-editorial"

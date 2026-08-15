@@ -59,7 +59,13 @@
       "kind": "official"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/super-mario-bros.svg",
+      "alt": "Abstract GameAtlas art tile for Super Mario Bros.",
+      "provenanceId": "gameatlas-art-super-mario-bros"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
     "gameatlas-editorial"

@@ -52,11 +52,23 @@
       "label": "Nintendo Life DSiWare reference",
       "url": "https://www.nintendolife.com/games/dsiware/mario_vs_donkey_kong_minis_march_again",
       "kind": "reference"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/mario-vs-donkey-kong-minis-march-again/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/mario-vs-donkey-kong-minis-march-again.svg",
+      "alt": "Abstract GameAtlas art tile for Mario vs. Donkey Kong: Minis March Again!",
+      "provenanceId": "gameatlas-art-mario-vs-donkey-kong-minis-march-again"
+    }
+  ],
   "sources": [
     "nintendo-life-reference",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

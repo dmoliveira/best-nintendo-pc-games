@@ -49,11 +49,23 @@
       "label": "Official game page",
       "url": "https://www.nintendo.co.jp/n01/n64/software/nus_p_ngej/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/goldeneye-007/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/goldeneye-007.svg",
+      "alt": "Abstract GameAtlas art tile for GoldenEye 007",
+      "provenanceId": "gameatlas-art-goldeneye-007"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

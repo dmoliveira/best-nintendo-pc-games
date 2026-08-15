@@ -50,11 +50,23 @@
       "label": "Official Steam store page",
       "url": "https://store.steampowered.com/app/1086940/Baldurs_Gate_3/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/baldurs-gate-3/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/baldurs-gate-3.svg",
+      "alt": "Abstract GameAtlas art tile for Baldur’s Gate 3",
+      "provenanceId": "gameatlas-art-baldurs-gate-3"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

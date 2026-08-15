@@ -52,11 +52,23 @@
       "label": "Official game page",
       "url": "https://www.nintendo.com/us/store/products/donkey-kong-bananza-switch-2/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/donkey-kong-bananza/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/donkey-kong-bananza.svg",
+      "alt": "Abstract GameAtlas art tile for Donkey Kong Bananza",
+      "provenanceId": "gameatlas-art-donkey-kong-bananza"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

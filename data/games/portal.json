@@ -54,7 +54,13 @@
       "kind": "official"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/portal.svg",
+      "alt": "Abstract GameAtlas art tile for Portal",
+      "provenanceId": "gameatlas-art-portal"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
     "gameatlas-editorial"
