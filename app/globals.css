@@ -3114,7 +3114,7 @@ h1 {
     justify-content: flex-start;
   }
 
-  .layout-control {
+  .layout-control:not(.layout-control--images) {
     display: none;
   }
 
@@ -3163,3 +3163,13 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.layout-control--images{border-left:1px solid var(--line);margin-left:4px;padding-left:14px}
+@media(min-width:801px){
+  .game-grid--columns-1 .game-card--no-image .game-card-body{grid-column:1/-1;padding:15px 18px 14px}
+}
+@media(max-width:800px){
+  .layout-control--images{border-left:0;margin-left:0;padding-left:0}
+}
+
+.game-card-compact-rail{margin:0 0 9px}

@@ -20,12 +20,12 @@ test("normalizes punctuation, diacritics, and whitespace for search", () => {
 });
 
 test("round-trips canonical URL search state and drops unknown filters", () => {
-  const state = { q: "  mario   kart ", platform: "pc-windows,nintendo-switch", genre: "racing,action", year: "", columns: "3" as const, yearFrom: "2010", yearTo: "2023", developer: "nintendo", publisher: "nintendo", sort: "newest" as const, page: 2, pageSize: 48 as const };
+  const state = { q: "  mario   kart ", platform: "pc-windows,nintendo-switch", genre: "racing,action", year: "", columns: "3" as const, images: "hide" as const, yearFrom: "2010", yearTo: "2023", developer: "nintendo", publisher: "nintendo", sort: "newest" as const, page: 2, pageSize: 48 as const };
   const query = serializeSearchState(state);
-  assert.equal(query, "?q=mario+kart&platform=nintendo-switch%2Cpc-windows&genre=action%2Cracing&from=2010&to=2023&developer=nintendo&publisher=nintendo&sort=newest&page=2&perPage=48&columns=3");
+  assert.equal(query, "?q=mario+kart&platform=nintendo-switch%2Cpc-windows&genre=action%2Cracing&from=2010&to=2023&developer=nintendo&publisher=nintendo&sort=newest&page=2&perPage=48&columns=3&images=hide");
   assert.deepEqual(parseSearchState(new URLSearchParams(query), options), { ...state, q: "mario kart", platform: "nintendo-switch,pc-windows", genre: "action,racing" });
-  assert.deepEqual(parseSearchState(new URLSearchParams("?platform=unknown%2Cnintendo-switch&platform=pc-windows&genre=nope&year=1900&sort=score&page=0&perPage=13&columns=9"), options), { q: "", platform: "nintendo-switch,pc-windows", genre: "", year: "", columns: "auto", yearFrom: "", yearTo: "", developer: "", publisher: "", sort: "relevance", page: 1, pageSize: 24 });
-  assert.deepEqual(parseSearchState(new URLSearchParams("?year=2023"), options), { q: "", platform: "", genre: "", year: "2023", columns: "auto", yearFrom: "", yearTo: "", developer: "", publisher: "", sort: "relevance", page: 1, pageSize: 24 });
+  assert.deepEqual(parseSearchState(new URLSearchParams("?platform=unknown%2Cnintendo-switch&platform=pc-windows&genre=nope&year=1900&sort=score&page=0&perPage=13&columns=9"), options), { q: "", platform: "nintendo-switch,pc-windows", genre: "", year: "", columns: "auto", yearFrom: "", yearTo: "", developer: "", publisher: "", sort: "relevance", page: 1, pageSize: 24, images: "show" });
+  assert.deepEqual(parseSearchState(new URLSearchParams("?year=2023"), options), { q: "", platform: "", genre: "", year: "2023", columns: "auto", yearFrom: "", yearTo: "", developer: "", publisher: "", sort: "relevance", page: 1, pageSize: 24, images: "show" });
 });
 
 test("applies AND query matching and combined filters deterministically", () => {
@@ -143,7 +143,7 @@ test("round-trips the optional layout mode without treating it as a filter", () 
 });
 
 test("clears filters without losing sort, page size, or layout preferences", () => {
-  assert.deepEqual(clearCatalogFilters({ q: "mario", platform: "nintendo-switch", genre: "action", year: "", columns: "3", yearFrom: "1990", yearTo: "2025", developer: "nintendo", publisher: "nintendo", sort: "newest", page: 4, pageSize: 48 }), {
-    q: "", platform: "", genre: "", year: "", columns: "3", yearFrom: "", yearTo: "", developer: "", publisher: "", sort: "newest", page: 1, pageSize: 48,
+  assert.deepEqual(clearCatalogFilters({ q: "mario", platform: "nintendo-switch", genre: "action", year: "", columns: "3", yearFrom: "1990", yearTo: "2025", developer: "nintendo", publisher: "nintendo", sort: "newest", page: 4, pageSize: 48, images: "hide" }), {
+    q: "", platform: "", genre: "", year: "", columns: "3", yearFrom: "", yearTo: "", developer: "", publisher: "", sort: "newest", page: 1, pageSize: 48, images: "hide",
   });
 });

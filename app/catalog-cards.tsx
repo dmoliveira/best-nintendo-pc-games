@@ -10,6 +10,7 @@ import type { CatalogCardRecord, CatalogColumns } from "@/lib/catalog/search";
 interface CatalogCardsProps {
   records: readonly CatalogCardRecord[];
   columns?: CatalogColumns;
+  showImages?: boolean;
   showResultPosition?: boolean;
   resultPositionOffset?: number;
   resultPositionTotal?: number;
@@ -25,7 +26,7 @@ function externalLabel(label: string): string {
   return label.replace(/^External\/reference\s+—\s*/, "");
 }
 
-export default function CatalogCards({ records, columns = "auto", showResultPosition = false, resultPositionOffset = 0, resultPositionTotal = records.length }: CatalogCardsProps) {
+export default function CatalogCards({ records, columns = "auto", showImages = true, showResultPosition = false, resultPositionOffset = 0, resultPositionTotal = records.length }: CatalogCardsProps) {
   const layoutClass = columns === "auto" ? "" : ` game-grid--columns-${columns}`;
   return <div className={`game-grid${layoutClass}`}>{records.map((record, index) => {
     const visiblePlatforms = record.platformIds.slice(0, 2);
@@ -46,7 +47,7 @@ export default function CatalogCards({ records, columns = "auto", showResultPosi
     const resultPosition = resultPositionOffset + index + 1;
     const positionLabel = `Current result position ${resultPosition} of ${resultPositionTotal}`;
 
-    return <article className="game-card" key={record.slug}>
+    return <article className={`game-card${showImages ? "" : " game-card--no-image"}`} key={record.slug}>
       <div className="game-card-topline">
         <div className="game-card-topline-leading">
           {showResultPosition ? <span className="game-card-position" aria-label={positionLabel} title="Current catalog order, not a quality ranking"><span className="game-card-position-label">Item</span> {String(resultPosition).padStart(2, "0")} <span className="game-card-position-total">/ {resultPositionTotal}</span></span> : null}
@@ -60,11 +61,11 @@ export default function CatalogCards({ records, columns = "auto", showResultPosi
         </div>
         <span className="game-card-year"><AttributeGlyph kind="year" />{record.releaseYear}</span>
       </div>
-      <div className="game-card-art">
+      {showImages ? <div className="game-card-art">
         <PackageThumbnail thumbnail={record.packageThumbnail} emoji={record.emoji} />
         <span className="game-card-art-rail">{record.editorialLabel ? <span className="editorial-badge"><span className="editorial-dot" aria-hidden="true" />{record.editorialLabel}</span> : null}</span>
         <span className="art-link-label" aria-hidden="true">View guide <span>↗</span></span>
-      </div>
+      </div> : record.editorialLabel ? <div className="game-card-compact-rail"><span className="editorial-badge"><span className="editorial-dot" aria-hidden="true" />{record.editorialLabel}</span></div> : null}
       <div className="game-card-body">
         <h3><Link className="game-card-title-link" href={`/games/${record.slug}/`}>{record.title}</Link></h3>
         {distributionLabel ? <div className="game-card-detail-chips"><span className="game-card-distribution"><AttributeGlyph kind={record.releaseFormat === "digital" ? "digital" : "physical"} />{distributionLabel}</span></div> : null}
