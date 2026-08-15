@@ -50,7 +50,13 @@ export function reduceBoxView(state: BoxViewState, action: BoxViewAction): BoxVi
   return INITIAL_BOX_VIEW_STATE;
 }
 
+export function describeBoxFace(angle: BoxViewAngle): string {
+  if (angle === 90) return "Left spine";
+  if (angle === 180) return "Back";
+  if (angle === 270) return "Right spine";
+  return "Front";
+}
+
 export function describeBoxView(state: BoxViewState): string {
-  const face = state.angle === 0 ? "Front" : state.angle === 180 ? "Back" : "Spine";
-  return `${face} view, ${Math.round(state.zoom * 100)}% zoom.`;
+  return `${describeBoxFace(state.angle)} view, ${Math.round(state.zoom * 100)}% zoom.`;
 }

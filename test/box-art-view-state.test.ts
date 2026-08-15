@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { describeBoxView, INITIAL_BOX_VIEW_STATE, nearestEquivalentBoxAngle, normalizeBoxAngle, reduceBoxView, renderBoxAngle, snapBoxAngle } from "../lib/box-art/view-state";
+import { describeBoxFace, describeBoxView, INITIAL_BOX_VIEW_STATE, nearestEquivalentBoxAngle, normalizeBoxAngle, reduceBoxView, renderBoxAngle, snapBoxAngle } from "../lib/box-art/view-state";
 
 test("package-view state rotates cyclically and bounds zoom", () => {
   let state = INITIAL_BOX_VIEW_STATE;
@@ -16,6 +16,9 @@ test("package-view state rotates cyclically and bounds zoom", () => {
   state = reduceBoxView(state, "zoom-in");
   assert.equal(state.zoom, 1.45);
   assert.equal(describeBoxView({ angle: 180, zoom: 1.3 }), "Back view, 130% zoom.");
+  assert.equal(describeBoxFace(90), "Left spine");
+  assert.equal(describeBoxFace(270), "Right spine");
+  assert.equal(describeBoxView({ angle: 90, zoom: 1 }), "Left spine view, 100% zoom.");
   assert.deepEqual(reduceBoxView(state, "reset"), INITIAL_BOX_VIEW_STATE);
 });
 

@@ -13,6 +13,8 @@ const LOCAL_REQUEST_TIMEOUT_MS = 10_000;
 const PROCESS_SHUTDOWN_TIMEOUT_MS = 5_000;
 const BROWSER_START_TIMEOUT_MS = 30_000;
 const PROFILE_CLEANUP_RETRIES = 20;
+const PROFILE_CLEANUP_SETTLE_MS = 500;
+const PROFILE_CLEANUP_TRANSIENT_CODES = new Set(["EBUSY", "ENOTEMPTY", ...(process.platform === "win32" ? ["EPERM"] : [])]);
 const POINTER_EVENT_SETTLE_MS = 50;
 
 function fail(message) {
@@ -223,6 +225,17 @@ async function closeBrowser(client) {
 async function stopServer(server) {
   await Promise.race([new Promise((resolve) => server.close(resolve)), new Promise((resolve) => setTimeout(resolve, PROCESS_SHUTDOWN_TIMEOUT_MS))]);
   server.closeAllConnections?.();
+}
+
+async function removeProfile(profile) {
+  if (!profile) return;
+  await new Promise((resolve) => setTimeout(resolve, PROFILE_CLEANUP_SETTLE_MS));
+  try {
+    fs.rmSync(profile, { recursive: true, force: true, maxRetries: PROFILE_CLEANUP_RETRIES, retryDelay: 250 });
+  } catch (error) {
+    if (!PROFILE_CLEANUP_TRANSIENT_CODES.has(error?.code)) throw error;
+    console.warn(`Box-art browser profile cleanup deferred (${error.code}): ${profile}`);
+  }
 }
 
 async function press(client, key, code, keyCode) {
@@ -608,9 +621,11 @@ async function main() {
     await waitFor(() => client.evaluate(`window.location.pathname === ${JSON.stringify(`${basePath}/`)}`));
     await client.send("Page.navigate", { url: pageUrl });
     await waitForGameBoxReady(client, physicalFallbackGame.title, { rotate: true });
+    const readViewStatus = () => client.evaluate('(() => { const status = document.querySelector("[data-box-view-status]"); return { id: status?.id, text: status?.textContent?.replace(/\\s+/g, " ").trim(), angle: status?.dataset.boxViewAngle, dragging: status?.dataset.boxViewDragging, live: status?.getAttribute("aria-live"), role: status?.getAttribute("role") }; })()');
 
-    const semantics = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); const note = document.querySelector(".game-box-viewer-note"); return { role: stage?.getAttribute("role"), label: stage?.getAttribute("aria-label"), describedBy: stage?.getAttribute("aria-describedby"), fallback: document.body.textContent.includes("GameAtlas reference case"), fallbackRole: fallback?.getAttribute("role"), panelPolicy: note?.textContent?.includes("original GameAtlas editorial panels") }; })()');
-    if (semantics.role !== "group" || !semantics.label?.includes("Interactive package view") || !semantics.describedBy || !semantics.fallback || semantics.fallbackRole !== "img" || !semantics.panelPolicy) fail("viewer baseline semantics, original-panel policy, or fallback copy is missing");
+    const semantics = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); const note = document.querySelector(".game-box-viewer-note"); const liveStatus = document.querySelector(".visually-hidden[aria-live]"); return { role: stage?.getAttribute("role"), label: stage?.getAttribute("aria-label"), describedBy: stage?.getAttribute("aria-describedby"), fallback: document.body.textContent.includes("GameAtlas reference case"), fallbackRole: fallback?.getAttribute("role"), panelPolicy: note?.textContent?.includes("original GameAtlas editorial panels"), live: liveStatus?.getAttribute("aria-live") }; })()');
+    const initialViewStatus = await readViewStatus();
+    if (semantics.role !== "group" || !semantics.label?.includes("Interactive package view") || semantics.describedBy !== "package-view-instructions" || !semantics.fallback || semantics.fallbackRole !== "img" || !semantics.panelPolicy || semantics.live !== "polite" || initialViewStatus.id !== "package-view-status" || initialViewStatus.text !== "Viewing: Front · 100% zoom" || initialViewStatus.angle !== "0" || initialViewStatus.dragging !== "false" || initialViewStatus.live || initialViewStatus.role) fail(`viewer baseline semantics, visible view status, original-panel policy, or fallback copy is missing: ${JSON.stringify({ semantics, initialViewStatus })}`);
     const physicalGeometry = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); const spines = [...document.querySelectorAll("[data-box-surface^=spine]")]; const back = document.querySelector("[data-box-surface=back]"); const stageStyle = getComputedStyle(stage); const boxStyle = getComputedStyle(box); return { kind: stage?.dataset.packageKind, depth: Number(stage?.dataset.packageDepth), restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), dimensions: ["--box-width", "--box-height", "--box-depth"].map((name) => box?.style.getPropertyValue(name)), transform: box?.style.transform, perspective: stageStyle.perspective, transformStyle: boxStyle.transformStyle, filter: boxStyle.filter, spines: spines.map((spine) => ({ surface: spine.dataset.boxSurface, label: spine.dataset.boxSpineLabel, text: spine.textContent?.trim(), hidden: spine.getAttribute("aria-hidden") })), back: { hidden: back?.getAttribute("aria-hidden"), title: back?.querySelector("[data-box-back-title]")?.getAttribute("data-box-back-title"), facts: Object.fromEntries([...(back?.querySelectorAll("[data-box-back-fact]") ?? [])].map((fact) => [fact.dataset.boxBackFact, fact.querySelector("dd")?.textContent?.trim()])) } }; })()');
     if (physicalGeometry.kind !== "physical" || physicalGeometry.depth < 8 || physicalGeometry.restAngle !== "-24" || !physicalGeometry.hasSpine || physicalGeometry.dimensions.some((value) => !value) || !physicalGeometry.transform?.includes("rotateY(-24deg)") || physicalGeometry.perspective !== "1200px" || physicalGeometry.transformStyle !== "preserve-3d" || physicalGeometry.filter !== "none") fail(`physical profile did not retain an unflattened dimensional rest pose: ${JSON.stringify(physicalGeometry)}`);
     const expectedPhysicalBackFacts = { profile: readableProfileLabel(physicalFallbackProfile.category), material: readableProfileLabel(physicalFallbackProfile.material), opening: physicalFallbackProfile.openingSide === "none" ? "No opening" : `Opens ${readableProfileLabel(physicalFallbackProfile.openingSide)}` };
@@ -620,9 +635,9 @@ async function main() {
     await press(client, "ArrowRight", "ArrowRight", 39);
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "90"'));
     const expectedPanelViews = [
-      { angle: "90", renderedAngle: "90", surface: "spine-left" },
-      { angle: "180", renderedAngle: "180", surface: "back" },
-      { angle: "270", renderedAngle: "270", surface: "spine-right" },
+      { angle: "90", renderedAngle: "90", surface: "spine-left", face: "Left spine" },
+      { angle: "180", renderedAngle: "180", surface: "back", face: "Back" },
+      { angle: "270", renderedAngle: "270", surface: "spine-right", face: "Right spine" },
     ];
     for (const [index, expectedPanelView] of expectedPanelViews.entries()) {
       if (index > 0) {
@@ -631,22 +646,23 @@ async function main() {
       }
       const panelFacingState = await client.evaluate('(() => { const box = document.querySelector(".game-box"); const panels = [...document.querySelectorAll("[data-box-surface]")].map((panel) => { const rect = panel.getBoundingClientRect(); const styles = getComputedStyle(panel); return { surface: panel.dataset.boxSurface, width: rect.width, height: rect.height, layoutWidth: styles.width, transform: styles.transform, backfaceVisibility: styles.backfaceVisibility }; }); return { angle: document.querySelector("[data-game-box-stage]")?.dataset.boxAngle, transform: box?.style.transform, panels }; })()');
       const expectedPanel = panelFacingState.panels.find((panel) => panel.surface === expectedPanelView.surface);
-      if (panelFacingState.angle !== expectedPanelView.angle || !panelFacingState.transform?.includes(`rotateY(${expectedPanelView.renderedAngle}deg)`) || !(expectedPanel?.width > 0) || !(expectedPanel?.height > 0) || expectedPanel.backfaceVisibility !== "hidden") fail(`physical panel did not retain its modeled face at the cardinal rotation: ${JSON.stringify({ expectedPanelView, panelFacingState })}`);
+      const currentViewStatus = await readViewStatus();
+      if (panelFacingState.angle !== expectedPanelView.angle || !panelFacingState.transform?.includes(`rotateY(${expectedPanelView.renderedAngle}deg)`) || !(expectedPanel?.width > 0) || !(expectedPanel?.height > 0) || expectedPanel.backfaceVisibility !== "hidden" || currentViewStatus.text !== `Viewing: ${expectedPanelView.face} · 100% zoom` || currentViewStatus.angle !== expectedPanelView.angle || currentViewStatus.dragging !== "false") fail(`physical panel or visible view status did not retain the modeled cardinal orientation: ${JSON.stringify({ expectedPanelView, panelFacingState, currentViewStatus })}`);
     }
     await client.evaluate('document.querySelector("[data-box-action=rotate-right]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "0"'));
     const wrappedRightState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle, transform: box?.style.transform }; })()');
-    if (wrappedRightState.angle !== "0" || wrappedRightState.dragAngle !== "360.0" || !wrappedRightState.transform?.includes("rotateY(336deg)")) fail(`right rotation did not preserve the short visual wrap from the left spine to the front rest pose: ${JSON.stringify(wrappedRightState)}`);
+    if (wrappedRightState.angle !== "0" || wrappedRightState.dragAngle !== "360.0" || !wrappedRightState.transform?.includes("rotateY(336deg)") || (await readViewStatus()).text !== "Viewing: Front · 100% zoom") fail(`right rotation did not preserve the short visual wrap from the left spine to the front rest pose: ${JSON.stringify(wrappedRightState)}`);
     await client.evaluate('document.querySelector("[data-box-action=rotate-left]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "270"'));
     await client.evaluate('document.querySelector("[data-box-action=reset]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "0"'));
     const resetState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle, transform: box?.style.transform }; })()');
-    if (resetState.angle !== "0" || resetState.dragAngle !== "0.0" || !resetState.transform?.includes("rotateY(-24deg)")) fail(`reset did not restore the dimensional front rest pose: ${JSON.stringify(resetState)}`);
+    if (resetState.angle !== "0" || resetState.dragAngle !== "0.0" || !resetState.transform?.includes("rotateY(-24deg)") || (await readViewStatus()).text !== "Viewing: Front · 100% zoom") fail(`reset did not restore the dimensional front rest pose: ${JSON.stringify(resetState)}`);
     await client.evaluate('document.querySelector("[data-box-action=rotate-left]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "270"'));
     const wrappedLeftState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle, transform: box?.style.transform }; })()');
-    if (wrappedLeftState.angle !== "270" || wrappedLeftState.dragAngle !== "-90.0" || !wrappedLeftState.transform?.includes("rotateY(-90deg)")) fail(`left rotation did not preserve the short visual wrap from the front rest pose to the left spine: ${JSON.stringify(wrappedLeftState)}`);
+    if (wrappedLeftState.angle !== "270" || wrappedLeftState.dragAngle !== "-90.0" || !wrappedLeftState.transform?.includes("rotateY(-90deg)") || (await readViewStatus()).text !== "Viewing: Right spine · 100% zoom") fail(`left rotation did not preserve the short visual wrap from the front rest pose to the left spine: ${JSON.stringify(wrappedLeftState)}`);
     await client.evaluate('document.querySelector("[data-box-action=reset]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "0"'));
     const dragCoordinates = await client.evaluate('(async () => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center", behavior: "instant" }); await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))); const rect = stage?.getBoundingClientRect(); if (!rect) return null; const centerX = rect.left + rect.width / 2; return { startX: centerX - 75, endX: centerX + 75, y: rect.top + rect.height / 2 }; })()');
@@ -654,11 +670,12 @@ async function main() {
     await drag(client, dragCoordinates);
     await waitForDragStart(client, dragCoordinates);
     const draggingState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { cursor: stage?.style.cursor, touchAction: stage?.style.touchAction, transition: box?.style.transition, willChange: box?.style.willChange, angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle }; })()');
-    if (draggingState.cursor !== "grabbing" || draggingState.touchAction !== "pan-y" || draggingState.transition !== "none" || draggingState.willChange !== "transform" || draggingState.angle !== "0") fail(`physical package drag did not enter a smooth transient rotation state: ${JSON.stringify(draggingState)}`);
+    const draggingViewStatus = await readViewStatus();
+    if (draggingState.cursor !== "grabbing" || draggingState.touchAction !== "pan-y" || draggingState.transition !== "none" || draggingState.willChange !== "transform" || draggingState.angle !== "0" || draggingViewStatus.text !== "Rotating toward: Left spine · 100% zoom" || draggingViewStatus.angle !== "90" || draggingViewStatus.dragging !== "true") fail(`physical package drag did not enter a smooth transient rotation state: ${JSON.stringify({ draggingState, draggingViewStatus })}`);
     await releaseDrag(client, dragCoordinates);
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "90" && document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "false"'));
     const draggedState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle, dimensions: ["--box-width", "--box-height", "--box-depth"].map((name) => box?.style.getPropertyValue(name)), transform: box?.style.transform, transition: box?.style.transition, willChange: box?.style.willChange }; })()');
-    if (draggedState.angle !== "90" || draggedState.dragAngle !== "90.0" || JSON.stringify(draggedState.dimensions) !== JSON.stringify(physicalGeometry.dimensions) || !draggedState.transform?.includes("rotateY(90deg)") || draggedState.transition !== "none" || draggedState.willChange) fail(`physical package drag did not commit a snapped cardinal view while retaining profile geometry: ${JSON.stringify(draggedState)}`);
+    if (draggedState.angle !== "90" || draggedState.dragAngle !== "90.0" || JSON.stringify(draggedState.dimensions) !== JSON.stringify(physicalGeometry.dimensions) || !draggedState.transform?.includes("rotateY(90deg)") || draggedState.transition !== "none" || draggedState.willChange || (await readViewStatus()).text !== "Viewing: Left spine · 100% zoom") fail(`physical package drag did not commit a snapped cardinal view while retaining profile geometry: ${JSON.stringify(draggedState)}`);
     await client.evaluate('document.querySelector("[data-box-action=reset]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "0"'));
     await drag(client, dragCoordinates);
@@ -668,6 +685,7 @@ async function main() {
     const dispatchedLostPointerCapture = await client.evaluate(`(() => { const stage = document.querySelector("[data-game-box-stage]"); if (!stage) return false; stage.dispatchEvent(new PointerEvent("lostpointercapture", { bubbles: true, cancelable: true, pointerId: 1, pointerType: "mouse", isPrimary: true, clientX: ${dragCoordinates.endX}, clientY: ${dragCoordinates.y} })); return true; })()`);
     if (!dispatchedLostPointerCapture) fail("physical package drag stage did not accept lost-pointer-capture validation");
     await waitFor(() => client.evaluate('new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => { const stage = document.querySelector("[data-game-box-stage]"); resolve(stage?.dataset.boxDragging === "false" && stage?.dataset.boxAngle === "0" && stage?.dataset.boxDragAngle === "0.0"); })))'));
+    if ((await readViewStatus()).text !== "Viewing: Front · 100% zoom") fail("lost pointer capture did not restore the visible front status");
     await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: dragCoordinates.endX, y: dragCoordinates.y, button: "left", buttons: 0, clickCount: 1 });
     await drag(client, dragCoordinates);
     await releaseDrag(client, dragCoordinates);
@@ -680,9 +698,10 @@ async function main() {
     if (!dispatchedPointerCancel) fail("physical package drag stage did not accept pointer-cancellation validation");
     await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: dragCoordinates.endX, y: dragCoordinates.y, button: "left", buttons: 0, clickCount: 1 });
     await waitFor(() => client.evaluate('new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => { const stage = document.querySelector("[data-game-box-stage]"); resolve(stage?.dataset.boxDragging === "false" && stage?.dataset.boxAngle === "0" && stage?.dataset.boxDragAngle === "0.0"); })))'));
+    if ((await readViewStatus()).text !== "Viewing: Front · 100% zoom") fail("pointer cancellation did not restore the visible front status");
     for (let index = 0; index < 4; index += 1) await client.evaluate('document.querySelector("[data-box-action=zoom-in]").click()');
     const zoomState = await client.evaluate('(() => { const button = document.querySelector("[data-box-action=zoom-in]"); return { zoom: document.querySelector("[data-game-box-stage]").dataset.boxZoom, disabled: button.disabled }; })()');
-    if (zoomState.zoom !== "1.45" || !zoomState.disabled) fail("zoom did not reach its bounded maximum");
+    if (zoomState.zoom !== "1.45" || !zoomState.disabled || (await readViewStatus()).text !== "Viewing: Front · 145% zoom") fail("zoom did not reach its bounded maximum or update the visible status");
 
     await client.evaluate('document.querySelector(".game-box-viewer").requestFullscreen = () => Promise.reject(new Error("forced fallback"))');
     await client.evaluate('document.querySelector("[data-box-action=fullscreen]").click()');
@@ -702,11 +721,12 @@ async function main() {
     await client.evaluate('document.querySelector("[data-box-action=rotate-right]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "90"'));
     const mobileSpineState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const spine = document.querySelector("[data-box-surface=spine-left]"); const label = spine?.querySelector(".game-box__spine-label"); const bounds = (element) => { const rect = element?.getBoundingClientRect(); return rect ? { left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom, width: rect.width, height: rect.height } : null; }; const inside = (child, parent) => Boolean(child && parent && child.left >= parent.left - 1 && child.right <= parent.right + 1 && child.top >= parent.top - 1 && child.bottom <= parent.bottom + 1); const spineRect = bounds(spine); return { spineWidth: spineRect?.width, spineHeight: spineRect?.height, label: label?.textContent, labelFontSize: label ? Number.parseFloat(getComputedStyle(label).fontSize) : 0, labelOverflow: label ? getComputedStyle(label).textOverflow : "", labelInside: inside(bounds(label), spineRect), overflow: document.documentElement.scrollWidth > window.innerWidth, stageWidth: stage?.getBoundingClientRect().width }; })()');
-    if (!(mobileSpineState.spineWidth > 0) || !(mobileSpineState.spineHeight > 0) || mobileSpineState.label !== panelStressGame.title || mobileSpineState.labelFontSize < 9 || mobileSpineState.labelOverflow !== "ellipsis" || !mobileSpineState.labelInside || mobileSpineState.overflow) fail(`mobile spine panel is not contained and readable for the shallowest, longest-title fixture: ${JSON.stringify({ panelStressGame: panelStressGame.slug, mobileSpineState })}`);
+    const mobileSpineStatus = await client.evaluate('(() => { const status = document.querySelector("[data-box-view-status]"); const rect = status?.getBoundingClientRect(); return { text: status?.textContent?.replace(/\\s+/g, " ").trim(), fontSize: status ? Number.parseFloat(getComputedStyle(status).fontSize) : 0, visible: Boolean(rect && rect.width > 0 && rect.height > 0 && rect.left >= 0 && rect.right <= window.innerWidth && rect.top >= 0 && rect.bottom <= window.innerHeight) }; })()');
+    if (!(mobileSpineState.spineWidth > 0) || !(mobileSpineState.spineHeight > 0) || mobileSpineState.label !== panelStressGame.title || mobileSpineState.labelFontSize < 9 || mobileSpineState.labelOverflow !== "ellipsis" || !mobileSpineState.labelInside || mobileSpineState.overflow || mobileSpineStatus.text !== "Viewing: Left spine · 100% zoom" || mobileSpineStatus.fontSize < 12 || !mobileSpineStatus.visible) fail(`mobile spine panel or view status is not contained and readable for the shallowest, longest-title fixture: ${JSON.stringify({ panelStressGame: panelStressGame.slug, mobileSpineState, mobileSpineStatus })}`);
     await client.evaluate('document.querySelector("[data-box-action=rotate-right]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "180"'));
-    const mobileBackState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const back = document.querySelector("[data-box-surface=back]"); const title = back?.querySelector("[data-box-back-title]"); const bounds = (element) => { const rect = element?.getBoundingClientRect(); return rect ? { left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom, width: rect.width, height: rect.height } : null; }; const inside = (child, parent) => Boolean(child && parent && child.left >= parent.left - 1 && child.right <= parent.right + 1 && child.top >= parent.top - 1 && child.bottom <= parent.bottom + 1); const backRect = bounds(back); return { backWidth: backRect?.width, backHeight: backRect?.height, title: title?.getAttribute("data-box-back-title"), titleInside: inside(bounds(title), backRect), overflow: document.documentElement.scrollWidth > window.innerWidth, stageWidth: stage?.getBoundingClientRect().width }; })()');
-    if (!(mobileBackState.backWidth > 0) || !(mobileBackState.backHeight > 0) || mobileBackState.title !== panelStressGame.title || !mobileBackState.titleInside || mobileBackState.overflow) fail(`mobile back panel is not contained and readable for the shallowest, longest-title fixture: ${JSON.stringify({ panelStressGame: panelStressGame.slug, mobileBackState })}`);
+    const mobileBackState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const back = document.querySelector("[data-box-surface=back]"); const title = back?.querySelector("[data-box-back-title]"); const factLabel = back?.querySelector(".game-box__back-fact dt"); const factValue = back?.querySelector(".game-box__back-fact dd"); const disclaimer = back?.querySelector(".game-box__back-disclaimer"); const bounds = (element) => { const rect = element?.getBoundingClientRect(); return rect ? { left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom, width: rect.width, height: rect.height } : null; }; const inside = (child, parent) => Boolean(child && parent && child.left >= parent.left - 1 && child.right <= parent.right + 1 && child.top >= parent.top - 1 && child.bottom <= parent.bottom + 1); const backRect = bounds(back); return { backWidth: backRect?.width, backHeight: backRect?.height, title: title?.getAttribute("data-box-back-title"), titleInside: inside(bounds(title), backRect), factLabelFontSize: factLabel ? Number.parseFloat(getComputedStyle(factLabel).fontSize) : 0, factValueFontSize: factValue ? Number.parseFloat(getComputedStyle(factValue).fontSize) : 0, disclaimerFontSize: disclaimer ? Number.parseFloat(getComputedStyle(disclaimer).fontSize) : 0, overflow: document.documentElement.scrollWidth > window.innerWidth, stageWidth: stage?.getBoundingClientRect().width }; })()');
+    if (!(mobileBackState.backWidth > 0) || !(mobileBackState.backHeight > 0) || mobileBackState.title !== panelStressGame.title || !mobileBackState.titleInside || mobileBackState.factLabelFontSize < 8.5 || mobileBackState.factValueFontSize < 9.5 || mobileBackState.disclaimerFontSize < 8.5 || mobileBackState.overflow || (await readViewStatus()).text !== "Viewing: Back · 100% zoom") fail(`mobile back panel or view status is not contained and readable for the shallowest, longest-title fixture: ${JSON.stringify({ panelStressGame: panelStressGame.slug, mobileBackState })}`);
     await client.send("Emulation.setDeviceMetricsOverride", desktopMetrics);
 
     const publishedFront = publishedBoxGame.assets.find((asset) => asset?.role === "box-front");
@@ -728,8 +748,12 @@ async function main() {
     if (!digitalDragCoordinates) fail("digital package stage did not expose drag coordinates");
     await drag(client, digitalDragCoordinates);
     await releaseDrag(client, digitalDragCoordinates);
+    await client.evaluate('document.querySelector("[data-game-box-stage]").focus()');
+    await press(client, "ArrowRight", "ArrowRight", 39);
+    await client.evaluate('document.querySelector("[data-box-action=zoom-in]").click()');
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxZoom === "1.15"'));
     const digitalState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); return { kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), hasBack: Boolean(document.querySelector(".game-box__back")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor }; })()');
-    if (digitalState.kind !== "digital" || digitalState.depth !== "0" || digitalState.restAngle !== "0" || digitalState.hasSpine || digitalState.hasBack || digitalState.hasRotate || digitalState.angle !== "0" || digitalState.dragging !== "false" || digitalState.cursor) fail(`digital profile implied a physical package or accepted drag rotation: ${JSON.stringify(digitalState)}`);
+    if (digitalState.kind !== "digital" || digitalState.depth !== "0" || digitalState.restAngle !== "0" || digitalState.hasSpine || digitalState.hasBack || digitalState.hasRotate || digitalState.angle !== "0" || digitalState.dragging !== "false" || digitalState.cursor || (await readViewStatus()).text !== "Viewing: Front · 115% zoom") fail(`digital profile implied a physical package, accepted drag rotation, or lost front-only visible status: ${JSON.stringify(digitalState)}`);
 
     const sourceListedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${sourceListedReferenceGame.slug}/`;
     await client.send("Page.navigate", { url: sourceListedPageUrl });
@@ -738,8 +762,12 @@ async function main() {
     if (!sourceListedDragCoordinates?.hitInsideStage) fail(`source-listed reference stage did not expose a stable pointer target: ${JSON.stringify(sourceListedDragCoordinates)}`);
     await drag(client, sourceListedDragCoordinates);
     await releaseDrag(client, sourceListedDragCoordinates);
+    await client.evaluate('document.querySelector("[data-game-box-stage]").focus()');
+    await press(client, "ArrowRight", "ArrowRight", 39);
+    await client.evaluate('document.querySelector("[data-box-action=zoom-in]").click()');
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxZoom === "1.15"'));
     const sourceListedState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); return { label: stage?.getAttribute("aria-label"), mode: stage?.dataset.presentationMode, kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasFront: Boolean(document.querySelector(".game-box__front img")), hasSpine: Boolean(document.querySelector(".game-box__spine")), hasBack: Boolean(document.querySelector(".game-box__back")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor, reference: document.body.textContent.includes("GameAtlas reference presentation"), scope: document.body.textContent.includes("do not establish a platform-specific release date"), copy: document.body.textContent.includes("no platform-specific package is implied"), fallbackRole: fallback?.getAttribute("role") }; })()');
-    if (!sourceListedState.label?.includes("Catalog reference view") || sourceListedState.mode !== "source-listed-reference" || sourceListedState.kind !== "digital" || sourceListedState.depth !== "0" || sourceListedState.restAngle !== "0" || sourceListedState.hasFront || sourceListedState.hasSpine || sourceListedState.hasBack || sourceListedState.hasRotate || sourceListedState.angle !== "0" || sourceListedState.dragging !== "false" || sourceListedState.cursor || !sourceListedState.reference || !sourceListedState.scope || !sourceListedState.copy || sourceListedState.fallbackRole !== "img") fail(`source-listed title-year record implied a platform package or accepted drag rotation: ${JSON.stringify(sourceListedState)}`);
+    if (!sourceListedState.label?.includes("Catalog reference view") || sourceListedState.mode !== "source-listed-reference" || sourceListedState.kind !== "digital" || sourceListedState.depth !== "0" || sourceListedState.restAngle !== "0" || sourceListedState.hasFront || sourceListedState.hasSpine || sourceListedState.hasBack || sourceListedState.hasRotate || sourceListedState.angle !== "0" || sourceListedState.dragging !== "false" || sourceListedState.cursor || !sourceListedState.reference || !sourceListedState.scope || !sourceListedState.copy || sourceListedState.fallbackRole !== "img" || (await readViewStatus()).text !== "Viewing: Front · 115% zoom") fail(`source-listed title-year record implied a platform package, accepted drag rotation, or lost front-only visible status: ${JSON.stringify(sourceListedState)}`);
 
     const catalogThumbnailUrl = new URL(`http://127.0.0.1:${preview.port}${basePath}/`);
     catalogThumbnailUrl.searchParams.set("q", catalogThumbnailGame.title);
@@ -755,27 +783,16 @@ async function main() {
     await client.send("Page.navigate", { url: pageUrl });
     await waitForGameBoxReady(client, physicalFallbackGame.title, { rotate: true });
     await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }, { name: "forced-colors", value: "active" }] });
-    const mediaState = await client.evaluate('(() => { const panelStyle = (selector) => { const style = getComputedStyle(document.querySelector(selector)); return { background: style.backgroundColor, border: style.borderTopColor, color: style.color }; }; return { reduce: matchMedia("(prefers-reduced-motion: reduce)").matches, forced: matchMedia("(forced-colors: active)").matches, duration: getComputedStyle(document.querySelector(".game-box")).transitionDuration, willChange: getComputedStyle(document.querySelector(".game-box")).willChange, spine: panelStyle(".game-box__spine"), back: panelStyle(".game-box__back") }; })()');
-    const panelsHaveForcedContrast = [mediaState.spine, mediaState.back].every((panel) => panel.background && panel.border && panel.color && panel.background !== panel.color && panel.border === panel.color);
-    if (!mediaState.reduce || !mediaState.forced || Number.parseFloat(mediaState.duration) > 0.001 || mediaState.willChange !== "auto" || !panelsHaveForcedContrast) fail(`reduced-motion, forced-colors, panel contrast, or compositor fallback is not active: ${JSON.stringify(mediaState)}`);
+    const mediaState = await client.evaluate('(() => { const panelStyle = (selector) => { const style = getComputedStyle(document.querySelector(selector)); return { background: style.backgroundColor, border: style.borderTopColor, color: style.color }; }; return { reduce: matchMedia("(prefers-reduced-motion: reduce)").matches, forced: matchMedia("(forced-colors: active)").matches, duration: getComputedStyle(document.querySelector(".game-box")).transitionDuration, willChange: getComputedStyle(document.querySelector(".game-box")).willChange, spine: panelStyle(".game-box__spine"), back: panelStyle(".game-box__back"), viewStatus: panelStyle("[data-box-view-status]") }; })()');
+    const panelsHaveForcedContrast = [mediaState.spine, mediaState.back, mediaState.viewStatus].every((panel) => panel.background && panel.border && panel.color && panel.background !== panel.color && panel.border === panel.color);
+    if (!mediaState.reduce || !mediaState.forced || Number.parseFloat(mediaState.duration) > 0.001 || mediaState.willChange !== "auto" || !panelsHaveForcedContrast) fail(`reduced-motion, forced-colors, panel contrast, visible status, or compositor fallback is not active: ${JSON.stringify(mediaState)}`);
     console.log(`Browser validation passed (${physicalFallbackGame.slug} physical fallback, ${sourceListedReferenceGame.slug} source-listed reference, ${publishedBoxGame ? `${publishedBoxGame.slug} published front` : "no published front"}, front-first image scheduling, package profiles, catalog filters/layout/pagination, mobile layout, keyboard, zoom, fullscreen fallback, focus restoration, background isolation, reduced motion, forced colors).`);
   } finally {
     await closeBrowser(client);
     client?.close();
     await stopBrowser(browser);
     if (preview) await stopServer(preview.server);
-    if (profile) {
-      try {
-        fs.rmSync(profile, { recursive: true, force: true, maxRetries: PROFILE_CLEANUP_RETRIES, retryDelay: 250 });
-      } catch (error) {
-        if (![
-          "EBUSY",
-          "ENOTEMPTY",
-          "EPERM",
-        ].includes(error?.code)) throw error;
-        fail(`Chrome profile cleanup remained busy after bounded retries: ${profile}`);
-      }
-    }
+    await removeProfile(profile);
   }
 }
 
