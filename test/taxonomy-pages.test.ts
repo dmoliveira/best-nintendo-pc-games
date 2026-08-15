@@ -5,6 +5,7 @@ import { test } from "node:test";
 const platformPage = readFileSync(new URL("../app/platforms/[id]/page.tsx", import.meta.url), "utf8");
 const genrePage = readFileSync(new URL("../app/genres/[id]/page.tsx", import.meta.url), "utf8");
 const hub = readFileSync(new URL("../app/taxonomy-hub.tsx", import.meta.url), "utf8");
+const platforms = JSON.parse(readFileSync(new URL("../data/platforms.json", import.meta.url), "utf8"));
 
 test("platform and genre hubs are static, bounded, and metadata-aware", () => {
   for (const page of [platformPage, genrePage]) {
@@ -29,4 +30,5 @@ test("platform and genre hubs are static, bounded, and metadata-aware", () => {
   assert.match(platformPage, /visual=\{\{ kind: "platform", platformId: platform.id \}\}/);
   assert.match(genrePage, /visual=\{\{ kind: "genre", genreId: genre.id \}\}/);
   assert.match(genrePage, /visual=\{\{ kind: "genre"/);
+  assert.ok((platforms.items ?? []).every((platform: { description?: string }) => !/(reviewed expansion|foundational|anchors|starter set|acclaimed|best)/i.test(platform.description ?? "")));
 });

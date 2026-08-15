@@ -4,11 +4,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import AttributeGlyph from "@/app/attribute-glyph";
 import GameBoxViewer from "@/app/game-box-viewer";
+import JsonLd from "@/app/json-ld";
 import PlatformGlyph from "@/app/platform-glyph";
 import SiteFooter from "../../site-footer";
 import SiteHeader from "../../site-header";
 import { createPackagePresentation } from "@/lib/box-art/package-engine";
 import { createSiteConfig } from "@/lib/site-config";
+import { createBreadcrumbStructuredData, createVideoGameStructuredData } from "@/lib/structured-data";
 import { getCatalogGame, getCatalogGames, getEditorialSignals, getGameBoxFront, getGameEditorialArt, getGenreHub, getPlatformHub, getPublicGameSignals, resolveCatalogRecordSemantics } from "@/lib/catalog/site-data";
 
 const site = createSiteConfig(process.env);
@@ -44,6 +46,7 @@ export default async function GamePage({ params }: GamePageProps) {
   const publicSignals = getPublicGameSignals(game);
   const boxAsset = getGameBoxFront(game);
   const editorialTileAsset = getGameEditorialArt(game);
+  const gameUrl = site.publicUrl(`games/${game.slug}/`);
   const platformLabel = platforms.map((platform) => getPlatformDisplayLabel(platform)).join(" · ");
   const semantics = resolveCatalogRecordSemantics(game);
   const isSourceListed = semantics.platformAssociationScope === "source-listed";
@@ -67,6 +70,8 @@ export default async function GamePage({ params }: GamePageProps) {
   const isCatalogMethodEntry = editorialSignals.some((signal) => signal.evidenceState === "catalog-method");
 
   return <div className="site-shell">
+     <JsonLd data={createVideoGameStructuredData({ title: game.title, description: game.shortDescription, url: gameUrl, releaseDate: game.release.date, releaseScope: semantics.releaseScope, platformAssociationScope: semantics.platformAssociationScope, platformNames: platforms.map((platform) => getPlatformDisplayLabel(platform)), genreNames: genres.map((genre) => genre.name) })} />
+    <JsonLd data={createBreadcrumbStructuredData([{ name: "GameAtlas", url: site.canonicalUrl }, { name: game.title, url: gameUrl }])} />
     <a className="skip-link" href="#main-content">Skip to main content</a>
     <SiteHeader />
 

@@ -1,0 +1,54 @@
+name: Catalog correction
+description: Report a factual, taxonomy, source, or asset-status correction.
+title: "Catalog correction: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please report one correction per issue. Do not paste review text or attach unlicensed artwork.
+  - type: input
+    id: slug
+    attributes:
+      label: Game or platform slug
+      description: Use the slug from the public URL, for example `metroid` or `nintendo-nes`.
+      placeholder: metroid
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Field to correct
+      placeholder: release year, platform, genre, source, or asset status
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: Describe the current value and the replacement value or status.
+    validations:
+      required: true
+  - type: input
+    id: source-url
+    attributes:
+      label: Public source URL
+      description: Link to the authoritative page supporting the correction.
+      placeholder: https://example.com/source
+    validations:
+      required: true
+  - type: textarea
+    id: rights-concern
+    attributes:
+      label: Rights or asset concern
+      description: If this concerns artwork, licensing, or copied material, explain the concern without uploading the material.
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Submission checks
+      options:
+        - label: I have not included copied review text or unlicensed artwork.
+          required: true
+        - label: I understand this report will be publicly visible on GitHub.
+          required: true

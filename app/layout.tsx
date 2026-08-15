@@ -7,10 +7,10 @@ const site = createSiteConfig(process.env);
 export const metadata: Metadata = {
   metadataBase: new URL(`${site.siteUrl}/`),
   title: { default: "GameAtlas", template: "%s | GameAtlas" },
-  description: "A source-aware atlas of the best Nintendo and PC games.",
+  description: "A source-aware atlas of Nintendo and PC game catalog entries.",
   applicationName: "GameAtlas",
   category: "games",
-  keywords: ["best Nintendo games", "best PC games", "Nintendo game guide", "acclaimed games", "video game list"],
+  keywords: ["Nintendo games", "PC games", "Nintendo game guide", "video game catalog", "video game list"],
   formatDetection: { telephone: false },
 };
 

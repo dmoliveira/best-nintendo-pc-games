@@ -4,7 +4,7 @@
 
 GameAtlas is a source-aware, static-first guide to acclaimed and popular games. It starts with Nintendo consoles, then expands to PC with searchable platform, genre, year, developer, publisher, and evidence filters.
 
-**Status:** foundation in progress · [planned GitHub Pages site](https://dmoliveira.github.io/best-nintendo-pc-games/)
+**Status:** live validated catalog · [GameAtlas on GitHub Pages](https://dmoliveira.github.io/best-nintendo-pc-games/)
 
 ## What is being built
 
@@ -16,6 +16,8 @@ GameAtlas is a source-aware, static-first guide to acclaimed and popular games. 
 - static GitHub Pages deployment with no runtime API keys.
 
 The launch plan and acceptance gates live in [`docs/plan/new/2026-08-15-gameatlas-launch.md`](docs/plan/new/2026-08-15-gameatlas-launch.md). Source, asset, and support constraints live in [`docs/rights-and-support-policy.md`](docs/rights-and-support-policy.md).
+
+Catalog refreshes, coverage reports, optional link checks, and correction handling are documented in [`docs/guides/catalog-maintenance.md`](docs/guides/catalog-maintenance.md).
 
 The canonical Nintendo platform taxonomy is in [`data/platforms.json`](data/platforms.json), with its checked alpha and expansion coverage matrix in [`data/coverage.json`](data/coverage.json).
 

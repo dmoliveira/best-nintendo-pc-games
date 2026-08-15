@@ -227,17 +227,17 @@
     },
     {
       "id": "supplier-dvd-14mm",
-      "title": "MediaSupply standard 14 mm DVD case",
-      "sourceUrl": "https://www.mediasupply.com/dvd-cases-black-standard-14mm.html",
+      "title": "MediaSupply DVD packaging catalog",
+      "sourceUrl": "https://www.mediasupply.com/collections/accessories-dvd-packaging",
       "accessedAt": "2026-08-15",
-      "method": "Supplier product measurement used only as a neutral DVD-case-family geometry reference."
+      "method": "Supplier packaging catalog used only as a neutral DVD-case-family geometry reference."
     },
     {
       "id": "retailer-switch-sku",
-      "title": "Target Super Mario Odyssey product listing",
-      "sourceUrl": "https://www.target.com/p/super-mario-odyssey-nintendo-switch/-/A-52161235",
+      "title": "Target Super Mario Odyssey product search",
+      "sourceUrl": "https://www.target.com/s?searchTerm=super%20mario%20odyssey%20nintendo%20switch",
       "accessedAt": "2026-08-15",
-      "method": "Retail SKU dimensions used as an approximate physical game-card-case reference; retailer dimensions can include packaging variance."
+      "method": "Retailer product search used as an approximate physical game-card-case reference; listings and packaging dimensions can change."
     },
     {
       "id": "nintendo-dsi-digital-exception",

@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { test } from "node:test";
 
 const page = readFileSync(new URL("../app/page.tsx", import.meta.url), "utf8");
+const manifest = readFileSync(new URL("../app/manifest.ts", import.meta.url), "utf8");
 const styles = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
 const gamePage = readFileSync(new URL("../app/games/[slug]/page.tsx", import.meta.url), "utf8");
 const browser = readFileSync(new URL("../app/catalog-browser.tsx", import.meta.url), "utf8");
@@ -11,6 +12,8 @@ const cards = readFileSync(new URL("../app/catalog-cards.tsx", import.meta.url),
 const packageThumbnail = readFileSync(new URL("../app/package-thumbnail.tsx", import.meta.url), "utf8");
 const taxonomyHub = readFileSync(new URL("../app/taxonomy-hub.tsx", import.meta.url), "utf8");
 const catalogIndex = readFileSync(new URL("../app/catalog/page.tsx", import.meta.url), "utf8");
+const policyPage = readFileSync(new URL("../app/docs/rights-and-support-policy/page.tsx", import.meta.url), "utf8");
+const footer = readFileSync(new URL("../app/site-footer.tsx", import.meta.url), "utf8");
 const staticExportValidator = readFileSync(new URL("../scripts/validate-static-export.mjs", import.meta.url), "utf8");
 
 test("home shell exposes a keyboard bypass and stable main landmark", () => {
@@ -22,6 +25,7 @@ test("home shell exposes a keyboard bypass and stable main landmark", () => {
 
 test("home shell exposes accessible catalog search and filters", () => {
   assert.match(page, /CatalogBrowser/);
+  assert.match(page, /createWebSiteStructuredData/);
   assert.match(page, /getCatalogSearchRecords/);
   assert.doesNotMatch(page, /Catalog search is coming soon/);
   assert.doesNotMatch(page, /Catalog coming soon/);
@@ -103,6 +107,20 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /Retry full catalog/);
   assert.match(browser, /syncPendingState/);
   assert.match(catalogIndex, /Browse every game\./);
+  assert.match(catalogIndex, /createCollectionPageStructuredData/);
+  assert.match(catalogIndex, /createBreadcrumbStructuredData/);
+  assert.match(gamePage, /createVideoGameStructuredData/);
+  assert.match(gamePage, /createBreadcrumbStructuredData/);
+  assert.match(policyPage, /site\.correctionUrl/);
+  assert.match(footer, /Report a correction/);
+  assert.match(page, /source-aware Nintendo and PC game catalog/);
+  assert.doesNotMatch(page, /Best Nintendo|games worth your time/);
+  assert.match(manifest, /source-aware Nintendo and PC game catalog/);
+  assert.doesNotMatch(manifest, /Best Nintendo|games worth your time/);
+  assert.match(footer, /Source-aware entries|source-aware catalog/);
+  assert.doesNotMatch(footer, /Curated picks|next great game|independent editorial guide/);
+  assert.match(staticExportValidator, /structuredDataBlocks/);
+  assert.match(staticExportValidator, /forbiddenStructuredDataKeys/);
   assert.match(catalogIndex, /No-JavaScript catalog/);
   assert.match(staticExportValidator, /const maximumHomePayloadBytes = 400 \* 1024/);
   assert.doesNotMatch(page, /Curated by humans|Thoughtful recommendations|reviewed picks/);
