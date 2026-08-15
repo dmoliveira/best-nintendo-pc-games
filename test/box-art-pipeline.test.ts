@@ -7,7 +7,7 @@ import path from "node:path";
 import { once } from "node:events";
 import { test } from "node:test";
 import { deflateSync } from "node:zlib";
-import { buildCodexImageArguments, generateBoxArt, getBoxArtPublicationLeaseInfo, publishBoxArt, recoverPendingBoxArtPublication } from "../lib/box-art/pipeline";
+import { GENERATED_BOX_ART_DISCLOSURE, OPENAI_TERMS_OF_USE_EFFECTIVE_DATE, OPENAI_TERMS_OF_USE_URL, buildCodexImageArguments, generateBoxArt, getBoxArtPublicationLeaseInfo, publishBoxArt, recoverPendingBoxArtPublication } from "../lib/box-art/pipeline";
 import { getBoxArtFormat } from "../lib/box-art/formats";
 
 function checksum(filePath: string) {
@@ -85,6 +85,10 @@ test("publishes only a checksum-bound draft and adds matching catalog provenance
     const manifest = JSON.parse(fs.readFileSync(path.join(fixture.root, "data/assets-manifest.json"), "utf8"));
     assert.equal(manifest.assets[0].contentChecksum, checksum(path.join(fixture.root, result.assetPath ?? "")));
     assert.equal(manifest.assets[0].boxFormatId, "cartridge-portrait");
+    assert.equal(manifest.assets[0].licenseOrPermissionUrl, OPENAI_TERMS_OF_USE_URL);
+    assert.equal(manifest.assets[0].providerTermsEffectiveDate, OPENAI_TERMS_OF_USE_EFFECTIVE_DATE);
+    assert.equal(manifest.assets[0].aiGeneratedDisclosure, GENERATED_BOX_ART_DISCLOSURE);
+    assert.match(manifest.assets[0].altText, /^AI-generated GameAtlas editorial front artwork/);
     const game = JSON.parse(fs.readFileSync(path.join(fixture.root, "data/games/sample-game.json"), "utf8"));
     assert.deepEqual(game.assets[0], { path: result.assetPath, alt: manifest.assets[0].altText, provenanceId: result.provenanceId, role: "box-front", boxFormatId: "cartridge-portrait" });
     assert.equal(fs.existsSync(path.join(fixture.root, "artifacts/box-art/.publish-journal.json")), false);

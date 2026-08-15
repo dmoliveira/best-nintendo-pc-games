@@ -51,6 +51,9 @@ interface PublicationJournal {
 export const BOX_ART_ARTIFACT_ROOT = "artifacts/box-art";
 export const MAX_BOX_ART_BYTES = 12 * 1024 * 1024;
 export const BOX_ART_APPROVAL_ATTESTATION = "I reviewed this exact asset and confirm it contains no recreated official box art, no logos, no characters, and no screenshots.";
+export const OPENAI_TERMS_OF_USE_URL = "https://openai.com/policies/terms-of-use/";
+export const OPENAI_TERMS_OF_USE_EFFECTIVE_DATE = "2026-01-01";
+export const GENERATED_BOX_ART_DISCLOSURE = "AI-generated with OpenAI Codex Image; reviewed before publication.";
 const SECRET_PATTERNS = [
   /\bsk-[A-Za-z0-9_-]{20,}\b/,
   /\b(?:ghp|gho|ghu|ghs)_[A-Za-z0-9_]{20,}\b/,
@@ -512,15 +515,16 @@ function publishBoxArtUnlocked(options: PublishBoxArtOptions, root: string): { r
   invariant(!fs.existsSync(targetPath), `refusing to overwrite ${targetRelativePath}`);
   invariant(!manifest.assets.some((asset) => isRecord(asset) && (asset.assetId === assetId || asset.path === targetRelativePath)), "manifest already contains this box-front asset");
   invariant(!game.assets.some((asset) => isRecord(asset) && asset.role === "box-front" && asset.boxFormatId === format.id), "game already has a box-front asset for this format");
-  const altText = `Original GameAtlas editorial front artwork for ${game.title} in the ${format.label} interactive package view.`;
+  const altText = `AI-generated GameAtlas editorial front artwork for ${game.title} in the ${format.label} interactive package view.`;
   const manifestRecord = {
     assetId,
     path: targetRelativePath,
     assetKind: "generated-game-box-front",
     creatorOrSource: `Generated with ${draft.modelOrTool}`,
-    licenseOrPermissionUrl: null,
-    notApplicableReason: "Original GameAtlas editorial artwork; no third-party artwork was acquired.",
-    attribution: "GameAtlas original editorial artwork",
+    licenseOrPermissionUrl: OPENAI_TERMS_OF_USE_URL,
+    providerTermsEffectiveDate: OPENAI_TERMS_OF_USE_EFFECTIVE_DATE,
+    attribution: "AI-generated with OpenAI Codex Image for GameAtlas",
+    aiGeneratedDisclosure: GENERATED_BOX_ART_DISCLOSURE,
     generatedOrAcquiredAt: draft.generatedAt,
     intendedUse: "game-box-front",
     altText,

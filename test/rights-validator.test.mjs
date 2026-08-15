@@ -96,12 +96,13 @@ function appendBoxFront(manifest, fixtureRoot, approvalNote) {
     path: relativePath,
     assetKind: "generated-game-box-front",
     creatorOrSource: "fixture",
-    licenseOrPermissionUrl: null,
-    notApplicableReason: "original fixture",
-    attribution: "GameAtlas",
+    licenseOrPermissionUrl: "https://openai.com/policies/terms-of-use/",
+    providerTermsEffectiveDate: "2026-01-01",
+    attribution: "AI-generated with OpenAI Codex Image for GameAtlas",
+    aiGeneratedDisclosure: "AI-generated with OpenAI Codex Image; reviewed before publication.",
     generatedOrAcquiredAt: "2026-08-15",
     intendedUse: "game-box-front",
-    altText: "Original GameAtlas editorial front artwork for Sample Game.",
+    altText: "AI-generated GameAtlas editorial front artwork for Sample Game.",
     reviewedBy: "fixture reviewer",
     rightsReviewedAt: "2026-08-15",
     recheckAt: null,
@@ -137,6 +138,16 @@ test("rejects a negated or embellished box-front attestation", () => {
     appendBoxFront(manifest, fixtureRoot, "Not reviewed, but no recreated official box art, no logos, no characters, and no screenshots. Extra text.");
   });
   assert.match(output, /approvalNote must attest/);
+});
+
+test("requires a dated provider terms record and AI disclosure for a generated game-box front", () => {
+  const output = runRightsValidator((manifest, fixtureRoot) => {
+    appendBoxFront(manifest, fixtureRoot, "I reviewed this exact asset and confirm it contains no recreated official box art, no logos, no characters, and no screenshots.");
+    manifest.assets.at(-1).providerTermsEffectiveDate = "not-a-date";
+    manifest.assets.at(-1).aiGeneratedDisclosure = "Reviewed editorial artwork.";
+  });
+  assert.match(output, /providerTermsEffectiveDate: must be a valid YYYY-MM-DD date/);
+  assert.match(output, /aiGeneratedDisclosure must identify AI generation/);
 });
 
 test("rejects credential-like data from a public manifest field", () => {

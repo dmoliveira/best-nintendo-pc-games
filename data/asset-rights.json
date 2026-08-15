@@ -160,6 +160,8 @@
       "modelOrTool",
       "outputOrAssetId",
       "generatedOrAcquiredAt",
+      "providerTermsEffectiveDate",
+      "aiGeneratedDisclosure",
       "contentChecksum",
       "boxFormatId",
       "pixelWidth",
