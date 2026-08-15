@@ -2501,10 +2501,7 @@ h1 {
 
 @media (max-width:800px){
   .game-grid{grid-template-columns:1fr}
-  .layout-control{align-items:flex-start;flex-direction:column;gap:8px;width:100%}
-  .layout-options{grid-template-columns:repeat(4,minmax(0,1fr));display:grid;width:100%}
-  .layout-option{min-width:0}
-  .layout-option-copy small{display:none}
+  .browser-layout-row{display:none}
 }
 
 /* Original, category-generic SVG markers. */
@@ -2603,6 +2600,7 @@ h1 {
 .game-card-topline-leading{align-items:center;display:flex;gap:8px;min-width:0}
 .game-card-position{color:var(--coral);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.58rem;letter-spacing:.08em}
 .game-card-position-label{color:var(--muted);font-family:inherit;font-size:.52rem;letter-spacing:.05em;text-transform:uppercase}
+.game-card-position-total{color:var(--faint);font-size:.5rem;letter-spacing:.04em}
 .game-card-signal-stack{align-items:flex-start;display:flex;flex:1;flex-wrap:wrap;gap:5px;min-width:0}
 .score-value,.sales-summary{align-items:baseline;display:inline-flex;gap:6px;line-height:1.2;text-decoration:none}
 .score-value strong,.sales-summary strong{color:var(--paper);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.68rem;font-weight:700}

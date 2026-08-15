@@ -81,7 +81,7 @@ export default function Home() {
           <div><p className="eyebrow">The reviewed catalog</p><h2 id="games-heading">Start with a game.</h2></div>
           <p className="section-aside">Search by title, person, platform, genre, year, or creator. Sort the results without turning editorial context into a blended rating.</p>
         </div>
-        <noscript><style>{".browser-panel, .result-tools .page-size-field, .hero-search { display: none; }"}</style><p className="noscript-note">Interactive filters and pagination require JavaScript; all reviewed game cards remain available below.</p></noscript>
+        <noscript><style>{".browser-panel, .result-tools .page-size-field, .hero-search { display: none; }"}</style><p className="noscript-note">Interactive filters, sorting, and pagination require JavaScript. URL filters cannot be applied without it, so the complete reviewed catalog is shown below.</p></noscript>
         <CatalogBrowser records={getCatalogSearchRecords()} />
       </section>
 
