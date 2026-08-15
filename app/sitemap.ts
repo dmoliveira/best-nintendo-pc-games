@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date("2026-08-15T00:00:00Z");
   return [
     { url: site.canonicalUrl, lastModified, changeFrequency: "weekly", priority: 1 },
+    { url: site.publicUrl("catalog/"), lastModified, changeFrequency: "weekly", priority: 0.9 },
     { url: site.publicUrl("docs/rights-and-support-policy/"), lastModified, changeFrequency: "monthly", priority: 0.5 },
     ...getPlatformHubs().map((platform) => ({ url: site.publicUrl(`platforms/${platform.id}/`), lastModified, changeFrequency: "monthly" as const, priority: 0.8 })),
     ...getGenreHubs().map((genre) => ({ url: site.publicUrl(`genres/${genre.id}/`), lastModified, changeFrequency: "monthly" as const, priority: 0.7 })),
