@@ -233,7 +233,7 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
     ...genres.map((genre) => genre.name),
   ].filter((value): value is string => Boolean(value)).join(" "));
   const catalogArt = getGameEditorialArt(game);
-  const catalogArtPath = catalogArt ? site.publicUrl(catalogArt.path.replace(/^public\//, "")) : undefined;
+  const catalogArtPath = catalogArt ? site.assetPath(catalogArt.path.replace(/^public\//, "")) : undefined;
   const packagePresentation = createPackagePresentation({
     title: game.title,
     platformIds: game.platforms,

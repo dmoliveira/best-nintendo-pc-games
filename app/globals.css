@@ -3227,4 +3227,4 @@ h1 {
 .display-page-size{border-top:1px solid var(--line);justify-content:space-between;margin-top:1px;padding-top:10px;width:100%}
 .display-page-size select{background:transparent;border:0;color:var(--paper);cursor:pointer;font-size:.64rem;padding:2px 0}
 .display-page-size select:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
-@media(max-width:800px){.display-panel{left:0;right:auto;max-width:calc(100vw - 32px);min-width:255px}.display-panel .layout-control--images{border-left:0;margin-left:0;padding-left:0}}
+@media(max-width:800px){.display-panel{left:0;right:auto;max-width:calc(100vw - 32px);min-width:255px}.display-panel .layout-control:not(.layout-control--images){display:none}.display-panel .layout-control--images{border-left:0;margin-left:0;padding-left:0}}

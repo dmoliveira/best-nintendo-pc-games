@@ -161,7 +161,10 @@ async function releaseDrag(client, { endX, y }) {
 const desktopMetrics = { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false };
 
 async function catalogIndexRequestCount(client) {
-  return client.evaluate('performance.getEntriesByType("resource").filter((entry) => new URL(entry.name).pathname.endsWith("/catalog-search-index.json")).length');
+  const requestDetails = await client.evaluate('(() => ({ origin: window.location.origin, urls: performance.getEntriesByType("resource").filter((entry) => new URL(entry.name).pathname.endsWith("/catalog-search-index.json")).map((entry) => entry.name) }))()');
+  const remoteRequest = requestDetails.urls.find((url) => new URL(url).origin !== requestDetails.origin);
+  if (remoteRequest) fail(`catalog index request escaped the local preview origin: ${remoteRequest}`);
+  return requestDetails.urls.length;
 }
 
 async function waitForCatalogShell(client) {
@@ -352,7 +355,13 @@ async function main() {
     .sort()
     .map((file) => JSON.parse(fs.readFileSync(path.join(gameDirectory, file), "utf8")));
   const assets = JSON.parse(fs.readFileSync(path.join(root, "data/assets-manifest.json"), "utf8")).assets ?? [];
+  const packageProfiles = JSON.parse(fs.readFileSync(path.join(root, "data/box-art-formats.json"), "utf8")).platformPackageProfiles ?? {};
   const assetById = new Map(assets.map((asset) => [asset.assetId, asset]));
+  const hasPublishedBoxFront = (game) => game.assets?.some((asset) => asset?.role === "box-front");
+  const isSourceListedReference = (game) => game.sources?.includes("wikidata-fact-reference")
+    && game.release?.scope === "earliest-title-release"
+    && game.platformAssociationScope === "source-listed";
+  const packageProfileFor = (game) => game.platforms?.length === 1 ? packageProfiles[game.platforms[0]] : undefined;
   const approvedEditorialAsset = (game) => game.assets?.find((asset) => {
     const manifest = assetById.get(asset?.provenanceId);
     return asset?.role !== "box-front" && manifest
@@ -360,20 +369,21 @@ async function main() {
       && manifest.assetKind === "generated-original-editorial"
       && manifest.intendedUse === "game-card-thumbnail";
   });
-  const fallbackGame = games.find((game) => !game.assets?.some((asset) => asset?.role === "box-front") && game.releaseFormat !== "digital" && game.platformAssociationScope !== "source-listed");
-  if (!fallbackGame) fail("no physical verified-release game without a published box front is available for fallback validation");
-  const sourceListedGame = games.find((game) => game.platformAssociationScope === "source-listed");
-  if (!sourceListedGame) fail("no source-listed reference fixture is available for package validation");
-  const publishedBoxGame = games.find((game) => game.assets?.some((asset) => asset?.role === "box-front"));
+  const physicalFallbackGame = games.find((game) => !isSourceListedReference(game) && !hasPublishedBoxFront(game) && packageProfileFor(game)?.kind === "physical");
+  if (!physicalFallbackGame) fail("no verified physical game without a published box front is available for fallback validation");
+  const sourceListedReferenceGame = games.find(isSourceListedReference);
+  if (!sourceListedReferenceGame) fail("no source-listed title-year reference game is available for validation");
+  const publishedBoxGame = games.find(hasPublishedBoxFront);
   if (!publishedBoxGame) fail("no approved published box-front fixture is available for browser validation");
-  const digitalGame = games.find((game) => game.releaseFormat === "digital");
-  if (!digitalGame) fail("no digital package fixture is available for browser validation");
-  const catalogThumbnailGame = games.find((game) => approvedEditorialAsset(game) && game.releaseFormat !== "digital" && game.platformAssociationScope !== "source-listed");
-  if (!catalogThumbnailGame) fail("no physical verified-release editorial-thumbnail fixture is available for browser validation");
+  const digitalGame = games.find((game) => !isSourceListedReference(game) && packageProfileFor(game)?.kind === "digital");
+  if (!digitalGame) fail("no verified digital package fixture is available for browser validation");
+  const catalogSearchRecords = JSON.parse(fs.readFileSync(path.join(root, "public/catalog-search-index.json"), "utf8")).records ?? [];
+  const initialCatalogSlugs = new Set(catalogSearchRecords.slice(0, 24).map((record) => record.slug));
+  const catalogThumbnailGame = games.find((game) => initialCatalogSlugs.has(game.slug) && isSourceListedReference(game) && approvedEditorialAsset(game));
+  if (!catalogThumbnailGame) fail("no initial source-listed editorial-thumbnail fixture is available for browser validation");
   const catalogThumbnailAsset = approvedEditorialAsset(catalogThumbnailGame);
   const catalogRepresentativeGame = games.find((game) => game.slug === "art-of-rally");
   if (!catalogRepresentativeGame) fail("the curated art-of-rally catalog fixture is required for card interaction validation");
-  const catalogSearchRecords = JSON.parse(fs.readFileSync(path.join(root, "public/catalog-search-index.json"), "utf8")).records ?? [];
   const initialCatalogPlatformIds = new Set(catalogSearchRecords.slice(0, 24).flatMap((record) => record.platformIds));
   const deferredCatalogPlatformId = catalogSearchRecords.flatMap((record) => record.platformIds).find((platformId) => !initialCatalogPlatformIds.has(platformId));
   if (!deferredCatalogPlatformId) fail("the catalog index needs a platform absent from the first 24 records for deferred query validation");
@@ -393,7 +403,7 @@ async function main() {
       const response = await fetch(`http://127.0.0.1:${debugPort}/json/version`);
       return response.ok;
     });
-    const pageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${fallbackGame.slug}/`;
+    const pageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${physicalFallbackGame.slug}/`;
     const targetResponse = await fetch(`http://127.0.0.1:${debugPort}/json/new?${encodeURIComponent(pageUrl)}`, { method: "PUT" });
     if (!targetResponse.ok) fail("Chrome did not create a debugging target");
     const target = await targetResponse.json();
@@ -429,8 +439,10 @@ async function main() {
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "true"'));
     const releasedCapture = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); if (!stage?.hasPointerCapture(1)) return false; stage.releasePointerCapture(1); return true; })()');
     if (!releasedCapture) fail("physical package drag did not capture the active pointer before cancellation validation");
-    await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: dragCoordinates.endX, y: dragCoordinates.y, button: "left", buttons: 0, clickCount: 1 });
+    const dispatchedLostPointerCapture = await client.evaluate(`(() => { const stage = document.querySelector("[data-game-box-stage]"); if (!stage) return false; stage.dispatchEvent(new PointerEvent("lostpointercapture", { bubbles: true, cancelable: true, pointerId: 1, pointerType: "mouse", isPrimary: true, clientX: ${dragCoordinates.endX}, clientY: ${dragCoordinates.y} })); return true; })()`);
+    if (!dispatchedLostPointerCapture) fail("physical package drag stage did not accept lost-pointer-capture validation");
     await waitFor(() => client.evaluate('new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => { const stage = document.querySelector("[data-game-box-stage]"); resolve(stage?.dataset.boxDragging === "false" && stage?.dataset.boxAngle === "0" && stage?.dataset.boxDragAngle === "0.0"); })))'));
+    await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: dragCoordinates.endX, y: dragCoordinates.y, button: "left", buttons: 0, clickCount: 1 });
     await drag(client, dragCoordinates);
     await releaseDrag(client, dragCoordinates);
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "90" && document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "false"'));
@@ -478,15 +490,15 @@ async function main() {
     const digitalState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); return { kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor }; })()');
     if (digitalState.kind !== "digital" || digitalState.depth !== "0" || digitalState.restAngle !== "0" || digitalState.hasSpine || digitalState.hasRotate || digitalState.angle !== "0" || digitalState.dragging !== "false" || digitalState.cursor) fail(`digital profile implied a physical package or accepted drag rotation: ${JSON.stringify(digitalState)}`);
 
-    const sourceListedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${sourceListedGame.slug}/`;
+    const sourceListedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${sourceListedReferenceGame.slug}/`;
     await client.send("Page.navigate", { url: sourceListedPageUrl });
-    await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(sourceListedGame.title)}`));
-    const sourceListedState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); const rect = stage?.getBoundingClientRect(); return rect ? { startX: rect.left + 20, endX: rect.left + 170, y: rect.top + rect.height / 2 } : null; })()');
-    if (!sourceListedState) fail("source-listed reference stage did not expose drag coordinates");
-    await drag(client, sourceListedState);
-    await releaseDrag(client, sourceListedState);
-    const sourceReferenceState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); return { mode: stage?.dataset.presentationMode, kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor, copy: document.body.textContent.includes("no platform-specific package is implied") }; })()');
-    if (sourceReferenceState.mode !== "source-listed-reference" || sourceReferenceState.kind !== "digital" || sourceReferenceState.depth !== "0" || sourceReferenceState.hasRotate || sourceReferenceState.angle !== "0" || sourceReferenceState.dragging !== "false" || sourceReferenceState.cursor || !sourceReferenceState.copy) fail(`source-listed reference presentation accepted physical drag behavior: ${JSON.stringify(sourceReferenceState)}`);
+    await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(sourceListedReferenceGame.title)}`));
+    const sourceListedDragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); const rect = stage?.getBoundingClientRect(); return rect ? { startX: rect.left + 20, endX: rect.left + 170, y: rect.top + rect.height / 2 } : null; })()');
+    if (!sourceListedDragCoordinates) fail("source-listed reference stage did not expose drag coordinates");
+    await drag(client, sourceListedDragCoordinates);
+    await releaseDrag(client, sourceListedDragCoordinates);
+    const sourceListedState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); return { label: stage?.getAttribute("aria-label"), mode: stage?.dataset.presentationMode, kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasFront: Boolean(document.querySelector(".game-box__front img")), hasSpine: Boolean(document.querySelector(".game-box__spine")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor, reference: document.body.textContent.includes("GameAtlas reference presentation"), scope: document.body.textContent.includes("do not establish a platform-specific release date"), copy: document.body.textContent.includes("no platform-specific package is implied"), fallbackRole: fallback?.getAttribute("role") }; })()');
+    if (!sourceListedState.label?.includes("Catalog reference view") || sourceListedState.mode !== "source-listed-reference" || sourceListedState.kind !== "digital" || sourceListedState.depth !== "0" || sourceListedState.restAngle !== "0" || sourceListedState.hasFront || sourceListedState.hasSpine || sourceListedState.hasRotate || sourceListedState.angle !== "0" || sourceListedState.dragging !== "false" || sourceListedState.cursor || !sourceListedState.reference || !sourceListedState.scope || !sourceListedState.copy || sourceListedState.fallbackRole !== "img") fail(`source-listed title-year record implied a platform package or accepted drag rotation: ${JSON.stringify(sourceListedState)}`);
 
     const catalogThumbnailUrl = new URL(`http://127.0.0.1:${preview.port}${basePath}/`);
     catalogThumbnailUrl.searchParams.set("q", catalogThumbnailGame.title);
@@ -495,7 +507,7 @@ async function main() {
     await waitFor(() => client.evaluate(`Boolean(document.querySelector(${JSON.stringify(catalogSelector)})?.closest(".game-card")?.querySelector(".package-thumbnail"))`));
     const thumbnailState = await client.evaluate(`(() => { const titleLink = document.querySelector(${JSON.stringify(catalogSelector)}); const thumbnail = titleLink?.closest(".game-card")?.querySelector(".package-thumbnail"); const object = thumbnail?.querySelector(".package-thumbnail__object"); const image = thumbnail?.querySelector(".package-thumbnail__front img"); return { format: thumbnail?.dataset.packageFormat, kind: thumbnail?.dataset.packageKind, hasSpine: Boolean(thumbnail?.querySelector(".package-thumbnail__spine")), source: image?.getAttribute("src"), loading: image?.getAttribute("loading"), decoding: image?.getAttribute("decoding"), priority: image?.getAttribute("fetchpriority"), transform: object ? getComputedStyle(object).transform : "" }; })()`);
     const expectedThumbnailSuffix = `/${catalogThumbnailAsset.path.replace(/^public\//, "")}`;
-    if (!thumbnailState.format || thumbnailState.kind !== "physical" || !thumbnailState.hasSpine || thumbnailState.transform === "none" || !thumbnailState.source?.endsWith(expectedThumbnailSuffix) || thumbnailState.loading !== "lazy" || thumbnailState.decoding !== "async" || thumbnailState.priority === "high") fail(`catalog package thumbnail did not retain approved low-impact loading behavior: ${JSON.stringify(thumbnailState)}`);
+    if (thumbnailState.format !== "catalog-reference" || thumbnailState.kind !== "digital" || thumbnailState.hasSpine || thumbnailState.transform !== "none" || !thumbnailState.source?.endsWith(expectedThumbnailSuffix) || thumbnailState.loading !== "lazy" || thumbnailState.decoding !== "async" || thumbnailState.priority === "high") fail(`source-listed catalog thumbnail implied a physical package or lost its low-impact loading behavior: ${JSON.stringify(thumbnailState)}`);
 
     await validateCatalogBrowser(client, `http://127.0.0.1:${preview.port}${basePath}/`, catalogRepresentativeGame, deferredCatalogPlatformId, deferredCatalogPlatformCount);
 
@@ -504,7 +516,7 @@ async function main() {
     await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }, { name: "forced-colors", value: "active" }] });
     const mediaState = await client.evaluate('(() => ({ reduce: matchMedia("(prefers-reduced-motion: reduce)").matches, forced: matchMedia("(forced-colors: active)").matches, duration: getComputedStyle(document.querySelector(".game-box")).transitionDuration, willChange: getComputedStyle(document.querySelector(".game-box")).willChange }))()');
     if (!mediaState.reduce || !mediaState.forced || Number.parseFloat(mediaState.duration) > 0.001 || mediaState.willChange !== "auto") fail(`reduced-motion, forced-colors, or compositor fallback is not active: ${JSON.stringify(mediaState)}`);
-    console.log(`Browser validation passed (${fallbackGame.slug} fallback, ${publishedBoxGame ? `${publishedBoxGame.slug} published front` : "no published front"}, front-first image scheduling, package profiles, catalog filters/layout/pagination, mobile layout, keyboard, zoom, fullscreen fallback, focus restoration, background isolation, reduced motion, forced colors).`);
+    console.log(`Browser validation passed (${physicalFallbackGame.slug} physical fallback, ${sourceListedReferenceGame.slug} source-listed reference, ${publishedBoxGame ? `${publishedBoxGame.slug} published front` : "no published front"}, front-first image scheduling, package profiles, catalog filters/layout/pagination, mobile layout, keyboard, zoom, fullscreen fallback, focus restoration, background isolation, reduced motion, forced colors).`);
   } finally {
     client?.close();
     if (browser && browser.exitCode === null && browser.signalCode === null) {

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && touch out/.nojekyll",
+    "build": "npm run generate:catalog-search-index && next build && touch out/.nojekyll",
     "preview": "python3 -m http.server 4173 --directory out",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
