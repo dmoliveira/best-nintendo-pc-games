@@ -220,6 +220,7 @@ export async function parseCatalogSearchIndex(value: unknown, expectedCount: num
 }
 
 export type CatalogSort = "relevance" | "newest" | "oldest" | "platform" | "title";
+export type CatalogImageMode = "show" | "hide";
 
 export interface CatalogSearchState {
   q: string;
@@ -234,6 +235,7 @@ export interface CatalogSearchState {
   sort?: CatalogSort;
   page?: number;
   pageSize?: CatalogPageSize;
+  images?: CatalogImageMode;
 }
 
 export interface SearchStateOptions {
@@ -271,11 +273,12 @@ export const EMPTY_SEARCH_STATE: CatalogSearchState = {
   sort: "relevance",
   page: 1,
   pageSize: DEFAULT_PAGE_SIZE,
+  images: "show",
 };
 export const SEARCH_STATE_EVENT = "gameatlas:search-state";
 
 export function clearCatalogFilters(state: CatalogSearchState): CatalogSearchState {
-  return { ...EMPTY_SEARCH_STATE, sort: state.sort, pageSize: state.pageSize, columns: state.columns };
+  return { ...EMPTY_SEARCH_STATE, sort: state.sort, pageSize: state.pageSize, columns: state.columns, images: state.images };
 }
 
 export function normalizeSearchText(value: string): string {
@@ -363,6 +366,7 @@ export function parseSearchState(params: URLSearchParams, options: SearchStateOp
   const hasRange = Boolean(yearFrom || yearTo);
   const rawColumns = params.get("columns");
   const columns: CatalogColumns = rawColumns === "1" || rawColumns === "2" || rawColumns === "3" ? rawColumns : "auto";
+  const images: CatalogImageMode = params.get("images") === "hide" ? "hide" : "show";
   return {
     q: cleanQuery(params.get("q") ?? ""),
     platform: readKnownList(params, "platform", options.platformIds),
@@ -376,6 +380,7 @@ export function parseSearchState(params: URLSearchParams, options: SearchStateOp
     sort: isCatalogSort(params.get("sort")) ? params.get("sort") as CatalogSort : "relevance",
     page: parsePositiveInteger(params.get("page"), 1),
     pageSize: parsePageSize(params.get("perPage"), DEFAULT_PAGE_SIZE),
+    images,
   };
 }
 
@@ -415,6 +420,7 @@ export function serializeSearchState(state: CatalogSearchState): string {
   if (state.page && Number.isSafeInteger(state.page) && state.page > 1) params.set("page", String(state.page));
   if (state.pageSize && isPageSize(state.pageSize) && state.pageSize !== DEFAULT_PAGE_SIZE) params.set("perPage", String(state.pageSize));
   if (state.columns && state.columns !== "auto") params.set("columns", state.columns);
+  if (state.images === "hide") params.set("images", "hide");
   const query = params.toString();
   return query ? `?${query}` : "";
 }

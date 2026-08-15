@@ -41,4 +41,10 @@ test("catalog cards expose one game route and describe compact metadata and exte
   assert.match(markup, /class="score-value" href="https:\/\/example\.test\/critic" target="_blank" rel="noreferrer" title="Test Critics · Published review" aria-label="Critic score: 92\/100; Published review; source Test Critics; opens in a new tab"/);
   assert.match(markup, /class="sales-summary" href="https:\/\/example\.test\/sales" target="_blank" rel="noreferrer" title="Test Sales · Reported units" aria-label="Reported sales: 1\.2M; Reported units; source Test Sales; opens in a new tab"/);
   assert.doesNotMatch(markup, /Open Example Critic critic score context/);
+
+  const compactMarkup = renderToStaticMarkup(createElement(CatalogCards, { records: [record], showImages: false }));
+  assert.match(compactMarkup, /class="game-card game-card--no-image"/);
+  assert.doesNotMatch(compactMarkup, /game-card-art/);
+  assert.match(compactMarkup, /game-card-compact-rail/);
+  assert.match(compactMarkup, /Featured/);
 });

@@ -19,6 +19,7 @@ import {
   serializeSearchState,
   type CatalogColumns,
   type CatalogCardRecord,
+  type CatalogImageMode,
   type CatalogPageSize,
   type CatalogSearchRecord,
   type CatalogSearchState,
@@ -31,7 +32,7 @@ const layoutOptions: Array<{ value: CatalogColumns; label: string; description: 
   { value: "3", label: "3", description: "Dense", accessibleLabel: "Three-column card layout" },
 ];
 
-const catalogQueryKeys = new Set(["q", "platform", "genre", "year", "from", "to", "developer", "publisher", "sort", "page", "perPage", "columns"]);
+const catalogQueryKeys = new Set(["q", "platform", "genre", "year", "from", "to", "developer", "publisher", "sort", "page", "perPage", "columns", "images"]);
 
 interface CatalogBrowserProps {
   initialRecords: readonly CatalogCardRecord[];
@@ -257,6 +258,12 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
     syncUrl(nextState, "push");
   }
 
+  function updateImages(images: CatalogImageMode) {
+    const nextState = { ...state, images };
+    setState(nextState);
+    syncUrl(nextState, "push");
+  }
+
   function clearFilters() {
     const nextState = clearCatalogFilters(state);
     setState(nextState);
@@ -311,6 +318,19 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
             </label>)}
           </div>
         </fieldset>
+        <fieldset className="layout-control layout-control--images">
+          <legend>Images</legend>
+          <div className="layout-options" role="radiogroup" aria-label="Choose card images">
+            <label className={`layout-option${state.images !== "hide" ? " layout-option--active" : ""}`}>
+              <input type="radio" name="card-images" value="show" aria-label="Show card images" checked={state.images !== "hide"} onChange={() => updateImages("show")} />
+              <span className="layout-option-copy"><strong>On</strong><small>Visual</small></span>
+            </label>
+            <label className={`layout-option${state.images === "hide" ? " layout-option--active" : ""}`}>
+              <input type="radio" name="card-images" value="hide" aria-label="Hide card images" checked={state.images === "hide"} onChange={() => updateImages("hide")} />
+              <span className="layout-option-copy"><strong>Off</strong><small>Compact</small></span>
+            </label>
+          </div>
+        </fieldset>
         <p className="layout-mobile-note">Single-column layout on smaller screens.</p>
       </div>
       {activeFilterCount > 0 ? <div className="browser-filter-summary" aria-label="Active filters">
@@ -325,7 +345,7 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
     </form>
     <div className="result-bar"><p className="result-summary" ref={resultSummaryRef} tabIndex={-1} aria-live="polite">{resultSummary}</p><div className="result-tools"><span className="result-detail">Signals kept separate</span><label className="page-size-field" htmlFor="catalog-page-size"><span>Cards</span><select id="catalog-page-size" value={state.pageSize ?? DEFAULT_PAGE_SIZE} onChange={(event) => updatePageSize(event.target.value)}>{PAGE_SIZE_OPTIONS.map((size) => <option value={size} key={size}>{size} / page</option>)}</select></label></div></div>
     {indexStatus === "error" ? <p className="catalog-index-error" role="status">The full catalog index could not load.{hasRecognizedUrlQuery ? " The filters in this link have not been applied." : ""} <button className="text-link" type="button" onClick={loadCatalogIndex}>Retry the full catalog</button> or <a href={catalogIndexHref}>browse every game instead.</a></p> : null}
-    {!catalogReady || filteredRecords.length > 0 ? <CatalogCards records={displayRecords} columns={state.columns} showResultPosition resultPositionOffset={resultPositionOffset} resultPositionTotal={resultPositionTotal} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, year, developer, or publisher.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
+    {!catalogReady || filteredRecords.length > 0 ? <CatalogCards records={displayRecords} columns={state.columns} showImages={state.images !== "hide"} showResultPosition resultPositionOffset={resultPositionOffset} resultPositionTotal={resultPositionTotal} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, year, developer, or publisher.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
     {hydrated && catalogReady && page.pageCount > 1 ? <nav className="catalog-pagination" aria-label="Catalog pages"><button type="button" className="pagination-button" disabled={page.page === 1} onClick={() => updatePage(page.page - 1)}>Previous</button><div className="pagination-pages">{paginationItems.map((item) => item.type === "ellipsis" ? <span className="pagination-ellipsis" aria-hidden="true" key={`ellipsis-${item.before}-${item.after}`}>…</span> : <button type="button" className={`pagination-button${item.page === page.page ? " pagination-button--current" : ""}`} aria-current={item.page === page.page ? "page" : undefined} aria-label={`Go to page ${item.page}`} key={item.page} onClick={() => updatePage(item.page)}>{item.page}</button>)}</div><button type="button" className="pagination-button" disabled={page.page === page.pageCount} onClick={() => updatePage(page.page + 1)}>Next</button></nav> : null}
   </div>;
 }
