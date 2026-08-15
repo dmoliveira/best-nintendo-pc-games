@@ -242,6 +242,15 @@ async function releaseDrag(client, { endX, y }) {
   await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: endX, y, button: "left", buttons: 0, clickCount: 1 });
 }
 
+async function waitForDragStart(client, { startX, y }) {
+  try {
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "true" && Number(document.querySelector("[data-game-box-stage]")?.dataset.boxDragAngle) > 0'));
+  } catch {
+    const state = await client.evaluate(`(() => { const stage = document.querySelector("[data-game-box-stage]"); const rect = stage?.getBoundingClientRect(); const hit = document.elementFromPoint(${startX}, ${y}); return { startX: ${startX}, y: ${y}, rect: rect ? { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, width: rect.width, height: rect.height } : null, hit: hit ? { tag: hit.tagName, className: hit.className, insideStage: Boolean(stage?.contains(hit)) } : null, pointerEvents: stage ? getComputedStyle(stage).pointerEvents : null, active: document.activeElement === stage, dragging: stage?.dataset.boxDragging, dragAngle: stage?.dataset.boxDragAngle }; })()`);
+    fail(`pointer drag did not start: ${JSON.stringify(state)}`);
+  }
+}
+
 const desktopMetrics = { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false };
 
 async function waitForGameBoxReady(client, title, { rotate = false } = {}) {
@@ -638,7 +647,7 @@ async function main() {
     const dragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); const rect = stage?.getBoundingClientRect(); if (!rect) return null; const centerX = rect.left + rect.width / 2; return { startX: centerX - 75, endX: centerX + 75, y: rect.top + rect.height / 2 }; })()');
     if (!dragCoordinates) fail("physical package stage did not expose drag coordinates");
     await drag(client, dragCoordinates);
-    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "true" && Number(document.querySelector("[data-game-box-stage]")?.dataset.boxDragAngle) > 0'));
+    await waitForDragStart(client, dragCoordinates);
     const draggingState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { cursor: stage?.style.cursor, touchAction: stage?.style.touchAction, transition: box?.style.transition, willChange: box?.style.willChange, angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle }; })()');
     if (draggingState.cursor !== "grabbing" || draggingState.touchAction !== "pan-y" || draggingState.transition !== "none" || draggingState.willChange !== "transform" || draggingState.angle !== "0") fail(`physical package drag did not enter a smooth transient rotation state: ${JSON.stringify(draggingState)}`);
     await releaseDrag(client, dragCoordinates);
