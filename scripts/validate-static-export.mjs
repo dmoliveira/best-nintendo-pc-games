@@ -9,7 +9,7 @@ const expectedBasePath = (process.env.EXPECTED_BASE_PATH ?? "/best-nintendo-pc-g
 const expectedCatalogGameCount = 1000;
 // App Router static exports include required Flight payloads for every client-navigable route.
 const maximumArtifactBytes = 150 * 1024 * 1024;
-const maximumHomePayloadBytes = 512 * 1024;
+const maximumHomePayloadBytes = 400 * 1024;
 const maximumCatalogSearchIndexBytes = 2 * 1024 * 1024;
 const expectedInitialCatalogCards = 24;
 const requiredFiles = ["index.html", ".nojekyll", "robots.txt", "sitemap.xml", "og-image.png", "mark.svg", "catalog/index.html", "catalog-search-index.json", "docs/rights-and-support-policy/index.html"];
