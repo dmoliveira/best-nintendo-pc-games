@@ -13,6 +13,8 @@ const LOCAL_REQUEST_TIMEOUT_MS = 10_000;
 const PROCESS_SHUTDOWN_TIMEOUT_MS = 5_000;
 const BROWSER_START_TIMEOUT_MS = 30_000;
 const PROFILE_CLEANUP_RETRIES = 20;
+const PROFILE_CLEANUP_SETTLE_MS = 500;
+const PROFILE_CLEANUP_TRANSIENT_CODES = new Set(["EBUSY", "ENOTEMPTY", ...(process.platform === "win32" ? ["EPERM"] : [])]);
 const POINTER_EVENT_SETTLE_MS = 50;
 
 function fail(message) {
@@ -223,6 +225,17 @@ async function closeBrowser(client) {
 async function stopServer(server) {
   await Promise.race([new Promise((resolve) => server.close(resolve)), new Promise((resolve) => setTimeout(resolve, PROCESS_SHUTDOWN_TIMEOUT_MS))]);
   server.closeAllConnections?.();
+}
+
+async function removeProfile(profile) {
+  if (!profile) return;
+  await new Promise((resolve) => setTimeout(resolve, PROFILE_CLEANUP_SETTLE_MS));
+  try {
+    fs.rmSync(profile, { recursive: true, force: true, maxRetries: PROFILE_CLEANUP_RETRIES, retryDelay: 250 });
+  } catch (error) {
+    if (!PROFILE_CLEANUP_TRANSIENT_CODES.has(error?.code)) throw error;
+    console.warn(`Box-art browser profile cleanup deferred (${error.code}): ${profile}`);
+  }
 }
 
 async function press(client, key, code, keyCode) {
@@ -779,18 +792,7 @@ async function main() {
     client?.close();
     await stopBrowser(browser);
     if (preview) await stopServer(preview.server);
-    if (profile) {
-      try {
-        fs.rmSync(profile, { recursive: true, force: true, maxRetries: PROFILE_CLEANUP_RETRIES, retryDelay: 250 });
-      } catch (error) {
-        if (![
-          "EBUSY",
-          "ENOTEMPTY",
-          "EPERM",
-        ].includes(error?.code)) throw error;
-        fail(`Chrome profile cleanup remained busy after bounded retries: ${profile}`);
-      }
-    }
+    await removeProfile(profile);
   }
 }
 
