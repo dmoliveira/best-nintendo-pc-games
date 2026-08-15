@@ -330,7 +330,7 @@ async function validateCatalogBrowser(client, preview, catalogUrl, representativ
   `);
   if (!representative.foundRepresentativeCard || !representative.titleLink || representative.gameDetailLinks !== 1 || representative.artLink || representative.platformList !== "UL") fail(`catalog card semantics are incomplete: ${JSON.stringify(representative)}`);
   const pointerTargets = await client.evaluate(String.raw`
-    (() => {
+    (async () => {
       const card = document.querySelector(${JSON.stringify(representativeSelector)})?.closest(".game-card");
       const art = card?.querySelector(".game-card-art");
       const titleLink = card?.querySelector("a.game-card-title-link");
@@ -342,6 +342,7 @@ async function validateCatalogBrowser(client, preview, catalogUrl, representativ
       const filters = ["platform", "genre", "year", "developer", "publisher"].map((filter) => card?.querySelector('[data-catalog-filter="' + filter + '"]'));
       const guides = ["platform", "genre"].map((guide) => card?.querySelector('[data-catalog-guide="' + guide + '"]'));
       card?.scrollIntoView({ block: "center" });
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
       return {
         artUsesPrimaryLink: anchorAtCenter(art) === titleLink,
         filtersStayIndependent: filters.every((link) => anchorAtCenter(link) === link),
