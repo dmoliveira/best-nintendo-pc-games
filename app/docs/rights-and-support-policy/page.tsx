@@ -48,7 +48,7 @@ export default function RightsAndSupportPolicyPage() {
         <section className="policy-card" aria-labelledby="correction-policy-heading">
           <h2 id="correction-policy-heading">Report a catalog correction</h2>
           <p>Found a wrong platform, genre, release year, source, or asset status? Include the game or platform slug, the field in question, a proposed correction, and a public source URL. Do not attach copied review text or unlicensed artwork.</p>
-          <a className="text-link" href={site.correctionUrl} target="_blank" rel="noreferrer">Open the catalog correction form <span aria-hidden="true">↗</span></a>
+          <a className="text-link" href={site.correctionUrl} target="_blank" rel="noreferrer" aria-label="Open the catalog correction form; opens in a new tab">Open the catalog correction form <span aria-hidden="true">↗</span></a>
         </section>
 
         <section className="policy-card" aria-labelledby="source-links-heading">
