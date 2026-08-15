@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { findCatalogIdentityCollisions, findDuplicateRecordIds, isEligibleCritic80, isEligiblePopularity, normalizeCatalogKey, validateGameRecord, validateSignal, type CatalogContext, type GameRecord, type GameSignal } from "../lib/catalog/index";
+import { findCatalogIdentityCollisions, findDuplicateRecordIds, isEligibleCritic80, isEligibleCriticDisplay, isEligiblePopularity, isEligibleSalesValueDisplay, normalizeCatalogKey, validateGameRecord, validateSignal, type CatalogContext, type GameRecord, type GameSignal } from "../lib/catalog/index";
 
 const sourcePolicy = (id: string, provider: string, allowedFields: string[], status: "approved" | "outbound-only" = "approved") => ({ id, provider, status, allowedFields, termsUrl: "https://example.com/terms", rightsReviewedAt: "2026-08-15", recheckAt: "2026-09-15", decisionEvidence: "fixture", coveredProcess: "fixture" });
 const context: CatalogContext = {
@@ -164,6 +164,22 @@ test("accepts 80 and rejects 79 at the configured critic threshold", () => {
   });
   assert.equal(isEligibleCritic80(signal(80), context), true);
   assert.equal(isEligibleCritic80(signal(79), context), false);
+});
+
+test("separates public critic display from the 80+ editorial threshold", () => {
+  const signal = {
+    kind: "critic" as const, evidenceState: "licensed-signal" as const, provider: "Licensed Critics", label: "Critic score", score: 79, scale: 100, scoreType: "average", editionOrPlatform: "Nintendo Switch", sourceId: "licensed-critic", sourceUrl: "https://example.com/score", termsUrl: "https://example.com/terms", capturedAt: "2026-08-15", verificationStatus: "verified" as const, rightsStatus: "approved" as const, reviewedBy: "fixture reviewer", rightsReviewedAt: "2026-08-15", recheckAt: "2026-09-15",
+  };
+  assert.equal(isEligibleCriticDisplay(signal, context), true);
+  assert.equal(isEligibleCritic80(signal, context), false);
+});
+
+test("only exposes value-based, fully sourced sales facts", () => {
+  const signal = {
+    kind: "sales" as const, evidenceState: "verified-fact" as const, provider: "Nintendo Investor Relations", label: "Worldwide units", sourceId: "nintendo-ir", sourceUrl: "https://example.com/sales", termsUrl: "https://example.com/terms", capturedAt: "2026-08-15", verificationStatus: "verified" as const, rightsStatus: "approved" as const, reviewedBy: "fixture reviewer", rightsReviewedAt: "2026-08-15", recheckAt: "2026-09-15", territory: "worldwide", period: "lifetime", asOf: "2026-08-15", value: 1234567, unit: "units",
+  };
+  assert.equal(isEligibleSalesValueDisplay(signal, context), true);
+  assert.equal(isEligibleSalesValueDisplay({ ...signal, value: undefined, rank: 1 }, context), false);
 });
 
 test("requires an official or reference link", () => {

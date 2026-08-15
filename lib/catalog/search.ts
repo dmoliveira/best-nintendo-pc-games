@@ -3,6 +3,22 @@ export interface CatalogCardLink {
   url: string;
 }
 
+export interface CatalogCriticSummary {
+  label: "Critic score";
+  display: string;
+  detail: string;
+  provider: string;
+  url: string;
+}
+
+export interface CatalogSalesSummary {
+  label: "Reported sales";
+  display: string;
+  detail: string;
+  provider: string;
+  url: string;
+}
+
 export type CatalogColumns = "auto" | "1" | "2" | "3";
 
 export interface CatalogSearchRecord {
@@ -16,6 +32,8 @@ export interface CatalogSearchRecord {
   publisher?: string;
   editorialLabel?: string;
   criticalLink?: CatalogCardLink;
+  criticSummary?: CatalogCriticSummary;
+  salesSummary?: CatalogSalesSummary;
   shortDescription: string;
   searchText: string;
   releaseYear: number;

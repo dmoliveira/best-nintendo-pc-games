@@ -182,6 +182,7 @@ export default function CatalogBrowser({ records }: CatalogBrowserProps) {
   }
 
   const displayRecords = hydrated ? page.records : filteredRecords;
+  const resultPositionOffset = hydrated ? page.startIndex : 0;
   const resultSummary = hydrated
     ? filteredRecords.length > 0 ? `Showing ${page.startIndex + 1}–${page.endIndex} of ${filteredRecords.length} matching games.` : "Showing 0 matching games."
     : `Showing 1–${records.length} of ${records.length} reviewed games.`;
@@ -230,7 +231,7 @@ export default function CatalogBrowser({ records }: CatalogBrowserProps) {
       <div className="browser-panel-footer"><p>Filters combine across facets. Multiple platforms or genres broaden that facet.</p><button className="browser-button" type="submit">Update results <span aria-hidden="true">↗</span></button></div>
     </form>
     <div className="result-bar"><p className="result-summary" ref={resultSummaryRef} tabIndex={-1} aria-live="polite">{resultSummary}</p><div className="result-tools"><span className="result-detail">{activeSortLabel} · signals kept separate</span><label className="page-size-field" htmlFor="catalog-page-size"><span>Cards</span><select id="catalog-page-size" value={state.pageSize ?? DEFAULT_PAGE_SIZE} onChange={(event) => updatePageSize(event.target.value)}>{PAGE_SIZE_OPTIONS.map((size) => <option value={size} key={size}>{size} / page</option>)}</select></label></div></div>
-    {filteredRecords.length > 0 ? <CatalogCards records={displayRecords} columns={state.columns} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, year, developer, or publisher.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
+    {filteredRecords.length > 0 ? <CatalogCards records={displayRecords} columns={state.columns} showResultPosition resultPositionOffset={resultPositionOffset} resultPositionTotal={filteredRecords.length} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, year, developer, or publisher.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
     {hydrated && page.pageCount > 1 ? <nav className="catalog-pagination" aria-label="Catalog pages"><button type="button" className="pagination-button" disabled={page.page === 1} onClick={() => updatePage(page.page - 1)}>Previous</button><div className="pagination-pages">{Array.from({ length: page.pageCount }, (_, index) => index + 1).map((pageNumber) => <button type="button" className={`pagination-button${pageNumber === page.page ? " pagination-button--current" : ""}`} aria-current={pageNumber === page.page ? "page" : undefined} aria-label={`Go to page ${pageNumber}`} key={pageNumber} onClick={() => updatePage(pageNumber)}>{pageNumber}</button>)}</div><button type="button" className="pagination-button" disabled={page.page === page.pageCount} onClick={() => updatePage(page.page + 1)}>Next</button></nav> : null}
   </div>;
 }
