@@ -186,6 +186,13 @@ async function validateCatalogBrowser(client, catalogUrl, representativeGame, de
   const idleRequests = await catalogIndexRequestCount(client);
   if (idle.status !== "idle" || idle.cards !== 24 || idleRequests !== 0 || !idle.summary?.includes("Browse or use filters to load the full catalog")) fail(`catalog index loaded before intent or viewport proximity: ${JSON.stringify({ idle, idleRequests })}`);
 
+  await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
+  const heroSearchMotion = await client.evaluate('(() => { const form = document.querySelector(".hero-search"); const target = document.getElementById("games"); if (!form || !target) return null; const originalScrollIntoView = target.scrollIntoView; let behavior; target.scrollIntoView = (options) => { behavior = options?.behavior; }; try { form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true })); } finally { target.scrollIntoView = originalScrollIntoView; } return { reducedMotion: matchMedia("(prefers-reduced-motion: reduce)").matches, behavior, hash: window.location.hash }; })()');
+  if (!heroSearchMotion?.reducedMotion || heroSearchMotion.behavior !== "auto" || heroSearchMotion.hash !== "#games") fail(`hero search did not honor reduced motion: ${JSON.stringify(heroSearchMotion)}`);
+  await client.send("Emulation.setEmulatedMedia", { features: [] });
+
+  await client.send("Page.navigate", { url: catalogUrl });
+  await waitForCatalogShell(client);
   const representativePlatformId = representativeGame.platforms?.[0];
   const representativeGenreId = representativeGame.genres?.[0];
   if (!representativePlatformId || !representativeGenreId) fail("the catalog interaction fixture needs a platform and genre");

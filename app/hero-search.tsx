@@ -7,6 +7,10 @@ function cleanQuery(value: string): string {
   return value.trim().replace(/\s+/g, " ");
 }
 
+export function getHeroSearchScrollBehavior(prefersReducedMotion: boolean): ScrollBehavior {
+  return prefersReducedMotion ? "auto" : "smooth";
+}
+
 export default function HeroSearch() {
   const [query, setQuery] = useState("");
 
@@ -32,7 +36,8 @@ export default function HeroSearch() {
     const nextUrl = `${window.location.pathname}${serialized ? `?${serialized}` : ""}#games`;
     window.history.pushState({}, "", nextUrl);
     window.dispatchEvent(new Event("popstate"));
-    document.getElementById("games")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const behavior = getHeroSearchScrollBehavior(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    document.getElementById("games")?.scrollIntoView({ behavior, block: "start" });
   }
 
   return (
