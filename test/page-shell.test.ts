@@ -36,7 +36,9 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /browser-field browser-facet-field/);
   assert.match(browser, /More filters/);
   assert.doesNotMatch(browser, /activeSortLabel/);
-  assert.match(browser, /Card layout/);
+  assert.match(browser, /Display/);
+  assert.match(browser, /display-disclosure/);
+  assert.match(browser, /Cards per page/);
   assert.match(browser, /Single-column layout on smaller screens\./);
   assert.match(browser, /Automatic responsive card layout/);
   assert.match(browser, /Choose card images/);
@@ -115,7 +117,8 @@ test("visual shell protects focus, contrast, and reduced-motion behavior", () =>
   assert.match(styles, /layout-control/);
   assert.match(styles, /@media \(max-width:800px\)[\s\S]*game-grid\{grid-template-columns:1fr\}/);
   assert.match(styles, /layout-options\{display:flex;gap:5px\}/);
-  assert.match(styles, /layout-mobile-note/);
+  assert.match(styles, /display-disclosure/);
+  assert.match(styles, /display-panel/);
   assert.match(styles, /layout-control:not\(.layout-control--images\)/);
   assert.match(styles, /game-grid--columns-1 \.game-card--no-image \.game-card-body/);
   assert.match(styles, /browser-panel-count/);
