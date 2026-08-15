@@ -1,11 +1,18 @@
 "use client";
 /* eslint-disable @next/next/no-img-element -- static export uses locally governed, base-prefixed asset URLs. */
 
-import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
-import { BOX_VIEW_ZOOMS, describeBoxView, INITIAL_BOX_VIEW_STATE, reduceBoxView, type BoxViewAction, type BoxViewState } from "@/lib/box-art/view-state";
+import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent, type PointerEvent } from "react";
+import { BOX_VIEW_ZOOMS, describeBoxView, INITIAL_BOX_VIEW_STATE, normalizeBoxAngle, reduceBoxView, snapBoxAngle, type BoxViewAction, type BoxViewState } from "@/lib/box-art/view-state";
 import type { PackagePresentation } from "@/lib/box-art/package-engine";
 
 type BoxStyle = CSSProperties & Record<"--box-width" | "--box-height" | "--box-depth", string>;
+const dragDegreesPerPixel = 0.6;
+
+interface DragState {
+  pointerId: number;
+  startAngle: number;
+  startX: number;
+}
 
 function readableProfileCategory(value: string): string {
   return value.replace(/-/g, " ");
@@ -13,8 +20,14 @@ function readableProfileCategory(value: string): string {
 
 export default function GameBoxViewer({ presentation }: { presentation: PackagePresentation }) {
   const [view, setView] = useState<BoxViewState>(INITIAL_BOX_VIEW_STATE);
+  const [visualAngle, setVisualAngle] = useState<number>(INITIAL_BOX_VIEW_STATE.angle);
+  const [isDragging, setIsDragging] = useState(false);
   const [nativeFullscreen, setNativeFullscreen] = useState(false);
   const [fallbackFullscreen, setFallbackFullscreen] = useState(false);
+  const viewRef = useRef<BoxViewState>(INITIAL_BOX_VIEW_STATE);
+  const visualAngleRef = useRef<number>(INITIAL_BOX_VIEW_STATE.angle);
+  const dragRef = useRef<DragState | null>(null);
+  const dragFrameRef = useRef<number | null>(null);
   const viewerRef = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const fullscreenControlRef = useRef<HTMLButtonElement>(null);
@@ -24,7 +37,8 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
   const { viewer, profile, governedFront } = presentation;
   const approvedFrontSrc = governedFront?.src;
   const frontSrc = failedSource === approvedFrontSrc ? undefined : approvedFrontSrc;
-  const canRotate = viewer.canRotate;
+  const isSourceListedReference = presentation.presentationMode === "source-listed-reference";
+  const canRotate = viewer.canRotate && presentation.formatKind === "physical" && !isSourceListedReference;
 
   useEffect(() => {
     const onFullscreenChange = () => {
@@ -40,6 +54,10 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
   useEffect(() => {
     if (fallbackFullscreen) requestAnimationFrame(() => stageRef.current?.focus());
   }, [fallbackFullscreen]);
+
+  useEffect(() => () => {
+    if (dragFrameRef.current !== null) cancelAnimationFrame(dragFrameRef.current);
+  }, []);
 
   useEffect(() => {
     if (!fallbackFullscreen || !viewerRef.current) return;
@@ -74,11 +92,75 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
     "--box-width": `${viewer.widthPx}px`,
     "--box-height": `${viewer.heightPx}px`,
     "--box-depth": `${viewer.depthPx}px`,
+    transition: isDragging ? "none" : undefined,
+    willChange: isDragging ? "transform" : undefined,
+  };
+  const stageStyle: CSSProperties | undefined = canRotate ? { cursor: isDragging ? "grabbing" : "grab", touchAction: "pan-y", userSelect: "none" } : undefined;
+
+  const flushVisualAngle = (angle: number): number => {
+    const normalized = normalizeBoxAngle(angle);
+    if (dragFrameRef.current !== null) {
+      cancelAnimationFrame(dragFrameRef.current);
+      dragFrameRef.current = null;
+    }
+    visualAngleRef.current = normalized;
+    setVisualAngle(normalized);
+    return normalized;
+  };
+  const queueVisualAngle = (angle: number) => {
+    visualAngleRef.current = normalizeBoxAngle(angle);
+    if (dragFrameRef.current !== null) return;
+    dragFrameRef.current = requestAnimationFrame(() => {
+      dragFrameRef.current = null;
+      setVisualAngle(visualAngleRef.current);
+    });
+  };
+  const commitView = (nextView: BoxViewState) => {
+    viewRef.current = nextView;
+    visualAngleRef.current = nextView.angle;
+    setView(nextView);
+    setVisualAngle(nextView.angle);
+  };
+  const cancelActiveDrag = (pointerId?: number) => {
+    const drag = dragRef.current;
+    if (!drag || (pointerId !== undefined && pointerId !== drag.pointerId)) return;
+    dragRef.current = null;
+    if (stageRef.current?.hasPointerCapture(drag.pointerId)) stageRef.current.releasePointerCapture(drag.pointerId);
+    flushVisualAngle(drag.startAngle);
+    setIsDragging(false);
   };
 
   const applyAction = (action: BoxViewAction) => {
     if (!canRotate && (action === "rotate-left" || action === "rotate-right")) return;
-    setView((current) => reduceBoxView(current, action));
+    cancelActiveDrag();
+    commitView(reduceBoxView(viewRef.current, action));
+  };
+  const onStagePointerDown = (event: PointerEvent<HTMLDivElement>) => {
+    if (!canRotate || dragRef.current || !event.isPrimary || event.button !== 0) return;
+    const stage = event.currentTarget;
+    const startAngle = visualAngleRef.current;
+    dragRef.current = { pointerId: event.pointerId, startAngle, startX: event.clientX };
+    stage.setPointerCapture(event.pointerId);
+    stage.focus({ preventScroll: true });
+    setIsDragging(true);
+    event.preventDefault();
+  };
+  const onStagePointerMove = (event: PointerEvent<HTMLDivElement>) => {
+    const drag = dragRef.current;
+    if (!drag || event.pointerId !== drag.pointerId) return;
+    queueVisualAngle(drag.startAngle + (event.clientX - drag.startX) * dragDegreesPerPixel);
+    event.preventDefault();
+  };
+  const onStagePointerUp = (event: PointerEvent<HTMLDivElement>) => {
+    const drag = dragRef.current;
+    if (!drag || event.pointerId !== drag.pointerId) return;
+    const finalAngle = normalizeBoxAngle(drag.startAngle + (event.clientX - drag.startX) * dragDegreesPerPixel);
+    dragRef.current = null;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    flushVisualAngle(finalAngle);
+    setIsDragging(false);
+    commitView({ ...viewRef.current, angle: snapBoxAngle(finalAngle) });
+    event.preventDefault();
   };
   const exitFallbackFullscreen = () => {
     setFallbackFullscreen(false);
@@ -136,7 +218,6 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
     focusable[nextIndex]?.focus();
   };
 
-  const isSourceListedReference = presentation.presentationMode === "source-listed-reference";
   const statusText = isSourceListedReference
     ? "GameAtlas reference presentation — no platform-specific package is implied"
     : frontSrc
@@ -150,7 +231,7 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
     : presentation.formatKind === "physical"
       ? `${profileCategory} model with a visible spine and proportional package depth.`
       : "Flat digital presentation with no invented physical package.";
-  const renderedAngle = viewer.restAngle + (canRotate ? view.angle : 0);
+  const renderedAngle = viewer.restAngle + (canRotate ? visualAngle : 0);
 
   return <section
     className={`game-box-viewer game-box-viewer--${presentation.formatKind}${isSourceListedReference ? " game-box-viewer--reference" : ""}${fallbackFullscreen ? " game-box-viewer--fallback-fullscreen" : ""}`}
@@ -177,12 +258,20 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
       data-package-depth={viewer.depthPx}
       data-package-rest-angle={viewer.restAngle}
       data-box-angle={view.angle}
+      data-box-drag-angle={visualAngle.toFixed(1)}
+      data-box-dragging={isDragging ? "true" : "false"}
       data-box-zoom={view.zoom}
+      style={stageStyle}
       tabIndex={0}
       role="group"
       aria-label={`${isSourceListedReference ? "Catalog reference view" : "Interactive package view"} for ${presentation.title}`}
       aria-describedby="package-view-instructions"
       onKeyDown={onStageKeyDown}
+      onPointerDown={onStagePointerDown}
+      onPointerMove={onStagePointerMove}
+      onPointerUp={onStagePointerUp}
+      onPointerCancel={(event) => cancelActiveDrag(event.pointerId)}
+      onLostPointerCapture={(event) => cancelActiveDrag(event.pointerId)}
     >
       <div className="game-box" style={{ ...boxStyle, transform: `rotateX(${viewer.tiltAngle}deg) rotateY(${renderedAngle}deg) scale(${view.zoom})` }}>
         <div className="game-box__face game-box__front">
@@ -196,7 +285,7 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
       </div>
       {presentation.editorialThumbnail ? <img className="game-box-stage__editorial-art" src={presentation.editorialThumbnail.src} alt={presentation.editorialThumbnail.alt} loading="lazy" decoding="async" fetchPriority="low" /> : null}
     </div>
-    <p className="game-box-instructions" id="package-view-instructions">{canRotate ? "Use the controls, or focus the package and press Left/Right to rotate, plus/minus to zoom, and Home or 0 to reset." : "Use plus/minus to zoom and Home or 0 to reset. Digital profiles stay flat."}</p>
+    <p className="game-box-instructions" id="package-view-instructions">{canRotate ? "Drag the package horizontally, use the controls, or focus it and press Left/Right to rotate. Use plus/minus to zoom and Home or 0 to reset." : "Use plus/minus to zoom and Home or 0 to reset. Digital profiles stay flat."}</p>
     <div className={`game-box-controls${canRotate ? "" : " game-box-controls--flat"}`} aria-label="Package view controls">
       {canRotate ? <>
         <button type="button" data-box-action="rotate-left" onClick={() => applyAction("rotate-left")}>Rotate left</button>
