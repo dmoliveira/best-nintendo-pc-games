@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { describeBoxView, INITIAL_BOX_VIEW_STATE, normalizeBoxAngle, reduceBoxView, snapBoxAngle } from "../lib/box-art/view-state";
+import { describeBoxView, INITIAL_BOX_VIEW_STATE, nearestEquivalentBoxAngle, normalizeBoxAngle, reduceBoxView, renderBoxAngle, snapBoxAngle } from "../lib/box-art/view-state";
 
 test("package-view state rotates cyclically and bounds zoom", () => {
   let state = INITIAL_BOX_VIEW_STATE;
@@ -29,4 +29,18 @@ test("normalizes and snaps continuous drag angles to stable package views", () =
   assert.equal(snapBoxAngle(-46), 270);
   assert.equal(snapBoxAngle(-45), 0);
   assert.equal(snapBoxAngle(359.9), 0);
+});
+
+test("keeps the front rest pose while aligning cardinal side and back faces", () => {
+  assert.equal(renderBoxAngle(0, -24), -24);
+  assert.equal(renderBoxAngle(90, -24), 90);
+  assert.equal(renderBoxAngle(180, -24), 180);
+  assert.equal(renderBoxAngle(270, -24), 270);
+  assert.equal(renderBoxAngle(360, -24), 336);
+  assert.equal(renderBoxAngle(45, -24), 39);
+  assert.equal(renderBoxAngle(315, -24), 309);
+  assert.equal(renderBoxAngle(-90, -24), -90);
+  assert.equal(nearestEquivalentBoxAngle(0, 270), -90);
+  assert.equal(nearestEquivalentBoxAngle(-90, 0), 0);
+  assert.equal(nearestEquivalentBoxAngle(450, 180), 540);
 });

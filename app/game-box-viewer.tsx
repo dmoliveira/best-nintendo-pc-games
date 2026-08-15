@@ -1,8 +1,8 @@
 "use client";
 /* eslint-disable @next/next/no-img-element -- static export uses locally governed, base-prefixed asset URLs. */
 
-import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent, type PointerEvent } from "react";
-import { BOX_VIEW_ZOOMS, describeBoxView, INITIAL_BOX_VIEW_STATE, normalizeBoxAngle, reduceBoxView, snapBoxAngle, type BoxViewAction, type BoxViewState } from "@/lib/box-art/view-state";
+import { useCallback, useEffect, useRef, useState, type CSSProperties, type KeyboardEvent, type PointerEvent } from "react";
+import { BOX_VIEW_ZOOMS, describeBoxView, INITIAL_BOX_VIEW_STATE, nearestEquivalentBoxAngle, reduceBoxView, renderBoxAngle, snapBoxAngle, type BoxViewAction, type BoxViewState } from "@/lib/box-art/view-state";
 import type { PackagePresentation } from "@/lib/box-art/package-engine";
 
 type BoxStyle = CSSProperties & Record<"--box-width" | "--box-height" | "--box-depth", string>;
@@ -39,6 +39,10 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
   const frontSrc = failedSource === approvedFrontSrc ? undefined : approvedFrontSrc;
   const isSourceListedReference = presentation.presentationMode === "source-listed-reference";
   const canRotate = viewer.canRotate && presentation.formatKind === "physical" && !isSourceListedReference;
+  const setStageRef = useCallback((node: HTMLDivElement | null) => {
+    stageRef.current = node;
+    if (node) node.dataset.boxHydrated = "true";
+  }, []);
 
   useEffect(() => {
     const onFullscreenChange = () => {
@@ -92,34 +96,34 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
     "--box-width": `${viewer.widthPx}px`,
     "--box-height": `${viewer.heightPx}px`,
     "--box-depth": `${viewer.depthPx}px`,
-    transition: isDragging ? "none" : undefined,
+    // Drag updates are animation-frame driven; CSS interpolation can turn an equivalent angle into a full spin.
+    transition: "none",
     willChange: isDragging ? "transform" : undefined,
   };
   const stageStyle: CSSProperties | undefined = canRotate ? { cursor: isDragging ? "grabbing" : "grab", touchAction: "pan-y", userSelect: "none" } : undefined;
 
   const flushVisualAngle = (angle: number): number => {
-    const normalized = normalizeBoxAngle(angle);
     if (dragFrameRef.current !== null) {
       cancelAnimationFrame(dragFrameRef.current);
       dragFrameRef.current = null;
     }
-    visualAngleRef.current = normalized;
-    setVisualAngle(normalized);
-    return normalized;
+    visualAngleRef.current = angle;
+    setVisualAngle(angle);
+    return angle;
   };
   const queueVisualAngle = (angle: number) => {
-    visualAngleRef.current = normalizeBoxAngle(angle);
+    visualAngleRef.current = angle;
     if (dragFrameRef.current !== null) return;
     dragFrameRef.current = requestAnimationFrame(() => {
       dragFrameRef.current = null;
       setVisualAngle(visualAngleRef.current);
     });
   };
-  const commitView = (nextView: BoxViewState) => {
+  const commitView = (nextView: BoxViewState, nextVisualAngle = visualAngleRef.current) => {
     viewRef.current = nextView;
-    visualAngleRef.current = nextView.angle;
+    visualAngleRef.current = nextVisualAngle;
     setView(nextView);
-    setVisualAngle(nextView.angle);
+    setVisualAngle(nextVisualAngle);
   };
   const cancelActiveDrag = (pointerId?: number) => {
     const drag = dragRef.current;
@@ -133,7 +137,13 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
   const applyAction = (action: BoxViewAction) => {
     if (!canRotate && (action === "rotate-left" || action === "rotate-right")) return;
     cancelActiveDrag();
-    commitView(reduceBoxView(viewRef.current, action));
+    const nextView = reduceBoxView(viewRef.current, action);
+    const nextVisualAngle = action === "reset"
+      ? INITIAL_BOX_VIEW_STATE.angle
+      : action === "rotate-left" || action === "rotate-right"
+        ? nearestEquivalentBoxAngle(visualAngleRef.current, nextView.angle)
+        : visualAngleRef.current;
+    commitView(nextView, nextVisualAngle);
   };
   const onStagePointerDown = (event: PointerEvent<HTMLDivElement>) => {
     if (!canRotate || dragRef.current || !event.isPrimary || event.button !== 0) return;
@@ -154,12 +164,13 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
   const onStagePointerUp = (event: PointerEvent<HTMLDivElement>) => {
     const drag = dragRef.current;
     if (!drag || event.pointerId !== drag.pointerId) return;
-    const finalAngle = normalizeBoxAngle(drag.startAngle + (event.clientX - drag.startX) * dragDegreesPerPixel);
+    const finalAngle = drag.startAngle + (event.clientX - drag.startX) * dragDegreesPerPixel;
+    const snappedAngle = snapBoxAngle(finalAngle);
     dragRef.current = null;
     if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
     flushVisualAngle(finalAngle);
     setIsDragging(false);
-    commitView({ ...viewRef.current, angle: snapBoxAngle(finalAngle) });
+    commitView({ ...viewRef.current, angle: snappedAngle }, nearestEquivalentBoxAngle(finalAngle, snappedAngle));
     event.preventDefault();
   };
   const exitFallbackFullscreen = () => {
@@ -226,12 +237,14 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
         ? "Approved package front unavailable — GameAtlas reference case shown"
         : "GameAtlas reference case — a package front has not been published";
   const profileCategory = readableProfileCategory(profile.category);
+  const profileMaterial = readableProfileCategory(profile.material);
+  const profileOpening = profile.openingSide === "none" ? "No opening" : `Opens ${readableProfileCategory(profile.openingSide)}`;
   const viewerDescription = isSourceListedReference
     ? "Flat GameAtlas reference presentation; it does not represent platform-specific packaging or a verified platform release."
     : presentation.formatKind === "physical"
       ? `${profileCategory} model with a visible spine and proportional package depth.`
       : "Flat digital presentation with no invented physical package.";
-  const renderedAngle = viewer.restAngle + (canRotate ? visualAngle : 0);
+  const renderedAngle = canRotate ? renderBoxAngle(visualAngle, viewer.restAngle) : 0;
 
   return <section
     className={`game-box-viewer game-box-viewer--${presentation.formatKind}${isSourceListedReference ? " game-box-viewer--reference" : ""}${fallbackFullscreen ? " game-box-viewer--fallback-fullscreen" : ""}`}
@@ -246,11 +259,11 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
       <h2 id="package-view-heading">{presentation.platformLabel}</h2>
       <p>{viewerDescription}</p>
       <p className="game-box-viewer-status" data-art-state={frontSrc ? "approved" : approvedFrontSrc ? "fallback" : "reference"}><span className="game-box-viewer-status-dot" aria-hidden="true" />{statusText}</p>
-      <p className="game-box-viewer-note">Only approved AI-generated fronts appear as package art. Editorial images remain separate reference art and never become package faces.</p>
+      <p className="game-box-viewer-note">Only approved AI-generated fronts appear as package art. Spine and back labels are original GameAtlas editorial panels, not publisher or platform packaging.</p>
     </div>
     <div
       className="game-box-stage"
-      ref={stageRef}
+      ref={setStageRef}
       data-game-box-stage="true"
       data-package-profile={profile.id}
       data-package-kind={presentation.formatKind}
@@ -273,16 +286,29 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
       onPointerCancel={(event) => cancelActiveDrag(event.pointerId)}
       onLostPointerCapture={(event) => cancelActiveDrag(event.pointerId)}
     >
-      <div className="game-box" style={{ ...boxStyle, transform: `rotateX(${viewer.tiltAngle}deg) rotateY(${renderedAngle}deg) scale(${view.zoom})` }}>
-        <div className="game-box__face game-box__front">
-          {frontSrc ? <img src={frontSrc} alt={governedFront?.alt ?? `AI-generated GameAtlas package front for ${presentation.title}`} loading="eager" decoding="async" fetchPriority="high" onError={() => setFailedSource(frontSrc)} /> : <div className="game-box__reference-art" role="img" aria-label={`GameAtlas reference front for ${presentation.title}`}><span aria-hidden="true">✦</span></div>}
+        <div className="game-box" style={{ ...boxStyle, transform: `rotateX(${viewer.tiltAngle}deg) rotateY(${renderedAngle}deg) scale(${view.zoom})` }}>
+          <div className="game-box__face game-box__front">
+            {frontSrc ? <img src={frontSrc} alt={governedFront?.alt ?? `AI-generated GameAtlas package front for ${presentation.title}`} loading="eager" decoding="async" fetchPriority="high" onError={() => setFailedSource(frontSrc)} /> : <div className="game-box__reference-art" role="img" aria-label={`GameAtlas reference front for ${presentation.title}`}><span aria-hidden="true">✦</span></div>}
+          </div>
+          {presentation.formatKind === "physical" ? <>
+            <div className="game-box__face game-box__spine game-box__spine--right" data-box-surface="spine-right" data-box-spine-label={presentation.title} aria-hidden="true"><div className="game-box__spine-label">{presentation.title}</div></div>
+            <div className="game-box__face game-box__spine game-box__spine--left" data-box-surface="spine-left" data-box-spine-label={presentation.title} aria-hidden="true"><div className="game-box__spine-label">{presentation.title}</div></div>
+            <div className="game-box__face game-box__back" data-box-surface="back" aria-hidden="true">
+              <div className="game-box__back-header">
+                <span className="game-box__back-kicker">GameAtlas edition</span>
+                <strong className="game-box__back-title" data-box-back-title={presentation.title}>{presentation.title}</strong>
+                <small className="game-box__back-platform">{presentation.platformLabel}</small>
+              </div>
+              <dl className="game-box__back-facts">
+                <div className="game-box__back-fact" data-box-back-fact="profile"><dt>Profile</dt><dd>{profileCategory}</dd></div>
+                <div className="game-box__back-fact" data-box-back-fact="material"><dt>Material</dt><dd>{profileMaterial}</dd></div>
+                <div className="game-box__back-fact game-box__back-fact--opening" data-box-back-fact="opening"><dt>Opening</dt><dd>{profileOpening}</dd></div>
+              </dl>
+              <p className="game-box__back-disclaimer">Original GameAtlas geometry — not official package artwork.</p>
+            </div>
+            <div className="game-box__face game-box__base" aria-hidden="true" />
+          </> : null}
         </div>
-        {presentation.formatKind === "physical" ? <>
-          <div className="game-box__face game-box__spine" aria-hidden="true"><span>{presentation.platformLabel}</span></div>
-          <div className="game-box__face game-box__back" aria-hidden="true"><span>GAMEATLAS PACKAGE VIEW</span><strong>{profileCategory}</strong><small>Geometry is modeled from a cited platform profile, not copied packaging.</small></div>
-          <div className="game-box__face game-box__base" aria-hidden="true" />
-        </> : null}
-      </div>
       {presentation.editorialThumbnail ? <img className="game-box-stage__editorial-art" src={presentation.editorialThumbnail.src} alt={presentation.editorialThumbnail.alt} loading="lazy" decoding="async" fetchPriority="low" /> : null}
     </div>
     <p className="game-box-instructions" id="package-view-instructions">{canRotate ? "Drag the package horizontally, use the controls, or focus it and press Left/Right to rotate. Use plus/minus to zoom and Home or 0 to reset." : "Use plus/minus to zoom and Home or 0 to reset. Digital profiles stay flat."}</p>

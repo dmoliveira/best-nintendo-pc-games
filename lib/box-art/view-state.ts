@@ -20,6 +20,23 @@ export function snapBoxAngle(angle: number): BoxViewAngle {
   return BOX_VIEW_ANGLES[Math.floor((normalized + 45) / 90) % BOX_VIEW_ANGLES.length];
 }
 
+/** Returns a target angle's equivalent nearest to an unwrapped visual angle. */
+export function nearestEquivalentBoxAngle(referenceAngle: number, targetAngle: number): number {
+  return targetAngle + 360 * Math.round((referenceAngle - targetAngle) / 360);
+}
+
+/** Keeps the front's dimensional rest pose while aligning cardinal side and back views with their actual faces. */
+export function renderBoxAngle(angle: number, restAngle: number): number {
+  const normalized = normalizeBoxAngle(angle);
+  const turns = Math.floor(angle / 360);
+  const projected = normalized <= 90
+    ? normalized + restAngle * (1 - normalized / 90) ** 2
+    : normalized >= 270
+      ? normalized + restAngle * ((normalized - 270) / 90) ** 2
+      : normalized;
+  return projected + 360 * turns;
+}
+
 function moveIn<T>(values: readonly T[], value: T, direction: -1 | 1): T {
   const index = Math.max(0, values.indexOf(value));
   return values[(index + direction + values.length) % values.length];

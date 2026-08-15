@@ -2906,11 +2906,12 @@ h1 {
 }
 
 .game-box {
-  filter: drop-shadow(17px 24px 18px rgba(0, 0, 0, .48));
+  filter: none;
+  pointer-events: none;
 }
 
 .game-box-viewer--digital .game-box {
-  filter: drop-shadow(0 21px 21px rgba(0, 0, 0, .42));
+  filter: none;
 }
 
 .game-box__front {
@@ -2936,6 +2937,183 @@ h1 {
   color: rgba(231, 245, 249, .88);
   font-size: .46rem;
   letter-spacing: .1em;
+}
+
+.game-box__spine {
+  box-sizing: border-box;
+  gap: 0;
+}
+
+.game-box__face {
+  pointer-events: auto;
+}
+
+.game-box__spine--right {
+  transform: rotateY(90deg) translateZ(calc(var(--box-width) / 2));
+}
+
+.game-box__spine--left {
+  transform: rotateY(-90deg) translateZ(calc(var(--box-width) / 2));
+}
+
+.game-box__spine-label {
+  color: #f1f0ed;
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: min(.62rem, calc(var(--box-depth) - 4px));
+  font-weight: 700;
+  letter-spacing: .035em;
+  line-height: .85;
+  max-width: calc(var(--box-height) - 20px);
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+  transform: rotate(90deg);
+  white-space: nowrap;
+  width: calc(var(--box-height) - 20px);
+}
+
+.game-box__spine--left .game-box__spine-label {
+  transform: rotate(-90deg);
+}
+
+.game-box__back {
+  box-sizing: border-box;
+  gap: clamp(8px, 4%, 14px);
+  justify-content: center;
+  padding: clamp(13px, 8%, 22px);
+}
+
+.game-box__back::before {
+  inset: clamp(10px, 8%, 18px);
+  pointer-events: none;
+}
+
+.game-box__back-header {
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.game-box__back .game-box__back-kicker,
+.game-box__back .game-box__back-platform,
+.game-box__back .game-box__back-fact dt,
+.game-box__back .game-box__back-fact dd,
+.game-box__back .game-box__back-disclaimer {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+.game-box__back .game-box__back-kicker {
+  color: #d5f27b;
+  font-size: .47rem;
+  font-weight: 700;
+}
+
+.game-box__back .game-box__back-title {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #f1f0ed;
+  display: -webkit-box;
+  font-size: clamp(.78rem, 2vw, 1.05rem);
+  line-height: 1.05;
+  max-width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.game-box__back .game-box__back-platform {
+  color: #c7d8e2;
+  font-size: .48rem;
+  line-height: 1.2;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.game-box__back-facts {
+  display: grid;
+  gap: 6px 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+.game-box__back-fact {
+  border-top: 1px solid rgba(213, 242, 123, .38);
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.game-box__back-fact--opening {
+  grid-column: 1 / -1;
+}
+
+.game-box__back .game-box__back-fact dt {
+  color: #d5f27b;
+  font-size: .4rem;
+  font-weight: 700;
+}
+
+.game-box__back .game-box__back-fact dd {
+  color: #e7f5f9;
+  font-size: .5rem;
+  line-height: 1.2;
+  margin: 2px 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.game-box__back .game-box__back-disclaimer {
+  color: #c7d8e2;
+  font-size: .43rem;
+  line-height: 1.35;
+  margin: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 800px) {
+  .game-box__back {
+    gap: 7px;
+    padding: 12px;
+  }
+
+  .game-box__back-facts {
+    gap: 5px 8px;
+  }
+}
+
+@media (forced-colors: active) {
+  .game-box__spine,
+  .game-box__back {
+    background: Canvas;
+    box-shadow: none;
+    color: CanvasText;
+  }
+
+  .game-box__spine-label,
+  .game-box__back .game-box__back-kicker,
+  .game-box__back .game-box__back-title,
+  .game-box__back .game-box__back-platform,
+  .game-box__back .game-box__back-fact dt,
+  .game-box__back .game-box__back-fact dd,
+  .game-box__back .game-box__back-disclaimer {
+    color: CanvasText;
+    text-shadow: none;
+  }
+
+  .game-box__back::before,
+  .game-box__back-fact {
+    border-color: CanvasText;
+  }
 }
 
 .game-box-controls--flat {

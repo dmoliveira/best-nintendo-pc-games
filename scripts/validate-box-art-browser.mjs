@@ -20,6 +20,10 @@ function catalogResultTotal(summary) {
   return normalized && /^\d+$/.test(normalized) ? Number(normalized) : undefined;
 }
 
+function readableProfileLabel(value) {
+  return value.replace(/-/g, " ");
+}
+
 function mimeType(filePath) {
   if (filePath.endsWith(".html")) return "text/html; charset=utf-8";
   if (filePath.endsWith(".js")) return "application/javascript; charset=utf-8";
@@ -73,7 +77,7 @@ async function unusedPort() {
   return port;
 }
 
-async function waitFor(check, timeoutMs = 15_000) {
+async function waitFor(check, timeoutMs = 30_000, label = "condition") {
   const deadline = Date.now() + timeoutMs;
   let lastError;
   while (Date.now() < deadline) {
@@ -85,7 +89,8 @@ async function waitFor(check, timeoutMs = 15_000) {
     }
     await new Promise((resolve) => setTimeout(resolve, 80));
   }
-  throw lastError ?? new Error("timed out");
+  const detail = lastError instanceof Error ? `: ${lastError.message}` : "";
+  throw new Error(`timed out waiting for ${label}${detail}`);
 }
 
 class CdpClient {
@@ -159,6 +164,14 @@ async function releaseDrag(client, { endX, y }) {
 }
 
 const desktopMetrics = { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false };
+
+async function waitForGameBoxReady(client, title, { rotate = false } = {}) {
+  await waitFor(
+    () => client.evaluate(`(() => { const stage = document.querySelector("[data-game-box-stage]"); return document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(title)} && stage?.dataset.boxHydrated === "true" && ${rotate ? 'Boolean(document.querySelector("[data-box-action=rotate-right]"))' : "true"}; })()`),
+    30_000,
+    `hydrated package viewer for ${title}`,
+  );
+}
 
 async function catalogIndexRequestCount(client) {
   const requestDetails = await client.evaluate('(() => ({ origin: window.location.origin, urls: performance.getEntriesByType("resource").filter((entry) => new URL(entry.name).pathname.endsWith("/catalog-search-index.json")).map((entry) => entry.name) }))()');
@@ -378,6 +391,17 @@ async function main() {
   });
   const physicalFallbackGame = games.find((game) => !isSourceListedReference(game) && !hasPublishedBoxFront(game) && packageProfileFor(game)?.kind === "physical");
   if (!physicalFallbackGame) fail("no verified physical game without a published box front is available for fallback validation");
+  const physicalFallbackProfile = packageProfileFor(physicalFallbackGame);
+  if (!physicalFallbackProfile) fail("physical fallback fixture is missing its package profile");
+  const panelStressGame = [...games]
+    .filter((game) => !isSourceListedReference(game) && packageProfileFor(game)?.kind === "physical")
+    .sort((left, right) => {
+      const leftProfile = packageProfileFor(left);
+      const rightProfile = packageProfileFor(right);
+      const depthDelta = (leftProfile?.dimensions.depth ?? Infinity) - (rightProfile?.dimensions.depth ?? Infinity);
+      return depthDelta || right.title.length - left.title.length || left.title.localeCompare(right.title);
+    })[0];
+  if (!panelStressGame) fail("no physical fixture is available for spine and back responsive validation");
   const sourceListedReferenceGame = games.find(isSourceListedReference);
   if (!sourceListedReferenceGame) fail("no source-listed title-year reference game is available for validation");
   const publishedBoxGame = games.find(hasPublishedBoxFront);
@@ -418,16 +442,46 @@ async function main() {
     await client.open();
     await client.send("Page.enable");
     await client.send("Runtime.enable");
-    await waitFor(() => client.evaluate('Boolean(document.querySelector("[data-game-box-stage]"))'));
+    await waitForGameBoxReady(client, physicalFallbackGame.title, { rotate: true });
 
-    const semantics = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); return { role: stage?.getAttribute("role"), label: stage?.getAttribute("aria-label"), describedBy: stage?.getAttribute("aria-describedby"), fallback: document.body.textContent.includes("GameAtlas reference case"), fallbackRole: fallback?.getAttribute("role") }; })()');
-    if (semantics.role !== "group" || !semantics.label?.includes("Interactive package view") || !semantics.describedBy || !semantics.fallback || semantics.fallbackRole !== "img") fail("viewer baseline semantics or fallback copy is missing");
-    const physicalGeometry = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { kind: stage?.dataset.packageKind, depth: Number(stage?.dataset.packageDepth), restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), dimensions: ["--box-width", "--box-height", "--box-depth"].map((name) => box?.style.getPropertyValue(name)), transform: box?.style.transform }; })()');
-    if (physicalGeometry.kind !== "physical" || physicalGeometry.depth < 8 || physicalGeometry.restAngle !== "-24" || !physicalGeometry.hasSpine || physicalGeometry.dimensions.some((value) => !value) || !physicalGeometry.transform?.includes("rotateY(-24deg)")) fail(`physical profile did not render a visible dimensional rest pose: ${JSON.stringify(physicalGeometry)}`);
+    const semantics = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); const note = document.querySelector(".game-box-viewer-note"); return { role: stage?.getAttribute("role"), label: stage?.getAttribute("aria-label"), describedBy: stage?.getAttribute("aria-describedby"), fallback: document.body.textContent.includes("GameAtlas reference case"), fallbackRole: fallback?.getAttribute("role"), panelPolicy: note?.textContent?.includes("original GameAtlas editorial panels") }; })()');
+    if (semantics.role !== "group" || !semantics.label?.includes("Interactive package view") || !semantics.describedBy || !semantics.fallback || semantics.fallbackRole !== "img" || !semantics.panelPolicy) fail("viewer baseline semantics, original-panel policy, or fallback copy is missing");
+    const physicalGeometry = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); const spines = [...document.querySelectorAll("[data-box-surface^=spine]")]; const back = document.querySelector("[data-box-surface=back]"); const stageStyle = getComputedStyle(stage); const boxStyle = getComputedStyle(box); return { kind: stage?.dataset.packageKind, depth: Number(stage?.dataset.packageDepth), restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), dimensions: ["--box-width", "--box-height", "--box-depth"].map((name) => box?.style.getPropertyValue(name)), transform: box?.style.transform, perspective: stageStyle.perspective, transformStyle: boxStyle.transformStyle, filter: boxStyle.filter, spines: spines.map((spine) => ({ surface: spine.dataset.boxSurface, label: spine.dataset.boxSpineLabel, text: spine.textContent?.trim(), hidden: spine.getAttribute("aria-hidden") })), back: { hidden: back?.getAttribute("aria-hidden"), title: back?.querySelector("[data-box-back-title]")?.getAttribute("data-box-back-title"), facts: Object.fromEntries([...(back?.querySelectorAll("[data-box-back-fact]") ?? [])].map((fact) => [fact.dataset.boxBackFact, fact.querySelector("dd")?.textContent?.trim()])) } }; })()');
+    if (physicalGeometry.kind !== "physical" || physicalGeometry.depth < 8 || physicalGeometry.restAngle !== "-24" || !physicalGeometry.hasSpine || physicalGeometry.dimensions.some((value) => !value) || !physicalGeometry.transform?.includes("rotateY(-24deg)") || physicalGeometry.perspective !== "1200px" || physicalGeometry.transformStyle !== "preserve-3d" || physicalGeometry.filter !== "none") fail(`physical profile did not retain an unflattened dimensional rest pose: ${JSON.stringify(physicalGeometry)}`);
+    const expectedPhysicalBackFacts = { profile: readableProfileLabel(physicalFallbackProfile.category), material: readableProfileLabel(physicalFallbackProfile.material), opening: physicalFallbackProfile.openingSide === "none" ? "No opening" : `Opens ${readableProfileLabel(physicalFallbackProfile.openingSide)}` };
+    if (physicalGeometry.spines.length !== 2 || physicalGeometry.spines.some((spine) => !["spine-left", "spine-right"].includes(spine.surface) || spine.label !== physicalFallbackGame.title || spine.text !== physicalFallbackGame.title || spine.hidden !== "true") || physicalGeometry.back.hidden !== "true" || physicalGeometry.back.title !== physicalFallbackGame.title || JSON.stringify(physicalGeometry.back.facts) !== JSON.stringify(expectedPhysicalBackFacts)) fail(`physical package panels did not expose original, decorative spine and back labels: ${JSON.stringify({ physicalGeometry, expectedPhysicalBackFacts })}`);
 
     await client.evaluate('document.querySelector("[data-game-box-stage]").focus()');
     await press(client, "ArrowRight", "ArrowRight", 39);
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "90"'));
+    const expectedPanelViews = [
+      { angle: "90", renderedAngle: "90", surface: "spine-left" },
+      { angle: "180", renderedAngle: "180", surface: "back" },
+      { angle: "270", renderedAngle: "270", surface: "spine-right" },
+    ];
+    for (const [index, expectedPanelView] of expectedPanelViews.entries()) {
+      if (index > 0) {
+        await client.evaluate('document.querySelector("[data-box-action=rotate-right]").click()');
+        await waitFor(() => client.evaluate(`document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === ${JSON.stringify(expectedPanelView.angle)}`));
+      }
+      const panelFacingState = await client.evaluate('(() => { const box = document.querySelector(".game-box"); const panels = [...document.querySelectorAll("[data-box-surface]")].map((panel) => { const rect = panel.getBoundingClientRect(); const styles = getComputedStyle(panel); return { surface: panel.dataset.boxSurface, width: rect.width, height: rect.height, layoutWidth: styles.width, transform: styles.transform, backfaceVisibility: styles.backfaceVisibility }; }); return { angle: document.querySelector("[data-game-box-stage]")?.dataset.boxAngle, transform: box?.style.transform, panels }; })()');
+      const expectedPanel = panelFacingState.panels.find((panel) => panel.surface === expectedPanelView.surface);
+      if (panelFacingState.angle !== expectedPanelView.angle || !panelFacingState.transform?.includes(`rotateY(${expectedPanelView.renderedAngle}deg)`) || !(expectedPanel?.width > 0) || !(expectedPanel?.height > 0) || expectedPanel.backfaceVisibility !== "hidden") fail(`physical panel did not retain its modeled face at the cardinal rotation: ${JSON.stringify({ expectedPanelView, panelFacingState })}`);
+    }
+    await client.evaluate('document.querySelector("[data-box-action=rotate-right]").click()');
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "0"'));
+    const wrappedRightState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle, transform: box?.style.transform }; })()');
+    if (wrappedRightState.angle !== "0" || wrappedRightState.dragAngle !== "360.0" || !wrappedRightState.transform?.includes("rotateY(336deg)")) fail(`right rotation did not preserve the short visual wrap from the left spine to the front rest pose: ${JSON.stringify(wrappedRightState)}`);
+    await client.evaluate('document.querySelector("[data-box-action=rotate-left]").click()');
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "270"'));
+    await client.evaluate('document.querySelector("[data-box-action=reset]").click()');
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "0"'));
+    const resetState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle, transform: box?.style.transform }; })()');
+    if (resetState.angle !== "0" || resetState.dragAngle !== "0.0" || !resetState.transform?.includes("rotateY(-24deg)")) fail(`reset did not restore the dimensional front rest pose: ${JSON.stringify(resetState)}`);
+    await client.evaluate('document.querySelector("[data-box-action=rotate-left]").click()');
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "270"'));
+    const wrappedLeftState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle, transform: box?.style.transform }; })()');
+    if (wrappedLeftState.angle !== "270" || wrappedLeftState.dragAngle !== "-90.0" || !wrappedLeftState.transform?.includes("rotateY(-90deg)")) fail(`left rotation did not preserve the short visual wrap from the front rest pose to the left spine: ${JSON.stringify(wrappedLeftState)}`);
     await client.evaluate('document.querySelector("[data-box-action=reset]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "0"'));
     const dragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); const rect = stage?.getBoundingClientRect(); if (!rect) return null; const startX = Math.max(rect.left + 10, Math.min(rect.right - 10, window.innerWidth - 160)); return { startX, endX: startX + 150, y: rect.top + rect.height / 2 }; })()');
@@ -439,7 +493,7 @@ async function main() {
     await releaseDrag(client, dragCoordinates);
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "90" && document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "false"'));
     const draggedState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle, dimensions: ["--box-width", "--box-height", "--box-depth"].map((name) => box?.style.getPropertyValue(name)), transform: box?.style.transform, transition: box?.style.transition, willChange: box?.style.willChange }; })()');
-    if (draggedState.angle !== "90" || draggedState.dragAngle !== "90.0" || JSON.stringify(draggedState.dimensions) !== JSON.stringify(physicalGeometry.dimensions) || !draggedState.transform?.includes("rotateY(66deg)") || draggedState.transition || draggedState.willChange) fail(`physical package drag did not commit a snapped cardinal view while retaining profile geometry: ${JSON.stringify(draggedState)}`);
+    if (draggedState.angle !== "90" || draggedState.dragAngle !== "90.0" || JSON.stringify(draggedState.dimensions) !== JSON.stringify(physicalGeometry.dimensions) || !draggedState.transform?.includes("rotateY(90deg)") || draggedState.transition !== "none" || draggedState.willChange) fail(`physical package drag did not commit a snapped cardinal view while retaining profile geometry: ${JSON.stringify(draggedState)}`);
     await client.evaluate('document.querySelector("[data-box-action=reset]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "0"'));
     await drag(client, dragCoordinates);
@@ -475,11 +529,26 @@ async function main() {
     await waitFor(() => client.evaluate('!document.querySelector(".topbar").hasAttribute("inert") && document.querySelector(".topbar").getAttribute("aria-hidden") === null'));
     await waitFor(() => client.evaluate('document.activeElement?.matches("[data-box-action=fullscreen]")'));
 
+    const panelStressPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${panelStressGame.slug}/`;
+    await client.send("Page.navigate", { url: panelStressPageUrl });
+    await waitForGameBoxReady(client, panelStressGame.title, { rotate: true });
+    await client.send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: false });
+    await client.evaluate('document.querySelector("[data-game-box-stage]").focus()');
+    await client.evaluate('document.querySelector("[data-box-action=rotate-right]").click()');
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "90"'));
+    const mobileSpineState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const spine = document.querySelector("[data-box-surface=spine-left]"); const label = spine?.querySelector(".game-box__spine-label"); const bounds = (element) => { const rect = element?.getBoundingClientRect(); return rect ? { left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom, width: rect.width, height: rect.height } : null; }; const inside = (child, parent) => Boolean(child && parent && child.left >= parent.left - 1 && child.right <= parent.right + 1 && child.top >= parent.top - 1 && child.bottom <= parent.bottom + 1); const spineRect = bounds(spine); return { spineWidth: spineRect?.width, spineHeight: spineRect?.height, label: label?.textContent, labelFontSize: label ? Number.parseFloat(getComputedStyle(label).fontSize) : 0, labelOverflow: label ? getComputedStyle(label).textOverflow : "", labelInside: inside(bounds(label), spineRect), overflow: document.documentElement.scrollWidth > window.innerWidth, stageWidth: stage?.getBoundingClientRect().width }; })()');
+    if (!(mobileSpineState.spineWidth > 0) || !(mobileSpineState.spineHeight > 0) || mobileSpineState.label !== panelStressGame.title || mobileSpineState.labelFontSize < 9 || mobileSpineState.labelOverflow !== "ellipsis" || !mobileSpineState.labelInside || mobileSpineState.overflow) fail(`mobile spine panel is not contained and readable for the shallowest, longest-title fixture: ${JSON.stringify({ panelStressGame: panelStressGame.slug, mobileSpineState })}`);
+    await client.evaluate('document.querySelector("[data-box-action=rotate-right]").click()');
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxAngle === "180"'));
+    const mobileBackState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const back = document.querySelector("[data-box-surface=back]"); const title = back?.querySelector("[data-box-back-title]"); const bounds = (element) => { const rect = element?.getBoundingClientRect(); return rect ? { left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom, width: rect.width, height: rect.height } : null; }; const inside = (child, parent) => Boolean(child && parent && child.left >= parent.left - 1 && child.right <= parent.right + 1 && child.top >= parent.top - 1 && child.bottom <= parent.bottom + 1); const backRect = bounds(back); return { backWidth: backRect?.width, backHeight: backRect?.height, title: title?.getAttribute("data-box-back-title"), titleInside: inside(bounds(title), backRect), overflow: document.documentElement.scrollWidth > window.innerWidth, stageWidth: stage?.getBoundingClientRect().width }; })()');
+    if (!(mobileBackState.backWidth > 0) || !(mobileBackState.backHeight > 0) || mobileBackState.title !== panelStressGame.title || !mobileBackState.titleInside || mobileBackState.overflow) fail(`mobile back panel is not contained and readable for the shallowest, longest-title fixture: ${JSON.stringify({ panelStressGame: panelStressGame.slug, mobileBackState })}`);
+    await client.send("Emulation.setDeviceMetricsOverride", desktopMetrics);
+
     const publishedFront = publishedBoxGame.assets.find((asset) => asset?.role === "box-front");
     const expectedFrontSrc = `${basePath}/${publishedFront.path.replace(/^public\//, "")}`;
     const publishedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${publishedBoxGame.slug}/`;
     await client.send("Page.navigate", { url: publishedPageUrl });
-    await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(publishedBoxGame.title)}`));
+    await waitForGameBoxReady(client, publishedBoxGame.title);
     const publishedState = await waitFor(async () => {
       const state = await client.evaluate('(() => { const front = document.querySelector(".game-box__front img"); const editorial = document.querySelector(".game-box-stage__editorial-art"); if (!front || !editorial) return null; const resources = performance.getEntriesByType("resource"); const startFor = (element) => { const pathname = new URL(element.src, document.baseURI).pathname; return resources.find((entry) => new URL(entry.name).pathname === pathname)?.startTime; }; return { src: front.getAttribute("src"), loaded: front.complete && front.naturalWidth > 0 && front.naturalHeight > 0, disclosure: document.body.textContent.includes("AI-generated GameAtlas editorial art"), frontLoading: front.getAttribute("loading"), frontDecoding: front.getAttribute("decoding"), frontPriority: front.getAttribute("fetchpriority"), editorialLoading: editorial.getAttribute("loading"), editorialDecoding: editorial.getAttribute("decoding"), editorialPriority: editorial.getAttribute("fetchpriority"), frontBeforeEditorial: Boolean(front.compareDocumentPosition(editorial) & Node.DOCUMENT_POSITION_FOLLOWING), frontStart: startFor(front), editorialStart: startFor(editorial) }; })()');
       return state?.loaded ? state : null;
@@ -489,23 +558,23 @@ async function main() {
 
     const digitalPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${digitalGame.slug}/`;
     await client.send("Page.navigate", { url: digitalPageUrl });
-    await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(digitalGame.title)}`));
+    await waitForGameBoxReady(client, digitalGame.title);
     const digitalDragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const rect = stage?.getBoundingClientRect(); return rect ? { startX: rect.left + 20, endX: rect.left + 170, y: rect.top + rect.height / 2 } : null; })()');
     if (!digitalDragCoordinates) fail("digital package stage did not expose drag coordinates");
     await drag(client, digitalDragCoordinates);
     await releaseDrag(client, digitalDragCoordinates);
-    const digitalState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); return { kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor }; })()');
-    if (digitalState.kind !== "digital" || digitalState.depth !== "0" || digitalState.restAngle !== "0" || digitalState.hasSpine || digitalState.hasRotate || digitalState.angle !== "0" || digitalState.dragging !== "false" || digitalState.cursor) fail(`digital profile implied a physical package or accepted drag rotation: ${JSON.stringify(digitalState)}`);
+    const digitalState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); return { kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), hasBack: Boolean(document.querySelector(".game-box__back")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor }; })()');
+    if (digitalState.kind !== "digital" || digitalState.depth !== "0" || digitalState.restAngle !== "0" || digitalState.hasSpine || digitalState.hasBack || digitalState.hasRotate || digitalState.angle !== "0" || digitalState.dragging !== "false" || digitalState.cursor) fail(`digital profile implied a physical package or accepted drag rotation: ${JSON.stringify(digitalState)}`);
 
     const sourceListedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${sourceListedReferenceGame.slug}/`;
     await client.send("Page.navigate", { url: sourceListedPageUrl });
-    await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(sourceListedReferenceGame.title)}`));
+    await waitForGameBoxReady(client, sourceListedReferenceGame.title);
     const sourceListedDragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); const rect = stage?.getBoundingClientRect(); return rect ? { startX: rect.left + 20, endX: rect.left + 170, y: rect.top + rect.height / 2 } : null; })()');
     if (!sourceListedDragCoordinates) fail("source-listed reference stage did not expose drag coordinates");
     await drag(client, sourceListedDragCoordinates);
     await releaseDrag(client, sourceListedDragCoordinates);
-    const sourceListedState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); return { label: stage?.getAttribute("aria-label"), mode: stage?.dataset.presentationMode, kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasFront: Boolean(document.querySelector(".game-box__front img")), hasSpine: Boolean(document.querySelector(".game-box__spine")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor, reference: document.body.textContent.includes("GameAtlas reference presentation"), scope: document.body.textContent.includes("do not establish a platform-specific release date"), copy: document.body.textContent.includes("no platform-specific package is implied"), fallbackRole: fallback?.getAttribute("role") }; })()');
-    if (!sourceListedState.label?.includes("Catalog reference view") || sourceListedState.mode !== "source-listed-reference" || sourceListedState.kind !== "digital" || sourceListedState.depth !== "0" || sourceListedState.restAngle !== "0" || sourceListedState.hasFront || sourceListedState.hasSpine || sourceListedState.hasRotate || sourceListedState.angle !== "0" || sourceListedState.dragging !== "false" || sourceListedState.cursor || !sourceListedState.reference || !sourceListedState.scope || !sourceListedState.copy || sourceListedState.fallbackRole !== "img") fail(`source-listed title-year record implied a platform package or accepted drag rotation: ${JSON.stringify(sourceListedState)}`);
+    const sourceListedState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); return { label: stage?.getAttribute("aria-label"), mode: stage?.dataset.presentationMode, kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasFront: Boolean(document.querySelector(".game-box__front img")), hasSpine: Boolean(document.querySelector(".game-box__spine")), hasBack: Boolean(document.querySelector(".game-box__back")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor, reference: document.body.textContent.includes("GameAtlas reference presentation"), scope: document.body.textContent.includes("do not establish a platform-specific release date"), copy: document.body.textContent.includes("no platform-specific package is implied"), fallbackRole: fallback?.getAttribute("role") }; })()');
+    if (!sourceListedState.label?.includes("Catalog reference view") || sourceListedState.mode !== "source-listed-reference" || sourceListedState.kind !== "digital" || sourceListedState.depth !== "0" || sourceListedState.restAngle !== "0" || sourceListedState.hasFront || sourceListedState.hasSpine || sourceListedState.hasBack || sourceListedState.hasRotate || sourceListedState.angle !== "0" || sourceListedState.dragging !== "false" || sourceListedState.cursor || !sourceListedState.reference || !sourceListedState.scope || !sourceListedState.copy || sourceListedState.fallbackRole !== "img") fail(`source-listed title-year record implied a platform package or accepted drag rotation: ${JSON.stringify(sourceListedState)}`);
 
     const catalogThumbnailUrl = new URL(`http://127.0.0.1:${preview.port}${basePath}/`);
     catalogThumbnailUrl.searchParams.set("q", catalogThumbnailGame.title);
@@ -519,10 +588,11 @@ async function main() {
     await validateCatalogBrowser(client, `http://127.0.0.1:${preview.port}${basePath}/`, catalogRepresentativeGame, deferredCatalogPlatformId, deferredCatalogPlatformCount);
 
     await client.send("Page.navigate", { url: pageUrl });
-    await waitFor(() => client.evaluate('Boolean(document.querySelector("[data-game-box-stage]"))'));
+    await waitForGameBoxReady(client, physicalFallbackGame.title, { rotate: true });
     await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }, { name: "forced-colors", value: "active" }] });
-    const mediaState = await client.evaluate('(() => ({ reduce: matchMedia("(prefers-reduced-motion: reduce)").matches, forced: matchMedia("(forced-colors: active)").matches, duration: getComputedStyle(document.querySelector(".game-box")).transitionDuration, willChange: getComputedStyle(document.querySelector(".game-box")).willChange }))()');
-    if (!mediaState.reduce || !mediaState.forced || Number.parseFloat(mediaState.duration) > 0.001 || mediaState.willChange !== "auto") fail(`reduced-motion, forced-colors, or compositor fallback is not active: ${JSON.stringify(mediaState)}`);
+    const mediaState = await client.evaluate('(() => { const panelStyle = (selector) => { const style = getComputedStyle(document.querySelector(selector)); return { background: style.backgroundColor, border: style.borderTopColor, color: style.color }; }; return { reduce: matchMedia("(prefers-reduced-motion: reduce)").matches, forced: matchMedia("(forced-colors: active)").matches, duration: getComputedStyle(document.querySelector(".game-box")).transitionDuration, willChange: getComputedStyle(document.querySelector(".game-box")).willChange, spine: panelStyle(".game-box__spine"), back: panelStyle(".game-box__back") }; })()');
+    const panelsHaveForcedContrast = [mediaState.spine, mediaState.back].every((panel) => panel.background && panel.border && panel.color && panel.background !== panel.color && panel.border === panel.color);
+    if (!mediaState.reduce || !mediaState.forced || Number.parseFloat(mediaState.duration) > 0.001 || mediaState.willChange !== "auto" || !panelsHaveForcedContrast) fail(`reduced-motion, forced-colors, panel contrast, or compositor fallback is not active: ${JSON.stringify(mediaState)}`);
     console.log(`Browser validation passed (${physicalFallbackGame.slug} physical fallback, ${sourceListedReferenceGame.slug} source-listed reference, ${publishedBoxGame ? `${publishedBoxGame.slug} published front` : "no published front"}, front-first image scheduling, package profiles, catalog filters/layout/pagination, mobile layout, keyboard, zoom, fullscreen fallback, focus restoration, background isolation, reduced motion, forced colors).`);
   } finally {
     client?.close();
