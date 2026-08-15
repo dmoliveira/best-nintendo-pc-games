@@ -89,6 +89,8 @@ body {
 .game-platform-list{flex-wrap:wrap;gap:8px}
 .game-platform-item{align-items:center;display:inline-flex;gap:6px}
 .game-platform-item .platform-glyph{height:18px;width:18px}
+.game-semantic-label{color:var(--cyan);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.63rem;letter-spacing:.08em;margin:0 0 7px;text-transform:uppercase}
+.game-scope-note{color:var(--muted);font-size:.78rem;line-height:1.55;margin:12px 0 0;max-width:58ch}
 .game-status-row{align-items:center;display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 4px}
 .game-status-row .score-link{font-size:.72rem}
 @media(max-width:800px){.game-card-art{height:128px}.game-card-footer{align-items:flex-start;flex-direction:column}.game-card-footer .card-link{align-self:flex-end}.wordmark-mark{width:28px}}
@@ -2818,6 +2820,8 @@ h1 {
 }
 
 .game-card-topline-leading{align-items:center;display:flex;gap:8px;min-width:0}
+.game-card-platform-group{align-items:center;display:flex;flex:1;flex-wrap:wrap;gap:4px 7px;min-width:0}
+.game-card-platform-scope,.game-card-year-label{color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.52rem;letter-spacing:.05em;text-transform:uppercase}
 .game-card-position{color:var(--coral);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.58rem;letter-spacing:.08em}
 .game-card-position-label{color:var(--muted);font-family:inherit;font-size:.52rem;letter-spacing:.05em;text-transform:uppercase}
 .game-card-position-total{color:var(--faint);font-size:.5rem;letter-spacing:.04em}

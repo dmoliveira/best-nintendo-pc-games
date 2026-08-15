@@ -10,8 +10,10 @@
     "Labels the source relationship without treating it as a popularity signal."
   ],
   "release": {
-    "year": 1981
+    "year": 1981,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "game-boy-advance"
   ],

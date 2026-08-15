@@ -30,7 +30,9 @@ export default function Home() {
   const platformCounts = new Map(populatedPlatforms.map((platform) => [platform.id, games.filter(({ game }) => game.platforms.includes(platform.id)).length]));
   const catalogSearchRecords = getCatalogSearchRecords();
   const catalogIndexDigest = getCatalogSearchIndexDigest(catalogSearchRecords);
-  const initialSearchRecords = catalogSearchRecords.slice(0, DEFAULT_PAGE_SIZE).map(toCatalogCardRecord);
+  const initialCatalogRecords = catalogSearchRecords.slice(0, DEFAULT_PAGE_SIZE);
+  const initialSourceListed = initialCatalogRecords.length > 0 && initialCatalogRecords.every((record) => record.platformAssociationScope === "source-listed");
+  const initialSearchRecords = initialCatalogRecords.map((record) => toCatalogCardRecord(record, !initialSourceListed));
   const catalogIndexUrl = `${site.publicUrl("catalog-search-index.json")}?v=${encodeURIComponent(catalogIndexDigest)}`;
 
   return <div className="site-shell">
@@ -88,7 +90,7 @@ export default function Home() {
           <p className="section-aside">Search by title, person, platform, genre, year, or creator. Sort the results without turning editorial context into a blended rating.</p>
         </div>
         <noscript><style>{".browser-panel, .result-tools .page-size-field, .hero-search { display: none; }"}</style><p className="noscript-note">Interactive filters and pagination require JavaScript. The first catalog entries remain available below; <Link href="/catalog/">browse every game in the no-JavaScript index</Link>.</p></noscript>
-        <CatalogBrowser initialRecords={initialSearchRecords} catalogEntryCount={games.length} catalogIndexDigest={catalogIndexDigest} catalogIndexUrl={catalogIndexUrl} catalogIndexHref={site.publicUrl("catalog/")} basePath={site.basePath} />
+        <CatalogBrowser initialRecords={initialSearchRecords} initialSourceListed={initialSourceListed} catalogEntryCount={games.length} catalogIndexDigest={catalogIndexDigest} catalogIndexUrl={catalogIndexUrl} catalogIndexHref={site.publicUrl("catalog/")} basePath={site.basePath} />
       </section>
 
       <section className="section-block section-block--method" id="method" aria-labelledby="method-heading">

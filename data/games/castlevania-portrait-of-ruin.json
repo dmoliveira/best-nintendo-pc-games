@@ -10,8 +10,10 @@
     "Keeps third-party commentary and scores out of the linked metadata path."
   ],
   "release": {
-    "year": 2006
+    "year": 2006,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-ds"
   ],

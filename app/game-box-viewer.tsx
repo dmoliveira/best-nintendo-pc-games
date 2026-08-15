@@ -136,19 +136,24 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
     focusable[nextIndex]?.focus();
   };
 
-  const statusText = frontSrc
-    ? "Published AI-generated GameAtlas editorial art on a governed package front"
-    : approvedFrontSrc
-      ? "Approved package front unavailable — GameAtlas reference case shown"
-      : "GameAtlas reference case — a package front has not been published";
+  const isSourceListedReference = presentation.presentationMode === "source-listed-reference";
+  const statusText = isSourceListedReference
+    ? "GameAtlas reference presentation — no platform-specific package is implied"
+    : frontSrc
+      ? "Published AI-generated GameAtlas editorial art on a governed package front"
+      : approvedFrontSrc
+        ? "Approved package front unavailable — GameAtlas reference case shown"
+        : "GameAtlas reference case — a package front has not been published";
   const profileCategory = readableProfileCategory(profile.category);
-  const viewerDescription = presentation.formatKind === "physical"
-    ? `${profileCategory} model with a visible spine and proportional package depth.`
-    : "Flat digital presentation with no invented physical package.";
+  const viewerDescription = isSourceListedReference
+    ? "Flat GameAtlas reference presentation; it does not represent platform-specific packaging or a verified platform release."
+    : presentation.formatKind === "physical"
+      ? `${profileCategory} model with a visible spine and proportional package depth.`
+      : "Flat digital presentation with no invented physical package.";
   const renderedAngle = viewer.restAngle + (canRotate ? view.angle : 0);
 
   return <section
-    className={`game-box-viewer game-box-viewer--${presentation.formatKind}${fallbackFullscreen ? " game-box-viewer--fallback-fullscreen" : ""}`}
+    className={`game-box-viewer game-box-viewer--${presentation.formatKind}${isSourceListedReference ? " game-box-viewer--reference" : ""}${fallbackFullscreen ? " game-box-viewer--fallback-fullscreen" : ""}`}
     ref={viewerRef}
     aria-labelledby="package-view-heading"
     role={fallbackFullscreen ? "dialog" : undefined}
@@ -156,7 +161,7 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
     onKeyDownCapture={onDialogKeyDown}
   >
     <div className="game-box-viewer-heading">
-      <p className="eyebrow">Interactive package view</p>
+      <p className="eyebrow">{isSourceListedReference ? "Catalog reference view" : "Interactive package view"}</p>
       <h2 id="package-view-heading">{presentation.platformLabel}</h2>
       <p>{viewerDescription}</p>
       <p className="game-box-viewer-status" data-art-state={frontSrc ? "approved" : approvedFrontSrc ? "fallback" : "reference"}><span className="game-box-viewer-status-dot" aria-hidden="true" />{statusText}</p>
@@ -168,13 +173,14 @@ export default function GameBoxViewer({ presentation }: { presentation: PackageP
       data-game-box-stage="true"
       data-package-profile={profile.id}
       data-package-kind={presentation.formatKind}
+      data-presentation-mode={presentation.presentationMode}
       data-package-depth={viewer.depthPx}
       data-package-rest-angle={viewer.restAngle}
       data-box-angle={view.angle}
       data-box-zoom={view.zoom}
       tabIndex={0}
       role="group"
-      aria-label={`Interactive package view for ${presentation.title}`}
+      aria-label={`${isSourceListedReference ? "Catalog reference view" : "Interactive package view"} for ${presentation.title}`}
       aria-describedby="package-view-instructions"
       onKeyDown={onStageKeyDown}
     >

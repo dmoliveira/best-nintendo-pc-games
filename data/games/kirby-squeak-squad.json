@@ -10,8 +10,10 @@
     "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
-    "year": 2006
+    "year": 2006,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-ds"
   ],

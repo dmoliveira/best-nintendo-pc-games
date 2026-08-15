@@ -10,8 +10,10 @@
     "Keeps third-party commentary and scores out of the linked metadata path."
   ],
   "release": {
-    "year": 1997
+    "year": 1997,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-64"
   ],

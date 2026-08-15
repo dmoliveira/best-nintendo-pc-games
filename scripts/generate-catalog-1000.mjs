@@ -92,7 +92,8 @@ function createRecord(candidate) {
     emoji: candidate.emoji,
     shortDescription: candidate.editorialCopy.shortDescription,
     highlights: candidate.editorialCopy.highlights,
-    release: { year: candidate.wikidataReleaseYear },
+    release: { year: candidate.wikidataReleaseYear, scope: candidate.releaseScope },
+    platformAssociationScope: candidate.platformAssociationScope,
     platforms: [candidate.platformId],
     genres: candidate.genreIds,
     keywords: [candidate.title, candidate.platformId, ...candidate.genreIds, "source-linked", "wikidata"],
@@ -153,6 +154,7 @@ function assertInventory(inventory) {
     if (!candidate.slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(candidate.slug) || slugs.has(candidate.slug)) throw new Error("Catalog-1000 inventory has an invalid or duplicate generated slug");
     if (candidate.entityUrl !== "https://www.wikidata.org/wiki/" + candidate.wikidataId) throw new Error("Catalog-1000 inventory entity URL must match its Wikidata QID");
     if (!Number.isInteger(candidate.wikidataReleaseYear) || candidate.wikidataReleaseYear < 1950 || candidate.wikidataReleaseYear > 2100) throw new Error("Catalog-1000 inventory has an invalid Wikidata release year");
+    if (candidate.releaseScope !== "earliest-title-release" || candidate.platformAssociationScope !== "source-listed") throw new Error("Catalog-1000 inventory has invalid title-release/platform-association semantics");
     qids.add(candidate.wikidataId);
     slugs.add(candidate.slug);
   }

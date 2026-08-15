@@ -14,10 +14,12 @@ function runRightsValidator(mutator) {
   const fixtureRoot = fs.mkdtempSync(path.join(os.tmpdir(), "gameatlas-rights-"));
   try {
     fs.mkdirSync(path.join(fixtureRoot, "data"), { recursive: true });
+    fs.mkdirSync(path.join(fixtureRoot, "data", "curation"), { recursive: true });
     fs.cpSync(path.join(repoRoot, "public"), path.join(fixtureRoot, "public"), { recursive: true });
-    for (const file of ["source-rights.json", "evidence-policy.json", "asset-rights.json", "assets-manifest.json", "box-art-formats.json"]) {
+    for (const file of ["source-rights.json", "evidence-policy.json", "asset-rights.json", "assets-manifest.json", "box-art-formats.json", "platform-chronology.json", "platforms.json"]) {
       fs.copyFileSync(path.join(repoRoot, "data", file), path.join(fixtureRoot, "data", file));
     }
+    fs.copyFileSync(path.join(repoRoot, "data", "curation", "2026-08-15-wikidata-catalog-1000.json"), path.join(fixtureRoot, "data", "curation", "2026-08-15-wikidata-catalog-1000.json"));
     const manifestPath = path.join(fixtureRoot, "data", "assets-manifest.json");
     const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
     mutator(manifest, fixtureRoot);

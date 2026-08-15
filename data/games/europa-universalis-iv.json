@@ -10,8 +10,10 @@
     "Uses a factual reference path instead of an aggregate score or review."
   ],
   "release": {
-    "year": 2013
+    "year": 2013,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "pc-windows"
   ],

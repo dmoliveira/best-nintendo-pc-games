@@ -10,8 +10,10 @@
     "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
-    "year": 1998
+    "year": 1998,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-64"
   ],

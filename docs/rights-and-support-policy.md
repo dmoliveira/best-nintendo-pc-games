@@ -45,8 +45,11 @@ The machine-readable registry is [`data/source-rights.json`](../data/source-righ
 | Official publisher/developer pages | Official/store/availability links | Not approved | A link is not image permission |
 | Nintendo Life | Title-specific historical outbound references only | Outbound-only; do not copy | Do not download or reuse |
 | Wikidata structured data | Frozen CC0 fields only: title label, earliest documented P577 release year (not a platform-launch claim), P400-listed platform, P136-listed genre, QID, and item URL | Not a numeric-signal provider | Do not copy item prose, website text, logos, images, or media |
+| Nintendo platform history | Earliest-known platform debut years used only as chronology-audit guards | Not a numeric-signal provider | Do not copy prose, media, or title availability claims |
 
 Wikidata's structured data is available under CC0; this does not make all Wikidata website content CC0. GameAtlas retains a direct item link and courteous `Data from Wikidata` provenance, but treats attribution as provenance rather than an endorsement claim. The registry deliberately does not claim that an API response or a public web page grants redistribution rights. Any future provider adapter must update the registry first, include the terms URL and recheck date, and add tests proving that unauthorized fields are omitted from the static artifact.
+
+For frozen Wikidata-generated catalog entries, `P577` is presented as an **earliest documented title release** and `P400` as a **Wikidata-listed platform**. Those independent statements do not establish an individual platform release date, availability, native status, port status, or re-release date. The reviewed platform-debut registry is an audit guard only; it never fills in a title/platform date.
 
 ## Asset rule
 

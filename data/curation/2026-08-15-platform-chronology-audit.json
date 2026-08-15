@@ -1,0 +1,1388 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-15",
+  "registryDigest": "sha256:120c759766c152810492fdaab786dbc55dcd10830f9fbeb74388796878fe7725",
+  "factSnapshotDigest": "sha256:98f08bad82d577bda1bbeef5d0dba961f304a70acbb07d4993cff97c67466a85",
+  "recordCount": 1000,
+  "associationCount": 153,
+  "associations": [
+    {
+      "slug": "qix",
+      "title": "Qix",
+      "titleReleaseYear": 1981,
+      "platformId": "game-boy",
+      "platformDebutYear": 1989,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "dig-dug",
+      "title": "Dig Dug",
+      "titleReleaseYear": 1982,
+      "platformId": "game-boy",
+      "platformDebutYear": 1989,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "bomb-jack",
+      "title": "Bomb Jack",
+      "titleReleaseYear": 1984,
+      "platformId": "game-boy",
+      "platformDebutYear": 1989,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "boulder-dash",
+      "title": "Boulder Dash",
+      "titleReleaseYear": 1984,
+      "platformId": "game-boy",
+      "platformDebutYear": 1989,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "f-1-race",
+      "title": "F-1 Race",
+      "titleReleaseYear": 1984,
+      "platformId": "game-boy",
+      "platformDebutYear": 1989,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "kung-fu-master",
+      "title": "Kung-Fu Master",
+      "titleReleaseYear": 1984,
+      "platformId": "game-boy",
+      "platformDebutYear": 1989,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "marble-madness",
+      "title": "Marble Madness",
+      "titleReleaseYear": 1984,
+      "platformId": "game-boy",
+      "platformDebutYear": 1989,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "tennis",
+      "title": "Tennis",
+      "titleReleaseYear": 1984,
+      "platformId": "game-boy",
+      "platformDebutYear": 1989,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "adventure-island",
+      "title": "Adventure Island",
+      "titleReleaseYear": 1986,
+      "platformId": "game-boy",
+      "platformDebutYear": 1989,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "defender",
+      "title": "Defender",
+      "titleReleaseYear": 1981,
+      "platformId": "game-boy-advance",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "defender-of-the-crown",
+      "title": "Defender of the Crown",
+      "titleReleaseYear": 1986,
+      "platformId": "game-boy-advance",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "out-run",
+      "title": "Out Run",
+      "titleReleaseYear": 1986,
+      "platformId": "game-boy-advance",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "shining-force",
+      "title": "Shining Force",
+      "titleReleaseYear": 1992,
+      "platformId": "game-boy-advance",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "comix-zone",
+      "title": "Comix Zone",
+      "titleReleaseYear": 1995,
+      "platformId": "game-boy-advance",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "sega-rally-championship",
+      "title": "Sega Rally Championship",
+      "titleReleaseYear": 1995,
+      "platformId": "game-boy-advance",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "broken-sword-the-shadow-of-the-templars",
+      "title": "Broken Sword: The Shadow of the Templars",
+      "titleReleaseYear": 1996,
+      "platformId": "game-boy-advance",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "pac-man-world",
+      "title": "Pac-Man World",
+      "titleReleaseYear": 1999,
+      "platformId": "game-boy-advance",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "medal-of-honor-underground",
+      "title": "Medal of Honor: Underground",
+      "titleReleaseYear": 2000,
+      "platformId": "game-boy-advance",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "midnight-club-street-racing",
+      "title": "Midnight Club: Street Racing",
+      "titleReleaseYear": 2000,
+      "platformId": "game-boy-advance",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "need-for-speed-porsche-unleashed",
+      "title": "Need for Speed: Porsche Unleashed",
+      "titleReleaseYear": 2000,
+      "platformId": "game-boy-advance",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "space-invaders",
+      "title": "Space Invaders",
+      "titleReleaseYear": 1978,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "galaxian",
+      "title": "Galaxian",
+      "titleReleaseYear": 1979,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "missile-command",
+      "title": "Missile Command",
+      "titleReleaseYear": 1980,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "pac-man",
+      "title": "Pac-Man",
+      "titleReleaseYear": 1980,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "centipede",
+      "title": "Centipede",
+      "titleReleaseYear": 1981,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "frogger",
+      "title": "Frogger",
+      "titleReleaseYear": 1981,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "ms-pac-man",
+      "title": "Ms. Pac-Man",
+      "titleReleaseYear": 1982,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "q-bert",
+      "title": "Q*bert",
+      "titleReleaseYear": 1982,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "bubble-bobble",
+      "title": "Bubble Bobble",
+      "titleReleaseYear": 1986,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "heroes-of-might-and-magic-a-strategic-quest",
+      "title": "Heroes of Might and Magic: A Strategic Quest",
+      "titleReleaseYear": 1995,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "rayman",
+      "title": "Rayman",
+      "titleReleaseYear": 1995,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "worms",
+      "title": "Worms",
+      "titleReleaseYear": 1995,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "donkey-kong-country-3-dixie-kong-s-double-trouble",
+      "title": "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
+      "titleReleaseYear": 1996,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "heroes-of-might-and-magic-ii",
+      "title": "Heroes of Might and Magic II",
+      "titleReleaseYear": 1996,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "mortal-kombat-4",
+      "title": "Mortal Kombat 4",
+      "titleReleaseYear": 1997,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "oddworld-abe-s-oddysee",
+      "title": "Oddworld: Abe's Oddysee",
+      "titleReleaseYear": 1997,
+      "platformId": "game-boy-color",
+      "platformDebutYear": 1998,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "myst",
+      "title": "Myst",
+      "titleReleaseYear": 1993,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "live-a-live",
+      "title": "Live A Live",
+      "titleReleaseYear": 1994,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "sonic-the-hedgehog-3",
+      "title": "Sonic the Hedgehog 3",
+      "titleReleaseYear": 1994,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "tails-adventure",
+      "title": "Tails Adventure",
+      "titleReleaseYear": 1995,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "warioware-inc-mega-microgames",
+      "title": "WarioWare, Inc.: Mega Microgames!",
+      "titleReleaseYear": 2003,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "warioware-touched",
+      "title": "WarioWare: Touched!",
+      "titleReleaseYear": 2004,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "tales-of-the-abyss",
+      "title": "Tales of the Abyss",
+      "titleReleaseYear": 2005,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "apollo-justice-ace-attorney",
+      "title": "Apollo Justice: Ace Attorney",
+      "titleReleaseYear": 2007,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "inazuma-eleven",
+      "title": "Inazuma Eleven",
+      "titleReleaseYear": 2008,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "doodle-jump",
+      "title": "Doodle Jump",
+      "titleReleaseYear": 2009,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "the-sims-3",
+      "title": "The Sims 3",
+      "titleReleaseYear": 2009,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "michael-jackson-the-experience",
+      "title": "Michael Jackson: The Experience",
+      "titleReleaseYear": 2010,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "vvvvvv",
+      "title": "VVVVVV",
+      "titleReleaseYear": 2010,
+      "platformId": "nintendo-3ds",
+      "platformDebutYear": 2011,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "paperboy",
+      "title": "Paperboy",
+      "titleReleaseYear": 1985,
+      "platformId": "nintendo-64",
+      "platformDebutYear": 1996,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "command-conquer",
+      "title": "Command & Conquer",
+      "titleReleaseYear": 1995,
+      "platformId": "nintendo-64",
+      "platformDebutYear": 1996,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "hexen-beyond-heretic",
+      "title": "Hexen: Beyond Heretic",
+      "titleReleaseYear": 1995,
+      "platformId": "nintendo-64",
+      "platformDebutYear": 1996,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "whac-a-mole",
+      "title": "Whac-A-Mole",
+      "titleReleaseYear": 1975,
+      "platformId": "nintendo-ds",
+      "platformDebutYear": 2004,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "the-settlers-ii",
+      "title": "The Settlers II",
+      "titleReleaseYear": 1996,
+      "platformId": "nintendo-ds",
+      "platformDebutYear": 2004,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "disgaea-hour-of-darkness",
+      "title": "Disgaea: Hour of Darkness",
+      "titleReleaseYear": 2003,
+      "platformId": "nintendo-ds",
+      "platformDebutYear": 2004,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "prehistorik-man",
+      "title": "Prehistorik Man",
+      "titleReleaseYear": 1995,
+      "platformId": "nintendo-dsi",
+      "platformDebutYear": 2008,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "metal-gear",
+      "title": "Metal Gear",
+      "titleReleaseYear": 1987,
+      "platformId": "nintendo-gamecube",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "sonic-the-hedgehog",
+      "title": "Sonic the Hedgehog",
+      "titleReleaseYear": 1991,
+      "platformId": "nintendo-gamecube",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "sonic-the-hedgehog-2",
+      "title": "Sonic the Hedgehog 2",
+      "titleReleaseYear": 1992,
+      "platformId": "nintendo-gamecube",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "sonic-the-hedgehog-cd",
+      "title": "Sonic the Hedgehog CD",
+      "titleReleaseYear": 1993,
+      "platformId": "nintendo-gamecube",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "sonic-knuckles",
+      "title": "Sonic & Knuckles",
+      "titleReleaseYear": 1994,
+      "platformId": "nintendo-gamecube",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "sonic-adventure",
+      "title": "Sonic Adventure",
+      "titleReleaseYear": 1998,
+      "platformId": "nintendo-gamecube",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "crazy-taxi",
+      "title": "Crazy Taxi",
+      "titleReleaseYear": 1999,
+      "platformId": "nintendo-gamecube",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "resident-evil-3-nemesis",
+      "title": "Resident Evil 3: Nemesis",
+      "titleReleaseYear": 1999,
+      "platformId": "nintendo-gamecube",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "resident-evil-code-veronica",
+      "title": "Resident Evil – Code: Veronica",
+      "titleReleaseYear": 2000,
+      "platformId": "nintendo-gamecube",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "the-sims",
+      "title": "The Sims",
+      "titleReleaseYear": 2000,
+      "platformId": "nintendo-gamecube",
+      "platformDebutYear": 2001,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "galaga",
+      "title": "Galaga",
+      "titleReleaseYear": 1981,
+      "platformId": "nintendo-nes",
+      "platformDebutYear": 1983,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "joust",
+      "title": "Joust",
+      "titleReleaseYear": 1982,
+      "platformId": "nintendo-nes",
+      "platformDebutYear": 1983,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "pooyan",
+      "title": "Pooyan",
+      "titleReleaseYear": 1982,
+      "platformId": "nintendo-nes",
+      "platformDebutYear": 1983,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "popeye",
+      "title": "Popeye",
+      "titleReleaseYear": 1982,
+      "platformId": "nintendo-nes",
+      "platformDebutYear": 1983,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "fire-emblem-mystery-of-the-emblem",
+      "title": "Fire Emblem: Mystery of the Emblem",
+      "titleReleaseYear": 1994,
+      "platformId": "nintendo-new-3ds",
+      "platformDebutYear": 2014,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "kirby-s-dream-course",
+      "title": "Kirby's Dream Course",
+      "titleReleaseYear": 1994,
+      "platformId": "nintendo-new-3ds",
+      "platformDebutYear": 2014,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "final-fight",
+      "title": "Final Fight",
+      "titleReleaseYear": 1989,
+      "platformId": "nintendo-snes",
+      "platformDebutYear": 1990,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "devil-may-cry",
+      "title": "Devil May Cry",
+      "titleReleaseYear": 2001,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "gothic",
+      "title": "Gothic",
+      "titleReleaseYear": 2001,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "syberia",
+      "title": "Syberia",
+      "titleReleaseYear": 2002,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "star-wars-jedi-knight-jedi-academy",
+      "title": "Star Wars Jedi Knight: Jedi Academy",
+      "titleReleaseYear": 2003,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "clannad",
+      "title": "Clannad",
+      "titleReleaseYear": 2004,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "crash-twinsanity",
+      "title": "Crash Twinsanity",
+      "titleReleaseYear": 2004,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "doom-3",
+      "title": "DOOM 3",
+      "titleReleaseYear": 2004,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "syberia-ii",
+      "title": "Syberia II",
+      "titleReleaseYear": 2004,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "devil-may-cry-3-dante-s-awakening",
+      "title": "Devil May Cry 3: Dante's Awakening",
+      "titleReleaseYear": 2005,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "hitman-blood-money",
+      "title": "Hitman: Blood Money",
+      "titleReleaseYear": 2006,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "titan-quest",
+      "title": "Titan Quest",
+      "titleReleaseYear": 2006,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "bioshock",
+      "title": "BioShock",
+      "titleReleaseYear": 2007,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "burnout-paradise",
+      "title": "Burnout Paradise",
+      "titleReleaseYear": 2008,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "machinarium",
+      "title": "Machinarium",
+      "titleReleaseYear": 2009,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "resident-evil-5",
+      "title": "Resident Evil 5",
+      "titleReleaseYear": 2009,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "danganronpa-trigger-happy-havoc",
+      "title": "Danganronpa: Trigger Happy Havoc",
+      "titleReleaseYear": 2010,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "limbo",
+      "title": "Limbo",
+      "titleReleaseYear": 2010,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "bulletstorm",
+      "title": "Bulletstorm",
+      "titleReleaseYear": 2011,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "catherine",
+      "title": "Catherine",
+      "titleReleaseYear": 2011,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "dark-souls",
+      "title": "Dark Souls",
+      "titleReleaseYear": 2011,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "saints-row-the-third",
+      "title": "Saints Row: The Third",
+      "titleReleaseYear": 2011,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "to-the-moon",
+      "title": "To the Moon",
+      "titleReleaseYear": 2011,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "diablo-iii",
+      "title": "Diablo III",
+      "titleReleaseYear": 2012,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "fez",
+      "title": "Fez",
+      "titleReleaseYear": 2012,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "game-dev-tycoon",
+      "title": "Game Dev Tycoon",
+      "titleReleaseYear": 2012,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "bioshock-infinite",
+      "title": "BioShock Infinite",
+      "titleReleaseYear": 2013,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "metro-last-light",
+      "title": "Metro: Last Light",
+      "titleReleaseYear": 2013,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "payday-2",
+      "title": "Payday 2",
+      "titleReleaseYear": 2013,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "saints-row-iv",
+      "title": "Saints Row IV",
+      "titleReleaseYear": 2013,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "warframe",
+      "title": "Warframe",
+      "titleReleaseYear": 2013,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "alien-isolation",
+      "title": "Alien: Isolation",
+      "titleReleaseYear": 2014,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "five-nights-at-freddy-s",
+      "title": "Five Nights at Freddy's",
+      "titleReleaseYear": 2014,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "five-nights-at-freddy-s-2",
+      "title": "Five Nights at Freddy's 2",
+      "titleReleaseYear": 2014,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "goat-simulator",
+      "title": "Goat Simulator",
+      "titleReleaseYear": 2014,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "smite",
+      "title": "Smite",
+      "titleReleaseYear": 2014,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "subnautica",
+      "title": "Subnautica",
+      "titleReleaseYear": 2014,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "fallout-shelter",
+      "title": "Fallout Shelter",
+      "titleReleaseYear": 2015,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "five-nights-at-freddy-s-3",
+      "title": "Five Nights at Freddy's 3",
+      "titleReleaseYear": 2015,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "five-nights-at-freddy-s-4",
+      "title": "Five Nights at Freddy's 4",
+      "titleReleaseYear": 2015,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "mini-metro",
+      "title": "Mini Metro",
+      "titleReleaseYear": 2015,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "prison-architect",
+      "title": "Prison Architect",
+      "titleReleaseYear": 2015,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "resident-evil-revelations-2",
+      "title": "Resident Evil: Revelations 2",
+      "titleReleaseYear": 2015,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "rocket-league",
+      "title": "Rocket League",
+      "titleReleaseYear": 2015,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "the-witcher-3-wild-hunt",
+      "title": "The Witcher 3: Wild Hunt",
+      "titleReleaseYear": 2015,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "civilization-vi",
+      "title": "Civilization VI",
+      "titleReleaseYear": 2016,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "dead-by-daylight",
+      "title": "Dead by Daylight",
+      "titleReleaseYear": 2016,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "firewatch",
+      "title": "Firewatch",
+      "titleReleaseYear": 2016,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "five-nights-at-freddy-s-sister-location",
+      "title": "Five Nights at Freddy's: Sister Location",
+      "titleReleaseYear": 2016,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "inside",
+      "title": "INSIDE",
+      "titleReleaseYear": 2016,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "no-man-s-sky",
+      "title": "No Man's Sky",
+      "titleReleaseYear": 2016,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "paladins-champions-of-the-realm",
+      "title": "Paladins: Champions of the Realm",
+      "titleReleaseYear": 2016,
+      "platformId": "nintendo-switch",
+      "platformDebutYear": 2017,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "tomb-raider",
+      "title": "Tomb Raider",
+      "titleReleaseYear": 2013,
+      "platformId": "nintendo-switch-2",
+      "platformDebutYear": 2025,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "apex-legends",
+      "title": "Apex Legends",
+      "titleReleaseYear": 2019,
+      "platformId": "nintendo-switch-2",
+      "platformDebutYear": 2025,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "cyberpunk-2077",
+      "title": "Cyberpunk 2077",
+      "titleReleaseYear": 2020,
+      "platformId": "nintendo-switch-2",
+      "platformDebutYear": 2025,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "hogwarts-legacy",
+      "title": "Hogwarts Legacy",
+      "titleReleaseYear": 2023,
+      "platformId": "nintendo-switch-2",
+      "platformDebutYear": 2025,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "brothers-in-arms-road-to-hill-30",
+      "title": "Brothers in Arms: Road to Hill 30",
+      "titleReleaseYear": 2005,
+      "platformId": "nintendo-wii",
+      "platformDebutYear": 2006,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "donkey-kong-jr",
+      "title": "Donkey Kong Jr.",
+      "titleReleaseYear": 1982,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "balloon-fight",
+      "title": "Balloon Fight",
+      "titleReleaseYear": 1984,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "excitebike",
+      "title": "Excitebike",
+      "titleReleaseYear": 1984,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "zelda-ii-the-adventure-of-link",
+      "title": "Zelda II: The Adventure of Link",
+      "titleReleaseYear": 1987,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "super-mario-kart",
+      "title": "Super Mario Kart",
+      "titleReleaseYear": 1992,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "donkey-kong-country-2-diddy-s-kong-quest",
+      "title": "Donkey Kong Country 2: Diddy's Kong Quest",
+      "titleReleaseYear": 1995,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "super-mario-rpg",
+      "title": "Super Mario RPG",
+      "titleReleaseYear": 1996,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "phoenix-wright-ace-attorney",
+      "title": "Phoenix Wright: Ace Attorney",
+      "titleReleaseYear": 2001,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "pikmin",
+      "title": "Pikmin",
+      "titleReleaseYear": 2001,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "animal-crossing-wild-world",
+      "title": "Animal Crossing: Wild World",
+      "titleReleaseYear": 2005,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "brain-age-train-your-brain-in-minutes-a-day",
+      "title": "Brain Age: Train Your Brain in Minutes a Day!",
+      "titleReleaseYear": 2005,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "the-legend-of-zelda-twilight-princess",
+      "title": "The Legend of Zelda: Twilight Princess",
+      "titleReleaseYear": 2005,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "super-paper-mario",
+      "title": "Super Paper Mario",
+      "titleReleaseYear": 2007,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "bayonetta",
+      "title": "Bayonetta",
+      "titleReleaseYear": 2009,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "the-legend-of-zelda-spirit-tracks",
+      "title": "The Legend of Zelda: Spirit Tracks",
+      "titleReleaseYear": 2009,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "super-meat-boy",
+      "title": "Super Meat Boy",
+      "titleReleaseYear": 2010,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "batman-arkham-city",
+      "title": "Batman: Arkham City",
+      "titleReleaseYear": 2011,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "deus-ex-human-revolution",
+      "title": "Deus Ex: Human Revolution",
+      "titleReleaseYear": 2011,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "tekken-tag-tournament-2",
+      "title": "Tekken Tag Tournament 2",
+      "titleReleaseYear": 2011,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "terraria",
+      "title": "Terraria",
+      "titleReleaseYear": 2011,
+      "platformId": "nintendo-wii-u",
+      "platformDebutYear": 2012,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "spacewar",
+      "title": "Spacewar!",
+      "titleReleaseYear": 1962,
+      "platformId": "pc-windows",
+      "platformDebutYear": 1985,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "breakout",
+      "title": "Breakout",
+      "titleReleaseYear": 1976,
+      "platformId": "pc-windows",
+      "platformDebutYear": 1985,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "asteroids",
+      "title": "Asteroids",
+      "titleReleaseYear": 1979,
+      "platformId": "pc-windows",
+      "platformDebutYear": 1985,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    },
+    {
+      "slug": "sokoban",
+      "title": "Sokoban",
+      "titleReleaseYear": 1982,
+      "platformId": "pc-windows",
+      "platformDebutYear": 1985,
+      "platformReleaseYear": null,
+      "interpretation": "unresolved"
+    }
+  ],
+  "snapshotDigest": "sha256:e17736f2bb2ca3de9113abd713ac113a9205367ae4dd1870a7d66d162587c255"
+}

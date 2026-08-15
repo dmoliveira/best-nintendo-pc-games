@@ -10,8 +10,10 @@
     "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
-    "year": 2021
+    "year": 2021,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "pc-windows"
   ],

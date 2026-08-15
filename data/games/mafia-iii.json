@@ -10,8 +10,10 @@
     "Keeps third-party commentary and scores out of the linked metadata path."
   ],
   "release": {
-    "year": 2016
+    "year": 2016,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "pc-windows"
   ],

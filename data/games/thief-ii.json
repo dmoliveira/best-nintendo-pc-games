@@ -10,8 +10,10 @@
     "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
   ],
   "release": {
-    "year": 2000
+    "year": 2000,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "pc-windows"
   ],

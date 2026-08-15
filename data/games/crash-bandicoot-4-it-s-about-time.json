@@ -10,8 +10,10 @@
     "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
-    "year": 2020
+    "year": 2020,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-switch"
   ],

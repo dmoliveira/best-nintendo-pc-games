@@ -91,7 +91,7 @@ const genres = readJson("data/genres.json").items ?? [];
 const genreIds = new Set(genres.map((genre) => genre.id));
 const platforms = readJson("data/platforms.json").items ?? [];
 const platformIds = new Set(platforms.map((platform) => platform.id));
-const candidateKeys = ["wikidataId", "entityUrl", "slug", "title", "aliases", "emoji", "wikidataReleaseYear", "platformId", "wikidataPlatformId", "genreIds", "wikidataGenreIds", "editorialCopy", "review"];
+const candidateKeys = ["wikidataId", "entityUrl", "slug", "title", "aliases", "emoji", "wikidataReleaseYear", "releaseScope", "platformId", "wikidataPlatformId", "platformAssociationScope", "genreIds", "wikidataGenreIds", "editorialCopy", "review"];
 const editorialKeys = ["shortDescription", "highlights", "rationale"];
 const reviewKeys = ["reviewedBy", "reviewedAt", "copyStatus", "sourceMethod"];
 const qids = new Set();
@@ -111,7 +111,9 @@ for (const [index, candidate] of (inventory.candidates ?? []).entries()) {
   candidateBySlug.set(candidate.slug, candidate);
   if (!hasNonEmpty(candidate.title) || !Array.isArray(candidate.aliases) || !hasNonEmpty(candidate.emoji)) fail(label + " requires title, aliases, and emoji");
   if (!Number.isInteger(candidate.wikidataReleaseYear) || candidate.wikidataReleaseYear < 1950 || candidate.wikidataReleaseYear > 2100) fail(label + " has an invalid Wikidata release year");
+  if (candidate.releaseScope !== "earliest-title-release") fail(label + " must scope its Wikidata year as an earliest title release");
   if (!platformIds.has(candidate.platformId) || inventory.platformQids?.[candidate.platformId] !== candidate.wikidataPlatformId) fail(label + " has an invalid platform/QID pair");
+  if (candidate.platformAssociationScope !== "source-listed") fail(label + " must scope its Wikidata platform as source-listed");
   if (!Array.isArray(candidate.genreIds) || !candidate.genreIds.length || candidate.genreIds.some((genreId) => !genreIds.has(genreId))) fail(label + " has an invalid canonical genre");
   if (!Array.isArray(candidate.wikidataGenreIds) || !candidate.wikidataGenreIds.length || candidate.wikidataGenreIds.some((qid) => !/^Q\d+$/.test(qid) || !inventory.genreMappings?.[qid])) fail(label + " has an invalid Wikidata genre mapping");
   for (const qid of candidate.wikidataGenreIds) {
@@ -160,7 +162,7 @@ for (const slug of candidateBySlug.keys()) if (!generatedSlugs.has(slug)) fail("
 for (const { game } of generatedGames) {
   const candidate = candidateBySlug.get(game.slug);
   if (!candidate) { fail("stale generated game record " + game.slug); continue; }
-  if (game.title !== candidate.title || game.release?.year !== candidate.wikidataReleaseYear || JSON.stringify(game.platforms) !== JSON.stringify([candidate.platformId]) || JSON.stringify(game.genres) !== JSON.stringify(candidate.genreIds)) fail("generated game metadata diverges for " + game.slug);
+  if (game.title !== candidate.title || game.release?.year !== candidate.wikidataReleaseYear || game.release?.scope !== candidate.releaseScope || game.platformAssociationScope !== candidate.platformAssociationScope || JSON.stringify(game.platforms) !== JSON.stringify([candidate.platformId]) || JSON.stringify(game.genres) !== JSON.stringify(candidate.genreIds)) fail("generated game metadata diverges for " + game.slug);
   if (JSON.stringify(game.sources) !== JSON.stringify(["wikidata-fact-reference", "gameatlas-editorial"])) fail("generated game sources are invalid for " + game.slug);
   if (!Array.isArray(game.links) || game.links.length !== 1 || game.links[0]?.kind !== "reference" || game.links[0]?.url !== candidate.entityUrl || game.links[0]?.label !== "External/reference — Wikidata structured data") fail("generated Wikidata link is invalid for " + game.slug);
   if (!Array.isArray(game.signals) || game.signals.length !== 1 || game.signals[0]?.kind !== "editorial" || game.signals[0]?.evidenceState !== "catalog-method" || game.signals[0]?.label !== "GameAtlas catalog method" || game.signals[0]?.reviewedBy !== "GameAtlas deterministic catalog process") fail("generated catalog signal is invalid for " + game.slug);

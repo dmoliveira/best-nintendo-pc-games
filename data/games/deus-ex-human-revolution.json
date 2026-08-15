@@ -10,8 +10,10 @@
     "Labels the source relationship without treating it as a popularity signal."
   ],
   "release": {
-    "year": 2011
+    "year": 2011,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-wii-u"
   ],

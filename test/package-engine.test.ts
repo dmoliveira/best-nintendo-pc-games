@@ -74,6 +74,25 @@ test("keeps digital presentation flat and fails closed for unsupported platform 
   assert.throws(() => createPackagePresentation({ title: "Ambiguous", platformIds: ["nintendo-switch", "pc-windows"], platformLabel: "Ambiguous" }), /exactly one platform/);
 });
 
+test("uses a neutral flat reference presentation for source-listed platform associations", () => {
+  const presentation = createPackagePresentation({
+    title: "Tomb Raider",
+    platformIds: ["nintendo-switch-2"],
+    platformLabel: "Wikidata-listed: Switch 2",
+    platformAssociationScope: "source-listed",
+    governedFront: { src: "/assets/games/tomb-raider/front-switch-2.png", alt: "Unsupported platform-specific front", formatId: "switch-2-game-case" },
+    editorialThumbnail: { src: "/assets/games/tomb-raider.svg", alt: "Abstract Tomb Raider reference art" },
+  });
+  assert.equal(presentation.presentationMode, "source-listed-reference");
+  assert.equal(presentation.formatId, "catalog-reference");
+  assert.equal(presentation.formatKind, "digital");
+  assert.equal(presentation.profile.category, "source-listed catalog reference");
+  assert.equal(presentation.viewer.depthPx, 0);
+  assert.equal(presentation.viewer.canRotate, false);
+  assert.equal(presentation.thumbnail.depthRatio, 0);
+  assert.equal(presentation.governedFront, undefined);
+});
+
 test("keeps every platform profile inside viewer and thumbnail safety bounds", () => {
   for (const [platformId, profile] of Object.entries(PLATFORM_PACKAGE_PROFILES)) {
     const presentation = createPackagePresentation({
@@ -99,12 +118,25 @@ test("keeps every platform profile inside viewer and thumbnail safety bounds", (
   }
 });
 
-test("resolves every current catalog game to one explicit package profile", () => {
+test("uses platform package profiles only for verified-release records", () => {
   const games = fs.readdirSync(path.join(root, "data/games")).filter((file) => file.endsWith(".json"));
   assert.ok(games.length > 0);
   for (const file of games) {
     const game = JSON.parse(fs.readFileSync(path.join(root, "data/games", file), "utf8"));
-    const resolution = resolvePackageProfile(game.platforms, game.releaseFormat);
-    assert.equal(resolution.status, "resolved", `${game.slug}: ${resolution.status === "unsupported" ? resolution.reason : ""}`);
+    const presentation = createPackagePresentation({
+      title: game.title,
+      platformIds: game.platforms,
+      platformLabel: game.platforms.join(", "),
+      platformAssociationScope: game.platformAssociationScope ?? "verified-release",
+      releaseFormat: game.releaseFormat,
+    });
+    if (game.platformAssociationScope === "source-listed") {
+      assert.equal(presentation.presentationMode, "source-listed-reference", `${game.slug}: source-listed records must not select a platform package`);
+      assert.equal(presentation.viewer.depthPx, 0, `${game.slug}: source-listed reference depth`);
+    } else {
+      const resolution = resolvePackageProfile(game.platforms, game.releaseFormat);
+      assert.equal(resolution.status, "resolved", `${game.slug}: ${resolution.status === "unsupported" ? resolution.reason : ""}`);
+      assert.equal(presentation.presentationMode, "platform-package", `${game.slug}: verified release uses package profile`);
+    }
   }
 });

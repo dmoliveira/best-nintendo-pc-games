@@ -10,8 +10,10 @@
     "Keeps third-party commentary and scores out of the linked metadata path."
   ],
   "release": {
-    "year": 1991
+    "year": 1991,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-snes"
   ],

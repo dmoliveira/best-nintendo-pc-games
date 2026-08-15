@@ -10,8 +10,10 @@
     "Labels the source relationship without treating it as a popularity signal."
   ],
   "release": {
-    "year": 2009
+    "year": 2009,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-ds"
   ],

@@ -10,8 +10,10 @@
     "Links the catalog entry to a source record without presenting a rating."
   ],
   "release": {
-    "year": 2005
+    "year": 2005,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-3ds"
   ],

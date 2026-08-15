@@ -114,6 +114,7 @@ test("client search projection excludes raw evidence objects", () => {
   assert.match(serialized, /GameAtlas editorial/);
   assert.ok(records.every((record) => record.artPath?.includes("/assets/games/") && record.artAlt));
   assert.ok(records.every((record) => record.platformDisplayLabels.length === record.platformLabels.length));
+  assert.ok(records.every((record) => (record.releaseScope === "earliest-title-release" && record.platformAssociationScope === "source-listed") || (record.releaseScope === "platform-release" && record.platformAssociationScope === "verified-release")));
   assert.equal(records.find((record) => record.platformIds.includes("pc-windows"))?.platformDisplayLabels[0], "PC / Windows");
   assert.ok(records.every((record) => ["GameAtlas pick", "GameAtlas catalog entry"].includes(record.editorialLabel ?? "")));
   assert.equal(records.find((record) => record.slug === "halo-3")?.editorialLabel, "GameAtlas catalog entry");
@@ -121,6 +122,14 @@ test("client search projection excludes raw evidence objects", () => {
   assert.equal(records.find((record) => record.slug === "super-mario-bros")?.editorialLabel, "GameAtlas pick");
   assert.ok(records.find((record) => record.slug === "super-mario-bros")?.evidenceLabels.includes("GameAtlas editorial"));
   assert.ok(records.every((record) => !record.criticSummary && !record.salesSummary));
+  assert.deepEqual(records.find((record) => record.slug === "tomb-raider") && {
+    releaseYear: records.find((record) => record.slug === "tomb-raider")?.releaseYear,
+    releaseScope: records.find((record) => record.slug === "tomb-raider")?.releaseScope,
+    platformAssociationScope: records.find((record) => record.slug === "tomb-raider")?.platformAssociationScope,
+    packageKind: records.find((record) => record.slug === "tomb-raider")?.packageThumbnail.kind,
+    packageFormat: records.find((record) => record.slug === "tomb-raider")?.packageThumbnail.formatId,
+    packageDepthRatio: records.find((record) => record.slug === "tomb-raider")?.packageThumbnail.depthRatio,
+  }, { releaseYear: 2013, releaseScope: "earliest-title-release", platformAssociationScope: "source-listed", packageKind: "digital", packageFormat: "catalog-reference", packageDepthRatio: 0 });
   assert.equal(records.filter((record) => record.criticalLink).length, 32);
   assert.ok(records.filter((record) => record.criticalLink).every((record) => record.criticalLink?.url.startsWith("https://www.metacritic.com/game/")));
 });
@@ -128,20 +137,30 @@ test("client search projection excludes raw evidence objects", () => {
 test("initial card projection excludes search-only catalog fields", () => {
   const card = toCatalogCardRecord(records[0]);
   const cardFields = new Set(["slug", "title", "emoji", "packageThumbnail", "developer", "publisher", "editorialLabel", "criticalLink", "criticSummary", "salesSummary", "shortDescription", "releaseYear", "releaseFormat", "platformIds", "platformLabels", "platformDisplayLabels", "platformHubIds", "genreIds", "genreLabels", "genreHubIds"]);
-  assert.deepEqual(Object.keys(card).sort(), Object.entries(records[0]).filter(([field, value]) => cardFields.has(field) && value !== undefined).map(([field]) => field).sort());
+  const expectedCardKeys = Object.entries(records[0]).filter(([field, value]) => cardFields.has(field) && value !== undefined).map(([field]) => field);
+  if (records[0].platformAssociationScope === "source-listed") expectedCardKeys.push("sourceListed");
+  assert.deepEqual(Object.keys(card).sort(), expectedCardKeys.sort());
   assert.equal("aliases" in card, false);
   assert.equal("artPath" in card, false);
   assert.equal("artAlt" in card, false);
   assert.equal("searchText" in card, false);
   assert.equal("releaseDate" in card, false);
+  assert.equal(card.sourceListed, records[0].platformAssociationScope === "source-listed" ? true : undefined);
   assert.equal("evidenceKinds" in card, false);
   assert.equal("evidenceLabels" in card, false);
   assert.equal(card.slug, records[0].slug);
-  assert.deepEqual(card.packageThumbnail, records[0].packageThumbnail);
+  assert.deepEqual(card.packageThumbnail, {
+    formatId: records[0].packageThumbnail.formatId,
+    kind: records[0].packageThumbnail.kind,
+    aspectRatio: records[0].packageThumbnail.aspectRatio,
+    depthRatio: records[0].packageThumbnail.depthRatio,
+    ...(records[0].packageThumbnail.frontPath ? { frontPath: records[0].packageThumbnail.frontPath } : {}),
+  });
+  assert.equal("frontAlt" in card.packageThumbnail, false);
 });
 
 test("card-safe projection retains every value needed to normalize full catalog URL state", () => {
-  const initialCards = records.slice(0, 24).map(toCatalogCardRecord);
+  const initialCards = records.slice(0, 24).map((record) => toCatalogCardRecord(record));
   const options = createSearchStateOptions(initialCards);
   assert.deepEqual([...options.platformIds].sort(), [...new Set(initialCards.flatMap((record) => record.platformIds))].sort());
   assert.deepEqual([...options.genreIds].sort(), [...new Set(initialCards.flatMap((record) => record.genreIds))].sort());

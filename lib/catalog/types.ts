@@ -3,6 +3,8 @@ export type RightsStatus = "approved" | "outbound-only" | "pending-review" | "pr
 export type SignalKind = "critic" | "user" | "sales" | "popularity" | "editorial";
 export type EvidenceState = "link-only" | "verified-fact" | "licensed-signal" | "original-editorial" | "catalog-method";
 export type ReleaseFormat = "cartridge" | "digital";
+export type ReleaseScope = "earliest-title-release" | "platform-release";
+export type PlatformAssociationScope = "source-listed" | "verified-release";
 
 export interface SourcePolicy {
   id: string;
@@ -135,6 +137,7 @@ export interface GameRelease {
   year: number;
   date?: string;
   region?: string;
+  scope?: ReleaseScope;
 }
 
 export interface GameRecord {
@@ -147,6 +150,7 @@ export interface GameRecord {
   highlights: string[];
   release: GameRelease;
   releaseFormat?: ReleaseFormat;
+  platformAssociationScope?: PlatformAssociationScope;
   platforms: string[];
   genres: string[];
   developer?: string;

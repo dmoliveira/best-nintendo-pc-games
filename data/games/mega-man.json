@@ -10,8 +10,10 @@
     "Uses a factual reference path instead of an aggregate score or review."
   ],
   "release": {
-    "year": 1987
+    "year": 1987,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-nes"
   ],

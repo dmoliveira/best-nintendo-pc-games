@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { MINIMUM_HUB_RECORDS, getCatalogGame, getCatalogGames, getCatalogGenre, getCatalogGenres, getCatalogPlatform, getCatalogPlatforms, getEditorialSignals, getGenreHub, getGenreHubs, getPlatformHub, getPlatformHubs, getPopulatedPlatforms, toCatalogSearchRecord } from "../lib/catalog/site-data";
+import { MINIMUM_HUB_RECORDS, getCatalogGame, getCatalogGames, getCatalogGenre, getCatalogGenres, getCatalogPlatform, getCatalogPlatforms, getEditorialSignals, getGenreHub, getGenreHubs, getPlatformHub, getPlatformHubs, getPopulatedPlatforms, resolveCatalogRecordSemantics, toCatalogSearchRecord } from "../lib/catalog/site-data";
 
 test("loads every validated game with resolved taxonomy labels", () => {
   const games = getCatalogGames();
@@ -14,6 +14,16 @@ test("loads every validated game with resolved taxonomy labels", () => {
 test("resolves static game routes by slug and fails closed for unknown slugs", () => {
   assert.equal(getCatalogGame("super-mario-bros")?.game.title, "Super Mario Bros.");
   assert.equal(getCatalogGame("missing-game"), undefined);
+});
+
+test("resolves generated title/year and platform association semantics without changing legacy curated records", () => {
+  const tombRaider = getCatalogGame("tomb-raider");
+  const superMarioBros = getCatalogGame("super-mario-bros");
+  if (!tombRaider || !superMarioBros) throw new Error("missing chronology fixtures");
+  assert.deepEqual(resolveCatalogRecordSemantics(tombRaider.game), { releaseScope: "earliest-title-release", platformAssociationScope: "source-listed" });
+  assert.deepEqual(resolveCatalogRecordSemantics(superMarioBros.game), { releaseScope: "platform-release", platformAssociationScope: "verified-release" });
+  assert.equal(toCatalogSearchRecord(tombRaider).releaseScope, "earliest-title-release");
+  assert.equal(toCatalogSearchRecord(tombRaider).platformAssociationScope, "source-listed");
 });
 
 test("reports only platform families with validated records as populated", () => {

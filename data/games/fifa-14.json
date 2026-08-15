@@ -10,8 +10,10 @@
     "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
   ],
   "release": {
-    "year": 2013
+    "year": 2013,
+    "scope": "earliest-title-release"
   },
+  "platformAssociationScope": "source-listed",
   "platforms": [
     "nintendo-3ds"
   ],
