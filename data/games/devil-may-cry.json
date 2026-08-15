@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "devil-may-cry",
+  "title": "Devil May Cry",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Devil May Cry appears in GameAtlas's Nintendo Switch action and adventure collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Maps a direct-reference action and adventure entry into the Nintendo Switch catalog.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Devil May Cry",
+    "nintendo-switch",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Nintendo Switch action and adventure discovery path using Wikidata-listed platform and genre statements; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q840889",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q840889.svg",
+      "alt": "Abstract GameAtlas art tile for Devil May Cry",
+      "provenanceId": "gameatlas-catalog-1000-q840889"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

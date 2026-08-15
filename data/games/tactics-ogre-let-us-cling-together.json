@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "tactics-ogre-let-us-cling-together",
+  "title": "Tactics Ogre: Let Us Cling Together",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Tactics Ogre: Let Us Cling Together is organized in GameAtlas's Super Nintendo Entertainment System strategy collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Maps a direct-reference strategy entry into the Super Nintendo Entertainment System catalog.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 1995
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Tactics Ogre: Let Us Cling Together",
+    "nintendo-snes",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Super Nintendo Entertainment System strategy discovery path using Wikidata-listed platform and genre statements; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1413485",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1413485.svg",
+      "alt": "Abstract GameAtlas art tile for Tactics Ogre: Let Us Cling Together",
+      "provenanceId": "gameatlas-catalog-1000-q1413485"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "call-of-duty-wwii",
+  "title": "Call of Duty: WWII",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Call of Duty: WWII joins the PC (Windows) shooter path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Frames a shooter catalog entry for source-aware PC (Windows) exploration.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Call of Duty: WWII",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the PC (Windows) shooter discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q29577137",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q29577137.svg",
+      "alt": "Abstract GameAtlas art tile for Call of Duty: WWII",
+      "provenanceId": "gameatlas-catalog-1000-q29577137"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

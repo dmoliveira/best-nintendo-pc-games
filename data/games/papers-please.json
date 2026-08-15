@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "papers-please",
+  "title": "Papers, Please",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Papers, Please is organized in GameAtlas's PC (Windows) adventure and simulation collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Adds a clearly sourced adventure and simulation option to the PC (Windows) discovery path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "adventure",
+    "simulation"
+  ],
+  "keywords": [
+    "Papers, Please",
+    "pc-windows",
+    "adventure",
+    "simulation",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the PC (Windows) adventure and simulation discovery path using a direct Wikidata structured-data record; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q14565978",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q14565978.svg",
+      "alt": "Abstract GameAtlas art tile for Papers, Please",
+      "provenanceId": "gameatlas-catalog-1000-q14565978"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

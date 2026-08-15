@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "paperboy",
+  "title": "Paperboy",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Paperboy appears in GameAtlas's Nintendo 64 action collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Brings a source-aware action entry to the Nintendo 64 browsing route.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 1985
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Paperboy",
+    "nintendo-64",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the Nintendo 64 action discovery path using Wikidata-listed platform and genre statements; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1330205",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1330205.svg",
+      "alt": "Abstract GameAtlas art tile for Paperboy",
+      "provenanceId": "gameatlas-catalog-1000-q1330205"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

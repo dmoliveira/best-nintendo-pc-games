@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "0-a-d",
+  "title": "0 A.D.",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "0 A.D. anchors a PC (Windows) strategy catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Adds a clearly sourced strategy option to the PC (Windows) discovery path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2021
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "0 A.D.",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the PC (Windows) strategy discovery path using a Wikidata-listed catalog relationship; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q161234",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q161234.svg",
+      "alt": "Abstract GameAtlas art tile for 0 A.D.",
+      "provenanceId": "gameatlas-catalog-1000-q161234"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

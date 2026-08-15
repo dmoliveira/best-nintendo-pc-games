@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "wolfenstein-3d",
+  "title": "Wolfenstein 3D",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Wolfenstein 3D anchors a Super Nintendo Entertainment System shooter catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Builds a traceable shooter option into the Super Nintendo Entertainment System discovery path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 1992
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Wolfenstein 3D",
+    "nintendo-snes",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Super Nintendo Entertainment System shooter discovery path using the frozen Wikidata metadata snapshot; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q18940",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q18940.svg",
+      "alt": "Abstract GameAtlas art tile for Wolfenstein 3D",
+      "provenanceId": "gameatlas-catalog-1000-q18940"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

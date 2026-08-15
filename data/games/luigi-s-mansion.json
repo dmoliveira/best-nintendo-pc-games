@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "luigi-s-mansion",
+  "title": "Luigi's Mansion",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Luigi's Mansion is organized in GameAtlas's Nintendo GameCube action and adventure collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Sets a direct-reference action and adventure marker within the Nintendo GameCube catalog.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Luigi's Mansion",
+    "nintendo-gamecube",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo GameCube action and adventure discovery path using a direct Wikidata structured-data record; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q984029",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q984029.svg",
+      "alt": "Abstract GameAtlas art tile for Luigi's Mansion",
+      "provenanceId": "gameatlas-catalog-1000-q984029"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

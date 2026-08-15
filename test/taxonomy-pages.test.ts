@@ -17,7 +17,7 @@ test("platform and genre hubs are static, bounded, and metadata-aware", () => {
   assert.match(hub, /className="skip-link" href="#main-content"/);
   assert.match(hub, /<main className="hub-page" id="main-content">/);
   assert.match(hub, /CatalogCards/);
-  assert.match(hub, /reviewed games/);
+  assert.match(hub, /catalog games/);
   assert.match(hub, /type TaxonomyVisual/);
   assert.match(hub, /visual: TaxonomyVisual/);
   assert.match(hub, /data-taxonomy-visual/);

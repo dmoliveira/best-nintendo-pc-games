@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "apex-legends",
+  "title": "Apex Legends",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Apex Legends is cataloged in the Nintendo Switch 2 shooter and strategy path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Offers a clearly labeled shooter and strategy route through the Nintendo Switch 2 collection.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2019
+  },
+  "platforms": [
+    "nintendo-switch-2"
+  ],
+  "genres": [
+    "shooter",
+    "strategy"
+  ],
+  "keywords": [
+    "Apex Legends",
+    "nintendo-switch-2",
+    "shooter",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Nintendo Switch 2 shooter and strategy discovery path using a Wikidata-listed catalog relationship; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q61478103",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q61478103.svg",
+      "alt": "Abstract GameAtlas art tile for Apex Legends",
+      "provenanceId": "gameatlas-catalog-1000-q61478103"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

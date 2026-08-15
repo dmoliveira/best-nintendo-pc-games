@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "far-cry-primal",
+  "title": "Far Cry Primal",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Far Cry Primal is organized in GameAtlas's PC (Windows) action and adventure collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Adds a clearly sourced action and adventure option to the PC (Windows) discovery path.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2016
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Far Cry Primal",
+    "pc-windows",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the PC (Windows) action and adventure discovery path using Wikidata-listed platform and genre statements; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q21072291",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q21072291.svg",
+      "alt": "Abstract GameAtlas art tile for Far Cry Primal",
+      "provenanceId": "gameatlas-catalog-1000-q21072291"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

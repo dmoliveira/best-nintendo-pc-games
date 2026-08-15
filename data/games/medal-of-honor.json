@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "medal-of-honor",
+  "title": "Medal of Honor",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Medal of Honor is included in GameAtlas's PC (Windows) shooter route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Adds a clearly sourced shooter option to the PC (Windows) discovery path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Medal of Honor",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the PC (Windows) shooter discovery path using a linked structured-data reference; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q850445",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q850445.svg",
+      "alt": "Abstract GameAtlas art tile for Medal of Honor",
+      "provenanceId": "gameatlas-catalog-1000-q850445"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

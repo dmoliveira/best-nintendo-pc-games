@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "harry-potter-and-the-philosopher-s-stone",
+  "title": "Harry Potter and the Philosopher's Stone",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Harry Potter and the Philosopher's Stone is organized in GameAtlas's Nintendo GameCube action and adventure collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Makes a documented action and adventure option easier to find in the Nintendo GameCube path.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Harry Potter and the Philosopher's Stone",
+    "nintendo-gamecube",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the Nintendo GameCube action and adventure discovery path using a direct Wikidata structured-data record; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q719960",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q719960.svg",
+      "alt": "Abstract GameAtlas art tile for Harry Potter and the Philosopher's Stone",
+      "provenanceId": "gameatlas-catalog-1000-q719960"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

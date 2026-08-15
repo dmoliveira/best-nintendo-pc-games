@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "garry-s-mod",
+  "title": "Garry's Mod",
+  "aliases": [],
+  "emoji": "🧱",
+  "shortDescription": "Garry's Mod is cataloged in the PC (Windows) sandbox and shooter path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Makes a documented sandbox and shooter option easier to find in the PC (Windows) path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "sandbox",
+    "shooter"
+  ],
+  "keywords": [
+    "Garry's Mod",
+    "pc-windows",
+    "sandbox",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the PC (Windows) sandbox and shooter discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q837923",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q837923.svg",
+      "alt": "Abstract GameAtlas art tile for Garry's Mod",
+      "provenanceId": "gameatlas-catalog-1000-q837923"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

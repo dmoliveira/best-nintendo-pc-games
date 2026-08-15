@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "metroid-samus-returns",
+  "title": "Metroid: Samus Returns",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Metroid: Samus Returns is kept in GameAtlas's Nintendo 3DS family action discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference action entry into the Nintendo 3DS family catalog.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Metroid: Samus Returns",
+    "nintendo-3ds",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Nintendo 3DS family action discovery path using the preserved Wikidata entity record; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q30325600",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q30325600.svg",
+      "alt": "Abstract GameAtlas art tile for Metroid: Samus Returns",
+      "provenanceId": "gameatlas-catalog-1000-q30325600"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

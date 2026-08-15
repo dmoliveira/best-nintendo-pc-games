@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "toy-story-2-buzz-lightyear-to-the-rescue",
+  "title": "Toy Story 2: Buzz Lightyear to the Rescue",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Toy Story 2: Buzz Lightyear to the Rescue joins the Nintendo 64 platformer path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Builds a traceable platformer option into the Nintendo 64 discovery path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 1999
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Toy Story 2: Buzz Lightyear to the Rescue",
+    "nintendo-64",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo 64 platformer discovery path using the documented Wikidata platform mapping; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2709135",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2709135.svg",
+      "alt": "Abstract GameAtlas art tile for Toy Story 2: Buzz Lightyear to the Rescue",
+      "provenanceId": "gameatlas-catalog-1000-q2709135"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

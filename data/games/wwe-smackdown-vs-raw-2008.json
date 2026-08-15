@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "wwe-smackdown-vs-raw-2008",
+  "title": "WWE SmackDown vs. Raw 2008",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "WWE SmackDown vs. Raw 2008 helps define a Nintendo DS family fighting path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Brings a source-aware fighting entry to the Nintendo DS family browsing route.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "WWE SmackDown vs. Raw 2008",
+    "nintendo-ds",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Nintendo DS family fighting discovery path using the frozen source metadata record; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1990913",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1990913.svg",
+      "alt": "Abstract GameAtlas art tile for WWE SmackDown vs. Raw 2008",
+      "provenanceId": "gameatlas-catalog-1000-q1990913"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

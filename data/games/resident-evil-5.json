@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "resident-evil-5",
+  "title": "Resident Evil 5",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Resident Evil 5 is cataloged in the Nintendo Switch action and adventure and shooter path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Places a source-linked action and adventure and shooter entry in the Nintendo Switch browsing path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "shooter"
+  ],
+  "keywords": [
+    "Resident Evil 5",
+    "nintendo-switch",
+    "action",
+    "adventure",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo Switch action and adventure and shooter discovery path using a direct Wikidata structured-data record; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q601050",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q601050.svg",
+      "alt": "Abstract GameAtlas art tile for Resident Evil 5",
+      "provenanceId": "gameatlas-catalog-1000-q601050"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

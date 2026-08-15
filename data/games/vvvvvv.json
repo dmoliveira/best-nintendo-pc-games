@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "vvvvvv",
+  "title": "VVVVVV",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "VVVVVV is organized in GameAtlas's Nintendo 3DS family platformer and puzzle collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Places a source-linked platformer and puzzle entry in the Nintendo 3DS family browsing path.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "platformer",
+    "puzzle"
+  ],
+  "keywords": [
+    "VVVVVV",
+    "nintendo-3ds",
+    "platformer",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Nintendo 3DS family platformer and puzzle discovery path using a source-linked Wikidata item; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q5766",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q5766.svg",
+      "alt": "Abstract GameAtlas art tile for VVVVVV",
+      "provenanceId": "gameatlas-catalog-1000-q5766"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

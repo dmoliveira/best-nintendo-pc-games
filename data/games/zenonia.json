@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "slug": "zenonia",
+  "title": "Zenonia",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Zenonia is kept in GameAtlas's Nintendo DSi family action discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented action option easier to find in the Nintendo DSi family path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-dsi"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Zenonia",
+    "nintendo-dsi",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Nintendo DSi family action discovery path using a linked Wikidata platform-and-genre statement; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q495115",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q495115.svg",
+      "alt": "Abstract GameAtlas art tile for Zenonia",
+      "provenanceId": "gameatlas-catalog-1000-q495115"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ],
+  "releaseFormat": "digital"
+}

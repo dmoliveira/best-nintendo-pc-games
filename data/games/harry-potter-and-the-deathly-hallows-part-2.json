@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "harry-potter-and-the-deathly-hallows-part-2",
+  "title": "Harry Potter and the Deathly Hallows – Part 2",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Harry Potter and the Deathly Hallows – Part 2 is grouped in GameAtlas's Nintendo DS family shooter catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Builds a traceable shooter option into the Nintendo DS family discovery path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Harry Potter and the Deathly Hallows – Part 2",
+    "nintendo-ds",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Nintendo DS family shooter discovery path using a Wikidata-listed catalog relationship; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1189721",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1189721.svg",
+      "alt": "Abstract GameAtlas art tile for Harry Potter and the Deathly Hallows – Part 2",
+      "provenanceId": "gameatlas-catalog-1000-q1189721"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

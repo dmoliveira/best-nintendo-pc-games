@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "shogun-total-war",
+  "title": "Shogun: Total War",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Shogun: Total War sits in the GameAtlas PC (Windows) strategy collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Offers a clearly labeled strategy route through the PC (Windows) collection.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Shogun: Total War",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) strategy discovery path using a linked Wikidata platform-and-genre statement; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q528310",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q528310.svg",
+      "alt": "Abstract GameAtlas art tile for Shogun: Total War",
+      "provenanceId": "gameatlas-catalog-1000-q528310"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

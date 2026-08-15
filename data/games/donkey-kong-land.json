@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "donkey-kong-land",
+  "title": "Donkey Kong Land",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Donkey Kong Land is organized in GameAtlas's Game Boy family platformer collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Sets a direct-reference platformer marker within the Game Boy family catalog.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 1995
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Donkey Kong Land",
+    "game-boy",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Game Boy family platformer discovery path using the documented Wikidata platform mapping; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2718657",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2718657.svg",
+      "alt": "Abstract GameAtlas art tile for Donkey Kong Land",
+      "provenanceId": "gameatlas-catalog-1000-q2718657"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

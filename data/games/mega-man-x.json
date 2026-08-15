@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "mega-man-x",
+  "title": "Mega Man X",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Mega Man X is cataloged in the Super Nintendo Entertainment System action and platformer path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Frames a action and platformer catalog entry for source-aware Super Nintendo Entertainment System exploration.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 1993
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "keywords": [
+    "Mega Man X",
+    "nintendo-snes",
+    "action",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Super Nintendo Entertainment System action and platformer discovery path using the frozen Wikidata metadata snapshot; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1196400",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1196400.svg",
+      "alt": "Abstract GameAtlas art tile for Mega Man X",
+      "provenanceId": "gameatlas-catalog-1000-q1196400"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

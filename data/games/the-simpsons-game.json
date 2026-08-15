@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-simpsons-game",
+  "title": "The Simpsons Game",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "The Simpsons Game is grouped in GameAtlas's Wii action and adventure and platformer catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Builds a traceable action and adventure and platformer option into the Wii discovery path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "platformer"
+  ],
+  "keywords": [
+    "The Simpsons Game",
+    "nintendo-wii",
+    "action",
+    "adventure",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Wii action and adventure and platformer discovery path using a Wikidata-listed catalog relationship; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1139044",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1139044.svg",
+      "alt": "Abstract GameAtlas art tile for The Simpsons Game",
+      "provenanceId": "gameatlas-catalog-1000-q1139044"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

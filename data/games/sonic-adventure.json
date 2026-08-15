@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "sonic-adventure",
+  "title": "Sonic Adventure",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Sonic Adventure joins the Nintendo GameCube platformer path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Builds a traceable platformer option into the Nintendo GameCube discovery path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 1998
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Sonic Adventure",
+    "nintendo-gamecube",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Nintendo GameCube platformer discovery path using a direct Wikidata structured-data record; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1069059",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1069059.svg",
+      "alt": "Abstract GameAtlas art tile for Sonic Adventure",
+      "provenanceId": "gameatlas-catalog-1000-q1069059"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "ninja-gaiden",
+  "title": "Ninja Gaiden",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Ninja Gaiden joins the Nintendo Entertainment System platformer path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Makes a documented platformer option easier to find in the Nintendo Entertainment System path.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 1988
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Ninja Gaiden",
+    "nintendo-nes",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Nintendo Entertainment System platformer discovery path using a linked Wikidata platform-and-genre statement; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2658381",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2658381.svg",
+      "alt": "Abstract GameAtlas art tile for Ninja Gaiden",
+      "provenanceId": "gameatlas-catalog-1000-q2658381"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

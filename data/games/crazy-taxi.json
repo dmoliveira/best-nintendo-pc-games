@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "crazy-taxi",
+  "title": "Crazy Taxi",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Crazy Taxi joins the Nintendo GameCube racing path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Builds a traceable racing option into the Nintendo GameCube discovery path.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 1999
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Crazy Taxi",
+    "nintendo-gamecube",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Nintendo GameCube racing discovery path using a Wikidata-listed catalog relationship; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1139272",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1139272.svg",
+      "alt": "Abstract GameAtlas art tile for Crazy Taxi",
+      "provenanceId": "gameatlas-catalog-1000-q1139272"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

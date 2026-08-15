@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "kirby-64-the-crystal-shards",
+  "title": "Kirby 64: The Crystal Shards",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Kirby 64: The Crystal Shards anchors a Nintendo 64 platformer catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Builds a traceable platformer option into the Nintendo 64 discovery path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Kirby 64: The Crystal Shards",
+    "nintendo-64",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the Nintendo 64 platformer discovery path using the frozen Wikidata metadata snapshot; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1366980",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1366980.svg",
+      "alt": "Abstract GameAtlas art tile for Kirby 64: The Crystal Shards",
+      "provenanceId": "gameatlas-catalog-1000-q1366980"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

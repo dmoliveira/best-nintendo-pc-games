@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "a-plague-tale-innocence",
+  "title": "A Plague Tale: Innocence",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "A Plague Tale: Innocence anchors a Nintendo Switch action and adventure and stealth catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Brings a source-aware action and adventure and stealth entry to the Nintendo Switch browsing route.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2019
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "stealth"
+  ],
+  "keywords": [
+    "A Plague Tale: Innocence",
+    "nintendo-switch",
+    "action",
+    "adventure",
+    "stealth",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Nintendo Switch action and adventure and stealth discovery path using a direct Wikidata structured-data record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q54577668",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q54577668.svg",
+      "alt": "Abstract GameAtlas art tile for A Plague Tale: Innocence",
+      "provenanceId": "gameatlas-catalog-1000-q54577668"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

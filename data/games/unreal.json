@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "unreal",
+  "title": "Unreal",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Unreal is kept in GameAtlas's PC (Windows) shooter discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Brings a source-aware shooter entry to the PC (Windows) browsing route.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1998
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Unreal",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the PC (Windows) shooter discovery path using a linked structured-data reference; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q588147",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q588147.svg",
+      "alt": "Abstract GameAtlas art tile for Unreal",
+      "provenanceId": "gameatlas-catalog-1000-q588147"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

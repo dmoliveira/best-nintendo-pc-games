@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "eve-online",
+  "title": "EVE Online",
+  "aliases": [],
+  "emoji": "🌱",
+  "shortDescription": "EVE Online sits in the GameAtlas PC (Windows) simulation collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Places a source-linked simulation entry in the PC (Windows) browsing path.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "simulation"
+  ],
+  "keywords": [
+    "EVE Online",
+    "pc-windows",
+    "simulation",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the PC (Windows) simulation discovery path using the documented Wikidata platform mapping; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q336177",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q336177.svg",
+      "alt": "Abstract GameAtlas art tile for EVE Online",
+      "provenanceId": "gameatlas-catalog-1000-q336177"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "yoshi-s-woolly-world",
+  "title": "Yoshi's Woolly World",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Yoshi's Woolly World is organized in GameAtlas's Nintendo 3DS family platformer collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Keeps a documented platformer option visible in the Nintendo 3DS family collection.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Yoshi's Woolly World",
+    "nintendo-3ds",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Nintendo 3DS family platformer discovery path using the documented Wikidata platform mapping; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q11955503",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q11955503.svg",
+      "alt": "Abstract GameAtlas art tile for Yoshi's Woolly World",
+      "provenanceId": "gameatlas-catalog-1000-q11955503"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

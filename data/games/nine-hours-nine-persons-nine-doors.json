@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "nine-hours-nine-persons-nine-doors",
+  "title": "Nine Hours, Nine Persons, Nine Doors",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Nine Hours, Nine Persons, Nine Doors helps define a Nintendo DS family adventure and visual novel path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Offers a clearly labeled adventure and visual novel route through the Nintendo DS family collection.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "adventure",
+    "visual-novel"
+  ],
+  "keywords": [
+    "Nine Hours, Nine Persons, Nine Doors",
+    "nintendo-ds",
+    "adventure",
+    "visual-novel",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Nintendo DS family adventure and visual novel discovery path using the preserved Wikidata entity record; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2474856",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2474856.svg",
+      "alt": "Abstract GameAtlas art tile for Nine Hours, Nine Persons, Nine Doors",
+      "provenanceId": "gameatlas-catalog-1000-q2474856"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

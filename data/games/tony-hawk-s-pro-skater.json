@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "tony-hawk-s-pro-skater",
+  "title": "Tony Hawk's Pro Skater",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Tony Hawk's Pro Skater sits in the GameAtlas Nintendo 64 sports collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Adds a clearly sourced sports option to the Nintendo 64 discovery path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 1999
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Tony Hawk's Pro Skater",
+    "nintendo-64",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo 64 sports discovery path using a source-linked Wikidata item; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2264782",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2264782.svg",
+      "alt": "Abstract GameAtlas art tile for Tony Hawk's Pro Skater",
+      "provenanceId": "gameatlas-catalog-1000-q2264782"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

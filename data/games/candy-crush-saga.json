@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "candy-crush-saga",
+  "title": "Candy Crush Saga",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Candy Crush Saga is cataloged in the PC (Windows) puzzle path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Frames a puzzle catalog entry for source-aware PC (Windows) exploration.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "Candy Crush Saga",
+    "pc-windows",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the PC (Windows) puzzle discovery path using a source-linked Wikidata item; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q8768018",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q8768018.svg",
+      "alt": "Abstract GameAtlas art tile for Candy Crush Saga",
+      "provenanceId": "gameatlas-catalog-1000-q8768018"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

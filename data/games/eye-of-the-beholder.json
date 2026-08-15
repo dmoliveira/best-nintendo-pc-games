@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "eye-of-the-beholder",
+  "title": "Eye of the Beholder",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Eye of the Beholder anchors a Super Nintendo Entertainment System action catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Builds a traceable action option into the Super Nintendo Entertainment System discovery path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 1990
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Eye of the Beholder",
+    "nintendo-snes",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Super Nintendo Entertainment System action discovery path using Wikidata-listed platform and genre statements; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1385731",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1385731.svg",
+      "alt": "Abstract GameAtlas art tile for Eye of the Beholder",
+      "provenanceId": "gameatlas-catalog-1000-q1385731"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

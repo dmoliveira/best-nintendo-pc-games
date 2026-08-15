@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "outlast-2",
+  "title": "Outlast 2",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Outlast 2 is cataloged in the Nintendo Switch horror and survival path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Brings a source-aware horror and survival entry to the Nintendo Switch browsing route.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "horror",
+    "survival"
+  ],
+  "keywords": [
+    "Outlast 2",
+    "nintendo-switch",
+    "horror",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo Switch horror and survival discovery path using a linked structured-data reference; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q21662718",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q21662718.svg",
+      "alt": "Abstract GameAtlas art tile for Outlast 2",
+      "provenanceId": "gameatlas-catalog-1000-q21662718"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

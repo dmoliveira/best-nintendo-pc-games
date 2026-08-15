@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "star-wars-jedi-knight-jedi-academy",
+  "title": "Star Wars Jedi Knight: Jedi Academy",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Star Wars Jedi Knight: Jedi Academy is organized in GameAtlas's Nintendo Switch shooter collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Brings a source-aware shooter entry to the Nintendo Switch browsing route.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Star Wars Jedi Knight: Jedi Academy",
+    "nintendo-switch",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo Switch shooter discovery path using the preserved Wikidata entity record; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q55295",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q55295.svg",
+      "alt": "Abstract GameAtlas art tile for Star Wars Jedi Knight: Jedi Academy",
+      "provenanceId": "gameatlas-catalog-1000-q55295"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

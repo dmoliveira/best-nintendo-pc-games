@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "medal-of-honor-underground",
+  "title": "Medal of Honor: Underground",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Medal of Honor: Underground is cataloged in the Game Boy Advance family shooter path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Offers a clearly labeled shooter route through the Game Boy Advance family collection.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Medal of Honor: Underground",
+    "game-boy-advance",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Game Boy Advance family shooter discovery path using the frozen source metadata record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1064176",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1064176.svg",
+      "alt": "Abstract GameAtlas art tile for Medal of Honor: Underground",
+      "provenanceId": "gameatlas-catalog-1000-q1064176"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

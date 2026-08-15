@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-kart-7",
+  "title": "Mario Kart 7",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Mario Kart 7 is included in GameAtlas's Nintendo 3DS family racing route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Brings a source-aware racing entry to the Nintendo 3DS family browsing route.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Mario Kart 7",
+    "nintendo-3ds",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Nintendo 3DS family racing discovery path using a linked structured-data reference; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1117024",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1117024.svg",
+      "alt": "Abstract GameAtlas art tile for Mario Kart 7",
+      "provenanceId": "gameatlas-catalog-1000-q1117024"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

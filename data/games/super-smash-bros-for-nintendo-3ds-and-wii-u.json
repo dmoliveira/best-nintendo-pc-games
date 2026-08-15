@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-smash-bros-for-nintendo-3ds-and-wii-u",
+  "title": "Super Smash Bros. for Nintendo 3DS and Wii U",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Super Smash Bros. for Nintendo 3DS and Wii U is grouped in GameAtlas's Wii U platformer catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Makes a documented platformer option easier to find in the Wii U path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Super Smash Bros. for Nintendo 3DS and Wii U",
+    "nintendo-wii-u",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Wii U platformer discovery path using Wikidata-listed platform and genre statements; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1195150",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1195150.svg",
+      "alt": "Abstract GameAtlas art tile for Super Smash Bros. for Nintendo 3DS and Wii U",
+      "provenanceId": "gameatlas-catalog-1000-q1195150"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

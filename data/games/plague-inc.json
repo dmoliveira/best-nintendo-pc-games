@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "plague-inc",
+  "title": "Plague Inc.",
+  "aliases": [],
+  "emoji": "🌱",
+  "shortDescription": "Plague Inc. is grouped in GameAtlas's PC (Windows) simulation and strategy catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Offers a clearly labeled simulation and strategy route through the PC (Windows) collection.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "simulation",
+    "strategy"
+  ],
+  "keywords": [
+    "Plague Inc.",
+    "pc-windows",
+    "simulation",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the PC (Windows) simulation and strategy discovery path using Wikidata-listed platform and genre statements; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q7200554",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q7200554.svg",
+      "alt": "Abstract GameAtlas art tile for Plague Inc.",
+      "provenanceId": "gameatlas-catalog-1000-q7200554"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

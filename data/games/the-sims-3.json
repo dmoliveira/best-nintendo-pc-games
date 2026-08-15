@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-sims-3",
+  "title": "The Sims 3",
+  "aliases": [],
+  "emoji": "🌱",
+  "shortDescription": "The Sims 3 is kept in GameAtlas's Nintendo 3DS family simulation discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Brings a source-aware simulation entry to the Nintendo 3DS family browsing route.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "simulation"
+  ],
+  "keywords": [
+    "The Sims 3",
+    "nintendo-3ds",
+    "simulation",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Nintendo 3DS family simulation discovery path using a direct Wikidata structured-data record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q185482",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q185482.svg",
+      "alt": "Abstract GameAtlas art tile for The Sims 3",
+      "provenanceId": "gameatlas-catalog-1000-q185482"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

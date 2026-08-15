@@ -21,7 +21,7 @@ test("adds an abstract, deterministic accent without recreating platform trade d
 
 test("assigns deterministic semantic tones to every populated genre", () => {
   const genres = getCatalogGenres();
-  assert.equal(genres.length, 7);
+  assert.equal(genres.length, 20);
   assert.ok(genres.every((genre) => ["amber", "coral", "cyan", "lime", "violet"].includes(getGenreTone(genre.id))));
   assert.equal(getGenreTone("future-genre"), "cyan");
 });

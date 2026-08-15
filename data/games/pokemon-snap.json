@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "pokemon-snap",
+  "title": "Pokémon Snap",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Pokémon Snap is grouped in GameAtlas's Nintendo 64 shooter catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Makes a documented shooter option easier to find in the Nintendo 64 path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1999
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Pokémon Snap",
+    "nintendo-64",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Nintendo 64 shooter discovery path using a linked Wikidata platform-and-genre statement; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1705294",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1705294.svg",
+      "alt": "Abstract GameAtlas art tile for Pokémon Snap",
+      "provenanceId": "gameatlas-catalog-1000-q1705294"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

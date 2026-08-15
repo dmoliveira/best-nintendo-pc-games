@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "tom-clancy-s-splinter-cell-blacklist",
+  "title": "Tom Clancy's Splinter Cell: Blacklist",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Tom Clancy's Splinter Cell: Blacklist is kept in GameAtlas's Wii U action and adventure and stealth discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference action and adventure and stealth entry into the Wii U catalog.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "stealth"
+  ],
+  "keywords": [
+    "Tom Clancy's Splinter Cell: Blacklist",
+    "nintendo-wii-u",
+    "action",
+    "adventure",
+    "stealth",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Wii U action and adventure and stealth discovery path using the preserved Wikidata entity record; this remains a deterministic catalog-method entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1955277",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1955277.svg",
+      "alt": "Abstract GameAtlas art tile for Tom Clancy's Splinter Cell: Blacklist",
+      "provenanceId": "gameatlas-catalog-1000-q1955277"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

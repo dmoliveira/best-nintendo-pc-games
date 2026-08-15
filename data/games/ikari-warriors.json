@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "ikari-warriors",
+  "title": "Ikari Warriors",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Ikari Warriors is cataloged in the Nintendo Entertainment System shooter path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference shooter entry into the Nintendo Entertainment System catalog.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 1986
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Ikari Warriors",
+    "nintendo-nes",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Nintendo Entertainment System shooter discovery path using a linked structured-data reference; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2796607",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2796607.svg",
+      "alt": "Abstract GameAtlas art tile for Ikari Warriors",
+      "provenanceId": "gameatlas-catalog-1000-q2796607"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

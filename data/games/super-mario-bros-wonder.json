@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-mario-bros-wonder",
+  "title": "Super Mario Bros. Wonder",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Super Mario Bros. Wonder helps define a Nintendo Switch platformer path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked platformer entry in the Nintendo Switch browsing path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2023
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Super Mario Bros. Wonder",
+    "nintendo-switch",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo Switch platformer discovery path using the frozen source metadata record; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q119819453",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q119819453.svg",
+      "alt": "Abstract GameAtlas art tile for Super Mario Bros. Wonder",
+      "provenanceId": "gameatlas-catalog-1000-q119819453"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

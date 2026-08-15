@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "deus-ex-human-revolution",
+  "title": "Deus Ex: Human Revolution",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Deus Ex: Human Revolution is kept in GameAtlas's Wii U action discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Keeps a documented action option visible in the Wii U collection.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Deus Ex: Human Revolution",
+    "nintendo-wii-u",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Wii U action discovery path using a Wikidata-listed catalog relationship; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q642107",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q642107.svg",
+      "alt": "Abstract GameAtlas art tile for Deus Ex: Human Revolution",
+      "provenanceId": "gameatlas-catalog-1000-q642107"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

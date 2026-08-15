@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "half-life-2-lost-coast",
+  "title": "Half-Life 2: Lost Coast",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Half-Life 2: Lost Coast is kept in GameAtlas's PC (Windows) shooter discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Keeps a documented shooter option visible in the PC (Windows) collection.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2005
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Half-Life 2: Lost Coast",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the PC (Windows) shooter discovery path using the frozen Wikidata metadata snapshot; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q223629",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q223629.svg",
+      "alt": "Abstract GameAtlas art tile for Half-Life 2: Lost Coast",
+      "provenanceId": "gameatlas-catalog-1000-q223629"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

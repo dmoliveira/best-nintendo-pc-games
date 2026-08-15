@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "battlefield-1",
+  "title": "Battlefield 1",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Battlefield 1 helps define a PC (Windows) shooter path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Sets a direct-reference shooter marker within the PC (Windows) catalog.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2016
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Battlefield 1",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) shooter discovery path using a linked structured-data reference; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q24031560",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q24031560.svg",
+      "alt": "Abstract GameAtlas art tile for Battlefield 1",
+      "provenanceId": "gameatlas-catalog-1000-q24031560"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

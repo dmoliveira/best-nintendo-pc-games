@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "professor-layton-vs-ace-attorney",
+  "title": "Professor Layton vs. Ace Attorney",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Professor Layton vs. Ace Attorney appears in GameAtlas's Nintendo 3DS family adventure and visual novel collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Makes a documented adventure and visual novel option easier to find in the Nintendo 3DS family path.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "adventure",
+    "visual-novel"
+  ],
+  "keywords": [
+    "Professor Layton vs. Ace Attorney",
+    "nintendo-3ds",
+    "adventure",
+    "visual-novel",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Nintendo 3DS family adventure and visual novel discovery path using a direct Wikidata structured-data record; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q957410",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q957410.svg",
+      "alt": "Abstract GameAtlas art tile for Professor Layton vs. Ace Attorney",
+      "provenanceId": "gameatlas-catalog-1000-q957410"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

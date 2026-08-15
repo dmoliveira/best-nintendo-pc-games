@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "assassin-s-creed-ii-discovery",
+  "title": "Assassin's Creed II: Discovery",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Assassin's Creed II: Discovery is cataloged in the Nintendo DS family action and adventure path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Places a source-linked action and adventure entry in the Nintendo DS family browsing path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Assassin's Creed II: Discovery",
+    "nintendo-ds",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Nintendo DS family action and adventure discovery path using the documented Wikidata platform mapping; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2075360",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2075360.svg",
+      "alt": "Abstract GameAtlas art tile for Assassin's Creed II: Discovery",
+      "provenanceId": "gameatlas-catalog-1000-q2075360"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

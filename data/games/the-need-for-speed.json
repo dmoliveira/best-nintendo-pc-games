@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-need-for-speed",
+  "title": "The Need for Speed",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "The Need for Speed appears in GameAtlas's PC (Windows) racing collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Keeps a documented racing option visible in the PC (Windows) collection.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 1994
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "The Need for Speed",
+    "pc-windows",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) racing discovery path using a direct Wikidata structured-data record; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q429246",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q429246.svg",
+      "alt": "Abstract GameAtlas art tile for The Need for Speed",
+      "provenanceId": "gameatlas-catalog-1000-q429246"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

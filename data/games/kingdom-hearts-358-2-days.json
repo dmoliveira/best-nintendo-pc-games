@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "kingdom-hearts-358-2-days",
+  "title": "Kingdom Hearts 358/2 Days",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Kingdom Hearts 358/2 Days is kept in GameAtlas's Nintendo DS family action discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Brings a source-aware action entry to the Nintendo DS family browsing route.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Kingdom Hearts 358/2 Days",
+    "nintendo-ds",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Nintendo DS family action discovery path using a linked structured-data reference; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q938641",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q938641.svg",
+      "alt": "Abstract GameAtlas art tile for Kingdom Hearts 358/2 Days",
+      "provenanceId": "gameatlas-catalog-1000-q938641"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

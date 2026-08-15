@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "warioware-twisted",
+  "title": "WarioWare: Twisted!",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "WarioWare: Twisted! sits in the GameAtlas Game Boy Advance family action and puzzle collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Frames a action and puzzle catalog entry for source-aware Game Boy Advance family exploration.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "action",
+    "puzzle"
+  ],
+  "keywords": [
+    "WarioWare: Twisted!",
+    "game-boy-advance",
+    "action",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Game Boy Advance family action and puzzle discovery path using a Wikidata-listed catalog relationship; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1368157",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1368157.svg",
+      "alt": "Abstract GameAtlas art tile for WarioWare: Twisted!",
+      "provenanceId": "gameatlas-catalog-1000-q1368157"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

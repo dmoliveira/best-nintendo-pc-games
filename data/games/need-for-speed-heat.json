@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "need-for-speed-heat",
+  "title": "Need for Speed Heat",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Need for Speed Heat helps define a PC (Windows) racing path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented racing option easier to find in the PC (Windows) path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2019
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Need for Speed Heat",
+    "pc-windows",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the PC (Windows) racing discovery path using the preserved Wikidata entity record; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q66439292",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q66439292.svg",
+      "alt": "Abstract GameAtlas art tile for Need for Speed Heat",
+      "provenanceId": "gameatlas-catalog-1000-q66439292"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

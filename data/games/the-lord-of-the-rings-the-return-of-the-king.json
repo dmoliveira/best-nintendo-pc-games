@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-lord-of-the-rings-the-return-of-the-king",
+  "title": "The Lord of the Rings: The Return of the King",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "The Lord of the Rings: The Return of the King is included in GameAtlas's Game Boy Advance family action and adventure route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Brings a source-aware action and adventure entry to the Game Boy Advance family browsing route.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "The Lord of the Rings: The Return of the King",
+    "game-boy-advance",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Game Boy Advance family action and adventure discovery path using the frozen Wikidata metadata snapshot; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q440046",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q440046.svg",
+      "alt": "Abstract GameAtlas art tile for The Lord of the Rings: The Return of the King",
+      "provenanceId": "gameatlas-catalog-1000-q440046"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "fifa-99",
+  "title": "FIFA 99",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "FIFA 99 is organized in GameAtlas's Nintendo 64 sports collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Frames a sports catalog entry for source-aware Nintendo 64 exploration.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 1998
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "FIFA 99",
+    "nintendo-64",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Nintendo 64 sports discovery path using Wikidata-listed platform and genre statements; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2420155",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2420155.svg",
+      "alt": "Abstract GameAtlas art tile for FIFA 99",
+      "provenanceId": "gameatlas-catalog-1000-q2420155"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

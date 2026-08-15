@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "shining-force",
+  "title": "Shining Force",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Shining Force anchors a Game Boy Advance family strategy catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Builds a traceable strategy option into the Game Boy Advance family discovery path.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 1992
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Shining Force",
+    "game-boy-advance",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Game Boy Advance family strategy discovery path using Wikidata-listed platform and genre statements; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1929072",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1929072.svg",
+      "alt": "Abstract GameAtlas art tile for Shining Force",
+      "provenanceId": "gameatlas-catalog-1000-q1929072"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

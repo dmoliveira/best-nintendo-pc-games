@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "lego-batman-the-videogame",
+  "title": "Lego Batman: The Videogame",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Lego Batman: The Videogame is included in GameAtlas's Nintendo DS family action and adventure route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Keeps a documented action and adventure option visible in the Nintendo DS family collection.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Lego Batman: The Videogame",
+    "nintendo-ds",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Nintendo DS family action and adventure discovery path using the frozen Wikidata metadata snapshot; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q74545",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q74545.svg",
+      "alt": "Abstract GameAtlas art tile for Lego Batman: The Videogame",
+      "provenanceId": "gameatlas-catalog-1000-q74545"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "yoshi-s-new-island",
+  "title": "Yoshi's New Island",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Yoshi's New Island helps define a Nintendo 3DS family platformer path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Offers a clearly labeled platformer route through the Nintendo 3DS family collection.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Yoshi's New Island",
+    "nintendo-3ds",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo 3DS family platformer discovery path using a Wikidata-listed catalog relationship; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q11955502",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q11955502.svg",
+      "alt": "Abstract GameAtlas art tile for Yoshi's New Island",
+      "provenanceId": "gameatlas-catalog-1000-q11955502"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

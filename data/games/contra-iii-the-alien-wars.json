@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "contra-iii-the-alien-wars",
+  "title": "Contra III: The Alien Wars",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Contra III: The Alien Wars joins the Game Boy family action path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Frames a action catalog entry for source-aware Game Boy family exploration.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 1992
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Contra III: The Alien Wars",
+    "game-boy",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Game Boy family action discovery path using a linked structured-data reference; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1368099",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1368099.svg",
+      "alt": "Abstract GameAtlas art tile for Contra III: The Alien Wars",
+      "provenanceId": "gameatlas-catalog-1000-q1368099"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

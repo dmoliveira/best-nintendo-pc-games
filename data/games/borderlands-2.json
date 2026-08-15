@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "borderlands-2",
+  "title": "Borderlands 2",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Borderlands 2 is kept in GameAtlas's PC (Windows) action and shooter discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference action and shooter entry into the PC (Windows) catalog.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "shooter"
+  ],
+  "keywords": [
+    "Borderlands 2",
+    "pc-windows",
+    "action",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) action and shooter discovery path using the frozen source metadata record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q893422",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q893422.svg",
+      "alt": "Abstract GameAtlas art tile for Borderlands 2",
+      "provenanceId": "gameatlas-catalog-1000-q893422"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

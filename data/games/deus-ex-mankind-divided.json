@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "deus-ex-mankind-divided",
+  "title": "Deus Ex: Mankind Divided",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Deus Ex: Mankind Divided is kept in GameAtlas's PC (Windows) action and stealth discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Frames a action and stealth catalog entry for source-aware PC (Windows) exploration.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2016
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "stealth"
+  ],
+  "keywords": [
+    "Deus Ex: Mankind Divided",
+    "pc-windows",
+    "action",
+    "stealth",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the PC (Windows) action and stealth discovery path using the documented Wikidata platform mapping; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q19772510",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q19772510.svg",
+      "alt": "Abstract GameAtlas art tile for Deus Ex: Mankind Divided",
+      "provenanceId": "gameatlas-catalog-1000-q19772510"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

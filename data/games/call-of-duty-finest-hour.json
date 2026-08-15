@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "call-of-duty-finest-hour",
+  "title": "Call of Duty: Finest Hour",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Call of Duty: Finest Hour joins the Nintendo GameCube shooter path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Frames a shooter catalog entry for source-aware Nintendo GameCube exploration.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Call of Duty: Finest Hour",
+    "nintendo-gamecube",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Nintendo GameCube shooter discovery path using Wikidata-listed platform and genre statements; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1982333",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1982333.svg",
+      "alt": "Abstract GameAtlas art tile for Call of Duty: Finest Hour",
+      "provenanceId": "gameatlas-catalog-1000-q1982333"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

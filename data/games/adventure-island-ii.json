@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "adventure-island-ii",
+  "title": "Adventure Island II",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Adventure Island II is grouped in GameAtlas's Game Boy family platformer catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Keeps a documented platformer option visible in the Game Boy family collection.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1991
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Adventure Island II",
+    "game-boy",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Game Boy family platformer discovery path using a linked structured-data reference; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1584331",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1584331.svg",
+      "alt": "Abstract GameAtlas art tile for Adventure Island II",
+      "provenanceId": "gameatlas-catalog-1000-q1584331"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

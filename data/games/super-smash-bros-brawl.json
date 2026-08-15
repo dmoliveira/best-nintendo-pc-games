@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-smash-bros-brawl",
+  "title": "Super Smash Bros. Brawl",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Super Smash Bros. Brawl is included in GameAtlas's Wii platformer route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Makes a documented platformer option easier to find in the Wii path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Super Smash Bros. Brawl",
+    "nintendo-wii",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Wii platformer discovery path using a source-linked Wikidata item; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q843131",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q843131.svg",
+      "alt": "Abstract GameAtlas art tile for Super Smash Bros. Brawl",
+      "provenanceId": "gameatlas-catalog-1000-q843131"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

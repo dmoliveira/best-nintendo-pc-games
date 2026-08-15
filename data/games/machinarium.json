@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "machinarium",
+  "title": "Machinarium",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Machinarium joins the Nintendo Switch adventure and puzzle path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Places a source-linked adventure and puzzle entry in the Nintendo Switch browsing path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "adventure",
+    "puzzle"
+  ],
+  "keywords": [
+    "Machinarium",
+    "nintendo-switch",
+    "adventure",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Nintendo Switch adventure and puzzle discovery path using a source-linked Wikidata item; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q856950",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q856950.svg",
+      "alt": "Abstract GameAtlas art tile for Machinarium",
+      "provenanceId": "gameatlas-catalog-1000-q856950"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

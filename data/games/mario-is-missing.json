@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-is-missing",
+  "title": "Mario Is Missing!",
+  "aliases": [],
+  "emoji": "🔎",
+  "shortDescription": "Mario Is Missing! helps define a Super Nintendo Entertainment System educational path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Sets a direct-reference educational marker within the Super Nintendo Entertainment System catalog.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 1993
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "educational"
+  ],
+  "keywords": [
+    "Mario Is Missing!",
+    "nintendo-snes",
+    "educational",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Super Nintendo Entertainment System educational discovery path using the frozen source metadata record; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2517563",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2517563.svg",
+      "alt": "Abstract GameAtlas art tile for Mario Is Missing!",
+      "provenanceId": "gameatlas-catalog-1000-q2517563"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

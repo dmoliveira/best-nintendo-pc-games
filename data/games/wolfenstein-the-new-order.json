@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "wolfenstein-the-new-order",
+  "title": "Wolfenstein: The New Order",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Wolfenstein: The New Order is kept in GameAtlas's PC (Windows) action and adventure and shooter discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Sets a direct-reference action and adventure and shooter marker within the PC (Windows) catalog.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "shooter"
+  ],
+  "keywords": [
+    "Wolfenstein: The New Order",
+    "pc-windows",
+    "action",
+    "adventure",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) action and adventure and shooter discovery path using a linked Wikidata platform-and-genre statement; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q12956031",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q12956031.svg",
+      "alt": "Abstract GameAtlas art tile for Wolfenstein: The New Order",
+      "provenanceId": "gameatlas-catalog-1000-q12956031"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

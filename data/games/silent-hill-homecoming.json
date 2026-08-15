@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "silent-hill-homecoming",
+  "title": "Silent Hill: Homecoming",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Silent Hill: Homecoming is kept in GameAtlas's PC (Windows) horror discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Sets a direct-reference horror marker within the PC (Windows) catalog.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "horror"
+  ],
+  "keywords": [
+    "Silent Hill: Homecoming",
+    "pc-windows",
+    "horror",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the PC (Windows) horror discovery path using a linked structured-data reference; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q938935",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q938935.svg",
+      "alt": "Abstract GameAtlas art tile for Silent Hill: Homecoming",
+      "provenanceId": "gameatlas-catalog-1000-q938935"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

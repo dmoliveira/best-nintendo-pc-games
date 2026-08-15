@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "slug": "catherine",
+  "title": "Catherine",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Catherine is organized in GameAtlas's Nintendo Switch action and adventure and horror and platformer and puzzle and survival collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Builds a traceable action and adventure and horror and platformer and puzzle and survival option into the Nintendo Switch discovery path.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "horror",
+    "platformer",
+    "puzzle",
+    "survival"
+  ],
+  "keywords": [
+    "Catherine",
+    "nintendo-switch",
+    "action",
+    "adventure",
+    "horror",
+    "platformer",
+    "puzzle",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Nintendo Switch action and adventure and horror and platformer and puzzle and survival discovery path using the documented Wikidata platform mapping; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q277377",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q277377.svg",
+      "alt": "Abstract GameAtlas art tile for Catherine",
+      "provenanceId": "gameatlas-catalog-1000-q277377"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "resident-evil-the-umbrella-chronicles",
+  "title": "Resident Evil: The Umbrella Chronicles",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Resident Evil: The Umbrella Chronicles is kept in GameAtlas's Wii shooter discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked shooter entry in the Wii browsing path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Resident Evil: The Umbrella Chronicles",
+    "nintendo-wii",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Wii shooter discovery path using a source-linked Wikidata item; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1053024",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1053024.svg",
+      "alt": "Abstract GameAtlas art tile for Resident Evil: The Umbrella Chronicles",
+      "provenanceId": "gameatlas-catalog-1000-q1053024"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

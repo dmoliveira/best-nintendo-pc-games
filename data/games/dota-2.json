@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "dota-2",
+  "title": "Dota 2",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Dota 2 is grouped in GameAtlas's PC (Windows) action and strategy catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Offers a clearly labeled action and strategy route through the PC (Windows) collection.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "strategy"
+  ],
+  "keywords": [
+    "Dota 2",
+    "pc-windows",
+    "action",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the PC (Windows) action and strategy discovery path using the preserved Wikidata entity record; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q771541",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q771541.svg",
+      "alt": "Abstract GameAtlas art tile for Dota 2",
+      "provenanceId": "gameatlas-catalog-1000-q771541"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

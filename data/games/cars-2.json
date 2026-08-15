@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "cars-2",
+  "title": "Cars 2",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Cars 2 is organized in GameAtlas's Nintendo DS family racing and shooter collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Makes a documented racing and shooter option easier to find in the Nintendo DS family path.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "racing",
+    "shooter"
+  ],
+  "keywords": [
+    "Cars 2",
+    "nintendo-ds",
+    "racing",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo DS family racing and shooter discovery path using the documented Wikidata platform mapping; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q94355",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q94355.svg",
+      "alt": "Abstract GameAtlas art tile for Cars 2",
+      "provenanceId": "gameatlas-catalog-1000-q94355"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

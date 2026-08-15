@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "mount-blade-ii-bannerlord",
+  "title": "Mount & Blade II: Bannerlord",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Mount & Blade II: Bannerlord helps define a PC (Windows) action and strategy path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Frames a action and strategy catalog entry for source-aware PC (Windows) exploration.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "strategy"
+  ],
+  "keywords": [
+    "Mount & Blade II: Bannerlord",
+    "pc-windows",
+    "action",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the PC (Windows) action and strategy discovery path using a Wikidata-listed catalog relationship; this remains a deterministic catalog-method entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q18361009",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q18361009.svg",
+      "alt": "Abstract GameAtlas art tile for Mount & Blade II: Bannerlord",
+      "provenanceId": "gameatlas-catalog-1000-q18361009"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

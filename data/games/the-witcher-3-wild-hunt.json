@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-witcher-3-wild-hunt",
+  "title": "The Witcher 3: Wild Hunt",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "The Witcher 3: Wild Hunt appears in GameAtlas's Nintendo Switch action collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Sets a direct-reference action marker within the Nintendo Switch catalog.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "The Witcher 3: Wild Hunt",
+    "nintendo-switch",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Nintendo Switch action discovery path using the frozen source metadata record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q4267401",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q4267401.svg",
+      "alt": "Abstract GameAtlas art tile for The Witcher 3: Wild Hunt",
+      "provenanceId": "gameatlas-catalog-1000-q4267401"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

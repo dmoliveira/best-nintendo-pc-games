@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "doom-3",
+  "title": "DOOM 3",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "DOOM 3 anchors a Nintendo Switch horror and shooter and survival catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Adds a clearly sourced horror and shooter and survival option to the Nintendo Switch discovery path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "horror",
+    "shooter",
+    "survival"
+  ],
+  "keywords": [
+    "DOOM 3",
+    "nintendo-switch",
+    "horror",
+    "shooter",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo Switch horror and shooter and survival discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q203310",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q203310.svg",
+      "alt": "Abstract GameAtlas art tile for DOOM 3",
+      "provenanceId": "gameatlas-catalog-1000-q203310"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

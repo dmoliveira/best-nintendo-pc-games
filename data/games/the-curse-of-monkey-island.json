@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-curse-of-monkey-island",
+  "title": "The Curse of Monkey Island",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "The Curse of Monkey Island helps define a PC (Windows) adventure path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Keeps a documented adventure option visible in the PC (Windows) collection.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 1997
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "adventure"
+  ],
+  "keywords": [
+    "The Curse of Monkey Island",
+    "pc-windows",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the PC (Windows) adventure discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1137217",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1137217.svg",
+      "alt": "Abstract GameAtlas art tile for The Curse of Monkey Island",
+      "provenanceId": "gameatlas-catalog-1000-q1137217"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

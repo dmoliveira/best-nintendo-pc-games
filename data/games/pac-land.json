@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "pac-land",
+  "title": "Pac-Land",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Pac-Land appears in GameAtlas's Nintendo Entertainment System platformer collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Frames a platformer catalog entry for source-aware Nintendo Entertainment System exploration.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 1984
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Pac-Land",
+    "nintendo-nes",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Nintendo Entertainment System platformer discovery path using a direct Wikidata structured-data record; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2752616",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2752616.svg",
+      "alt": "Abstract GameAtlas art tile for Pac-Land",
+      "provenanceId": "gameatlas-catalog-1000-q2752616"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

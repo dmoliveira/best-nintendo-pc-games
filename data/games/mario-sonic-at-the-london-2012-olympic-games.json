@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-sonic-at-the-london-2012-olympic-games",
+  "title": "Mario & Sonic at the London 2012 Olympic Games",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Mario & Sonic at the London 2012 Olympic Games anchors a Nintendo 3DS family sports catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Maps a direct-reference sports entry into the Nintendo 3DS family catalog.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Mario & Sonic at the London 2012 Olympic Games",
+    "nintendo-3ds",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Nintendo 3DS family sports discovery path using the frozen Wikidata metadata snapshot; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1139375",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1139375.svg",
+      "alt": "Abstract GameAtlas art tile for Mario & Sonic at the London 2012 Olympic Games",
+      "provenanceId": "gameatlas-catalog-1000-q1139375"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

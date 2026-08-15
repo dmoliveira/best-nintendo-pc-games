@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "metal-gear",
+  "title": "Metal Gear",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Metal Gear sits in the GameAtlas Nintendo GameCube action and adventure and stealth collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Offers a clearly labeled action and adventure and stealth route through the Nintendo GameCube collection.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 1987
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "stealth"
+  ],
+  "keywords": [
+    "Metal Gear",
+    "nintendo-gamecube",
+    "action",
+    "adventure",
+    "stealth",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Nintendo GameCube action and adventure and stealth discovery path using a linked Wikidata platform-and-genre statement; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q6552947",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q6552947.svg",
+      "alt": "Abstract GameAtlas art tile for Metal Gear",
+      "provenanceId": "gameatlas-catalog-1000-q6552947"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

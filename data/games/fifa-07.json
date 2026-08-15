@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "fifa-07",
+  "title": "FIFA 07",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "FIFA 07 sits in the GameAtlas Nintendo GameCube sports collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Builds a traceable sports option into the Nintendo GameCube discovery path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "FIFA 07",
+    "nintendo-gamecube",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the Nintendo GameCube sports discovery path using the preserved Wikidata entity record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q725280",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q725280.svg",
+      "alt": "Abstract GameAtlas art tile for FIFA 07",
+      "provenanceId": "gameatlas-catalog-1000-q725280"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

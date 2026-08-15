@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-godfather",
+  "title": "The Godfather",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "The Godfather helps define a Wii action and adventure and shooter path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Sets a direct-reference action and adventure and shooter marker within the Wii catalog.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "shooter"
+  ],
+  "keywords": [
+    "The Godfather",
+    "nintendo-wii",
+    "action",
+    "adventure",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Wii action and adventure and shooter discovery path using a linked structured-data reference; this remains a deterministic catalog-method entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1139696",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1139696.svg",
+      "alt": "Abstract GameAtlas art tile for The Godfather",
+      "provenanceId": "gameatlas-catalog-1000-q1139696"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

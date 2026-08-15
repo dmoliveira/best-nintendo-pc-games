@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "assassin-s-creed-revelations",
+  "title": "Assassin's Creed: Revelations",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Assassin's Creed: Revelations joins the PC (Windows) action and adventure path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Maps a direct-reference action and adventure entry into the PC (Windows) catalog.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Assassin's Creed: Revelations",
+    "pc-windows",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the PC (Windows) action and adventure discovery path using the frozen source metadata record; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q739654",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q739654.svg",
+      "alt": "Abstract GameAtlas art tile for Assassin's Creed: Revelations",
+      "provenanceId": "gameatlas-catalog-1000-q739654"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

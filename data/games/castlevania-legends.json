@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "castlevania-legends",
+  "title": "Castlevania Legends",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Castlevania Legends is cataloged in the Game Boy family platformer path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Builds a traceable platformer option into the Game Boy family discovery path.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 1997
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Castlevania Legends",
+    "game-boy",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Game Boy family platformer discovery path using the frozen Wikidata metadata snapshot; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2454468",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2454468.svg",
+      "alt": "Abstract GameAtlas art tile for Castlevania Legends",
+      "provenanceId": "gameatlas-catalog-1000-q2454468"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

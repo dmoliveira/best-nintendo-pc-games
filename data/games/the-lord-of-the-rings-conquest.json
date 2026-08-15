@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-lord-of-the-rings-conquest",
+  "title": "The Lord of the Rings: Conquest",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "The Lord of the Rings: Conquest sits in the GameAtlas Nintendo DS family action and adventure collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Brings a source-aware action and adventure entry to the Nintendo DS family browsing route.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "The Lord of the Rings: Conquest",
+    "nintendo-ds",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Nintendo DS family action and adventure discovery path using the frozen Wikidata metadata snapshot; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1194246",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1194246.svg",
+      "alt": "Abstract GameAtlas art tile for The Lord of the Rings: Conquest",
+      "provenanceId": "gameatlas-catalog-1000-q1194246"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

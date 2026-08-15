@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "halo-reach",
+  "title": "Halo: Reach",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Halo: Reach sits in the GameAtlas PC (Windows) shooter collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Adds a clearly sourced shooter option to the PC (Windows) discovery path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Halo: Reach",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) shooter discovery path using a Wikidata-listed catalog relationship; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q283878",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q283878.svg",
+      "alt": "Abstract GameAtlas art tile for Halo: Reach",
+      "provenanceId": "gameatlas-catalog-1000-q283878"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

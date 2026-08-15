@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "tony-hawk-s-pro-skater-3",
+  "title": "Tony Hawk's Pro Skater 3",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Tony Hawk's Pro Skater 3 helps define a Nintendo 64 sports path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Frames a sports catalog entry for source-aware Nintendo 64 exploration.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Tony Hawk's Pro Skater 3",
+    "nintendo-64",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Nintendo 64 sports discovery path using a linked Wikidata platform-and-genre statement; this remains a deterministic catalog-method entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1463730",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1463730.svg",
+      "alt": "Abstract GameAtlas art tile for Tony Hawk's Pro Skater 3",
+      "provenanceId": "gameatlas-catalog-1000-q1463730"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

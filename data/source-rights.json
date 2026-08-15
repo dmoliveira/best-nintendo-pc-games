@@ -271,6 +271,35 @@
       "recheckAt": "2026-09-15",
       "decisionEvidence": "https://www.nintendolife.com/games",
       "coveredProcess": "Outbound title-link only for historical Nintendo catalog references; no scores, review text, images, or provider content is copied or cached."
+    },
+    {
+      "id": "wikidata-fact-reference",
+      "provider": "Wikidata contributors",
+      "role": "CC0 structured-data catalog reference",
+      "status": "approved",
+      "allowedFields": [
+        "wikidataTitleLabel",
+        "wikidataReleaseYear",
+        "wikidataListedPlatform",
+        "wikidataListedGenre",
+        "individualSourceUrl"
+      ],
+      "numericScores": "not-authorized",
+      "reviewText": "do-not-copy",
+      "images": "do-not-download",
+      "attribution": "Data from Wikidata (CC0); item link provided. Use only the listed structured fields and do not imply Wikimedia endorsement.",
+      "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/en",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "structuredDataPolicyUrl": "https://www.wikidata.org/wiki/Wikidata:Copyright",
+      "dataAccessUrl": "https://www.wikidata.org/wiki/Wikidata:Data_access",
+      "queryServiceUrl": "https://query.wikidata.org/",
+      "recheckBefore": "each frozen inventory refresh",
+      "notes": "Approved only for Wikidata structured data: title label, an earliest documented P577 release year, Wikidata-listed platform and genre statements, QID, and a direct item URL. Not all Wikidata website content is CC0. Do not copy prose, scores, sitelink counts, images, rankings, or other provider content.",
+      "reviewedBy": "GameAtlas catalog-1000 source review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "decisionEvidence": "https://www.wikidata.org/wiki/Wikidata:Copyright",
+      "coveredProcess": "Frozen local import through the Wikidata Query Service. Structured statements are retained with QID provenance; all editorial copy and art are authored in GameAtlas and no provider prose, media, ratings, or popularity metrics are copied."
     }
   ],
   "support": {

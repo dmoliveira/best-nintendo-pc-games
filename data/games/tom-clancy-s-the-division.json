@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "tom-clancy-s-the-division",
+  "title": "Tom Clancy's The Division",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Tom Clancy's The Division sits in the GameAtlas PC (Windows) action and shooter collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Frames a action and shooter catalog entry for source-aware PC (Windows) exploration.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2016
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "shooter"
+  ],
+  "keywords": [
+    "Tom Clancy's The Division",
+    "pc-windows",
+    "action",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the PC (Windows) action and shooter discovery path using a Wikidata-listed catalog relationship; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q13431312",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q13431312.svg",
+      "alt": "Abstract GameAtlas art tile for Tom Clancy's The Division",
+      "provenanceId": "gameatlas-catalog-1000-q13431312"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

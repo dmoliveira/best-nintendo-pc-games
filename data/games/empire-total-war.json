@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "empire-total-war",
+  "title": "Empire: Total War",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Empire: Total War is grouped in GameAtlas's PC (Windows) strategy catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Maps a direct-reference strategy entry into the PC (Windows) catalog.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Empire: Total War",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the PC (Windows) strategy discovery path using a direct Wikidata structured-data record; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q839088",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q839088.svg",
+      "alt": "Abstract GameAtlas art tile for Empire: Total War",
+      "provenanceId": "gameatlas-catalog-1000-q839088"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

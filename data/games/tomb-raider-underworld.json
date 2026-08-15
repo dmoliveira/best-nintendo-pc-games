@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "tomb-raider-underworld",
+  "title": "Tomb Raider: Underworld",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Tomb Raider: Underworld is included in GameAtlas's Wii action and adventure route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Brings a source-aware action and adventure entry to the Wii browsing route.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Tomb Raider: Underworld",
+    "nintendo-wii",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Wii action and adventure discovery path using a source-linked Wikidata item; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q915860",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q915860.svg",
+      "alt": "Abstract GameAtlas art tile for Tomb Raider: Underworld",
+      "provenanceId": "gameatlas-catalog-1000-q915860"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

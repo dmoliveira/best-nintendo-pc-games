@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-outer-worlds",
+  "title": "The Outer Worlds",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "The Outer Worlds anchors a Nintendo Switch action catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Sets a direct-reference action marker within the Nintendo Switch catalog.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2019
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "The Outer Worlds",
+    "nintendo-switch",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Nintendo Switch action discovery path using a direct Wikidata structured-data record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q59535090",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q59535090.svg",
+      "alt": "Abstract GameAtlas art tile for The Outer Worlds",
+      "provenanceId": "gameatlas-catalog-1000-q59535090"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

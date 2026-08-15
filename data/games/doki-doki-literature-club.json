@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "doki-doki-literature-club",
+  "title": "Doki Doki Literature Club!",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Doki Doki Literature Club! appears in GameAtlas's PC (Windows) horror and visual novel collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Builds a traceable horror and visual novel option into the PC (Windows) discovery path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "horror",
+    "visual-novel"
+  ],
+  "keywords": [
+    "Doki Doki Literature Club!",
+    "pc-windows",
+    "horror",
+    "visual-novel",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the PC (Windows) horror and visual novel discovery path using Wikidata-listed platform and genre statements; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q42266827",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q42266827.svg",
+      "alt": "Abstract GameAtlas art tile for Doki Doki Literature Club!",
+      "provenanceId": "gameatlas-catalog-1000-q42266827"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

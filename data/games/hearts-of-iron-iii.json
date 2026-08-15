@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "hearts-of-iron-iii",
+  "title": "Hearts of Iron III",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Hearts of Iron III helps define a PC (Windows) strategy path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Brings a source-aware strategy entry to the PC (Windows) browsing route.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Hearts of Iron III",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the PC (Windows) strategy discovery path using a Wikidata-listed catalog relationship; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q222473",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q222473.svg",
+      "alt": "Abstract GameAtlas art tile for Hearts of Iron III",
+      "provenanceId": "gameatlas-catalog-1000-q222473"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "ms-pac-man",
+  "title": "Ms. Pac-Man",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Ms. Pac-Man is included in GameAtlas's Game Boy Color puzzle route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Frames a puzzle catalog entry for source-aware Game Boy Color exploration.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 1982
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "Ms. Pac-Man",
+    "game-boy-color",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Game Boy Color puzzle discovery path using Wikidata-listed platform and genre statements; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2141683",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2141683.svg",
+      "alt": "Abstract GameAtlas art tile for Ms. Pac-Man",
+      "provenanceId": "gameatlas-catalog-1000-q2141683"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

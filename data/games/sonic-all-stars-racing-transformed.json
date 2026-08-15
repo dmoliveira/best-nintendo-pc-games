@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "sonic-all-stars-racing-transformed",
+  "title": "Sonic & All-Stars Racing Transformed",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Sonic & All-Stars Racing Transformed is cataloged in the Nintendo 3DS family racing path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Places a source-linked racing entry in the Nintendo 3DS family browsing path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Sonic & All-Stars Racing Transformed",
+    "nintendo-3ds",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo 3DS family racing discovery path using a direct Wikidata structured-data record; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2614466",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2614466.svg",
+      "alt": "Abstract GameAtlas art tile for Sonic & All-Stars Racing Transformed",
+      "provenanceId": "gameatlas-catalog-1000-q2614466"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

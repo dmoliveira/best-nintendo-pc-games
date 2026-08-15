@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "spider-man-miles-morales",
+  "title": "Spider-Man: Miles Morales",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Spider-Man: Miles Morales is organized in GameAtlas's PC (Windows) action and adventure collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Sets a direct-reference action and adventure marker within the PC (Windows) catalog.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Spider-Man: Miles Morales",
+    "pc-windows",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the PC (Windows) action and adventure discovery path using a linked Wikidata platform-and-genre statement; this remains a deterministic catalog-method entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q96216165",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q96216165.svg",
+      "alt": "Abstract GameAtlas art tile for Spider-Man: Miles Morales",
+      "provenanceId": "gameatlas-catalog-1000-q96216165"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

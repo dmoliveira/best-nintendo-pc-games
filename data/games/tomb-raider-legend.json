@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "tomb-raider-legend",
+  "title": "Tomb Raider: Legend",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Tomb Raider: Legend is included in GameAtlas's Nintendo GameCube action and adventure and platformer route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Offers a clearly labeled action and adventure and platformer route through the Nintendo GameCube collection.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "platformer"
+  ],
+  "keywords": [
+    "Tomb Raider: Legend",
+    "nintendo-gamecube",
+    "action",
+    "adventure",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Nintendo GameCube action and adventure and platformer discovery path using a linked structured-data reference; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q665785",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q665785.svg",
+      "alt": "Abstract GameAtlas art tile for Tomb Raider: Legend",
+      "provenanceId": "gameatlas-catalog-1000-q665785"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

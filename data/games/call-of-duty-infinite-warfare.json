@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "call-of-duty-infinite-warfare",
+  "title": "Call of Duty: Infinite Warfare",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Call of Duty: Infinite Warfare joins the PC (Windows) shooter path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Maps a direct-reference shooter entry into the PC (Windows) catalog.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2016
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Call of Duty: Infinite Warfare",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the PC (Windows) shooter discovery path using a direct Wikidata structured-data record; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q23978200",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q23978200.svg",
+      "alt": "Abstract GameAtlas art tile for Call of Duty: Infinite Warfare",
+      "provenanceId": "gameatlas-catalog-1000-q23978200"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

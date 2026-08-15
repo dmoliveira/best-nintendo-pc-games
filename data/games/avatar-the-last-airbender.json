@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "avatar-the-last-airbender",
+  "title": "Avatar: The Last Airbender",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Avatar: The Last Airbender is grouped in GameAtlas's Wii action and adventure catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Frames a action and adventure catalog entry for source-aware Wii exploration.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Avatar: The Last Airbender",
+    "nintendo-wii",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Wii action and adventure discovery path using a linked Wikidata platform-and-genre statement; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2601847",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2601847.svg",
+      "alt": "Abstract GameAtlas art tile for Avatar: The Last Airbender",
+      "provenanceId": "gameatlas-catalog-1000-q2601847"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

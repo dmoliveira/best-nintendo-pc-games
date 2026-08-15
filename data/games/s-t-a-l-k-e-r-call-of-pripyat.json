@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "s-t-a-l-k-e-r-call-of-pripyat",
+  "title": "S.T.A.L.K.E.R.: Call of Pripyat",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "S.T.A.L.K.E.R.: Call of Pripyat anchors a PC (Windows) horror and shooter and survival catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Frames a horror and shooter and survival catalog entry for source-aware PC (Windows) exploration.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "horror",
+    "shooter",
+    "survival"
+  ],
+  "keywords": [
+    "S.T.A.L.K.E.R.: Call of Pripyat",
+    "pc-windows",
+    "horror",
+    "shooter",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) horror and shooter and survival discovery path using the frozen Wikidata metadata snapshot; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q788762",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q788762.svg",
+      "alt": "Abstract GameAtlas art tile for S.T.A.L.K.E.R.: Call of Pripyat",
+      "provenanceId": "gameatlas-catalog-1000-q788762"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

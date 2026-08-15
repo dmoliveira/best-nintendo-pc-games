@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "metal-gear-solid-v-the-phantom-pain",
+  "title": "Metal Gear Solid V: The Phantom Pain",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Metal Gear Solid V: The Phantom Pain is cataloged in the PC (Windows) shooter path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Makes a documented shooter option easier to find in the PC (Windows) path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Metal Gear Solid V: The Phantom Pain",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the PC (Windows) shooter discovery path using the documented Wikidata platform mapping; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q717600",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q717600.svg",
+      "alt": "Abstract GameAtlas art tile for Metal Gear Solid V: The Phantom Pain",
+      "provenanceId": "gameatlas-catalog-1000-q717600"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

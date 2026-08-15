@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-bros",
+  "title": "Mario Bros.",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Mario Bros. anchors a Nintendo Entertainment System platformer catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Builds a traceable platformer option into the Nintendo Entertainment System discovery path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 1984
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Mario Bros.",
+    "nintendo-nes",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Nintendo Entertainment System platformer discovery path using a linked Wikidata platform-and-genre statement; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q610968",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q610968.svg",
+      "alt": "Abstract GameAtlas art tile for Mario Bros.",
+      "provenanceId": "gameatlas-catalog-1000-q610968"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

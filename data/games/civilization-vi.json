@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "civilization-vi",
+  "title": "Civilization VI",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Civilization VI is grouped in GameAtlas's Nintendo Switch strategy catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Offers a clearly labeled strategy route through the Nintendo Switch collection.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2016
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Civilization VI",
+    "nintendo-switch",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Nintendo Switch strategy discovery path using the frozen Wikidata metadata snapshot; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q24050047",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q24050047.svg",
+      "alt": "Abstract GameAtlas art tile for Civilization VI",
+      "provenanceId": "gameatlas-catalog-1000-q24050047"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

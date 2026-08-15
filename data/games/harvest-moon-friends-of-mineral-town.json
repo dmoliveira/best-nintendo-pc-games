@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "harvest-moon-friends-of-mineral-town",
+  "title": "Harvest Moon: Friends of Mineral Town",
+  "aliases": [],
+  "emoji": "🌱",
+  "shortDescription": "Harvest Moon: Friends of Mineral Town is organized in GameAtlas's Game Boy Advance family simulation collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Frames a simulation catalog entry for source-aware Game Boy Advance family exploration.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "simulation"
+  ],
+  "keywords": [
+    "Harvest Moon: Friends of Mineral Town",
+    "game-boy-advance",
+    "simulation",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Game Boy Advance family simulation discovery path using a direct Wikidata structured-data record; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1313985",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1313985.svg",
+      "alt": "Abstract GameAtlas art tile for Harvest Moon: Friends of Mineral Town",
+      "provenanceId": "gameatlas-catalog-1000-q1313985"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

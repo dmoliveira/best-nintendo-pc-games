@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "pikmin",
+  "title": "Pikmin",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Pikmin is organized in GameAtlas's Wii U strategy collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Frames a strategy catalog entry for source-aware Wii U exploration.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Pikmin",
+    "nintendo-wii-u",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Wii U strategy discovery path using the preserved Wikidata entity record; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1198484",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1198484.svg",
+      "alt": "Abstract GameAtlas art tile for Pikmin",
+      "provenanceId": "gameatlas-catalog-1000-q1198484"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "cyberpunk-2077",
+  "title": "Cyberpunk 2077",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Cyberpunk 2077 is cataloged in the Nintendo Switch 2 action path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Makes a documented action option easier to find in the Nintendo Switch 2 path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "nintendo-switch-2"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Cyberpunk 2077",
+    "nintendo-switch-2",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Nintendo Switch 2 action discovery path using a source-linked Wikidata item; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q3182559",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q3182559.svg",
+      "alt": "Abstract GameAtlas art tile for Cyberpunk 2077",
+      "provenanceId": "gameatlas-catalog-1000-q3182559"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "bad-piggies",
+  "title": "Bad Piggies",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Bad Piggies is organized in GameAtlas's Wii U puzzle collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Builds a traceable puzzle option into the Wii U discovery path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "Bad Piggies",
+    "nintendo-wii-u",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Wii U puzzle discovery path using the frozen Wikidata metadata snapshot; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q144728",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q144728.svg",
+      "alt": "Abstract GameAtlas art tile for Bad Piggies",
+      "provenanceId": "gameatlas-catalog-1000-q144728"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

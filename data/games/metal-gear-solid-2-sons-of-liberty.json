@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "metal-gear-solid-2-sons-of-liberty",
+  "title": "Metal Gear Solid 2: Sons of Liberty",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Metal Gear Solid 2: Sons of Liberty appears in GameAtlas's PC (Windows) action and adventure collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Offers a clearly labeled action and adventure route through the PC (Windows) collection.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Metal Gear Solid 2: Sons of Liberty",
+    "pc-windows",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the PC (Windows) action and adventure discovery path using the preserved Wikidata entity record; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q907226",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q907226.svg",
+      "alt": "Abstract GameAtlas art tile for Metal Gear Solid 2: Sons of Liberty",
+      "provenanceId": "gameatlas-catalog-1000-q907226"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

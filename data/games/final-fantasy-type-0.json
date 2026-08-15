@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "final-fantasy-type-0",
+  "title": "Final Fantasy Type-0",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Final Fantasy Type-0 is cataloged in the PC (Windows) action path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Keeps a documented action option visible in the PC (Windows) collection.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Final Fantasy Type-0",
+    "pc-windows",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the PC (Windows) action discovery path using the frozen source metadata record; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1774415",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1774415.svg",
+      "alt": "Abstract GameAtlas art tile for Final Fantasy Type-0",
+      "provenanceId": "gameatlas-catalog-1000-q1774415"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

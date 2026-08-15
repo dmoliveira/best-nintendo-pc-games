@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "need-for-speed-underground",
+  "title": "Need for Speed: Underground",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Need for Speed: Underground is grouped in GameAtlas's Nintendo GameCube racing catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Offers a clearly labeled racing route through the Nintendo GameCube collection.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Need for Speed: Underground",
+    "nintendo-gamecube",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Nintendo GameCube racing discovery path using the documented Wikidata platform mapping; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q247210",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q247210.svg",
+      "alt": "Abstract GameAtlas art tile for Need for Speed: Underground",
+      "provenanceId": "gameatlas-catalog-1000-q247210"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-wario",
+  "title": "Mario & Wario",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Mario & Wario is included in GameAtlas's Super Nintendo Entertainment System puzzle route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Brings a source-aware puzzle entry to the Super Nintendo Entertainment System browsing route.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 1993
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "Mario & Wario",
+    "nintendo-snes",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Super Nintendo Entertainment System puzzle discovery path using the frozen source metadata record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2540072",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2540072.svg",
+      "alt": "Abstract GameAtlas art tile for Mario & Wario",
+      "provenanceId": "gameatlas-catalog-1000-q2540072"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

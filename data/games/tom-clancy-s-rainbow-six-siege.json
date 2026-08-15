@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "tom-clancy-s-rainbow-six-siege",
+  "title": "Tom Clancy's Rainbow Six Siege",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Tom Clancy's Rainbow Six Siege is organized in GameAtlas's PC (Windows) shooter and strategy collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Sets a direct-reference shooter and strategy marker within the PC (Windows) catalog.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter",
+    "strategy"
+  ],
+  "keywords": [
+    "Tom Clancy's Rainbow Six Siege",
+    "pc-windows",
+    "shooter",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the PC (Windows) shooter and strategy discovery path using the preserved Wikidata entity record; this remains a deterministic catalog-method entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q17183996",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q17183996.svg",
+      "alt": "Abstract GameAtlas art tile for Tom Clancy's Rainbow Six Siege",
+      "provenanceId": "gameatlas-catalog-1000-q17183996"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

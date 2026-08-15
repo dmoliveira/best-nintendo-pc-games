@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "europa-universalis-iv",
+  "title": "Europa Universalis IV",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Europa Universalis IV is included in GameAtlas's PC (Windows) strategy route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Offers a clearly labeled strategy route through the PC (Windows) collection.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Europa Universalis IV",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) strategy discovery path using Wikidata-listed platform and genre statements; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2625075",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2625075.svg",
+      "alt": "Abstract GameAtlas art tile for Europa Universalis IV",
+      "provenanceId": "gameatlas-catalog-1000-q2625075"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

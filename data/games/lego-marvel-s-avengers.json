@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "lego-marvel-s-avengers",
+  "title": "Lego Marvel's Avengers",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Lego Marvel's Avengers is cataloged in the Nintendo 3DS family action and adventure path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Offers a clearly labeled action and adventure route through the Nintendo 3DS family collection.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Lego Marvel's Avengers",
+    "nintendo-3ds",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo 3DS family action and adventure discovery path using a linked structured-data reference; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q18920891",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q18920891.svg",
+      "alt": "Abstract GameAtlas art tile for Lego Marvel's Avengers",
+      "provenanceId": "gameatlas-catalog-1000-q18920891"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

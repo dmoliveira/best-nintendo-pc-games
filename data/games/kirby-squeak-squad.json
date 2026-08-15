@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "kirby-squeak-squad",
+  "title": "Kirby: Squeak Squad",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Kirby: Squeak Squad helps define a Nintendo DS family platformer path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Frames a platformer catalog entry for source-aware Nintendo DS family exploration.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Kirby: Squeak Squad",
+    "nintendo-ds",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Nintendo DS family platformer discovery path using a direct Wikidata structured-data record; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q959102",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q959102.svg",
+      "alt": "Abstract GameAtlas art tile for Kirby: Squeak Squad",
+      "provenanceId": "gameatlas-catalog-1000-q959102"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

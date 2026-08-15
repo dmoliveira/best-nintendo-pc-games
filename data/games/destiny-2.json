@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "destiny-2",
+  "title": "Destiny 2",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Destiny 2 is cataloged in the PC (Windows) action and shooter path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Makes a documented action and shooter option easier to find in the PC (Windows) path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "shooter"
+  ],
+  "keywords": [
+    "Destiny 2",
+    "pc-windows",
+    "action",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the PC (Windows) action and shooter discovery path using a linked structured-data reference; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q29045915",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q29045915.svg",
+      "alt": "Abstract GameAtlas art tile for Destiny 2",
+      "provenanceId": "gameatlas-catalog-1000-q29045915"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

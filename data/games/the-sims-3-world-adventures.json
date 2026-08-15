@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-sims-3-world-adventures",
+  "title": "The Sims 3: World Adventures",
+  "aliases": [],
+  "emoji": "🌱",
+  "shortDescription": "The Sims 3: World Adventures joins the PC (Windows) simulation path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Frames a simulation catalog entry for source-aware PC (Windows) exploration.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "simulation"
+  ],
+  "keywords": [
+    "The Sims 3: World Adventures",
+    "pc-windows",
+    "simulation",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) simulation discovery path using the documented Wikidata platform mapping; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1451266",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1451266.svg",
+      "alt": "Abstract GameAtlas art tile for The Sims 3: World Adventures",
+      "provenanceId": "gameatlas-catalog-1000-q1451266"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

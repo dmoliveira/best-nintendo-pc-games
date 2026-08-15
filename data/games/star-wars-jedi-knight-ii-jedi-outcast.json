@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "star-wars-jedi-knight-ii-jedi-outcast",
+  "title": "Star Wars Jedi Knight II: Jedi Outcast",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Star Wars Jedi Knight II: Jedi Outcast joins the Nintendo GameCube shooter path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Adds a clearly sourced shooter option to the Nintendo GameCube discovery path.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2002
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Star Wars Jedi Knight II: Jedi Outcast",
+    "nintendo-gamecube",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the Nintendo GameCube shooter discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q55298",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q55298.svg",
+      "alt": "Abstract GameAtlas art tile for Star Wars Jedi Knight II: Jedi Outcast",
+      "provenanceId": "gameatlas-catalog-1000-q55298"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

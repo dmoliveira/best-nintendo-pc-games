@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "kingdom-hearts-iii",
+  "title": "Kingdom Hearts III",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Kingdom Hearts III is organized in GameAtlas's Nintendo Switch action collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Keeps a documented action option visible in the Nintendo Switch collection.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2019
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Kingdom Hearts III",
+    "nintendo-switch",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo Switch action discovery path using a direct Wikidata structured-data record; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q3265748",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q3265748.svg",
+      "alt": "Abstract GameAtlas art tile for Kingdom Hearts III",
+      "provenanceId": "gameatlas-catalog-1000-q3265748"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

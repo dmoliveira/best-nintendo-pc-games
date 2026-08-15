@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "samurai-shodown",
+  "title": "Samurai Shodown",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Samurai Shodown is organized in GameAtlas's Game Boy family fighting collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Offers a clearly labeled fighting route through the Game Boy family collection.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 1993
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Samurai Shodown",
+    "game-boy",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Game Boy family fighting discovery path using Wikidata-listed platform and genre statements; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1209867",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1209867.svg",
+      "alt": "Abstract GameAtlas art tile for Samurai Shodown",
+      "provenanceId": "gameatlas-catalog-1000-q1209867"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

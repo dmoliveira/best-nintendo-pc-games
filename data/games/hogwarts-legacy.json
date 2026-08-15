@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "hogwarts-legacy",
+  "title": "Hogwarts Legacy",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Hogwarts Legacy joins the Nintendo Switch 2 action path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Adds a clearly sourced action option to the Nintendo Switch 2 discovery path.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2023
+  },
+  "platforms": [
+    "nintendo-switch-2"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Hogwarts Legacy",
+    "nintendo-switch-2",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Nintendo Switch 2 action discovery path using a source-linked Wikidata item; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q99397854",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q99397854.svg",
+      "alt": "Abstract GameAtlas art tile for Hogwarts Legacy",
+      "provenanceId": "gameatlas-catalog-1000-q99397854"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

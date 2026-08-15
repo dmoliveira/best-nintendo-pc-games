@@ -1,10 +1,10 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { getCatalogGame, getCatalogGames, getCatalogGenre, getCatalogGenres, getCatalogPlatform, getCatalogPlatforms, getEditorialSignals, getGenreHub, getGenreHubs, getPlatformHub, getPlatformHubs, getPopulatedPlatforms, toCatalogSearchRecord } from "../lib/catalog/site-data";
+import { MINIMUM_HUB_RECORDS, getCatalogGame, getCatalogGames, getCatalogGenre, getCatalogGenres, getCatalogPlatform, getCatalogPlatforms, getEditorialSignals, getGenreHub, getGenreHubs, getPlatformHub, getPlatformHubs, getPopulatedPlatforms, toCatalogSearchRecord } from "../lib/catalog/site-data";
 
 test("loads every validated game with resolved taxonomy labels", () => {
   const games = getCatalogGames();
-  assert.equal(games.length, 103);
+  assert.equal(games.length, 1000);
   assert.equal(new Set(games.map(({ game }) => game.slug)).size, games.length);
   assert.ok(games.every(({ platforms, genres }) => platforms.length > 0 && genres.length > 0));
   assert.ok(games.every(({ game }) => getEditorialSignals(game).length > 0));
@@ -28,11 +28,13 @@ test("taxonomy hub inventories include only referenced populated entries", () =>
   const genres = getCatalogGenres();
   const records = getCatalogGames();
   assert.equal(platforms.length, 16);
-  assert.equal(genres.length, 7);
+  assert.equal(genres.length, 20);
   assert.ok(platforms.every((platform) => records.some(({ game }) => game.platforms.includes(platform.id))));
   assert.ok(genres.every((genre) => records.some(({ game }) => game.genres.includes(genre.id))));
   assert.equal(getPlatformHubs().length, 16);
-  assert.equal(getGenreHubs().length, 7);
+  const expectedGenreHubCount = genres.filter((genre) => records.filter(({ game }) => game.genres.includes(genre.id)).length >= MINIMUM_HUB_RECORDS).length;
+  assert.equal(getGenreHubs().length, expectedGenreHubCount);
+  assert.ok(getGenreHubs().every((genre) => records.filter(({ game }) => game.genres.includes(genre.id)).length >= MINIMUM_HUB_RECORDS));
   assert.equal(getPlatformHub("nintendo-nes")?.id, "nintendo-nes");
   assert.equal(getGenreHub("missing-genre"), undefined);
   assert.equal(getCatalogPlatform("missing-platform"), undefined);

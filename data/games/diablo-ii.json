@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "diablo-ii",
+  "title": "Diablo II",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Diablo II is organized in GameAtlas's PC (Windows) action collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Adds a clearly sourced action option to the PC (Windows) discovery path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Diablo II",
+    "pc-windows",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) action discovery path using the frozen source metadata record; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q244033",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q244033.svg",
+      "alt": "Abstract GameAtlas art tile for Diablo II",
+      "provenanceId": "gameatlas-catalog-1000-q244033"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

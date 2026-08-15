@@ -23,8 +23,10 @@ validate:
 	npm run typecheck
 	npm run validate:rights
 	npm run validate:catalog
+	npm run validate:catalog-search-index
+	npm run validate:catalog-1000
 	npm run validate:catalog-expansion
 	npm test
-	npm run build
+	npm run build:catalog-1000
 	test -f out/.nojekyll || touch out/.nojekyll
 	npm run validate:export

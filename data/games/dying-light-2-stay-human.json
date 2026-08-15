@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "dying-light-2-stay-human",
+  "title": "Dying Light 2 Stay Human",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Dying Light 2 Stay Human helps define a Nintendo Switch action and horror and survival path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Adds a clearly sourced action and horror and survival option to the Nintendo Switch discovery path.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2022
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "horror",
+    "survival"
+  ],
+  "keywords": [
+    "Dying Light 2 Stay Human",
+    "nintendo-switch",
+    "action",
+    "horror",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Nintendo Switch action and horror and survival discovery path using a linked structured-data reference; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q55004330",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q55004330.svg",
+      "alt": "Abstract GameAtlas art tile for Dying Light 2 Stay Human",
+      "provenanceId": "gameatlas-catalog-1000-q55004330"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

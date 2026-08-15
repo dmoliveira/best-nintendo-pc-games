@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "wii-sports-resort",
+  "title": "Wii Sports Resort",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Wii Sports Resort is kept in GameAtlas's Wii sports discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Frames a sports catalog entry for source-aware Wii exploration.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Wii Sports Resort",
+    "nintendo-wii",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Wii sports discovery path using a Wikidata-listed catalog relationship; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1135241",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1135241.svg",
+      "alt": "Abstract GameAtlas art tile for Wii Sports Resort",
+      "provenanceId": "gameatlas-catalog-1000-q1135241"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

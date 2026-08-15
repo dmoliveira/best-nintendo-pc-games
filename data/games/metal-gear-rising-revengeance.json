@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "metal-gear-rising-revengeance",
+  "title": "Metal Gear Rising: Revengeance",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Metal Gear Rising: Revengeance is kept in GameAtlas's PC (Windows) action discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented action option easier to find in the PC (Windows) path.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Metal Gear Rising: Revengeance",
+    "pc-windows",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the PC (Windows) action discovery path using a direct Wikidata structured-data record; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q930345",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q930345.svg",
+      "alt": "Abstract GameAtlas art tile for Metal Gear Rising: Revengeance",
+      "provenanceId": "gameatlas-catalog-1000-q930345"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

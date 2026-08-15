@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "another-world",
+  "title": "Another World",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Another World is kept in GameAtlas's Super Nintendo Entertainment System action and adventure and platformer discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Adds a clearly sourced action and adventure and platformer option to the Super Nintendo Entertainment System discovery path.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 1991
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "platformer"
+  ],
+  "keywords": [
+    "Another World",
+    "nintendo-snes",
+    "action",
+    "adventure",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Super Nintendo Entertainment System action and adventure and platformer discovery path using a linked Wikidata platform-and-genre statement; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q257469",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q257469.svg",
+      "alt": "Abstract GameAtlas art tile for Another World",
+      "provenanceId": "gameatlas-catalog-1000-q257469"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

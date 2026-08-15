@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "ducktales-2",
+  "title": "DuckTales 2",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "DuckTales 2 anchors a Game Boy family platformer catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Adds a clearly sourced platformer option to the Game Boy family discovery path.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 1993
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "DuckTales 2",
+    "game-boy",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Game Boy family platformer discovery path using a linked structured-data reference; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2630920",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2630920.svg",
+      "alt": "Abstract GameAtlas art tile for DuckTales 2",
+      "provenanceId": "gameatlas-catalog-1000-q2630920"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

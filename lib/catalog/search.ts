@@ -60,6 +60,116 @@ export interface CatalogSearchRecord {
   evidenceLabels: string[];
 }
 
+const catalogSearchRecordKeys = new Set([
+  "slug", "title", "aliases", "emoji", "artPath", "artAlt", "packageThumbnail", "developer", "publisher", "editorialLabel", "criticalLink", "criticSummary", "salesSummary", "shortDescription", "searchText", "releaseYear", "releaseDate", "releaseFormat", "platformIds", "platformLabels", "platformDisplayLabels", "platformHubIds", "genreIds", "genreLabels", "genreHubIds", "evidenceKinds", "evidenceLabels",
+]);
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+}
+
+function isNonEmptyString(value: unknown, maximumLength = 4096): value is string {
+  return typeof value === "string" && value.trim().length > 0 && value.length <= maximumLength;
+}
+
+function isStringArray(value: unknown, minimumLength = 0): value is string[] {
+  return Array.isArray(value) && value.length >= minimumLength && value.every((item) => isNonEmptyString(item));
+}
+
+function isSubset(values: readonly string[], candidates: readonly string[]): boolean {
+  const allowed = new Set(candidates);
+  return values.every((value) => allowed.has(value));
+}
+
+function hasNoDuplicateValues(values: readonly string[]): boolean {
+  return new Set(values).size === values.length;
+}
+
+function isSafeCatalogArtPath(value: unknown, catalogIndexUrl: string): value is string | undefined {
+  if (value === undefined) return true;
+  if (!isNonEmptyString(value, 2048)) return false;
+  try {
+    const indexUrl = new URL(catalogIndexUrl, "https://gameatlas.invalid");
+    const assetUrl = new URL(value, indexUrl);
+    const basePath = indexUrl.pathname.replace(/\/catalog-search-index\.json$/, "");
+    return assetUrl.origin === indexUrl.origin && assetUrl.pathname.startsWith(`${basePath}/assets/games/`) && assetUrl.pathname.endsWith(".svg") && !assetUrl.search && !assetUrl.hash;
+  } catch {
+    return false;
+  }
+}
+
+function isSafeCriticalLink(value: unknown): boolean {
+  if (value === undefined) return true;
+  if (!isRecord(value) || Object.keys(value).sort().join(",") !== "label,url" || !isNonEmptyString(value.label, 256) || !isNonEmptyString(value.url, 2048)) return false;
+  try {
+    return new URL(value.url).protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
+function isSafeSignalSummary(value: unknown, label: "Critic score" | "Reported sales"): boolean {
+  if (value === undefined) return true;
+  if (!isRecord(value) || Object.keys(value).sort().join(",") !== "detail,display,label,provider,url" || value.label !== label || !isNonEmptyString(value.display, 128) || !isNonEmptyString(value.detail, 512) || !isNonEmptyString(value.provider, 256) || !isNonEmptyString(value.url, 2048)) return false;
+  try {
+    return new URL(value.url).protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
+function isSafePackageThumbnail(value: unknown, catalogIndexUrl: string): boolean {
+  if (!isRecord(value) || Object.keys(value).some((key) => !["formatId", "kind", "aspectRatio", "depthRatio", "frontPath", "frontAlt"].includes(key)) || !isNonEmptyString(value.formatId, 128) || (value.kind !== "digital" && value.kind !== "physical") || typeof value.aspectRatio !== "number" || !Number.isFinite(value.aspectRatio) || value.aspectRatio <= 0 || typeof value.depthRatio !== "number" || !Number.isFinite(value.depthRatio) || value.depthRatio < 0) return false;
+  if (!isSafeCatalogArtPath(value.frontPath, catalogIndexUrl)) return false;
+  return value.frontAlt === undefined || isNonEmptyString(value.frontAlt, 512);
+}
+
+function isCatalogSearchRecord(value: unknown, catalogIndexUrl: string): value is CatalogSearchRecord {
+  if (!isRecord(value) || Object.keys(value).some((key) => !catalogSearchRecordKeys.has(key))) return false;
+  if (!isNonEmptyString(value.slug, 160) || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value.slug) || !isNonEmptyString(value.title, 512) || !isStringArray(value.aliases) || !isNonEmptyString(value.emoji, 32) || !isNonEmptyString(value.shortDescription, 2048) || !isNonEmptyString(value.searchText, 8192)) return false;
+  if (value.artAlt !== undefined && !isNonEmptyString(value.artAlt, 512)) return false;
+  if (value.developer !== undefined && !isNonEmptyString(value.developer, 512)) return false;
+  if (value.publisher !== undefined && !isNonEmptyString(value.publisher, 512)) return false;
+  if (value.editorialLabel !== undefined && !isNonEmptyString(value.editorialLabel, 128)) return false;
+  if (!isSafeCatalogArtPath(value.artPath, catalogIndexUrl) || !isSafePackageThumbnail(value.packageThumbnail, catalogIndexUrl) || !isSafeCriticalLink(value.criticalLink) || !isSafeSignalSummary(value.criticSummary, "Critic score") || !isSafeSignalSummary(value.salesSummary, "Reported sales")) return false;
+  const releaseYear = value.releaseYear;
+  if (typeof releaseYear !== "number" || !Number.isInteger(releaseYear) || releaseYear < 1950 || releaseYear > 2100) return false;
+  if (value.releaseDate !== undefined && (!isNonEmptyString(value.releaseDate, 10) || !/^\d{4}-\d{2}-\d{2}$/.test(value.releaseDate))) return false;
+  if (value.releaseFormat !== undefined && value.releaseFormat !== "cartridge" && value.releaseFormat !== "digital") return false;
+  if (!isStringArray(value.platformIds, 1) || !isStringArray(value.platformLabels, 1) || !isStringArray(value.platformDisplayLabels, 1) || !isStringArray(value.genreIds, 1) || !isStringArray(value.genreLabels, 1)) return false;
+  const platformIds = value.platformIds;
+  const platformLabels = value.platformLabels;
+  const platformDisplayLabels = value.platformDisplayLabels;
+  const genreIds = value.genreIds;
+  const genreLabels = value.genreLabels;
+  if (platformIds.length !== platformLabels.length || platformIds.length !== platformDisplayLabels.length || genreIds.length !== genreLabels.length) return false;
+  if (!isStringArray(value.platformHubIds) || !isStringArray(value.genreHubIds)) return false;
+  const platformHubIds = value.platformHubIds;
+  const genreHubIds = value.genreHubIds;
+  if (!hasNoDuplicateValues(platformIds) || !hasNoDuplicateValues(genreIds) || !isSubset(platformHubIds, platformIds) || !isSubset(genreHubIds, genreIds)) return false;
+  if (!isStringArray(value.evidenceKinds, 1) || !isStringArray(value.evidenceLabels, 1)) return false;
+  if (value.evidenceKinds.length !== value.evidenceLabels.length) return false;
+  return true;
+}
+
+async function digestCatalogSearchRecords(records: readonly CatalogSearchRecord[]): Promise<string | undefined> {
+  if (!globalThis.crypto?.subtle) return undefined;
+  const bytes = new TextEncoder().encode(JSON.stringify(records));
+  const digest = await globalThis.crypto.subtle.digest("SHA-256", bytes);
+  return `sha256:${[...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("")}`;
+}
+
+export async function parseCatalogSearchIndex(value: unknown, expectedCount: number, expectedDigest: string, catalogIndexUrl: string): Promise<CatalogSearchRecord[] | undefined> {
+  if (!isRecord(value) || Object.keys(value).sort().join(",") !== "projectionDigest,recordCount,records,schemaVersion" || value.schemaVersion !== 1 || value.recordCount !== expectedCount || value.projectionDigest !== expectedDigest || !/^sha256:[a-f0-9]{64}$/.test(expectedDigest) || !Array.isArray(value.records) || value.records.length !== expectedCount) return undefined;
+  const slugs = new Set<string>();
+  for (const record of value.records) {
+    if (!isCatalogSearchRecord(record, catalogIndexUrl) || slugs.has(record.slug)) return undefined;
+    slugs.add(record.slug);
+  }
+  const records = value.records as CatalogSearchRecord[];
+  return await digestCatalogSearchRecords(records) === expectedDigest ? records : undefined;
+}
+
 export type CatalogSort = "relevance" | "newest" | "oldest" | "platform" | "title";
 
 export interface CatalogSearchState {
@@ -304,6 +414,33 @@ export interface CatalogPage {
   pageCount: number;
   startIndex: number;
   endIndex: number;
+}
+
+export type CatalogPaginationItem =
+  | { type: "page"; page: number }
+  | { type: "ellipsis"; before: number; after: number };
+
+export function getCatalogPaginationItems(rawPageCount: number, rawCurrentPage: number, neighborCount = 2): CatalogPaginationItem[] {
+  const pageCount = Math.max(1, Number.isSafeInteger(rawPageCount) ? rawPageCount : 1);
+  const currentPage = Math.min(Math.max(Number.isSafeInteger(rawCurrentPage) ? rawCurrentPage : 1, 1), pageCount);
+  const radius = Math.max(0, Number.isSafeInteger(neighborCount) ? neighborCount : 2);
+  const pages = new Set<number>([1, pageCount]);
+  const nearStart = currentPage <= radius + 3;
+  const nearEnd = currentPage >= pageCount - radius - 2;
+  const start = nearStart ? 1 : Math.max(1, currentPage - radius);
+  const end = nearEnd ? pageCount : Math.min(pageCount, currentPage + radius);
+  for (let page = start; page <= end; page += 1) pages.add(page);
+  if (nearStart) for (let page = 1; page <= Math.min(pageCount, radius * 2 + 3); page += 1) pages.add(page);
+  if (nearEnd) for (let page = Math.max(1, pageCount - radius * 2 - 2); page <= pageCount; page += 1) pages.add(page);
+
+  const items: CatalogPaginationItem[] = [];
+  let previousPage: number | undefined;
+  for (const page of [...pages].sort((left, right) => left - right)) {
+    if (previousPage !== undefined && page - previousPage > 1) items.push({ type: "ellipsis", before: previousPage, after: page });
+    items.push({ type: "page", page });
+    previousPage = page;
+  }
+  return items;
 }
 
 export function paginateCatalog(records: readonly CatalogSearchRecord[], requestedPage = 1, requestedPageSize: number = DEFAULT_PAGE_SIZE): CatalogPage {

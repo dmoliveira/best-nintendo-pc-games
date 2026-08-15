@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "hello-neighbor",
+  "title": "Hello Neighbor",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Hello Neighbor is grouped in GameAtlas's Nintendo Switch horror and survival catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Places a source-linked horror and survival entry in the Nintendo Switch browsing path.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "horror",
+    "survival"
+  ],
+  "keywords": [
+    "Hello Neighbor",
+    "nintendo-switch",
+    "horror",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Nintendo Switch horror and survival discovery path using the documented Wikidata platform mapping; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q28127320",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q28127320.svg",
+      "alt": "Abstract GameAtlas art tile for Hello Neighbor",
+      "provenanceId": "gameatlas-catalog-1000-q28127320"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

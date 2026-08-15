@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "crash-mind-over-mutant",
+  "title": "Crash: Mind over Mutant",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Crash: Mind over Mutant is kept in GameAtlas's Nintendo DS family platformer discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable platformer option into the Nintendo DS family discovery path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Crash: Mind over Mutant",
+    "nintendo-ds",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the Nintendo DS family platformer discovery path using a linked Wikidata platform-and-genre statement; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q507396",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q507396.svg",
+      "alt": "Abstract GameAtlas art tile for Crash: Mind over Mutant",
+      "provenanceId": "gameatlas-catalog-1000-q507396"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

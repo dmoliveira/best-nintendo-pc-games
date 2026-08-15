@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "rayman",
+  "title": "Rayman",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Rayman sits in the GameAtlas Game Boy Color platformer collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Brings a source-aware platformer entry to the Game Boy Color browsing route.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 1995
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Rayman",
+    "game-boy-color",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Game Boy Color platformer discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q13219473",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q13219473.svg",
+      "alt": "Abstract GameAtlas art tile for Rayman",
+      "provenanceId": "gameatlas-catalog-1000-q13219473"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

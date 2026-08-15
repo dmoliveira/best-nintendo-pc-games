@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-rabbids-kingdom-battle",
+  "title": "Mario + Rabbids Kingdom Battle",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Mario + Rabbids Kingdom Battle is organized in GameAtlas's Nintendo Switch strategy collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Frames a strategy catalog entry for source-aware Nintendo Switch exploration.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Mario + Rabbids Kingdom Battle",
+    "nintendo-switch",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo Switch strategy discovery path using a direct Wikidata structured-data record; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q30246427",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q30246427.svg",
+      "alt": "Abstract GameAtlas art tile for Mario + Rabbids Kingdom Battle",
+      "provenanceId": "gameatlas-catalog-1000-q30246427"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "marvel-ultimate-alliance",
+  "title": "Marvel: Ultimate Alliance",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Marvel: Ultimate Alliance is cataloged in the Game Boy Advance family action path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Frames a action catalog entry for source-aware Game Boy Advance family exploration.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Marvel: Ultimate Alliance",
+    "game-boy-advance",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Game Boy Advance family action discovery path using a Wikidata-listed catalog relationship; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2337304",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2337304.svg",
+      "alt": "Abstract GameAtlas art tile for Marvel: Ultimate Alliance",
+      "provenanceId": "gameatlas-catalog-1000-q2337304"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

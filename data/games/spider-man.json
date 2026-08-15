@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "spider-man",
+  "title": "Spider-Man",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Spider-Man is grouped in GameAtlas's Nintendo 64 fighting catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Maps a direct-reference fighting entry into the Nintendo 64 catalog.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Spider-Man",
+    "nintendo-64",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Nintendo 64 fighting discovery path using the preserved Wikidata entity record; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q288296",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q288296.svg",
+      "alt": "Abstract GameAtlas art tile for Spider-Man",
+      "provenanceId": "gameatlas-catalog-1000-q288296"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

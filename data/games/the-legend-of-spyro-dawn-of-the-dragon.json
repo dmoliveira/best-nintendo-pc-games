@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-spyro-dawn-of-the-dragon",
+  "title": "The Legend of Spyro: Dawn of the Dragon",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "The Legend of Spyro: Dawn of the Dragon is grouped in GameAtlas's Nintendo DS family action and adventure catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Adds a clearly sourced action and adventure option to the Nintendo DS family discovery path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "The Legend of Spyro: Dawn of the Dragon",
+    "nintendo-ds",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo DS family action and adventure discovery path using a linked structured-data reference; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1779348",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1779348.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Spyro: Dawn of the Dragon",
+      "provenanceId": "gameatlas-catalog-1000-q1779348"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

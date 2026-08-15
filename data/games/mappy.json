@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mappy",
+  "title": "Mappy",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Mappy joins the Nintendo Entertainment System platformer path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Builds a traceable platformer option into the Nintendo Entertainment System discovery path.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 1984
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Mappy",
+    "nintendo-nes",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Nintendo Entertainment System platformer discovery path using a direct Wikidata structured-data record; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1188338",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1188338.svg",
+      "alt": "Abstract GameAtlas art tile for Mappy",
+      "provenanceId": "gameatlas-catalog-1000-q1188338"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

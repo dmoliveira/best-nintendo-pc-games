@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "wario-s-woods",
+  "title": "Wario's Woods",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Wario's Woods joins the Super Nintendo Entertainment System puzzle path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Places a source-linked puzzle entry in the Super Nintendo Entertainment System browsing path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 1994
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "Wario's Woods",
+    "nintendo-snes",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Super Nintendo Entertainment System puzzle discovery path using a Wikidata-listed catalog relationship; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2716205",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2716205.svg",
+      "alt": "Abstract GameAtlas art tile for Wario's Woods",
+      "provenanceId": "gameatlas-catalog-1000-q2716205"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

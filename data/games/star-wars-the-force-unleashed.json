@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "star-wars-the-force-unleashed",
+  "title": "Star Wars: The Force Unleashed",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Star Wars: The Force Unleashed is kept in GameAtlas's Wii action and adventure discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Keeps a documented action and adventure option visible in the Wii collection.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Star Wars: The Force Unleashed",
+    "nintendo-wii",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Wii action and adventure discovery path using a direct Wikidata structured-data record; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q840167",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q840167.svg",
+      "alt": "Abstract GameAtlas art tile for Star Wars: The Force Unleashed",
+      "provenanceId": "gameatlas-catalog-1000-q840167"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

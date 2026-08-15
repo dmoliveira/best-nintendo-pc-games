@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "wario-land-ii",
+  "title": "Wario Land II",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Wario Land II is organized in GameAtlas's Game Boy family platformer collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Builds a traceable platformer option into the Game Boy family discovery path.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 1998
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Wario Land II",
+    "game-boy",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Game Boy family platformer discovery path using the frozen source metadata record; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1635462",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1635462.svg",
+      "alt": "Abstract GameAtlas art tile for Wario Land II",
+      "provenanceId": "gameatlas-catalog-1000-q1635462"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

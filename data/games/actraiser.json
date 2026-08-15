@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "actraiser",
+  "title": "ActRaiser",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "ActRaiser is kept in GameAtlas's Super Nintendo Entertainment System action and platformer discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable action and platformer option into the Super Nintendo Entertainment System discovery path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 1990
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "keywords": [
+    "ActRaiser",
+    "nintendo-snes",
+    "action",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Super Nintendo Entertainment System action and platformer discovery path using a source-linked Wikidata item; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q343033",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q343033.svg",
+      "alt": "Abstract GameAtlas art tile for ActRaiser",
+      "provenanceId": "gameatlas-catalog-1000-q343033"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

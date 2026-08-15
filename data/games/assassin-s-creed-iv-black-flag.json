@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "assassin-s-creed-iv-black-flag",
+  "title": "Assassin's Creed IV: Black Flag",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Assassin's Creed IV: Black Flag is grouped in GameAtlas's Wii U action and adventure and stealth catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Sets a direct-reference action and adventure and stealth marker within the Wii U catalog.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "stealth"
+  ],
+  "keywords": [
+    "Assassin's Creed IV: Black Flag",
+    "nintendo-wii-u",
+    "action",
+    "adventure",
+    "stealth",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Wii U action and adventure and stealth discovery path using Wikidata-listed platform and genre statements; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q6052688",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q6052688.svg",
+      "alt": "Abstract GameAtlas art tile for Assassin's Creed IV: Black Flag",
+      "provenanceId": "gameatlas-catalog-1000-q6052688"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

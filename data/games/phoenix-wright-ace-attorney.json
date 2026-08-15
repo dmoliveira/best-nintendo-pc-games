@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "phoenix-wright-ace-attorney",
+  "title": "Phoenix Wright: Ace Attorney",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Phoenix Wright: Ace Attorney is grouped in GameAtlas's Wii U adventure and visual novel catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Brings a source-aware adventure and visual novel entry to the Wii U browsing route.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "adventure",
+    "visual-novel"
+  ],
+  "keywords": [
+    "Phoenix Wright: Ace Attorney",
+    "nintendo-wii-u",
+    "adventure",
+    "visual-novel",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Wii U adventure and visual novel discovery path using a direct Wikidata structured-data record; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1322480",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1322480.svg",
+      "alt": "Abstract GameAtlas art tile for Phoenix Wright: Ace Attorney",
+      "provenanceId": "gameatlas-catalog-1000-q1322480"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "daikatana",
+  "title": "Daikatana",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Daikatana anchors a Game Boy Color shooter catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Offers a clearly labeled shooter route through the Game Boy Color collection.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Daikatana",
+    "game-boy-color",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Game Boy Color shooter discovery path using the frozen source metadata record; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q596596",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q596596.svg",
+      "alt": "Abstract GameAtlas art tile for Daikatana",
+      "provenanceId": "gameatlas-catalog-1000-q596596"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

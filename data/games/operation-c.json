@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "operation-c",
+  "title": "Operation C",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Operation C joins the Game Boy family shooter path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Places a source-linked shooter entry in the Game Boy family browsing path.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 1991
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Operation C",
+    "game-boy",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Game Boy family shooter discovery path using the documented Wikidata platform mapping; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2639874",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2639874.svg",
+      "alt": "Abstract GameAtlas art tile for Operation C",
+      "provenanceId": "gameatlas-catalog-1000-q2639874"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

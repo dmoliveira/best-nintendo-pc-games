@@ -6,6 +6,8 @@ import PlatformGlyph from "./platform-glyph";
 import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
 import { createSiteConfig } from "@/lib/site-config";
+import { DEFAULT_PAGE_SIZE } from "@/lib/catalog/search";
+import { getCatalogSearchIndexDigest } from "@/lib/catalog/search-index";
 import { getCatalogGames, getCatalogSearchRecords, getPlatformHubs, getPopulatedPlatforms } from "@/lib/catalog/site-data";
 
 const site = createSiteConfig(process.env);
@@ -26,6 +28,10 @@ export default function Home() {
   const populatedPlatforms = getPopulatedPlatforms();
   const platformHubIds = new Set(getPlatformHubs().map((platform) => platform.id));
   const platformCounts = new Map(populatedPlatforms.map((platform) => [platform.id, games.filter(({ game }) => game.platforms.includes(platform.id)).length]));
+  const catalogSearchRecords = getCatalogSearchRecords();
+  const catalogIndexDigest = getCatalogSearchIndexDigest(catalogSearchRecords);
+  const initialSearchRecords = catalogSearchRecords.slice(0, DEFAULT_PAGE_SIZE);
+  const catalogIndexUrl = `${site.publicUrl("catalog-search-index.json")}?v=${encodeURIComponent(catalogIndexDigest)}`;
 
   return <div className="site-shell">
     <a className="skip-link" href="#main-content">Skip to main content</a>
@@ -34,11 +40,11 @@ export default function Home() {
     <main id="main-content">
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="eyebrow-dot" aria-hidden="true" /> Curated game discovery <span className="eyebrow-divider" aria-hidden="true">/</span> 2026 edition</p>
-          <h1 id="hero-title">Find the games<br /><em>worth your time.</em></h1>
-          <p className="hero-lede">Thoughtful recommendations for curious players. Browse standout games by platform, genre, era, and the details that make them special.</p>
+          <p className="eyebrow"><span className="eyebrow-dot" aria-hidden="true" /> Source-aware game discovery <span className="eyebrow-divider" aria-hidden="true">/</span> 2026 edition</p>
+          <h1 id="hero-title">Find a game.<br /><em>Explore the atlas.</em></h1>
+          <p className="hero-lede">A broad, source-aware catalog for curious players. Browse games by platform, genre, era, and the context kept with each entry.</p>
           <HeroSearch />
-          <p className="search-note"><span className="status-dot" aria-hidden="true" /> {games.length} reviewed picks and growing · no blended scores, no endless scroll</p>
+          <p className="search-note"><span className="status-dot" aria-hidden="true" /> {games.length} catalog entries · no blended scores, no endless scroll</p>
         </div>
         <div className="hero-art" aria-hidden="true">
           <div className="hero-art-grid" />
@@ -48,28 +54,28 @@ export default function Home() {
           <div className="hero-core"><span className="hero-core-symbol">✦</span><strong>PLAY<br />WITH<br />PURPOSE</strong></div>
           <span className="map-label map-label--one">N / 01</span>
           <span className="map-label map-label--two">PC / 02</span>
-          <span className="map-label map-label--three">CURATED</span>
+          <span className="map-label map-label--three">SOURCED</span>
           <span className="map-label map-label--four">◎</span>
         </div>
       </section>
 
       <section className="signal-strip" aria-label="Why browse GameAtlas">
-        <div className="signal-item"><span className="signal-icon" aria-hidden="true">✦</span><span><strong>Curated by humans</strong><small>Original editorial picks, not a popularity pile.</small></span></div>
-        <div className="signal-item"><span className="signal-icon" aria-hidden="true">◌</span><span><strong>Context over hype</strong><small>{games.length} games with a reason to be here.</small></span></div>
+        <div className="signal-item"><span className="signal-icon" aria-hidden="true">✦</span><span><strong>Method stays visible</strong><small>Catalog methods and original editorial context with documented source paths.</small></span></div>
+        <div className="signal-item"><span className="signal-icon" aria-hidden="true">◌</span><span><strong>Context over hype</strong><small>{games.length} entries with visible source context.</small></span></div>
         <div className="signal-item"><span className="signal-icon" aria-hidden="true">↗</span><span><strong>Sources stay visible</strong><small>Every signal is labeled and easy to inspect.</small></span></div>
       </section>
 
       <section className="section-block section-block--platforms" id="platforms" aria-labelledby="platform-heading">
         <div className="section-heading">
           <div><p className="eyebrow">Browse the atlas</p><h2 id="platform-heading">Choose a <em>starting point.</em></h2></div>
-          <p className="section-aside"><strong>{populatedPlatforms.length} platform families</strong> with reviewed picks. Select any tile to filter the catalog, or open a guide when a collection has enough depth.</p>
+          <p className="section-aside"><strong>{populatedPlatforms.length} platform families</strong> with catalog entries. Select any tile to filter the catalog, or open a guide when a collection has enough depth.</p>
         </div>
         <div className="platform-grid">
           {populatedPlatforms.map((platform, index) => <article className={`platform-card platform-card--${platformTones[index % platformTones.length]}`} key={platform.id}>
             <Link className="platform-card-main" href={`/?platform=${platform.id}#games`} aria-label={`Filter games by ${platform.name}`}>
               <span className="card-topline">{platform.family === "pc" ? "PC" : "NINTENDO"}<span aria-hidden="true">↗</span></span>
               <span className="platform-card-icon" aria-hidden="true"><PlatformGlyph platformId={platform.id} /></span>
-              <span className="platform-card-copy"><strong>{platform.name}</strong><small>{platformCounts.get(platform.id) ?? 0} reviewed {platformCounts.get(platform.id) === 1 ? "pick" : "picks"}</small></span>
+              <span className="platform-card-copy"><strong>{platform.name}</strong><small>{platformCounts.get(platform.id) ?? 0} catalog {platformCounts.get(platform.id) === 1 ? "entry" : "entries"}</small></span>
             </Link>
             {platformHubIds.has(platform.id) ? <div className="platform-card-footer"><Link className="platform-guide" href={`/platforms/${platform.id}/`}>Open guide <span aria-hidden="true">↗</span></Link></div> : null}
           </article>)}
@@ -78,11 +84,11 @@ export default function Home() {
 
       <section className="section-block section-block--catalog" id="games" aria-labelledby="games-heading">
         <div className="section-heading section-heading--catalog">
-          <div><p className="eyebrow">The reviewed catalog</p><h2 id="games-heading">Start with a game.</h2></div>
+          <div><p className="eyebrow">The source-aware catalog</p><h2 id="games-heading">Start with a game.</h2></div>
           <p className="section-aside">Search by title, person, platform, genre, year, or creator. Sort the results without turning editorial context into a blended rating.</p>
         </div>
-        <noscript><style>{".browser-panel, .result-tools .page-size-field, .hero-search { display: none; }"}</style><p className="noscript-note">Interactive filters, sorting, and pagination require JavaScript. URL filters cannot be applied without it, so the complete reviewed catalog is shown below.</p></noscript>
-        <CatalogBrowser records={getCatalogSearchRecords()} />
+        <noscript><style>{".browser-panel, .result-tools .page-size-field, .hero-search { display: none; }"}</style><p className="noscript-note">Interactive filters and pagination require JavaScript. The first catalog entries remain available below; <Link href="/catalog/">browse every game in the no-JavaScript index</Link>.</p></noscript>
+        <CatalogBrowser initialRecords={initialSearchRecords} catalogEntryCount={games.length} catalogIndexDigest={catalogIndexDigest} catalogIndexUrl={catalogIndexUrl} catalogIndexHref={site.publicUrl("catalog/")} />
       </section>
 
       <section className="section-block section-block--method" id="method" aria-labelledby="method-heading">

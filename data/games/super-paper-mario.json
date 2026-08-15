@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-paper-mario",
+  "title": "Super Paper Mario",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Super Paper Mario is grouped in GameAtlas's Wii U platformer catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Places a source-linked platformer entry in the Wii U browsing path.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Super Paper Mario",
+    "nintendo-wii-u",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Wii U platformer discovery path using a linked structured-data reference; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q522508",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q522508.svg",
+      "alt": "Abstract GameAtlas art tile for Super Paper Mario",
+      "provenanceId": "gameatlas-catalog-1000-q522508"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

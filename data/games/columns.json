@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "columns",
+  "title": "Columns",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Columns is organized in GameAtlas's Super Nintendo Entertainment System puzzle collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Places a source-linked puzzle entry in the Super Nintendo Entertainment System browsing path.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 1990
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "Columns",
+    "nintendo-snes",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Super Nintendo Entertainment System puzzle discovery path using the frozen Wikidata metadata snapshot; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1112940",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1112940.svg",
+      "alt": "Abstract GameAtlas art tile for Columns",
+      "provenanceId": "gameatlas-catalog-1000-q1112940"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "mega-man-bass",
+  "title": "Mega Man & Bass",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Mega Man & Bass anchors a Super Nintendo Entertainment System action and platformer catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Makes a documented action and platformer option easier to find in the Super Nintendo Entertainment System path.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 1998
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "keywords": [
+    "Mega Man & Bass",
+    "nintendo-snes",
+    "action",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Super Nintendo Entertainment System action and platformer discovery path using the documented Wikidata platform mapping; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q3051587",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q3051587.svg",
+      "alt": "Abstract GameAtlas art tile for Mega Man & Bass",
+      "provenanceId": "gameatlas-catalog-1000-q3051587"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

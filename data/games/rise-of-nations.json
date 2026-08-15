@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "rise-of-nations",
+  "title": "Rise of Nations",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Rise of Nations sits in the GameAtlas PC (Windows) strategy collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Brings a source-aware strategy entry to the PC (Windows) browsing route.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Rise of Nations",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the PC (Windows) strategy discovery path using Wikidata-listed platform and genre statements; this remains a deterministic catalog-method entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q454621",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q454621.svg",
+      "alt": "Abstract GameAtlas art tile for Rise of Nations",
+      "provenanceId": "gameatlas-catalog-1000-q454621"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

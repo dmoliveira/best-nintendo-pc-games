@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "batman-arkham-city",
+  "title": "Batman: Arkham City",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Batman: Arkham City anchors a Wii U action and adventure and fighting and stealth catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Places a source-linked action and adventure and fighting and stealth entry in the Wii U browsing path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "fighting",
+    "stealth"
+  ],
+  "keywords": [
+    "Batman: Arkham City",
+    "nintendo-wii-u",
+    "action",
+    "adventure",
+    "fighting",
+    "stealth",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Wii U action and adventure and fighting and stealth discovery path using the documented Wikidata platform mapping; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q288811",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q288811.svg",
+      "alt": "Abstract GameAtlas art tile for Batman: Arkham City",
+      "provenanceId": "gameatlas-catalog-1000-q288811"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

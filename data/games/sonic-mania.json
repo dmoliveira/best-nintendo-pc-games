@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "sonic-mania",
+  "title": "Sonic Mania",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Sonic Mania helps define a Nintendo Switch platformer path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Sets a direct-reference platformer marker within the Nintendo Switch catalog.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Sonic Mania",
+    "nintendo-switch",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Nintendo Switch platformer discovery path using a Wikidata-listed catalog relationship; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q25991770",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q25991770.svg",
+      "alt": "Abstract GameAtlas art tile for Sonic Mania",
+      "provenanceId": "gameatlas-catalog-1000-q25991770"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

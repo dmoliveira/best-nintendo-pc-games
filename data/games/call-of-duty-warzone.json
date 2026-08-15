@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "call-of-duty-warzone",
+  "title": "Call of Duty: Warzone",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Call of Duty: Warzone helps define a PC (Windows) shooter path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable shooter option into the PC (Windows) discovery path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Call of Duty: Warzone",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the PC (Windows) shooter discovery path using the frozen source metadata record; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q87416343",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q87416343.svg",
+      "alt": "Abstract GameAtlas art tile for Call of Duty: Warzone",
+      "provenanceId": "gameatlas-catalog-1000-q87416343"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

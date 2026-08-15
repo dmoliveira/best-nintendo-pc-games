@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "lode-runner",
+  "title": "Lode Runner",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Lode Runner is included in GameAtlas's Nintendo Entertainment System platformer and puzzle route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Builds a traceable platformer and puzzle option into the Nintendo Entertainment System discovery path.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 1983
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "platformer",
+    "puzzle"
+  ],
+  "keywords": [
+    "Lode Runner",
+    "nintendo-nes",
+    "platformer",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Nintendo Entertainment System platformer and puzzle discovery path using the frozen source metadata record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1197566",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1197566.svg",
+      "alt": "Abstract GameAtlas art tile for Lode Runner",
+      "provenanceId": "gameatlas-catalog-1000-q1197566"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

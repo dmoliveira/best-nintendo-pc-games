@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "batman-arkham-asylum",
+  "title": "Batman: Arkham Asylum",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Batman: Arkham Asylum sits in the GameAtlas PC (Windows) action collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Maps a direct-reference action entry into the PC (Windows) catalog.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Batman: Arkham Asylum",
+    "pc-windows",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) action discovery path using Wikidata-listed platform and genre statements; this remains a deterministic catalog-method entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q746228",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q746228.svg",
+      "alt": "Abstract GameAtlas art tile for Batman: Arkham Asylum",
+      "provenanceId": "gameatlas-catalog-1000-q746228"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

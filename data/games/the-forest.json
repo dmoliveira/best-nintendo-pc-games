@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-forest",
+  "title": "The Forest",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "The Forest is grouped in GameAtlas's PC (Windows) horror and survival catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Keeps a documented horror and survival option visible in the PC (Windows) collection.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2018
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "horror",
+    "survival"
+  ],
+  "keywords": [
+    "The Forest",
+    "pc-windows",
+    "horror",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the PC (Windows) horror and survival discovery path using a direct Wikidata structured-data record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q16267841",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q16267841.svg",
+      "alt": "Abstract GameAtlas art tile for The Forest",
+      "provenanceId": "gameatlas-catalog-1000-q16267841"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

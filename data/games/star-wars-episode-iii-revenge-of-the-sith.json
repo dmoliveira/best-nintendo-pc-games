@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "star-wars-episode-iii-revenge-of-the-sith",
+  "title": "Star Wars: Episode III – Revenge of the Sith",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Star Wars: Episode III – Revenge of the Sith joins the Game Boy Advance family action and adventure path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Frames a action and adventure catalog entry for source-aware Game Boy Advance family exploration.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2005
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Star Wars: Episode III – Revenge of the Sith",
+    "game-boy-advance",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Game Boy Advance family action and adventure discovery path using the preserved Wikidata entity record; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q54846",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q54846.svg",
+      "alt": "Abstract GameAtlas art tile for Star Wars: Episode III – Revenge of the Sith",
+      "provenanceId": "gameatlas-catalog-1000-q54846"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

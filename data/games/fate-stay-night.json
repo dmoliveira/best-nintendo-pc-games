@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "fate-stay-night",
+  "title": "Fate/stay night",
+  "aliases": [],
+  "emoji": "📖",
+  "shortDescription": "Fate/stay night is kept in GameAtlas's PC (Windows) visual novel discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented visual novel option easier to find in the PC (Windows) path.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "visual-novel"
+  ],
+  "keywords": [
+    "Fate/stay night",
+    "pc-windows",
+    "visual-novel",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the PC (Windows) visual novel discovery path using the frozen Wikidata metadata snapshot; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q857823",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q857823.svg",
+      "alt": "Abstract GameAtlas art tile for Fate/stay night",
+      "provenanceId": "gameatlas-catalog-1000-q857823"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

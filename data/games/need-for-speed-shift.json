@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "need-for-speed-shift",
+  "title": "Need for Speed: Shift",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Need for Speed: Shift sits in the GameAtlas PC (Windows) racing collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Maps a direct-reference racing entry into the PC (Windows) catalog.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Need for Speed: Shift",
+    "pc-windows",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) racing discovery path using a linked structured-data reference; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q4104",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q4104.svg",
+      "alt": "Abstract GameAtlas art tile for Need for Speed: Shift",
+      "provenanceId": "gameatlas-catalog-1000-q4104"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

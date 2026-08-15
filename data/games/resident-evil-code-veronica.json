@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "resident-evil-code-veronica",
+  "title": "Resident Evil – Code: Veronica",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Resident Evil – Code: Veronica is included in GameAtlas's Nintendo GameCube horror and survival route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Adds a clearly sourced horror and survival option to the Nintendo GameCube discovery path.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "horror",
+    "survival"
+  ],
+  "keywords": [
+    "Resident Evil – Code: Veronica",
+    "nintendo-gamecube",
+    "horror",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Nintendo GameCube horror and survival discovery path using a Wikidata-listed catalog relationship; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1050284",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1050284.svg",
+      "alt": "Abstract GameAtlas art tile for Resident Evil – Code: Veronica",
+      "provenanceId": "gameatlas-catalog-1000-q1050284"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

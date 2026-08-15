@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "star-fox-2",
+  "title": "Star Fox 2",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Star Fox 2 anchors a Super Nintendo Entertainment System shooter catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Sets a direct-reference shooter marker within the Super Nintendo Entertainment System catalog.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Star Fox 2",
+    "nintendo-snes",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Super Nintendo Entertainment System shooter discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q3496959",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q3496959.svg",
+      "alt": "Abstract GameAtlas art tile for Star Fox 2",
+      "provenanceId": "gameatlas-catalog-1000-q3496959"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

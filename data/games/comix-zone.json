@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "comix-zone",
+  "title": "Comix Zone",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Comix Zone appears in GameAtlas's Game Boy Advance family fighting collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Keeps a documented fighting option visible in the Game Boy Advance family collection.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 1995
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Comix Zone",
+    "game-boy-advance",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Game Boy Advance family fighting discovery path using the frozen source metadata record; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1114985",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1114985.svg",
+      "alt": "Abstract GameAtlas art tile for Comix Zone",
+      "provenanceId": "gameatlas-catalog-1000-q1114985"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

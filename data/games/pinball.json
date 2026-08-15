@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "pinball",
+  "title": "Pinball",
+  "aliases": [],
+  "emoji": "🕹️",
+  "shortDescription": "Pinball sits in the GameAtlas Nintendo Entertainment System arcade collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Adds a clearly sourced arcade option to the Nintendo Entertainment System discovery path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 1984
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "arcade"
+  ],
+  "keywords": [
+    "Pinball",
+    "nintendo-nes",
+    "arcade",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Nintendo Entertainment System arcade discovery path using a direct Wikidata structured-data record; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q511995",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q511995.svg",
+      "alt": "Abstract GameAtlas art tile for Pinball",
+      "provenanceId": "gameatlas-catalog-1000-q511995"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

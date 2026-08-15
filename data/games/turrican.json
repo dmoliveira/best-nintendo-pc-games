@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "turrican",
+  "title": "Turrican",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Turrican is organized in GameAtlas's Game Boy family shooter collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Builds a traceable shooter option into the Game Boy family discovery path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 1990
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Turrican",
+    "game-boy",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Game Boy family shooter discovery path using a direct Wikidata structured-data record; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1929662",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1929662.svg",
+      "alt": "Abstract GameAtlas art tile for Turrican",
+      "provenanceId": "gameatlas-catalog-1000-q1929662"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "f-1-race",
+  "title": "F-1 Race",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "F-1 Race is organized in GameAtlas's Game Boy family racing collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Brings a source-aware racing entry to the Game Boy family browsing route.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1984
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "F-1 Race",
+    "game-boy",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Game Boy family racing discovery path using a source-linked Wikidata item; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1090190",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1090190.svg",
+      "alt": "Abstract GameAtlas art tile for F-1 Race",
+      "provenanceId": "gameatlas-catalog-1000-q1090190"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

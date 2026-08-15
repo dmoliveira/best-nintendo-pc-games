@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "q-bert",
+  "title": "Q*bert",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Q*bert helps define a Game Boy Color action and platformer and puzzle path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked action and platformer and puzzle entry in the Game Boy Color browsing path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1982
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "action",
+    "platformer",
+    "puzzle"
+  ],
+  "keywords": [
+    "Q*bert",
+    "game-boy-color",
+    "action",
+    "platformer",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Game Boy Color action and platformer and puzzle discovery path using a linked Wikidata platform-and-genre statement; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1565343",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1565343.svg",
+      "alt": "Abstract GameAtlas art tile for Q*bert",
+      "provenanceId": "gameatlas-catalog-1000-q1565343"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

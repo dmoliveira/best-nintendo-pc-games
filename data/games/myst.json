@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "myst",
+  "title": "Myst",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Myst anchors a Nintendo 3DS family adventure and puzzle catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Offers a clearly labeled adventure and puzzle route through the Nintendo 3DS family collection.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 1993
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "adventure",
+    "puzzle"
+  ],
+  "keywords": [
+    "Myst",
+    "nintendo-3ds",
+    "adventure",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Nintendo 3DS family adventure and puzzle discovery path using a linked structured-data reference; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q6497116",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q6497116.svg",
+      "alt": "Abstract GameAtlas art tile for Myst",
+      "provenanceId": "gameatlas-catalog-1000-q6497116"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

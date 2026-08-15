@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "half-life-2-episode-two",
+  "title": "Half-Life 2: Episode Two",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Half-Life 2: Episode Two helps define a PC (Windows) shooter path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked shooter entry in the PC (Windows) browsing path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Half-Life 2: Episode Two",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the PC (Windows) shooter discovery path using the preserved Wikidata entity record; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q553308",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q553308.svg",
+      "alt": "Abstract GameAtlas art tile for Half-Life 2: Episode Two",
+      "provenanceId": "gameatlas-catalog-1000-q553308"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

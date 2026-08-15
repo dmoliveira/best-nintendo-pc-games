@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "lego-marvel-super-heroes",
+  "title": "Lego Marvel Super Heroes",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Lego Marvel Super Heroes sits in the GameAtlas Nintendo 3DS family action and adventure collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Sets a direct-reference action and adventure marker within the Nintendo 3DS family catalog.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Lego Marvel Super Heroes",
+    "nintendo-3ds",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo 3DS family action and adventure discovery path using the frozen Wikidata metadata snapshot; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q3662198",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q3662198.svg",
+      "alt": "Abstract GameAtlas art tile for Lego Marvel Super Heroes",
+      "provenanceId": "gameatlas-catalog-1000-q3662198"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

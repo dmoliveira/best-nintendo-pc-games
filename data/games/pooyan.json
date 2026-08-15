@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "pooyan",
+  "title": "Pooyan",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Pooyan helps define a Nintendo Entertainment System action path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented action option easier to find in the Nintendo Entertainment System path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 1982
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Pooyan",
+    "nintendo-nes",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo Entertainment System action discovery path using a linked structured-data reference; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1199765",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1199765.svg",
+      "alt": "Abstract GameAtlas art tile for Pooyan",
+      "provenanceId": "gameatlas-catalog-1000-q1199765"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

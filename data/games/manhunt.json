@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "manhunt",
+  "title": "Manhunt",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Manhunt sits in the GameAtlas PC (Windows) horror collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Offers a clearly labeled horror route through the PC (Windows) collection.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "horror"
+  ],
+  "keywords": [
+    "Manhunt",
+    "pc-windows",
+    "horror",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the PC (Windows) horror discovery path using a source-linked Wikidata item; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q853344",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q853344.svg",
+      "alt": "Abstract GameAtlas art tile for Manhunt",
+      "provenanceId": "gameatlas-catalog-1000-q853344"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

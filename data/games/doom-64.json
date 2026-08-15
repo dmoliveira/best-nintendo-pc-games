@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "doom-64",
+  "title": "Doom 64",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Doom 64 helps define a Nintendo 64 shooter path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable shooter option into the Nintendo 64 discovery path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 1997
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Doom 64",
+    "nintendo-64",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the Nintendo 64 shooter discovery path using a linked Wikidata platform-and-genre statement; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1071278",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1071278.svg",
+      "alt": "Abstract GameAtlas art tile for Doom 64",
+      "provenanceId": "gameatlas-catalog-1000-q1071278"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

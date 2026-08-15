@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "five-nights-at-freddy-s",
+  "title": "Five Nights at Freddy's",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Five Nights at Freddy's is kept in GameAtlas's Nintendo Switch adventure and horror and survival discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Offers a clearly labeled adventure and horror and survival route through the Nintendo Switch collection.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "adventure",
+    "horror",
+    "survival"
+  ],
+  "keywords": [
+    "Five Nights at Freddy's",
+    "nintendo-switch",
+    "adventure",
+    "horror",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Nintendo Switch adventure and horror and survival discovery path using a linked structured-data reference; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q17618314",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q17618314.svg",
+      "alt": "Abstract GameAtlas art tile for Five Nights at Freddy's",
+      "provenanceId": "gameatlas-catalog-1000-q17618314"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

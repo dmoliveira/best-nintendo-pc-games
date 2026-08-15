@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Abstract GameAtlas art tile">
+  <defs>
+    <linearGradient id="q2273753-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101127"/>
+      <stop offset="1" stop-color="#b89cff" stop-opacity=".52"/>
+    </linearGradient>
+    <pattern id="q2273753-grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#e7ebf0" stroke-opacity=".12"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#q2273753-g)"/>
+  <rect width="800" height="450" fill="url(#q2273753-grid)" opacity=".42"/>
+  <circle cx="212" cy="99" r="118" fill="none" stroke="#ffcf70" stroke-opacity=".55" stroke-width="3"/>
+  <circle cx="730" cy="269" r="178" fill="none" stroke="#b89cff" stroke-opacity=".4" stroke-width="2"/>
+  <path d="M-30 297 C160 301 280 430 480 245 S690 80 830 155" fill="none" stroke="#ffcf70" stroke-opacity=".7" stroke-width="18"/>
+  <path d="M-40 405 C130 240 250 470 430 300 S650 180 840 45" fill="none" stroke="#e7ebf0" stroke-opacity=".2" stroke-width="2" transform="rotate(-13 400 225)"/>
+  <circle cx="246" cy="77" r="8" fill="#b89cff"/>
+  <circle cx="674" cy="307" r="6" fill="#ffcf70"/>
+</svg>

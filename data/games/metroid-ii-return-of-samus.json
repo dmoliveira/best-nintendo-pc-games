@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "metroid-ii-return-of-samus",
+  "title": "Metroid II: Return of Samus",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Metroid II: Return of Samus helps define a Game Boy family action path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Brings a source-aware action entry to the Game Boy family browsing route.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 1991
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Metroid II: Return of Samus",
+    "game-boy",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Game Boy family action discovery path using the documented Wikidata platform mapping; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2471454",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2471454.svg",
+      "alt": "Abstract GameAtlas art tile for Metroid II: Return of Samus",
+      "provenanceId": "gameatlas-catalog-1000-q2471454"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

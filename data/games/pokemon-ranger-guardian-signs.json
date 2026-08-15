@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "pokemon-ranger-guardian-signs",
+  "title": "Pokémon Ranger: Guardian Signs",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Pokémon Ranger: Guardian Signs is organized in GameAtlas's Nintendo DS family action collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Sets a direct-reference action marker within the Nintendo DS family catalog.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Pokémon Ranger: Guardian Signs",
+    "nintendo-ds",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo DS family action discovery path using the documented Wikidata platform mapping; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1187259",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1187259.svg",
+      "alt": "Abstract GameAtlas art tile for Pokémon Ranger: Guardian Signs",
+      "provenanceId": "gameatlas-catalog-1000-q1187259"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "friday-night-funkin",
+  "title": "Friday Night Funkin'",
+  "aliases": [],
+  "emoji": "🎵",
+  "shortDescription": "Friday Night Funkin' helps define a PC (Windows) rhythm path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked rhythm entry in the PC (Windows) browsing path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2019
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "rhythm"
+  ],
+  "keywords": [
+    "Friday Night Funkin'",
+    "pc-windows",
+    "rhythm",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the PC (Windows) rhythm discovery path using the frozen source metadata record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q105731119",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q105731119.svg",
+      "alt": "Abstract GameAtlas art tile for Friday Night Funkin'",
+      "provenanceId": "gameatlas-catalog-1000-q105731119"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "half-life-2-episode-one",
+  "title": "Half-Life 2: Episode One",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Half-Life 2: Episode One is organized in GameAtlas's PC (Windows) shooter collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Places a source-linked shooter entry in the PC (Windows) browsing path.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Half-Life 2: Episode One",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the PC (Windows) shooter discovery path using the preserved Wikidata entity record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q18951",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q18951.svg",
+      "alt": "Abstract GameAtlas art tile for Half-Life 2: Episode One",
+      "provenanceId": "gameatlas-catalog-1000-q18951"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

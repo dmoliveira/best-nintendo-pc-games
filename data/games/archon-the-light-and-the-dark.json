@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "archon-the-light-and-the-dark",
+  "title": "Archon: The Light and the Dark",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Archon: The Light and the Dark is kept in GameAtlas's Nintendo Entertainment System fighting discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Keeps a documented fighting option visible in the Nintendo Entertainment System collection.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 1983
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Archon: The Light and the Dark",
+    "nintendo-nes",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Nintendo Entertainment System fighting discovery path using a linked structured-data reference; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q91268",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q91268.svg",
+      "alt": "Abstract GameAtlas art tile for Archon: The Light and the Dark",
+      "provenanceId": "gameatlas-catalog-1000-q91268"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

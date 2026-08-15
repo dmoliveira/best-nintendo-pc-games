@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "street-fighter-ii",
+  "title": "Street Fighter II",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Street Fighter II sits in the GameAtlas Game Boy family fighting collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Brings a source-aware fighting entry to the Game Boy family browsing route.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1991
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Street Fighter II",
+    "game-boy",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Game Boy family fighting discovery path using a source-linked Wikidata item; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1133204",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1133204.svg",
+      "alt": "Abstract GameAtlas art tile for Street Fighter II",
+      "provenanceId": "gameatlas-catalog-1000-q1133204"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

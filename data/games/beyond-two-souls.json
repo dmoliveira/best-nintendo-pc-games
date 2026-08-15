@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "beyond-two-souls",
+  "title": "Beyond: Two Souls",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Beyond: Two Souls is grouped in GameAtlas's PC (Windows) action and adventure catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Brings a source-aware action and adventure entry to the PC (Windows) browsing route.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Beyond: Two Souls",
+    "pc-windows",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the PC (Windows) action and adventure discovery path using a linked Wikidata platform-and-genre statement; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q166226",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q166226.svg",
+      "alt": "Abstract GameAtlas art tile for Beyond: Two Souls",
+      "provenanceId": "gameatlas-catalog-1000-q166226"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

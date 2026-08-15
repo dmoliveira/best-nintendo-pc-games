@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "sekiro-shadows-die-twice",
+  "title": "Sekiro: Shadows Die Twice",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Sekiro: Shadows Die Twice appears in GameAtlas's PC (Windows) action and adventure collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Places a source-linked action and adventure entry in the PC (Windows) browsing path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2019
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Sekiro: Shadows Die Twice",
+    "pc-windows",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the PC (Windows) action and adventure discovery path using the frozen Wikidata metadata snapshot; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q54906424",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q54906424.svg",
+      "alt": "Abstract GameAtlas art tile for Sekiro: Shadows Die Twice",
+      "provenanceId": "gameatlas-catalog-1000-q54906424"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

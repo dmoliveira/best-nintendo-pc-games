@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "world-of-goo",
+  "title": "World of Goo",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "World of Goo is kept in GameAtlas's Wii puzzle discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference puzzle entry into the Wii catalog.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "World of Goo",
+    "nintendo-wii",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Wii puzzle discovery path using a direct Wikidata structured-data record; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q637312",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q637312.svg",
+      "alt": "Abstract GameAtlas art tile for World of Goo",
+      "provenanceId": "gameatlas-catalog-1000-q637312"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

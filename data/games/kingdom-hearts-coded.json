@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "kingdom-hearts-coded",
+  "title": "Kingdom Hearts Coded",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Kingdom Hearts Coded is grouped in GameAtlas's Nintendo DS family puzzle catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Makes a documented puzzle option easier to find in the Nintendo DS family path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "Kingdom Hearts Coded",
+    "nintendo-ds",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo DS family puzzle discovery path using a linked structured-data reference; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1083444",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1083444.svg",
+      "alt": "Abstract GameAtlas art tile for Kingdom Hearts Coded",
+      "provenanceId": "gameatlas-catalog-1000-q1083444"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

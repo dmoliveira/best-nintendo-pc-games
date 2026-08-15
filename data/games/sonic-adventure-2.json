@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "sonic-adventure-2",
+  "title": "Sonic Adventure 2",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Sonic Adventure 2 is kept in GameAtlas's Nintendo GameCube platformer discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Adds a clearly sourced platformer option to the Nintendo GameCube discovery path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Sonic Adventure 2",
+    "nintendo-gamecube",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Nintendo GameCube platformer discovery path using the preserved Wikidata entity record; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1070984",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1070984.svg",
+      "alt": "Abstract GameAtlas art tile for Sonic Adventure 2",
+      "provenanceId": "gameatlas-catalog-1000-q1070984"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

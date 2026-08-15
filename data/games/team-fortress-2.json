@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "team-fortress-2",
+  "title": "Team Fortress 2",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Team Fortress 2 is kept in GameAtlas's PC (Windows) shooter discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked shooter entry in the PC (Windows) browsing path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Team Fortress 2",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) shooter discovery path using a linked structured-data reference; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q382108",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q382108.svg",
+      "alt": "Abstract GameAtlas art tile for Team Fortress 2",
+      "provenanceId": "gameatlas-catalog-1000-q382108"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

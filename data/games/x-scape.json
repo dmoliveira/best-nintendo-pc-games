@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "slug": "x-scape",
+  "title": "X-Scape",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "X-Scape is organized in GameAtlas's Nintendo DSi family shooter collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Frames a shooter catalog entry for source-aware Nintendo DSi family exploration.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-dsi"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "X-Scape",
+    "nintendo-dsi",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Nintendo DSi family shooter discovery path using the preserved Wikidata entity record; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q8041523",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q8041523.svg",
+      "alt": "Abstract GameAtlas art tile for X-Scape",
+      "provenanceId": "gameatlas-catalog-1000-q8041523"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ],
+  "releaseFormat": "digital"
+}

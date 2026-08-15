@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "simearth",
+  "title": "SimEarth",
+  "aliases": [],
+  "emoji": "🌱",
+  "shortDescription": "SimEarth is organized in GameAtlas's Super Nintendo Entertainment System simulation collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Places a source-linked simulation entry in the Super Nintendo Entertainment System browsing path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 1990
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "simulation"
+  ],
+  "keywords": [
+    "SimEarth",
+    "nintendo-snes",
+    "simulation",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Super Nintendo Entertainment System simulation discovery path using a direct Wikidata structured-data record; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1511144",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1511144.svg",
+      "alt": "Abstract GameAtlas art tile for SimEarth",
+      "provenanceId": "gameatlas-catalog-1000-q1511144"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -27,6 +27,7 @@ The machine-readable evidence model is [`data/evidence-policy.json`](../data/evi
 - **Verified fact:** a manually checked primary-source fact may be displayed with scope, territory, period, and `asOf`; sales facts are not critic scores.
 - **Licensed signal:** critic, user, or popularity numbers require a source-registry decision authorizing the exact field, public display, terms, reviewer, and recheck date.
 - **Original editorial:** GameAtlas rationale and selection only; it is never an aggregate or fallback score.
+- **Catalog method:** deterministic context generated from a frozen source inventory. It is labeled as a catalog method, not title-by-title editorial review or original human commentary.
 
 The `>=80` filter requires a verified, rights-approved, provider-authorized critic signal on a 100-point scale. It cannot fall back to user ratings, sales, popularity, or editorial signals. The initial critic and popularity provider allowlists are empty, so the public catalog currently exposes no cached numeric signal.
 
@@ -43,8 +44,9 @@ The machine-readable registry is [`data/source-rights.json`](../data/source-righ
 | Nintendo Investor Relations | Dated, attributed first-party sales facts where published | Not a critic score | Do not reuse images without permission |
 | Official publisher/developer pages | Official/store/availability links | Not approved | A link is not image permission |
 | Nintendo Life | Title-specific historical outbound references only | Outbound-only; do not copy | Do not download or reuse |
+| Wikidata structured data | Frozen CC0 fields only: title label, earliest documented P577 release year (not a platform-launch claim), P400-listed platform, P136-listed genre, QID, and item URL | Not a numeric-signal provider | Do not copy item prose, website text, logos, images, or media |
 
-The registry deliberately does not claim that an API response or a public web page grants redistribution rights. Any future provider adapter must update the registry first, include the terms URL and recheck date, and add tests proving that unauthorized fields are omitted from the static artifact.
+Wikidata's structured data is available under CC0; this does not make all Wikidata website content CC0. GameAtlas retains a direct item link and courteous `Data from Wikidata` provenance, but treats attribution as provenance rather than an endorsement claim. The registry deliberately does not claim that an API response or a public web page grants redistribution rights. Any future provider adapter must update the registry first, include the terms URL and recheck date, and add tests proving that unauthorized fields are omitted from the static artifact.
 
 ## Asset rule
 
@@ -75,6 +77,7 @@ Before each catalog or asset refresh:
 - check whether the support path changes the applicable commercial-use status;
 - confirm every numeric signal has both verification and rights approval;
 - confirm sales figures retain geography, period, scope, and `asOf` date;
+- for a Wikidata refresh, retain QIDs and query metadata, choose the documented P577 year deterministically, and treat P400/P136 as Wikidata-listed statements rather than definitive availability or classification;
 - confirm every local asset has a manifest record and compatible use;
 - record reviewed date, reviewer, and an expiry/recheck date;
 - run the catalog, source, asset, link, and static-export validators.

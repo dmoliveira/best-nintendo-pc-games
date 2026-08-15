@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "dwarf-fortress",
+  "title": "Dwarf Fortress",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Dwarf Fortress helps define a PC (Windows) adventure and sandbox and simulation and survival path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Frames a adventure and sandbox and simulation and survival catalog entry for source-aware PC (Windows) exploration.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "adventure",
+    "sandbox",
+    "simulation",
+    "survival"
+  ],
+  "keywords": [
+    "Dwarf Fortress",
+    "pc-windows",
+    "adventure",
+    "sandbox",
+    "simulation",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) adventure and sandbox and simulation and survival discovery path using the frozen source metadata record; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q248810",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q248810.svg",
+      "alt": "Abstract GameAtlas art tile for Dwarf Fortress",
+      "provenanceId": "gameatlas-catalog-1000-q248810"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

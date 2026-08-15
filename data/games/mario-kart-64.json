@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mario-kart-64",
+  "title": "Mario Kart 64",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Mario Kart 64 is organized in GameAtlas's Nintendo 64 racing collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Builds a traceable racing option into the Nintendo 64 discovery path.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Mario Kart 64",
+    "nintendo-64",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo 64 racing discovery path using the documented Wikidata platform mapping; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1046604",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1046604.svg",
+      "alt": "Abstract GameAtlas art tile for Mario Kart 64",
+      "provenanceId": "gameatlas-catalog-1000-q1046604"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

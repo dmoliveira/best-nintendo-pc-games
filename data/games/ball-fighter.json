@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "slug": "ball-fighter",
+  "title": "Ball Fighter",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Ball Fighter appears in GameAtlas's Nintendo DSi family puzzle collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Keeps a documented puzzle option visible in the Nintendo DSi family collection.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-dsi"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "Ball Fighter",
+    "nintendo-dsi",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Nintendo DSi family puzzle discovery path using the frozen Wikidata metadata snapshot; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q4851193",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q4851193.svg",
+      "alt": "Abstract GameAtlas art tile for Ball Fighter",
+      "provenanceId": "gameatlas-catalog-1000-q4851193"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ],
+  "releaseFormat": "digital"
+}

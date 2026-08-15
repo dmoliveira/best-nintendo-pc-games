@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "europa-universalis-ii",
+  "title": "Europa Universalis II",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Europa Universalis II is organized in GameAtlas's PC (Windows) strategy collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Places a source-linked strategy entry in the PC (Windows) browsing path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Europa Universalis II",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the PC (Windows) strategy discovery path using the preserved Wikidata entity record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q765103",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q765103.svg",
+      "alt": "Abstract GameAtlas art tile for Europa Universalis II",
+      "provenanceId": "gameatlas-catalog-1000-q765103"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

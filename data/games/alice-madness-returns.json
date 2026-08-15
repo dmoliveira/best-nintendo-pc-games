@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "alice-madness-returns",
+  "title": "Alice: Madness Returns",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Alice: Madness Returns sits in the GameAtlas PC (Windows) action and adventure and horror collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Makes a documented action and adventure and horror option easier to find in the PC (Windows) path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "horror"
+  ],
+  "keywords": [
+    "Alice: Madness Returns",
+    "pc-windows",
+    "action",
+    "adventure",
+    "horror",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the PC (Windows) action and adventure and horror discovery path using the documented Wikidata platform mapping; this remains a deterministic catalog-method entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q648980",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q648980.svg",
+      "alt": "Abstract GameAtlas art tile for Alice: Madness Returns",
+      "provenanceId": "gameatlas-catalog-1000-q648980"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

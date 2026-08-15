@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "rayman-2-the-great-escape",
+  "title": "Rayman 2: The Great Escape",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Rayman 2: The Great Escape is included in GameAtlas's Nintendo 64 platformer route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Places a source-linked platformer entry in the Nintendo 64 browsing path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 1999
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Rayman 2: The Great Escape",
+    "nintendo-64",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo 64 platformer discovery path using the preserved Wikidata entity record; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2292393",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2292393.svg",
+      "alt": "Abstract GameAtlas art tile for Rayman 2: The Great Escape",
+      "provenanceId": "gameatlas-catalog-1000-q2292393"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

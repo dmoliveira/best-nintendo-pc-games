@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "missile-command",
+  "title": "Missile Command",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Missile Command is kept in GameAtlas's Game Boy Color shooter discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Keeps a documented shooter option visible in the Game Boy Color collection.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 1980
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Missile Command",
+    "game-boy-color",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Game Boy Color shooter discovery path using a linked Wikidata platform-and-genre statement; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1192794",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1192794.svg",
+      "alt": "Abstract GameAtlas art tile for Missile Command",
+      "provenanceId": "gameatlas-catalog-1000-q1192794"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

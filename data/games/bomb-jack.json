@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "bomb-jack",
+  "title": "Bomb Jack",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Bomb Jack is grouped in GameAtlas's Game Boy family platformer catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Frames a platformer catalog entry for source-aware Game Boy family exploration.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 1984
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Bomb Jack",
+    "game-boy",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Game Boy family platformer discovery path using a Wikidata-listed catalog relationship; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q738698",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q738698.svg",
+      "alt": "Abstract GameAtlas art tile for Bomb Jack",
+      "provenanceId": "gameatlas-catalog-1000-q738698"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

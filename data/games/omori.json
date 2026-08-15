@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "omori",
+  "title": "Omori",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Omori helps define a Nintendo Switch horror path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented horror option easier to find in the Nintendo Switch path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "horror"
+  ],
+  "keywords": [
+    "Omori",
+    "nintendo-switch",
+    "horror",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Nintendo Switch horror discovery path using a source-linked Wikidata item; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q105618699",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q105618699.svg",
+      "alt": "Abstract GameAtlas art tile for Omori",
+      "provenanceId": "gameatlas-catalog-1000-q105618699"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

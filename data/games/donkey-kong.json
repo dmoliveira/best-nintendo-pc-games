@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "donkey-kong",
+  "title": "Donkey Kong",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Donkey Kong sits in the GameAtlas Game Boy family platformer and puzzle collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Sets a direct-reference platformer and puzzle marker within the Game Boy family catalog.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 1994
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "platformer",
+    "puzzle"
+  ],
+  "keywords": [
+    "Donkey Kong",
+    "game-boy",
+    "platformer",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Game Boy family platformer and puzzle discovery path using a Wikidata-listed catalog relationship; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2564684",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2564684.svg",
+      "alt": "Abstract GameAtlas art tile for Donkey Kong",
+      "provenanceId": "gameatlas-catalog-1000-q2564684"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

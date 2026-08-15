@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "metro-last-light",
+  "title": "Metro: Last Light",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Metro: Last Light anchors a Nintendo Switch horror and shooter and survival catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Places a source-linked horror and shooter and survival entry in the Nintendo Switch browsing path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "horror",
+    "shooter",
+    "survival"
+  ],
+  "keywords": [
+    "Metro: Last Light",
+    "nintendo-switch",
+    "horror",
+    "shooter",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Nintendo Switch horror and shooter and survival discovery path using a Wikidata-listed catalog relationship; this remains a deterministic catalog-method entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q569898",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q569898.svg",
+      "alt": "Abstract GameAtlas art tile for Metro: Last Light",
+      "provenanceId": "gameatlas-catalog-1000-q569898"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

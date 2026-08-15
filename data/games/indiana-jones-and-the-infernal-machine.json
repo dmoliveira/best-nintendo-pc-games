@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "indiana-jones-and-the-infernal-machine",
+  "title": "Indiana Jones and the Infernal Machine",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Indiana Jones and the Infernal Machine appears in GameAtlas's Nintendo 64 action and adventure and puzzle collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Brings a source-aware action and adventure and puzzle entry to the Nintendo 64 browsing route.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 1999
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "puzzle"
+  ],
+  "keywords": [
+    "Indiana Jones and the Infernal Machine",
+    "nintendo-64",
+    "action",
+    "adventure",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Nintendo 64 action and adventure and puzzle discovery path using the preserved Wikidata entity record; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1527683",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1527683.svg",
+      "alt": "Abstract GameAtlas art tile for Indiana Jones and the Infernal Machine",
+      "provenanceId": "gameatlas-catalog-1000-q1527683"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

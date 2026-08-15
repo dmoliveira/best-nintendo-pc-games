@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "spider-man-friend-or-foe",
+  "title": "Spider-Man: Friend or Foe",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Spider-Man: Friend or Foe appears in GameAtlas's Nintendo DS family action and adventure and fighting and platformer collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Places a source-linked action and adventure and fighting and platformer entry in the Nintendo DS family browsing path.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "fighting",
+    "platformer"
+  ],
+  "keywords": [
+    "Spider-Man: Friend or Foe",
+    "nintendo-ds",
+    "action",
+    "adventure",
+    "fighting",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Nintendo DS family action and adventure and fighting and platformer discovery path using a direct Wikidata structured-data record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1093923",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1093923.svg",
+      "alt": "Abstract GameAtlas art tile for Spider-Man: Friend or Foe",
+      "provenanceId": "gameatlas-catalog-1000-q1093923"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

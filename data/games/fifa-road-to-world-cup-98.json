@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "fifa-road-to-world-cup-98",
+  "title": "FIFA: Road to World Cup 98",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "FIFA: Road to World Cup 98 anchors a Nintendo 64 sports catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "highlights": [
+    "Builds a traceable sports option into the Nintendo 64 discovery path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 1997
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "FIFA: Road to World Cup 98",
+    "nintendo-64",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Nintendo 64 sports discovery path using a linked Wikidata platform-and-genre statement; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q913223",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q913223.svg",
+      "alt": "Abstract GameAtlas art tile for FIFA: Road to World Cup 98",
+      "provenanceId": "gameatlas-catalog-1000-q913223"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

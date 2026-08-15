@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-evil-within",
+  "title": "The Evil Within",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "The Evil Within sits in the GameAtlas PC (Windows) horror and shooter and survival collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Offers a clearly labeled horror and shooter and survival route through the PC (Windows) collection.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "horror",
+    "shooter",
+    "survival"
+  ],
+  "keywords": [
+    "The Evil Within",
+    "pc-windows",
+    "horror",
+    "shooter",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the PC (Windows) horror and shooter and survival discovery path using the frozen Wikidata metadata snapshot; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q3407139",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q3407139.svg",
+      "alt": "Abstract GameAtlas art tile for The Evil Within",
+      "provenanceId": "gameatlas-catalog-1000-q3407139"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

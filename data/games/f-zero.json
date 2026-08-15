@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "f-zero",
+  "title": "F-Zero",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "F-Zero sits in the GameAtlas Super Nintendo Entertainment System racing collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Offers a clearly labeled racing route through the Super Nintendo Entertainment System collection.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 1990
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "F-Zero",
+    "nintendo-snes",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Super Nintendo Entertainment System racing discovery path using the documented Wikidata platform mapping; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1198491",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1198491.svg",
+      "alt": "Abstract GameAtlas art tile for F-Zero",
+      "provenanceId": "gameatlas-catalog-1000-q1198491"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

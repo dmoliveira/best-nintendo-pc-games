@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "five-nights-at-freddy-s-3",
+  "title": "Five Nights at Freddy's 3",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Five Nights at Freddy's 3 is cataloged in the Nintendo Switch adventure and horror and survival path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Brings a source-aware adventure and horror and survival entry to the Nintendo Switch browsing route.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "adventure",
+    "horror",
+    "survival"
+  ],
+  "keywords": [
+    "Five Nights at Freddy's 3",
+    "nintendo-switch",
+    "adventure",
+    "horror",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Nintendo Switch adventure and horror and survival discovery path using a Wikidata-listed catalog relationship; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q18913274",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q18913274.svg",
+      "alt": "Abstract GameAtlas art tile for Five Nights at Freddy's 3",
+      "provenanceId": "gameatlas-catalog-1000-q18913274"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

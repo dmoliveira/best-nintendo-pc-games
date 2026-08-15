@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "shift-2-unleashed",
+  "title": "Shift 2 Unleashed",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Shift 2 Unleashed is grouped in GameAtlas's PC (Windows) racing catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Places a source-linked racing entry in the PC (Windows) browsing path.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Shift 2 Unleashed",
+    "pc-windows",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the PC (Windows) racing discovery path using the frozen source metadata record; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q940134",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q940134.svg",
+      "alt": "Abstract GameAtlas art tile for Shift 2 Unleashed",
+      "provenanceId": "gameatlas-catalog-1000-q940134"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

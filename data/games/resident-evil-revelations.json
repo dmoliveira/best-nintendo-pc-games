@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "resident-evil-revelations",
+  "title": "Resident Evil: Revelations",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Resident Evil: Revelations appears in GameAtlas's Wii U action and horror and shooter and survival collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Places a source-linked action and horror and shooter and survival entry in the Wii U browsing path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "action",
+    "horror",
+    "shooter",
+    "survival"
+  ],
+  "keywords": [
+    "Resident Evil: Revelations",
+    "nintendo-wii-u",
+    "action",
+    "horror",
+    "shooter",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Wii U action and horror and shooter and survival discovery path using a source-linked Wikidata item; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1138864",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1138864.svg",
+      "alt": "Abstract GameAtlas art tile for Resident Evil: Revelations",
+      "provenanceId": "gameatlas-catalog-1000-q1138864"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

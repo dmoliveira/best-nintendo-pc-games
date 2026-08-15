@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "resident-evil-the-darkside-chronicles",
+  "title": "Resident Evil: The Darkside Chronicles",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Resident Evil: The Darkside Chronicles is included in GameAtlas's Wii shooter route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Offers a clearly labeled shooter route through the Wii collection.",
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Resident Evil: The Darkside Chronicles",
+    "nintendo-wii",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Wii shooter discovery path using a linked structured-data reference; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1152909",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1152909.svg",
+      "alt": "Abstract GameAtlas art tile for Resident Evil: The Darkside Chronicles",
+      "provenanceId": "gameatlas-catalog-1000-q1152909"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

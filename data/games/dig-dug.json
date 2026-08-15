@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "dig-dug",
+  "title": "Dig Dug",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Dig Dug helps define a Game Boy family action path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Frames a action catalog entry for source-aware Game Boy family exploration.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 1982
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Dig Dug",
+    "game-boy",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Game Boy family action discovery path using the frozen Wikidata metadata snapshot; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q204105",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q204105.svg",
+      "alt": "Abstract GameAtlas art tile for Dig Dug",
+      "provenanceId": "gameatlas-catalog-1000-q204105"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

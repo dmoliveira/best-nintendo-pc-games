@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "to-the-moon",
+  "title": "To the Moon",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "To the Moon is included in GameAtlas's Nintendo Switch adventure route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Offers a clearly labeled adventure route through the Nintendo Switch collection.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "adventure"
+  ],
+  "keywords": [
+    "To the Moon",
+    "nintendo-switch",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Nintendo Switch adventure discovery path using a direct Wikidata structured-data record; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1711379",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1711379.svg",
+      "alt": "Abstract GameAtlas art tile for To the Moon",
+      "provenanceId": "gameatlas-catalog-1000-q1711379"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

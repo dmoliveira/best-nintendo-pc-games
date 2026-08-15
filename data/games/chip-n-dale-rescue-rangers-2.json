@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "chip-n-dale-rescue-rangers-2",
+  "title": "Chip 'n Dale Rescue Rangers 2",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Chip 'n Dale Rescue Rangers 2 is grouped in GameAtlas's Nintendo Entertainment System platformer catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Places a source-linked platformer entry in the Nintendo Entertainment System browsing path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 1993
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Chip 'n Dale Rescue Rangers 2",
+    "nintendo-nes",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Nintendo Entertainment System platformer discovery path using a direct Wikidata structured-data record; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1935772",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1935772.svg",
+      "alt": "Abstract GameAtlas art tile for Chip 'n Dale Rescue Rangers 2",
+      "provenanceId": "gameatlas-catalog-1000-q1935772"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "life-is-strange",
+  "title": "Life Is Strange",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Life Is Strange is grouped in GameAtlas's PC (Windows) adventure catalog path beside a direct Wikidata structured-data record.",
+  "highlights": [
+    "Brings a source-aware adventure entry to the PC (Windows) browsing route.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "adventure"
+  ],
+  "keywords": [
+    "Life Is Strange",
+    "pc-windows",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the PC (Windows) adventure discovery path using the frozen Wikidata metadata snapshot; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q18536861",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q18536861.svg",
+      "alt": "Abstract GameAtlas art tile for Life Is Strange",
+      "provenanceId": "gameatlas-catalog-1000-q18536861"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

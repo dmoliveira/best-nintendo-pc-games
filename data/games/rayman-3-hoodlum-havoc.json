@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "rayman-3-hoodlum-havoc",
+  "title": "Rayman 3: Hoodlum Havoc",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Rayman 3: Hoodlum Havoc is kept in GameAtlas's Nintendo GameCube platformer discovery path through frozen catalog organization and a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked platformer entry in the Nintendo GameCube browsing path.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Rayman 3: Hoodlum Havoc",
+    "nintendo-gamecube",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo GameCube platformer discovery path using a linked structured-data reference; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1416931",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1416931.svg",
+      "alt": "Abstract GameAtlas art tile for Rayman 3: Hoodlum Havoc",
+      "provenanceId": "gameatlas-catalog-1000-q1416931"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

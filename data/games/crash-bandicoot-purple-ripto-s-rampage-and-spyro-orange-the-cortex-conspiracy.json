@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "crash-bandicoot-purple-ripto-s-rampage-and-spyro-orange-the-cortex-conspiracy",
+  "title": "Crash Bandicoot Purple: Ripto's Rampage and Spyro Orange: The Cortex Conspiracy",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Crash Bandicoot Purple: Ripto's Rampage and Spyro Orange: The Cortex Conspiracy joins the Game Boy Advance family platformer path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "highlights": [
+    "Makes a documented platformer option easier to find in the Game Boy Advance family path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Crash Bandicoot Purple: Ripto's Rampage and Spyro Orange: The Cortex Conspiracy",
+    "game-boy-advance",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the Game Boy Advance family platformer discovery path using the documented Wikidata platform mapping; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1052116",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1052116.svg",
+      "alt": "Abstract GameAtlas art tile for Crash Bandicoot Purple: Ripto's Rampage and Spyro Orange: The Cortex Conspiracy",
+      "provenanceId": "gameatlas-catalog-1000-q1052116"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

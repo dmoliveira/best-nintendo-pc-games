@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "metal-gear-solid-3-snake-eater",
+  "title": "Metal Gear Solid 3: Snake Eater",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Metal Gear Solid 3: Snake Eater is included in GameAtlas's PC (Windows) action and adventure route, alongside deterministic catalog context and a linked Wikidata item.",
+  "highlights": [
+    "Offers a clearly labeled action and adventure route through the PC (Windows) collection.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Metal Gear Solid 3: Snake Eater",
+    "pc-windows",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the PC (Windows) action and adventure discovery path using the preserved Wikidata entity record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q247935",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q247935.svg",
+      "alt": "Abstract GameAtlas art tile for Metal Gear Solid 3: Snake Eater",
+      "provenanceId": "gameatlas-catalog-1000-q247935"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "no-man-s-sky",
+  "title": "No Man's Sky",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "No Man's Sky is cataloged in the Nintendo Switch action and adventure and simulation and survival path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "highlights": [
+    "Brings a source-aware action and adventure and simulation and survival entry to the Nintendo Switch browsing route.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2016
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "simulation",
+    "survival"
+  ],
+  "keywords": [
+    "No Man's Sky",
+    "nintendo-switch",
+    "action",
+    "adventure",
+    "simulation",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Nintendo Switch action and adventure and simulation and survival discovery path using a direct Wikidata structured-data record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q15297043",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q15297043.svg",
+      "alt": "Abstract GameAtlas art tile for No Man's Sky",
+      "provenanceId": "gameatlas-catalog-1000-q15297043"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

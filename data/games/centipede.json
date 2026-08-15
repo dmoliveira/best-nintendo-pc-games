@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "centipede",
+  "title": "Centipede",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Centipede is organized in GameAtlas's Game Boy Color shooter collection with a source-linked record and deterministic catalog context.",
+  "highlights": [
+    "Brings a source-aware shooter entry to the Game Boy Color browsing route.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 1981
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Centipede",
+    "game-boy-color",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the Game Boy Color shooter discovery path using a direct Wikidata structured-data record; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1053648",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1053648.svg",
+      "alt": "Abstract GameAtlas art tile for Centipede",
+      "provenanceId": "gameatlas-catalog-1000-q1053648"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

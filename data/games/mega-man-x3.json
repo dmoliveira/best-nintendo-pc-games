@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mega-man-x3",
+  "title": "Mega Man X3",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Mega Man X3 appears in GameAtlas's Super Nintendo Entertainment System action collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Brings a source-aware action entry to the Super Nintendo Entertainment System browsing route.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 1995
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Mega Man X3",
+    "nintendo-snes",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Super Nintendo Entertainment System action discovery path using a linked structured-data reference; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2744116",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2744116.svg",
+      "alt": "Abstract GameAtlas art tile for Mega Man X3",
+      "provenanceId": "gameatlas-catalog-1000-q2744116"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

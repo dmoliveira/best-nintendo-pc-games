@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "tony-hawk-s-pro-skater-4",
+  "title": "Tony Hawk's Pro Skater 4",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Tony Hawk's Pro Skater 4 helps define a Game Boy Advance family sports path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented sports option easier to find in the Game Boy Advance family path.",
+    "Separates the GameAtlas catalog method from the external factual reference."
+  ],
+  "release": {
+    "year": 2002
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Tony Hawk's Pro Skater 4",
+    "game-boy-advance",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Game Boy Advance family sports discovery path using a linked structured-data reference; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1512956",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1512956.svg",
+      "alt": "Abstract GameAtlas art tile for Tony Hawk's Pro Skater 4",
+      "provenanceId": "gameatlas-catalog-1000-q1512956"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

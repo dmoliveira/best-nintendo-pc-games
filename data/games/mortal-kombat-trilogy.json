@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mortal-kombat-trilogy",
+  "title": "Mortal Kombat Trilogy",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Mortal Kombat Trilogy sits in the GameAtlas Nintendo 64 fighting collection, pairing a direct structured-data reference with a catalog-method note.",
+  "highlights": [
+    "Places a source-linked fighting entry in the Nintendo 64 browsing path.",
+    "Keeps the external item link distinct from the deterministic catalog method."
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Mortal Kombat Trilogy",
+    "nintendo-64",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Mapped for the Nintendo 64 fighting discovery path using a linked structured-data reference; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1300499",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1300499.svg",
+      "alt": "Abstract GameAtlas art tile for Mortal Kombat Trilogy",
+      "provenanceId": "gameatlas-catalog-1000-q1300499"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

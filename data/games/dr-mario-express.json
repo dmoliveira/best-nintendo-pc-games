@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "slug": "dr-mario-express",
+  "title": "Dr. Mario Express",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Dr. Mario Express appears in GameAtlas's Nintendo DSi family puzzle collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Keeps a documented puzzle option visible in the Nintendo DSi family collection.",
+    "Retains source provenance while keeping the catalog context method-generated."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-dsi"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "Dr. Mario Express",
+    "nintendo-dsi",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Nintendo DSi family puzzle discovery path using a direct Wikidata structured-data record; this remains a catalog-method note with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas deterministic catalog process",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "catalog-method"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2973804",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2973804.svg",
+      "alt": "Abstract GameAtlas art tile for Dr. Mario Express",
+      "provenanceId": "gameatlas-catalog-1000-q2973804"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ],
+  "releaseFormat": "digital"
+}
