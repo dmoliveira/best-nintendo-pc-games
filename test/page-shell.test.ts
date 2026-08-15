@@ -39,6 +39,8 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /Single-column layout on smaller screens\./);
   assert.match(browser, /Automatic responsive card layout/);
   assert.match(browser, /Choose card images/);
+  assert.match(browser, /getEffectiveCatalogSort/);
+  assert.match(browser, /disabled=\{option\.value === "relevance"/);
   assert.match(browser, /showImages=\{state\.images !== "hide"\}/);
   assert.match(browser, /name="card-images" value="hide"/);
   assert.match(browser, /columns/);

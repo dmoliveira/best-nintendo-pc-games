@@ -10,6 +10,7 @@ import {
   EMPTY_SEARCH_STATE,
   filterCatalog,
   getCatalogPaginationItems,
+  getEffectiveCatalogSort,
   normalizeSearchText,
   PAGE_SIZE_OPTIONS,
   paginateCatalog,
@@ -369,7 +370,7 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
       </div>
       <div className="browser-controls">
         <label className="browser-field browser-field--query" htmlFor="catalog-query"><span>Search games</span><span className="browser-input"><span className="field-icon" aria-hidden="true">⌕</span><input id="catalog-query" type="search" value={state.q} onChange={(event) => updateQuery(event.target.value)} placeholder="Title, person, platform, or keyword" /></span></label>
-        <label className="browser-field" htmlFor="catalog-sort"><span>Sort by</span><select id="catalog-sort" value={state.sort ?? "relevance"} onChange={(event) => updateSort(event.target.value)}><option value="score" disabled>Score (licensed data only)</option>{CATALOG_SORT_OPTIONS.map((option) => <option value={option.value} key={option.value}>{option.label}</option>)}</select></label>
+        <label className="browser-field" htmlFor="catalog-sort"><span>Sort by</span><select id="catalog-sort" value={getEffectiveCatalogSort(state)} onChange={(event) => updateSort(event.target.value)}><option value="score" disabled>Score (licensed data only)</option>{CATALOG_SORT_OPTIONS.map((option) => <option value={option.value} disabled={option.value === "relevance" && !normalizeSearchText(state.q)} key={option.value}>{option.label}</option>)}</select></label>
       </div>
       <div className="browser-facet-grid">
         <details className="browser-disclosure">

@@ -291,6 +291,11 @@ export function normalizeSearchText(value: string): string {
     .replace(/\s+/g, " ");
 }
 
+export function getEffectiveCatalogSort(state: Pick<CatalogSearchState, "q" | "sort">): CatalogSort {
+  const requestedSort = state.sort ?? "relevance";
+  return requestedSort === "relevance" && !normalizeSearchText(state.q) ? "title" : requestedSort;
+}
+
 export function createSearchStateOptions(records: readonly CatalogCardRecord[]): SearchStateOptions {
   const platformIds = new Set<string>();
   const genreIds = new Set<string>();
@@ -473,6 +478,7 @@ function compareBySort(left: CatalogSearchRecord, right: CatalogSearchRecord, st
 export function filterCatalog(records: readonly CatalogSearchRecord[], state: CatalogSearchState): CatalogSearchRecord[] {
   const query = normalizeSearchText(state.q);
   const queryTokens = query.split(" ").filter(Boolean);
+  const effectiveState = { ...state, sort: getEffectiveCatalogSort({ q: query, sort: state.sort }) };
   const platforms = new Set(splitList(state.platform));
   const genres = new Set(splitList(state.genre));
   const yearFrom = state.yearFrom || state.year;
@@ -489,7 +495,7 @@ export function filterCatalog(records: readonly CatalogSearchRecord[], state: Ca
       if (publisher && normalizeSearchText(record.publisher ?? "") !== publisher) return false;
       return queryTokens.every((token) => record.searchText.includes(token));
     })
-    .sort((left, right) => compareBySort(left, right, state, query, queryTokens));
+    .sort((left, right) => compareBySort(left, right, effectiveState, query, queryTokens));
 }
 
 export interface CatalogPage {
