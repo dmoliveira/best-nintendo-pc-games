@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CatalogBrowser from "./catalog-browser";
+import HeroSearch from "./hero-search";
 import PlatformGlyph from "./platform-glyph";
+import SiteFooter from "./site-footer";
+import SiteHeader from "./site-header";
 import { createSiteConfig } from "@/lib/site-config";
 import { getCatalogGames, getCatalogSearchRecords, getPlatformHubs, getPopulatedPlatforms } from "@/lib/catalog/site-data";
 
-import GameAtlasMark from "@/app/gameatlas-mark";
 const site = createSiteConfig(process.env);
 
 export const metadata: Metadata = {
@@ -17,48 +19,90 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const platformTones = ["violet", "coral", "cyan", "lime", "orange", "blue", "violet", "coral"] as const;
+const platformTones = ["violet", "coral", "cyan", "lime", "orange", "blue"] as const;
 
 export default function Home() {
   const games = getCatalogGames();
   const populatedPlatforms = getPopulatedPlatforms();
   const platformHubIds = new Set(getPlatformHubs().map((platform) => platform.id));
+  const platformCounts = new Map(populatedPlatforms.map((platform) => [platform.id, games.filter(({ game }) => game.platforms.includes(platform.id)).length]));
 
   return <div className="site-shell">
     <a className="skip-link" href="#main-content">Skip to main content</a>
-    <header className="topbar">
-      <Link className="wordmark" href="/" aria-label="GameAtlas home"><GameAtlasMark />Game<span className="wordmark-accent">Atlas</span></Link>
-      <nav className="topnav" aria-label="Primary navigation"><a href="#platforms">Platforms</a><a href="#games">Games</a><a href="#method">How it works</a><Link href="/docs/rights-and-support-policy/">Sources &amp; rights</Link></nav>
-    </header>
+    <SiteHeader active="browse" />
 
     <main id="main-content">
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="eyebrow-dot" aria-hidden="true" /> Nintendo first · PC next</p>
+          <p className="eyebrow"><span className="eyebrow-dot" aria-hidden="true" /> Curated game discovery <span className="eyebrow-divider" aria-hidden="true">/</span> 2026 edition</p>
           <h1 id="hero-title">Find the games<br /><em>worth your time.</em></h1>
-          <p className="hero-lede">A beautifully organized atlas of acclaimed and popular games — built for fast browsing by platform, genre, year, people, and evidence.</p>
-          <div className="availability-panel" aria-label="Catalog availability">
-            <span className="search-icon" aria-hidden="true">⌕</span>
-            <div className="availability-copy"><strong>Reviewed catalog is live</strong><span>{games.length} records are available now; search and filters are available below.</span></div>
-            <span className="availability-status">Live</span>
-          </div>
-          <p className="search-note">Every current record has an original description, platform context, and source-aware editorial rationale.</p>
+          <p className="hero-lede">Thoughtful recommendations for curious players. Browse standout games by platform, genre, era, and the details that make them special.</p>
+          <HeroSearch />
+          <p className="search-note"><span className="status-dot" aria-hidden="true" /> {games.length} reviewed picks and growing · no blended scores, no endless scroll</p>
         </div>
-        <div className="hero-art" aria-label="Abstract GameAtlas map illustration" role="img"><div className="orbit orbit--outer" aria-hidden="true" /><div className="orbit orbit--inner" aria-hidden="true" /><div className="hero-core"><span aria-hidden="true">🎮</span><strong>PLAY<br />SMART</strong></div><span className="map-label map-label--one">N-01</span><span className="map-label map-label--two">PC / 02</span><span className="map-label map-label--three">LIVE</span></div>
+        <div className="hero-art" aria-hidden="true">
+          <div className="hero-art-grid" />
+          <div className="orbit orbit--outer" />
+          <div className="orbit orbit--middle" />
+          <div className="orbit orbit--inner" />
+          <div className="hero-core"><span className="hero-core-symbol">✦</span><strong>PLAY<br />WITH<br />PURPOSE</strong></div>
+          <span className="map-label map-label--one">N / 01</span>
+          <span className="map-label map-label--two">PC / 02</span>
+          <span className="map-label map-label--three">CURATED</span>
+          <span className="map-label map-label--four">◎</span>
+        </div>
       </section>
 
-      <section className="signal-strip" aria-label="Catalog facts"><div><b>{games.length}</b><span>reviewed games<br />in this slice</span></div><div><b>{populatedPlatforms.length}</b><span>platform families<br />with records</span></div><div><b>⌁</b><span>context over<br />hype</span></div></section>
+      <section className="signal-strip" aria-label="Why browse GameAtlas">
+        <div className="signal-item"><span className="signal-icon" aria-hidden="true">✦</span><span><strong>Curated by humans</strong><small>Original editorial picks, not a popularity pile.</small></span></div>
+        <div className="signal-item"><span className="signal-icon" aria-hidden="true">◌</span><span><strong>Context over hype</strong><small>{games.length} games with a reason to be here.</small></span></div>
+        <div className="signal-item"><span className="signal-icon" aria-hidden="true">↗</span><span><strong>Sources stay visible</strong><small>Every signal is labeled and easy to inspect.</small></span></div>
+      </section>
 
-      <section className="section-block" id="platforms" aria-labelledby="platform-heading"><div className="section-heading"><div><p className="eyebrow">Your starting point</p><h2 id="platform-heading">Choose an era.</h2></div><p className="section-aside">The taxonomy maps every supported Nintendo family. Populated platforms have reviewed records; planned families stay visible without pretending to be complete.</p></div><div className="platform-grid">{populatedPlatforms.map((platform, index) => <article className={`platform-card platform-card--${platformTones[index % platformTones.length]}`} key={platform.id}><div className="card-topline">RECORDS LIVE</div><div className="platform-emoji" aria-hidden="true"><PlatformGlyph platformId={platform.id} /></div><h3>{platformHubIds.has(platform.id) ? <Link href={`/platforms/${platform.id}/`}>{platform.name}</Link> : platform.name}</h3><p>{platform.description}</p><span className="card-status">Browse the games below</span></article>)}</div></section>
+      <section className="section-block section-block--platforms" id="platforms" aria-labelledby="platform-heading">
+        <div className="section-heading">
+          <div><p className="eyebrow">Browse the atlas</p><h2 id="platform-heading">Choose a <em>starting point.</em></h2></div>
+          <p className="section-aside"><strong>{populatedPlatforms.length} platform families</strong> with reviewed picks. Select any tile to filter the catalog, or open a guide when a collection has enough depth.</p>
+        </div>
+        <div className="platform-grid">
+          {populatedPlatforms.map((platform, index) => <article className={`platform-card platform-card--${platformTones[index % platformTones.length]}`} key={platform.id}>
+            <Link className="platform-card-main" href={`/?platform=${platform.id}#games`} aria-label={`Filter games by ${platform.name}`}>
+              <span className="card-topline">{platform.family === "pc" ? "PC" : "NINTENDO"}<span aria-hidden="true">↗</span></span>
+              <span className="platform-card-icon" aria-hidden="true"><PlatformGlyph platformId={platform.id} /></span>
+              <span className="platform-card-copy"><strong>{platform.name}</strong><small>{platformCounts.get(platform.id) ?? 0} reviewed {platformCounts.get(platform.id) === 1 ? "pick" : "picks"}</small></span>
+            </Link>
+            {platformHubIds.has(platform.id) ? <div className="platform-card-footer"><Link className="platform-guide" href={`/platforms/${platform.id}/`}>Open guide <span aria-hidden="true">↗</span></Link></div> : null}
+          </article>)}
+        </div>
+      </section>
 
-      <section className="section-block section-block--catalog" id="games" aria-labelledby="games-heading"><div className="section-heading"><div><p className="eyebrow">The reviewed catalog</p><h2 id="games-heading">Start with a game.</h2></div><p className="section-aside">Search across titles, people, platforms, genres, and years. These are original GameAtlas selections, not blended ratings.</p></div><CatalogBrowser records={getCatalogSearchRecords()} /></section>
+      <section className="section-block section-block--catalog" id="games" aria-labelledby="games-heading">
+        <div className="section-heading section-heading--catalog">
+          <div><p className="eyebrow">The reviewed catalog</p><h2 id="games-heading">Start with a game.</h2></div>
+          <p className="section-aside">Search by title, person, platform, genre, or year. Every card is an original GameAtlas selection, not a blended rating.</p>
+        </div>
+        <CatalogBrowser records={getCatalogSearchRecords()} />
+      </section>
 
-      <section className="section-block section-block--method" id="method" aria-labelledby="method-heading"><div className="section-heading"><div><p className="eyebrow">A better way to browse</p><h2 id="method-heading">Less noise.<br /><em>More signal.</em></h2></div><p className="section-aside">A great list should help you decide, not make you decode a mysterious score. GameAtlas keeps each signal labeled, sourced, and easy to inspect.</p></div><div className="promise-grid"><article className="promise-card"><span className="promise-number">01</span><h3>Choose a platform</h3><p>Start with a console era or PC, then narrow the field with the live catalog controls.</p></article><article className="promise-card"><span className="promise-number">02</span><h3>Read the signal</h3><p>Critic, community, sales, popularity, and editorial signals stay separate.</p></article><article className="promise-card"><span className="promise-number">03</span><h3>Go deeper</h3><p>Open a concise game page with sources, links, and useful context.</p></article></div></section>
+      <section className="section-block section-block--method" id="method" aria-labelledby="method-heading">
+        <div className="section-heading">
+          <div><p className="eyebrow">A better way to browse</p><h2 id="method-heading">Less noise.<br /><em>More signal.</em></h2></div>
+          <p className="section-aside">A good list should help you decide, not make you decode a mysterious score. GameAtlas keeps each signal labeled, sourced, and easy to inspect.</p>
+        </div>
+        <div className="promise-grid">
+          <article className="promise-card"><span className="promise-number">01</span><h3>Choose a platform</h3><p>Start with a console era or PC, then narrow the field with the live catalog controls.</p></article>
+          <article className="promise-card"><span className="promise-number">02</span><h3>Read the signal</h3><p>Critic, community, sales, popularity, and editorial signals stay separate.</p></article>
+          <article className="promise-card"><span className="promise-number">03</span><h3>Go deeper</h3><p>Open a concise game page with sources, links, and useful context.</p></article>
+        </div>
+      </section>
 
-      <section className="closing-panel" aria-labelledby="closing-heading"><div><p className="eyebrow">The atlas is opening</p><h2 id="closing-heading">Good games are<br /><em>worth finding.</em></h2></div><div className="closing-copy"><p>GameAtlas is a free, source-aware guide for players who want the right game for the right machine — without the endless scroll.</p><Link className="text-link" href="/docs/rights-and-support-policy/">Read the source &amp; rights policy ↗</Link></div></section>
+      <section className="closing-panel" aria-labelledby="closing-heading">
+        <div><p className="eyebrow">The atlas is opening</p><h2 id="closing-heading">Good games are<br /><em>worth finding.</em></h2></div>
+        <div className="closing-copy"><p>GameAtlas is a free, source-aware guide for players who want the right game for the right machine — without the endless scroll.</p><Link className="text-link" href="/docs/rights-and-support-policy/">Read the source &amp; rights policy <span aria-hidden="true">↗</span></Link></div>
+      </section>
     </main>
 
-    <footer className="footer"><div className="wordmark wordmark--footer"><GameAtlasMark />Game<span className="wordmark-accent">Atlas</span></div><p>Best Nintendo &amp; PC games, with context.</p><p className="footer-meta">Built for curious players · 2026</p></footer>
+    <SiteFooter />
     <noscript><p className="noscript-note">All reviewed game cards remain available without JavaScript; interactive search and filters require JavaScript.</p></noscript>
   </div>;
 }

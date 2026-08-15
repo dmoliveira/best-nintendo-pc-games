@@ -43,6 +43,7 @@ export interface SearchStateOptions {
 }
 
 export const EMPTY_SEARCH_STATE: CatalogSearchState = { q: "", platform: "", genre: "", year: "" };
+export const SEARCH_STATE_EVENT = "gameatlas:search-state";
 
 export function normalizeSearchText(value: string): string {
   return value
