@@ -12,6 +12,7 @@ const CDP_COMMAND_TIMEOUT_MS = 10_000;
 const LOCAL_REQUEST_TIMEOUT_MS = 10_000;
 const PROCESS_SHUTDOWN_TIMEOUT_MS = 5_000;
 const BROWSER_START_TIMEOUT_MS = 30_000;
+const PROFILE_CLEANUP_RETRIES = 20;
 
 function fail(message) {
   throw new Error(`Box-art browser validation failed: ${message}`);
@@ -738,7 +739,7 @@ async function main() {
     client?.close();
     await stopBrowser(browser);
     if (preview) await stopServer(preview.server);
-    if (profile) fs.rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
+    if (profile) fs.rmSync(profile, { recursive: true, force: true, maxRetries: PROFILE_CLEANUP_RETRIES, retryDelay: 250 });
   }
 }
 
