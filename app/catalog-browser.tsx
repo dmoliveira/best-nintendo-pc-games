@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore
 import CatalogCards from "./catalog-cards";
 import {
   CATALOG_SORT_OPTIONS,
+  clearCatalogFilters,
   DEFAULT_PAGE_SIZE,
   EMPTY_SEARCH_STATE,
   filterCatalog,
@@ -117,7 +118,6 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   const yearFrom = state.yearFrom || state.year;
   const yearTo = state.yearTo || state.year;
   const activeFilterCount = platforms.length + genres.length + [state.q, yearFrom || yearTo, state.developer, state.publisher].filter(Boolean).length;
-  const activeSortLabel = CATALOG_SORT_OPTIONS.find((option) => option.value === (state.sort ?? "relevance"))?.label ?? "Relevance";
   const developerLabel = state.developer ? developerOptions.find((option) => option.id === state.developer)?.label ?? state.developer : "";
   const publisherLabel = state.publisher ? publisherOptions.find((option) => option.id === state.publisher)?.label ?? state.publisher : "";
 
@@ -249,7 +249,7 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   }
 
   function clearFilters() {
-    const nextState = { ...EMPTY_SEARCH_STATE, columns: state.columns };
+    const nextState = clearCatalogFilters(state);
     setState(nextState);
     syncUrl(nextState, "push");
   }
@@ -266,14 +266,12 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   return <div className="catalog-browser" ref={catalogBrowserRef} data-catalog-index-status={indexStatus} onFocusCapture={loadCatalogIndex} onPointerDownCapture={loadCatalogIndex} onKeyDownCapture={loadCatalogIndex}>
     <form className="browser-panel" id="catalog-search" role="search" aria-label="Catalog search and filters" onSubmit={(event) => event.preventDefault()}>
       <div className="browser-panel-heading">
-        <div><p className="eyebrow">Find your next favorite</p><h3>Filter the atlas.</h3></div>
-        <div className="browser-panel-status"><span>{activeFilterCount ? `${activeFilterCount} active` : "All picks"}</span><button className="browser-button browser-button--clear" type="button" onClick={clearFilters}>Reset</button></div>
+        <div><p className="eyebrow">Find your next favorite</p><h3>Filter the atlas. <span className="browser-panel-count">{catalogReady ? filteredRecords.length : catalogEntryCount} games</span></h3></div>
+        <div className="browser-panel-status"><span>{activeFilterCount ? `${activeFilterCount} active` : "All picks"}</span>{activeFilterCount > 0 ? <button className="browser-button browser-button--clear" type="button" onClick={clearFilters}>Clear all</button> : null}</div>
       </div>
       <div className="browser-controls">
         <label className="browser-field browser-field--query" htmlFor="catalog-query"><span>Search games</span><span className="browser-input"><span className="field-icon" aria-hidden="true">⌕</span><input id="catalog-query" type="search" value={state.q} onChange={(event) => updateQuery(event.target.value)} placeholder="Title, person, platform, or keyword" /></span></label>
         <label className="browser-field" htmlFor="catalog-sort"><span>Sort by</span><select id="catalog-sort" value={state.sort ?? "relevance"} onChange={(event) => updateSort(event.target.value)}><option value="score" disabled>Score (licensed data only)</option>{CATALOG_SORT_OPTIONS.map((option) => <option value={option.value} key={option.value}>{option.label}</option>)}</select></label>
-        <label className="browser-field" htmlFor="catalog-year-from"><span>From first release</span><select id="catalog-year-from" value={yearFrom} onChange={(event) => updateYear("yearFrom", event.target.value)}><option value="">Any year</option>{yearOptions.map((year) => <option value={year} key={year}>{year}</option>)}</select></label>
-        <label className="browser-field" htmlFor="catalog-year-to"><span>To first release</span><select id="catalog-year-to" value={yearTo} onChange={(event) => updateYear("yearTo", event.target.value)}><option value="">Any year</option>{yearOptions.map((year) => <option value={year} key={year}>{year}</option>)}</select></label>
       </div>
       <div className="browser-facet-grid">
         <details className="browser-disclosure">
@@ -284,8 +282,10 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
           <summary>Genres <span>{genres.length ? `${genres.length} selected` : "All"}</span></summary>
           <fieldset className="browser-check-fieldset"><legend className="visually-hidden">Genres</legend><div className="browser-check-list">{genreOptions.map((option) => <label className="browser-check" key={option.id}><input type="checkbox" checked={genres.includes(option.id)} onChange={(event) => updateFacet("genre", option.id, event.target.checked)} /><span>{option.label}</span></label>)}</div></fieldset>
         </details>
+        <label className="browser-field browser-facet-field" htmlFor="catalog-year-from"><span>From first release</span><select id="catalog-year-from" value={yearFrom} onChange={(event) => updateYear("yearFrom", event.target.value)}><option value="">Any year</option>{yearOptions.map((year) => <option value={year} key={year}>{year}</option>)}</select></label>
+        <label className="browser-field browser-facet-field" htmlFor="catalog-year-to"><span>To first release</span><select id="catalog-year-to" value={yearTo} onChange={(event) => updateYear("yearTo", event.target.value)}><option value="">Any year</option>{yearOptions.map((year) => <option value={year} key={year}>{year}</option>)}</select></label>
         <details className="browser-disclosure browser-disclosure--advanced">
-          <summary>Advanced filters <span>{state.developer || state.publisher ? "Active" : "Optional"}</span></summary>
+          <summary>More filters <span>{state.developer || state.publisher ? "Active" : "Optional"}</span></summary>
           <div className="browser-advanced-fields">
             <label className="browser-field" htmlFor="catalog-developer"><span>Developer</span><select id="catalog-developer" value={state.developer ?? ""} onChange={(event) => updateAdvancedFilter("developer", event.target.value)}><option value="">All developers</option>{developerOptions.map((option) => <option value={option.id} key={option.id}>{option.label}</option>)}</select></label>
             <label className="browser-field" htmlFor="catalog-publisher"><span>Publisher</span><select id="catalog-publisher" value={state.publisher ?? ""} onChange={(event) => updateAdvancedFilter("publisher", event.target.value)}><option value="">All publishers</option>{publisherOptions.map((option) => <option value={option.id} key={option.id}>{option.label}</option>)}</select></label>
@@ -312,9 +312,9 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
         {state.developer ? <button type="button" className="filter-chip" aria-label={`Remove developer filter: ${developerLabel}`} onClick={() => updateAdvancedFilter("developer", "")}>Dev: {developerLabel} <span aria-hidden="true">×</span></button> : null}
         {state.publisher ? <button type="button" className="filter-chip" aria-label={`Remove publisher filter: ${publisherLabel}`} onClick={() => updateAdvancedFilter("publisher", "")}>Pub: {publisherLabel} <span aria-hidden="true">×</span></button> : null}
       </div> : null}
-      <div className="browser-panel-footer"><p>Updates apply instantly. Multiple platforms or genres broaden that facet. Years use each title&apos;s first documented release.</p></div>
+      <p className="visually-hidden">Updates apply instantly. Multiple platforms or genres broaden that facet. Years use each title&apos;s first documented release.</p>
     </form>
-    <div className="result-bar"><p className="result-summary" ref={resultSummaryRef} tabIndex={-1} aria-live="polite">{resultSummary}</p><div className="result-tools"><span className="result-detail">{activeSortLabel} · signals kept separate</span><label className="page-size-field" htmlFor="catalog-page-size"><span>Cards</span><select id="catalog-page-size" value={state.pageSize ?? DEFAULT_PAGE_SIZE} onChange={(event) => updatePageSize(event.target.value)}>{PAGE_SIZE_OPTIONS.map((size) => <option value={size} key={size}>{size} / page</option>)}</select></label></div></div>
+    <div className="result-bar"><p className="result-summary" ref={resultSummaryRef} tabIndex={-1} aria-live="polite">{resultSummary}</p><div className="result-tools"><span className="result-detail">Signals kept separate</span><label className="page-size-field" htmlFor="catalog-page-size"><span>Cards</span><select id="catalog-page-size" value={state.pageSize ?? DEFAULT_PAGE_SIZE} onChange={(event) => updatePageSize(event.target.value)}>{PAGE_SIZE_OPTIONS.map((size) => <option value={size} key={size}>{size} / page</option>)}</select></label></div></div>
     {indexStatus === "error" ? <p className="catalog-index-error" role="status">The full catalog index could not load. <a href={catalogIndexHref}>Browse every game instead.</a></p> : null}
     {filteredRecords.length > 0 ? <CatalogCards records={displayRecords} columns={state.columns} showResultPosition resultPositionOffset={resultPositionOffset} resultPositionTotal={resultPositionTotal} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, year, developer, or publisher.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
     {hydrated && catalogReady && page.pageCount > 1 ? <nav className="catalog-pagination" aria-label="Catalog pages"><button type="button" className="pagination-button" disabled={page.page === 1} onClick={() => updatePage(page.page - 1)}>Previous</button><div className="pagination-pages">{paginationItems.map((item) => item.type === "ellipsis" ? <span className="pagination-ellipsis" aria-hidden="true" key={`ellipsis-${item.before}-${item.after}`}>…</span> : <button type="button" className={`pagination-button${item.page === page.page ? " pagination-button--current" : ""}`} aria-current={item.page === page.page ? "page" : undefined} aria-label={`Go to page ${item.page}`} key={item.page} onClick={() => updatePage(item.page)}>{item.page}</button>)}</div><button type="button" className="pagination-button" disabled={page.page === page.pageCount} onClick={() => updatePage(page.page + 1)}>Next</button></nav> : null}

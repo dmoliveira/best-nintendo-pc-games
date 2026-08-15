@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { getCatalogSearchRecords } from "../lib/catalog/site-data";
-import { filterCatalog, getCatalogPaginationItems, normalizeSearchText, paginateCatalog, parseSearchState, serializeSearchState, type SearchStateOptions } from "../lib/catalog/search";
+import { clearCatalogFilters, filterCatalog, getCatalogPaginationItems, normalizeSearchText, paginateCatalog, parseSearchState, serializeSearchState, type SearchStateOptions } from "../lib/catalog/search";
 
 const records = getCatalogSearchRecords();
 const options: SearchStateOptions = {
@@ -115,4 +115,10 @@ test("round-trips the optional layout mode without treating it as a filter", () 
   const three = parseSearchState(new URLSearchParams("?columns=3"), options);
   assert.equal(three.columns, "3");
   assert.equal(filterCatalog(records, three).length, records.length);
+});
+
+test("clears filters without losing sort, page size, or layout preferences", () => {
+  assert.deepEqual(clearCatalogFilters({ q: "mario", platform: "nintendo-switch", genre: "action", year: "", columns: "3", yearFrom: "1990", yearTo: "2025", developer: "nintendo", publisher: "nintendo", sort: "newest", page: 4, pageSize: 48 }), {
+    q: "", platform: "", genre: "", year: "", columns: "3", yearFrom: "", yearTo: "", developer: "", publisher: "", sort: "newest", page: 1, pageSize: 48,
+  });
 });

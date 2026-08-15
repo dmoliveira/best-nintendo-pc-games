@@ -29,6 +29,11 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /onSubmit=\{\(event\) => event\.preventDefault\(\)\}/);
   assert.match(browser, /addEventListener\("popstate"/);
   assert.doesNotMatch(browser, /Update results/);
+  assert.match(browser, /browser-panel-count/);
+  assert.match(browser, /htmlFor="catalog-sort"/);
+  assert.match(browser, /browser-field browser-facet-field/);
+  assert.match(browser, /More filters/);
+  assert.doesNotMatch(browser, /activeSortLabel/);
   assert.match(browser, /Card layout/);
   assert.match(browser, /Single-column layout on smaller screens\./);
   assert.match(browser, /Automatic responsive card layout/);
@@ -80,6 +85,8 @@ test("visual shell protects focus, contrast, and reduced-motion behavior", () =>
   assert.match(styles, /@media \(max-width:800px\)[\s\S]*game-grid\{grid-template-columns:1fr\}/);
   assert.match(styles, /layout-options\{display:flex;gap:5px\}/);
   assert.match(styles, /layout-mobile-note/);
+  assert.match(styles, /browser-panel-count/);
+  assert.match(styles, /grid-template-columns: minmax\(0, 1fr\) minmax\(170px, \.28fr\)/);
   assert.match(styles, /game-card-title-link::before/);
   assert.match(styles, /\.tag-list a/);
   assert.match(styles, /forced-colors: active[\s\S]*layout-option--active/);

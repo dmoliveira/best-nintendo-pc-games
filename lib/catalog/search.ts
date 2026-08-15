@@ -225,6 +225,10 @@ export const EMPTY_SEARCH_STATE: CatalogSearchState = {
 };
 export const SEARCH_STATE_EVENT = "gameatlas:search-state";
 
+export function clearCatalogFilters(state: CatalogSearchState): CatalogSearchState {
+  return { ...EMPTY_SEARCH_STATE, sort: state.sort, pageSize: state.pageSize, columns: state.columns };
+}
+
 export function normalizeSearchText(value: string): string {
   return value
     .normalize("NFKD")
