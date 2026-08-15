@@ -38,8 +38,11 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /Card layout/);
   assert.match(browser, /Single-column layout on smaller screens\./);
   assert.match(browser, /Automatic responsive card layout/);
+  assert.match(browser, /Choose card images/);
+  assert.match(browser, /showImages=\{state\.images !== "hide"\}/);
+  assert.match(browser, /name="card-images" value="hide"/);
   assert.match(browser, /columns/);
-  assert.match(browser, /CatalogCards records={displayRecords} columns={state.columns} showResultPosition/);
+  assert.match(browser, /CatalogCards records={displayRecords} columns={state.columns} showImages=\{state\.images !== "hide"\} showResultPosition/);
   assert.match(browser, /resultPositionOffset/);
   assert.match(browser, /Score \(licensed data only\)/);
   assert.match(browser, /catalog-pagination/);
@@ -90,6 +93,8 @@ test("visual shell protects focus, contrast, and reduced-motion behavior", () =>
   assert.match(styles, /@media \(max-width:800px\)[\s\S]*game-grid\{grid-template-columns:1fr\}/);
   assert.match(styles, /layout-options\{display:flex;gap:5px\}/);
   assert.match(styles, /layout-mobile-note/);
+  assert.match(styles, /layout-control:not\(.layout-control--images\)/);
+  assert.match(styles, /game-grid--columns-1 \.game-card--no-image \.game-card-body/);
   assert.match(styles, /browser-panel-count/);
   assert.match(styles, /grid-template-columns: minmax\(0, 1fr\) minmax\(170px, \.28fr\)/);
   assert.match(styles, /game-card-title-link::before/);
