@@ -830,14 +830,14 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 12px;
   margin-bottom: 18px;
-  padding: 18px;
+  padding: 16px;
 }
 
 .browser-panel-heading {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .browser-panel-heading .eyebrow {
@@ -848,6 +848,16 @@ h1 {
   font-size: 1.18rem;
   letter-spacing: -0.045em;
   margin: 0;
+}
+
+.browser-panel-count {
+  color: var(--muted);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  font-size: .82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 6px;
+  white-space: nowrap;
 }
 
 .browser-panel-status {
@@ -865,14 +875,14 @@ h1 {
   align-items: end;
   display: grid;
   gap: 10px;
-  grid-template-columns: minmax(260px, 1.8fr) repeat(3, minmax(120px, 0.78fr)) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(170px, .28fr);
 }
 
 .browser-facet-grid {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 10px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 8px;
 }
 
 .browser-disclosure {
@@ -973,7 +983,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .filter-chip {
@@ -1003,7 +1013,7 @@ h1 {
   display: flex;
   gap: 14px;
   justify-content: space-between;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .browser-panel-footer p {
@@ -1120,7 +1130,7 @@ h1 {
   align-items: baseline;
   display: flex;
   justify-content: space-between;
-  margin: 0 1px 14px;
+  margin: 0 1px 12px;
 }
 
 .result-summary,
@@ -2142,16 +2152,11 @@ h1 {
   }
 
   .browser-controls {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr) minmax(170px, .34fr);
   }
 
   .browser-facet-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .browser-field--query,
-  .browser-actions {
-    grid-column: span 3;
   }
 
   .browser-actions {
@@ -2248,6 +2253,16 @@ h1 {
 }
 
 @media (max-width: 620px) {
+  .browser-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .browser-panel-count {
+    display: block;
+    margin-left: 0;
+    margin-top: 3px;
+  }
+
   h1 {
     font-size: clamp(3.45rem, 15vw, 5.4rem);
   }
@@ -2317,16 +2332,11 @@ h1 {
   }
 
   .browser-controls {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(150px, .46fr);
   }
 
   .browser-facet-grid {
     grid-template-columns: 1fr;
-  }
-
-  .browser-field--query,
-  .browser-actions {
-    grid-column: auto;
   }
 
   .browser-actions,
@@ -3073,5 +3083,11 @@ h1 {
   .filter-chip:focus {
     outline: 2px solid Highlight;
     outline-offset: 2px;
+  }
+}
+
+@media (max-width: 620px) {
+  .browser-controls {
+    grid-template-columns: 1fr;
   }
 }
