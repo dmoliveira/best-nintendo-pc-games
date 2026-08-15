@@ -13,6 +13,7 @@ const LOCAL_REQUEST_TIMEOUT_MS = 10_000;
 const PROCESS_SHUTDOWN_TIMEOUT_MS = 5_000;
 const BROWSER_START_TIMEOUT_MS = 30_000;
 const PROFILE_CLEANUP_RETRIES = 20;
+const POINTER_EVENT_SETTLE_MS = 50;
 
 function fail(message) {
   throw new Error(`Box-art browser validation failed: ${message}`);
@@ -231,6 +232,7 @@ async function press(client, key, code, keyCode) {
 
 async function drag(client, { startX, endX, y }) {
   await client.send("Input.dispatchMouseEvent", { type: "mousePressed", x: startX, y, button: "left", buttons: 1, clickCount: 1 });
+  await new Promise((resolve) => setTimeout(resolve, POINTER_EVENT_SETTLE_MS));
   await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: (startX + endX) / 2, y, button: "left", buttons: 1 });
   await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: endX, y, button: "left", buttons: 1 });
 }
