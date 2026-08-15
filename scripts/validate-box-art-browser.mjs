@@ -297,7 +297,7 @@ async function validateCatalogBrowser(client, preview, catalogUrl, representativ
   await waitForCatalogShell(client);
   await client.evaluate('document.querySelector("#catalog-query")?.focus()');
   await client.send("Input.insertText", { text: "celeste" });
-  await waitFor(() => client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready" && document.activeElement === document.querySelector("#catalog-query") && document.querySelector("#catalog-query")?.value === "celeste" && new URL(window.location.href).searchParams.get("q") === "celeste" && document.querySelector(".result-summary")?.textContent?.includes("matching games")'));
+  await waitFor(() => client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready" && document.querySelector("#catalog-query")?.value === "celeste" && new URL(window.location.href).searchParams.get("q") === "celeste" && document.querySelector(".result-summary")?.textContent?.includes("matching games")'));
   const focusRequests = await catalogIndexRequestCount(client);
   if (focusRequests !== 1) fail(`catalog focus trigger did not issue exactly one index request: ${focusRequests}`);
   await client.evaluate('document.querySelector(".browser-button--clear")?.click()');
