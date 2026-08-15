@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import CatalogCards from "./catalog-cards";
 import {
   CATALOG_SORT_OPTIONS,
@@ -90,6 +90,7 @@ export default function CatalogBrowser({ records }: CatalogBrowserProps) {
   }), [developerOptions, genreOptions, platformOptions, publisherOptions, yearOptions]);
   const [state, setState] = useState<CatalogSearchState>(EMPTY_SEARCH_STATE);
   const hydrated = useSyncExternalStore(subscribeToHydration, getHydratedSnapshot, getServerHydratedSnapshot);
+  const resultSummaryRef = useRef<HTMLParagraphElement>(null);
   const filteredRecords = useMemo(() => filterCatalog(records, state), [records, state]);
   const page = useMemo(() => paginateCatalog(filteredRecords, state.page, state.pageSize), [filteredRecords, state.page, state.pageSize]);
   const platforms = selectedValues(state.platform);
@@ -160,6 +161,12 @@ export default function CatalogBrowser({ records }: CatalogBrowserProps) {
     const nextState = { ...state, page: nextPage };
     setState(nextState);
     syncUrl(nextState, "push");
+    window.requestAnimationFrame(() => {
+      const summary = resultSummaryRef.current;
+      if (!summary) return;
+      summary.focus({ preventScroll: true });
+      summary.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    });
   }
 
   function updateColumns(columns: CatalogColumns) {
@@ -222,7 +229,7 @@ export default function CatalogBrowser({ records }: CatalogBrowserProps) {
       {activeFilterCount > 0 ? <div className="browser-filter-summary" aria-label="Active filters">{state.q ? <button type="button" className="filter-chip" onClick={() => updateQuery("")}>Search: {state.q} <span aria-hidden="true">×</span></button> : null}{platformOptions.filter((option) => platforms.includes(option.id)).map((option) => <button type="button" className="filter-chip" key={`platform-${option.id}`} onClick={() => updateFacet("platform", option.id, false)}>{option.label} <span aria-hidden="true">×</span></button>)}{genreOptions.filter((option) => genres.includes(option.id)).map((option) => <button type="button" className="filter-chip" key={`genre-${option.id}`} onClick={() => updateFacet("genre", option.id, false)}>{option.label} <span aria-hidden="true">×</span></button>)}{yearFrom || yearTo ? <button type="button" className="filter-chip" onClick={() => updateState({ year: "", yearFrom: "", yearTo: "" })}>Years: {yearFrom || "Any"}–{yearTo || "Any"} <span aria-hidden="true">×</span></button> : null}{state.developer ? <button type="button" className="filter-chip" onClick={() => updateAdvancedFilter("developer", "")}>Dev: {developerOptions.find((option) => option.id === state.developer)?.label ?? state.developer} <span aria-hidden="true">×</span></button> : null}{state.publisher ? <button type="button" className="filter-chip" onClick={() => updateAdvancedFilter("publisher", "")}>Pub: {publisherOptions.find((option) => option.id === state.publisher)?.label ?? state.publisher} <span aria-hidden="true">×</span></button> : null}</div> : null}
       <div className="browser-panel-footer"><p>Filters combine across facets. Multiple platforms or genres broaden that facet.</p><button className="browser-button" type="submit">Update results <span aria-hidden="true">↗</span></button></div>
     </form>
-    <div className="result-bar"><p className="result-summary" aria-live="polite">{resultSummary}</p><div className="result-tools"><span className="result-detail">{activeSortLabel} · signals kept separate</span><label className="page-size-field" htmlFor="catalog-page-size"><span>Cards</span><select id="catalog-page-size" value={state.pageSize ?? DEFAULT_PAGE_SIZE} onChange={(event) => updatePageSize(event.target.value)}>{PAGE_SIZE_OPTIONS.map((size) => <option value={size} key={size}>{size} / page</option>)}</select></label></div></div>
+    <div className="result-bar"><p className="result-summary" ref={resultSummaryRef} tabIndex={-1} aria-live="polite">{resultSummary}</p><div className="result-tools"><span className="result-detail">{activeSortLabel} · signals kept separate</span><label className="page-size-field" htmlFor="catalog-page-size"><span>Cards</span><select id="catalog-page-size" value={state.pageSize ?? DEFAULT_PAGE_SIZE} onChange={(event) => updatePageSize(event.target.value)}>{PAGE_SIZE_OPTIONS.map((size) => <option value={size} key={size}>{size} / page</option>)}</select></label></div></div>
     {filteredRecords.length > 0 ? <CatalogCards records={displayRecords} columns={state.columns} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, year, developer, or publisher.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
     {hydrated && page.pageCount > 1 ? <nav className="catalog-pagination" aria-label="Catalog pages"><button type="button" className="pagination-button" disabled={page.page === 1} onClick={() => updatePage(page.page - 1)}>Previous</button><div className="pagination-pages">{Array.from({ length: page.pageCount }, (_, index) => index + 1).map((pageNumber) => <button type="button" className={`pagination-button${pageNumber === page.page ? " pagination-button--current" : ""}`} aria-current={pageNumber === page.page ? "page" : undefined} aria-label={`Go to page ${pageNumber}`} key={pageNumber} onClick={() => updatePage(pageNumber)}>{pageNumber}</button>)}</div><button type="button" className="pagination-button" disabled={page.page === page.pageCount} onClick={() => updatePage(page.page + 1)}>Next</button></nav> : null}
   </div>;
