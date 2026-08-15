@@ -15,7 +15,7 @@ function checkNoRawEvidence(html, location) { for (const field of forbiddenEvide
 if (!fs.existsSync(outDir)) { fail(`missing output directory ${outDir}`); process.exit(1); }
 for (const file of requiredFiles) if (!fs.existsSync(path.join(outDir, file))) fail(`missing ${file}`);
 const html = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
-for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth your time.", "Start with a game.", "Search games", "Showing", "GameAtlas pick", "platform-glyph", "data-platform-accent", "data-attribute-glyph", "Critic score", "Card layout", "game-card-topline-platforms", "Current result position"]) if (!html.includes(expected)) fail(`home page does not contain ${JSON.stringify(expected)}`);
+for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth your time.", "Start with a game.", "Search games", "Showing", "GameAtlas pick", "platform-glyph", "data-platform-accent", "data-attribute-glyph", "Critic score", "Card layout", "Single-column layout on smaller screens.", "game-card-title-link", "Current result position"]) if (!html.includes(expected)) fail(`home page does not contain ${JSON.stringify(expected)}`);
 if (!/<svg[^>]+aria-hidden="true"[^>]+focusable="false"/.test(html)) fail("home page is missing decorative, non-focusable catalog glyph semantics");
 if (!/Showing[\s\S]{0,120}of[\s\S]{0,120}reviewed games/.test(html)) fail("home page is missing the accessible result count");
 if (!html.includes("docs/rights-and-support-policy")) fail("home page is missing the policy link");
@@ -28,6 +28,9 @@ if (expectedBasePath && !sitemap.includes(expectedBasePath)) fail(`sitemap does 
 const gamesDir = path.join(rootDir, "data/games");
 const gameFiles = fs.existsSync(gamesDir) ? fs.readdirSync(gamesDir).filter((file) => file.endsWith(".json")).sort() : [];
 const gameRecords = gameFiles.map((file) => JSON.parse(fs.readFileSync(path.join(gamesDir, file), "utf8")));
+const detailLinkCounts = new Map();
+for (const match of html.matchAll(/<a[^>]+href="[^"]*\/games\/([^/"?]+)\/[^"]*"/g)) detailLinkCounts.set(match[1], (detailLinkCounts.get(match[1]) ?? 0) + 1);
+for (const game of gameRecords) if (detailLinkCounts.get(game.slug) !== 1) fail(`home page must expose exactly one primary detail link for ${game.slug}, found ${detailLinkCounts.get(game.slug) ?? 0}`);
 const assetManifest = JSON.parse(fs.readFileSync(path.join(rootDir, "data/assets-manifest.json"), "utf8"));
 const assetById = new Map((assetManifest.assets ?? []).map((asset) => [asset.assetId, asset]));
 const usedPlatformIds = new Set(gameRecords.flatMap((game) => game.platforms ?? []));

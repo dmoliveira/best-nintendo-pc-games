@@ -74,6 +74,31 @@ test("keeps digital presentation flat and fails closed for unsupported platform 
   assert.throws(() => createPackagePresentation({ title: "Ambiguous", platformIds: ["nintendo-switch", "pc-windows"], platformLabel: "Ambiguous" }), /exactly one platform/);
 });
 
+test("keeps every platform profile inside viewer and thumbnail safety bounds", () => {
+  for (const [platformId, profile] of Object.entries(PLATFORM_PACKAGE_PROFILES)) {
+    const presentation = createPackagePresentation({
+      title: platformId,
+      platformIds: [platformId],
+      platformLabel: platformId,
+      releaseFormat: profile.kind === "digital" ? "digital" : undefined,
+    });
+    assert.ok(Number.isInteger(presentation.viewer.widthPx) && presentation.viewer.widthPx > 0 && presentation.viewer.widthPx <= 282, `${platformId}: width`);
+    assert.ok(Number.isInteger(presentation.viewer.heightPx) && presentation.viewer.heightPx > 0 && presentation.viewer.heightPx <= 296, `${platformId}: height`);
+    assert.ok(Number.isFinite(presentation.thumbnail.aspectRatio) && presentation.thumbnail.aspectRatio > 0, `${platformId}: aspect ratio`);
+    if (profile.kind === "physical") {
+      assert.ok(presentation.viewer.depthPx >= 8 && presentation.viewer.depthPx <= 46, `${platformId}: physical depth`);
+      assert.equal(presentation.viewer.restAngle, -24, `${platformId}: rest angle`);
+      assert.equal(presentation.viewer.canRotate, true, `${platformId}: rotation`);
+      assert.ok(presentation.thumbnail.depthRatio > 0, `${platformId}: thumbnail depth`);
+    } else {
+      assert.equal(presentation.viewer.depthPx, 0, `${platformId}: digital depth`);
+      assert.equal(presentation.viewer.restAngle, 0, `${platformId}: digital rest angle`);
+      assert.equal(presentation.viewer.canRotate, false, `${platformId}: digital rotation`);
+      assert.equal(presentation.thumbnail.depthRatio, 0, `${platformId}: digital thumbnail depth`);
+    }
+  }
+});
+
 test("resolves every current catalog game to one explicit package profile", () => {
   const games = fs.readdirSync(path.join(root, "data/games")).filter((file) => file.endsWith(".json"));
   assert.ok(games.length > 0);

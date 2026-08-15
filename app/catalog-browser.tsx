@@ -20,11 +20,11 @@ import {
   type SearchStateOptions,
 } from "@/lib/catalog/search";
 
-const layoutOptions: Array<{ value: CatalogColumns; label: string; description: string }> = [
-  { value: "auto", label: "Auto", description: "Responsive" },
-  { value: "1", label: "1", description: "Focus" },
-  { value: "2", label: "2", description: "Balanced" },
-  { value: "3", label: "3", description: "Dense" },
+const layoutOptions: Array<{ value: CatalogColumns; label: string; description: string; accessibleLabel: string }> = [
+  { value: "auto", label: "Auto", description: "Responsive", accessibleLabel: "Automatic responsive card layout" },
+  { value: "1", label: "1", description: "Focus", accessibleLabel: "One-column card layout" },
+  { value: "2", label: "2", description: "Balanced", accessibleLabel: "Two-column card layout" },
+  { value: "3", label: "3", description: "Dense", accessibleLabel: "Three-column card layout" },
 ];
 
 interface CatalogBrowserProps {
@@ -221,11 +221,12 @@ export default function CatalogBrowser({ records }: CatalogBrowserProps) {
           <legend>Card layout</legend>
           <div className="layout-options" role="radiogroup" aria-label="Choose card columns">
             {layoutOptions.map((option) => <label className={`layout-option${state.columns === option.value ? " layout-option--active" : ""}`} key={option.value}>
-              <input type="radio" name="card-columns" value={option.value} checked={state.columns === option.value} onChange={() => updateColumns(option.value)} />
+              <input type="radio" name="card-columns" value={option.value} aria-label={option.accessibleLabel} checked={state.columns === option.value} onChange={() => updateColumns(option.value)} />
               <span className="layout-option-copy"><strong>{option.label}</strong><small>{option.description}</small></span>
             </label>)}
           </div>
         </fieldset>
+        <p className="layout-mobile-note">Single-column layout on smaller screens.</p>
       </div>
       {activeFilterCount > 0 ? <div className="browser-filter-summary" aria-label="Active filters">{state.q ? <button type="button" className="filter-chip" onClick={() => updateQuery("")}>Search: {state.q} <span aria-hidden="true">×</span></button> : null}{platformOptions.filter((option) => platforms.includes(option.id)).map((option) => <button type="button" className="filter-chip" key={`platform-${option.id}`} onClick={() => updateFacet("platform", option.id, false)}>{option.label} <span aria-hidden="true">×</span></button>)}{genreOptions.filter((option) => genres.includes(option.id)).map((option) => <button type="button" className="filter-chip" key={`genre-${option.id}`} onClick={() => updateFacet("genre", option.id, false)}>{option.label} <span aria-hidden="true">×</span></button>)}{yearFrom || yearTo ? <button type="button" className="filter-chip" onClick={() => updateState({ year: "", yearFrom: "", yearTo: "" })}>Years: {yearFrom || "Any"}–{yearTo || "Any"} <span aria-hidden="true">×</span></button> : null}{state.developer ? <button type="button" className="filter-chip" onClick={() => updateAdvancedFilter("developer", "")}>Dev: {developerOptions.find((option) => option.id === state.developer)?.label ?? state.developer} <span aria-hidden="true">×</span></button> : null}{state.publisher ? <button type="button" className="filter-chip" onClick={() => updateAdvancedFilter("publisher", "")}>Pub: {publisherOptions.find((option) => option.id === state.publisher)?.label ?? state.publisher} <span aria-hidden="true">×</span></button> : null}</div> : null}
       <div className="browser-panel-footer"><p>Updates apply instantly. Multiple platforms or genres broaden that facet.</p></div>

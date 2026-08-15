@@ -46,3 +46,21 @@ this glyph system: a raster grid would download unused cells, cannot safely
 provide individual responsive meaning, and creates extra provenance/review
 work. Use the governed box-art workflow only for an approved, text-free,
 abstract editorial image where a raster focal image adds value.
+
+## Interaction and accessibility contract
+
+- A card has one keyboard and screen-reader route to its game: the title link.
+  The card’s artwork and footer remain part of the same pointer target without
+  creating duplicate tab stops. Platform, genre, and external-evidence links
+  remain independent controls above that primary target.
+- Platform markers are a real list. If a card abbreviates its visible platforms,
+  it says `+N platforms` and keeps the omitted names in visually hidden text.
+  Genre overflow follows the same rule with `+N more genres` and the omitted
+  genre names available to assistive technology.
+- Density choices are available on desktop. Small screens use a deliberate
+  single-column layout and state that fact instead of showing controls whose
+  choices would have no visual effect. A selected URL density is preserved for
+  the next desktop viewport.
+- Reduced-motion and forced-colors checks are part of the browser gate. Active
+  layout and current-page states require text/semantic state plus a visible
+  outline, never author colour alone.
