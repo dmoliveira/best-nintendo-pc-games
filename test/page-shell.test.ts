@@ -39,6 +39,9 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /htmlFor="catalog-sort"/);
   assert.match(browser, /browser-field browser-facet-field/);
   assert.match(browser, /More filters/);
+  assert.match(browser, /browser-facet-search/);
+  assert.match(browser, /visiblePlatformOptions/);
+  assert.match(browser, /visibleGenreOptions/);
   assert.doesNotMatch(browser, /activeSortLabel/);
   assert.match(browser, /Display/);
   assert.match(browser, /display-disclosure/);
