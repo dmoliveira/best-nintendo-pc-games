@@ -5,8 +5,9 @@ import { createSiteConfig } from "../site-config";
 import { getPlatformDisplayLabel } from "./display";
 import { getPublicSignalSummaries, type PublicSignalSummaries } from "./public-signals";
 import { normalizeSearchText, type CatalogSearchRecord } from "./search";
-import { selectEditorialAsset } from "../box-art/asset-roles.mjs";
+import { selectApprovedBoxFrontAsset, selectEditorialAsset } from "../box-art/asset-roles.mjs";
 import { BOX_ART_FORMAT_IDS } from "../box-art/formats";
+import { createPackagePresentation } from "../box-art/package-engine";
 import { validateGameRecord } from "./validator";
 import type {
   CatalogContext,
@@ -186,6 +187,11 @@ export function getPublicGameSignals(game: GameRecord): PublicSignalSummaries {
   return getPublicSignalSummaries(game, context);
 }
 
+export function getGameBoxFront(game: GameRecord) {
+  return selectApprovedBoxFrontAsset(game.assets, context.assetById);
+}
+}
+
 export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame): CatalogSearchRecord {
   const evidenceKinds = [...new Set(game.signals.map((signal) => signal.kind))];
   const evidenceLabels = evidenceKinds.map((kind) => kind === "editorial" ? "GameAtlas editorial" : kind);
@@ -204,13 +210,29 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
     ...genres.map((genre) => genre.name),
   ].filter((value): value is string => Boolean(value)).join(" "));
   const catalogArt = getGameEditorialArt(game);
+  const catalogArtPath = catalogArt ? site.publicUrl(catalogArt.path.replace(/^public\//, "")) : undefined;
+  const packagePresentation = createPackagePresentation({
+    title: game.title,
+    platformIds: game.platforms,
+    platformLabel: platforms.map((platform) => getPlatformDisplayLabel(platform)).join(" · "),
+    releaseFormat: game.releaseFormat,
+    editorialThumbnail: catalogArtPath && catalogArt?.alt ? { src: catalogArtPath, alt: catalogArt.alt } : undefined,
+  });
   return {
     slug: game.slug,
     title: game.title,
     aliases: [...game.aliases],
     emoji: game.emoji,
-    artPath: catalogArt ? site.publicUrl(catalogArt.path.replace(/^public\//, "")) : undefined,
+    artPath: catalogArtPath,
     artAlt: catalogArt?.alt,
+    packageThumbnail: {
+      formatId: packagePresentation.formatId,
+      kind: packagePresentation.formatKind,
+      aspectRatio: packagePresentation.thumbnail.aspectRatio,
+      depthRatio: packagePresentation.thumbnail.depthRatio,
+      frontPath: packagePresentation.thumbnail.frontSrc,
+      frontAlt: packagePresentation.thumbnail.frontAlt,
+    },
     developer: game.developer,
     publisher: game.publisher,
     editorialLabel,

@@ -42,10 +42,31 @@ function hasConditionalValue(record, field) {
   if (field === "pixelWidth" || field === "pixelHeight") return Number.isInteger(record[field]) && record[field] > 0;
   return nonEmpty(record[field]);
 }
+function validGeometryDimensions(value, kind) {
+  return Boolean(
+    value
+    && Number.isFinite(value.width)
+    && Number.isFinite(value.height)
+    && Number.isFinite(value.depth)
+    && value.width > 0
+    && value.height > 0
+    && (kind === "physical" ? value.depth > 0 : value.depth === 0),
+  );
+}
+
 function validateBoxArtFormats() {
-  if (boxArtFormats.schemaVersion !== 1 || !nonEmpty(boxArtFormats.policy) || !Array.isArray(boxArtFormats.formats) || !boxArtFormats.formats.length || !boxArtFormats.platformFormatMap || typeof boxArtFormats.platformFormatMap !== "object" || Array.isArray(boxArtFormats.platformFormatMap)) {
-    fail("data/box-art-formats.json: requires schemaVersion 1, policy, formats, and platformFormatMap");
+  if (boxArtFormats.schemaVersion !== 2 || !nonEmpty(boxArtFormats.policy) || !nonEmpty(boxArtFormats.geometryPolicy) || !Array.isArray(boxArtFormats.geometrySources) || !boxArtFormats.geometrySources.length || !Array.isArray(boxArtFormats.formats) || !boxArtFormats.formats.length || !boxArtFormats.platformFormatMap || typeof boxArtFormats.platformFormatMap !== "object" || Array.isArray(boxArtFormats.platformFormatMap) || !boxArtFormats.platformPackageProfiles || typeof boxArtFormats.platformPackageProfiles !== "object" || Array.isArray(boxArtFormats.platformPackageProfiles)) {
+    fail("data/box-art-formats.json: requires schemaVersion 2, policy, geometry provenance, formats, mappings, and package profiles");
     return;
+  }
+  const sourceById = new Map();
+  for (const [index, source] of boxArtFormats.geometrySources.entries()) {
+    const label = `data/box-art-formats.json.geometrySources[${index}]`;
+    if (!source || !nonEmpty(source.id) || sourceById.has(source.id) || !nonEmpty(source.title) || (source.sourceUrl !== null && !isValidHttpsUrl(source.sourceUrl)) || !parseCalendarKey(source.accessedAt) || !nonEmpty(source.method)) {
+      fail(`${label}: requires unique id, title, nullable HTTPS source URL, date, and method`);
+      continue;
+    }
+    sourceById.set(source.id, source);
   }
   for (const [index, format] of boxArtFormats.formats.entries()) {
     const label = `data/box-art-formats.json.formats[${index}]`;
@@ -53,13 +74,26 @@ function validateBoxArtFormats() {
       fail(`${label}: requires a unique non-empty id`);
       continue;
     }
-    if (!nonEmpty(format.label) || !["physical", "digital"].includes(format.kind) || !format.dimensions || !Number.isFinite(format.dimensions.width) || !Number.isFinite(format.dimensions.height) || !Number.isFinite(format.dimensions.depth) || format.dimensions.width <= 0 || format.dimensions.height <= 0 || format.dimensions.depth < 0 || !format.image || !Number.isInteger(format.image.width) || !Number.isInteger(format.image.height) || format.image.width < 1 || format.image.height < 1) {
+    if (!nonEmpty(format.label) || !["physical", "digital"].includes(format.kind) || !validGeometryDimensions(format.dimensions, format.kind) || !format.image || !Number.isInteger(format.image.width) || !Number.isInteger(format.image.height) || format.image.width < 1 || format.image.height < 1) {
       fail(`${label}: has invalid label, kind, dimensions, or image dimensions`);
       continue;
     }
     boxFormatById.set(format.id, format);
   }
+  const mappedPlatformIds = new Set(Object.keys(boxArtFormats.platformFormatMap));
   for (const [platformId, formatId] of Object.entries(boxArtFormats.platformFormatMap)) if (!nonEmpty(platformId) || !nonEmpty(formatId) || !boxFormatById.has(formatId)) fail(`data/box-art-formats.json.platformFormatMap.${platformId}: must reference a declared format`);
+  const profileIds = new Set();
+  for (const platformId of mappedPlatformIds) if (!(platformId in boxArtFormats.platformPackageProfiles)) fail(`data/box-art-formats.json.platformPackageProfiles.${platformId}: missing profile`);
+  for (const [platformId, profile] of Object.entries(boxArtFormats.platformPackageProfiles)) {
+    const label = `data/box-art-formats.json.platformPackageProfiles.${platformId}`;
+    const format = boxFormatById.get(profile?.formatId);
+    if (!mappedPlatformIds.has(platformId) || !profile || !nonEmpty(profile.id) || profileIds.has(profile.id) || !format || profile.formatId !== boxArtFormats.platformFormatMap[platformId] || !["physical", "digital"].includes(profile.kind) || !validGeometryDimensions(profile.dimensions, profile.kind) || profile.kind !== format.kind || !nonEmpty(profile.category) || !["cardboard", "digital", "plastic-case", "plastic-clamshell"].includes(profile.material) || !["left", "none"].includes(profile.openingSide) || (profile.kind === "physical" && profile.openingSide !== "left") || (profile.kind === "digital" && profile.openingSide !== "none") || !sourceById.has(profile.sourceId) || !["official-platform-exception", "representative-estimate", "retailer-reference", "supplier-reference"].includes(profile.basis) || !["low", "medium", "high"].includes(profile.confidence) || !nonEmpty(profile.scope) || !nonEmpty(profile.caveat)) {
+      fail(`${label}: has invalid format, geometry, material, provenance, or presentation fields`);
+      continue;
+    }
+    if (profile.basis !== "representative-estimate" && !sourceById.get(profile.sourceId).sourceUrl) fail(`${label}: non-estimate geometry requires a source URL`);
+    profileIds.add(profile.id);
+  }
 }
 
 validateBoxArtFormats();

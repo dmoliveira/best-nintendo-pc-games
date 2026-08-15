@@ -13,7 +13,7 @@ const asset = {
   role: "box-front",
   boxFormatId: "cartridge-portrait",
 };
-const manifest = { assetId: asset.provenanceId, path: asset.path };
+const manifest = { assetId: asset.provenanceId, path: asset.path, altText: asset.alt, assetKind: "generated-game-box-front", intendedUse: "game-box-front", boxFormatId: asset.boxFormatId };
 
 test("accepts a box-only page without requiring separate scene art", () => {
   const outDir = fs.mkdtempSync(path.join(os.tmpdir(), "gameatlas-export-"));
@@ -33,4 +33,10 @@ test("requires separate scene art only when a non-box asset exists", () => {
   const generic = { path: "public/assets/games/sample-game.svg", alt: "Abstract editorial tile", provenanceId: "tile" };
   const failures = validateGameArtExport({ game: { assets: [asset, generic] }, gameHtml: `<img src="${basePath}/assets/games/sample-game/front-cartridge-portrait.png">`, outDir: os.tmpdir(), assetById: new Map([[asset.provenanceId, manifest]]), expectedBasePath: basePath });
   assert.ok(failures.some((failure) => failure.includes("not an approved editorial game-card thumbnail")));
+});
+
+
+test("rejects a role-only package face without governed manifest metadata", () => {
+  const failures = validateGameArtExport({ game: { assets: [asset] }, gameHtml: `<img src="${basePath}/assets/games/sample-game/front-cartridge-portrait.png">`, outDir: os.tmpdir(), assetById: new Map([[asset.provenanceId, { assetId: asset.provenanceId, path: asset.path }]]), expectedBasePath: basePath });
+  assert.ok(failures.some((failure) => failure.includes("not an approved generated game-box-front")));
 });

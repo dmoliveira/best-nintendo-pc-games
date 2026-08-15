@@ -19,6 +19,16 @@ export interface CatalogSalesSummary {
   url: string;
 }
 
+export interface CatalogPackageThumbnail {
+  formatId: string;
+  kind: "digital" | "physical";
+  aspectRatio: number;
+  depthRatio: number;
+  frontPath?: string;
+  frontAlt?: string;
+}
+}
+
 export type CatalogColumns = "auto" | "1" | "2" | "3";
 
 export interface CatalogSearchRecord {
@@ -28,6 +38,7 @@ export interface CatalogSearchRecord {
   emoji: string;
   artPath?: string;
   artAlt?: string;
+  packageThumbnail: CatalogPackageThumbnail;
   developer?: string;
   publisher?: string;
   editorialLabel?: string;
