@@ -148,7 +148,7 @@ function hasNoDuplicateValues(values: readonly string[]): boolean {
 
 function isSafeCatalogArtPath(value: unknown, catalogIndexUrl: string): value is string | undefined {
   if (value === undefined) return true;
-  if (!isNonEmptyString(value, 2048)) return false;
+  if (!isNonEmptyString(value, 2048) || !value.startsWith("/") || value.startsWith("//") || value.includes("\\")) return false;
   try {
     const indexUrl = new URL(catalogIndexUrl, "https://gameatlas.invalid");
     const assetUrl = new URL(value, indexUrl);

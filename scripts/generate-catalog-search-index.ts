@@ -4,7 +4,6 @@ import { serializeCatalogSearchIndex } from "../lib/catalog/search-index";
 import { getCatalogSearchRecords } from "../lib/catalog/site-data";
 
 const root = process.cwd();
-const targetPath = path.join(root, "public/catalog-search-index.json");
 const records = getCatalogSearchRecords();
 const expectedCount = 1000;
 
@@ -12,9 +11,12 @@ if (records.length !== expectedCount) throw new Error(`Catalog search index requ
 const expected = serializeCatalogSearchIndex(records);
 const check = process.argv.includes("--check");
 const write = process.argv.includes("--write");
+const outputArgumentIndex = process.argv.indexOf("--output");
+const output = outputArgumentIndex === -1 ? undefined : process.argv[outputArgumentIndex + 1];
+const targetPath = path.resolve(root, output ?? "public/catalog-search-index.json");
 
-if ((check && write) || (!check && !write)) {
-  console.error("Usage: tsx scripts/generate-catalog-search-index.ts --check|--write");
+if ((check && write) || (!check && !write) || (outputArgumentIndex !== -1 && (!output || output.startsWith("--")))) {
+  console.error("Usage: tsx scripts/generate-catalog-search-index.ts --check|--write [--output path]");
   process.exit(1);
 }
 

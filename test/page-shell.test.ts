@@ -87,6 +87,9 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(page, /map\(\(record\) => toCatalogCardRecord\(record, !initialSourceListed\)\)/);
   assert.match(page, /catalogIndexDigest=/);
   assert.match(page, /catalogIndexUrl=/);
+  assert.match(page, /const catalogIndexUrl = `\$\{site\.assetPath\("catalog-search-index\.json"\)\}\?v=/);
+  assert.match(page, /catalogIndexHref=\{site\.assetPath\("catalog\/"\)\}/);
+  assert.doesNotMatch(page, /site\.publicUrl\("catalog-search-index\.json"\)/);
   assert.match(browser, /fetch\(catalogIndexUrl, \{ signal: controller\.signal \}\)/);
   assert.match(browser, /indexRequestRef\.current = null;[\s\S]*indexStatusRef\.current = "error";[\s\S]*setIndexStatus\("error"\)/);
   assert.match(browser, /indexStatusRef\.current === "error" && !force/);
@@ -141,6 +144,7 @@ test("visual shell protects focus, contrast, and reduced-motion behavior", () =>
   assert.match(styles, /display-disclosure/);
   assert.match(styles, /display-panel/);
   assert.match(styles, /layout-control:not\(.layout-control--images\)/);
+  assert.match(styles, /\.display-panel \.layout-control:not\(\.layout-control--images\)\{display:none\}/);
   assert.match(styles, /game-grid--columns-1 \.game-card--no-image \.game-card-body/);
   assert.match(styles, /browser-panel-count/);
   assert.match(styles, /grid-template-columns: minmax\(0, 1fr\) minmax\(170px, \.28fr\)/);
