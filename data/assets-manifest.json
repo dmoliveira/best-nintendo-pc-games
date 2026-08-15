@@ -1917,6 +1917,30 @@
       "promptOrGenerationBrief": "Original abstract atlas tile generated deterministically from a catalog identifier and a generic geometric palette; exclude titles, logos, characters, screenshots, packaging, and franchise-specific visual motifs.",
       "modelOrTool": "GameAtlas deterministic SVG generator",
       "outputOrAssetId": "gameatlas-art-factorio"
+    },
+    {
+      "assetId": "game-celeste-box-front-pc-big-box",
+      "path": "public/assets/games/celeste/front-pc-big-box.png",
+      "assetKind": "generated-game-box-front",
+      "creatorOrSource": "Generated with codex-image 0.1.0 (codex provider)",
+      "licenseOrPermissionUrl": "https://openai.com/policies/terms-of-use/",
+      "providerTermsEffectiveDate": "2026-01-01",
+      "attribution": "AI-generated with OpenAI Codex Image for GameAtlas",
+      "aiGeneratedDisclosure": "AI-generated with OpenAI Codex Image; reviewed before publication.",
+      "generatedOrAcquiredAt": "2026-08-15",
+      "intendedUse": "game-box-front",
+      "altText": "AI-generated GameAtlas editorial front artwork for Celeste in the PC big-box edition interactive package view.",
+      "reviewedBy": "OpenAI Orchestrator automated image review",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": null,
+      "promptOrGenerationBrief": "Create one original abstract editorial key-art illustration for a GameAtlas game catalog. Art direction: Original abstract mountain contours, luminous ascent lines, faceted stone, and calm atmospheric gradients; no text, logos, branded motifs, characters, screenshots, official-cover composition, packaging trade dress, copied style, or artist imitation.. Composition: fit the pc big-box edition 1024x1536 canvas with a strong central silhouette and clean edge space for local HTML labels. Do not include text, letters, numbers, logos, publisher marks, platform marks, characters from existing franchises, screenshots, product packaging, copied compositions, or any recreation of an existing game cover. Do not imitate a living artist or an existing game's visual style. Make the art distinctly original, editorial, and non-branded.",
+      "modelOrTool": "codex-image 0.1.0 (codex provider)",
+      "outputOrAssetId": "sha256:e16dfaab3f264fd2e4879127d803653058825b8f10f087809913344c11744adf",
+      "contentChecksum": "sha256:e16dfaab3f264fd2e4879127d803653058825b8f10f087809913344c11744adf",
+      "boxFormatId": "pc-big-box",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536,
+      "approvalNote": "I reviewed this exact asset and confirm it contains no recreated official box art, no logos, no characters, and no screenshots."
     }
   ]
 }

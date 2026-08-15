@@ -40,12 +40,15 @@ test("taxonomy hub inventories include only referenced populated entries", () =>
 });
 
 
-test("keeps external rating references link-only and manifest-backed art present", () => {
+test("keeps external rating references link-only and manifest-backed card art present", () => {
   const games = getCatalogGames();
   const ratingLinks = games.flatMap(({ game }) => game.links.filter((link) => link.label === "External/reference — Metacritic"));
   assert.ok(ratingLinks.length >= 32);
   assert.ok(ratingLinks.every((link) => link.kind === "critical" && link.url.startsWith("https://www.metacritic.com/game/")));
-  assert.ok(games.every(({ game }) => game.assets.length === 1 && game.assets[0].path.startsWith("public/assets/games/")));
+  assert.ok(games.every(({ game }) => {
+    const cardAssets = game.assets.filter((asset) => asset.role !== "box-front");
+    return cardAssets.length === 1 && cardAssets[0].path.startsWith("public/assets/games/");
+  }));
 });
 
 

@@ -145,9 +145,13 @@ async function press(client, key, code, keyCode) {
 async function main() {
   if (!fs.existsSync(outDirectory)) fail("missing out/; run npm run build first");
   const gameDirectory = path.join(root, "data/games");
-  const firstGame = fs.readdirSync(gameDirectory).filter((file) => file.endsWith(".json")).sort()[0];
-  if (!firstGame) fail("no game route is available for browser validation");
-  const slug = JSON.parse(fs.readFileSync(path.join(gameDirectory, firstGame), "utf8")).slug;
+  const games = fs.readdirSync(gameDirectory)
+    .filter((file) => file.endsWith(".json"))
+    .sort()
+    .map((file) => JSON.parse(fs.readFileSync(path.join(gameDirectory, file), "utf8")));
+  const fallbackGame = games.find((game) => !game.assets?.some((asset) => asset?.role === "box-front"));
+  if (!fallbackGame) fail("no game without a published box front is available for fallback validation");
+  const publishedBoxGame = games.find((game) => game.assets?.some((asset) => asset?.role === "box-front"));
   const chrome = chromeCandidates.find((candidate) => candidate && fs.existsSync(candidate));
   if (!chrome) fail("Google Chrome was not found; set CHROME_BIN to a local Chrome executable");
 
@@ -162,7 +166,7 @@ async function main() {
       const response = await fetch(`http://127.0.0.1:${debugPort}/json/version`);
       return response.ok;
     });
-    const pageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${slug}/`;
+    const pageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${fallbackGame.slug}/`;
     const targetResponse = await fetch(`http://127.0.0.1:${debugPort}/json/new?${encodeURIComponent(pageUrl)}`, { method: "PUT" });
     if (!targetResponse.ok) fail("Chrome did not create a debugging target");
     const target = await targetResponse.json();
@@ -194,15 +198,30 @@ async function main() {
     await waitFor(() => client.evaluate('!document.querySelector(".topbar").hasAttribute("inert") && document.querySelector(".topbar").getAttribute("aria-hidden") === null'));
     await waitFor(() => client.evaluate('document.activeElement?.matches("[data-box-action=fullscreen]")'));
 
+    if (publishedBoxGame) {
+      const publishedFront = publishedBoxGame.assets.find((asset) => asset?.role === "box-front");
+      const expectedFrontSrc = `${basePath}/${publishedFront.path.replace(/^public\//, "")}`;
+      const publishedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${publishedBoxGame.slug}/`;
+      await client.send("Page.navigate", { url: publishedPageUrl });
+      await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(publishedBoxGame.title)}`));
+      const publishedState = await waitFor(() => client.evaluate('(() => { const front = document.querySelector(".game-box__front img"); if (!front) return null; return { src: front.getAttribute("src"), loaded: front.complete && front.naturalWidth > 0 && front.naturalHeight > 0, disclosure: document.body.textContent.includes("AI-generated GameAtlas editorial art") }; })()'));
+      if (publishedState.src !== expectedFrontSrc || !publishedState.loaded || !publishedState.disclosure) fail(`published ${publishedBoxGame.slug} front did not load with its base-prefixed source and AI disclosure`);
+    }
+
     await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }, { name: "forced-colors", value: "active" }] });
     const mediaState = await client.evaluate('(() => ({ reduce: matchMedia("(prefers-reduced-motion: reduce)").matches, forced: matchMedia("(forced-colors: active)").matches, duration: getComputedStyle(document.querySelector(".game-box")).transitionDuration }))()');
     if (!mediaState.reduce || !mediaState.forced || Number.parseFloat(mediaState.duration) > 0.001) fail(`reduced-motion or forced-colors fallback is not active: ${JSON.stringify(mediaState)}`);
-    console.log(`Box-art browser validation passed (${slug}, keyboard, zoom, fullscreen fallback, focus restoration, background isolation, reduced motion, forced colors).`);
+    console.log(`Box-art browser validation passed (${fallbackGame.slug} fallback, ${publishedBoxGame ? `${publishedBoxGame.slug} published front` : "no published front"}, keyboard, zoom, fullscreen fallback, focus restoration, background isolation, reduced motion, forced colors).`);
   } finally {
     client?.close();
-    if (browser && !browser.killed) browser.kill("SIGTERM");
+    if (browser && browser.exitCode === null && browser.signalCode === null) {
+      await new Promise((resolve) => {
+        browser.once("close", resolve);
+        browser.kill("SIGTERM");
+      });
+    }
     await new Promise((resolve) => preview.server.close(resolve));
-    fs.rmSync(profile, { recursive: true, force: true });
+    fs.rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
   }
 }
 

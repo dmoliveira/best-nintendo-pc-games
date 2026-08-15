@@ -1,6 +1,6 @@
 # Game box-art workflow
 
-This workflow produces **original GameAtlas editorial art**, not a replacement for an official cover scan. It is designed for a static GitHub Pages site: no generation key reaches the browser, and a reviewed image becomes a normal committed `public/` asset only after the local gates pass.
+This workflow produces **AI-generated GameAtlas editorial art**, not a replacement for an official cover scan. It is designed for a static GitHub Pages site: no generation key reaches the browser, and a reviewed image becomes a normal committed `public/` asset only after the local gates pass.
 
 ## Design model
 
@@ -41,7 +41,7 @@ The default provider is the authenticated Codex CLI. API billing is intentionall
 
 ## Review and publication
 
-Inspect the staged PNG before publication. Reject it if it resembles an official cover, logo, character, screenshot, or a known game’s recognizable composition. The reviewer must attest to the exact checksum-bound output:
+Inspect the staged PNG before publication. Reject it if it includes text, numbers, marks, a logo, a character, screenshot, official-cover composition, package trade dress, a recognizable existing-game style, or a living-artist imitation. The reviewer must attest to the exact checksum-bound output:
 
 ```bash
 npm run art:publish -- \
@@ -50,7 +50,7 @@ npm run art:publish -- \
   --approval-note "I reviewed this exact asset and confirm it contains no recreated official box art, no logos, no characters, and no screenshots."
 ```
 
-Publication verifies the PNG signature, CRC/chunk structure, dimensions, 12 MB size limit, SHA-256 checksum, intended format, and the exact attestation. It then holds a kernel-owned, repository-specific loopback lease and writes the image, manifest entry, and typed game-asset reference as a journaled transaction. A crashed process releases that lease automatically; the next invocation can safely restore the journal before retrying. If the process is interrupted, recover the exact pre-publication state before retrying:
+Publication verifies the PNG signature, CRC/chunk structure, dimensions, 12 MB size limit, SHA-256 checksum, intended format, and the exact attestation. The public manifest records an AI-generation disclosure plus the OpenAI Terms of Use URL and effective date alongside the tool, prompt, dimensions, and review record. It then holds a kernel-owned, repository-specific loopback lease and writes the image, manifest entry, and typed game-asset reference as a journaled transaction. A crashed process releases that lease automatically; the next invocation can safely restore the journal before retrying. If the process is interrupted, recover the exact pre-publication state before retrying:
 
 ```bash
 npm run art:publish -- --recover
@@ -72,7 +72,7 @@ The browser gate requires a local Chrome binary and verifies keyboard rotation, 
 - Left/Right, plus/minus, Home/0 work only while the package stage has focus;
 - fullscreen failure opens the labelled fallback dialog; Escape closes it and returns focus;
 - reduced motion removes interpolation; forced colors keeps boundaries and controls visible;
-- generated front art is visibly original, clear of marks/characters/screenshots, and the local HTML label remains readable;
+- generated front art is visibly distinct from official game imagery, clear of text/marks/characters/screenshots/trade dress/style imitation, and the local HTML label remains readable;
 - the exported game page uses the Pages base path and a game without approved art still says **GameAtlas reference case**.
 
 ## AI contributor contract

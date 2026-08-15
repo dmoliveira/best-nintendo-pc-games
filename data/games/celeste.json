@@ -62,6 +62,13 @@
       "path": "public/assets/games/celeste.svg",
       "alt": "Abstract GameAtlas art tile for Celeste",
       "provenanceId": "gameatlas-art-celeste"
+    },
+    {
+      "path": "public/assets/games/celeste/front-pc-big-box.png",
+      "alt": "AI-generated GameAtlas editorial front artwork for Celeste in the PC big-box edition interactive package view.",
+      "provenanceId": "game-celeste-box-front-pc-big-box",
+      "role": "box-front",
+      "boxFormatId": "pc-big-box"
     }
   ],
   "sources": [

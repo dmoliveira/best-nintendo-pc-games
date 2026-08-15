@@ -145,6 +145,9 @@ for (const record of manifest.assets ?? []) {
   if (record.assetKind === "generated-game-box-front") {
     const format = boxFormatById.get(record.boxFormatId);
     if (!format) fail(`${record.path}: boxFormatId must reference a declared format`);
+    if (!isValidHttpsUrl(record.licenseOrPermissionUrl)) fail(`${record.path}: generated box-front requires a provider terms URL`);
+    requirePastDate(record.providerTermsEffectiveDate, `${record.path}: providerTermsEffectiveDate`);
+    if (!/\bAI-generated\b/i.test(record.aiGeneratedDisclosure ?? "")) fail(`${record.path}: aiGeneratedDisclosure must identify AI generation`);
     if (!record.path.startsWith("public/assets/games/") || !record.path.endsWith(`/front-${record.boxFormatId}.png`)) fail(`${record.path}: generated box-front path must use public/assets/games/<slug>/front-<format>.png`);
     if (!/^sha256:[a-f0-9]{64}$/.test(record.contentChecksum ?? "")) fail(`${record.path}: contentChecksum must be a sha256 digest`);
     else if (sha256(assetPath) !== record.contentChecksum) fail(`${record.path}: contentChecksum does not match file bytes`);

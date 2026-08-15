@@ -19,7 +19,7 @@ type ExpansionInventory = {
 };
 
 type AssetManifest = {
-  assets: Array<{ assetId: string; path: string }>;
+  assets: Array<{ assetId: string; path: string; intendedUse?: string }>;
 };
 
 type SourceRegistry = {
@@ -78,15 +78,16 @@ test("materializes the 60-item curated expansion inventory without numeric evide
 test("keeps every game-card asset unique and manifest-backed", () => {
   const catalog = getCatalogGames();
   const assets = catalog.map(({ game }) => {
-    assert.equal(game.assets.length, 1, `${game.slug} should have one game-card asset`);
-    return game.assets[0];
+    const cardAssets = game.assets.filter((asset) => asset.role !== "box-front");
+    assert.equal(cardAssets.length, 1, `${game.slug} should have one game-card asset`);
+    return cardAssets[0];
   });
   const paths = assets.map((asset) => asset.path);
   const provenanceIds = assets.map((asset) => asset.provenanceId);
   assert.equal(new Set(paths).size, catalog.length);
   assert.equal(new Set(provenanceIds).size, catalog.length);
 
-  const manifestGameAssets = manifest.assets.filter((asset) => asset.path.startsWith("public/assets/games/"));
+  const manifestGameAssets = manifest.assets.filter((asset) => asset.intendedUse === "game-card-thumbnail");
   assert.equal(manifestGameAssets.length, catalog.length);
   for (const asset of assets) {
     const manifestEntry = manifest.assets.find((entry) => entry.assetId === asset.provenanceId);

@@ -146,7 +146,7 @@ export default function GameBoxViewer({ title, platformLabel, formatId, frontSrc
     aria-modal={fallbackFullscreen || undefined}
     onKeyDownCapture={onDialogKeyDown}
   >
-    <div className="game-box-viewer-heading"><p className="eyebrow">Interactive package view</p><h2 id="package-view-heading">Explore the GameAtlas edition.</h2><p>{frontSrc ? "Original editorial art, displayed on a neutral GameAtlas reference package." : "GameAtlas reference case — original art can be added after it passes the generation and rights review."}</p></div>
+    <div className="game-box-viewer-heading"><p className="eyebrow">Interactive package view</p><h2 id="package-view-heading">Explore the GameAtlas edition.</h2><p>{frontSrc ? "AI-generated GameAtlas editorial art, displayed on a neutral reference package." : "GameAtlas reference case — AI-generated editorial art can be added after it passes generation and rights review."}</p></div>
     <div
       className={`game-box-stage game-box-stage--${format.accent}`}
       ref={stageRef}
@@ -162,11 +162,11 @@ export default function GameBoxViewer({ title, platformLabel, formatId, frontSrc
       {editorialArtSrc ? <img className="game-box-stage__editorial-art" src={editorialArtSrc} alt={editorialArtAlt ?? `Abstract GameAtlas editorial art for ${title}`} /> : null}
       <div className="game-box" style={{ ...boxStyle, transform: `rotateX(-6deg) rotateY(${view.angle}deg) scale(${view.zoom})` }}>
         <div className="game-box__face game-box__front">
-          {frontSrc ? <img src={frontSrc} alt={frontAlt ?? `Original GameAtlas editorial front artwork for ${title}`} /> : <div className="game-box__reference-art" aria-label={`GameAtlas reference front for ${title}`}><span aria-hidden="true">✦</span></div>}
+          {frontSrc ? <img src={frontSrc} alt={frontAlt ?? `AI-generated GameAtlas editorial front artwork for ${title}`} /> : <div className="game-box__reference-art" aria-label={`GameAtlas reference front for ${title}`}><span aria-hidden="true">✦</span></div>}
           <div className="game-box__front-label"><span>GameAtlas edition</span><strong>{title}</strong><small>{platformLabel}</small></div>
         </div>
         <div className="game-box__face game-box__spine" aria-hidden="true"><span>GameAtlas</span><strong>{title}</strong></div>
-        <div className="game-box__face game-box__back" aria-hidden="true"><span>Original editorial package view</span><strong>{format.label}</strong><small>Labels are HTML/CSS, not copied packaging.</small></div>
+        <div className="game-box__face game-box__back" aria-hidden="true"><span>GameAtlas editorial package view</span><strong>{format.label}</strong><small>Labels are HTML/CSS, not copied packaging.</small></div>
         <div className="game-box__face game-box__base" aria-hidden="true" />
       </div>
     </div>
