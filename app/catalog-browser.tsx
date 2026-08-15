@@ -30,6 +30,20 @@ const layoutOptions: Array<{ value: CatalogColumns; label: string; description: 
 ];
 
 const catalogQueryKeys = new Set(["q", "platform", "genre", "year", "from", "to", "developer", "publisher", "sort", "page", "perPage", "columns"]);
+const catalogQueryParamGroups: Record<string, readonly string[]> = {
+  q: ["q"],
+  platform: ["platform"],
+  genre: ["genre"],
+  year: ["year", "from", "to"],
+  yearFrom: ["year", "from", "to"],
+  yearTo: ["year", "from", "to"],
+  developer: ["developer"],
+  publisher: ["publisher"],
+  sort: ["sort"],
+  page: ["page"],
+  pageSize: ["perPage"],
+  columns: ["columns"],
+};
 
 interface CatalogBrowserProps {
   initialRecords: readonly CatalogSearchRecord[];
@@ -80,6 +94,8 @@ function nameOptions(records: readonly CatalogSearchRecord[], field: "developer"
 export default function CatalogBrowser({ initialRecords, catalogEntryCount, catalogIndexDigest, catalogIndexUrl, catalogIndexHref }: CatalogBrowserProps) {
   const [records, setRecords] = useState<readonly CatalogSearchRecord[]>(initialRecords);
   const [indexStatus, setIndexStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const indexStatusRef = useRef(indexStatus);
+  const mountedRef = useRef(false);
   const catalogBrowserRef = useRef<HTMLDivElement>(null);
   const indexRequestRef = useRef<Promise<void> | null>(null);
   const indexAbortRef = useRef<AbortController | null>(null);
@@ -121,10 +137,11 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   const developerLabel = state.developer ? developerOptions.find((option) => option.id === state.developer)?.label ?? state.developer : "";
   const publisherLabel = state.publisher ? publisherOptions.find((option) => option.id === state.publisher)?.label ?? state.publisher : "";
 
-  const loadCatalogIndex = useCallback(() => {
-    if (indexRequestRef.current) return;
+  const loadCatalogIndex = useCallback((force = false) => {
+    if (indexRequestRef.current || indexStatusRef.current === "loading" || indexStatusRef.current === "ready" || (indexStatusRef.current === "error" && !force)) return;
     const controller = new AbortController();
     indexAbortRef.current = controller;
+    indexStatusRef.current = "loading";
     setIndexStatus("loading");
     const request = fetch(catalogIndexUrl, { signal: controller.signal })
       .then(async (response) => {
@@ -135,19 +152,57 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
         return catalogRecords;
       })
       .then((catalogRecords) => {
-        if (controller.signal.aborted) return;
+        if (controller.signal.aborted || indexAbortRef.current !== controller) return;
+        indexRequestRef.current = null;
+        indexAbortRef.current = null;
+        indexStatusRef.current = "ready";
+        if (!mountedRef.current) return;
         setRecords(catalogRecords);
         setIndexStatus("ready");
       })
       .catch((error: unknown) => {
-        if (controller.signal.aborted || (error instanceof DOMException && error.name === "AbortError")) return;
+        if (controller.signal.aborted || indexAbortRef.current !== controller || (error instanceof DOMException && error.name === "AbortError")) return;
         indexRequestRef.current = null;
+        indexAbortRef.current = null;
+        indexStatusRef.current = "error";
+        if (!mountedRef.current) return;
         setIndexStatus("error");
       });
     indexRequestRef.current = request;
   }, [catalogEntryCount, catalogIndexDigest, catalogIndexUrl]);
 
-  useEffect(() => () => { indexAbortRef.current?.abort(); }, []);
+  const syncUrl = useCallback((nextState: CatalogSearchState, mode: "push" | "replace", changedFields: readonly string[] = []) => {
+    const params = new URLSearchParams(serializeSearchState(nextState));
+    if (!catalogReady) {
+      const changedParams = new Set<string>(["page"]);
+      for (const field of changedFields) for (const key of catalogQueryParamGroups[field] ?? []) changedParams.add(key);
+      const currentParams = new URLSearchParams(window.location.search);
+      for (const key of catalogQueryKeys) {
+        if (changedParams.has(key)) continue;
+        params.delete(key);
+        for (const value of currentParams.getAll(key)) params.append(key, value);
+      }
+    }
+    const serialized = params.toString();
+    const nextUrl = `${window.location.pathname}${serialized ? `?${serialized}` : ""}${window.location.hash}`;
+    window.history[mode === "push" ? "pushState" : "replaceState"]({}, "", nextUrl);
+    window.dispatchEvent(new Event(SEARCH_STATE_EVENT));
+  }, [catalogReady]);
+
+  useEffect(() => {
+    indexStatusRef.current = indexStatus;
+  }, [indexStatus]);
+
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+      indexAbortRef.current?.abort();
+      indexAbortRef.current = null;
+      indexRequestRef.current = null;
+      indexStatusRef.current = "idle";
+    };
+  }, []);
 
   useEffect(() => {
     if (hasCatalogQuery(window.location.search) || !("IntersectionObserver" in window)) {
@@ -185,18 +240,20 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
     syncFromUrl();
     window.addEventListener("popstate", syncFromUrl);
     return () => window.removeEventListener("popstate", syncFromUrl);
-  }, [catalogReady, options, records]);
+  }, [catalogReady, options, records, syncUrl]);
 
-  function syncUrl(nextState: CatalogSearchState, mode: "push" | "replace") {
-    const nextUrl = `${window.location.pathname}${serializeSearchState(nextState)}${window.location.hash}`;
-    window.history[mode === "push" ? "pushState" : "replaceState"]({}, "", nextUrl);
-    window.dispatchEvent(new Event(SEARCH_STATE_EVENT));
-  }
+  useEffect(() => {
+    if (catalogReady) return;
+    const syncPendingState = () => setState(parseSearchState(new URLSearchParams(window.location.search), options));
+    syncPendingState();
+    window.addEventListener("popstate", syncPendingState);
+    return () => window.removeEventListener("popstate", syncPendingState);
+  }, [catalogReady, options]);
 
   function updateState(patch: Partial<CatalogSearchState>, mode: "push" | "replace" = "push") {
     const nextState = { ...state, ...patch, page: 1 };
     setState(nextState);
-    syncUrl(nextState, mode);
+    syncUrl(nextState, mode, [...Object.keys(patch), "page"]);
   }
 
   function updateQuery(value: string) {
@@ -205,6 +262,9 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
 
   function updateFacet(field: "platform" | "genre", value: string, checked: boolean) {
     const nextValues = new Set(selectedValues(state[field]));
+    if (!catalogReady) {
+      for (const rawValue of new URLSearchParams(window.location.search).getAll(field).flatMap((raw) => raw.split(","))) nextValues.add(rawValue.trim());
+    }
     if (checked) nextValues.add(value);
     else nextValues.delete(value);
     updateState({ [field]: [...nextValues].sort().join(",") });
@@ -230,10 +290,14 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
     if (PAGE_SIZE_OPTIONS.includes(pageSize as CatalogPageSize)) updateState({ pageSize: pageSize as CatalogPageSize });
   }
 
+  function retryCatalogIndex() {
+    loadCatalogIndex(true);
+  }
+
   function updatePage(nextPage: number) {
     const nextState = { ...state, page: nextPage };
     setState(nextState);
-    syncUrl(nextState, "push");
+    syncUrl(nextState, "push", ["page"]);
     window.requestAnimationFrame(() => {
       const summary = resultSummaryRef.current;
       if (!summary) return;
@@ -245,13 +309,13 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   function updateColumns(columns: CatalogColumns) {
     const nextState = { ...state, columns };
     setState(nextState);
-    syncUrl(nextState, "push");
+    syncUrl(nextState, "push", ["columns"]);
   }
 
   function clearFilters() {
     const nextState = { ...EMPTY_SEARCH_STATE, columns: state.columns };
     setState(nextState);
-    syncUrl(nextState, "push");
+    syncUrl(nextState, "push", [...catalogQueryKeys]);
   }
 
   const displayRecords = hydrated ? page.records : initialRecords;
@@ -259,11 +323,16 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   const resultPositionTotal = catalogReady ? filteredRecords.length : catalogEntryCount;
   const resultSummary = !hydrated
     ? `Showing 1–${initialRecords.length} of ${catalogEntryCount} catalog games.`
-    : !catalogReady
-      ? indexStatus === "error" ? `Showing the first ${initialRecords.length} of ${catalogEntryCount} catalog games.` : indexStatus === "idle" ? `Showing the first ${initialRecords.length} of ${catalogEntryCount} catalog games. Browse or use filters to load the full catalog.` : `Loading ${catalogEntryCount} catalog games.`
-      : filteredRecords.length > 0 ? `Showing ${page.startIndex + 1}–${page.endIndex} of ${filteredRecords.length} matching games.` : "Showing 0 matching games.";
+      : !catalogReady
+        ? indexStatus === "error" ? `Showing the first ${initialRecords.length} of ${catalogEntryCount} catalog games.` : indexStatus === "idle" ? `Showing the first ${initialRecords.length} of ${catalogEntryCount} catalog games. Browse or use filters to load the full catalog.` : `Loading ${catalogEntryCount} catalog games.`
+        : filteredRecords.length > 0 ? `Showing ${page.startIndex + 1}–${page.endIndex} of ${filteredRecords.length} matching games.` : "Showing 0 matching games.";
+  const indexStatusMessage = indexStatus === "loading"
+    ? "Loading the full catalog. Filter changes will apply when it is ready."
+    : indexStatus === "error"
+      ? "The full catalog could not load. Filter changes are queued until you retry."
+      : `Showing a ${initialRecords.length}-card preview. Browse or use filters to load all ${catalogEntryCount} games.`;
 
-  return <div className="catalog-browser" ref={catalogBrowserRef} data-catalog-index-status={indexStatus} onFocusCapture={loadCatalogIndex} onPointerDownCapture={loadCatalogIndex} onKeyDownCapture={loadCatalogIndex}>
+  return <div className="catalog-browser" ref={catalogBrowserRef} data-catalog-index-status={indexStatus} onFocusCapture={() => loadCatalogIndex()} onPointerDownCapture={() => loadCatalogIndex()} onKeyDownCapture={() => loadCatalogIndex()}>
     <form className="browser-panel" id="catalog-search" role="search" aria-label="Catalog search and filters" onSubmit={(event) => event.preventDefault()}>
       <div className="browser-panel-heading">
         <div><p className="eyebrow">Find your next favorite</p><h3>Filter the atlas.</h3></div>
@@ -314,8 +383,9 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
       </div> : null}
       <div className="browser-panel-footer"><p>Updates apply instantly. Multiple platforms or genres broaden that facet. Years use each title&apos;s first documented release.</p></div>
     </form>
-    <div className="result-bar"><p className="result-summary" ref={resultSummaryRef} tabIndex={-1} aria-live="polite">{resultSummary}</p><div className="result-tools"><span className="result-detail">{activeSortLabel} · signals kept separate</span><label className="page-size-field" htmlFor="catalog-page-size"><span>Cards</span><select id="catalog-page-size" value={state.pageSize ?? DEFAULT_PAGE_SIZE} onChange={(event) => updatePageSize(event.target.value)}>{PAGE_SIZE_OPTIONS.map((size) => <option value={size} key={size}>{size} / page</option>)}</select></label></div></div>
-    {indexStatus === "error" ? <p className="catalog-index-error" role="status">The full catalog index could not load. <a href={catalogIndexHref}>Browse every game instead.</a></p> : null}
+    {!catalogReady ? <div className={`catalog-index-status catalog-index-status--${indexStatus}`}><span role="status" aria-live="polite">{indexStatusMessage}</span>{indexStatus === "error" ? <button className="browser-button browser-button--retry" type="button" onClick={retryCatalogIndex}>Retry full catalog</button> : null}</div> : null}
+    <div className="result-bar"><p className="result-summary" ref={resultSummaryRef} tabIndex={-1} aria-live={catalogReady ? "polite" : "off"}>{resultSummary}</p><div className="result-tools"><span className="result-detail">{activeSortLabel} · signals kept separate</span><label className="page-size-field" htmlFor="catalog-page-size"><span>Cards</span><select id="catalog-page-size" value={state.pageSize ?? DEFAULT_PAGE_SIZE} onChange={(event) => updatePageSize(event.target.value)}>{PAGE_SIZE_OPTIONS.map((size) => <option value={size} key={size}>{size} / page</option>)}</select></label></div></div>
+    {indexStatus === "error" ? <p className="catalog-index-error">The full catalog index could not load. <a href={catalogIndexHref}>Browse every game instead.</a></p> : null}
     {filteredRecords.length > 0 ? <CatalogCards records={displayRecords} columns={state.columns} showResultPosition resultPositionOffset={resultPositionOffset} resultPositionTotal={resultPositionTotal} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, year, developer, or publisher.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search <span aria-hidden="true">↗</span></button></div>}
     {hydrated && catalogReady && page.pageCount > 1 ? <nav className="catalog-pagination" aria-label="Catalog pages"><button type="button" className="pagination-button" disabled={page.page === 1} onClick={() => updatePage(page.page - 1)}>Previous</button><div className="pagination-pages">{paginationItems.map((item) => item.type === "ellipsis" ? <span className="pagination-ellipsis" aria-hidden="true" key={`ellipsis-${item.before}-${item.after}`}>…</span> : <button type="button" className={`pagination-button${item.page === page.page ? " pagination-button--current" : ""}`} aria-current={item.page === page.page ? "page" : undefined} aria-label={`Go to page ${item.page}`} key={item.page} onClick={() => updatePage(item.page)}>{item.page}</button>)}</div><button type="button" className="pagination-button" disabled={page.page === page.pageCount} onClick={() => updatePage(page.page + 1)}>Next</button></nav> : null}
   </div>;

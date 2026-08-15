@@ -1195,6 +1195,34 @@ h1 {
   font-weight: 700;
 }
 
+.catalog-index-status {
+  align-items: center;
+  background: rgba(114, 230, 223, 0.06);
+  border: 1px solid rgba(114, 230, 223, 0.22);
+  border-radius: 7px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.72rem;
+  gap: 10px;
+  justify-content: space-between;
+  line-height: 1.45;
+  margin: 12px 0 0;
+  padding: 10px 12px;
+}
+
+.catalog-index-status--error {
+  background: rgba(255, 133, 111, 0.08);
+  border-color: rgba(255, 133, 111, 0.3);
+}
+
+.browser-button--retry {
+  flex: 0 0 auto;
+  font-size: 0.61rem;
+  height: 32px;
+  padding: 0 9px;
+}
+
 .pagination-pages {
   display: flex;
   flex-wrap: wrap;
@@ -2322,6 +2350,26 @@ h1 {
 
   .browser-facet-grid {
     grid-template-columns: 1fr;
+  }
+
+  .browser-check-list {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .browser-check {
+    min-height: 44px;
+  }
+
+  .browser-check span {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  .browser-check input {
+    height: 18px;
+    width: 18px;
   }
 
   .browser-field--query,
