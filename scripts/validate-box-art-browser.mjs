@@ -1,14 +1,19 @@
 import { spawn } from "node:child_process";
 import fs from "node:fs";
 import http from "node:http";
-import net from "node:net";
 import os from "node:os";
 import path from "node:path";
 
 const root = process.cwd();
 const outDirectory = path.join(root, "out");
-const basePath = "/best-nintendo-pc-games";
-const chromeCandidates = [process.env.CHROME_BIN, "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"].filter(Boolean);
+const basePath = (process.env.PAGES_BASE_PATH ?? "/best-nintendo-pc-games").replace(/\/+$/, "");
+const chromeCandidates = [process.env.CHROME_BIN, "/usr/bin/google-chrome", "/usr/bin/google-chrome-stable", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"].filter(Boolean);
+const CDP_COMMAND_TIMEOUT_MS = 10_000;
+const LOCAL_REQUEST_TIMEOUT_MS = 10_000;
+const PROCESS_SHUTDOWN_TIMEOUT_MS = 5_000;
+const BROWSER_START_TIMEOUT_MS = 30_000;
+const PROFILE_CLEANUP_RETRIES = 20;
+const POINTER_EVENT_SETTLE_MS = 50;
 
 function fail(message) {
   throw new Error(`Box-art browser validation failed: ${message}`);
@@ -35,8 +40,10 @@ function mimeType(filePath) {
 }
 
 function resolveExportPath(requestPath) {
-  const stripped = requestPath === basePath ? "/" : requestPath.startsWith(`${basePath}/`) ? requestPath.slice(basePath.length) : requestPath;
-  const normalized = decodeURIComponent(stripped).replace(/^\/+/, "");
+  const stripped = requestPath === basePath ? "/" : requestPath.startsWith(`${basePath}/`) ? requestPath.slice(basePath.length) : null;
+  if (stripped === null) return null;
+  let normalized;
+  try { normalized = decodeURIComponent(stripped).replace(/^\/+/, ""); } catch { return null; }
   const raw = path.resolve(outDirectory, normalized || "index.html");
   const target = fs.existsSync(raw) && fs.statSync(raw).isDirectory() ? path.join(raw, "index.html") : raw;
   if (!(target === outDirectory || target.startsWith(`${outDirectory}${path.sep}`))) return null;
@@ -44,12 +51,26 @@ function resolveExportPath(requestPath) {
 }
 
 async function startServer() {
+  let failNextCatalogIndexRequest = false;
   const server = http.createServer((request, response) => {
     const requestPath = new URL(request.url ?? "/", "http://localhost").pathname;
+    if (failNextCatalogIndexRequest && requestPath === `${basePath}/catalog-search-index.json`) {
+      failNextCatalogIndexRequest = false;
+      response.writeHead(503, { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" });
+      response.end("Injected browser validation failure");
+      return;
+    }
     const target = resolveExportPath(requestPath);
     if (!target || !fs.existsSync(target) || !fs.statSync(target).isFile()) {
-      response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
-      response.end("Not found");
+      const notFoundPath = path.join(outDirectory, "404.html");
+      if (requestPath === basePath || requestPath.startsWith(`${basePath}/`)) {
+        response.writeHead(404, { "content-type": "text/html; charset=utf-8" });
+        if (fs.existsSync(notFoundPath)) fs.createReadStream(notFoundPath).pipe(response);
+        else response.end("Not found");
+      } else {
+        response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
+        response.end("Not found");
+      }
       return;
     }
     response.writeHead(200, { "content-type": mimeType(target), "cache-control": "no-store" });
@@ -61,20 +82,28 @@ async function startServer() {
   });
   const address = server.address();
   if (!address || typeof address === "string") fail("could not determine local preview port");
-  return { server, port: address.port };
+  return { server, port: address.port, failNextCatalogIndexRequest: () => { failNextCatalogIndexRequest = true; } };
 }
 
-async function unusedPort() {
-  const server = net.createServer();
-  await new Promise((resolve, reject) => {
-    server.once("error", reject);
-    server.listen(0, "127.0.0.1", () => resolve());
+async function waitForChromeDebugPort(browser, profile) {
+  const activePortPath = path.join(profile, "DevToolsActivePort");
+  let onError;
+  const browserError = new Promise((_, reject) => {
+    onError = (error) => reject(new Error(`Chrome failed to start: ${error.message}`));
+    browser.once("error", onError);
   });
-  const address = server.address();
-  if (!address || typeof address === "string") fail("could not reserve Chrome debugging port");
-  const port = address.port;
-  await new Promise((resolve) => server.close(resolve));
-  return port;
+  try {
+    return await Promise.race([
+      waitFor(() => {
+        if (!fs.existsSync(activePortPath)) return undefined;
+        const port = Number(fs.readFileSync(activePortPath, "utf8").trim().split(/\s+/, 1)[0]);
+        return Number.isInteger(port) && port > 0 ? port : undefined;
+      }, BROWSER_START_TIMEOUT_MS),
+      browserError,
+    ]);
+  } finally {
+    browser.off("error", onError);
+  }
 }
 
 async function waitFor(check, timeoutMs = 30_000, label = "condition") {
@@ -93,6 +122,13 @@ async function waitFor(check, timeoutMs = 30_000, label = "condition") {
   throw new Error(`timed out waiting for ${label}${detail}`);
 }
 
+async function fetchLocal(url, options = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), LOCAL_REQUEST_TIMEOUT_MS);
+  try { return await fetch(url, { ...options, signal: controller.signal }); }
+  finally { clearTimeout(timer); }
+}
+
 class CdpClient {
   constructor(url) {
     this.nextId = 1;
@@ -103,14 +139,18 @@ class CdpClient {
 
   async open() {
     await new Promise((resolve, reject) => {
-      this.socket.addEventListener("open", resolve, { once: true });
-      this.socket.addEventListener("error", reject, { once: true });
+      const timer = setTimeout(() => reject(new Error("CDP socket open timed out")), CDP_COMMAND_TIMEOUT_MS);
+      const onOpen = () => { clearTimeout(timer); resolve(); };
+      const onError = () => { clearTimeout(timer); reject(new Error("CDP socket failed to open")); };
+      this.socket.addEventListener("open", onOpen, { once: true });
+      this.socket.addEventListener("error", onError, { once: true });
     });
     this.socket.addEventListener("message", (event) => {
       const message = JSON.parse(String(event.data));
       if (message.id) {
         const pending = this.pending.get(message.id);
         if (!pending) return;
+        clearTimeout(pending.timer);
         this.pending.delete(message.id);
         if (message.error) pending.reject(new Error(`${message.error.message ?? "CDP error"}`));
         else pending.resolve(message.result);
@@ -119,13 +159,28 @@ class CdpClient {
       const listeners = this.events.get(message.method) ?? [];
       for (const listener of listeners.splice(0)) listener(message.params);
     });
+    this.socket.addEventListener("error", () => this.rejectPending(new Error("CDP socket error")));
+    this.socket.addEventListener("close", () => this.rejectPending(new Error("CDP socket closed")));
+  }
+
+  rejectPending(error) {
+    for (const pending of this.pending.values()) {
+      clearTimeout(pending.timer);
+      pending.reject(error);
+    }
+    this.pending.clear();
   }
 
   send(method, params = {}) {
     const id = this.nextId++;
     return new Promise((resolve, reject) => {
-      this.pending.set(id, { resolve, reject });
-      this.socket.send(JSON.stringify({ id, method, params }));
+      const timer = setTimeout(() => {
+        this.pending.delete(id);
+        reject(new Error(`CDP command timed out: ${method}`));
+      }, CDP_COMMAND_TIMEOUT_MS);
+      this.pending.set(id, { resolve, reject, timer });
+      try { this.socket.send(JSON.stringify({ id, method, params })); }
+      catch (error) { clearTimeout(timer); this.pending.delete(id); reject(error); }
     });
   }
 
@@ -144,23 +199,55 @@ class CdpClient {
   }
 
   close() {
+    this.rejectPending(new Error("CDP client closed"));
     this.socket.close();
   }
 }
 
+async function stopBrowser(browser) {
+  if (!browser || browser.exitCode !== null || browser.signalCode !== null) return;
+  const closed = new Promise((resolve) => browser.once("close", resolve));
+  browser.kill("SIGTERM");
+  const terminated = await Promise.race([closed.then(() => true), new Promise((resolve) => setTimeout(() => resolve(false), PROCESS_SHUTDOWN_TIMEOUT_MS))]);
+  if (!terminated && browser.exitCode === null && browser.signalCode === null) {
+    browser.kill("SIGKILL");
+    await Promise.race([closed, new Promise((resolve) => setTimeout(resolve, 1_000))]);
+  }
+}
+
+async function closeBrowser(client) {
+  if (!client) return;
+  try { await client.send("Browser.close"); } catch {}
+}
+
+async function stopServer(server) {
+  await Promise.race([new Promise((resolve) => server.close(resolve)), new Promise((resolve) => setTimeout(resolve, PROCESS_SHUTDOWN_TIMEOUT_MS))]);
+  server.closeAllConnections?.();
+}
+
 async function press(client, key, code, keyCode) {
-  await client.send("Input.dispatchKeyEvent", { type: "keyDown", key, code, windowsVirtualKeyCode: keyCode, nativeVirtualKeyCode: keyCode });
+  await client.send("Input.dispatchKeyEvent", { type: "rawKeyDown", key, code, windowsVirtualKeyCode: keyCode, nativeVirtualKeyCode: keyCode });
   await client.send("Input.dispatchKeyEvent", { type: "keyUp", key, code, windowsVirtualKeyCode: keyCode, nativeVirtualKeyCode: keyCode });
 }
 
 async function drag(client, { startX, endX, y }) {
   await client.send("Input.dispatchMouseEvent", { type: "mousePressed", x: startX, y, button: "left", buttons: 1, clickCount: 1 });
+  await new Promise((resolve) => setTimeout(resolve, POINTER_EVENT_SETTLE_MS));
   await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: (startX + endX) / 2, y, button: "left", buttons: 1 });
   await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: endX, y, button: "left", buttons: 1 });
 }
 
 async function releaseDrag(client, { endX, y }) {
   await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: endX, y, button: "left", buttons: 0, clickCount: 1 });
+}
+
+async function waitForDragStart(client, { startX, y }) {
+  try {
+    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "true" && Number(document.querySelector("[data-game-box-stage]")?.dataset.boxDragAngle) > 0'));
+  } catch {
+    const state = await client.evaluate(`(() => { const stage = document.querySelector("[data-game-box-stage]"); const rect = stage?.getBoundingClientRect(); const hit = document.elementFromPoint(${startX}, ${y}); return { startX: ${startX}, y: ${y}, rect: rect ? { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, width: rect.width, height: rect.height } : null, hit: hit ? { tag: hit.tagName, className: hit.className, insideStage: Boolean(stage?.contains(hit)) } : null, pointerEvents: stage ? getComputedStyle(stage).pointerEvents : null, active: document.activeElement === stage, dragging: stage?.dataset.boxDragging, dragAngle: stage?.dataset.boxDragAngle }; })()`);
+    fail(`pointer drag did not start: ${JSON.stringify(state)}`);
+  }
 }
 
 const desktopMetrics = { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false };
@@ -177,24 +264,33 @@ async function catalogIndexRequestCount(client) {
   const requestDetails = await client.evaluate('(() => ({ origin: window.location.origin, urls: performance.getEntriesByType("resource").filter((entry) => new URL(entry.name).pathname.endsWith("/catalog-search-index.json")).map((entry) => entry.name) }))()');
   const remoteRequest = requestDetails.urls.find((url) => new URL(url).origin !== requestDetails.origin);
   if (remoteRequest) fail(`catalog index request escaped the local preview origin: ${remoteRequest}`);
+  const invalidBasePathRequest = requestDetails.urls.find((url) => !new URL(url).pathname.startsWith(`${basePath}/`));
+  if (invalidBasePathRequest) fail(`catalog index request escaped the configured base path: ${invalidBasePathRequest}`);
   return requestDetails.urls.length;
 }
 
 async function waitForCatalogShell(client) {
-  await waitFor(() => client.evaluate('Boolean(document.querySelector("#catalog-query")) && document.querySelectorAll(".game-card").length === 24'));
+  await waitFor(
+    () => client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "idle" && document.querySelector("#catalog-query") && document.querySelectorAll(".game-card").length === 24 && document.querySelector(".result-summary")?.textContent?.includes("Browse or use filters to load the full catalog")'),
+    30_000,
+    "hydrated catalog shell",
+  );
 }
 
 async function waitForCatalogReady(client) {
   await waitFor(() => client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready" && document.querySelector(".result-summary")?.textContent?.includes("matching games")'));
 }
 
-async function validateCatalogBrowser(client, catalogUrl, representativeGame, deferredPlatformId, deferredPlatformCount) {
+async function waitForAnimationFrames(client) {
+  await client.evaluate('new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
+}
+
+async function validateCatalogBrowser(client, preview, catalogUrl, representativeGame, deferredPlatformId, deferredPlatformCount) {
   await client.send("Emulation.setDeviceMetricsOverride", desktopMetrics);
   await client.send("Emulation.setEmulatedMedia", { features: [] });
 
   await client.send("Page.navigate", { url: catalogUrl });
   await waitForCatalogShell(client);
-  await new Promise((resolve) => setTimeout(resolve, 350));
   const idle = await client.evaluate('(() => ({ status: document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus, cards: document.querySelectorAll(".game-card").length, summary: document.querySelector(".result-summary")?.textContent }))()');
   const idleRequests = await catalogIndexRequestCount(client);
   if (idle.status !== "idle" || idle.cards !== 24 || idleRequests !== 0 || !idle.summary?.includes("Browse or use filters to load the full catalog")) fail(`catalog index loaded before intent or viewport proximity: ${JSON.stringify({ idle, idleRequests })}`);
@@ -219,7 +315,7 @@ async function validateCatalogBrowser(client, catalogUrl, representativeGame, de
   await waitForCatalogShell(client);
   await client.evaluate('document.querySelector("#catalog-query")?.focus()');
   await client.send("Input.insertText", { text: "celeste" });
-  await waitFor(() => client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready" && document.activeElement === document.querySelector("#catalog-query") && document.querySelector("#catalog-query")?.value === "celeste" && new URL(window.location.href).searchParams.get("q") === "celeste" && document.querySelector(".result-summary")?.textContent?.includes("matching games")'));
+  await waitFor(() => client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready" && document.querySelector("#catalog-query")?.value === "celeste" && new URL(window.location.href).searchParams.get("q") === "celeste" && document.querySelector(".result-summary")?.textContent?.includes("matching games")'));
   const focusRequests = await catalogIndexRequestCount(client);
   if (focusRequests !== 1) fail(`catalog focus trigger did not issue exactly one index request: ${focusRequests}`);
   await client.evaluate('document.querySelector(".browser-button--clear")?.click()');
@@ -248,7 +344,7 @@ async function validateCatalogBrowser(client, catalogUrl, representativeGame, de
   `);
   if (!representative.foundRepresentativeCard || !representative.titleLink || representative.gameDetailLinks !== 1 || representative.artLink || representative.platformList !== "UL") fail(`catalog card semantics are incomplete: ${JSON.stringify(representative)}`);
   const pointerTargets = await client.evaluate(String.raw`
-    (() => {
+    (async () => {
       const card = document.querySelector(${JSON.stringify(representativeSelector)})?.closest(".game-card");
       const art = card?.querySelector(".game-card-art");
       const titleLink = card?.querySelector("a.game-card-title-link");
@@ -259,7 +355,8 @@ async function validateCatalogBrowser(client, catalogUrl, representativeGame, de
       };
       const filters = ["platform", "genre", "year", "developer", "publisher"].map((filter) => card?.querySelector('[data-catalog-filter="' + filter + '"]'));
       const guides = ["platform", "genre"].map((guide) => card?.querySelector('[data-catalog-guide="' + guide + '"]'));
-      card?.scrollIntoView({ block: "center" });
+      card?.scrollIntoView({ block: "center", behavior: "instant" });
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
       return {
         artUsesPrimaryLink: anchorAtCenter(art) === titleLink,
         filtersStayIndependent: filters.every((link) => anchorAtCenter(link) === link),
@@ -288,15 +385,56 @@ async function validateCatalogBrowser(client, catalogUrl, representativeGame, de
   const baseline = { ...baselineSnapshot, total: catalogResultTotal(baselineSnapshot.summary) };
   if (!(baseline.cardCount > 0) || !Number.isFinite(baseline.total) || baseline.total < baseline.cardCount) fail(`catalog baseline did not expose a bounded result total: ${JSON.stringify(baseline)}`);
 
+  await client.evaluate('document.querySelector(".display-disclosure")?.setAttribute("open", ""); document.querySelector(\'input[name="card-images"][value="hide"]\')?.click()');
+  await waitFor(() => client.evaluate('new URL(window.location.href).searchParams.get("images") === "hide" && document.querySelectorAll(".game-card--no-image").length === document.querySelectorAll(".game-card").length'));
+  const imagesOffState = await client.evaluate('(() => ({ summary: document.querySelector(".display-summary")?.textContent, images: new URL(window.location.href).searchParams.get("images"), noImageCards: document.querySelectorAll(".game-card--no-image").length, thumbnails: document.querySelectorAll(".package-thumbnail").length }))()');
+  if (!imagesOffState.summary?.includes("Images off") || imagesOffState.images !== "hide" || imagesOffState.noImageCards !== baseline.cardCount || imagesOffState.thumbnails !== 0) fail(`image display toggle did not remove card media deterministically: ${JSON.stringify(imagesOffState)}`);
+  await client.evaluate('document.querySelector(\'input[name="card-images"][value="show"]\')?.click()');
+  await waitFor(() => client.evaluate('!new URL(window.location.href).searchParams.has("images") && document.querySelectorAll(".package-thumbnail").length > 0'));
+
+  await client.evaluate('document.querySelector("#catalog-query")?.focus()');
+  await client.send("Input.insertText", { text: "zzzz-no-game-matches-this-token" });
+  await waitFor(() => client.evaluate('new URL(window.location.href).searchParams.get("q") === "zzzz-no-game-matches-this-token" && document.querySelector(".empty-state")?.textContent?.includes("No games match those filters")'));
+  const emptyState = await client.evaluate('(() => ({ cards: document.querySelectorAll(".game-card").length, summary: document.querySelector(".result-summary")?.textContent, pagination: Boolean(document.querySelector(".catalog-pagination")), clear: Boolean(document.querySelector(".empty-state button")) }))()');
+  if (emptyState.cards !== 0 || emptyState.summary !== "Showing 0 matching games." || emptyState.pagination || !emptyState.clear) fail(`empty catalog recovery state is incomplete: ${JSON.stringify(emptyState)}`);
+  await client.evaluate('document.querySelector(".empty-state button")?.click()');
+  await waitFor(() => client.evaluate('!new URL(window.location.href).searchParams.has("q") && document.querySelectorAll(".game-card").length > 0'));
+
   await client.evaluate('document.querySelector(\'input[name="card-columns"][value="3"]\')?.click()');
   await waitFor(() => client.evaluate('new URL(window.location.href).searchParams.get("columns") === "3" && document.querySelector(".game-grid")?.classList.contains("game-grid--columns-3")'));
 
+  const platformSearchActivated = await client.evaluate('(() => { const disclosure = [...document.querySelectorAll(".browser-disclosure")].find((candidate) => candidate.querySelector("summary")?.textContent?.trim().startsWith("Platforms")); if (!disclosure) return false; disclosure.open = true; const input = disclosure.querySelector(\'input[placeholder="Find a platform"]\'); input?.focus(); return Boolean(input); })()');
+  if (!platformSearchActivated) fail("catalog browser did not expose the platform facet search");
+  await client.send("Input.insertText", { text: "Windows" });
+  const platformSearchState = await waitFor(() => client.evaluate('(() => { const disclosure = [...document.querySelectorAll(".browser-disclosure")].find((candidate) => candidate.querySelector("summary")?.textContent?.trim().startsWith("Platforms")); const labels = [...(disclosure?.querySelectorAll("label.browser-check") ?? [])].map((label) => label.textContent?.trim()); return labels.length === 1 && labels[0]?.includes("PC / Windows") ? { value: disclosure.querySelector(\'input[placeholder="Find a platform"]\')?.value, labels } : null; })()'));
+  if (platformSearchState.value !== "Windows" || platformSearchState.labels[0] !== "PC / Windows") fail(`platform facet search returned unstable options: ${JSON.stringify(platformSearchState)}`);
   const foundPlatform = await client.evaluate('(() => { const disclosure = [...document.querySelectorAll(".browser-disclosure")].find((candidate) => candidate.querySelector("summary")?.textContent?.trim().startsWith("Platforms")); if (!disclosure) return false; disclosure.open = true; const label = [...disclosure.querySelectorAll("label.browser-check")].find((candidate) => candidate.textContent?.includes("PC / Windows")); const input = label?.querySelector("input"); input?.click(); return Boolean(input); })()');
   if (!foundPlatform) fail("catalog browser did not expose the PC platform facet");
   await waitFor(() => client.evaluate('(() => { const chip = [...document.querySelectorAll(".filter-chip")].find((candidate) => candidate.getAttribute("aria-label") === "Remove platform filter: PC / Windows"); return new URL(window.location.href).searchParams.get("platform") === "pc-windows" && document.querySelectorAll(".game-card").length > 0 && chip && document.querySelector(".result-summary")?.textContent?.includes("matching games"); })()'));
   const filteredSnapshot = await client.evaluate('(() => { const chip = [...document.querySelectorAll(".filter-chip")].find((candidate) => candidate.getAttribute("aria-label") === "Remove platform filter: PC / Windows"); return { cardCount: document.querySelectorAll(".game-card").length, layout: document.querySelector(".game-grid")?.className, summary: document.querySelector(".result-summary")?.textContent ?? "", chipLabel: chip?.getAttribute("aria-label") }; })()');
   const filtered = { ...filteredSnapshot, total: catalogResultTotal(filteredSnapshot.summary) };
   if (!(filtered.cardCount > 0) || !Number.isFinite(filtered.total) || filtered.total < filtered.cardCount || filtered.total >= baseline.total || !filtered.layout?.includes("game-grid--columns-3") || !filtered.summary.includes("matching games") || filtered.chipLabel !== "Remove platform filter: PC / Windows") fail(`catalog filtering did not update the visible state or expose a clear removal action: ${JSON.stringify({ baseline, filtered })}`);
+
+  await client.send("Page.navigate", { url: catalogUrl });
+  await waitForCatalogShell(client);
+  await client.evaluate('document.querySelector("#catalog-query")?.focus()');
+  await waitForCatalogReady(client);
+  const persistedUrl = new URL(catalogUrl);
+  persistedUrl.searchParams.set("platform", "pc-windows");
+  persistedUrl.searchParams.set("columns", "3");
+  persistedUrl.searchParams.set("perPage", "12");
+  persistedUrl.searchParams.set("images", "hide");
+  await client.send("Page.navigate", { url: persistedUrl.toString() });
+  await waitForCatalogReady(client);
+  const persistedBeforeReload = await client.evaluate('(() => ({ href: window.location.href, platform: document.querySelector(\'input[type="checkbox"]:checked\')?.value, columns: document.querySelector(\'input[name="card-columns"]:checked\')?.value, images: document.querySelector(\'input[name="card-images"]:checked\')?.value, perPage: document.querySelector("#catalog-page-size")?.value, cards: document.querySelectorAll(".game-card").length }))()');
+  await client.send("Page.reload", { ignoreCache: true });
+  await waitForCatalogReady(client);
+  const persistedAfterReload = await client.evaluate('(() => ({ href: window.location.href, platform: document.querySelector(\'input[type="checkbox"]:checked\')?.value, columns: document.querySelector(\'input[name="card-columns"]:checked\')?.value, images: document.querySelector(\'input[name="card-images"]:checked\')?.value, perPage: document.querySelector("#catalog-page-size")?.value, cards: document.querySelectorAll(".game-card").length }))()');
+  if (JSON.stringify(persistedAfterReload) !== JSON.stringify(persistedBeforeReload)) fail(`catalog state did not survive a hard refresh: ${JSON.stringify({ persistedBeforeReload, persistedAfterReload })}`);
+  await client.evaluate("history.back()");
+  await waitFor(() => client.evaluate('!new URL(window.location.href).searchParams.has("platform") && !new URL(window.location.href).searchParams.has("images")'));
+  await client.evaluate("history.forward()");
+  await waitFor(() => client.evaluate('new URL(window.location.href).searchParams.get("platform") === "pc-windows" && new URL(window.location.href).searchParams.get("images") === "hide" && document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "ready"'));
 
   await client.evaluate('(() => { const select = document.querySelector("#catalog-page-size"); if (!select) return; select.value = "12"; select.dispatchEvent(new Event("change", { bubbles: true })); })()');
   await waitFor(() => client.evaluate('new URL(window.location.href).searchParams.get("perPage") === "12" && document.querySelectorAll(".game-card").length === 12'));
@@ -328,7 +466,7 @@ async function validateCatalogBrowser(client, catalogUrl, representativeGame, de
 
   await client.send("Page.navigate", { url: catalogUrl });
   await waitForCatalogShell(client);
-  await new Promise((resolve) => setTimeout(resolve, 350));
+  await waitForAnimationFrames(client);
   const beforeIntersectionRequests = await catalogIndexRequestCount(client);
   if (beforeIntersectionRequests !== 0 || await client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus !== "idle"')) fail(`catalog index did not remain deferred before intersection: ${JSON.stringify({ beforeIntersectionRequests })}`);
   await client.evaluate('document.querySelector(".catalog-browser")?.scrollIntoView({ block: "start" })');
@@ -349,10 +487,22 @@ async function validateCatalogBrowser(client, catalogUrl, representativeGame, de
 
   await client.send("Page.navigate", { url: `${catalogUrl}?utm_source=browser-validation` });
   await waitForCatalogShell(client);
-  await new Promise((resolve) => setTimeout(resolve, 350));
+  await waitForAnimationFrames(client);
   const unrelatedQueryState = await client.evaluate('(() => ({ status: document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus, summary: document.querySelector(".result-summary")?.textContent }))()');
   const unrelatedQueryRequests = await catalogIndexRequestCount(client);
   if (unrelatedQueryState.status !== "idle" || unrelatedQueryRequests !== 0 || !unrelatedQueryState.summary?.includes("Browse or use filters to load the full catalog")) fail(`unrelated URL parameters triggered a catalog index request: ${JSON.stringify({ unrelatedQueryState, unrelatedQueryRequests })}`);
+
+  preview.failNextCatalogIndexRequest();
+  await client.send("Page.navigate", { url: catalogUrl });
+  await waitForCatalogShell(client);
+  await client.evaluate('document.querySelector("#catalog-query")?.focus()');
+  await waitFor(() => client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "error" && Boolean(document.querySelector(".browser-button--retry"))'));
+  const failedIndexState = await client.evaluate('(() => ({ status: document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus, message: document.querySelector(".catalog-index-error")?.textContent?.replace(/\\s+/g, " ").trim(), retry: document.querySelector(".browser-button--retry")?.textContent?.trim() }))()');
+  if (failedIndexState.status !== "error" || !failedIndexState.message?.includes("could not load") || failedIndexState.retry !== "Retry full catalog") fail(`catalog index failure state did not expose a bounded recovery action: ${JSON.stringify(failedIndexState)}`);
+  await client.evaluate('document.querySelector(".browser-button--retry")?.click()');
+  await waitForCatalogReady(client);
+  const recoveredIndexState = await client.evaluate('(() => ({ status: document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus, cards: document.querySelectorAll(".game-card").length, summary: document.querySelector(".result-summary")?.textContent }))()');
+  if (recoveredIndexState.status !== "ready" || recoveredIndexState.cards !== 24 || !recoveredIndexState.summary?.includes("of 1000 matching games")) fail(`catalog index retry did not restore the full result state: ${JSON.stringify(recoveredIndexState)}`);
 
   async function validateTaxonomyReturn(kind, id) {
     const section = kind === "platform" ? "platforms" : "genres";
@@ -420,28 +570,43 @@ async function main() {
   if (!deferredCatalogPlatformId) fail("the catalog index needs a platform absent from the first 24 records for deferred query validation");
   const deferredCatalogPlatformCount = catalogSearchRecords.filter((record) => record.platformIds.includes(deferredCatalogPlatformId)).length;
   if (deferredCatalogPlatformCount < 1) fail("the deferred catalog platform fixture must match at least one record");
-  const chrome = chromeCandidates.find((candidate) => candidate && fs.existsSync(candidate));
+  const chrome = chromeCandidates.find((candidate) => {
+    try { fs.accessSync(candidate, fs.constants.X_OK); return true; } catch { return false; }
+  });
   if (!chrome) fail("Google Chrome was not found; set CHROME_BIN to a local Chrome executable");
 
-  const preview = await startServer();
-  const debugPort = await unusedPort();
-  const profile = fs.mkdtempSync(path.join(os.tmpdir(), "gameatlas-chrome-profile-"));
+  let preview;
+  let profile;
   let browser;
   let client;
   try {
-    browser = spawn(chrome, ["--headless=new", "--no-first-run", "--no-default-browser-check", "--disable-background-networking", "--disable-component-update", `--remote-debugging-port=${debugPort}`, `--user-data-dir=${profile}`, "about:blank"], { stdio: "ignore" });
+    preview = await startServer();
+    profile = fs.mkdtempSync(path.join(os.tmpdir(), "gameatlas-chrome-profile-"));
+    browser = spawn(chrome, ["--headless=new", "--no-first-run", "--no-default-browser-check", "--disable-background-networking", "--disable-component-update", "--remote-debugging-port=0", `--user-data-dir=${profile}`, "about:blank"], { stdio: "ignore" });
+    const debugPort = await waitForChromeDebugPort(browser, profile);
     await waitFor(async () => {
-      const response = await fetch(`http://127.0.0.1:${debugPort}/json/version`);
+      const response = await fetchLocal(`http://127.0.0.1:${debugPort}/json/version`);
       return response.ok;
     });
     const pageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${physicalFallbackGame.slug}/`;
-    const targetResponse = await fetch(`http://127.0.0.1:${debugPort}/json/new?${encodeURIComponent(pageUrl)}`, { method: "PUT" });
+    const targetResponse = await fetchLocal(`http://127.0.0.1:${debugPort}/json/new?${encodeURIComponent(pageUrl)}`, { method: "PUT" });
     if (!targetResponse.ok) fail("Chrome did not create a debugging target");
     const target = await targetResponse.json();
     client = new CdpClient(target.webSocketDebuggerUrl);
     await client.open();
     await client.send("Page.enable");
     await client.send("Runtime.enable");
+    const missingUrl = `http://127.0.0.1:${preview.port}${basePath}/missing-browser-route/`;
+    const missingResponse = await fetchLocal(missingUrl);
+    const missingBody = await missingResponse.text();
+    if (missingResponse.status !== 404 || !missingBody.includes("That trail ends here.") || missingBody.includes("Not found")) fail(`preview 404 did not serve the exported not-found page: ${JSON.stringify({ status: missingResponse.status, body: missingBody.slice(0, 120) })}`);
+    await client.send("Page.navigate", { url: missingUrl });
+    await waitFor(() => client.evaluate('document.querySelector("h1")?.textContent?.trim() === "That trail ends here."'));
+    const missingState = await client.evaluate('(() => ({ robots: document.querySelector("meta[name=robots]")?.content, home: document.querySelector("main a")?.getAttribute("href") }))()');
+    if (!missingState.robots?.includes("noindex") || missingState.home !== `${basePath}/`) fail(`404 page lost noindex or base-path home navigation: ${JSON.stringify(missingState)}`);
+    await client.send("Page.navigate", { url: new URL(missingState.home, missingUrl).toString() });
+    await waitFor(() => client.evaluate(`window.location.pathname === ${JSON.stringify(`${basePath}/`)}`));
+    await client.send("Page.navigate", { url: pageUrl });
     await waitForGameBoxReady(client, physicalFallbackGame.title, { rotate: true });
 
     const semantics = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); const note = document.querySelector(".game-box-viewer-note"); return { role: stage?.getAttribute("role"), label: stage?.getAttribute("aria-label"), describedBy: stage?.getAttribute("aria-describedby"), fallback: document.body.textContent.includes("GameAtlas reference case"), fallbackRole: fallback?.getAttribute("role"), panelPolicy: note?.textContent?.includes("original GameAtlas editorial panels") }; })()');
@@ -484,10 +649,10 @@ async function main() {
     if (wrappedLeftState.angle !== "270" || wrappedLeftState.dragAngle !== "-90.0" || !wrappedLeftState.transform?.includes("rotateY(-90deg)")) fail(`left rotation did not preserve the short visual wrap from the front rest pose to the left spine: ${JSON.stringify(wrappedLeftState)}`);
     await client.evaluate('document.querySelector("[data-box-action=reset]").click()');
     await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]").dataset.boxAngle === "0"'));
-    const dragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); const rect = stage?.getBoundingClientRect(); if (!rect) return null; const startX = Math.max(rect.left + 10, Math.min(rect.right - 10, window.innerWidth - 160)); return { startX, endX: startX + 150, y: rect.top + rect.height / 2 }; })()');
+    const dragCoordinates = await client.evaluate('(async () => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center", behavior: "instant" }); await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))); const rect = stage?.getBoundingClientRect(); if (!rect) return null; const centerX = rect.left + rect.width / 2; return { startX: centerX - 75, endX: centerX + 75, y: rect.top + rect.height / 2 }; })()');
     if (!dragCoordinates) fail("physical package stage did not expose drag coordinates");
     await drag(client, dragCoordinates);
-    await waitFor(() => client.evaluate('document.querySelector("[data-game-box-stage]")?.dataset.boxDragging === "true" && Number(document.querySelector("[data-game-box-stage]")?.dataset.boxDragAngle) > 0'));
+    await waitForDragStart(client, dragCoordinates);
     const draggingState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { cursor: stage?.style.cursor, touchAction: stage?.style.touchAction, transition: box?.style.transition, willChange: box?.style.willChange, angle: stage?.dataset.boxAngle, dragAngle: stage?.dataset.boxDragAngle }; })()');
     if (draggingState.cursor !== "grabbing" || draggingState.touchAction !== "pan-y" || draggingState.transition !== "none" || draggingState.willChange !== "transform" || draggingState.angle !== "0") fail(`physical package drag did not enter a smooth transient rotation state: ${JSON.stringify(draggingState)}`);
     await releaseDrag(client, dragCoordinates);
@@ -569,8 +734,8 @@ async function main() {
     const sourceListedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${sourceListedReferenceGame.slug}/`;
     await client.send("Page.navigate", { url: sourceListedPageUrl });
     await waitForGameBoxReady(client, sourceListedReferenceGame.title);
-    const sourceListedDragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); const rect = stage?.getBoundingClientRect(); return rect ? { startX: rect.left + 20, endX: rect.left + 170, y: rect.top + rect.height / 2 } : null; })()');
-    if (!sourceListedDragCoordinates) fail("source-listed reference stage did not expose drag coordinates");
+    const sourceListedDragCoordinates = await client.evaluate('(async () => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center", behavior: "instant" }); await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))); const rect = stage?.getBoundingClientRect(); if (!rect) return null; const centerX = rect.left + rect.width / 2; const startX = centerX - 75; const y = rect.top + rect.height / 2; return { startX, endX: centerX + 75, y, hitInsideStage: Boolean(stage.contains(document.elementFromPoint(startX, y))) }; })()');
+    if (!sourceListedDragCoordinates?.hitInsideStage) fail(`source-listed reference stage did not expose a stable pointer target: ${JSON.stringify(sourceListedDragCoordinates)}`);
     await drag(client, sourceListedDragCoordinates);
     await releaseDrag(client, sourceListedDragCoordinates);
     const sourceListedState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); return { label: stage?.getAttribute("aria-label"), mode: stage?.dataset.presentationMode, kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasFront: Boolean(document.querySelector(".game-box__front img")), hasSpine: Boolean(document.querySelector(".game-box__spine")), hasBack: Boolean(document.querySelector(".game-box__back")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor, reference: document.body.textContent.includes("GameAtlas reference presentation"), scope: document.body.textContent.includes("do not establish a platform-specific release date"), copy: document.body.textContent.includes("no platform-specific package is implied"), fallbackRole: fallback?.getAttribute("role") }; })()');
@@ -585,7 +750,7 @@ async function main() {
     const expectedThumbnailSuffix = `/${catalogThumbnailAsset.path.replace(/^public\//, "")}`;
     if (thumbnailState.format !== "catalog-reference" || thumbnailState.kind !== "digital" || thumbnailState.hasSpine || thumbnailState.transform !== "none" || !thumbnailState.source?.endsWith(expectedThumbnailSuffix) || thumbnailState.loading !== "lazy" || thumbnailState.decoding !== "async" || thumbnailState.priority === "high") fail(`source-listed catalog thumbnail implied a physical package or lost its low-impact loading behavior: ${JSON.stringify(thumbnailState)}`);
 
-    await validateCatalogBrowser(client, `http://127.0.0.1:${preview.port}${basePath}/`, catalogRepresentativeGame, deferredCatalogPlatformId, deferredCatalogPlatformCount);
+    await validateCatalogBrowser(client, preview, `http://127.0.0.1:${preview.port}${basePath}/`, catalogRepresentativeGame, deferredCatalogPlatformId, deferredCatalogPlatformCount);
 
     await client.send("Page.navigate", { url: pageUrl });
     await waitForGameBoxReady(client, physicalFallbackGame.title, { rotate: true });
@@ -595,15 +760,22 @@ async function main() {
     if (!mediaState.reduce || !mediaState.forced || Number.parseFloat(mediaState.duration) > 0.001 || mediaState.willChange !== "auto" || !panelsHaveForcedContrast) fail(`reduced-motion, forced-colors, panel contrast, or compositor fallback is not active: ${JSON.stringify(mediaState)}`);
     console.log(`Browser validation passed (${physicalFallbackGame.slug} physical fallback, ${sourceListedReferenceGame.slug} source-listed reference, ${publishedBoxGame ? `${publishedBoxGame.slug} published front` : "no published front"}, front-first image scheduling, package profiles, catalog filters/layout/pagination, mobile layout, keyboard, zoom, fullscreen fallback, focus restoration, background isolation, reduced motion, forced colors).`);
   } finally {
+    await closeBrowser(client);
     client?.close();
-    if (browser && browser.exitCode === null && browser.signalCode === null) {
-      await new Promise((resolve) => {
-        browser.once("close", resolve);
-        browser.kill("SIGTERM");
-      });
+    await stopBrowser(browser);
+    if (preview) await stopServer(preview.server);
+    if (profile) {
+      try {
+        fs.rmSync(profile, { recursive: true, force: true, maxRetries: PROFILE_CLEANUP_RETRIES, retryDelay: 250 });
+      } catch (error) {
+        if (![
+          "EBUSY",
+          "ENOTEMPTY",
+          "EPERM",
+        ].includes(error?.code)) throw error;
+        fail(`Chrome profile cleanup remained busy after bounded retries: ${profile}`);
+      }
     }
-    await new Promise((resolve) => preview.server.close(resolve));
-    fs.rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
   }
 }
 

@@ -1,7 +1,7 @@
-.PHONY: help install lint typecheck test build report-coverage check-links validate
+.PHONY: help install lint typecheck test build report-coverage check-links browser-e2e validate
 
 help:
-	@printf '%s\n' 'GameAtlas commands:' '  make install        install locked dependencies' '  make lint           run ESLint' '  make typecheck      run TypeScript checks' '  make test           run tests' '  make build          build the static Pages export' '  make report-coverage refresh the deterministic coverage report' '  make check-links    check published URLs (network, opt-in)' '  make validate       run the complete local validation bundle'
+	@printf '%s\n' 'GameAtlas commands:' '  make install        install locked dependencies' '  make lint           run ESLint' '  make typecheck      run TypeScript checks' '  make test           run tests' '  make build          build the static Pages export' '  make report-coverage refresh the deterministic coverage report' '  make check-links    check published URLs (network, opt-in)' '  make browser-e2e     run the Chrome/CDP browser smoke suite' '  make validate       run the complete local validation bundle'
 
 install:
 	npm ci
@@ -23,6 +23,9 @@ report-coverage:
 
 check-links:
 	npm run check:links
+
+browser-e2e:
+	npm run validate:box-art-browser
 
 validate:
 	npm run lint
