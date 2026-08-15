@@ -214,6 +214,11 @@ async function stopBrowser(browser) {
   }
 }
 
+async function closeBrowser(client) {
+  if (!client) return;
+  try { await client.send("Browser.close"); } catch {}
+}
+
 async function stopServer(server) {
   await Promise.race([new Promise((resolve) => server.close(resolve)), new Promise((resolve) => setTimeout(resolve, PROCESS_SHUTDOWN_TIMEOUT_MS))]);
   server.closeAllConnections?.();
@@ -736,10 +741,22 @@ async function main() {
     if (!mediaState.reduce || !mediaState.forced || Number.parseFloat(mediaState.duration) > 0.001 || mediaState.willChange !== "auto" || !panelsHaveForcedContrast) fail(`reduced-motion, forced-colors, panel contrast, or compositor fallback is not active: ${JSON.stringify(mediaState)}`);
     console.log(`Browser validation passed (${physicalFallbackGame.slug} physical fallback, ${sourceListedReferenceGame.slug} source-listed reference, ${publishedBoxGame ? `${publishedBoxGame.slug} published front` : "no published front"}, front-first image scheduling, package profiles, catalog filters/layout/pagination, mobile layout, keyboard, zoom, fullscreen fallback, focus restoration, background isolation, reduced motion, forced colors).`);
   } finally {
+    await closeBrowser(client);
     client?.close();
     await stopBrowser(browser);
     if (preview) await stopServer(preview.server);
-    if (profile) fs.rmSync(profile, { recursive: true, force: true, maxRetries: PROFILE_CLEANUP_RETRIES, retryDelay: 250 });
+    if (profile) {
+      try {
+        fs.rmSync(profile, { recursive: true, force: true, maxRetries: PROFILE_CLEANUP_RETRIES, retryDelay: 250 });
+      } catch (error) {
+        if (![
+          "EBUSY",
+          "ENOTEMPTY",
+          "EPERM",
+        ].includes(error?.code)) throw error;
+        console.warn(`Chrome profile cleanup remained busy after bounded retries: ${profile}`);
+      }
+    }
   }
 }
 
