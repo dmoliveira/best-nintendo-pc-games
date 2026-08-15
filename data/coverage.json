@@ -200,5 +200,6 @@
       "label": "Classic Edition and mini reproductions",
       "reason": "Retro reproductions are model/products of an existing platform family, not new game platforms."
     }
-  ]
+  ],
+  "minimumHubRecords": 2
 }

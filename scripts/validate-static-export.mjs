@@ -5,8 +5,10 @@ const outDir = path.resolve(process.env.OUT_DIR ?? "out");
 const rootDir = process.cwd();
 const expectedBasePath = (process.env.EXPECTED_BASE_PATH ?? "/best-nintendo-pc-games").replace(/\/$/, "");
 const requiredFiles = ["index.html", ".nojekyll", "robots.txt", "sitemap.xml", "og-image.png", "mark.svg", "docs/rights-and-support-policy/index.html"];
+const forbiddenEvidenceFields = ["sourceUrl", "termsUrl", "rightsStatus", "verificationStatus", "capturedAt", "recheckAt"];
 
 function fail(message) { console.error(`Static export validation failed: ${message}`); process.exitCode = 1; }
+function checkNoRawEvidence(html, location) { for (const field of forbiddenEvidenceFields) if (html.includes(field)) fail(`${location} leaks raw evidence field ${field}`); }
 if (!fs.existsSync(outDir)) { fail(`missing output directory ${outDir}`); process.exit(1); }
 for (const file of requiredFiles) if (!fs.existsSync(path.join(outDir, file))) fail(`missing ${file}`);
 const html = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
@@ -14,14 +16,24 @@ for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth y
 if (!/Showing[\s\S]{0,120}of[\s\S]{0,120}reviewed games/.test(html)) fail("home page is missing the accessible result count");
 if (!html.includes("docs/rights-and-support-policy")) fail("home page is missing the policy link");
 if (html.includes("Catalog search is coming soon") || html.includes("Catalog coming soon") || html.includes("next discovery layer") || html.includes("discovery tools arrive") || html.includes("80+")) fail("home page exposes stale preview or unauthorized numeric messaging");
-for (const forbidden of ["sourceUrl", "termsUrl", "rightsStatus", "verificationStatus", "capturedAt", "recheckAt"]) if (html.includes(forbidden)) fail(`home page leaks raw evidence field ${forbidden}`);
 if (html.includes("action=\"/\"")) fail("home page contains a root-relative form action that bypasses the Pages base path");
+checkNoRawEvidence(html, "home page");
 const sitemap = fs.readFileSync(path.join(outDir, "sitemap.xml"), "utf8");
 if (expectedBasePath && !sitemap.includes(expectedBasePath)) fail(`sitemap does not include ${expectedBasePath || "/"}`);
 const gamesDir = path.join(rootDir, "data/games");
 const gameFiles = fs.existsSync(gamesDir) ? fs.readdirSync(gamesDir).filter((file) => file.endsWith(".json")).sort() : [];
-for (const file of gameFiles) {
-  const game = JSON.parse(fs.readFileSync(path.join(gamesDir, file), "utf8"));
+const gameRecords = gameFiles.map((file) => JSON.parse(fs.readFileSync(path.join(gamesDir, file), "utf8")));
+const usedPlatformIds = new Set(gameRecords.flatMap((game) => game.platforms ?? []));
+const usedGenreIds = new Set(gameRecords.flatMap((game) => game.genres ?? []));
+const platformsDocument = JSON.parse(fs.readFileSync(path.join(rootDir, "data/platforms.json"), "utf8"));
+const genresDocument = JSON.parse(fs.readFileSync(path.join(rootDir, "data/genres.json"), "utf8"));
+const coverageDocument = JSON.parse(fs.readFileSync(path.join(rootDir, "data/coverage.json"), "utf8"));
+const minimumHubRecords = Number.isInteger(coverageDocument.minimumHubRecords) && coverageDocument.minimumHubRecords >= 1 ? coverageDocument.minimumHubRecords : 2;
+const platformCounts = new Map([...usedPlatformIds].map((id) => [id, gameRecords.filter((game) => game.platforms?.includes(id)).length]));
+const genreCounts = new Map([...usedGenreIds].map((id) => [id, gameRecords.filter((game) => game.genres?.includes(id)).length]));
+const platformRecords = (platformsDocument.items ?? []).filter((platform) => platform.coverage === "populated" && usedPlatformIds.has(platform.id) && (platformCounts.get(platform.id) ?? 0) >= minimumHubRecords);
+const genreRecords = (genresDocument.items ?? []).filter((genre) => usedGenreIds.has(genre.id) && (genreCounts.get(genre.id) ?? 0) >= minimumHubRecords);
+for (const game of gameRecords) {
   const route = `games/${game.slug}/index.html`;
   const gamePath = path.join(outDir, route);
   if (!fs.existsSync(gamePath)) {
@@ -34,8 +46,26 @@ for (const file of gameFiles) {
   if (gameHtml.includes("80+") || /(?:critic score|popularity value|popularity rank)/i.test(gameHtml)) fail(`${route} exposes unauthorized numeric evidence messaging`);
   if (!sitemap.includes(`games/${game.slug}/`)) fail(`sitemap is missing ${game.slug}`);
 }
+for (const hub of [...platformRecords.map((record) => ({ type: "platform", record })), ...genreRecords.map((record) => ({ type: "genre", record }))]) {
+  const route = `${hub.type}s/${hub.record.id}/index.html`;
+  const hubPath = path.join(outDir, route);
+  if (!fs.existsSync(hubPath)) {
+    fail(`missing static ${hub.type} hub ${route}`);
+    continue;
+  }
+  const hubHtml = fs.readFileSync(hubPath, "utf8");
+  if (!hubHtml.includes(hub.record.name)) fail(`${route} does not contain its taxonomy name`);
+  if (!hubHtml.includes("reviewed games")) fail(`${route} does not contain a reviewed game count`);
+  if (!hubHtml.includes('class="skip-link"') || !hubHtml.includes('<main') || !hubHtml.includes('<h1')) fail(`${route} is missing accessible page landmarks`);
+  if (!hubHtml.includes(`${hub.type}s/${hub.record.id}/`)) fail(`${route} is missing its canonical/internal path`);
+  const representedGame = gameRecords.find((game) => hub.type === "platform" ? game.platforms?.includes(hub.record.id) : game.genres?.includes(hub.record.id));
+  if (!representedGame || !hubHtml.includes(`games/${representedGame.slug}/`)) fail(`${route} is missing a represented game link`);
+  if (!/Original editorial|GameAtlas editorial/.test(hubHtml)) fail(`${route} is missing editorial evidence labeling`);
+  if (!sitemap.includes(`${hub.type}s/${hub.record.id}/`)) fail(`sitemap is missing ${route}`);
+  checkNoRawEvidence(hubHtml, route);
+}
 const allFiles = [];
 function walk(directory) { for (const entry of fs.readdirSync(directory, { withFileTypes: true })) { const fullPath = path.join(directory, entry.name); if (entry.isDirectory()) walk(fullPath); else allFiles.push(fullPath); } }
 walk(outDir);
 for (const file of allFiles.filter((candidate) => /\.(html|js|css|xml|txt)$/.test(candidate))) if (/buy\.stripe\.com|\b(?:task|session|epic|memory|doc)_[0-9]+\b/i.test(fs.readFileSync(file, "utf8"))) fail(`public support/tracker detail found in ${path.relative(outDir, file)}`);
-if (!process.exitCode) console.log(`Static export validation passed (${allFiles.length} files, ${gameFiles.length} game routes, base path ${expectedBasePath || "/"}).`);
+if (!process.exitCode) console.log(`Static export validation passed (${allFiles.length} files, ${platformRecords.length} platform hubs (min ${minimumHubRecords}), ${genreRecords.length} genre hubs (min ${minimumHubRecords}), ${gameFiles.length} game routes, base path ${expectedBasePath || "/"}).`);

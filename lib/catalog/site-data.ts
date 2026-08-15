@@ -97,6 +97,8 @@ const platformDocument = asDocument(loadJson("data/platforms.json"));
 const genreDocument = asDocument(loadJson("data/genres.json"));
 const sourceDocument = asDocument(loadJson("data/source-rights.json"));
 const assetDocument = asDocument(loadJson("data/assets-manifest.json"));
+const coverageDocument = asDocument(loadJson("data/coverage.json"));
+export const MINIMUM_HUB_RECORDS = typeof coverageDocument.minimumHubRecords === "number" ? coverageDocument.minimumHubRecords : 2;
 const platforms = asItems<PlatformRecord>(platformDocument, "data/platforms.json");
 const genres = asItems<GenreRecord>(genreDocument, "data/genres.json");
 const context = createContext(platforms, genres, sourceDocument, assetDocument);
@@ -115,6 +117,11 @@ const catalogGames: CatalogGame[] = games.map((game) => ({
   }),
 }));
 const catalogBySlug = new Map(catalogGames.map((entry) => [entry.game.slug, entry]));
+const usedPlatformIds = new Set(catalogGames.flatMap(({ game }) => game.platforms));
+const usedGenreIds = new Set(catalogGames.flatMap(({ game }) => game.genres));
+const platformRecordCounts = new Map([...usedPlatformIds].map((id) => [id, catalogGames.filter(({ game }) => game.platforms.includes(id)).length]));
+const genreRecordCounts = new Map([...usedGenreIds].map((id) => [id, catalogGames.filter(({ game }) => game.genres.includes(id)).length]));
+const catalogSearchRecords = catalogGames.map(toCatalogSearchRecord);
 
 export function getCatalogGames(): readonly CatalogGame[] {
   return catalogGames;
@@ -124,8 +131,40 @@ export function getCatalogGame(slug: string): CatalogGame | undefined {
   return catalogBySlug.get(slug);
 }
 
+export function getCatalogPlatforms(): PlatformRecord[] {
+  return platforms.filter((platform) => platform.coverage === "populated" && usedPlatformIds.has(platform.id));
+}
+
+export function getCatalogPlatform(id: string): PlatformRecord | undefined {
+  return getCatalogPlatforms().find((platform) => platform.id === id);
+}
+
+export function getPlatformHubs(): PlatformRecord[] {
+  return getCatalogPlatforms().filter((platform) => (platformRecordCounts.get(platform.id) ?? 0) >= MINIMUM_HUB_RECORDS);
+}
+
+export function getPlatformHub(id: string): PlatformRecord | undefined {
+  return getPlatformHubs().find((platform) => platform.id === id);
+}
+
 export function getPopulatedPlatforms(): PlatformRecord[] {
-  return platforms.filter((platform) => platform.coverage === "populated");
+  return getCatalogPlatforms();
+}
+
+export function getCatalogGenres(): GenreRecord[] {
+  return genres.filter((genre) => usedGenreIds.has(genre.id));
+}
+
+export function getCatalogGenre(id: string): GenreRecord | undefined {
+  return getCatalogGenres().find((genre) => genre.id === id);
+}
+
+export function getGenreHubs(): GenreRecord[] {
+  return getCatalogGenres().filter((genre) => (genreRecordCounts.get(genre.id) ?? 0) >= MINIMUM_HUB_RECORDS);
+}
+
+export function getGenreHub(id: string): GenreRecord | undefined {
+  return getGenreHubs().find((genre) => genre.id === id);
 }
 
 export function getEditorialSignals(game: GameRecord): EditorialSignal[] {
@@ -158,13 +197,15 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
     releaseFormat: game.releaseFormat,
     platformIds: platforms.map((platform) => platform.id),
     platformLabels: platforms.map((platform) => platform.name),
+    platformHubIds: platforms.filter((platform) => (platformRecordCounts.get(platform.id) ?? 0) >= MINIMUM_HUB_RECORDS).map((platform) => platform.id),
     genreIds: genres.map((genre) => genre.id),
     genreLabels: genres.map((genre) => genre.name),
+    genreHubIds: genres.filter((genre) => (genreRecordCounts.get(genre.id) ?? 0) >= MINIMUM_HUB_RECORDS).map((genre) => genre.id),
     evidenceKinds,
     evidenceLabels,
   };
 }
 
 export function getCatalogSearchRecords(): readonly CatalogSearchRecord[] {
-  return catalogGames.map(toCatalogSearchRecord);
+  return catalogSearchRecords;
 }

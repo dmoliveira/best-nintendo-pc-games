@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import CatalogCards from "./catalog-cards";
 import {
   EMPTY_SEARCH_STATE,
   filterCatalog,
@@ -68,6 +68,6 @@ export default function CatalogBrowser({ records }: CatalogBrowserProps) {
       </div>
     </form>
     <p className="result-summary" aria-live="polite">Showing {filteredRecords.length} of {records.length} reviewed games.</p>
-    {filteredRecords.length > 0 ? <div className="game-grid">{filteredRecords.map((record) => <article className="game-card" key={record.slug}><div className="game-card-topline"><span>{record.platformLabels.join(" · ")}</span><span>{record.releaseYear}</span></div><div className="game-card-emoji" aria-hidden="true">{record.emoji}</div><h3><Link href={`/games/${record.slug}/`}>{record.title}</Link></h3><p>{record.shortDescription}</p><div className="tag-list" aria-label="Genres">{record.genreLabels.map((label) => <span className="tag" key={label}>{label}</span>)}</div><div className="game-card-footer"><span className="evidence-pill">{record.evidenceLabels.join(" · ")}</span><Link className="card-link" href={`/games/${record.slug}/`}>Read the game page <span aria-hidden="true">↗</span></Link></div></article>)}</div> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, or year.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search ↗</button></div>}
+    {filteredRecords.length > 0 ? <CatalogCards records={filteredRecords} /> : <div className="empty-state" role="status"><strong>No games match those filters.</strong><span>Try a broader title, platform, genre, or year.</span><button className="text-link" type="button" onClick={clearFilters}>Clear the current search ↗</button></div>}
   </div>;
 }
