@@ -4,11 +4,12 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import CatalogCards from "../app/catalog-cards";
 import { getCatalogSearchRecords } from "../lib/catalog/site-data";
+import type { CatalogSearchRecord } from "../lib/catalog/search";
 
-test("catalog cards expose one game route and announce omitted platform and genre labels", () => {
+test("catalog cards expose one game route and describe compact metadata and external destinations", () => {
   const base = getCatalogSearchRecords()[0];
   if (!base) throw new Error("missing catalog fixture");
-  const record = {
+  const record: CatalogSearchRecord = {
     ...base,
     slug: "visual-card-fixture",
     title: "Visual card fixture",
@@ -20,6 +21,9 @@ test("catalog cards expose one game route and announce omitted platform and genr
     genreLabels: ["Action", "Adventure", "Racing", "Puzzle"],
     genreHubIds: [],
     editorialLabel: "Featured",
+    criticalLink: { label: "External/reference — Example Critic", url: "https://example.test/fallback-critic" },
+    criticSummary: { label: "Critic score", display: "92/100", detail: "Published review", provider: "Test Critics", url: "https://example.test/critic" },
+    salesSummary: { label: "Reported sales", display: "1.2M", detail: "Reported units", provider: "Test Sales", url: "https://example.test/sales" },
   };
   const markup = renderToStaticMarkup(createElement(CatalogCards, { records: [record] }));
   const detailLinks = markup.match(/href="[^\"]*\/games\/visual-card-fixture(?:\/)?"/g) ?? [];
@@ -34,4 +38,7 @@ test("catalog cards expose one game route and announce omitted platform and genr
   assert.match(markup, /<span class="editorial-badge"><span class="editorial-dot" aria-hidden="true"><\/span>Featured<\/span>/);
   assert.doesNotMatch(markup, /<div class="game-card-art" aria-hidden/);
   assert.doesNotMatch(markup, /<div class="game-card-art"[^>]*><a/);
+  assert.match(markup, /class="score-value" href="https:\/\/example\.test\/critic" target="_blank" rel="noreferrer" title="Test Critics · Published review" aria-label="Critic score: 92\/100; Published review; source Test Critics; opens in a new tab"/);
+  assert.match(markup, /class="sales-summary" href="https:\/\/example\.test\/sales" target="_blank" rel="noreferrer" title="Test Sales · Reported units" aria-label="Reported sales: 1\.2M; Reported units; source Test Sales; opens in a new tab"/);
+  assert.doesNotMatch(markup, /Open Example Critic critic score context/);
 });
