@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { localTodayKey } from "../date-policy.mjs";
 import { createSiteConfig } from "../site-config";
+import { getPlatformDisplayLabel } from "./display";
 import { normalizeSearchText, type CatalogSearchRecord } from "./search";
 import { selectEditorialAsset } from "../box-art/asset-roles.mjs";
 import { BOX_ART_FORMAT_IDS } from "../box-art/formats";
@@ -214,6 +215,7 @@ export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame):
     releaseFormat: game.releaseFormat,
     platformIds: platforms.map((platform) => platform.id),
     platformLabels: platforms.map((platform) => platform.name),
+    platformDisplayLabels: platforms.map((platform) => getPlatformDisplayLabel(platform)),
     platformHubIds: platforms.filter((platform) => (platformRecordCounts.get(platform.id) ?? 0) >= MINIMUM_HUB_RECORDS).map((platform) => platform.id),
     genreIds: genres.map((genre) => genre.id),
     genreLabels: genres.map((genre) => genre.name),

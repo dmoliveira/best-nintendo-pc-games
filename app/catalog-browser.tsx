@@ -22,7 +22,7 @@ export default function CatalogBrowser({ records }: CatalogBrowserProps) {
     genreIds: new Set(records.flatMap((record) => record.genreIds)),
     years: new Set(records.map((record) => String(record.releaseYear))),
   }), [records]);
-  const platformOptions = useMemo(() => [...new Map(records.flatMap((record) => record.platformLabels.map((label, index) => [label, record.platformIds[index]] as const))).entries()].sort(([left], [right]) => normalizeSearchText(left) < normalizeSearchText(right) ? -1 : normalizeSearchText(left) > normalizeSearchText(right) ? 1 : 0), [records]);
+  const platformOptions = useMemo(() => [...new Map(records.flatMap((record) => record.platformDisplayLabels.map((label, index) => [label, record.platformIds[index]] as const))).entries()].sort(([left], [right]) => normalizeSearchText(left) < normalizeSearchText(right) ? -1 : normalizeSearchText(left) > normalizeSearchText(right) ? 1 : 0), [records]);
   const genreOptions = useMemo(() => [...new Map(records.flatMap((record) => record.genreLabels.map((label, index) => [label, record.genreIds[index]] as const))).entries()].sort(([left], [right]) => normalizeSearchText(left) < normalizeSearchText(right) ? -1 : normalizeSearchText(left) > normalizeSearchText(right) ? 1 : 0), [records]);
   const yearOptions = useMemo(() => [...options.years].sort((left, right) => Number(right) - Number(left)), [options.years]);
   const [state, setState] = useState<CatalogSearchState>(EMPTY_SEARCH_STATE);

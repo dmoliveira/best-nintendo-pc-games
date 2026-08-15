@@ -33,6 +33,8 @@ test("visual shell protects focus, contrast, and reduced-motion behavior", () =>
   assert.match(styles, /wordmark-orbit/);
   assert.match(styles, /@keyframes wordmark-orbit-spin/);
   assert.match(styles, /overflow-x:clip/);
+  assert.match(styles, /game-box\{transition:none/);
+  assert.match(styles, /game-card-credits,\.game-card-credits>span\{max-width:100%;overflow:visible;text-overflow:clip;white-space:normal\}/);
   assert.doesNotMatch(styles, /\.platform-card:hover\{[^}]*transform/);
 });
 
@@ -44,6 +46,8 @@ test("game detail pages expose static params, a skip link, and explicit editoria
   assert.match(gamePage, /Original editorial/);
   assert.match(gamePage, /PlatformGlyph/);
   assert.match(gamePage, /game-status-row/);
+  assert.match(gamePage, /getPlatformDisplayLabel/);
+  assert.match(browser, /platformDisplayLabels/);
   assert.match(gamePage, /Official &amp; external resources/);
   assert.match(gamePage, /DSiWare · Digital/);
 });

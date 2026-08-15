@@ -20,6 +20,7 @@ export interface CatalogSearchRecord {
   releaseFormat?: "cartridge" | "digital";
   platformIds: string[];
   platformLabels: string[];
+  platformDisplayLabels: string[];
   platformHubIds: string[];
   genreIds: string[];
   genreLabels: string[];

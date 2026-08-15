@@ -21,25 +21,32 @@ export default function CatalogCards({ records }: CatalogCardsProps) {
     const visibleGenres = record.genreIds.slice(0, 3);
     const hiddenGenreCount = Math.max(record.genreIds.length - visibleGenres.length, 0);
     const sameTeam = record.developer && record.publisher && record.developer === record.publisher;
+    const distributionLabel = record.releaseFormat === "digital" ? "Digital" : record.releaseFormat === "cartridge" ? "Cartridge" : undefined;
+    const creditTitle = sameTeam ? `Team: ${record.developer}` : [record.developer ? `Dev: ${record.developer}` : null, record.publisher ? `Pub: ${record.publisher}` : null].filter(Boolean).join(" · ");
     return <article className="game-card" key={record.slug}>
       <div className="game-card-art">
         {record.artPath ? <img src={record.artPath} alt="" loading="lazy" /> : <span className="game-card-emoji" aria-hidden="true">{record.emoji}</span>}
         <div className="game-card-art-rail">
           {record.editorialLabel ? <span className="editorial-badge"><span className="editorial-dot" aria-hidden="true" />{record.editorialLabel}</span> : null}
-          <span className="game-card-year">{record.releaseYear}</span>
         </div>
       </div>
       <h3><Link href={`/games/${record.slug}/`}>{record.title}</Link></h3>
-      <div className="game-card-platforms" aria-label={`Platforms: ${record.platformLabels.join(", ")}`}>
-        {visiblePlatforms.map((platformId, index) => <span className="game-card-platform" key={platformId}>
-          <PlatformGlyph platformId={platformId} />
-          {record.platformHubIds.includes(platformId) ? <Link href={`/platforms/${platformId}/`}>{record.platformLabels[index]}</Link> : <span>{record.platformLabels[index]}</span>}
-        </span>)}
-        {hiddenPlatformCount > 0 ? <span className="game-card-platform game-card-platform--more">+{hiddenPlatformCount}</span> : null}
+      <div className="game-card-fact-row">
+        <div className="game-card-platforms" aria-label={`Platforms: ${record.platformLabels.join(", ")}`}>
+          {visiblePlatforms.map((platformId, index) => <span className="game-card-platform" key={platformId} title={record.platformLabels[index]}>
+            <PlatformGlyph platformId={platformId} />
+            {record.platformHubIds.includes(platformId) ? <Link aria-label={`Open ${record.platformLabels[index]} platform guide`} href={`/platforms/${platformId}/`}>{record.platformDisplayLabels[index]}</Link> : <span>{record.platformDisplayLabels[index]}</span>}
+          </span>)}
+          {hiddenPlatformCount > 0 ? <span className="game-card-platform game-card-platform--more">+{hiddenPlatformCount}</span> : null}
+        </div>
+        <div className="game-card-fact-aside">
+          <span className="game-card-year">{record.releaseYear}</span>
+          {distributionLabel ? <span className="game-card-distribution">{distributionLabel}</span> : null}
+        </div>
       </div>
       <p className="game-card-description">{record.shortDescription}</p>
-      {record.developer || record.publisher ? <div className="game-card-credits" aria-label="Credits">
-        {sameTeam ? <span><b>Team</b>{record.developer}</span> : <>{record.developer ? <span><b>Dev</b>{record.developer}</span> : null}{record.publisher ? <span><b>Pub</b>{record.publisher}</span> : null}</>}
+      {record.developer || record.publisher ? <div className="game-card-credits" aria-label="Credits" title={creditTitle}>
+        {sameTeam ? <span><b>Team</b>{record.developer}</span> : <span>{record.developer ? <><b>Dev</b>{record.developer}</> : null}{record.developer && record.publisher ? <span className="credit-divider" aria-hidden="true"> · </span> : null}{record.publisher ? <><b>Pub</b>{record.publisher}</> : null}</span>}
       </div> : null}
       <div className="tag-list" aria-label="Genres">
         {visibleGenres.map((genreId, index) => record.genreHubIds.includes(genreId) ? <Link className={`tag tag--${getGenreTone(genreId)}`} href={`/genres/${genreId}/`} key={genreId}>{record.genreLabels[index]}</Link> : <span className={`tag tag--${getGenreTone(genreId)}`} key={genreId}>{record.genreLabels[index]}</span>)}
