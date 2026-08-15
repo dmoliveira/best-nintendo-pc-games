@@ -4,7 +4,7 @@
   "title": "Dying Light",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Dying Light is included in GameAtlas's PC (Windows) action and adventure and horror and survival route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "Dying Light is included in GameAtlas's PC (Windows) action and adventure and horror and survival route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
     "Makes a documented action and adventure and horror and survival option easier to find in the PC (Windows) path.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -35,17 +35,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Recorded for the PC (Windows) action and adventure and horror and survival discovery path using a linked structured-data reference; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

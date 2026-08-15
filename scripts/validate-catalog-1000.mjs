@@ -118,8 +118,8 @@ for (const [index, candidate] of (inventory.candidates ?? []).entries()) {
     const mapping = inventory.genreMappings[qid];
     if (!hasNonEmpty(mapping?.label) || !Array.isArray(mapping?.genreIds) || mapping.genreIds.some((genreId) => !genreIds.has(genreId))) fail(label + " contains an invalid frozen genre mapping for " + qid);
   }
-  if (!hasNonEmpty(candidate.editorialCopy?.shortDescription) || !Array.isArray(candidate.editorialCopy?.highlights) || candidate.editorialCopy.highlights.length !== 2 || candidate.editorialCopy.highlights.some((highlight) => !hasNonEmpty(highlight)) || !hasNonEmpty(candidate.editorialCopy?.rationale)) fail(label + " has incomplete original editorial copy");
-  if (candidate.review?.reviewedBy !== "GameAtlas frozen catalog method" || candidate.review?.reviewedAt !== "2026-08-15" || candidate.review?.copyStatus !== "original-gameatlas" || candidate.review?.sourceMethod !== "fact-only-wikidata") fail(label + " has an invalid catalog-method attestation");
+  if (!hasNonEmpty(candidate.editorialCopy?.shortDescription) || !Array.isArray(candidate.editorialCopy?.highlights) || candidate.editorialCopy.highlights.length !== 2 || candidate.editorialCopy.highlights.some((highlight) => !hasNonEmpty(highlight)) || !hasNonEmpty(candidate.editorialCopy?.rationale)) fail(label + " has incomplete deterministic catalog-method copy");
+  if (candidate.review?.reviewedBy !== "GameAtlas deterministic catalog process" || candidate.review?.reviewedAt !== "2026-08-15" || candidate.review?.copyStatus !== "deterministic-catalog-method" || candidate.review?.sourceMethod !== "frozen-wikidata-structured-data") fail(label + " has an invalid catalog-method attestation");
   const signature = textSignature(inventoryCopy(candidate), candidate.title).join("-");
   if (copySignatures.has(signature)) fail(label + " duplicates editorial copy from " + copySignatures.get(signature));
   else copySignatures.set(signature, label);
@@ -163,7 +163,7 @@ for (const { game } of generatedGames) {
   if (game.title !== candidate.title || game.release?.year !== candidate.wikidataReleaseYear || JSON.stringify(game.platforms) !== JSON.stringify([candidate.platformId]) || JSON.stringify(game.genres) !== JSON.stringify(candidate.genreIds)) fail("generated game metadata diverges for " + game.slug);
   if (JSON.stringify(game.sources) !== JSON.stringify(["wikidata-fact-reference", "gameatlas-editorial"])) fail("generated game sources are invalid for " + game.slug);
   if (!Array.isArray(game.links) || game.links.length !== 1 || game.links[0]?.kind !== "reference" || game.links[0]?.url !== candidate.entityUrl || game.links[0]?.label !== "External/reference — Wikidata structured data") fail("generated Wikidata link is invalid for " + game.slug);
-  if (!Array.isArray(game.signals) || game.signals.length !== 1 || game.signals[0]?.kind !== "editorial" || game.signals[0]?.evidenceState !== "original-editorial" || game.signals[0]?.label !== "GameAtlas catalog entry" || game.signals[0]?.reviewedBy !== "GameAtlas frozen catalog method") fail("generated catalog signal is invalid for " + game.slug);
+  if (!Array.isArray(game.signals) || game.signals.length !== 1 || game.signals[0]?.kind !== "editorial" || game.signals[0]?.evidenceState !== "catalog-method" || game.signals[0]?.label !== "GameAtlas catalog method" || game.signals[0]?.reviewedBy !== "GameAtlas deterministic catalog process") fail("generated catalog signal is invalid for " + game.slug);
   const signal = game.signals?.[0] ?? {};
   for (const field of ["score", "scale", "count", "value", "rank", "methodVersion", "scoreType", "sitelinkCount"]) if (field in signal) fail("generated signal contains prohibited field " + field + " for " + game.slug);
   if (!Array.isArray(game.assets) || game.assets.length !== 1 || "role" in game.assets[0] || "boxFormatId" in game.assets[0]) fail("generated game must have exactly one non-box generic asset for " + game.slug);

@@ -4,7 +4,7 @@
   "title": "Star Fox 64 3D",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "Star Fox 64 3D helps define a Nintendo 3DS family shooter path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Star Fox 64 3D helps define a Nintendo 3DS family shooter path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Builds a traceable shooter option into the Nintendo 3DS family discovery path.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Documented for the Nintendo 3DS family shooter discovery path using the frozen Wikidata metadata snapshot; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

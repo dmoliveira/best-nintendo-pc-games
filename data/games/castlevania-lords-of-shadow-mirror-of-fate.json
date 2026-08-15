@@ -4,7 +4,7 @@
   "title": "Castlevania: Lords of Shadow – Mirror of Fate",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Castlevania: Lords of Shadow – Mirror of Fate joins the Nintendo 3DS family action and platformer path in GameAtlas with original context and a clearly labeled Wikidata structured-data link.",
+  "shortDescription": "Castlevania: Lords of Shadow – Mirror of Fate joins the Nintendo 3DS family action and platformer path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
   "highlights": [
     "Maps a direct-reference action and platformer entry into the Nintendo 3DS family catalog.",
     "Uses structured metadata as provenance rather than imported review copy."
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Registered for the Nintendo 3DS family action and platformer discovery path using Wikidata-listed platform and genre statements; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

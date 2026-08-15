@@ -4,10 +4,10 @@
   "title": "Hitman 2: Silent Assassin",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Hitman 2: Silent Assassin is grouped with GameAtlas's Nintendo GameCube action and adventure picks, where original catalog context sits beside a direct Wikidata record.",
+  "shortDescription": "Hitman 2: Silent Assassin is grouped in GameAtlas's Nintendo GameCube action and adventure catalog path beside a direct Wikidata structured-data record.",
   "highlights": [
     "Brings a source-aware action and adventure entry to the Nintendo GameCube browsing route.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 2002
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Logged for the Nintendo GameCube action and adventure discovery path using a direct Wikidata structured-data record; this remains a labeled reference path, not a popularity claim.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

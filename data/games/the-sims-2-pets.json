@@ -4,7 +4,7 @@
   "title": "The Sims 2: Pets",
   "aliases": [],
   "emoji": "🌱",
-  "shortDescription": "The Sims 2: Pets is organized in GameAtlas's Nintendo GameCube simulation collection with a source-linked record and independently written context.",
+  "shortDescription": "The Sims 2: Pets is organized in GameAtlas's Nintendo GameCube simulation collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Brings a source-aware simulation entry to the Nintendo GameCube browsing route.",
     "Uses a factual reference path instead of an aggregate score or review."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Documented for the Nintendo GameCube simulation discovery path using a linked structured-data reference; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

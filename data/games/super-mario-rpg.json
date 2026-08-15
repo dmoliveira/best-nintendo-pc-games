@@ -4,7 +4,7 @@
   "title": "Super Mario RPG",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Super Mario RPG is kept in GameAtlas's Wii U action discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Super Mario RPG is kept in GameAtlas's Wii U action discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Builds a traceable action option into the Wii U discovery path.",
     "Links the catalog entry to a source record without presenting a rating."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Recorded for the Wii U action discovery path using the frozen source metadata record; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

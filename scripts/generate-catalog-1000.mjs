@@ -99,7 +99,7 @@ function createRecord(candidate) {
     signals: [{
       kind: "editorial",
       provider: "GameAtlas",
-      label: "GameAtlas catalog entry",
+      label: "GameAtlas catalog method",
       rationale: candidate.editorialCopy.rationale,
       sourceId: "gameatlas-editorial",
       sourceUrl,
@@ -109,7 +109,7 @@ function createRecord(candidate) {
       reviewedBy: candidate.review.reviewedBy,
       rightsReviewedAt: reviewDate,
       recheckAt: recheckDate,
-      evidenceState: "original-editorial",
+      evidenceState: "catalog-method",
     }],
     links: [{ label: "External/reference — Wikidata structured data", url: candidate.entityUrl, kind: "reference" }],
     assets: [{ path: assetPath(candidate), alt: assetAlt(candidate), provenanceId: assetId(candidate) }],

@@ -4,7 +4,7 @@
   "title": "Silent Hill: Shattered Memories",
   "aliases": [],
   "emoji": "🕯️",
-  "shortDescription": "Silent Hill: Shattered Memories sits in the GameAtlas Wii horror collection, pairing a direct structured-data reference with original catalog context.",
+  "shortDescription": "Silent Hill: Shattered Memories sits in the GameAtlas Wii horror collection, pairing a direct structured-data reference with a catalog-method note.",
   "highlights": [
     "Brings a source-aware horror entry to the Wii browsing route.",
     "Keeps third-party commentary and scores out of the linked metadata path."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Grouped for the Wii horror discovery path using a source-linked Wikidata item; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,7 +4,7 @@
   "title": "Super Paper Mario",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Super Paper Mario is grouped with GameAtlas's Wii U platformer picks, where original catalog context sits beside a direct Wikidata record.",
+  "shortDescription": "Super Paper Mario is grouped in GameAtlas's Wii U platformer catalog path beside a direct Wikidata structured-data record.",
   "highlights": [
     "Places a source-linked platformer entry in the Wii U browsing path.",
     "Uses structured metadata as provenance rather than imported review copy."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the Wii U platformer discovery path using a linked structured-data reference; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

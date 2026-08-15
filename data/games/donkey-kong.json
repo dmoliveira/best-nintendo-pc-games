@@ -4,7 +4,7 @@
   "title": "Donkey Kong",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Donkey Kong sits in the GameAtlas Game Boy family platformer and puzzle collection, pairing a direct structured-data reference with original catalog context.",
+  "shortDescription": "Donkey Kong sits in the GameAtlas Game Boy family platformer and puzzle collection, pairing a direct structured-data reference with a catalog-method note.",
   "highlights": [
     "Sets a direct-reference platformer and puzzle marker within the Game Boy family catalog.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Logged for the Game Boy family platformer and puzzle discovery path using a Wikidata-listed catalog relationship; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

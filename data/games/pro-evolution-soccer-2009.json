@@ -4,7 +4,7 @@
   "title": "Pro Evolution Soccer 2009",
   "aliases": [],
   "emoji": "🏟️",
-  "shortDescription": "Pro Evolution Soccer 2009 helps define a Wii sports path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Pro Evolution Soccer 2009 helps define a Wii sports path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Builds a traceable sports option into the Wii discovery path.",
     "Links the catalog entry to a source record without presenting a rating."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Registered for the Wii sports discovery path using the preserved Wikidata entity record; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

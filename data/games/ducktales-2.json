@@ -4,10 +4,10 @@
   "title": "DuckTales 2",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "DuckTales 2 anchors a Game Boy family platformer entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "DuckTales 2 anchors a Game Boy family platformer catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Adds a clearly sourced platformer option to the Game Boy family discovery path.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 1993
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the Game Boy family platformer discovery path using a linked structured-data reference; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

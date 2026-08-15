@@ -4,7 +4,7 @@
   "title": "Golf",
   "aliases": [],
   "emoji": "🏟️",
-  "shortDescription": "Golf helps define a Nintendo Entertainment System sports path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Golf helps define a Nintendo Entertainment System sports path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Builds a traceable sports option into the Nintendo Entertainment System discovery path.",
     "Links the catalog entry to a source record without presenting a rating."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Classified for the Nintendo Entertainment System sports discovery path using Wikidata-listed platform and genre statements; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the Nintendo Entertainment System sports discovery path using Wikidata-listed platform and genre statements; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

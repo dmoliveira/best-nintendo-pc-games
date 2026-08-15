@@ -4,10 +4,10 @@
   "title": "Splatoon 2",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Splatoon 2 is organized in GameAtlas's Nintendo Switch action and shooter collection with a source-linked record and independently written context.",
+  "shortDescription": "Splatoon 2 is organized in GameAtlas's Nintendo Switch action and shooter collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Adds a clearly sourced action and shooter option to the Nintendo Switch discovery path.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2017
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Documented for the Nintendo Switch action and shooter discovery path using a direct Wikidata structured-data record; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo Switch action and shooter discovery path using a direct Wikidata structured-data record; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

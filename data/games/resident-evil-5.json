@@ -4,10 +4,10 @@
   "title": "Resident Evil 5",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Resident Evil 5 is cataloged with Nintendo Switch action and adventure and shooter picks in GameAtlas, keeping its editorial context separate from the linked Wikidata record.",
+  "shortDescription": "Resident Evil 5 is cataloged in the Nintendo Switch action and adventure and shooter path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
   "highlights": [
     "Places a source-linked action and adventure and shooter entry in the Nintendo Switch browsing path.",
-    "Retains source provenance while keeping the catalog context independently authored."
+    "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
     "year": 2009
@@ -33,17 +33,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Indexed for the Nintendo Switch action and adventure and shooter discovery path using a direct Wikidata structured-data record; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the Nintendo Switch action and adventure and shooter discovery path using a direct Wikidata structured-data record; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

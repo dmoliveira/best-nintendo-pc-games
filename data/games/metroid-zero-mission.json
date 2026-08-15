@@ -4,7 +4,7 @@
   "title": "Metroid: Zero Mission",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Metroid: Zero Mission is kept in GameAtlas's Game Boy Advance family action discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Metroid: Zero Mission is kept in GameAtlas's Game Boy Advance family action discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Offers a clearly labeled action route through the Game Boy Advance family collection.",
     "Uses structured metadata as provenance rather than imported review copy."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Registered for the Game Boy Advance family action discovery path using the frozen source metadata record; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Game Boy Advance family action discovery path using the frozen source metadata record; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

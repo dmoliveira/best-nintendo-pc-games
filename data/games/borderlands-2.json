@@ -4,7 +4,7 @@
   "title": "Borderlands 2",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Borderlands 2 is kept in GameAtlas's PC (Windows) action and shooter discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Borderlands 2 is kept in GameAtlas's PC (Windows) action and shooter discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Maps a direct-reference action and shooter entry into the PC (Windows) catalog.",
     "Preserves a direct source trail without copying provider prose or media."
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Grouped for the PC (Windows) action and shooter discovery path using the frozen source metadata record; this remains a labeled reference path, not a popularity claim.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,10 +4,10 @@
   "title": "The Crew",
   "aliases": [],
   "emoji": "🏁",
-  "shortDescription": "The Crew is grouped with GameAtlas's PC (Windows) racing picks, where original catalog context sits beside a direct Wikidata record.",
+  "shortDescription": "The Crew is grouped in GameAtlas's PC (Windows) racing catalog path beside a direct Wikidata structured-data record.",
   "highlights": [
     "Places a source-linked racing entry in the PC (Windows) browsing path.",
-    "Retains source provenance while keeping the catalog context independently authored."
+    "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
     "year": 2013
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Classified for the PC (Windows) racing discovery path using a direct Wikidata structured-data record; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

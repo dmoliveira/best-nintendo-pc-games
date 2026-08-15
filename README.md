@@ -11,7 +11,7 @@ GameAtlas is a source-aware, static-first guide to acclaimed and popular games. 
 - fast prefix and partial-match search;
 - platform, generation, genre, year, developer, publisher, and quality-signal filters;
 - provider-specific critic/community signals, sales facts, popularity signals, and editorial picks kept separate;
-- concise game pages with original context, sources, official/store links, and related discovery;
+- concise game pages with clearly labeled catalog-method or original editorial context, sources, official/store links, and related discovery;
 - responsive, keyboard-friendly visual browsing with local/generated editorial art;
 - static GitHub Pages deployment with no runtime API keys.
 

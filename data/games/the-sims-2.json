@@ -4,7 +4,7 @@
   "title": "The Sims 2",
   "aliases": [],
   "emoji": "🌱",
-  "shortDescription": "The Sims 2 is grouped with GameAtlas's Nintendo GameCube simulation picks, where original catalog context sits beside a direct Wikidata record.",
+  "shortDescription": "The Sims 2 is grouped in GameAtlas's Nintendo GameCube simulation catalog path beside a direct Wikidata structured-data record.",
   "highlights": [
     "Adds a clearly sourced simulation option to the Nintendo GameCube discovery path.",
     "Links the catalog entry to a source record without presenting a rating."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Mapped for the Nintendo GameCube simulation discovery path using a linked Wikidata platform-and-genre statement; this remains a factual-reference workflow rather than a rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

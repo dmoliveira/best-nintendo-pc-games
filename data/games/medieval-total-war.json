@@ -4,10 +4,10 @@
   "title": "Medieval: Total War",
   "aliases": [],
   "emoji": "♟️",
-  "shortDescription": "Medieval: Total War anchors a PC (Windows) strategy entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Medieval: Total War anchors a PC (Windows) strategy catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Sets a direct-reference strategy marker within the PC (Windows) catalog.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2002
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Documented for the PC (Windows) strategy discovery path using Wikidata-listed platform and genre statements; this remains catalog organization rather than provider commentary.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,10 +4,10 @@
   "title": "Bulletstorm",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "Bulletstorm is grouped with GameAtlas's Nintendo Switch shooter picks, where original catalog context sits beside a direct Wikidata record.",
+  "shortDescription": "Bulletstorm is grouped in GameAtlas's Nintendo Switch shooter catalog path beside a direct Wikidata structured-data record.",
   "highlights": [
     "Keeps a documented shooter option visible in the Nintendo Switch collection.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 2011
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Mapped for the Nintendo Switch shooter discovery path using the documented Wikidata platform mapping; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

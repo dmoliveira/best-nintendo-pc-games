@@ -4,10 +4,10 @@
   "title": "Mega Man & Bass",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Mega Man & Bass anchors a Super Nintendo Entertainment System action and platformer entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Mega Man & Bass anchors a Super Nintendo Entertainment System action and platformer catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Makes a documented action and platformer option easier to find in the Super Nintendo Entertainment System path.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 1998
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Recorded for the Super Nintendo Entertainment System action and platformer discovery path using the documented Wikidata platform mapping; this remains catalog organization rather than provider commentary.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

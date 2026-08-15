@@ -4,7 +4,7 @@
   "title": "Half-Life: Alyx",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "Half-Life: Alyx is organized in GameAtlas's PC (Windows) shooter collection with a source-linked record and independently written context.",
+  "shortDescription": "Half-Life: Alyx is organized in GameAtlas's PC (Windows) shooter collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Sets a direct-reference shooter marker within the PC (Windows) catalog.",
     "Uses a factual reference path instead of an aggregate score or review."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Grouped for the PC (Windows) shooter discovery path using a source-linked Wikidata item; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the PC (Windows) shooter discovery path using a source-linked Wikidata item; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

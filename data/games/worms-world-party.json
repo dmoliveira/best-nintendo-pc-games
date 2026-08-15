@@ -4,7 +4,7 @@
   "title": "Worms World Party",
   "aliases": [],
   "emoji": "♟️",
-  "shortDescription": "Worms World Party is grouped with GameAtlas's Game Boy Advance family strategy picks, where original catalog context sits beside a direct Wikidata record.",
+  "shortDescription": "Worms World Party is grouped in GameAtlas's Game Boy Advance family strategy catalog path beside a direct Wikidata structured-data record.",
   "highlights": [
     "Maps a direct-reference strategy entry into the Game Boy Advance family catalog.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Registered for the Game Boy Advance family strategy discovery path using the frozen source metadata record; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Registered for the Game Boy Advance family strategy discovery path using the frozen source metadata record; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

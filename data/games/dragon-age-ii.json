@@ -4,7 +4,7 @@
   "title": "Dragon Age II",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Dragon Age II helps define a PC (Windows) action path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Dragon Age II helps define a PC (Windows) action path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Brings a source-aware action entry to the PC (Windows) browsing route.",
     "Links the catalog entry to a source record without presenting a rating."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the PC (Windows) action discovery path using a source-linked Wikidata item; this remains a labeled reference path, not a popularity claim.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,7 +4,7 @@
   "title": "World of Goo",
   "aliases": [],
   "emoji": "🧩",
-  "shortDescription": "World of Goo is kept in GameAtlas's Wii puzzle discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "World of Goo is kept in GameAtlas's Wii puzzle discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Maps a direct-reference puzzle entry into the Wii catalog.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Cataloged for the Wii puzzle discovery path using a direct Wikidata structured-data record; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Wii puzzle discovery path using a direct Wikidata structured-data record; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,9 +4,9 @@
   "title": "Age of Empires II: The Conquerors",
   "aliases": [],
   "emoji": "♟️",
-  "shortDescription": "Age of Empires II: The Conquerors anchors a PC (Windows) strategy entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Age of Empires II: The Conquerors anchors a PC (Windows) strategy catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
-    "Frames a strategy pick for source-aware PC (Windows) exploration.",
+    "Frames a strategy catalog entry for source-aware PC (Windows) exploration.",
     "Labels the source relationship without treating it as a popularity signal."
   ],
   "release": {
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Listed for the PC (Windows) strategy discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog entry with its source kept explicit.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,7 +4,7 @@
   "title": "Myst",
   "aliases": [],
   "emoji": "🧭",
-  "shortDescription": "Myst anchors a Nintendo 3DS family adventure and puzzle entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Myst anchors a Nintendo 3DS family adventure and puzzle catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Offers a clearly labeled adventure and puzzle route through the Nintendo 3DS family collection.",
     "Uses structured metadata as provenance rather than imported review copy."
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Mapped for the Nintendo 3DS family adventure and puzzle discovery path using a linked structured-data reference; this remains catalog organization rather than provider commentary.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

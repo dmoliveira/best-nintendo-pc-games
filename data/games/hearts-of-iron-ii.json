@@ -4,10 +4,10 @@
   "title": "Hearts of Iron II",
   "aliases": [],
   "emoji": "♟️",
-  "shortDescription": "Hearts of Iron II is organized in GameAtlas's PC (Windows) strategy collection with a source-linked record and independently written context.",
+  "shortDescription": "Hearts of Iron II is organized in GameAtlas's PC (Windows) strategy collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Offers a clearly labeled strategy route through the PC (Windows) collection.",
-    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
   ],
   "release": {
     "year": 2005
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Listed for the PC (Windows) strategy discovery path using Wikidata-listed platform and genre statements; this remains a factual-reference workflow rather than a rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

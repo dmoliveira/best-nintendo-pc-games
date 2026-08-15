@@ -4,10 +4,10 @@
   "title": "Wario Land II",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Wario Land II is organized in GameAtlas's Game Boy family platformer collection with a source-linked record and independently written context.",
+  "shortDescription": "Wario Land II is organized in GameAtlas's Game Boy family platformer collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Builds a traceable platformer option into the Game Boy family discovery path.",
-    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
   ],
   "release": {
     "year": 1998
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Recorded for the Game Boy family platformer discovery path using the frozen source metadata record; this remains a source-aware catalog entry, not a review or rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

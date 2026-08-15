@@ -4,10 +4,10 @@
   "title": "Chip 'n Dale Rescue Rangers",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Chip 'n Dale Rescue Rangers is cataloged with Nintendo Entertainment System platformer picks in GameAtlas, keeping its editorial context separate from the linked Wikidata record.",
+  "shortDescription": "Chip 'n Dale Rescue Rangers is cataloged in the Nintendo Entertainment System platformer path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
   "highlights": [
     "Keeps a documented platformer option visible in the Nintendo Entertainment System collection.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 1990
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Registered for the Nintendo Entertainment System platformer discovery path using a direct Wikidata structured-data record; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

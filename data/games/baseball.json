@@ -4,7 +4,7 @@
   "title": "Baseball",
   "aliases": [],
   "emoji": "🏟️",
-  "shortDescription": "Baseball is grouped with GameAtlas's Nintendo Entertainment System sports picks, where original catalog context sits beside a direct Wikidata record.",
+  "shortDescription": "Baseball is grouped in GameAtlas's Nintendo Entertainment System sports catalog path beside a direct Wikidata structured-data record.",
   "highlights": [
     "Makes a documented sports option easier to find in the Nintendo Entertainment System path.",
     "Uses structured metadata as provenance rather than imported review copy."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Logged for the Nintendo Entertainment System sports discovery path using a direct Wikidata structured-data record; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Nintendo Entertainment System sports discovery path using a direct Wikidata structured-data record; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

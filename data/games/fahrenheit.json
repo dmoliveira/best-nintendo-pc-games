@@ -4,10 +4,10 @@
   "title": "Fahrenheit",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Fahrenheit is included in GameAtlas's PC (Windows) action and adventure and horror route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "Fahrenheit is included in GameAtlas's PC (Windows) action and adventure and horror route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
     "Offers a clearly labeled action and adventure and horror route through the PC (Windows) collection.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2005
@@ -33,17 +33,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Documented for the PC (Windows) action and adventure and horror discovery path using a source-linked Wikidata item; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the PC (Windows) action and adventure and horror discovery path using a source-linked Wikidata item; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,7 +4,7 @@
   "title": "Yoshi",
   "aliases": [],
   "emoji": "🧩",
-  "shortDescription": "Yoshi is kept in GameAtlas's Game Boy family puzzle discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Yoshi is kept in GameAtlas's Game Boy family puzzle discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Maps a direct-reference puzzle entry into the Game Boy family catalog.",
     "Uses a factual reference path instead of an aggregate score or review."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the Game Boy family puzzle discovery path using a linked Wikidata platform-and-genre statement; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

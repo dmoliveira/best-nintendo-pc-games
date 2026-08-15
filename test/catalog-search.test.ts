@@ -100,7 +100,9 @@ test("client search projection excludes raw evidence objects", () => {
   assert.equal(records.find((record) => record.platformIds.includes("pc-windows"))?.platformDisplayLabels[0], "PC / Windows");
   assert.ok(records.every((record) => ["GameAtlas pick", "GameAtlas catalog entry"].includes(record.editorialLabel ?? "")));
   assert.equal(records.find((record) => record.slug === "halo-3")?.editorialLabel, "GameAtlas catalog entry");
+  assert.ok(records.find((record) => record.slug === "halo-3")?.evidenceLabels.includes("GameAtlas catalog method"));
   assert.equal(records.find((record) => record.slug === "super-mario-bros")?.editorialLabel, "GameAtlas pick");
+  assert.ok(records.find((record) => record.slug === "super-mario-bros")?.evidenceLabels.includes("GameAtlas editorial"));
   assert.ok(records.every((record) => !record.criticSummary && !record.salesSummary));
   assert.equal(records.filter((record) => record.criticalLink).length, 32);
   assert.ok(records.filter((record) => record.criticalLink).every((record) => record.criticalLink?.url.startsWith("https://www.metacritic.com/game/")));

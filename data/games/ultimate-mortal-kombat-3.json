@@ -4,10 +4,10 @@
   "title": "Ultimate Mortal Kombat 3",
   "aliases": [],
   "emoji": "🥊",
-  "shortDescription": "Ultimate Mortal Kombat 3 is organized in GameAtlas's Game Boy family fighting collection with a source-linked record and independently written context.",
+  "shortDescription": "Ultimate Mortal Kombat 3 is organized in GameAtlas's Game Boy family fighting collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Sets a direct-reference fighting marker within the Game Boy family catalog.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 1996
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Grouped for the Game Boy family fighting discovery path using the documented Wikidata platform mapping; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Grouped for the Game Boy family fighting discovery path using the documented Wikidata platform mapping; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

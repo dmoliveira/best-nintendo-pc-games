@@ -4,7 +4,7 @@
   "title": "Tom Clancy's Splinter Cell: Chaos Theory",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Tom Clancy's Splinter Cell: Chaos Theory sits in the GameAtlas Nintendo GameCube action and adventure and stealth collection, pairing a direct structured-data reference with original catalog context.",
+  "shortDescription": "Tom Clancy's Splinter Cell: Chaos Theory sits in the GameAtlas Nintendo GameCube action and adventure and stealth collection, pairing a direct structured-data reference with a catalog-method note.",
   "highlights": [
     "Maps a direct-reference action and adventure and stealth entry into the Nintendo GameCube catalog.",
     "Links the catalog entry to a source record without presenting a rating."
@@ -33,17 +33,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Classified for the Nintendo GameCube action and adventure and stealth discovery path using a linked Wikidata platform-and-genre statement; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the Nintendo GameCube action and adventure and stealth discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,9 +4,9 @@
   "title": "FIFA 99",
   "aliases": [],
   "emoji": "🏟️",
-  "shortDescription": "FIFA 99 is organized in GameAtlas's Nintendo 64 sports collection with a source-linked record and independently written context.",
+  "shortDescription": "FIFA 99 is organized in GameAtlas's Nintendo 64 sports collection with a source-linked record and deterministic catalog context.",
   "highlights": [
-    "Frames a sports pick for source-aware Nintendo 64 exploration.",
+    "Frames a sports catalog entry for source-aware Nintendo 64 exploration.",
     "Uses structured metadata as provenance rather than imported review copy."
   ],
   "release": {
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Cataloged for the Nintendo 64 sports discovery path using Wikidata-listed platform and genre statements; this remains a factual-reference workflow rather than a rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

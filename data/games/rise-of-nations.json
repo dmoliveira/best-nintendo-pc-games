@@ -4,7 +4,7 @@
   "title": "Rise of Nations",
   "aliases": [],
   "emoji": "♟️",
-  "shortDescription": "Rise of Nations sits in the GameAtlas PC (Windows) strategy collection, pairing a direct structured-data reference with original catalog context.",
+  "shortDescription": "Rise of Nations sits in the GameAtlas PC (Windows) strategy collection, pairing a direct structured-data reference with a catalog-method note.",
   "highlights": [
     "Brings a source-aware strategy entry to the PC (Windows) browsing route.",
     "Uses a factual reference path instead of an aggregate score or review."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Recorded for the PC (Windows) strategy discovery path using Wikidata-listed platform and genre statements; this remains an independently authored entry rather than a provider verdict.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Recorded for the PC (Windows) strategy discovery path using Wikidata-listed platform and genre statements; this remains a deterministic catalog-method entry rather than a provider verdict.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

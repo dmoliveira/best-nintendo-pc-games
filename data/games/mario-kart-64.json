@@ -4,10 +4,10 @@
   "title": "Mario Kart 64",
   "aliases": [],
   "emoji": "🏁",
-  "shortDescription": "Mario Kart 64 is organized in GameAtlas's Nintendo 64 racing collection with a source-linked record and independently written context.",
+  "shortDescription": "Mario Kart 64 is organized in GameAtlas's Nintendo 64 racing collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Builds a traceable racing option into the Nintendo 64 discovery path.",
-    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
   ],
   "release": {
     "year": 1996
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the Nintendo 64 racing discovery path using the documented Wikidata platform mapping; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

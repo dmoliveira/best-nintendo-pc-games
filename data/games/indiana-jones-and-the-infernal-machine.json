@@ -4,10 +4,10 @@
   "title": "Indiana Jones and the Infernal Machine",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Indiana Jones and the Infernal Machine appears in GameAtlas's Nintendo 64 action and adventure and puzzle collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "shortDescription": "Indiana Jones and the Infernal Machine appears in GameAtlas's Nintendo 64 action and adventure and puzzle collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
   "highlights": [
     "Brings a source-aware action and adventure and puzzle entry to the Nintendo 64 browsing route.",
-    "Retains source provenance while keeping the catalog context independently authored."
+    "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
     "year": 1999
@@ -33,17 +33,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Grouped for the Nintendo 64 action and adventure and puzzle discovery path using the preserved Wikidata entity record; this remains a catalog entry with its source kept explicit.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

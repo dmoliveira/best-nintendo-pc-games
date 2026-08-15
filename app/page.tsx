@@ -60,7 +60,7 @@ export default function Home() {
       </section>
 
       <section className="signal-strip" aria-label="Why browse GameAtlas">
-        <div className="signal-item"><span className="signal-icon" aria-hidden="true">✦</span><span><strong>Method stays visible</strong><small>Original GameAtlas context with documented source paths.</small></span></div>
+        <div className="signal-item"><span className="signal-icon" aria-hidden="true">✦</span><span><strong>Method stays visible</strong><small>Catalog methods and original editorial context with documented source paths.</small></span></div>
         <div className="signal-item"><span className="signal-icon" aria-hidden="true">◌</span><span><strong>Context over hype</strong><small>{games.length} entries with visible source context.</small></span></div>
         <div className="signal-item"><span className="signal-icon" aria-hidden="true">↗</span><span><strong>Sources stay visible</strong><small>Every signal is labeled and easy to inspect.</small></span></div>
       </section>

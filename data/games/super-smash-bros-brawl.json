@@ -4,10 +4,10 @@
   "title": "Super Smash Bros. Brawl",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Super Smash Bros. Brawl is included in GameAtlas's Wii platformer route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "Super Smash Bros. Brawl is included in GameAtlas's Wii platformer route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
     "Makes a documented platformer option easier to find in the Wii path.",
-    "Retains source provenance while keeping the catalog context independently authored."
+    "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
     "year": 2008
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Mapped for the Wii platformer discovery path using a source-linked Wikidata item; this remains a factual-reference workflow rather than a rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

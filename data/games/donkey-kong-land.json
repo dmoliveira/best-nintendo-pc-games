@@ -4,7 +4,7 @@
   "title": "Donkey Kong Land",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Donkey Kong Land is organized in GameAtlas's Game Boy family platformer collection with a source-linked record and independently written context.",
+  "shortDescription": "Donkey Kong Land is organized in GameAtlas's Game Boy family platformer collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Sets a direct-reference platformer marker within the Game Boy family catalog.",
     "Uses structured metadata as provenance rather than imported review copy."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Grouped for the Game Boy family platformer discovery path using the documented Wikidata platform mapping; this remains a labeled reference path, not a popularity claim.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,9 +4,9 @@
   "title": "Far Cry 3",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Far Cry 3 helps define a PC (Windows) action and adventure and shooter path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Far Cry 3 helps define a PC (Windows) action and adventure and shooter path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
-    "Frames a action and adventure and shooter pick for source-aware PC (Windows) exploration.",
+    "Frames a action and adventure and shooter catalog entry for source-aware PC (Windows) exploration.",
     "Keeps third-party commentary and scores out of the linked metadata path."
   ],
   "release": {
@@ -33,17 +33,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Grouped for the PC (Windows) action and adventure and shooter discovery path using a source-linked Wikidata item; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

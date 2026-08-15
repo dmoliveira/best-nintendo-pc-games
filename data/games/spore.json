@@ -4,7 +4,7 @@
   "title": "Spore",
   "aliases": [],
   "emoji": "🕹️",
-  "shortDescription": "Spore is cataloged with PC (Windows) arcade and simulation and strategy picks in GameAtlas, keeping its editorial context separate from the linked Wikidata record.",
+  "shortDescription": "Spore is cataloged in the PC (Windows) arcade and simulation and strategy path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
   "highlights": [
     "Places a source-linked arcade and simulation and strategy entry in the PC (Windows) browsing path.",
     "Uses a factual reference path instead of an aggregate score or review."
@@ -33,17 +33,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Grouped for the PC (Windows) arcade and simulation and strategy discovery path using the preserved Wikidata entity record; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

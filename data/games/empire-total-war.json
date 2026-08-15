@@ -4,10 +4,10 @@
   "title": "Empire: Total War",
   "aliases": [],
   "emoji": "♟️",
-  "shortDescription": "Empire: Total War is grouped with GameAtlas's PC (Windows) strategy picks, where original catalog context sits beside a direct Wikidata record.",
+  "shortDescription": "Empire: Total War is grouped in GameAtlas's PC (Windows) strategy catalog path beside a direct Wikidata structured-data record.",
   "highlights": [
     "Maps a direct-reference strategy entry into the PC (Windows) catalog.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2009
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Listed for the PC (Windows) strategy discovery path using a direct Wikidata structured-data record; this remains a catalog entry with its source kept explicit.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

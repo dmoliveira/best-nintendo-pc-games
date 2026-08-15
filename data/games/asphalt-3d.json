@@ -4,10 +4,10 @@
   "title": "Asphalt 3D",
   "aliases": [],
   "emoji": "🏁",
-  "shortDescription": "Asphalt 3D helps define a Nintendo 3DS family racing path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Asphalt 3D helps define a Nintendo 3DS family racing path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Keeps a documented racing option visible in the Nintendo 3DS family collection.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2011
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Documented for the Nintendo 3DS family racing discovery path using the documented Wikidata platform mapping; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo 3DS family racing discovery path using the documented Wikidata platform mapping; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

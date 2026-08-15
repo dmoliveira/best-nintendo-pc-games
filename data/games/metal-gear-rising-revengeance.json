@@ -4,10 +4,10 @@
   "title": "Metal Gear Rising: Revengeance",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Metal Gear Rising: Revengeance is kept in GameAtlas's PC (Windows) action discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Metal Gear Rising: Revengeance is kept in GameAtlas's PC (Windows) action discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Makes a documented action option easier to find in the PC (Windows) path.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2013
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Logged for the PC (Windows) action discovery path using a direct Wikidata structured-data record; this remains catalog organization rather than provider commentary.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

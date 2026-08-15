@@ -4,7 +4,7 @@
   "title": "Breakout",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Breakout sits in the GameAtlas PC (Windows) action collection, pairing a direct structured-data reference with original catalog context.",
+  "shortDescription": "Breakout sits in the GameAtlas PC (Windows) action collection, pairing a direct structured-data reference with a catalog-method note.",
   "highlights": [
     "Places a source-linked action entry in the PC (Windows) browsing path.",
     "Uses structured metadata as provenance rather than imported review copy."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Listed for the PC (Windows) action discovery path using a Wikidata-listed catalog relationship; this remains a factual-reference workflow rather than a rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

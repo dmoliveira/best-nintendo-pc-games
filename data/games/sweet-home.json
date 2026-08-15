@@ -4,10 +4,10 @@
   "title": "Sweet Home",
   "aliases": [],
   "emoji": "🕯️",
-  "shortDescription": "Sweet Home anchors a Nintendo Entertainment System horror entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Sweet Home anchors a Nintendo Entertainment System horror catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Places a source-linked horror entry in the Nintendo Entertainment System browsing path.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 1989
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Cataloged for the Nintendo Entertainment System horror discovery path using a Wikidata-listed catalog relationship; this remains a labeled reference path, not a popularity claim.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

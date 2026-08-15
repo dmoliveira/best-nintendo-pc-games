@@ -4,10 +4,10 @@
   "title": "F-Zero",
   "aliases": [],
   "emoji": "🏁",
-  "shortDescription": "F-Zero sits in the GameAtlas Super Nintendo Entertainment System racing collection, pairing a direct structured-data reference with original catalog context.",
+  "shortDescription": "F-Zero sits in the GameAtlas Super Nintendo Entertainment System racing collection, pairing a direct structured-data reference with a catalog-method note.",
   "highlights": [
     "Offers a clearly labeled racing route through the Super Nintendo Entertainment System collection.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 1990
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Registered for the Super Nintendo Entertainment System racing discovery path using the documented Wikidata platform mapping; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

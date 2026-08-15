@@ -4,10 +4,10 @@
   "title": "WWE SmackDown vs. Raw 2008",
   "aliases": [],
   "emoji": "🥊",
-  "shortDescription": "WWE SmackDown vs. Raw 2008 helps define a Nintendo DS family fighting path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "WWE SmackDown vs. Raw 2008 helps define a Nintendo DS family fighting path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Brings a source-aware fighting entry to the Nintendo DS family browsing route.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2007
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Mapped for the Nintendo DS family fighting discovery path using the frozen source metadata record; this remains a source-aware catalog entry, not a review or rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

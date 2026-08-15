@@ -4,9 +4,9 @@
   "title": "Psychonauts",
   "aliases": [],
   "emoji": "🧭",
-  "shortDescription": "Psychonauts is organized in GameAtlas's PC (Windows) adventure and platformer collection with a source-linked record and independently written context.",
+  "shortDescription": "Psychonauts is organized in GameAtlas's PC (Windows) adventure and platformer collection with a source-linked record and deterministic catalog context.",
   "highlights": [
-    "Frames a adventure and platformer pick for source-aware PC (Windows) exploration.",
+    "Frames a adventure and platformer catalog entry for source-aware PC (Windows) exploration.",
     "Links the catalog entry to a source record without presenting a rating."
   ],
   "release": {
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the PC (Windows) adventure and platformer discovery path using a linked structured-data reference; this remains a source-aware catalog entry, not a review or rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

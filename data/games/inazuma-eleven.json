@@ -4,10 +4,10 @@
   "title": "Inazuma Eleven",
   "aliases": [],
   "emoji": "🏟️",
-  "shortDescription": "Inazuma Eleven is organized in GameAtlas's Nintendo 3DS family sports collection with a source-linked record and independently written context.",
+  "shortDescription": "Inazuma Eleven is organized in GameAtlas's Nintendo 3DS family sports collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Makes a documented sports option easier to find in the Nintendo 3DS family path.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 2008
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Documented for the Nintendo 3DS family sports discovery path using the frozen Wikidata metadata snapshot; this remains a source-aware catalog entry, not a review or rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

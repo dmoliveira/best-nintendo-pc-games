@@ -4,10 +4,10 @@
   "title": "Mass Effect 3",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "Mass Effect 3 anchors a Wii U shooter entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Mass Effect 3 anchors a Wii U shooter catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Places a source-linked shooter entry in the Wii U browsing path.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 2012
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Logged for the Wii U shooter discovery path using a linked Wikidata platform-and-genre statement; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Wii U shooter discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

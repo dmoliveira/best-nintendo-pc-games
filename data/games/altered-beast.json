@@ -4,7 +4,7 @@
   "title": "Altered Beast",
   "aliases": [],
   "emoji": "🥊",
-  "shortDescription": "Altered Beast is kept in GameAtlas's Nintendo Entertainment System fighting and platformer discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Altered Beast is kept in GameAtlas's Nintendo Entertainment System fighting and platformer discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Maps a direct-reference fighting and platformer entry into the Nintendo Entertainment System catalog.",
     "Links the catalog entry to a source record without presenting a rating."
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Logged for the Nintendo Entertainment System fighting and platformer discovery path using the documented Wikidata platform mapping; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

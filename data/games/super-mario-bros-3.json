@@ -4,9 +4,9 @@
   "title": "Super Mario Bros. 3",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Super Mario Bros. 3 anchors a Nintendo Entertainment System platformer entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Super Mario Bros. 3 anchors a Nintendo Entertainment System platformer catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
-    "Frames a platformer pick for source-aware Nintendo Entertainment System exploration.",
+    "Frames a platformer catalog entry for source-aware Nintendo Entertainment System exploration.",
     "Uses structured metadata as provenance rather than imported review copy."
   ],
   "release": {
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Registered for the Nintendo Entertainment System platformer discovery path using the documented Wikidata platform mapping; this remains a source-aware catalog entry, not a review or rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

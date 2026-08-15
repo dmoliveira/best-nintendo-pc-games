@@ -4,7 +4,7 @@
   "title": "NieR: Automata",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "NieR: Automata appears in GameAtlas's Nintendo Switch action collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "shortDescription": "NieR: Automata appears in GameAtlas's Nintendo Switch action collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
   "highlights": [
     "Maps a direct-reference action entry into the Nintendo Switch catalog.",
     "Keeps third-party commentary and scores out of the linked metadata path."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Recorded for the Nintendo Switch action discovery path using the documented Wikidata platform mapping; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

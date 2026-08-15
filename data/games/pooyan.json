@@ -4,7 +4,7 @@
   "title": "Pooyan",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Pooyan helps define a Nintendo Entertainment System action path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Pooyan helps define a Nintendo Entertainment System action path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Makes a documented action option easier to find in the Nintendo Entertainment System path.",
     "Preserves a direct source trail without copying provider prose or media."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the Nintendo Entertainment System action discovery path using a linked structured-data reference; this remains a factual-reference workflow rather than a rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

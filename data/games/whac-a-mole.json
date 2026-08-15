@@ -4,7 +4,7 @@
   "title": "Whac-A-Mole",
   "aliases": [],
   "emoji": "🕹️",
-  "shortDescription": "Whac-A-Mole is included in GameAtlas's Nintendo DS family arcade route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "Whac-A-Mole is included in GameAtlas's Nintendo DS family arcade route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
     "Sets a direct-reference arcade marker within the Nintendo DS family catalog.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the Nintendo DS family arcade discovery path using a Wikidata-listed catalog relationship; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

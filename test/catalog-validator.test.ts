@@ -11,6 +11,7 @@ const context: CatalogContext = {
     ["licensed-critic", sourcePolicy("licensed-critic", "Licensed Critics", ["numericScore"])],
     ["nintendo-ir", sourcePolicy("nintendo-ir", "Nintendo Investor Relations", ["manuallyReviewedSalesFact"])],
     ["popularity-source", sourcePolicy("popularity-source", "Popularity Provider", ["popularitySignal"])],
+    ["gameatlas-editorial", sourcePolicy("gameatlas-editorial", "GameAtlas", ["editorialRationale"])],
   ]),
   todayKey: "2026-08-15",
   assetById: new Map(),
@@ -50,6 +51,28 @@ const baseGame: GameRecord = {
 
 test("accepts a valid game record with no signals or assets", () => {
   assert.deepEqual(validateGameRecord(baseGame, "fixture", context), []);
+});
+
+test("distinguishes deterministic catalog-method signals from original editorial", () => {
+  const catalogMethod = {
+    kind: "editorial",
+    evidenceState: "catalog-method",
+    provider: "GameAtlas",
+    label: "GameAtlas catalog method",
+    rationale: "A deterministic note about the frozen catalog method.",
+    sourceId: "gameatlas-editorial",
+    sourceUrl: "https://example.com/catalog-method",
+    termsUrl: "https://example.com/terms",
+    capturedAt: "2026-08-15",
+    verificationStatus: "verified",
+    rightsStatus: "approved",
+    reviewedBy: "GameAtlas deterministic catalog process",
+    rightsReviewedAt: "2026-08-15",
+    recheckAt: "2026-09-15",
+  } as const;
+  assert.deepEqual(validateSignal(catalogMethod, "catalog-method", context), []);
+  assert.deepEqual(validateSignal({ ...catalogMethod, evidenceState: "original-editorial" }, "original-editorial", context), []);
+  assert.ok(validateSignal({ ...catalogMethod, evidenceState: "unsupported" }, "unsupported", context).some((problem) => problem.message.includes("unsupported evidence state")));
 });
 
 test("rejects a cached score when rights are outbound-only", () => {

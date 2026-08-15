@@ -4,7 +4,7 @@
   "title": "Crash: Mind over Mutant",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Crash: Mind over Mutant is kept in GameAtlas's Nintendo DS family platformer discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Crash: Mind over Mutant is kept in GameAtlas's Nintendo DS family platformer discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Builds a traceable platformer option into the Nintendo DS family discovery path.",
     "Uses a factual reference path instead of an aggregate score or review."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Classified for the Nintendo DS family platformer discovery path using a linked Wikidata platform-and-genre statement; this remains a source-aware catalog entry, not a review or rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

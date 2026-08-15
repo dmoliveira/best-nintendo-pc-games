@@ -4,9 +4,9 @@
   "title": "Wii Sports Resort",
   "aliases": [],
   "emoji": "🏟️",
-  "shortDescription": "Wii Sports Resort is kept in GameAtlas's Wii sports discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Wii Sports Resort is kept in GameAtlas's Wii sports discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
-    "Frames a sports pick for source-aware Wii exploration.",
+    "Frames a sports catalog entry for source-aware Wii exploration.",
     "Uses structured metadata as provenance rather than imported review copy."
   ],
   "release": {
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Listed for the Wii sports discovery path using a Wikidata-listed catalog relationship; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Listed for the Wii sports discovery path using a Wikidata-listed catalog relationship; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

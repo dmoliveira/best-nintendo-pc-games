@@ -4,7 +4,7 @@
   "title": "DOOM 3",
   "aliases": [],
   "emoji": "🕯️",
-  "shortDescription": "DOOM 3 anchors a Nintendo Switch horror and shooter and survival entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "DOOM 3 anchors a Nintendo Switch horror and shooter and survival catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Adds a clearly sourced horror and shooter and survival option to the Nintendo Switch discovery path.",
     "Preserves a direct source trail without copying provider prose or media."
@@ -33,17 +33,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the Nintendo Switch horror and shooter and survival discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

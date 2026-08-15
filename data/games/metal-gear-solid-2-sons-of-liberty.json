@@ -4,7 +4,7 @@
   "title": "Metal Gear Solid 2: Sons of Liberty",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Metal Gear Solid 2: Sons of Liberty appears in GameAtlas's PC (Windows) action and adventure collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "shortDescription": "Metal Gear Solid 2: Sons of Liberty appears in GameAtlas's PC (Windows) action and adventure collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
   "highlights": [
     "Offers a clearly labeled action and adventure route through the PC (Windows) collection.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Recorded for the PC (Windows) action and adventure discovery path using the preserved Wikidata entity record; this remains a factual-reference workflow rather than a rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

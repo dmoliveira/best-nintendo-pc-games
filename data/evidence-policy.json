@@ -73,6 +73,22 @@
         "reviewedBy"
       ],
       "notes": "Original GameAtlas selection and copy; never represent it as an aggregate or provider score."
+    },
+    {
+      "id": "catalog-method",
+      "publicMode": "catalog-method-display",
+      "allowedKinds": [
+        "editorial"
+      ],
+      "numericDisplay": false,
+      "requiredFields": [
+        "provider",
+        "sourceId",
+        "sourceUrl",
+        "rationale",
+        "reviewedBy"
+      ],
+      "notes": "Deterministic catalog context generated from a frozen source inventory; it is not title-by-title editorial review or original human commentary."
     }
   ],
   "thresholds": {

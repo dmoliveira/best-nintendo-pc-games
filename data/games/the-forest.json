@@ -4,7 +4,7 @@
   "title": "The Forest",
   "aliases": [],
   "emoji": "🕯️",
-  "shortDescription": "The Forest is grouped with GameAtlas's PC (Windows) horror and survival picks, where original catalog context sits beside a direct Wikidata record.",
+  "shortDescription": "The Forest is grouped in GameAtlas's PC (Windows) horror and survival catalog path beside a direct Wikidata structured-data record.",
   "highlights": [
     "Keeps a documented horror and survival option visible in the PC (Windows) collection.",
     "Preserves a direct source trail without copying provider prose or media."
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Documented for the PC (Windows) horror and survival discovery path using a direct Wikidata structured-data record; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

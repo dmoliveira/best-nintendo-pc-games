@@ -4,7 +4,7 @@
   "title": "Castlevania II: Belmont's Revenge",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Castlevania II: Belmont's Revenge helps define a Game Boy family platformer path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Castlevania II: Belmont's Revenge helps define a Game Boy family platformer path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Maps a direct-reference platformer entry into the Game Boy family catalog.",
     "Preserves a direct source trail without copying provider prose or media."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the Game Boy family platformer discovery path using the frozen source metadata record; this remains a source-aware catalog entry, not a review or rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,10 +4,10 @@
   "title": "Need for Speed: Hot Pursuit",
   "aliases": [],
   "emoji": "🏁",
-  "shortDescription": "Need for Speed: Hot Pursuit anchors a Wii racing entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Need for Speed: Hot Pursuit anchors a Wii racing catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Builds a traceable racing option into the Wii discovery path.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2010
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Documented for the Wii racing discovery path using a direct Wikidata structured-data record; this remains a labeled reference path, not a popularity claim.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

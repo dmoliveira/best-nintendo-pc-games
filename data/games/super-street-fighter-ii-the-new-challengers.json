@@ -4,10 +4,10 @@
   "title": "Super Street Fighter II: The New Challengers",
   "aliases": [],
   "emoji": "🥊",
-  "shortDescription": "Super Street Fighter II: The New Challengers sits in the GameAtlas Super Nintendo Entertainment System fighting collection, pairing a direct structured-data reference with original catalog context.",
+  "shortDescription": "Super Street Fighter II: The New Challengers sits in the GameAtlas Super Nintendo Entertainment System fighting collection, pairing a direct structured-data reference with a catalog-method note.",
   "highlights": [
     "Keeps a documented fighting option visible in the Super Nintendo Entertainment System collection.",
-    "Retains source provenance while keeping the catalog context independently authored."
+    "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
     "year": 1993
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Registered for the Super Nintendo Entertainment System fighting discovery path using a source-linked Wikidata item; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

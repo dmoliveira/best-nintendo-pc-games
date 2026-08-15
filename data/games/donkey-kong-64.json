@@ -4,7 +4,7 @@
   "title": "Donkey Kong 64",
   "aliases": [],
   "emoji": "🧭",
-  "shortDescription": "Donkey Kong 64 is organized in GameAtlas's Nintendo 64 adventure and platformer collection with a source-linked record and independently written context.",
+  "shortDescription": "Donkey Kong 64 is organized in GameAtlas's Nintendo 64 adventure and platformer collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Keeps a documented adventure and platformer option visible in the Nintendo 64 collection.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Documented for the Nintendo 64 adventure and platformer discovery path using a linked structured-data reference; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo 64 adventure and platformer discovery path using a linked structured-data reference; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

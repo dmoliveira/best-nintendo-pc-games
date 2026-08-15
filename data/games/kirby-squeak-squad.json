@@ -4,10 +4,10 @@
   "title": "Kirby: Squeak Squad",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Kirby: Squeak Squad helps define a Nintendo DS family platformer path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Kirby: Squeak Squad helps define a Nintendo DS family platformer path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
-    "Frames a platformer pick for source-aware Nintendo DS family exploration.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Frames a platformer catalog entry for source-aware Nintendo DS family exploration.",
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2006
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Recorded for the Nintendo DS family platformer discovery path using a direct Wikidata structured-data record; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

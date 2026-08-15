@@ -4,10 +4,10 @@
   "title": "1943: The Battle of Midway",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "1943: The Battle of Midway is kept in GameAtlas's Nintendo Entertainment System shooter discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "1943: The Battle of Midway is kept in GameAtlas's Nintendo Entertainment System shooter discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
-    "Frames a shooter pick for source-aware Nintendo Entertainment System exploration.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Frames a shooter catalog entry for source-aware Nintendo Entertainment System exploration.",
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 1987
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Classified for the Nintendo Entertainment System shooter discovery path using Wikidata-listed platform and genre statements; this remains a factual-reference workflow rather than a rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

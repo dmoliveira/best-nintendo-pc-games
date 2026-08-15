@@ -4,10 +4,10 @@
   "title": "Star Fox 2",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "Star Fox 2 anchors a Super Nintendo Entertainment System shooter entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Star Fox 2 anchors a Super Nintendo Entertainment System shooter catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Sets a direct-reference shooter marker within the Super Nintendo Entertainment System catalog.",
-    "Retains source provenance while keeping the catalog context independently authored."
+    "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
     "year": 2017
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Documented for the Super Nintendo Entertainment System shooter discovery path using a linked Wikidata platform-and-genre statement; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Super Nintendo Entertainment System shooter discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

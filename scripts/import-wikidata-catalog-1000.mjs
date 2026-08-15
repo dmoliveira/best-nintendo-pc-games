@@ -70,22 +70,22 @@ const genreRules = [
 ];
 const titleExclusion = /\b(remaster(?:ed)?|deluxe|collection|compilation|anniversary|definitive edition|game of the year edition|complete edition|directors cut|enhanced edition|hd)\b/i;
 const copyShortForms = [
-  "appears in GameAtlas's {platform} {genre} collection, paired with independently written context and a linked Wikidata structured-data record.",
-  "is grouped with GameAtlas's {platform} {genre} picks, where original catalog context sits beside a direct Wikidata record.",
-  "joins the {platform} {genre} path in GameAtlas with original context and a clearly labeled Wikidata structured-data link.",
-  "is kept in GameAtlas's {platform} {genre} discovery path through original editorial organization and a direct Wikidata record.",
-  "anchors a {platform} {genre} entry in GameAtlas, with independently written context and a linked structured-data source.",
-  "is cataloged with {platform} {genre} picks in GameAtlas, keeping its editorial context separate from the linked Wikidata record.",
-  "sits in the GameAtlas {platform} {genre} collection, pairing a direct structured-data reference with original catalog context.",
-  "is included in GameAtlas's {platform} {genre} route, alongside independently authored context and a linked Wikidata item.",
-  "helps define a {platform} {genre} path in GameAtlas through original editorial framing and a direct Wikidata record.",
-  "is organized in GameAtlas's {platform} {genre} collection with a source-linked record and independently written context.",
+  "appears in GameAtlas's {platform} {genre} collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
+  "is grouped in GameAtlas's {platform} {genre} catalog path beside a direct Wikidata structured-data record.",
+  "joins the {platform} {genre} path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
+  "is kept in GameAtlas's {platform} {genre} discovery path through frozen catalog organization and a direct Wikidata record.",
+  "anchors a {platform} {genre} catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
+  "is cataloged in the {platform} {genre} path in GameAtlas, keeping the frozen method separate from the linked Wikidata record.",
+  "sits in the GameAtlas {platform} {genre} collection, pairing a direct structured-data reference with a catalog-method note.",
+  "is included in GameAtlas's {platform} {genre} route, alongside deterministic catalog context and a linked Wikidata item.",
+  "helps define a {platform} {genre} path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
+  "is organized in GameAtlas's {platform} {genre} collection with a source-linked record and deterministic catalog context.",
 ];
 const copyFirstHighlights = [
   "Adds a clearly sourced {genre} option to the {platform} discovery path.",
   "Keeps a documented {genre} option visible in the {platform} collection.",
   "Places a source-linked {genre} entry in the {platform} browsing path.",
-  "Frames a {genre} pick for source-aware {platform} exploration.",
+  "Frames a {genre} catalog entry for source-aware {platform} exploration.",
   "Maps a direct-reference {genre} entry into the {platform} catalog.",
   "Offers a clearly labeled {genre} route through the {platform} collection.",
   "Builds a traceable {genre} option into the {platform} discovery path.",
@@ -94,20 +94,20 @@ const copyFirstHighlights = [
   "Makes a documented {genre} option easier to find in the {platform} path.",
 ];
 const copySecondHighlights = [
-  "Pairs original GameAtlas organization with a direct Wikidata structured-data record.",
+  "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record.",
   "Keeps third-party commentary and scores out of the linked metadata path.",
   "Uses structured metadata as provenance rather than imported review copy.",
   "Links the catalog entry to a source record without presenting a rating.",
-  "Separates GameAtlas editorial context from the external factual reference.",
+  "Separates the GameAtlas catalog method from the external factual reference.",
   "Preserves a direct source trail without copying provider prose or media.",
   "Labels the source relationship without treating it as a popularity signal.",
-  "Keeps the external item link distinct from original GameAtlas commentary.",
+  "Keeps the external item link distinct from the deterministic catalog method.",
   "Uses a factual reference path instead of an aggregate score or review.",
-  "Retains source provenance while keeping the catalog context independently authored.",
+  "Retains source provenance while keeping the catalog context method-generated.",
 ];
 const copyRationaleVerbs = ["Recorded", "Listed", "Indexed", "Mapped", "Documented", "Cataloged", "Logged", "Classified", "Registered", "Grouped"];
 const copyRationaleSources = ["a linked Wikidata platform-and-genre statement", "Wikidata-listed platform and genre statements", "a direct Wikidata structured-data record", "the frozen Wikidata metadata snapshot", "a source-linked Wikidata item", "the documented Wikidata platform mapping", "a Wikidata-listed catalog relationship", "the preserved Wikidata entity record", "a linked structured-data reference", "the frozen source metadata record"];
-const copyRationaleEnds = ["a source-aware catalog entry, not a review or rating", "catalog organization rather than provider commentary", "a catalog record, never an aggregate score", "source-aware discovery without copied review text", "an independently authored entry rather than a provider verdict", "a labeled reference path, not a popularity claim", "original context with no imported numerical signal", "a factual-reference workflow rather than a rating", "a browsable catalog record, not a score", "a catalog entry with its source kept explicit"];
+const copyRationaleEnds = ["a source-aware catalog entry, not a review or rating", "catalog organization rather than provider commentary", "a catalog record, never an aggregate score", "source-aware discovery without copied review text", "a deterministic catalog-method entry rather than a provider verdict", "a labeled reference path, not a popularity claim", "a catalog-method note with no imported numerical signal", "a factual-reference workflow rather than a rating", "a browsable catalog record, not a score", "a catalog entry with its source kept explicit"];
 const wikidataSource = {
   id: "wikidata-fact-reference",
   provider: "Wikidata contributors",
@@ -348,7 +348,7 @@ async function main() {
       genreIds: candidate.genreIds,
       wikidataGenreIds: candidate.wikidataGenreIds,
       editorialCopy,
-      review: { reviewedBy: "GameAtlas frozen catalog method", reviewedAt: reviewDate, copyStatus: "original-gameatlas", sourceMethod: "fact-only-wikidata" },
+      review: { reviewedBy: "GameAtlas deterministic catalog process", reviewedAt: reviewDate, copyStatus: "deterministic-catalog-method", sourceMethod: "frozen-wikidata-structured-data" },
     };
   }).sort((left, right) => left.wikidataId.localeCompare(right.wikidataId));
   const queryTemplate = platformQuery("<PLATFORM_QID>", 0, 180);
@@ -392,17 +392,17 @@ function rewriteFrozenInventory() {
       wikidataGenreIds: candidate.wikidataGenreIds,
       editorialCopy: createEditorialCopy(candidate, platformName, candidateGenreNames),
       review: {
-        reviewedBy: "GameAtlas frozen catalog method",
+        reviewedBy: "GameAtlas deterministic catalog process",
         reviewedAt: reviewDate,
-        copyStatus: "original-gameatlas",
-        sourceMethod: "fact-only-wikidata",
+        copyStatus: "deterministic-catalog-method",
+        sourceMethod: "frozen-wikidata-structured-data",
       },
     };
   }).sort((left, right) => left.wikidataId.localeCompare(right.wikidataId));
   const frozenBase = { ...inventory, source: { ...wikidataSource }, candidates };
   delete frozenBase.snapshotDigest;
   writeJson(inventoryPath, { ...frozenBase, snapshotDigest: "sha256:" + digest(JSON.stringify(frozenBase)) });
-  console.log("Frozen Wikidata inventory rewritten with structured-data terminology and original editorial copy (" + candidates.length + " candidates).");
+  console.log("Frozen Wikidata inventory rewritten with structured-data terminology and deterministic catalog-method copy (" + candidates.length + " candidates).");
 }
 
 const rewrite = process.argv.includes("--rewrite-frozen-inventory");

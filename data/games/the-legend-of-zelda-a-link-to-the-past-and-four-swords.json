@@ -4,10 +4,10 @@
   "title": "The Legend of Zelda: A Link to the Past and Four Swords",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "The Legend of Zelda: A Link to the Past and Four Swords is organized in GameAtlas's Game Boy Advance family action and adventure collection with a source-linked record and independently written context.",
+  "shortDescription": "The Legend of Zelda: A Link to the Past and Four Swords is organized in GameAtlas's Game Boy Advance family action and adventure collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Maps a direct-reference action and adventure entry into the Game Boy Advance family catalog.",
-    "Retains source provenance while keeping the catalog context independently authored."
+    "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
     "year": 2002
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Documented for the Game Boy Advance family action and adventure discovery path using a Wikidata-listed catalog relationship; this remains a labeled reference path, not a popularity claim.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

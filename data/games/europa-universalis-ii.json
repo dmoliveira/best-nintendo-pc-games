@@ -4,7 +4,7 @@
   "title": "Europa Universalis II",
   "aliases": [],
   "emoji": "♟️",
-  "shortDescription": "Europa Universalis II is organized in GameAtlas's PC (Windows) strategy collection with a source-linked record and independently written context.",
+  "shortDescription": "Europa Universalis II is organized in GameAtlas's PC (Windows) strategy collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Places a source-linked strategy entry in the PC (Windows) browsing path.",
     "Links the catalog entry to a source record without presenting a rating."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Mapped for the PC (Windows) strategy discovery path using the preserved Wikidata entity record; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,10 +4,10 @@
   "title": "Papers, Please",
   "aliases": [],
   "emoji": "🧭",
-  "shortDescription": "Papers, Please is organized in GameAtlas's PC (Windows) adventure and simulation collection with a source-linked record and independently written context.",
+  "shortDescription": "Papers, Please is organized in GameAtlas's PC (Windows) adventure and simulation collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Adds a clearly sourced adventure and simulation option to the PC (Windows) discovery path.",
-    "Retains source provenance while keeping the catalog context independently authored."
+    "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
     "year": 2013
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Classified for the PC (Windows) adventure and simulation discovery path using a direct Wikidata structured-data record; this remains a factual-reference workflow rather than a rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

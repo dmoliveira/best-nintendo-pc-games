@@ -4,9 +4,9 @@
   "title": "Harvest Moon: Friends of Mineral Town",
   "aliases": [],
   "emoji": "🌱",
-  "shortDescription": "Harvest Moon: Friends of Mineral Town is organized in GameAtlas's Game Boy Advance family simulation collection with a source-linked record and independently written context.",
+  "shortDescription": "Harvest Moon: Friends of Mineral Town is organized in GameAtlas's Game Boy Advance family simulation collection with a source-linked record and deterministic catalog context.",
   "highlights": [
-    "Frames a simulation pick for source-aware Game Boy Advance family exploration.",
+    "Frames a simulation catalog entry for source-aware Game Boy Advance family exploration.",
     "Keeps third-party commentary and scores out of the linked metadata path."
   ],
   "release": {
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Logged for the Game Boy Advance family simulation discovery path using a direct Wikidata structured-data record; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

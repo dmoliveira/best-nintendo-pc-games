@@ -4,7 +4,7 @@
   "title": "The Witcher 2: Assassins of Kings",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "The Witcher 2: Assassins of Kings anchors a PC (Windows) action entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "The Witcher 2: Assassins of Kings anchors a PC (Windows) action catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Offers a clearly labeled action route through the PC (Windows) collection.",
     "Uses structured metadata as provenance rather than imported review copy."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Cataloged for the PC (Windows) action discovery path using a linked structured-data reference; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

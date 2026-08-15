@@ -4,10 +4,10 @@
   "title": "Tony Hawk's Pro Skater 4",
   "aliases": [],
   "emoji": "🏟️",
-  "shortDescription": "Tony Hawk's Pro Skater 4 helps define a Game Boy Advance family sports path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Tony Hawk's Pro Skater 4 helps define a Game Boy Advance family sports path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Makes a documented sports option easier to find in the Game Boy Advance family path.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2002
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Mapped for the Game Boy Advance family sports discovery path using a linked structured-data reference; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

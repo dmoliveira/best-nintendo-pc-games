@@ -111,10 +111,11 @@ const expectedEvidenceStates = {
   "verified-fact": { publicMode: "factual-display", numericDisplay: true, allowedKinds: ["sales"], requiredFields: ["sourceId", "sourceUrl", "territory", "period", "asOf", "reviewedBy"] },
   "licensed-signal": { publicMode: "numeric-display", numericDisplay: true, allowedKinds: ["critic", "user", "popularity"], requiredFields: ["provider", "sourceId", "sourceUrl", "termsUrl", "methodVersionOrScoreType", "capturedAt", "reviewedBy", "rightsReviewedAt", "recheckAt"] },
   "original-editorial": { publicMode: "editorial-display", numericDisplay: false, allowedKinds: ["editorial"], requiredFields: ["provider", "sourceId", "sourceUrl", "rationale", "reviewedBy"] },
+  "catalog-method": { publicMode: "catalog-method-display", numericDisplay: false, allowedKinds: ["editorial"], requiredFields: ["provider", "sourceId", "sourceUrl", "rationale", "reviewedBy"] },
 };
 const evidenceStates = Array.isArray(evidencePolicy.states) ? evidencePolicy.states : [];
 const evidenceStateIds = new Set(evidenceStates.map((state) => state.id));
-if (evidencePolicy.schemaVersion !== 1 || evidenceStates.length !== 4 || evidenceStateIds.size !== 4) fail("evidence policy must define exactly four publishing states");
+if (evidencePolicy.schemaVersion !== 1 || evidenceStates.length !== 5 || evidenceStateIds.size !== 5) fail("evidence policy must define exactly five publishing states");
 for (const [id, expected] of Object.entries(expectedEvidenceStates)) {
   const actual = evidenceStates.find((state) => state.id === id);
   const actualKinds = Array.isArray(actual?.allowedKinds) ? [...actual.allowedKinds].sort() : [];

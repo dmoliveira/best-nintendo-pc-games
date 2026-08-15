@@ -4,9 +4,9 @@
   "title": "Super Meat Boy",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Super Meat Boy anchors a Wii U platformer entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Super Meat Boy anchors a Wii U platformer catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
-    "Frames a platformer pick for source-aware Wii U exploration.",
+    "Frames a platformer catalog entry for source-aware Wii U exploration.",
     "Uses structured metadata as provenance rather than imported review copy."
   ],
   "release": {
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Cataloged for the Wii U platformer discovery path using a direct Wikidata structured-data record; this remains a labeled reference path, not a popularity claim.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,7 +4,7 @@
   "title": "Mortal Kombat: Deception",
   "aliases": [],
   "emoji": "🥊",
-  "shortDescription": "Mortal Kombat: Deception is included in GameAtlas's Nintendo GameCube fighting route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "Mortal Kombat: Deception is included in GameAtlas's Nintendo GameCube fighting route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
     "Places a source-linked fighting entry in the Nintendo GameCube browsing path.",
     "Uses a factual reference path instead of an aggregate score or review."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Mapped for the Nintendo GameCube fighting discovery path using a linked Wikidata platform-and-genre statement; this remains a source-aware catalog entry, not a review or rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

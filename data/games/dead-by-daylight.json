@@ -4,7 +4,7 @@
   "title": "Dead by Daylight",
   "aliases": [],
   "emoji": "🕯️",
-  "shortDescription": "Dead by Daylight is included in GameAtlas's Nintendo Switch horror and survival route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "Dead by Daylight is included in GameAtlas's Nintendo Switch horror and survival route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
     "Adds a clearly sourced horror and survival option to the Nintendo Switch discovery path.",
     "Links the catalog entry to a source record without presenting a rating."
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Registered for the Nintendo Switch horror and survival discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

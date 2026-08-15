@@ -4,10 +4,10 @@
   "title": "Saints Row: The Third",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Saints Row: The Third sits in the GameAtlas Nintendo Switch action and adventure collection, pairing a direct structured-data reference with original catalog context.",
+  "shortDescription": "Saints Row: The Third sits in the GameAtlas Nintendo Switch action and adventure collection, pairing a direct structured-data reference with a catalog-method note.",
   "highlights": [
     "Places a source-linked action and adventure entry in the Nintendo Switch browsing path.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2011
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Grouped for the Nintendo Switch action and adventure discovery path using the frozen Wikidata metadata snapshot; this remains catalog organization rather than provider commentary.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

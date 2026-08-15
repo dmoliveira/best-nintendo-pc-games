@@ -4,7 +4,7 @@
   "title": "Friday Night Funkin'",
   "aliases": [],
   "emoji": "🎵",
-  "shortDescription": "Friday Night Funkin' helps define a PC (Windows) rhythm path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Friday Night Funkin' helps define a PC (Windows) rhythm path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Places a source-linked rhythm entry in the PC (Windows) browsing path.",
     "Keeps third-party commentary and scores out of the linked metadata path."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Recorded for the PC (Windows) rhythm discovery path using the frozen source metadata record; this remains a labeled reference path, not a popularity claim.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

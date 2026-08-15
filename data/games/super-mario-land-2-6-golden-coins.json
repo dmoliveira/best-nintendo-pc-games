@@ -4,7 +4,7 @@
   "title": "Super Mario Land 2: 6 Golden Coins",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Super Mario Land 2: 6 Golden Coins is included in GameAtlas's Game Boy family platformer route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "Super Mario Land 2: 6 Golden Coins is included in GameAtlas's Game Boy family platformer route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
     "Offers a clearly labeled platformer route through the Game Boy family collection.",
     "Keeps third-party commentary and scores out of the linked metadata path."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Cataloged for the Game Boy family platformer discovery path using a linked Wikidata platform-and-genre statement; this remains a labeled reference path, not a popularity claim.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

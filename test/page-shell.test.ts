@@ -25,7 +25,7 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.doesNotMatch(page, /Catalog search is coming soon/);
   assert.doesNotMatch(page, /Catalog coming soon/);
   assert.doesNotMatch(page, /80\+/);
-  assert.match(page, /URL filters cannot be applied without it/);
+  assert.match(page, /browse every game in the no-JavaScript index/);
   assert.match(browser, /onSubmit=\{\(event\) => event\.preventDefault\(\)\}/);
   assert.match(browser, /addEventListener\("popstate"/);
   assert.doesNotMatch(browser, /Update results/);
@@ -80,6 +80,8 @@ test("game detail pages expose static params, a skip link, and explicit editoria
   assert.match(gamePage, /generateStaticParams/);
   assert.match(gamePage, /className="skip-link" href="#main-content"/);
   assert.match(gamePage, /Original editorial/);
+  assert.match(gamePage, /Catalog method/);
+  assert.match(gamePage, /isCatalogMethodEntry/);
   assert.match(gamePage, /PlatformGlyph/);
   assert.match(gamePage, /game-status-row/);
   assert.match(gamePage, /getPlatformDisplayLabel/);
@@ -87,7 +89,6 @@ test("game detail pages expose static params, a skip link, and explicit editoria
   assert.match(gamePage, /Official &amp; external resources/);
   assert.match(gamePage, /DSiWare · Digital/);
   assert.match(gamePage, /First documented release/);
-  assert.match(gamePage, /isFrozenCatalogEntry/);
 });
 
 test("game pages retain governed package views and a visible reference fallback", () => {

@@ -4,7 +4,7 @@
   "title": "Five Nights at Freddy's: Sister Location",
   "aliases": [],
   "emoji": "🧭",
-  "shortDescription": "Five Nights at Freddy's: Sister Location anchors a Nintendo Switch adventure and horror and survival entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Five Nights at Freddy's: Sister Location anchors a Nintendo Switch adventure and horror and survival catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Places a source-linked adventure and horror and survival entry in the Nintendo Switch browsing path.",
     "Links the catalog entry to a source record without presenting a rating."
@@ -33,17 +33,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Registered for the Nintendo Switch adventure and horror and survival discovery path using a source-linked Wikidata item; this remains a source-aware catalog entry, not a review or rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

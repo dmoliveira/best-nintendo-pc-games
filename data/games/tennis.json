@@ -4,7 +4,7 @@
   "title": "Tennis",
   "aliases": [],
   "emoji": "🏟️",
-  "shortDescription": "Tennis is organized in GameAtlas's Game Boy family sports collection with a source-linked record and independently written context.",
+  "shortDescription": "Tennis is organized in GameAtlas's Game Boy family sports collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Offers a clearly labeled sports route through the Game Boy family collection.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Mapped for the Game Boy family sports discovery path using a linked Wikidata platform-and-genre statement; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

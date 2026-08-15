@@ -4,7 +4,7 @@
   "title": "Diddy Kong Racing",
   "aliases": [],
   "emoji": "🏁",
-  "shortDescription": "Diddy Kong Racing anchors a Nintendo 64 racing entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Diddy Kong Racing anchors a Nintendo 64 racing catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Builds a traceable racing option into the Nintendo 64 discovery path.",
     "Uses a factual reference path instead of an aggregate score or review."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Logged for the Nintendo 64 racing discovery path using a linked structured-data reference; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,10 +4,10 @@
   "title": "Archon: The Light and the Dark",
   "aliases": [],
   "emoji": "🥊",
-  "shortDescription": "Archon: The Light and the Dark is kept in GameAtlas's Nintendo Entertainment System fighting discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Archon: The Light and the Dark is kept in GameAtlas's Nintendo Entertainment System fighting discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Keeps a documented fighting option visible in the Nintendo Entertainment System collection.",
-    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
   ],
   "release": {
     "year": 1983
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Cataloged for the Nintendo Entertainment System fighting discovery path using a linked structured-data reference; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,7 +4,7 @@
   "title": "Nine Hours, Nine Persons, Nine Doors",
   "aliases": [],
   "emoji": "🧭",
-  "shortDescription": "Nine Hours, Nine Persons, Nine Doors helps define a Nintendo DS family adventure and visual novel path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Nine Hours, Nine Persons, Nine Doors helps define a Nintendo DS family adventure and visual novel path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Offers a clearly labeled adventure and visual novel route through the Nintendo DS family collection.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Grouped for the Nintendo DS family adventure and visual novel discovery path using the preserved Wikidata entity record; this remains a factual-reference workflow rather than a rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

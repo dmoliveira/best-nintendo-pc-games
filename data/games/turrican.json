@@ -4,7 +4,7 @@
   "title": "Turrican",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "Turrican is organized in GameAtlas's Game Boy family shooter collection with a source-linked record and independently written context.",
+  "shortDescription": "Turrican is organized in GameAtlas's Game Boy family shooter collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Builds a traceable shooter option into the Game Boy family discovery path.",
     "Keeps third-party commentary and scores out of the linked metadata path."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Mapped for the Game Boy family shooter discovery path using a direct Wikidata structured-data record; this remains a factual-reference workflow rather than a rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

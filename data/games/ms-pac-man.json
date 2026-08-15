@@ -4,9 +4,9 @@
   "title": "Ms. Pac-Man",
   "aliases": [],
   "emoji": "🧩",
-  "shortDescription": "Ms. Pac-Man is included in GameAtlas's Game Boy Color puzzle route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "Ms. Pac-Man is included in GameAtlas's Game Boy Color puzzle route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
-    "Frames a puzzle pick for source-aware Game Boy Color exploration.",
+    "Frames a puzzle catalog entry for source-aware Game Boy Color exploration.",
     "Preserves a direct source trail without copying provider prose or media."
   ],
   "release": {
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the Game Boy Color puzzle discovery path using Wikidata-listed platform and genre statements; this remains a catalog entry with its source kept explicit.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

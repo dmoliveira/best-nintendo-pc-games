@@ -4,9 +4,9 @@
   "title": "Street Fighter V",
   "aliases": [],
   "emoji": "🥊",
-  "shortDescription": "Street Fighter V sits in the GameAtlas PC (Windows) fighting collection, pairing a direct structured-data reference with original catalog context.",
+  "shortDescription": "Street Fighter V sits in the GameAtlas PC (Windows) fighting collection, pairing a direct structured-data reference with a catalog-method note.",
   "highlights": [
-    "Frames a fighting pick for source-aware PC (Windows) exploration.",
+    "Frames a fighting catalog entry for source-aware PC (Windows) exploration.",
     "Uses a factual reference path instead of an aggregate score or review."
   ],
   "release": {
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Documented for the PC (Windows) fighting discovery path using a linked structured-data reference; this remains catalog organization rather than provider commentary.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

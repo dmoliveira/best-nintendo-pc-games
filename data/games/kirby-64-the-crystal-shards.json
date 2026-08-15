@@ -4,7 +4,7 @@
   "title": "Kirby 64: The Crystal Shards",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Kirby 64: The Crystal Shards anchors a Nintendo 64 platformer entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Kirby 64: The Crystal Shards anchors a Nintendo 64 platformer catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Builds a traceable platformer option into the Nintendo 64 discovery path.",
     "Keeps third-party commentary and scores out of the linked metadata path."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Classified for the Nintendo 64 platformer discovery path using the frozen Wikidata metadata snapshot; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

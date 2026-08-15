@@ -4,10 +4,10 @@
   "title": "Doki Doki Literature Club!",
   "aliases": [],
   "emoji": "🕯️",
-  "shortDescription": "Doki Doki Literature Club! appears in GameAtlas's PC (Windows) horror and visual novel collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "shortDescription": "Doki Doki Literature Club! appears in GameAtlas's PC (Windows) horror and visual novel collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
   "highlights": [
     "Builds a traceable horror and visual novel option into the PC (Windows) discovery path.",
-    "Retains source provenance while keeping the catalog context independently authored."
+    "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
     "year": 2017
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Classified for the PC (Windows) horror and visual novel discovery path using Wikidata-listed platform and genre statements; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

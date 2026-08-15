@@ -4,10 +4,10 @@
   "title": "Mortal Kombat: Deadly Alliance",
   "aliases": [],
   "emoji": "🥊",
-  "shortDescription": "Mortal Kombat: Deadly Alliance helps define a Game Boy family fighting path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Mortal Kombat: Deadly Alliance helps define a Game Boy family fighting path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Makes a documented fighting option easier to find in the Game Boy family path.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 2002
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Recorded for the Game Boy family fighting discovery path using the preserved Wikidata entity record; this remains a labeled reference path, not a popularity claim.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

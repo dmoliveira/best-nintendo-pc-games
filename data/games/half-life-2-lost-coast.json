@@ -4,10 +4,10 @@
   "title": "Half-Life 2: Lost Coast",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "Half-Life 2: Lost Coast is kept in GameAtlas's PC (Windows) shooter discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Half-Life 2: Lost Coast is kept in GameAtlas's PC (Windows) shooter discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Keeps a documented shooter option visible in the PC (Windows) collection.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2005
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Documented for the PC (Windows) shooter discovery path using the frozen Wikidata metadata snapshot; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

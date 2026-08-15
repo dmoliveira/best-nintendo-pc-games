@@ -4,7 +4,7 @@
   "title": "Dota 2",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Dota 2 is grouped with GameAtlas's PC (Windows) action and strategy picks, where original catalog context sits beside a direct Wikidata record.",
+  "shortDescription": "Dota 2 is grouped in GameAtlas's PC (Windows) action and strategy catalog path beside a direct Wikidata structured-data record.",
   "highlights": [
     "Offers a clearly labeled action and strategy route through the PC (Windows) collection.",
     "Uses structured metadata as provenance rather than imported review copy."
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Classified for the PC (Windows) action and strategy discovery path using the preserved Wikidata entity record; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the PC (Windows) action and strategy discovery path using the preserved Wikidata entity record; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,7 +4,7 @@
   "title": "Team Fortress 2",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "Team Fortress 2 is kept in GameAtlas's PC (Windows) shooter discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Team Fortress 2 is kept in GameAtlas's PC (Windows) shooter discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Places a source-linked shooter entry in the PC (Windows) browsing path.",
     "Keeps third-party commentary and scores out of the linked metadata path."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Grouped for the PC (Windows) shooter discovery path using a linked structured-data reference; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

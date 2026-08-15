@@ -4,10 +4,10 @@
   "title": "Limbo",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Limbo is kept in GameAtlas's Nintendo Switch platformer and puzzle discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Limbo is kept in GameAtlas's Nintendo Switch platformer and puzzle discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Offers a clearly labeled platformer and puzzle route through the Nintendo Switch collection.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 2010
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Mapped for the Nintendo Switch platformer and puzzle discovery path using a source-linked Wikidata item; this remains catalog organization rather than provider commentary.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,10 +4,10 @@
   "title": "Tux Racer",
   "aliases": [],
   "emoji": "🏁",
-  "shortDescription": "Tux Racer is organized in GameAtlas's PC (Windows) racing and sports collection with a source-linked record and independently written context.",
+  "shortDescription": "Tux Racer is organized in GameAtlas's PC (Windows) racing and sports collection with a source-linked record and deterministic catalog context.",
   "highlights": [
-    "Frames a racing and sports pick for source-aware PC (Windows) exploration.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Frames a racing and sports catalog entry for source-aware PC (Windows) exploration.",
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 2000
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Documented for the PC (Windows) racing and sports discovery path using a direct Wikidata structured-data record; this remains a factual-reference workflow rather than a rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

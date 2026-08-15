@@ -4,10 +4,10 @@
   "title": "Mount & Blade II: Bannerlord",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Mount & Blade II: Bannerlord helps define a PC (Windows) action and strategy path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Mount & Blade II: Bannerlord helps define a PC (Windows) action and strategy path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
-    "Frames a action and strategy pick for source-aware PC (Windows) exploration.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Frames a action and strategy catalog entry for source-aware PC (Windows) exploration.",
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2020
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Indexed for the PC (Windows) action and strategy discovery path using a Wikidata-listed catalog relationship; this remains an independently authored entry rather than a provider verdict.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Indexed for the PC (Windows) action and strategy discovery path using a Wikidata-listed catalog relationship; this remains a deterministic catalog-method entry rather than a provider verdict.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

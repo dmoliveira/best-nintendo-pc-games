@@ -27,6 +27,7 @@ The machine-readable evidence model is [`data/evidence-policy.json`](../data/evi
 - **Verified fact:** a manually checked primary-source fact may be displayed with scope, territory, period, and `asOf`; sales facts are not critic scores.
 - **Licensed signal:** critic, user, or popularity numbers require a source-registry decision authorizing the exact field, public display, terms, reviewer, and recheck date.
 - **Original editorial:** GameAtlas rationale and selection only; it is never an aggregate or fallback score.
+- **Catalog method:** deterministic context generated from a frozen source inventory. It is labeled as a catalog method, not title-by-title editorial review or original human commentary.
 
 The `>=80` filter requires a verified, rights-approved, provider-authorized critic signal on a 100-point scale. It cannot fall back to user ratings, sales, popularity, or editorial signals. The initial critic and popularity provider allowlists are empty, so the public catalog currently exposes no cached numeric signal.
 

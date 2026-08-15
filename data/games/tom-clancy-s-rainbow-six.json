@@ -4,10 +4,10 @@
   "title": "Tom Clancy's Rainbow Six",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "Tom Clancy's Rainbow Six is organized in GameAtlas's Nintendo 64 shooter and strategy collection with a source-linked record and independently written context.",
+  "shortDescription": "Tom Clancy's Rainbow Six is organized in GameAtlas's Nintendo 64 shooter and strategy collection with a source-linked record and deterministic catalog context.",
   "highlights": [
     "Adds a clearly sourced shooter and strategy option to the Nintendo 64 discovery path.",
-    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
   ],
   "release": {
     "year": 1998
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Cataloged for the Nintendo 64 shooter and strategy discovery path using a linked structured-data reference; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

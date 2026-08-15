@@ -4,7 +4,7 @@
   "title": "Batman: Arkham City",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Batman: Arkham City anchors a Wii U action and adventure and fighting and stealth entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Batman: Arkham City anchors a Wii U action and adventure and fighting and stealth catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Places a source-linked action and adventure and fighting and stealth entry in the Wii U browsing path.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -35,17 +35,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Logged for the Wii U action and adventure and fighting and stealth discovery path using the documented Wikidata platform mapping; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,7 +4,7 @@
   "title": "2010 FIFA World Cup South Africa",
   "aliases": [],
   "emoji": "🏟️",
-  "shortDescription": "2010 FIFA World Cup South Africa is included in GameAtlas's Wii sports route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "2010 FIFA World Cup South Africa is included in GameAtlas's Wii sports route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
     "Maps a direct-reference sports entry into the Wii catalog.",
     "Uses structured metadata as provenance rather than imported review copy."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the Wii sports discovery path using a source-linked Wikidata item; this remains a source-aware catalog entry, not a review or rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

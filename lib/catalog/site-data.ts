@@ -193,9 +193,12 @@ export function getGameBoxFront(game: GameRecord) {
 
 export function toCatalogSearchRecord({ game, platforms, genres }: CatalogGame): CatalogSearchRecord {
   const evidenceKinds = [...new Set(game.signals.map((signal) => signal.kind))];
-  const evidenceLabels = evidenceKinds.map((kind) => kind === "editorial" ? "GameAtlas editorial" : kind);
+  const editorialSignals = getEditorialSignals(game);
+  const evidenceLabels = [...new Set(game.signals.map((signal) => signal.kind === "editorial"
+    ? signal.evidenceState === "catalog-method" ? "GameAtlas catalog method" : "GameAtlas editorial"
+    : signal.kind))];
   const criticalLink = game.links.find((link) => link.kind === "critical");
-  const editorialLabel = getEditorialSignals(game).length > 0 ? game.sources.includes("wikidata-fact-reference") ? "GameAtlas catalog entry" : "GameAtlas pick" : undefined;
+  const editorialLabel = editorialSignals.length > 0 ? editorialSignals.some((signal) => signal.evidenceState === "catalog-method") ? "GameAtlas catalog entry" : "GameAtlas pick" : undefined;
   const publicSignals = getPublicSignalSummaries(game, context);
   const searchText = normalizeSearchText([
     game.title,

@@ -4,7 +4,7 @@
   "title": "Burnout Legends",
   "aliases": [],
   "emoji": "🏁",
-  "shortDescription": "Burnout Legends joins the Nintendo DS family racing path in GameAtlas with original context and a clearly labeled Wikidata structured-data link.",
+  "shortDescription": "Burnout Legends joins the Nintendo DS family racing path in GameAtlas with a clearly labeled catalog-method note and Wikidata link.",
   "highlights": [
     "Keeps a documented racing option visible in the Nintendo DS family collection.",
     "Preserves a direct source trail without copying provider prose or media."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Cataloged for the Nintendo DS family racing discovery path using the documented Wikidata platform mapping; this remains a catalog entry with its source kept explicit.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

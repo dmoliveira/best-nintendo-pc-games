@@ -4,10 +4,10 @@
   "title": "Pokémon Dash",
   "aliases": [],
   "emoji": "🏁",
-  "shortDescription": "Pokémon Dash helps define a Nintendo DS family racing path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Pokémon Dash helps define a Nintendo DS family racing path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
-    "Frames a racing pick for source-aware Nintendo DS family exploration.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Frames a racing catalog entry for source-aware Nintendo DS family exploration.",
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2004
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Registered for the Nintendo DS family racing discovery path using the preserved Wikidata entity record; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

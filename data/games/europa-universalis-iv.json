@@ -4,7 +4,7 @@
   "title": "Europa Universalis IV",
   "aliases": [],
   "emoji": "♟️",
-  "shortDescription": "Europa Universalis IV is included in GameAtlas's PC (Windows) strategy route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "Europa Universalis IV is included in GameAtlas's PC (Windows) strategy route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
     "Offers a clearly labeled strategy route through the PC (Windows) collection.",
     "Uses a factual reference path instead of an aggregate score or review."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Grouped for the PC (Windows) strategy discovery path using Wikidata-listed platform and genre statements; this remains a source-aware catalog entry, not a review or rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

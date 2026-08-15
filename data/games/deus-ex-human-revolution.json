@@ -4,7 +4,7 @@
   "title": "Deus Ex: Human Revolution",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Deus Ex: Human Revolution is kept in GameAtlas's Wii U action discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Deus Ex: Human Revolution is kept in GameAtlas's Wii U action discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Keeps a documented action option visible in the Wii U collection.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Cataloged for the Wii U action discovery path using a Wikidata-listed catalog relationship; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Wii U action discovery path using a Wikidata-listed catalog relationship; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

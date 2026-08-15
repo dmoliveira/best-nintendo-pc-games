@@ -4,7 +4,7 @@
   "title": "Prototype",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Prototype appears in GameAtlas's PC (Windows) action and adventure collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "shortDescription": "Prototype appears in GameAtlas's PC (Windows) action and adventure collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
   "highlights": [
     "Maps a direct-reference action and adventure entry into the PC (Windows) catalog.",
     "Uses a factual reference path instead of an aggregate score or review."
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Listed for the PC (Windows) action and adventure discovery path using the documented Wikidata platform mapping; this remains a catalog entry with its source kept explicit.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

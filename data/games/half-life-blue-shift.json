@@ -4,10 +4,10 @@
   "title": "Half-Life: Blue Shift",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "Half-Life: Blue Shift is kept in GameAtlas's PC (Windows) shooter discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Half-Life: Blue Shift is kept in GameAtlas's PC (Windows) shooter discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Brings a source-aware shooter entry to the PC (Windows) browsing route.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 2001
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Recorded for the PC (Windows) shooter discovery path using the frozen source metadata record; this remains a catalog record, never an aggregate score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

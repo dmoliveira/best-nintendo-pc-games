@@ -4,7 +4,7 @@
   "title": "Silent Hill 2",
   "aliases": [],
   "emoji": "🕯️",
-  "shortDescription": "Silent Hill 2 is included in GameAtlas's PC (Windows) horror route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "Silent Hill 2 is included in GameAtlas's PC (Windows) horror route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
     "Offers a clearly labeled horror route through the PC (Windows) collection.",
     "Uses structured metadata as provenance rather than imported review copy."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Documented for the PC (Windows) horror discovery path using a Wikidata-listed catalog relationship; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

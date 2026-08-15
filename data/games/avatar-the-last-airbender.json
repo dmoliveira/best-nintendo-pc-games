@@ -4,10 +4,10 @@
   "title": "Avatar: The Last Airbender",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Avatar: The Last Airbender is grouped with GameAtlas's Wii action and adventure picks, where original catalog context sits beside a direct Wikidata record.",
+  "shortDescription": "Avatar: The Last Airbender is grouped in GameAtlas's Wii action and adventure catalog path beside a direct Wikidata structured-data record.",
   "highlights": [
-    "Frames a action and adventure pick for source-aware Wii exploration.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Frames a action and adventure catalog entry for source-aware Wii exploration.",
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2006
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the Wii action and adventure discovery path using a linked Wikidata platform-and-genre statement; this remains catalog organization rather than provider commentary.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,10 +4,10 @@
   "title": "Thief II",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "Thief II helps define a PC (Windows) shooter and stealth path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Thief II helps define a PC (Windows) shooter and stealth path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Builds a traceable shooter and stealth option into the PC (Windows) discovery path.",
-    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
   ],
   "release": {
     "year": 2000
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Cataloged for the PC (Windows) shooter and stealth discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

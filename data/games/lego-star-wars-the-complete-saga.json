@@ -4,10 +4,10 @@
   "title": "Lego Star Wars: The Complete Saga",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Lego Star Wars: The Complete Saga sits in the GameAtlas Nintendo DS family action and adventure collection, pairing a direct structured-data reference with original catalog context.",
+  "shortDescription": "Lego Star Wars: The Complete Saga sits in the GameAtlas Nintendo DS family action and adventure collection, pairing a direct structured-data reference with a catalog-method note.",
   "highlights": [
     "Keeps a documented action and adventure option visible in the Nintendo DS family collection.",
-    "Retains source provenance while keeping the catalog context independently authored."
+    "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
     "year": 2007
@@ -31,17 +31,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Indexed for the Nintendo DS family action and adventure discovery path using a direct Wikidata structured-data record; this remains a source-aware catalog entry, not a review or rating.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

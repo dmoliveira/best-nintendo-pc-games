@@ -4,7 +4,7 @@
   "title": "Sonic Unleashed",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Sonic Unleashed is included in GameAtlas's Wii platformer route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "Sonic Unleashed is included in GameAtlas's Wii platformer route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
     "Brings a source-aware platformer entry to the Wii browsing route.",
     "Uses a factual reference path instead of an aggregate score or review."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Logged for the Wii platformer discovery path using a linked structured-data reference; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Wii platformer discovery path using a linked structured-data reference; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

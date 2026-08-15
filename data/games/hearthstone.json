@@ -4,10 +4,10 @@
   "title": "Hearthstone",
   "aliases": [],
   "emoji": "♟️",
-  "shortDescription": "Hearthstone anchors a PC (Windows) strategy entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Hearthstone anchors a PC (Windows) strategy catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Places a source-linked strategy entry in the PC (Windows) browsing path.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2014
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Classified for the PC (Windows) strategy discovery path using a source-linked Wikidata item; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Classified for the PC (Windows) strategy discovery path using a source-linked Wikidata item; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

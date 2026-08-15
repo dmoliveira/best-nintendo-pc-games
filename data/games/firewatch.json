@@ -4,10 +4,10 @@
   "title": "Firewatch",
   "aliases": [],
   "emoji": "🧭",
-  "shortDescription": "Firewatch helps define a Nintendo Switch adventure path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Firewatch helps define a Nintendo Switch adventure path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Offers a clearly labeled adventure route through the Nintendo Switch collection.",
-    "Retains source provenance while keeping the catalog context independently authored."
+    "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
     "year": 2016
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Documented for the Nintendo Switch adventure discovery path using a linked structured-data reference; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Documented for the Nintendo Switch adventure discovery path using a linked structured-data reference; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

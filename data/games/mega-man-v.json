@@ -4,7 +4,7 @@
   "title": "Mega Man V",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Mega Man V is kept in GameAtlas's Game Boy family action discovery path through original editorial organization and a direct Wikidata record.",
+  "shortDescription": "Mega Man V is kept in GameAtlas's Game Boy family action discovery path through frozen catalog organization and a direct Wikidata record.",
   "highlights": [
     "Brings a source-aware action entry to the Game Boy family browsing route.",
     "Uses structured metadata as provenance rather than imported review copy."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Classified for the Game Boy family action discovery path using the frozen source metadata record; this remains source-aware discovery without copied review text.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,10 +4,10 @@
   "title": "Frogger",
   "aliases": [],
   "emoji": "⚡",
-  "shortDescription": "Frogger helps define a Game Boy Color action path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Frogger helps define a Game Boy Color action path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
-    "Frames a action pick for source-aware Game Boy Color exploration.",
-    "Retains source provenance while keeping the catalog context independently authored."
+    "Frames a action catalog entry for source-aware Game Boy Color exploration.",
+    "Retains source provenance while keeping the catalog context method-generated."
   ],
   "release": {
     "year": 1981
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Classified for the Game Boy Color action discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

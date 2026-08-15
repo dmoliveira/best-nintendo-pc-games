@@ -4,7 +4,7 @@
   "title": "Michael Jackson: The Experience",
   "aliases": [],
   "emoji": "🎵",
-  "shortDescription": "Michael Jackson: The Experience anchors a Nintendo 3DS family rhythm entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Michael Jackson: The Experience anchors a Nintendo 3DS family rhythm catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Places a source-linked rhythm entry in the Nintendo 3DS family browsing path.",
     "Links the catalog entry to a source record without presenting a rating."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Listed for the Nintendo 3DS family rhythm discovery path using Wikidata-listed platform and genre statements; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

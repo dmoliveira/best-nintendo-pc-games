@@ -4,7 +4,7 @@
   "title": "Yie Ar Kung-Fu",
   "aliases": [],
   "emoji": "🥊",
-  "shortDescription": "Yie Ar Kung-Fu is grouped with GameAtlas's Nintendo Entertainment System fighting picks, where original catalog context sits beside a direct Wikidata record.",
+  "shortDescription": "Yie Ar Kung-Fu is grouped in GameAtlas's Nintendo Entertainment System fighting catalog path beside a direct Wikidata structured-data record.",
   "highlights": [
     "Brings a source-aware fighting entry to the Nintendo Entertainment System browsing route.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Logged for the Nintendo Entertainment System fighting discovery path using a linked structured-data reference; this remains catalog organization rather than provider commentary.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

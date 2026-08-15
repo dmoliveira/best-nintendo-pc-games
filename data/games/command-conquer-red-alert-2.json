@@ -4,10 +4,10 @@
   "title": "Command & Conquer: Red Alert 2",
   "aliases": [],
   "emoji": "♟️",
-  "shortDescription": "Command & Conquer: Red Alert 2 helps define a PC (Windows) strategy path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Command & Conquer: Red Alert 2 helps define a PC (Windows) strategy path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
     "Makes a documented strategy option easier to find in the PC (Windows) path.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 2000
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Logged for the PC (Windows) strategy discovery path using a direct Wikidata structured-data record; this remains catalog organization rather than provider commentary.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

@@ -4,10 +4,10 @@
   "title": "Fire Emblem: Shadow Dragon and the Blade of Light",
   "aliases": [],
   "emoji": "♟️",
-  "shortDescription": "Fire Emblem: Shadow Dragon and the Blade of Light helps define a Nintendo Entertainment System strategy path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "shortDescription": "Fire Emblem: Shadow Dragon and the Blade of Light helps define a Nintendo Entertainment System strategy path in GameAtlas through a frozen catalog method and a direct Wikidata record.",
   "highlights": [
-    "Frames a strategy pick for source-aware Nintendo Entertainment System exploration.",
-    "Keeps the external item link distinct from original GameAtlas commentary."
+    "Frames a strategy catalog entry for source-aware Nintendo Entertainment System exploration.",
+    "Keeps the external item link distinct from the deterministic catalog method."
   ],
   "release": {
     "year": 1990
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Cataloged for the Nintendo Entertainment System strategy discovery path using the documented Wikidata platform mapping; this remains original context with no imported numerical signal.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Cataloged for the Nintendo Entertainment System strategy discovery path using the documented Wikidata platform mapping; this remains a catalog-method note with no imported numerical signal.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

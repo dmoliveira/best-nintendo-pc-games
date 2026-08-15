@@ -1,7 +1,7 @@
 export type VerificationStatus = "verified" | "unverified";
 export type RightsStatus = "approved" | "outbound-only" | "pending-review" | "prohibited";
 export type SignalKind = "critic" | "user" | "sales" | "popularity" | "editorial";
-export type EvidenceState = "link-only" | "verified-fact" | "licensed-signal" | "original-editorial";
+export type EvidenceState = "link-only" | "verified-fact" | "licensed-signal" | "original-editorial" | "catalog-method";
 export type ReleaseFormat = "cartridge" | "digital";
 
 export interface SourcePolicy {
@@ -97,13 +97,23 @@ export interface LicensedPopularitySignal extends SourceRef {
 
 export type PopularitySignal = LinkOnlyPopularitySignal | LicensedPopularitySignal;
 
-export interface EditorialSignal extends SourceRef {
+export interface OriginalEditorialSignal extends SourceRef {
   kind: "editorial";
   evidenceState: "original-editorial";
   provider: "GameAtlas";
   label: string;
   rationale: string;
 }
+
+export interface CatalogMethodSignal extends SourceRef {
+  kind: "editorial";
+  evidenceState: "catalog-method";
+  provider: "GameAtlas";
+  label: string;
+  rationale: string;
+}
+
+export type EditorialSignal = OriginalEditorialSignal | CatalogMethodSignal;
 
 export type GameSignal = CriticOrUserSignal | SalesSignal | PopularitySignal | EditorialSignal;
 

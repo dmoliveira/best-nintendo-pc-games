@@ -4,10 +4,10 @@
   "title": "Battletoads",
   "aliases": [],
   "emoji": "🪜",
-  "shortDescription": "Battletoads appears in GameAtlas's Nintendo Entertainment System platformer collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "shortDescription": "Battletoads appears in GameAtlas's Nintendo Entertainment System platformer collection, with a deterministic catalog-method note and a linked Wikidata structured-data record.",
   "highlights": [
     "Keeps a documented platformer option visible in the Nintendo Entertainment System collection.",
-    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+    "Pairs a frozen GameAtlas catalog method with a direct Wikidata structured-data record."
   ],
   "release": {
     "year": 1991
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Grouped for the Nintendo Entertainment System platformer discovery path using a direct Wikidata structured-data record; this remains a labeled reference path, not a popularity claim.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

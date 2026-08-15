@@ -4,7 +4,7 @@
   "title": "Mario & Sonic at the Rio 2016 Olympic Games",
   "aliases": [],
   "emoji": "🏟️",
-  "shortDescription": "Mario & Sonic at the Rio 2016 Olympic Games anchors a Nintendo 3DS family sports entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "shortDescription": "Mario & Sonic at the Rio 2016 Olympic Games anchors a Nintendo 3DS family sports catalog entry in GameAtlas, with a deterministic note and a linked structured-data source.",
   "highlights": [
     "Brings a source-aware sports entry to the Nintendo 3DS family browsing route.",
     "Labels the source relationship without treating it as a popularity signal."
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
+      "label": "GameAtlas catalog method",
       "rationale": "Grouped for the Nintendo 3DS family sports discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [

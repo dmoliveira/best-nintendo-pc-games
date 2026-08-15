@@ -4,10 +4,10 @@
   "title": "Paladins: Champions of the Realm",
   "aliases": [],
   "emoji": "🎯",
-  "shortDescription": "Paladins: Champions of the Realm is included in GameAtlas's Nintendo Switch shooter route, alongside independently authored context and a linked Wikidata item.",
+  "shortDescription": "Paladins: Champions of the Realm is included in GameAtlas's Nintendo Switch shooter route, alongside deterministic catalog context and a linked Wikidata item.",
   "highlights": [
-    "Frames a shooter pick for source-aware Nintendo Switch exploration.",
-    "Separates GameAtlas editorial context from the external factual reference."
+    "Frames a shooter catalog entry for source-aware Nintendo Switch exploration.",
+    "Separates the GameAtlas catalog method from the external factual reference."
   ],
   "release": {
     "year": 2016
@@ -29,17 +29,17 @@
     {
       "kind": "editorial",
       "provider": "GameAtlas",
-      "label": "GameAtlas catalog entry",
-      "rationale": "Logged for the Nintendo Switch shooter discovery path using a linked structured-data reference; this remains an independently authored entry rather than a provider verdict.",
+      "label": "GameAtlas catalog method",
+      "rationale": "Logged for the Nintendo Switch shooter discovery path using a linked structured-data reference; this remains a deterministic catalog-method entry rather than a provider verdict.",
       "sourceId": "gameatlas-editorial",
       "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
       "capturedAt": "2026-08-15",
       "verificationStatus": "verified",
       "rightsStatus": "approved",
-      "reviewedBy": "GameAtlas frozen catalog method",
+      "reviewedBy": "GameAtlas deterministic catalog process",
       "rightsReviewedAt": "2026-08-15",
       "recheckAt": "2026-09-15",
-      "evidenceState": "original-editorial"
+      "evidenceState": "catalog-method"
     }
   ],
   "links": [
