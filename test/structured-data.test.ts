@@ -7,13 +7,14 @@ const site = createSiteConfig({ NODE_ENV: "production", PAGES_BASE_PATH: "/best-
 
 test("structured data emits conservative score-free schemas with Pages URLs", () => {
   const gameUrl = site.publicUrl("games/example/");
-  const game = createVideoGameStructuredData({ title: "Example", description: "A useful description.", url: gameUrl, releaseDate: "1990-01-02", platformNames: ["NES"], genreNames: ["Adventure"] });
+  const game = createVideoGameStructuredData({ title: "Example", description: "A useful description.", url: gameUrl, releaseDate: "1990-01-02", releaseScope: "platform-release", platformAssociationScope: "verified-release", platformNames: ["NES"], genreNames: ["Adventure"] });
   const collection = createCollectionPageStructuredData({ site, url: site.publicUrl("platforms/nintendo-nes/"), name: "NES Games", description: "NES guide." });
   const breadcrumb = createBreadcrumbStructuredData([{ name: "GameAtlas", url: site.canonicalUrl }, { name: "Example", url: gameUrl }]);
   const website = createWebSiteStructuredData(site);
 
   assert.equal(game["@type"], "VideoGame");
   assert.equal(game.datePublished, "1990-01-02");
+  assert.deepEqual(game.gamePlatform, ["NES"]);
   assert.equal(collection["@type"], "CollectionPage");
   assert.equal(breadcrumb["@type"], "BreadcrumbList");
   assert.equal(website["@type"], "WebSite");
