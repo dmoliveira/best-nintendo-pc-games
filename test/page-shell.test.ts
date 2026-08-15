@@ -45,6 +45,8 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /function clearFilters\(\) \{\s+const nextState = clearCatalogFilters\(state\);\s+setPlatformQuery\(""\);\s+setGenreQuery\(""\);/);
   assert.match(browser, /hasVisibleFilters = activeFilterCount > 0 \|\| pendingFilterQuery \|\| hasFacetQueries/);
   assert.match(browser, /hasFacetQueries \? "Facet search"/);
+  assert.match(browser, /platformOptionSummary = platformQuery \? `\$\{visiblePlatformOptions.length\} shown`/);
+  assert.match(browser, /genreOptionSummary = genreQuery \? `\$\{visibleGenreOptions.length\} shown`/);
   assert.doesNotMatch(browser, /activeSortLabel/);
   assert.match(browser, /Display/);
   assert.match(browser, /display-disclosure/);

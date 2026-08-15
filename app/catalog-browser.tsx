@@ -154,6 +154,8 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
   const genres = useMemo(() => selectedValues(state.genre), [state.genre]);
   const visiblePlatformOptions = useMemo(() => facetOptions(platformOptions, platforms, platformQuery), [platformOptions, platformQuery, platforms]);
   const visibleGenreOptions = useMemo(() => facetOptions(genreOptions, genres, genreQuery), [genreOptions, genreQuery, genres]);
+  const platformOptionSummary = platformQuery ? `${visiblePlatformOptions.length} shown` : platforms.length ? `${platforms.length} selected` : "All";
+  const genreOptionSummary = genreQuery ? `${visibleGenreOptions.length} shown` : genres.length ? `${genres.length} selected` : "All";
   const yearFrom = state.yearFrom || state.year;
   const yearTo = state.yearTo || state.year;
   const activeFilterCount = platforms.length + genres.length + [state.q, yearFrom || yearTo, state.developer, state.publisher].filter(Boolean).length;
@@ -399,11 +401,11 @@ export default function CatalogBrowser({ initialRecords, catalogEntryCount, cata
       </div> : null}
       <div className="browser-facet-grid">
         <details className="browser-disclosure">
-          <summary>Platforms <span>{platforms.length ? `${platforms.length} selected` : "All"}</span></summary>
+          <summary>Platforms <span>{platformOptionSummary}</span></summary>
           <fieldset className="browser-check-fieldset"><legend className="visually-hidden">Platforms</legend><label className="browser-facet-search"><span className="visually-hidden">Find a platform</span><span aria-hidden="true">⌕</span><input type="search" value={platformQuery} onChange={(event) => setPlatformQuery(event.target.value)} placeholder="Find a platform" /></label><div className="browser-check-list">{visiblePlatformOptions.map((option) => <label className="browser-check" key={option.id}><input type="checkbox" checked={platforms.includes(option.id)} onChange={(event) => updateFacet("platform", option.id, event.target.checked)} /><span>{option.label}</span></label>)}</div>{visiblePlatformOptions.length === 0 ? <p className="browser-facet-empty" role="status">No matching platforms.</p> : null}</fieldset>
         </details>
         <details className="browser-disclosure">
-          <summary>Genres <span>{genres.length ? `${genres.length} selected` : "All"}</span></summary>
+          <summary>Genres <span>{genreOptionSummary}</span></summary>
           <fieldset className="browser-check-fieldset"><legend className="visually-hidden">Genres</legend><label className="browser-facet-search"><span className="visually-hidden">Find a genre</span><span aria-hidden="true">⌕</span><input type="search" value={genreQuery} onChange={(event) => setGenreQuery(event.target.value)} placeholder="Find a genre" /></label><div className="browser-check-list">{visibleGenreOptions.map((option) => <label className="browser-check" key={option.id}><input type="checkbox" checked={genres.includes(option.id)} onChange={(event) => updateFacet("genre", option.id, event.target.checked)} /><span>{option.label}</span></label>)}</div>{visibleGenreOptions.length === 0 ? <p className="browser-facet-empty" role="status">No matching genres.</p> : null}</fieldset>
         </details>
         <label className="browser-field browser-facet-field" htmlFor="catalog-year-from"><span>From catalog year</span><select id="catalog-year-from" value={yearFrom} onChange={(event) => updateYear("yearFrom", event.target.value)}><option value="">Any year</option>{yearOptions.map((year) => <option value={year} key={year}>{year}</option>)}</select></label>
