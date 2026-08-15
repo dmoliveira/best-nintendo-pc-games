@@ -149,9 +149,24 @@ async function main() {
     .filter((file) => file.endsWith(".json"))
     .sort()
     .map((file) => JSON.parse(fs.readFileSync(path.join(gameDirectory, file), "utf8")));
+  const assets = JSON.parse(fs.readFileSync(path.join(root, "data/assets-manifest.json"), "utf8")).assets ?? [];
+  const assetById = new Map(assets.map((asset) => [asset.assetId, asset]));
+  const approvedEditorialAsset = (game) => game.assets?.find((asset) => {
+    const manifest = assetById.get(asset?.provenanceId);
+    return asset?.role !== "box-front" && manifest
+      && asset.path === manifest.path
+      && manifest.assetKind === "generated-original-editorial"
+      && manifest.intendedUse === "game-card-thumbnail";
+  });
   const fallbackGame = games.find((game) => !game.assets?.some((asset) => asset?.role === "box-front"));
   if (!fallbackGame) fail("no game without a published box front is available for fallback validation");
   const publishedBoxGame = games.find((game) => game.assets?.some((asset) => asset?.role === "box-front"));
+  if (!publishedBoxGame) fail("no approved published box-front fixture is available for browser validation");
+  const digitalGame = games.find((game) => game.releaseFormat === "digital");
+  if (!digitalGame) fail("no digital package fixture is available for browser validation");
+  const catalogThumbnailGame = games.find((game) => approvedEditorialAsset(game));
+  if (!catalogThumbnailGame) fail("no approved editorial-thumbnail fixture is available for browser validation");
+  const catalogThumbnailAsset = approvedEditorialAsset(catalogThumbnailGame);
   const chrome = chromeCandidates.find((candidate) => candidate && fs.existsSync(candidate));
   if (!chrome) fail("Google Chrome was not found; set CHROME_BIN to a local Chrome executable");
 
@@ -178,6 +193,8 @@ async function main() {
 
     const semantics = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); return { role: stage?.getAttribute("role"), label: stage?.getAttribute("aria-label"), describedBy: stage?.getAttribute("aria-describedby"), fallback: document.body.textContent.includes("GameAtlas reference case") }; })()');
     if (semantics.role !== "group" || !semantics.label?.includes("Interactive package view") || !semantics.describedBy || !semantics.fallback) fail("viewer baseline semantics or fallback copy is missing");
+    const physicalGeometry = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const box = document.querySelector(".game-box"); return { kind: stage?.dataset.packageKind, depth: Number(stage?.dataset.packageDepth), restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), transform: box?.style.transform }; })()');
+    if (physicalGeometry.kind !== "physical" || physicalGeometry.depth < 8 || physicalGeometry.restAngle !== "-24" || !physicalGeometry.hasSpine || !physicalGeometry.transform?.includes("rotateY(-24deg)")) fail(`physical profile did not render a visible dimensional rest pose: ${JSON.stringify(physicalGeometry)}`);
 
     await client.evaluate('document.querySelector("[data-game-box-stage]").focus()');
     await press(client, "ArrowRight", "ArrowRight", 39);
@@ -198,20 +215,33 @@ async function main() {
     await waitFor(() => client.evaluate('!document.querySelector(".topbar").hasAttribute("inert") && document.querySelector(".topbar").getAttribute("aria-hidden") === null'));
     await waitFor(() => client.evaluate('document.activeElement?.matches("[data-box-action=fullscreen]")'));
 
-    if (publishedBoxGame) {
-      const publishedFront = publishedBoxGame.assets.find((asset) => asset?.role === "box-front");
-      const expectedFrontSrc = `${basePath}/${publishedFront.path.replace(/^public\//, "")}`;
-      const publishedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${publishedBoxGame.slug}/`;
-      await client.send("Page.navigate", { url: publishedPageUrl });
-      await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(publishedBoxGame.title)}`));
-      const publishedState = await waitFor(() => client.evaluate('(() => { const front = document.querySelector(".game-box__front img"); if (!front) return null; return { src: front.getAttribute("src"), loaded: front.complete && front.naturalWidth > 0 && front.naturalHeight > 0, disclosure: document.body.textContent.includes("AI-generated GameAtlas editorial art") }; })()'));
-      if (publishedState.src !== expectedFrontSrc || !publishedState.loaded || !publishedState.disclosure) fail(`published ${publishedBoxGame.slug} front did not load with its base-prefixed source and AI disclosure`);
-    }
+    const publishedFront = publishedBoxGame.assets.find((asset) => asset?.role === "box-front");
+    const expectedFrontSrc = `${basePath}/${publishedFront.path.replace(/^public\//, "")}`;
+    const publishedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${publishedBoxGame.slug}/`;
+    await client.send("Page.navigate", { url: publishedPageUrl });
+    await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(publishedBoxGame.title)}`));
+    const publishedState = await waitFor(() => client.evaluate('(() => { const front = document.querySelector(".game-box__front img"); if (!front) return null; return { src: front.getAttribute("src"), loaded: front.complete && front.naturalWidth > 0 && front.naturalHeight > 0, disclosure: document.body.textContent.includes("AI-generated GameAtlas editorial art") }; })()'));
+    if (publishedState.src !== expectedFrontSrc || !publishedState.loaded || !publishedState.disclosure) fail(`published ${publishedBoxGame.slug} front did not load with its base-prefixed source and AI disclosure`);
 
+    const digitalPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${digitalGame.slug}/`;
+    await client.send("Page.navigate", { url: digitalPageUrl });
+    await waitFor(() => client.evaluate(`document.querySelector("h1")?.textContent?.trim() === ${JSON.stringify(digitalGame.title)}`));
+    const digitalState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); return { kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasSpine: Boolean(document.querySelector(".game-box__spine")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")) }; })()');
+    if (digitalState.kind !== "digital" || digitalState.depth !== "0" || digitalState.restAngle !== "0" || digitalState.hasSpine || digitalState.hasRotate) fail(`digital profile implied a physical package: ${JSON.stringify(digitalState)}`);
+
+    await client.send("Page.navigate", { url: `http://127.0.0.1:${preview.port}${basePath}/` });
+    const catalogSelector = `.game-card-art[href="${basePath}/games/${catalogThumbnailGame.slug}/"] .package-thumbnail`;
+    await waitFor(() => client.evaluate(`Boolean(document.querySelector(${JSON.stringify(catalogSelector)}))`));
+    const thumbnailState = await client.evaluate(`(() => { const thumbnail = document.querySelector(${JSON.stringify(catalogSelector)}); const object = thumbnail?.querySelector(".package-thumbnail__object"); const image = thumbnail?.querySelector(".package-thumbnail__front img"); return { format: thumbnail?.dataset.packageFormat, kind: thumbnail?.dataset.packageKind, hasSpine: Boolean(thumbnail?.querySelector(".package-thumbnail__spine")), source: image?.getAttribute("src"), transform: object ? getComputedStyle(object).transform : "" }; })()`);
+    const expectedThumbnailSuffix = `/${catalogThumbnailAsset.path.replace(/^public\//, "")}`;
+    if (!thumbnailState.format || thumbnailState.kind !== "physical" || !thumbnailState.hasSpine || thumbnailState.transform === "none" || !thumbnailState.source?.endsWith(expectedThumbnailSuffix)) fail(`catalog package thumbnail did not render the approved editorial asset in a dimensional physical card: ${JSON.stringify(thumbnailState)}`);
+
+    await client.send("Page.navigate", { url: pageUrl });
+    await waitFor(() => client.evaluate('Boolean(document.querySelector("[data-game-box-stage]"))'));
     await client.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }, { name: "forced-colors", value: "active" }] });
     const mediaState = await client.evaluate('(() => ({ reduce: matchMedia("(prefers-reduced-motion: reduce)").matches, forced: matchMedia("(forced-colors: active)").matches, duration: getComputedStyle(document.querySelector(".game-box")).transitionDuration }))()');
     if (!mediaState.reduce || !mediaState.forced || Number.parseFloat(mediaState.duration) > 0.001) fail(`reduced-motion or forced-colors fallback is not active: ${JSON.stringify(mediaState)}`);
-    console.log(`Box-art browser validation passed (${fallbackGame.slug} fallback, ${publishedBoxGame ? `${publishedBoxGame.slug} published front` : "no published front"}, keyboard, zoom, fullscreen fallback, focus restoration, background isolation, reduced motion, forced colors).`);
+    console.log(`Box-art browser validation passed (${fallbackGame.slug} fallback, ${publishedBoxGame ? `${publishedBoxGame.slug} published front` : "no published front"}, physical rest pose, digital flat mode, catalog thumbnails, keyboard, zoom, fullscreen fallback, focus restoration, background isolation, reduced motion, forced colors).`);
   } finally {
     client?.close();
     if (browser && browser.exitCode === null && browser.signalCode === null) {

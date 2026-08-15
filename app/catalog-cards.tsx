@@ -1,9 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import Link from "next/link";
 import AttributeGlyph, { type AttributeGlyphKind } from "./attribute-glyph";
 import PlatformGlyph from "./platform-glyph";
+import PackageThumbnail from "./package-thumbnail";
 import { getGenreTone } from "@/lib/catalog/display";
 import type { CatalogColumns, CatalogSearchRecord } from "@/lib/catalog/search";
 
@@ -59,7 +59,7 @@ export default function CatalogCards({ records, columns = "auto", showResultPosi
         <span className="game-card-year"><AttributeGlyph kind="year" />{record.releaseYear}</span>
       </div>
       <Link className="game-card-art" href={`/games/${record.slug}/`} aria-label={`Open ${record.title} game page`}>
-        {record.artPath ? <img src={record.artPath} alt="" loading="lazy" /> : <span className="game-card-emoji" aria-hidden="true">{record.emoji}</span>}
+        <PackageThumbnail thumbnail={record.packageThumbnail} emoji={record.emoji} />
         <span className="game-card-art-rail">{record.editorialLabel ? <span className="editorial-badge"><span className="editorial-dot" aria-hidden="true" />{record.editorialLabel}</span> : null}</span>
         <span className="art-link-label">View guide <span aria-hidden="true">↗</span></span>
       </Link>

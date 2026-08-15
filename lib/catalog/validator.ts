@@ -1,5 +1,6 @@
 import { parseCalendarKey } from "../date-policy.mjs";
 import { isValidHttpsUrl } from "../url-policy.mjs";
+import { resolvePackageProfile } from "../box-art/formats";
 import evidencePolicy from "../../data/evidence-policy.json";
 import type {
   CatalogContext,
@@ -273,6 +274,8 @@ export function validateGameRecord(record: unknown, path: string, context: Catal
   if (game.release?.date) validateDate(game.release.date, `${path}.release.date`, context, errors, "any");
   if (game.releaseFormat !== undefined && !["cartridge", "digital"].includes(game.releaseFormat as ReleaseFormat)) errors.push(issue(`${path}.releaseFormat`, "must be cartridge or digital when present"));
   if (game.platforms?.includes("nintendo-dsi") && game.releaseFormat !== "digital") errors.push(issue(`${path}.releaseFormat`, "Nintendo DSi records must identify DSiWare/digital distribution"));
+  const packageResolution = resolvePackageProfile(Array.isArray(game.platforms) ? game.platforms : [], game.releaseFormat);
+  if (packageResolution.status === "unsupported") errors.push(issue(`${path}.platforms`, `cannot resolve a package profile: ${packageResolution.reason}`));
   if (!Array.isArray(game.signals)) errors.push(issue(`${path}.signals`, "must be an array"));
   else game.signals.forEach((signal, index) => errors.push(...validateSignal(signal, `${path}.signals[${index}]`, context)));
   if (!Array.isArray(game.links) || game.links.length < 1) errors.push(issue(`${path}.links`, "must contain at least one official or reference link"));

@@ -1,68 +1,207 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "policy": "These are neutral GameAtlas display proportions for original editorial package views. They are not manufacturer measurements, official package templates, trade dress, logos, or a license to recreate retail packaging.",
   "formats": [
     {
       "id": "cartridge-portrait",
       "label": "Portrait cartridge case",
       "kind": "physical",
-      "dimensions": { "width": 105, "height": 165, "depth": 10 },
-      "image": { "width": 1024, "height": 1536 },
+      "dimensions": {
+        "width": 105,
+        "height": 165,
+        "depth": 10
+      },
+      "image": {
+        "width": 1024,
+        "height": 1536
+      },
       "accent": "coral"
     },
     {
       "id": "cartridge-landscape",
       "label": "Landscape cartridge box",
       "kind": "physical",
-      "dimensions": { "width": 175, "height": 125, "depth": 20 },
-      "image": { "width": 1536, "height": 1024 },
+      "dimensions": {
+        "width": 175,
+        "height": 125,
+        "depth": 20
+      },
+      "image": {
+        "width": 1536,
+        "height": 1024
+      },
       "accent": "lime"
     },
     {
       "id": "optical-disc-case",
       "label": "Optical-disc case",
       "kind": "physical",
-      "dimensions": { "width": 135, "height": 190, "depth": 14 },
-      "image": { "width": 1024, "height": 1536 },
+      "dimensions": {
+        "width": 135,
+        "height": 190,
+        "depth": 14
+      },
+      "image": {
+        "width": 1024,
+        "height": 1536
+      },
       "accent": "cyan"
     },
     {
       "id": "handheld-wide-case",
       "label": "Wide handheld case",
       "kind": "physical",
-      "dimensions": { "width": 135, "height": 125, "depth": 15 },
-      "image": { "width": 1536, "height": 1024 },
+      "dimensions": {
+        "width": 135,
+        "height": 125,
+        "depth": 15
+      },
+      "image": {
+        "width": 1536,
+        "height": 1024
+      },
       "accent": "violet"
     },
     {
       "id": "handheld-tall-box",
       "label": "Tall handheld box",
       "kind": "physical",
-      "dimensions": { "width": 92, "height": 126, "depth": 14 },
-      "image": { "width": 1024, "height": 1536 },
+      "dimensions": {
+        "width": 92,
+        "height": 126,
+        "depth": 14
+      },
+      "image": {
+        "width": 1024,
+        "height": 1536
+      },
       "accent": "lime"
     },
     {
       "id": "pc-big-box",
       "label": "PC big-box edition",
       "kind": "physical",
-      "dimensions": { "width": 190, "height": 240, "depth": 25 },
-      "image": { "width": 1024, "height": 1536 },
+      "dimensions": {
+        "width": 190,
+        "height": 240,
+        "depth": 25
+      },
+      "image": {
+        "width": 1024,
+        "height": 1536
+      },
       "accent": "cyan"
     },
     {
       "id": "digital-edition",
       "label": "Digital edition card",
       "kind": "digital",
-      "dimensions": { "width": 150, "height": 150, "depth": 0 },
-      "image": { "width": 1024, "height": 1024 },
+      "dimensions": {
+        "width": 150,
+        "height": 150,
+        "depth": 0
+      },
+      "image": {
+        "width": 1024,
+        "height": 1024
+      },
+      "accent": "violet"
+    },
+    {
+      "id": "nes-cartridge-box",
+      "label": "Tall cardboard cartridge box",
+      "kind": "physical",
+      "dimensions": {
+        "width": 133,
+        "height": 191,
+        "depth": 30
+      },
+      "image": {
+        "width": 1024,
+        "height": 1536
+      },
+      "accent": "coral"
+    },
+    {
+      "id": "snes-cartridge-box",
+      "label": "Large cardboard cartridge box",
+      "kind": "physical",
+      "dimensions": {
+        "width": 146,
+        "height": 203,
+        "depth": 32
+      },
+      "image": {
+        "width": 1024,
+        "height": 1536
+      },
+      "accent": "lime"
+    },
+    {
+      "id": "nintendo-64-cartridge-box",
+      "label": "Deep cardboard cartridge box",
+      "kind": "physical",
+      "dimensions": {
+        "width": 133,
+        "height": 191,
+        "depth": 32
+      },
+      "image": {
+        "width": 1024,
+        "height": 1536
+      },
+      "accent": "cyan"
+    },
+    {
+      "id": "game-boy-advance-box",
+      "label": "Wide handheld cartridge box",
+      "kind": "physical",
+      "dimensions": {
+        "width": 133,
+        "height": 140,
+        "depth": 25
+      },
+      "image": {
+        "width": 1536,
+        "height": 1024
+      },
+      "accent": "lime"
+    },
+    {
+      "id": "nintendo-ds-case",
+      "label": "Tall handheld card case",
+      "kind": "physical",
+      "dimensions": {
+        "width": 122,
+        "height": 135,
+        "depth": 14
+      },
+      "image": {
+        "width": 1024,
+        "height": 1536
+      },
+      "accent": "violet"
+    },
+    {
+      "id": "nintendo-3ds-case",
+      "label": "Tall handheld card case",
+      "kind": "physical",
+      "dimensions": {
+        "width": 124,
+        "height": 135,
+        "depth": 14
+      },
+      "image": {
+        "width": 1024,
+        "height": 1536
+      },
       "accent": "violet"
     }
   ],
   "platformFormatMap": {
-    "nintendo-nes": "cartridge-landscape",
-    "nintendo-snes": "cartridge-landscape",
-    "nintendo-64": "cartridge-landscape",
+    "nintendo-nes": "nes-cartridge-box",
+    "nintendo-snes": "snes-cartridge-box",
+    "nintendo-64": "nintendo-64-cartridge-box",
     "nintendo-gamecube": "optical-disc-case",
     "nintendo-wii": "optical-disc-case",
     "nintendo-wii-u": "optical-disc-case",
@@ -70,11 +209,332 @@
     "nintendo-switch-2": "cartridge-portrait",
     "game-boy": "handheld-tall-box",
     "game-boy-color": "handheld-tall-box",
-    "game-boy-advance": "handheld-tall-box",
-    "nintendo-ds": "handheld-wide-case",
+    "game-boy-advance": "game-boy-advance-box",
+    "nintendo-ds": "nintendo-ds-case",
     "nintendo-dsi": "digital-edition",
-    "nintendo-3ds": "handheld-wide-case",
-    "nintendo-new-3ds": "handheld-wide-case",
+    "nintendo-3ds": "nintendo-3ds-case",
+    "nintendo-new-3ds": "nintendo-3ds-case",
     "pc-windows": "pc-big-box"
+  },
+  "geometryPolicy": "Package profiles are geometry-only GameAtlas reference models. Measurements are representative source-backed references or explicitly labelled estimates; they do not authorize official logos, colour systems, layouts, rating marks, cover art, moulding details, or other trade dress.",
+  "geometrySources": [
+    {
+      "id": "representative-us-retail-estimate",
+      "title": "GameAtlas representative US retail package geometry research synthesis",
+      "sourceUrl": null,
+      "accessedAt": "2026-08-15",
+      "method": "No authoritative public archival manufacturer measurement was located; values are clearly labelled representative estimates and must not be presented as official specifications."
+    },
+    {
+      "id": "supplier-dvd-14mm",
+      "title": "MediaSupply standard 14 mm DVD case",
+      "sourceUrl": "https://www.mediasupply.com/dvd-cases-black-standard-14mm.html",
+      "accessedAt": "2026-08-15",
+      "method": "Supplier product measurement used only as a neutral DVD-case-family geometry reference."
+    },
+    {
+      "id": "retailer-switch-sku",
+      "title": "Target Super Mario Odyssey product listing",
+      "sourceUrl": "https://www.target.com/p/super-mario-odyssey-nintendo-switch/-/A-52161235",
+      "accessedAt": "2026-08-15",
+      "method": "Retail SKU dimensions used as an approximate physical game-card-case reference; retailer dimensions can include packaging variance."
+    },
+    {
+      "id": "nintendo-dsi-digital-exception",
+      "title": "Nintendo support: Nintendo DSi Shop closed",
+      "sourceUrl": "https://www.nintendo.com/en-gb/Support/Nintendo-DSi-2DS-3DS/Nintendo-DSi-Shop/Nintendo-DSi-Shop-closed-1283259.html",
+      "accessedAt": "2026-08-15",
+      "method": "Official source used only for the DSiWare digital-media exception, not for physical case dimensions."
+    }
+  ],
+  "platformPackageProfiles": {
+    "nintendo-nes": {
+      "id": "nintendo-nes-package",
+      "formatId": "nes-cartridge-box",
+      "kind": "physical",
+      "category": "cardboard-cartridge-box",
+      "material": "cardboard",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 133,
+        "height": 191,
+        "depth": 30
+      },
+      "sourceId": "representative-us-retail-estimate",
+      "basis": "representative-estimate",
+      "confidence": "low",
+      "scope": "Representative US retail package",
+      "caveat": "Title, region, revision, and insert depth vary; this is not an official standard."
+    },
+    "nintendo-snes": {
+      "id": "nintendo-snes-package",
+      "formatId": "snes-cartridge-box",
+      "kind": "physical",
+      "category": "cardboard-cartridge-box",
+      "material": "cardboard",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 146,
+        "height": 203,
+        "depth": 32
+      },
+      "sourceId": "representative-us-retail-estimate",
+      "basis": "representative-estimate",
+      "confidence": "low",
+      "scope": "Representative US retail package",
+      "caveat": "Title, region, revision, and insert depth vary; this is not an official standard."
+    },
+    "nintendo-64": {
+      "id": "nintendo-64-package",
+      "formatId": "nintendo-64-cartridge-box",
+      "kind": "physical",
+      "category": "cardboard-cartridge-box",
+      "material": "cardboard",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 133,
+        "height": 191,
+        "depth": 32
+      },
+      "sourceId": "representative-us-retail-estimate",
+      "basis": "representative-estimate",
+      "confidence": "low",
+      "scope": "Representative US retail package",
+      "caveat": "Battery and insert depth can vary; this is not an official standard."
+    },
+    "nintendo-gamecube": {
+      "id": "nintendo-gamecube-package",
+      "formatId": "optical-disc-case",
+      "kind": "physical",
+      "category": "mini-disc-case",
+      "material": "plastic-case",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 135,
+        "height": 190,
+        "depth": 15
+      },
+      "sourceId": "representative-us-retail-estimate",
+      "basis": "representative-estimate",
+      "confidence": "low",
+      "scope": "Representative retail mini-disc case",
+      "caveat": "Proprietary case, regional, and special-edition variation expected."
+    },
+    "nintendo-wii": {
+      "id": "nintendo-wii-package",
+      "formatId": "optical-disc-case",
+      "kind": "physical",
+      "category": "optical-disc-case",
+      "material": "plastic-case",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 135,
+        "height": 190,
+        "depth": 14
+      },
+      "sourceId": "supplier-dvd-14mm",
+      "basis": "supplier-reference",
+      "confidence": "medium",
+      "scope": "Neutral DVD-case-family reference",
+      "caveat": "Supplier measurement is a geometry reference only; bundles and slipcovers vary."
+    },
+    "nintendo-wii-u": {
+      "id": "nintendo-wii-u-package",
+      "formatId": "optical-disc-case",
+      "kind": "physical",
+      "category": "optical-disc-case",
+      "material": "plastic-case",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 135,
+        "height": 190,
+        "depth": 14
+      },
+      "sourceId": "supplier-dvd-14mm",
+      "basis": "supplier-reference",
+      "confidence": "medium",
+      "scope": "Neutral DVD-case-family reference",
+      "caveat": "Supplier measurement is a geometry reference only; bundles and slipcovers vary."
+    },
+    "nintendo-switch": {
+      "id": "nintendo-switch-package",
+      "formatId": "cartridge-portrait",
+      "kind": "physical",
+      "category": "game-card-clamshell",
+      "material": "plastic-clamshell",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 104,
+        "height": 169,
+        "depth": 10.5
+      },
+      "sourceId": "retailer-switch-sku",
+      "basis": "retailer-reference",
+      "confidence": "medium",
+      "scope": "Representative physical game-card case",
+      "caveat": "Retail SKU dimensions may include packaging variance and are not a manufacturer specification."
+    },
+    "nintendo-switch-2": {
+      "id": "nintendo-switch-2-package",
+      "formatId": "cartridge-portrait",
+      "kind": "physical",
+      "category": "game-card-clamshell",
+      "material": "plastic-clamshell",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 104,
+        "height": 169,
+        "depth": 10.5
+      },
+      "sourceId": "representative-us-retail-estimate",
+      "basis": "representative-estimate",
+      "confidence": "low",
+      "scope": "Provisional game-card case",
+      "caveat": "Replace when measured retail SKU evidence is archived; do not present as a manufacturer specification."
+    },
+    "game-boy": {
+      "id": "game-boy-package",
+      "formatId": "handheld-tall-box",
+      "kind": "physical",
+      "category": "cardboard-cartridge-box",
+      "material": "cardboard",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 108,
+        "height": 140,
+        "depth": 25
+      },
+      "sourceId": "representative-us-retail-estimate",
+      "basis": "representative-estimate",
+      "confidence": "low",
+      "scope": "Representative US retail package",
+      "caveat": "Title, region, and insert variation expected; not an official standard."
+    },
+    "game-boy-color": {
+      "id": "game-boy-color-package",
+      "formatId": "handheld-tall-box",
+      "kind": "physical",
+      "category": "cardboard-cartridge-box",
+      "material": "cardboard",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 108,
+        "height": 140,
+        "depth": 25
+      },
+      "sourceId": "representative-us-retail-estimate",
+      "basis": "representative-estimate",
+      "confidence": "low",
+      "scope": "Representative US retail package",
+      "caveat": "Title, region, and insert variation expected; not an official standard."
+    },
+    "game-boy-advance": {
+      "id": "game-boy-advance-package",
+      "formatId": "game-boy-advance-box",
+      "kind": "physical",
+      "category": "cardboard-cartridge-box",
+      "material": "cardboard",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 133,
+        "height": 140,
+        "depth": 25
+      },
+      "sourceId": "representative-us-retail-estimate",
+      "basis": "representative-estimate",
+      "confidence": "low",
+      "scope": "Representative US retail package",
+      "caveat": "Title and region variation expected; not an official standard."
+    },
+    "nintendo-ds": {
+      "id": "nintendo-ds-package",
+      "formatId": "nintendo-ds-case",
+      "kind": "physical",
+      "category": "handheld-card-case",
+      "material": "plastic-clamshell",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 122,
+        "height": 135,
+        "depth": 14
+      },
+      "sourceId": "representative-us-retail-estimate",
+      "basis": "representative-estimate",
+      "confidence": "low",
+      "scope": "Representative DS-family retail case",
+      "caveat": "Verify against a measured SKU; manuals and inserts can alter depth."
+    },
+    "nintendo-dsi": {
+      "id": "nintendo-dsi-digital-package",
+      "formatId": "digital-edition",
+      "kind": "digital",
+      "category": "digital-edition-card",
+      "material": "digital",
+      "openingSide": "none",
+      "dimensions": {
+        "width": 150,
+        "height": 150,
+        "depth": 0
+      },
+      "sourceId": "nintendo-dsi-digital-exception",
+      "basis": "official-platform-exception",
+      "confidence": "medium",
+      "scope": "DSiWare digital distribution",
+      "caveat": "This is a flat GameAtlas digital reference card; it does not represent a physical DSi package."
+    },
+    "nintendo-3ds": {
+      "id": "nintendo-3ds-package",
+      "formatId": "nintendo-3ds-case",
+      "kind": "physical",
+      "category": "handheld-card-case",
+      "material": "plastic-clamshell",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 124,
+        "height": 135,
+        "depth": 14
+      },
+      "sourceId": "representative-us-retail-estimate",
+      "basis": "representative-estimate",
+      "confidence": "low",
+      "scope": "Representative 3DS-family retail case",
+      "caveat": "Verify against a measured SKU; special editions can add outer cartons."
+    },
+    "nintendo-new-3ds": {
+      "id": "nintendo-new-3ds-package",
+      "formatId": "nintendo-3ds-case",
+      "kind": "physical",
+      "category": "handheld-card-case",
+      "material": "plastic-clamshell",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 124,
+        "height": 135,
+        "depth": 14
+      },
+      "sourceId": "representative-us-retail-estimate",
+      "basis": "representative-estimate",
+      "confidence": "low",
+      "scope": "Representative 3DS-family retail case",
+      "caveat": "Software package family is shared with 3DS; not a distinct official standard."
+    },
+    "pc-windows": {
+      "id": "pc-windows-package",
+      "formatId": "pc-big-box",
+      "kind": "physical",
+      "category": "legacy-pc-reference-box",
+      "material": "cardboard",
+      "openingSide": "left",
+      "dimensions": {
+        "width": 216,
+        "height": 280,
+        "depth": 38
+      },
+      "sourceId": "representative-us-retail-estimate",
+      "basis": "representative-estimate",
+      "confidence": "low",
+      "scope": "GameAtlas legacy PC reference box",
+      "caveat": "PC software has no single packaging standard; use a title-specific override when evidence exists."
+    }
   }
 }
