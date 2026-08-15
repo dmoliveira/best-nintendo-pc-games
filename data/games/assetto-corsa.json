@@ -50,11 +50,23 @@
       "label": "Official Steam store page",
       "url": "https://store.steampowered.com/app/244210/Assetto_Corsa/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/assetto-corsa/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/assetto-corsa.svg",
+      "alt": "Abstract GameAtlas art tile for Assetto Corsa",
+      "provenanceId": "gameatlas-art-assetto-corsa"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

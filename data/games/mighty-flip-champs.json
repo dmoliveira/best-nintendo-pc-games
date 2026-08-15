@@ -51,11 +51,23 @@
       "label": "Nintendo Life DSiWare reference",
       "url": "https://www.nintendolife.com/games/dsiware/mighty_flip_champs",
       "kind": "reference"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/mighty-flip-champs/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/mighty-flip-champs.svg",
+      "alt": "Abstract GameAtlas art tile for Mighty Flip Champs!",
+      "provenanceId": "gameatlas-art-mighty-flip-champs"
+    }
+  ],
   "sources": [
     "nintendo-life-reference",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

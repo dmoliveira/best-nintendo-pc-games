@@ -51,11 +51,23 @@
       "label": "Official game page",
       "url": "https://www.nintendo.com/us/store/products/mario-kart-world-switch-2/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/mario-kart-world/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/mario-kart-world.svg",
+      "alt": "Abstract GameAtlas art tile for Mario Kart World",
+      "provenanceId": "gameatlas-art-mario-kart-world"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

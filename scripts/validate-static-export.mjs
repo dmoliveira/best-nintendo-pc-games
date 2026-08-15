@@ -43,6 +43,7 @@ for (const game of gameRecords) {
   const gameHtml = fs.readFileSync(gamePath, "utf8");
   if (!gameHtml.includes(game.title)) fail(`${route} does not contain its game title`);
   if (!gameHtml.includes("Original editorial")) fail(`${route} does not contain explicit editorial evidence labeling`);
+  if (Array.isArray(game.assets) && game.assets.length > 0 && !gameHtml.includes("game-hero-art")) fail(`${route} does not render its manifested art asset`);
   if (gameHtml.includes("80+") || /(?:critic score|popularity value|popularity rank)/i.test(gameHtml)) fail(`${route} exposes unauthorized numeric evidence messaging`);
   if (!sitemap.includes(`games/${game.slug}/`)) fail(`sitemap is missing ${game.slug}`);
 }

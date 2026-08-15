@@ -50,11 +50,23 @@
       "label": "Official Steam store page",
       "url": "https://store.steampowered.com/app/70/HalfLife/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/half-life/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/half-life.svg",
+      "alt": "Abstract GameAtlas art tile for Half-Life",
+      "provenanceId": "gameatlas-art-half-life"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

@@ -51,11 +51,23 @@
       "label": "Official Steam store page",
       "url": "https://store.steampowered.com/app/1250410/Microsoft_Flight_Simulator_40th_Anniversary_Edition/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/microsoft-flight-simulator/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/microsoft-flight-simulator-2020.svg",
+      "alt": "Abstract GameAtlas art tile for Microsoft Flight Simulator",
+      "provenanceId": "gameatlas-art-microsoft-flight-simulator-2020"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

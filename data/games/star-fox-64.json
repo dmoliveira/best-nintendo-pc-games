@@ -51,11 +51,23 @@
       "label": "Official game page",
       "url": "https://www.nintendo.co.jp/n01/n64/software/nus_p_nfxj/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/star-fox-64/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/star-fox-64.svg",
+      "alt": "Abstract GameAtlas art tile for Star Fox 64",
+      "provenanceId": "gameatlas-art-star-fox-64"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

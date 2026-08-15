@@ -50,11 +50,23 @@
       "label": "Official game page",
       "url": "https://www.nintendo.co.jp/ngc/gm8j/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/metroid-prime/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/metroid-prime.svg",
+      "alt": "Abstract GameAtlas art tile for Metroid Prime",
+      "provenanceId": "gameatlas-art-metroid-prime"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

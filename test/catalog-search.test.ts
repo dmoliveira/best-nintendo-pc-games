@@ -41,6 +41,7 @@ test("applies AND query matching and combined filters deterministically", () => 
 
 test("client search projection excludes raw evidence objects", () => {
   const serialized = JSON.stringify(records);
-  for (const forbidden of ["sourceUrl", "termsUrl", "rightsStatus", "verificationStatus", "capturedAt", "recheckAt", "rationale", "links", "assets"]) assert.doesNotMatch(serialized, new RegExp(forbidden));
+  for (const forbidden of ["sourceUrl", "termsUrl", "rightsStatus", "verificationStatus", "capturedAt", "recheckAt", "rationale", "links", "provenanceId"]) assert.doesNotMatch(serialized, new RegExp(forbidden));
   assert.match(serialized, /GameAtlas editorial/);
+  assert.ok(records.every((record) => record.artPath?.includes("/assets/games/") && record.artAlt));
 });

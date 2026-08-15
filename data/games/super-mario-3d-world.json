@@ -53,11 +53,23 @@
       "label": "Official game page",
       "url": "https://www.nintendo.co.jp/wiiu/ardj/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/super-mario-3d-world/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/super-mario-3d-world.svg",
+      "alt": "Abstract GameAtlas art tile for Super Mario 3D World",
+      "provenanceId": "gameatlas-art-super-mario-3d-world"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

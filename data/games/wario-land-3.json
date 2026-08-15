@@ -55,7 +55,13 @@
       "kind": "official"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/wario-land-3.svg",
+      "alt": "Abstract GameAtlas art tile for Wario Land 3",
+      "provenanceId": "gameatlas-art-wario-land-3"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
     "gameatlas-editorial"

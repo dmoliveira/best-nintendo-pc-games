@@ -50,11 +50,23 @@
       "label": "Nintendo Game Boy Advance product archive",
       "url": "https://www.nintendo.co.jp/n08/amkj/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/mario-kart-super-circuit/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/mario-kart-super-circuit.svg",
+      "alt": "Abstract GameAtlas art tile for Mario Kart: Super Circuit",
+      "provenanceId": "gameatlas-art-mario-kart-super-circuit"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

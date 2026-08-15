@@ -51,7 +51,13 @@
       "kind": "official"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/nintendogs.svg",
+      "alt": "Abstract GameAtlas art tile for Nintendogs",
+      "provenanceId": "gameatlas-art-nintendogs"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
     "gameatlas-editorial"

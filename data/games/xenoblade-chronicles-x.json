@@ -53,11 +53,23 @@
       "label": "Official game page",
       "url": "https://www.nintendo.co.jp/wiiu/ax5j/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/xenoblade-chronicles-x/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/xenoblade-chronicles-x.svg",
+      "alt": "Abstract GameAtlas art tile for Xenoblade Chronicles X",
+      "provenanceId": "gameatlas-art-xenoblade-chronicles-x"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

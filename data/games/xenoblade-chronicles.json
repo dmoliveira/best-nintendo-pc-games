@@ -53,11 +53,23 @@
       "label": "Official game page",
       "url": "https://www.nintendo.co.jp/wii/sx4j/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/xenoblade-chronicles/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/xenoblade-chronicles.svg",
+      "alt": "Abstract GameAtlas art tile for Xenoblade Chronicles",
+      "provenanceId": "gameatlas-art-xenoblade-chronicles"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

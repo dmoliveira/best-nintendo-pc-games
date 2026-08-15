@@ -52,7 +52,13 @@
       "kind": "official"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/super-mario-land.svg",
+      "alt": "Abstract GameAtlas art tile for Super Mario Land",
+      "provenanceId": "gameatlas-art-super-mario-land"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
     "gameatlas-editorial"

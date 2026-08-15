@@ -3,6 +3,8 @@ export interface CatalogSearchRecord {
   title: string;
   aliases: string[];
   emoji: string;
+  artPath?: string;
+  artAlt?: string;
   shortDescription: string;
   searchText: string;
   releaseYear: number;

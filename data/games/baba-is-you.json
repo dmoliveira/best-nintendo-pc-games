@@ -49,11 +49,23 @@
       "label": "Official Steam store page",
       "url": "https://store.steampowered.com/app/736260/Baba_Is_You/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/baba-is-you/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/baba-is-you.svg",
+      "alt": "Abstract GameAtlas art tile for Baba Is You",
+      "provenanceId": "gameatlas-art-baba-is-you"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

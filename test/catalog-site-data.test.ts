@@ -38,3 +38,12 @@ test("taxonomy hub inventories include only referenced populated entries", () =>
   assert.equal(getCatalogPlatform("missing-platform"), undefined);
   assert.equal(getCatalogGenre("missing-genre"), undefined);
 });
+
+
+test("keeps external rating references link-only and manifest-backed art present", () => {
+  const games = getCatalogGames();
+  const ratingLinks = games.flatMap(({ game }) => game.links.filter((link) => link.label === "External/reference — Metacritic"));
+  assert.equal(ratingLinks.length, 32);
+  assert.ok(ratingLinks.every((link) => link.kind === "critical" && link.url.startsWith("https://www.metacritic.com/game/")));
+  assert.ok(games.every(({ game }) => game.assets.length === 1 && game.assets[0].path.startsWith("public/assets/games/")));
+});

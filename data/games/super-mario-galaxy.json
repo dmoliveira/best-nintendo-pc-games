@@ -53,11 +53,23 @@
       "label": "Official game page",
       "url": "https://www.nintendo.co.jp/wii/rmgj/",
       "kind": "official"
+    },
+    {
+      "label": "External/reference — Metacritic",
+      "url": "https://www.metacritic.com/game/super-mario-galaxy/",
+      "kind": "critical"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/super-mario-galaxy.svg",
+      "alt": "Abstract GameAtlas art tile for Super Mario Galaxy",
+      "provenanceId": "gameatlas-art-super-mario-galaxy"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
-    "gameatlas-editorial"
+    "gameatlas-editorial",
+    "metacritic"
   ]
 }

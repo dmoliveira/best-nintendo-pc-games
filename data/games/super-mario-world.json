@@ -53,7 +53,13 @@
       "kind": "official"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "path": "public/assets/games/super-mario-world.svg",
+      "alt": "Abstract GameAtlas art tile for Super Mario World",
+      "provenanceId": "gameatlas-art-super-mario-world"
+    }
+  ],
   "sources": [
     "official-publisher-pages",
     "gameatlas-editorial"
