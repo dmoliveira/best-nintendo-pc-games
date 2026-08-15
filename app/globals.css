@@ -2501,7 +2501,6 @@ h1 {
 
 @media (max-width:800px){
   .game-grid{grid-template-columns:1fr}
-  .browser-layout-row{display:none}
 }
 
 /* Original, category-generic SVG markers. */
@@ -2852,5 +2851,89 @@ h1 {
   .package-thumbnail__spine,
   .game-box-controls button {
     border-color: CanvasText;
+  }
+}
+
+/* Catalog interaction and high-contrast completion pass. */
+.game-card {
+  position: relative;
+}
+
+.game-card-title-link::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.game-card-topline a,
+.tag-list a,
+.game-card-footer a {
+  position: relative;
+  z-index: 2;
+}
+
+.game-card:hover .art-link-label,
+.game-card:focus-within .art-link-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.game-card-topline-platforms {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.layout-mobile-note {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .browser-layout-row {
+    justify-content: flex-start;
+  }
+
+  .layout-control {
+    display: none;
+  }
+
+  .layout-mobile-note {
+    color: var(--faint);
+    display: block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: .61rem;
+    letter-spacing: .04em;
+    line-height: 1.45;
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+@media (forced-colors: active) {
+  .layout-option,
+  .pagination-button,
+  .filter-chip {
+    background: Canvas;
+    border-color: CanvasText;
+    color: CanvasText;
+    forced-color-adjust: auto;
+  }
+
+  .layout-option--active,
+  .pagination-button--current {
+    background: Highlight;
+    border-color: Highlight;
+    color: HighlightText;
+    font-weight: 700;
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+
+  .layout-option:focus-within,
+  .pagination-button:focus-visible,
+  .filter-chip:focus {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
   }
 }

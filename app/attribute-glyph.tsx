@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
-export type AttributeGlyphKind = "studio" | "publisher" | "genre" | "year" | "digital" | "physical";
+export const ATTRIBUTE_GLYPH_KINDS = ["studio", "publisher", "genre", "year", "digital", "physical"] as const;
+export type AttributeGlyphKind = typeof ATTRIBUTE_GLYPH_KINDS[number];
 
 interface AttributeGlyphProps {
   kind: AttributeGlyphKind;

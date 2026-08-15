@@ -29,6 +29,8 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /addEventListener\("popstate"/);
   assert.doesNotMatch(browser, /Update results/);
   assert.match(browser, /Card layout/);
+  assert.match(browser, /Single-column layout on smaller screens\./);
+  assert.match(browser, /Automatic responsive card layout/);
   assert.match(browser, /columns/);
   assert.match(browser, /CatalogCards records={displayRecords} columns={state.columns} showResultPosition/);
   assert.match(browser, /resultPositionOffset/);
@@ -36,8 +38,10 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(browser, /catalog-pagination/);
   assert.match(cards, /Current result position/);
   assert.match(cards, /not a quality ranking/);
-  assert.match(cards, /Additional genres:/);
-  assert.match(cards, /aria-hidden="true">\+\{hiddenGenreCount\} more/);
+  assert.match(cards, /game-card-title-link/);
+  assert.match(cards, /data-platform-overflow/);
+  assert.match(cards, /data-genre-overflow/);
+  assert.match(cards, /<ul className="game-card-topline-platforms"/);
   assert.doesNotMatch(taxonomyHub, /showResultPosition/);
 });
 
@@ -52,7 +56,11 @@ test("visual shell protects focus, contrast, and reduced-motion behavior", () =>
   assert.match(styles, /game-grid--columns-1/);
   assert.match(styles, /layout-control/);
   assert.match(styles, /@media \(max-width:800px\)[\s\S]*game-grid\{grid-template-columns:1fr\}/);
-  assert.match(styles, /browser-layout-row\{display:none\}/);
+  assert.match(styles, /layout-options\{display:flex;gap:5px\}/);
+  assert.match(styles, /layout-mobile-note/);
+  assert.match(styles, /game-card-title-link::before/);
+  assert.match(styles, /\.tag-list a/);
+  assert.match(styles, /forced-colors: active[\s\S]*layout-option--active/);
   assert.match(styles, /game-card-credits>span/);
   assert.doesNotMatch(styles, /\.platform-card:hover\s*\{[^}]*transform/);
 });
