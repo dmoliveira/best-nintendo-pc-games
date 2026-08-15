@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "diddy-kong-racing",
+  "title": "Diddy Kong Racing",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Diddy Kong Racing anchors a Nintendo 64 racing entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Builds a traceable racing option into the Nintendo 64 discovery path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 1997
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Diddy Kong Racing",
+    "nintendo-64",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the Nintendo 64 racing discovery path using a linked structured-data reference; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q545072",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q545072.svg",
+      "alt": "Abstract GameAtlas art tile for Diddy Kong Racing",
+      "provenanceId": "gameatlas-catalog-1000-q545072"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

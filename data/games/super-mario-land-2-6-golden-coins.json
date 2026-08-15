@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-mario-land-2-6-golden-coins",
+  "title": "Super Mario Land 2: 6 Golden Coins",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Super Mario Land 2: 6 Golden Coins is included in GameAtlas's Game Boy family platformer route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Offers a clearly labeled platformer route through the Game Boy family collection.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 1992
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Super Mario Land 2: 6 Golden Coins",
+    "game-boy",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Game Boy family platformer discovery path using a linked Wikidata platform-and-genre statement; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q596392",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q596392.svg",
+      "alt": "Abstract GameAtlas art tile for Super Mario Land 2: 6 Golden Coins",
+      "provenanceId": "gameatlas-catalog-1000-q596392"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

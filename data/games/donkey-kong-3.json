@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "donkey-kong-3",
+  "title": "Donkey Kong 3",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Donkey Kong 3 anchors a Nintendo Entertainment System shooter entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Frames a shooter pick for source-aware Nintendo Entertainment System exploration.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 1984
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Donkey Kong 3",
+    "nintendo-nes",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Nintendo Entertainment System shooter discovery path using a Wikidata-listed catalog relationship; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q390291",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q390291.svg",
+      "alt": "Abstract GameAtlas art tile for Donkey Kong 3",
+      "provenanceId": "gameatlas-catalog-1000-q390291"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

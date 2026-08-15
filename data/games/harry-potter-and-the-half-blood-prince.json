@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "harry-potter-and-the-half-blood-prince",
+  "title": "Harry Potter and the Half-Blood Prince",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Harry Potter and the Half-Blood Prince is kept in GameAtlas's Wii action and adventure and shooter discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Frames a action and adventure and shooter pick for source-aware Wii exploration.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "shooter"
+  ],
+  "keywords": [
+    "Harry Potter and the Half-Blood Prince",
+    "nintendo-wii",
+    "action",
+    "adventure",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the Wii action and adventure and shooter discovery path using Wikidata-listed platform and genre statements; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q862524",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q862524.svg",
+      "alt": "Abstract GameAtlas art tile for Harry Potter and the Half-Blood Prince",
+      "provenanceId": "gameatlas-catalog-1000-q862524"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

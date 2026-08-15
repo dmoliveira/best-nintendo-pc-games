@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "amnesia-the-dark-descent",
+  "title": "Amnesia: The Dark Descent",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Amnesia: The Dark Descent sits in the GameAtlas PC (Windows) horror collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Maps a direct-reference horror entry into the PC (Windows) catalog.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "horror"
+  ],
+  "keywords": [
+    "Amnesia: The Dark Descent",
+    "pc-windows",
+    "horror",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the PC (Windows) horror discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q22986",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q22986.svg",
+      "alt": "Abstract GameAtlas art tile for Amnesia: The Dark Descent",
+      "provenanceId": "gameatlas-catalog-1000-q22986"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

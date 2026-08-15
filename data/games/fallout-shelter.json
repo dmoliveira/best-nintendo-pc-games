@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "fallout-shelter",
+  "title": "Fallout Shelter",
+  "aliases": [],
+  "emoji": "🌱",
+  "shortDescription": "Fallout Shelter is organized in GameAtlas's Nintendo Switch simulation and survival collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Offers a clearly labeled simulation and survival route through the Nintendo Switch collection.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "simulation",
+    "survival"
+  ],
+  "keywords": [
+    "Fallout Shelter",
+    "nintendo-switch",
+    "simulation",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Nintendo Switch simulation and survival discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q20116199",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q20116199.svg",
+      "alt": "Abstract GameAtlas art tile for Fallout Shelter",
+      "provenanceId": "gameatlas-catalog-1000-q20116199"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

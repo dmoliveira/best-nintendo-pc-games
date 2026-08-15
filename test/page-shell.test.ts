@@ -10,6 +10,7 @@ const boxViewer = readFileSync(new URL("../app/game-box-viewer.tsx", import.meta
 const cards = readFileSync(new URL("../app/catalog-cards.tsx", import.meta.url), "utf8");
 const packageThumbnail = readFileSync(new URL("../app/package-thumbnail.tsx", import.meta.url), "utf8");
 const taxonomyHub = readFileSync(new URL("../app/taxonomy-hub.tsx", import.meta.url), "utf8");
+const catalogIndex = readFileSync(new URL("../app/catalog/page.tsx", import.meta.url), "utf8");
 
 test("home shell exposes a keyboard bypass and stable main landmark", () => {
   assert.match(page, /className="skip-link" href="#main-content"/);
@@ -43,6 +44,15 @@ test("home shell exposes accessible catalog search and filters", () => {
   assert.match(cards, /data-genre-overflow/);
   assert.match(cards, /<ul className="game-card-topline-platforms"/);
   assert.doesNotMatch(taxonomyHub, /showResultPosition/);
+  assert.match(browser, /getCatalogPaginationItems/);
+  assert.match(browser, /pagination-ellipsis/);
+  assert.match(page, /initialRecords=/);
+  assert.match(page, /catalogIndexDigest=/);
+  assert.match(page, /catalogIndexUrl=/);
+  assert.match(browser, /fetch\(catalogIndexUrl\)/);
+  assert.match(catalogIndex, /Browse every game\./);
+  assert.match(catalogIndex, /No-JavaScript catalog/);
+  assert.doesNotMatch(page, /Curated by humans|Thoughtful recommendations|reviewed picks/);
 });
 
 test("visual shell protects focus, contrast, and reduced-motion behavior", () => {
@@ -76,11 +86,14 @@ test("game detail pages expose static params, a skip link, and explicit editoria
   assert.match(browser, /platformDisplayLabels/);
   assert.match(gamePage, /Official &amp; external resources/);
   assert.match(gamePage, /DSiWare · Digital/);
+  assert.match(gamePage, /First documented release/);
+  assert.match(gamePage, /isFrozenCatalogEntry/);
 });
 
-test("game pages expose an honest, keyboard-operable package-view fallback", () => {
-  assert.match(gamePage, /GameBoxViewer/);
+test("game pages retain governed package views and a visible reference fallback", () => {
+  assert.match(gamePage, /GameBoxViewer key=\{game\.slug\} presentation=\{packagePresentation\}/);
   assert.match(gamePage, /site\.assetPath\(boxAsset\.path\.replace/);
+  assert.match(gamePage, /Catalog method/);
   assert.match(boxViewer, /GameAtlas reference case/);
   assert.match(boxViewer, /data-game-box-stage/);
   assert.match(boxViewer, /aria-live="polite"/);

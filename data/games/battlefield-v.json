@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "battlefield-v",
+  "title": "Battlefield V",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Battlefield V is organized in GameAtlas's PC (Windows) shooter collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Frames a shooter pick for source-aware PC (Windows) exploration.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2018
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Battlefield V",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the PC (Windows) shooter discovery path using a source-linked Wikidata item; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q21043786",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q21043786.svg",
+      "alt": "Abstract GameAtlas art tile for Battlefield V",
+      "provenanceId": "gameatlas-catalog-1000-q21043786"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

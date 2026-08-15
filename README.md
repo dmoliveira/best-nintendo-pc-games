@@ -1,6 +1,6 @@
 # GameAtlas — Best Nintendo & PC Games
 
-> Find the games worth your time.
+> Explore a source-aware game atlas.
 
 GameAtlas is a source-aware, static-first guide to acclaimed and popular games. It starts with Nintendo consoles, then expands to PC with searchable platform, genre, year, developer, publisher, and evidence filters.
 
@@ -19,7 +19,7 @@ The launch plan and acceptance gates live in [`docs/plan/new/2026-08-15-gameatla
 
 The canonical Nintendo platform taxonomy is in [`data/platforms.json`](data/platforms.json), with its checked alpha and expansion coverage matrix in [`data/coverage.json`](data/coverage.json).
 
-**Catalog snapshot (2026-08-15):** 103 reviewed GameAtlas editorial picks across all 16 supported Nintendo and Windows PC platform families.
+**Catalog snapshot (2026-08-15):** 1,000 GameAtlas catalog entries across all 16 supported Nintendo and Windows PC platform families. The 897-entry scale batch uses frozen Wikidata structured metadata with direct item links; GameAtlas authors its own catalog context and artwork.
 
 ## Trust and rights
 

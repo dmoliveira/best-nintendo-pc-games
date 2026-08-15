@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "minecraft-story-mode",
+  "title": "Minecraft: Story Mode",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Minecraft: Story Mode is kept in GameAtlas's Wii U adventure discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked adventure entry in the Wii U browsing path.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "adventure"
+  ],
+  "keywords": [
+    "Minecraft: Story Mode",
+    "nintendo-wii-u",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Wii U adventure discovery path using a linked structured-data reference; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q20888644",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q20888644.svg",
+      "alt": "Abstract GameAtlas art tile for Minecraft: Story Mode",
+      "provenanceId": "gameatlas-catalog-1000-q20888644"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

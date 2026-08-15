@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "minesweeper",
+  "title": "Minesweeper",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Minesweeper helps define a PC (Windows) puzzle path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Frames a puzzle pick for source-aware PC (Windows) exploration.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1989
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "Minesweeper",
+    "pc-windows",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the PC (Windows) puzzle discovery path using Wikidata-listed platform and genre statements; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q126194",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q126194.svg",
+      "alt": "Abstract GameAtlas art tile for Minesweeper",
+      "provenanceId": "gameatlas-catalog-1000-q126194"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

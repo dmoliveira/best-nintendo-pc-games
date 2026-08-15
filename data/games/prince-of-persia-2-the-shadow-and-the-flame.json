@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "prince-of-persia-2-the-shadow-and-the-flame",
+  "title": "Prince of Persia 2: The Shadow and the Flame",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Prince of Persia 2: The Shadow and the Flame is included in GameAtlas's Super Nintendo Entertainment System platformer route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Places a source-linked platformer entry in the Super Nintendo Entertainment System browsing path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1993
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Prince of Persia 2: The Shadow and the Flame",
+    "nintendo-snes",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the Super Nintendo Entertainment System platformer discovery path using a linked structured-data reference; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q906895",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q906895.svg",
+      "alt": "Abstract GameAtlas art tile for Prince of Persia 2: The Shadow and the Flame",
+      "provenanceId": "gameatlas-catalog-1000-q906895"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

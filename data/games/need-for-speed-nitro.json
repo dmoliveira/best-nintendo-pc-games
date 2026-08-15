@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "need-for-speed-nitro",
+  "title": "Need for Speed: Nitro",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Need for Speed: Nitro is organized in GameAtlas's Wii racing collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Places a source-linked racing entry in the Wii browsing path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Need for Speed: Nitro",
+    "nintendo-wii",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the Wii racing discovery path using the frozen source metadata record; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1313322",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1313322.svg",
+      "alt": "Abstract GameAtlas art tile for Need for Speed: Nitro",
+      "provenanceId": "gameatlas-catalog-1000-q1313322"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

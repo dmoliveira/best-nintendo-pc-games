@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "what-remains-of-edith-finch",
+  "title": "What Remains of Edith Finch",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "What Remains of Edith Finch sits in the GameAtlas Nintendo Switch adventure collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Adds a clearly sourced adventure option to the Nintendo Switch discovery path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "adventure"
+  ],
+  "keywords": [
+    "What Remains of Edith Finch",
+    "nintendo-switch",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the Nintendo Switch adventure discovery path using the frozen source metadata record; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q28451186",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q28451186.svg",
+      "alt": "Abstract GameAtlas art tile for What Remains of Edith Finch",
+      "provenanceId": "gameatlas-catalog-1000-q28451186"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

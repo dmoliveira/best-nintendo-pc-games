@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mortal-kombat-x",
+  "title": "Mortal Kombat X",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Mortal Kombat X anchors a PC (Windows) fighting entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Adds a clearly sourced fighting option to the PC (Windows) discovery path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Mortal Kombat X",
+    "pc-windows",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the PC (Windows) fighting discovery path using a source-linked Wikidata item; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q17118361",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q17118361.svg",
+      "alt": "Abstract GameAtlas art tile for Mortal Kombat X",
+      "provenanceId": "gameatlas-catalog-1000-q17118361"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

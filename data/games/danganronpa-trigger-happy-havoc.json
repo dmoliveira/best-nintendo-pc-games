@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "danganronpa-trigger-happy-havoc",
+  "title": "Danganronpa: Trigger Happy Havoc",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Danganronpa: Trigger Happy Havoc helps define a Nintendo Switch action and adventure and visual novel path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Sets a direct-reference action and adventure and visual novel marker within the Nintendo Switch catalog.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "visual-novel"
+  ],
+  "keywords": [
+    "Danganronpa: Trigger Happy Havoc",
+    "nintendo-switch",
+    "action",
+    "adventure",
+    "visual-novel",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Nintendo Switch action and adventure and visual novel discovery path using the frozen source metadata record; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1035512",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1035512.svg",
+      "alt": "Abstract GameAtlas art tile for Danganronpa: Trigger Happy Havoc",
+      "provenanceId": "gameatlas-catalog-1000-q1035512"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

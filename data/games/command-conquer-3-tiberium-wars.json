@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "command-conquer-3-tiberium-wars",
+  "title": "Command & Conquer 3: Tiberium Wars",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Command & Conquer 3: Tiberium Wars is organized in GameAtlas's PC (Windows) strategy collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Builds a traceable strategy option into the PC (Windows) discovery path.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Command & Conquer 3: Tiberium Wars",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the PC (Windows) strategy discovery path using Wikidata-listed platform and genre statements; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q633046",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q633046.svg",
+      "alt": "Abstract GameAtlas art tile for Command & Conquer 3: Tiberium Wars",
+      "provenanceId": "gameatlas-catalog-1000-q633046"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "dwarf-fortress",
+  "title": "Dwarf Fortress",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Dwarf Fortress helps define a PC (Windows) adventure and sandbox and simulation and survival path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Frames a adventure and sandbox and simulation and survival pick for source-aware PC (Windows) exploration.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "adventure",
+    "sandbox",
+    "simulation",
+    "survival"
+  ],
+  "keywords": [
+    "Dwarf Fortress",
+    "pc-windows",
+    "adventure",
+    "sandbox",
+    "simulation",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the PC (Windows) adventure and sandbox and simulation and survival discovery path using the frozen source metadata record; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q248810",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q248810.svg",
+      "alt": "Abstract GameAtlas art tile for Dwarf Fortress",
+      "provenanceId": "gameatlas-catalog-1000-q248810"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

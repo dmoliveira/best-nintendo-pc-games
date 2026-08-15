@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "american-mcgee-s-alice",
+  "title": "American McGee's Alice",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "American McGee's Alice sits in the GameAtlas PC (Windows) horror and shooter collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Maps a direct-reference horror and shooter entry into the PC (Windows) catalog.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "horror",
+    "shooter"
+  ],
+  "keywords": [
+    "American McGee's Alice",
+    "pc-windows",
+    "horror",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the PC (Windows) horror and shooter discovery path using a linked Wikidata platform-and-genre statement; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q465689",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q465689.svg",
+      "alt": "Abstract GameAtlas art tile for American McGee's Alice",
+      "provenanceId": "gameatlas-catalog-1000-q465689"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

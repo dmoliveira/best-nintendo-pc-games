@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "five-nights-at-freddy-s-sister-location",
+  "title": "Five Nights at Freddy's: Sister Location",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Five Nights at Freddy's: Sister Location anchors a Nintendo Switch adventure and horror and survival entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Places a source-linked adventure and horror and survival entry in the Nintendo Switch browsing path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2016
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "adventure",
+    "horror",
+    "survival"
+  ],
+  "keywords": [
+    "Five Nights at Freddy's: Sister Location",
+    "nintendo-switch",
+    "adventure",
+    "horror",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Nintendo Switch adventure and horror and survival discovery path using a source-linked Wikidata item; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q24060042",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q24060042.svg",
+      "alt": "Abstract GameAtlas art tile for Five Nights at Freddy's: Sister Location",
+      "provenanceId": "gameatlas-catalog-1000-q24060042"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

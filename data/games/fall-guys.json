@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "fall-guys",
+  "title": "Fall Guys",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Fall Guys appears in GameAtlas's Nintendo Switch platformer collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Brings a source-aware platformer entry to the Nintendo Switch browsing route.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Fall Guys",
+    "nintendo-switch",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Nintendo Switch platformer discovery path using the documented Wikidata platform mapping; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q85760410",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q85760410.svg",
+      "alt": "Abstract GameAtlas art tile for Fall Guys",
+      "provenanceId": "gameatlas-catalog-1000-q85760410"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

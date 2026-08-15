@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "fire-emblem-warriors",
+  "title": "Fire Emblem Warriors",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Fire Emblem Warriors is grouped with GameAtlas's New Nintendo 3DS family action picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Brings a source-aware action entry to the New Nintendo 3DS family browsing route.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-new-3ds"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Fire Emblem Warriors",
+    "nintendo-new-3ds",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Indexed for the New Nintendo 3DS family action discovery path using a linked Wikidata platform-and-genre statement; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q30589355",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q30589355.svg",
+      "alt": "Abstract GameAtlas art tile for Fire Emblem Warriors",
+      "provenanceId": "gameatlas-catalog-1000-q30589355"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

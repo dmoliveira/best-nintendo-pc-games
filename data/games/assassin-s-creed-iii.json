@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "assassin-s-creed-iii",
+  "title": "Assassin's Creed III",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Assassin's Creed III sits in the GameAtlas Wii U action and adventure and stealth collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Builds a traceable action and adventure and stealth option into the Wii U discovery path.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "stealth"
+  ],
+  "keywords": [
+    "Assassin's Creed III",
+    "nintendo-wii-u",
+    "action",
+    "adventure",
+    "stealth",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the Wii U action and adventure and stealth discovery path using a linked structured-data reference; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q40166",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q40166.svg",
+      "alt": "Abstract GameAtlas art tile for Assassin's Creed III",
+      "provenanceId": "gameatlas-catalog-1000-q40166"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

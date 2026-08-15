@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "slug": "bomberman-blitz",
+  "title": "Bomberman Blitz",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Bomberman Blitz is organized in GameAtlas's Nintendo DSi family action and puzzle collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Offers a clearly labeled action and puzzle route through the Nintendo DSi family collection.",
+    "Retains source provenance while keeping the catalog context independently authored."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-dsi"
+  ],
+  "genres": [
+    "action",
+    "puzzle"
+  ],
+  "keywords": [
+    "Bomberman Blitz",
+    "nintendo-dsi",
+    "action",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Nintendo DSi family action and puzzle discovery path using Wikidata-listed platform and genre statements; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q4940642",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q4940642.svg",
+      "alt": "Abstract GameAtlas art tile for Bomberman Blitz",
+      "provenanceId": "gameatlas-catalog-1000-q4940642"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ],
+  "releaseFormat": "digital"
+}

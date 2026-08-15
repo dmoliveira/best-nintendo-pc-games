@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mortal-kombat-armageddon",
+  "title": "Mortal Kombat: Armageddon",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Mortal Kombat: Armageddon helps define a Wii fighting path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Offers a clearly labeled fighting route through the Wii collection.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Mortal Kombat: Armageddon",
+    "nintendo-wii",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Wii fighting discovery path using a source-linked Wikidata item; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1299648",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1299648.svg",
+      "alt": "Abstract GameAtlas art tile for Mortal Kombat: Armageddon",
+      "provenanceId": "gameatlas-catalog-1000-q1299648"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

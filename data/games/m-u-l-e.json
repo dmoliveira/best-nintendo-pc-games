@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "m-u-l-e",
+  "title": "M.U.L.E.",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "M.U.L.E. is organized in GameAtlas's Nintendo Entertainment System strategy collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Sets a direct-reference strategy marker within the Nintendo Entertainment System catalog.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 1983
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "M.U.L.E.",
+    "nintendo-nes",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Nintendo Entertainment System strategy discovery path using the frozen Wikidata metadata snapshot; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1284570",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1284570.svg",
+      "alt": "Abstract GameAtlas art tile for M.U.L.E.",
+      "provenanceId": "gameatlas-catalog-1000-q1284570"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

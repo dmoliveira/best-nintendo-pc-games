@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "new-super-mario-bros-2",
+  "title": "New Super Mario Bros. 2",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "New Super Mario Bros. 2 is cataloged with Nintendo 3DS family platformer picks in GameAtlas, keeping its editorial context separate from the linked Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference platformer entry into the Nintendo 3DS family catalog.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "New Super Mario Bros. 2",
+    "nintendo-3ds",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Nintendo 3DS family platformer discovery path using a linked structured-data reference; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q558621",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q558621.svg",
+      "alt": "Abstract GameAtlas art tile for New Super Mario Bros. 2",
+      "provenanceId": "gameatlas-catalog-1000-q558621"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

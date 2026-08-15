@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "ultimate-spider-man",
+  "title": "Ultimate Spider-Man",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Ultimate Spider-Man is organized in GameAtlas's Game Boy Advance family action and adventure and fighting collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Sets a direct-reference action and adventure and fighting marker within the Game Boy Advance family catalog.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2005
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "fighting"
+  ],
+  "keywords": [
+    "Ultimate Spider-Man",
+    "game-boy-advance",
+    "action",
+    "adventure",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Game Boy Advance family action and adventure and fighting discovery path using a linked Wikidata platform-and-genre statement; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2583842",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2583842.svg",
+      "alt": "Abstract GameAtlas art tile for Ultimate Spider-Man",
+      "provenanceId": "gameatlas-catalog-1000-q2583842"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "nier-automata",
+  "title": "NieR: Automata",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "NieR: Automata appears in GameAtlas's Nintendo Switch action collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Maps a direct-reference action entry into the Nintendo Switch catalog.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "NieR: Automata",
+    "nintendo-switch",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Nintendo Switch action discovery path using the documented Wikidata platform mapping; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q21078985",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q21078985.svg",
+      "alt": "Abstract GameAtlas art tile for NieR: Automata",
+      "provenanceId": "gameatlas-catalog-1000-q21078985"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

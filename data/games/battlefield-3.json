@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "battlefield-3",
+  "title": "Battlefield 3",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Battlefield 3 anchors a PC (Windows) shooter entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Builds a traceable shooter option into the PC (Windows) discovery path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Battlefield 3",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the PC (Windows) shooter discovery path using a source-linked Wikidata item; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q791454",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q791454.svg",
+      "alt": "Abstract GameAtlas art tile for Battlefield 3",
+      "provenanceId": "gameatlas-catalog-1000-q791454"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

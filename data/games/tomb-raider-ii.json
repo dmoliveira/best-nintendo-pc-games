@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "tomb-raider-ii",
+  "title": "Tomb Raider II",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Tomb Raider II appears in GameAtlas's PC (Windows) action and adventure collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Sets a direct-reference action and adventure marker within the PC (Windows) catalog.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 1997
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Tomb Raider II",
+    "pc-windows",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the PC (Windows) action and adventure discovery path using a linked structured-data reference; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q816451",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q816451.svg",
+      "alt": "Abstract GameAtlas art tile for Tomb Raider II",
+      "provenanceId": "gameatlas-catalog-1000-q816451"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

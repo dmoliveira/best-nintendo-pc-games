@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "subnautica",
+  "title": "Subnautica",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Subnautica is kept in GameAtlas's Nintendo Switch action and adventure and survival discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference action and adventure and survival entry into the Nintendo Switch catalog.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "survival"
+  ],
+  "keywords": [
+    "Subnautica",
+    "nintendo-switch",
+    "action",
+    "adventure",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Nintendo Switch action and adventure and survival discovery path using the documented Wikidata platform mapping; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q21039915",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q21039915.svg",
+      "alt": "Abstract GameAtlas art tile for Subnautica",
+      "provenanceId": "gameatlas-catalog-1000-q21039915"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

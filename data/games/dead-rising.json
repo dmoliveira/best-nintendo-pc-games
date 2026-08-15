@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "dead-rising",
+  "title": "Dead Rising",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Dead Rising is included in GameAtlas's Wii horror and survival route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Keeps a documented horror and survival option visible in the Wii collection.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "horror",
+    "survival"
+  ],
+  "keywords": [
+    "Dead Rising",
+    "nintendo-wii",
+    "horror",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the Wii horror and survival discovery path using the documented Wikidata platform mapping; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1145336",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1145336.svg",
+      "alt": "Abstract GameAtlas art tile for Dead Rising",
+      "provenanceId": "gameatlas-catalog-1000-q1145336"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

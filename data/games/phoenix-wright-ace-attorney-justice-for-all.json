@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "phoenix-wright-ace-attorney-justice-for-all",
+  "title": "Phoenix Wright: Ace Attorney – Justice for All",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Phoenix Wright: Ace Attorney – Justice for All is included in GameAtlas's Game Boy Advance family adventure and visual novel route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Maps a direct-reference adventure and visual novel entry into the Game Boy Advance family catalog.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2002
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "adventure",
+    "visual-novel"
+  ],
+  "keywords": [
+    "Phoenix Wright: Ace Attorney – Justice for All",
+    "game-boy-advance",
+    "adventure",
+    "visual-novel",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Game Boy Advance family adventure and visual novel discovery path using Wikidata-listed platform and genre statements; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q645003",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q645003.svg",
+      "alt": "Abstract GameAtlas art tile for Phoenix Wright: Ace Attorney – Justice for All",
+      "provenanceId": "gameatlas-catalog-1000-q645003"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

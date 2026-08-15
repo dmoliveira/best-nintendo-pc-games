@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "far-cry-2",
+  "title": "Far Cry 2",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Far Cry 2 is cataloged with PC (Windows) shooter picks in GameAtlas, keeping its editorial context separate from the linked Wikidata record.",
+  "highlights": [
+    "Sets a direct-reference shooter marker within the PC (Windows) catalog.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Far Cry 2",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the PC (Windows) shooter discovery path using the frozen Wikidata metadata snapshot; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q176336",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q176336.svg",
+      "alt": "Abstract GameAtlas art tile for Far Cry 2",
+      "provenanceId": "gameatlas-catalog-1000-q176336"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

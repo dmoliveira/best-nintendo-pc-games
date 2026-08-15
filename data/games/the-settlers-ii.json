@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-settlers-ii",
+  "title": "The Settlers II",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "The Settlers II is grouped with GameAtlas's Nintendo DS family strategy picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Brings a source-aware strategy entry to the Nintendo DS family browsing route.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "The Settlers II",
+    "nintendo-ds",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the Nintendo DS family strategy discovery path using a source-linked Wikidata item; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1995487",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1995487.svg",
+      "alt": "Abstract GameAtlas art tile for The Settlers II",
+      "provenanceId": "gameatlas-catalog-1000-q1995487"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

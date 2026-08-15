@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "sonic-unleashed",
+  "title": "Sonic Unleashed",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Sonic Unleashed is included in GameAtlas's Wii platformer route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Brings a source-aware platformer entry to the Wii browsing route.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Sonic Unleashed",
+    "nintendo-wii",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the Wii platformer discovery path using a linked structured-data reference; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1150928",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1150928.svg",
+      "alt": "Abstract GameAtlas art tile for Sonic Unleashed",
+      "provenanceId": "gameatlas-catalog-1000-q1150928"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

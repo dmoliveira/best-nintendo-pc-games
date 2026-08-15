@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "warioware-inc-mega-microgames",
+  "title": "WarioWare, Inc.: Mega Microgames!",
+  "aliases": [],
+  "emoji": "🎉",
+  "shortDescription": "WarioWare, Inc.: Mega Microgames! is cataloged with Nintendo 3DS family party picks in GameAtlas, keeping its editorial context separate from the linked Wikidata record.",
+  "highlights": [
+    "Keeps a documented party option visible in the Nintendo 3DS family collection.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "party"
+  ],
+  "keywords": [
+    "WarioWare, Inc.: Mega Microgames!",
+    "nintendo-3ds",
+    "party",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Nintendo 3DS family party discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1195267",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1195267.svg",
+      "alt": "Abstract GameAtlas art tile for WarioWare, Inc.: Mega Microgames!",
+      "provenanceId": "gameatlas-catalog-1000-q1195267"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

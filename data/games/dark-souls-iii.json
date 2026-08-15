@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "dark-souls-iii",
+  "title": "Dark Souls III",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Dark Souls III sits in the GameAtlas PC (Windows) action collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Frames a action pick for source-aware PC (Windows) exploration.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2016
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Dark Souls III",
+    "pc-windows",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the PC (Windows) action discovery path using the documented Wikidata platform mapping; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q20112508",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q20112508.svg",
+      "alt": "Abstract GameAtlas art tile for Dark Souls III",
+      "provenanceId": "gameatlas-catalog-1000-q20112508"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "mega-man-7",
+  "title": "Mega Man 7",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Mega Man 7 anchors a Super Nintendo Entertainment System action and platformer entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Frames a action and platformer pick for source-aware Super Nintendo Entertainment System exploration.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 1995
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "keywords": [
+    "Mega Man 7",
+    "nintendo-snes",
+    "action",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Super Nintendo Entertainment System action and platformer discovery path using a linked structured-data reference; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q610749",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q610749.svg",
+      "alt": "Abstract GameAtlas art tile for Mega Man 7",
+      "provenanceId": "gameatlas-catalog-1000-q610749"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

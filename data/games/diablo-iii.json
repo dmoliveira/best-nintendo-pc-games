@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "diablo-iii",
+  "title": "Diablo III",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Diablo III is grouped with GameAtlas's Nintendo Switch action picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented action option easier to find in the Nintendo Switch path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Diablo III",
+    "nintendo-switch",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the Nintendo Switch action discovery path using Wikidata-listed platform and genre statements; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q244030",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q244030.svg",
+      "alt": "Abstract GameAtlas art tile for Diablo III",
+      "provenanceId": "gameatlas-catalog-1000-q244030"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

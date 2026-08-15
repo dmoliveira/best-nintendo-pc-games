@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "transformers-the-game",
+  "title": "Transformers: The Game",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Transformers: The Game is included in GameAtlas's Nintendo DS family shooter route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Offers a clearly labeled shooter route through the Nintendo DS family collection.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Transformers: The Game",
+    "nintendo-ds",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Nintendo DS family shooter discovery path using the frozen source metadata record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1326987",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1326987.svg",
+      "alt": "Abstract GameAtlas art tile for Transformers: The Game",
+      "provenanceId": "gameatlas-catalog-1000-q1326987"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

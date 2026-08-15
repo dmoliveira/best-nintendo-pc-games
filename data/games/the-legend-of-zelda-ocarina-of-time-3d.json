@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-ocarina-of-time-3d",
+  "title": "The Legend of Zelda: Ocarina of Time 3D",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "The Legend of Zelda: Ocarina of Time 3D sits in the GameAtlas Nintendo 3DS family action and adventure collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Adds a clearly sourced action and adventure option to the Nintendo 3DS family discovery path.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "The Legend of Zelda: Ocarina of Time 3D",
+    "nintendo-3ds",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the Nintendo 3DS family action and adventure discovery path using a linked Wikidata platform-and-genre statement; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q642526",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q642526.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: Ocarina of Time 3D",
+      "provenanceId": "gameatlas-catalog-1000-q642526"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-mario-rpg",
+  "title": "Super Mario RPG",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Super Mario RPG is kept in GameAtlas's Wii U action discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable action option into the Wii U discovery path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Super Mario RPG",
+    "nintendo-wii-u",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Wii U action discovery path using the frozen source metadata record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1063119",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1063119.svg",
+      "alt": "Abstract GameAtlas art tile for Super Mario RPG",
+      "provenanceId": "gameatlas-catalog-1000-q1063119"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

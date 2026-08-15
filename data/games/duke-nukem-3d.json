@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "duke-nukem-3d",
+  "title": "Duke Nukem 3D",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Duke Nukem 3D is kept in GameAtlas's Nintendo 64 shooter discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable shooter option into the Nintendo 64 discovery path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Duke Nukem 3D",
+    "nintendo-64",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Nintendo 64 shooter discovery path using the frozen source metadata record; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q728061",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q728061.svg",
+      "alt": "Abstract GameAtlas art tile for Duke Nukem 3D",
+      "provenanceId": "gameatlas-catalog-1000-q728061"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

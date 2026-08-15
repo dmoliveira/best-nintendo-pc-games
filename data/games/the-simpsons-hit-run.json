@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-simpsons-hit-run",
+  "title": "The Simpsons: Hit & Run",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "The Simpsons: Hit & Run helps define a Nintendo GameCube action and adventure path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked action and adventure entry in the Nintendo GameCube browsing path.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "The Simpsons: Hit & Run",
+    "nintendo-gamecube",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Indexed for the Nintendo GameCube action and adventure discovery path using the preserved Wikidata entity record; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q836690",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q836690.svg",
+      "alt": "Abstract GameAtlas art tile for The Simpsons: Hit & Run",
+      "provenanceId": "gameatlas-catalog-1000-q836690"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

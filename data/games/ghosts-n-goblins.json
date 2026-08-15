@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "ghosts-n-goblins",
+  "title": "Ghosts 'n Goblins",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Ghosts 'n Goblins is grouped with GameAtlas's Nintendo Entertainment System platformer picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Offers a clearly labeled platformer route through the Nintendo Entertainment System collection.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1985
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Ghosts 'n Goblins",
+    "nintendo-nes",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Nintendo Entertainment System platformer discovery path using a linked structured-data reference; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q956303",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q956303.svg",
+      "alt": "Abstract GameAtlas art tile for Ghosts 'n Goblins",
+      "provenanceId": "gameatlas-catalog-1000-q956303"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

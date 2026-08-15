@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "pokemon-dash",
+  "title": "Pokémon Dash",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Pokémon Dash helps define a Nintendo DS family racing path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Frames a racing pick for source-aware Nintendo DS family exploration.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Pokémon Dash",
+    "nintendo-ds",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Nintendo DS family racing discovery path using the preserved Wikidata entity record; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1191912",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1191912.svg",
+      "alt": "Abstract GameAtlas art tile for Pokémon Dash",
+      "provenanceId": "gameatlas-catalog-1000-q1191912"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

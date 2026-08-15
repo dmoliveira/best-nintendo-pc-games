@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "fifa-19",
+  "title": "FIFA 19",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "FIFA 19 helps define a Nintendo Switch sports path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented sports option easier to find in the Nintendo Switch path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2018
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "FIFA 19",
+    "nintendo-switch",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Nintendo Switch sports discovery path using the documented Wikidata platform mapping; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q54153179",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q54153179.svg",
+      "alt": "Abstract GameAtlas art tile for FIFA 19",
+      "provenanceId": "gameatlas-catalog-1000-q54153179"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

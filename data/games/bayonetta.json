@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "bayonetta",
+  "title": "Bayonetta",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Bayonetta is grouped with GameAtlas's Wii U action and adventure and shooter picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable action and adventure and shooter option into the Wii U discovery path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "shooter"
+  ],
+  "keywords": [
+    "Bayonetta",
+    "nintendo-wii-u",
+    "action",
+    "adventure",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Wii U action and adventure and shooter discovery path using the preserved Wikidata entity record; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q791569",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q791569.svg",
+      "alt": "Abstract GameAtlas art tile for Bayonetta",
+      "provenanceId": "gameatlas-catalog-1000-q791569"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

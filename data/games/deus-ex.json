@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "deus-ex",
+  "title": "Deus Ex",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Deus Ex is kept in GameAtlas's PC (Windows) action and shooter and stealth discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference action and shooter and stealth entry into the PC (Windows) catalog.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "shooter",
+    "stealth"
+  ],
+  "keywords": [
+    "Deus Ex",
+    "pc-windows",
+    "action",
+    "shooter",
+    "stealth",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the PC (Windows) action and shooter and stealth discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q644793",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q644793.svg",
+      "alt": "Abstract GameAtlas art tile for Deus Ex",
+      "provenanceId": "gameatlas-catalog-1000-q644793"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "silent-hill-4-the-room",
+  "title": "Silent Hill 4: The Room",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Silent Hill 4: The Room joins the PC (Windows) horror and survival path in GameAtlas with original context and a clearly labeled Wikidata structured-data link.",
+  "highlights": [
+    "Builds a traceable horror and survival option into the PC (Windows) discovery path.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "horror",
+    "survival"
+  ],
+  "keywords": [
+    "Silent Hill 4: The Room",
+    "pc-windows",
+    "horror",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the PC (Windows) horror and survival discovery path using a source-linked Wikidata item; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q613124",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q613124.svg",
+      "alt": "Abstract GameAtlas art tile for Silent Hill 4: The Room",
+      "provenanceId": "gameatlas-catalog-1000-q613124"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

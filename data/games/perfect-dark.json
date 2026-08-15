@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "perfect-dark",
+  "title": "Perfect Dark",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Perfect Dark anchors a Nintendo 64 action and shooter entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Adds a clearly sourced action and shooter option to the Nintendo 64 discovery path.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "action",
+    "shooter"
+  ],
+  "keywords": [
+    "Perfect Dark",
+    "nintendo-64",
+    "action",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the Nintendo 64 action and shooter discovery path using the documented Wikidata platform mapping; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1408723",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1408723.svg",
+      "alt": "Abstract GameAtlas art tile for Perfect Dark",
+      "provenanceId": "gameatlas-catalog-1000-q1408723"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

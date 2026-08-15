@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "space-invaders",
+  "title": "Space Invaders",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Space Invaders sits in the GameAtlas Game Boy Color shooter collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Adds a clearly sourced shooter option to the Game Boy Color discovery path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1978
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Space Invaders",
+    "game-boy-color",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the Game Boy Color shooter discovery path using the frozen source metadata record; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q220665",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q220665.svg",
+      "alt": "Abstract GameAtlas art tile for Space Invaders",
+      "provenanceId": "gameatlas-catalog-1000-q220665"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

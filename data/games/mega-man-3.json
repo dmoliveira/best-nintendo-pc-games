@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "mega-man-3",
+  "title": "Mega Man 3",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Mega Man 3 is organized in GameAtlas's Nintendo Entertainment System action and platformer collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Makes a documented action and platformer option easier to find in the Nintendo Entertainment System path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 1990
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "action",
+    "platformer"
+  ],
+  "keywords": [
+    "Mega Man 3",
+    "nintendo-nes",
+    "action",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the Nintendo Entertainment System action and platformer discovery path using the preserved Wikidata entity record; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2014874",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2014874.svg",
+      "alt": "Abstract GameAtlas art tile for Mega Man 3",
+      "provenanceId": "gameatlas-catalog-1000-q2014874"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

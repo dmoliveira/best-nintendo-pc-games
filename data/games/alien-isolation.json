@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "slug": "alien-isolation",
+  "title": "Alien: Isolation",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Alien: Isolation sits in the GameAtlas Nintendo Switch action and adventure and horror and shooter and stealth and survival collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Offers a clearly labeled action and adventure and horror and shooter and stealth and survival route through the Nintendo Switch collection.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "horror",
+    "shooter",
+    "stealth",
+    "survival"
+  ],
+  "keywords": [
+    "Alien: Isolation",
+    "nintendo-switch",
+    "action",
+    "adventure",
+    "horror",
+    "shooter",
+    "stealth",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the Nintendo Switch action and adventure and horror and shooter and stealth and survival discovery path using a source-linked Wikidata item; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q15613717",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q15613717.svg",
+      "alt": "Abstract GameAtlas art tile for Alien: Isolation",
+      "provenanceId": "gameatlas-catalog-1000-q15613717"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

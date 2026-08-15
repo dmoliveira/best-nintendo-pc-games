@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "apollo-justice-ace-attorney",
+  "title": "Apollo Justice: Ace Attorney",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Apollo Justice: Ace Attorney sits in the GameAtlas Nintendo 3DS family adventure and visual novel collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Sets a direct-reference adventure and visual novel marker within the Nintendo 3DS family catalog.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "adventure",
+    "visual-novel"
+  ],
+  "keywords": [
+    "Apollo Justice: Ace Attorney",
+    "nintendo-3ds",
+    "adventure",
+    "visual-novel",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the Nintendo 3DS family adventure and visual novel discovery path using a linked structured-data reference; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2287871",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2287871.svg",
+      "alt": "Abstract GameAtlas art tile for Apollo Justice: Ace Attorney",
+      "provenanceId": "gameatlas-catalog-1000-q2287871"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

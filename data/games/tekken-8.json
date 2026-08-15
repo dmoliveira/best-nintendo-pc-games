@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "tekken-8",
+  "title": "Tekken 8",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Tekken 8 sits in the GameAtlas PC (Windows) fighting collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Sets a direct-reference fighting marker within the PC (Windows) catalog.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2024
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Tekken 8",
+    "pc-windows",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the PC (Windows) fighting discovery path using a source-linked Wikidata item; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q105486599",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q105486599.svg",
+      "alt": "Abstract GameAtlas art tile for Tekken 8",
+      "provenanceId": "gameatlas-catalog-1000-q105486599"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

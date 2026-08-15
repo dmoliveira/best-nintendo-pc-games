@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "assassin-s-creed-syndicate",
+  "title": "Assassin's Creed Syndicate",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Assassin's Creed Syndicate is grouped with GameAtlas's PC (Windows) action and adventure and stealth picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference action and adventure and stealth entry into the PC (Windows) catalog.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "stealth"
+  ],
+  "keywords": [
+    "Assassin's Creed Syndicate",
+    "pc-windows",
+    "action",
+    "adventure",
+    "stealth",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the PC (Windows) action and adventure and stealth discovery path using the frozen Wikidata metadata snapshot; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q18602166",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q18602166.svg",
+      "alt": "Abstract GameAtlas art tile for Assassin's Creed Syndicate",
+      "provenanceId": "gameatlas-catalog-1000-q18602166"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

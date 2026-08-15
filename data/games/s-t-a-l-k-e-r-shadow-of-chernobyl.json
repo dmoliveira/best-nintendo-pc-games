@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "s-t-a-l-k-e-r-shadow-of-chernobyl",
+  "title": "S.T.A.L.K.E.R.: Shadow of Chernobyl",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "S.T.A.L.K.E.R.: Shadow of Chernobyl sits in the GameAtlas PC (Windows) horror and shooter and survival collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Makes a documented horror and shooter and survival option easier to find in the PC (Windows) path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "horror",
+    "shooter",
+    "survival"
+  ],
+  "keywords": [
+    "S.T.A.L.K.E.R.: Shadow of Chernobyl",
+    "pc-windows",
+    "horror",
+    "shooter",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the PC (Windows) horror and shooter and survival discovery path using a linked structured-data reference; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q215861",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q215861.svg",
+      "alt": "Abstract GameAtlas art tile for S.T.A.L.K.E.R.: Shadow of Chernobyl",
+      "provenanceId": "gameatlas-catalog-1000-q215861"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

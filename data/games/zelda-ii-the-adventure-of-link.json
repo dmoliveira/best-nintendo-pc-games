@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "zelda-ii-the-adventure-of-link",
+  "title": "Zelda II: The Adventure of Link",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Zelda II: The Adventure of Link is included in GameAtlas's Wii U action route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Adds a clearly sourced action option to the Wii U discovery path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 1987
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Zelda II: The Adventure of Link",
+    "nintendo-wii-u",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Wii U action discovery path using a linked structured-data reference; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q187339",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q187339.svg",
+      "alt": "Abstract GameAtlas art tile for Zelda II: The Adventure of Link",
+      "provenanceId": "gameatlas-catalog-1000-q187339"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

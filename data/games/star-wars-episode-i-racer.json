@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "star-wars-episode-i-racer",
+  "title": "Star Wars Episode I: Racer",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Star Wars Episode I: Racer appears in GameAtlas's Nintendo 64 racing collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Makes a documented racing option easier to find in the Nintendo 64 path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 1999
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Star Wars Episode I: Racer",
+    "nintendo-64",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Nintendo 64 racing discovery path using the frozen Wikidata metadata snapshot; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q55217",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q55217.svg",
+      "alt": "Abstract GameAtlas art tile for Star Wars Episode I: Racer",
+      "provenanceId": "gameatlas-catalog-1000-q55217"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

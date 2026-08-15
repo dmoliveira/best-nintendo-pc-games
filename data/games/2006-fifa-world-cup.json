@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "2006-fifa-world-cup",
+  "title": "2006 FIFA World Cup",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "2006 FIFA World Cup sits in the GameAtlas Game Boy Advance family sports collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Sets a direct-reference sports marker within the Game Boy Advance family catalog.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "2006 FIFA World Cup",
+    "game-boy-advance",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Game Boy Advance family sports discovery path using a source-linked Wikidata item; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1138744",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1138744.svg",
+      "alt": "Abstract GameAtlas art tile for 2006 FIFA World Cup",
+      "provenanceId": "gameatlas-catalog-1000-q1138744"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

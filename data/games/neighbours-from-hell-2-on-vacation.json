@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "neighbours-from-hell-2-on-vacation",
+  "title": "Neighbours from Hell 2: On Vacation",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Neighbours from Hell 2: On Vacation is organized in GameAtlas's Nintendo DS family puzzle and strategy collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Brings a source-aware puzzle and strategy entry to the Nintendo DS family browsing route.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "puzzle",
+    "strategy"
+  ],
+  "keywords": [
+    "Neighbours from Hell 2: On Vacation",
+    "nintendo-ds",
+    "puzzle",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Indexed for the Nintendo DS family puzzle and strategy discovery path using the preserved Wikidata entity record; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q684690",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q684690.svg",
+      "alt": "Abstract GameAtlas art tile for Neighbours from Hell 2: On Vacation",
+      "provenanceId": "gameatlas-catalog-1000-q684690"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

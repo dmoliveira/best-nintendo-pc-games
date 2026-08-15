@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "prince-of-persia-the-sands-of-time",
+  "title": "Prince of Persia: The Sands of Time",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Prince of Persia: The Sands of Time sits in the GameAtlas Nintendo GameCube action and adventure collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Frames a action and adventure pick for source-aware Nintendo GameCube exploration.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Prince of Persia: The Sands of Time",
+    "nintendo-gamecube",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the Nintendo GameCube action and adventure discovery path using the frozen Wikidata metadata snapshot; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q715292",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q715292.svg",
+      "alt": "Abstract GameAtlas art tile for Prince of Persia: The Sands of Time",
+      "provenanceId": "gameatlas-catalog-1000-q715292"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

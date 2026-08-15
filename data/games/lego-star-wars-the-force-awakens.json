@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "lego-star-wars-the-force-awakens",
+  "title": "Lego Star Wars: The Force Awakens",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Lego Star Wars: The Force Awakens helps define a Nintendo 3DS family action and adventure path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference action and adventure entry into the Nintendo 3DS family catalog.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2016
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Lego Star Wars: The Force Awakens",
+    "nintendo-3ds",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Nintendo 3DS family action and adventure discovery path using a Wikidata-listed catalog relationship; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q22570384",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q22570384.svg",
+      "alt": "Abstract GameAtlas art tile for Lego Star Wars: The Force Awakens",
+      "provenanceId": "gameatlas-catalog-1000-q22570384"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

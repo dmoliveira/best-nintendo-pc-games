@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "splatoon-2",
+  "title": "Splatoon 2",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Splatoon 2 is organized in GameAtlas's Nintendo Switch action and shooter collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Adds a clearly sourced action and shooter option to the Nintendo Switch discovery path.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "shooter"
+  ],
+  "keywords": [
+    "Splatoon 2",
+    "nintendo-switch",
+    "action",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Nintendo Switch action and shooter discovery path using a direct Wikidata structured-data record; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q28129061",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q28129061.svg",
+      "alt": "Abstract GameAtlas art tile for Splatoon 2",
+      "provenanceId": "gameatlas-catalog-1000-q28129061"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

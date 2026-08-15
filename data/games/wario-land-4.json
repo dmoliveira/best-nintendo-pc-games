@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "wario-land-4",
+  "title": "Wario Land 4",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Wario Land 4 is included in GameAtlas's Game Boy Advance family platformer route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Places a source-linked platformer entry in the Game Boy Advance family browsing path.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Wario Land 4",
+    "game-boy-advance",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Game Boy Advance family platformer discovery path using Wikidata-listed platform and genre statements; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2357489",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2357489.svg",
+      "alt": "Abstract GameAtlas art tile for Wario Land 4",
+      "provenanceId": "gameatlas-catalog-1000-q2357489"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

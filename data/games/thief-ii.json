@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "thief-ii",
+  "title": "Thief II",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Thief II helps define a PC (Windows) shooter and stealth path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable shooter and stealth option into the PC (Windows) discovery path.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter",
+    "stealth"
+  ],
+  "keywords": [
+    "Thief II",
+    "pc-windows",
+    "shooter",
+    "stealth",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the PC (Windows) shooter and stealth discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q795365",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q795365.svg",
+      "alt": "Abstract GameAtlas art tile for Thief II",
+      "provenanceId": "gameatlas-catalog-1000-q795365"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

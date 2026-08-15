@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "hotel-dusk-room-215",
+  "title": "Hotel Dusk: Room 215",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Hotel Dusk: Room 215 anchors a Nintendo DS family adventure and visual novel entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Keeps a documented adventure and visual novel option visible in the Nintendo DS family collection.",
+    "Retains source provenance while keeping the catalog context independently authored."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "adventure",
+    "visual-novel"
+  ],
+  "keywords": [
+    "Hotel Dusk: Room 215",
+    "nintendo-ds",
+    "adventure",
+    "visual-novel",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Nintendo DS family adventure and visual novel discovery path using the frozen Wikidata metadata snapshot; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1330228",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1330228.svg",
+      "alt": "Abstract GameAtlas art tile for Hotel Dusk: Room 215",
+      "provenanceId": "gameatlas-catalog-1000-q1330228"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

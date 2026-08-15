@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "rocket-league",
+  "title": "Rocket League",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Rocket League helps define a Nintendo Switch sports path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Frames a sports pick for source-aware Nintendo Switch exploration.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Rocket League",
+    "nintendo-switch",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the Nintendo Switch sports discovery path using a Wikidata-listed catalog relationship; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q20031743",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q20031743.svg",
+      "alt": "Abstract GameAtlas art tile for Rocket League",
+      "provenanceId": "gameatlas-catalog-1000-q20031743"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

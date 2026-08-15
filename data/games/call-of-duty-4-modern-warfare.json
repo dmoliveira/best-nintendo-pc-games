@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "call-of-duty-4-modern-warfare",
+  "title": "Call of Duty 4: Modern Warfare",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Call of Duty 4: Modern Warfare is grouped with GameAtlas's Wii shooter picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Offers a clearly labeled shooter route through the Wii collection.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Call of Duty 4: Modern Warfare",
+    "nintendo-wii",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Wii shooter discovery path using the frozen source metadata record; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q76255",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q76255.svg",
+      "alt": "Abstract GameAtlas art tile for Call of Duty 4: Modern Warfare",
+      "provenanceId": "gameatlas-catalog-1000-q76255"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

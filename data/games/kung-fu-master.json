@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "kung-fu-master",
+  "title": "Kung-Fu Master",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Kung-Fu Master appears in GameAtlas's Game Boy family fighting collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Makes a documented fighting option easier to find in the Game Boy family path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 1984
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Kung-Fu Master",
+    "game-boy",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Game Boy family fighting discovery path using a source-linked Wikidata item; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1319139",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1319139.svg",
+      "alt": "Abstract GameAtlas art tile for Kung-Fu Master",
+      "provenanceId": "gameatlas-catalog-1000-q1319139"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

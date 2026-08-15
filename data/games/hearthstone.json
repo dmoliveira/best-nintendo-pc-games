@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "hearthstone",
+  "title": "Hearthstone",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Hearthstone anchors a PC (Windows) strategy entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Places a source-linked strategy entry in the PC (Windows) browsing path.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Hearthstone",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the PC (Windows) strategy discovery path using a source-linked Wikidata item; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q8262784",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q8262784.svg",
+      "alt": "Abstract GameAtlas art tile for Hearthstone",
+      "provenanceId": "gameatlas-catalog-1000-q8262784"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

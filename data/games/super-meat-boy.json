@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "super-meat-boy",
+  "title": "Super Meat Boy",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Super Meat Boy anchors a Wii U platformer entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Frames a platformer pick for source-aware Wii U exploration.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Super Meat Boy",
+    "nintendo-wii-u",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Wii U platformer discovery path using a direct Wikidata structured-data record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1784048",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1784048.svg",
+      "alt": "Abstract GameAtlas art tile for Super Meat Boy",
+      "provenanceId": "gameatlas-catalog-1000-q1784048"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

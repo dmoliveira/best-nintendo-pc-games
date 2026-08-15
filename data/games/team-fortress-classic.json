@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "team-fortress-classic",
+  "title": "Team Fortress Classic",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Team Fortress Classic is included in GameAtlas's PC (Windows) shooter route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Places a source-linked shooter entry in the PC (Windows) browsing path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 1999
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Team Fortress Classic",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the PC (Windows) shooter discovery path using the preserved Wikidata entity record; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1799621",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1799621.svg",
+      "alt": "Abstract GameAtlas art tile for Team Fortress Classic",
+      "provenanceId": "gameatlas-catalog-1000-q1799621"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

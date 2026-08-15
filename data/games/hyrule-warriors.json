@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "hyrule-warriors",
+  "title": "Hyrule Warriors",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Hyrule Warriors is grouped with GameAtlas's Wii U action picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked action entry in the Wii U browsing path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Hyrule Warriors",
+    "nintendo-wii-u",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Indexed for the Wii U action discovery path using a linked Wikidata platform-and-genre statement; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q15361287",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q15361287.svg",
+      "alt": "Abstract GameAtlas art tile for Hyrule Warriors",
+      "provenanceId": "gameatlas-catalog-1000-q15361287"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "half-life-2",
+  "title": "Half-Life 2",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Half-Life 2 anchors a PC (Windows) horror and shooter entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Frames a horror and shooter pick for source-aware PC (Windows) exploration.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "horror",
+    "shooter"
+  ],
+  "keywords": [
+    "Half-Life 2",
+    "pc-windows",
+    "horror",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the PC (Windows) horror and shooter discovery path using Wikidata-listed platform and genre statements; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q193581",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q193581.svg",
+      "alt": "Abstract GameAtlas art tile for Half-Life 2",
+      "provenanceId": "gameatlas-catalog-1000-q193581"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

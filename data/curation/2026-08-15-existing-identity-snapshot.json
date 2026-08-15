@@ -1,0 +1,1101 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-15",
+  "catalogCount": 103,
+  "identities": [
+    {
+      "slug": "animal-crossing",
+      "title": "Animal Crossing",
+      "aliases": [],
+      "normalizedKeys": [
+        "animal-crossing",
+        "animal-crossing"
+      ]
+    },
+    {
+      "slug": "animal-crossing-new-horizons",
+      "title": "Animal Crossing: New Horizons",
+      "aliases": [],
+      "normalizedKeys": [
+        "animal-crossing-new-horizons",
+        "animal-crossing-new-horizons"
+      ]
+    },
+    {
+      "slug": "animal-crossing-new-leaf",
+      "title": "Animal Crossing: New Leaf",
+      "aliases": [],
+      "normalizedKeys": [
+        "animal-crossing-new-leaf",
+        "animal-crossing-new-leaf"
+      ]
+    },
+    {
+      "slug": "art-of-rally",
+      "title": "art of rally",
+      "aliases": [],
+      "normalizedKeys": [
+        "art-of-rally",
+        "art-of-rally"
+      ]
+    },
+    {
+      "slug": "art-style-pictobits",
+      "title": "Art Style: PiCTOBITS",
+      "aliases": [
+        "PiCTOBITS"
+      ],
+      "normalizedKeys": [
+        "art-style-pictobits",
+        "art-style-pictobits",
+        "pictobits"
+      ]
+    },
+    {
+      "slug": "assetto-corsa",
+      "title": "Assetto Corsa",
+      "aliases": [],
+      "normalizedKeys": [
+        "assetto-corsa",
+        "assetto-corsa"
+      ]
+    },
+    {
+      "slug": "baba-is-you",
+      "title": "Baba Is You",
+      "aliases": [],
+      "normalizedKeys": [
+        "baba-is-you",
+        "baba-is-you"
+      ]
+    },
+    {
+      "slug": "baldurs-gate-3",
+      "title": "Baldur’s Gate 3",
+      "aliases": [],
+      "normalizedKeys": [
+        "baldur-s-gate-3",
+        "baldurs-gate-3"
+      ]
+    },
+    {
+      "slug": "banjo-kazooie",
+      "title": "Banjo-Kazooie",
+      "aliases": [],
+      "normalizedKeys": [
+        "banjo-kazooie",
+        "banjo-kazooie"
+      ]
+    },
+    {
+      "slug": "bayonetta-2",
+      "title": "Bayonetta 2",
+      "aliases": [],
+      "normalizedKeys": [
+        "bayonetta-2",
+        "bayonetta-2"
+      ]
+    },
+    {
+      "slug": "captain-toad-treasure-tracker",
+      "title": "Captain Toad: Treasure Tracker",
+      "aliases": [],
+      "normalizedKeys": [
+        "captain-toad-treasure-tracker",
+        "captain-toad-treasure-tracker"
+      ]
+    },
+    {
+      "slug": "cave-story",
+      "title": "Cave Story",
+      "aliases": [],
+      "normalizedKeys": [
+        "cave-story",
+        "cave-story"
+      ]
+    },
+    {
+      "slug": "celeste",
+      "title": "Celeste",
+      "aliases": [],
+      "normalizedKeys": [
+        "celeste",
+        "celeste"
+      ]
+    },
+    {
+      "slug": "chrono-trigger",
+      "title": "Chrono Trigger",
+      "aliases": [],
+      "normalizedKeys": [
+        "chrono-trigger",
+        "chrono-trigger"
+      ]
+    },
+    {
+      "slug": "control-ultimate-edition",
+      "title": "Control Ultimate Edition",
+      "aliases": [
+        "Control"
+      ],
+      "normalizedKeys": [
+        "control",
+        "control-ultimate-edition",
+        "control-ultimate-edition"
+      ]
+    },
+    {
+      "slug": "disco-elysium-the-final-cut",
+      "title": "Disco Elysium – The Final Cut",
+      "aliases": [],
+      "normalizedKeys": [
+        "disco-elysium-the-final-cut",
+        "disco-elysium-the-final-cut"
+      ]
+    },
+    {
+      "slug": "donkey-kong-bananza",
+      "title": "Donkey Kong Bananza",
+      "aliases": [
+        "Donkey Kong Bananza Switch 2"
+      ],
+      "normalizedKeys": [
+        "donkey-kong-bananza",
+        "donkey-kong-bananza",
+        "donkey-kong-bananza-switch-2"
+      ]
+    },
+    {
+      "slug": "donkey-kong-country",
+      "title": "Donkey Kong Country",
+      "aliases": [],
+      "normalizedKeys": [
+        "donkey-kong-country",
+        "donkey-kong-country"
+      ]
+    },
+    {
+      "slug": "donkey-kong-country-returns",
+      "title": "Donkey Kong Country Returns",
+      "aliases": [],
+      "normalizedKeys": [
+        "donkey-kong-country-returns",
+        "donkey-kong-country-returns"
+      ]
+    },
+    {
+      "slug": "donkey-kong-country-tropical-freeze",
+      "title": "Donkey Kong Country: Tropical Freeze",
+      "aliases": [],
+      "normalizedKeys": [
+        "donkey-kong-country-tropical-freeze",
+        "donkey-kong-country-tropical-freeze"
+      ]
+    },
+    {
+      "slug": "drag-x-drive",
+      "title": "Drag x Drive",
+      "aliases": [],
+      "normalizedKeys": [
+        "drag-x-drive",
+        "drag-x-drive"
+      ]
+    },
+    {
+      "slug": "f-zero-gx",
+      "title": "F-Zero GX",
+      "aliases": [],
+      "normalizedKeys": [
+        "f-zero-gx",
+        "f-zero-gx"
+      ]
+    },
+    {
+      "slug": "f-zero-maximum-velocity",
+      "title": "F-Zero: Maximum Velocity",
+      "aliases": [],
+      "normalizedKeys": [
+        "f-zero-maximum-velocity",
+        "f-zero-maximum-velocity"
+      ]
+    },
+    {
+      "slug": "factorio",
+      "title": "Factorio",
+      "aliases": [],
+      "normalizedKeys": [
+        "factorio",
+        "factorio"
+      ]
+    },
+    {
+      "slug": "fast-fusion",
+      "title": "FAST Fusion",
+      "aliases": [],
+      "normalizedKeys": [
+        "fast-fusion",
+        "fast-fusion"
+      ]
+    },
+    {
+      "slug": "final-fantasy-vi",
+      "title": "Final Fantasy VI",
+      "aliases": [
+        "Final Fantasy III"
+      ],
+      "normalizedKeys": [
+        "final-fantasy-iii",
+        "final-fantasy-vi",
+        "final-fantasy-vi"
+      ]
+    },
+    {
+      "slug": "fire-emblem-awakening",
+      "title": "Fire Emblem Awakening",
+      "aliases": [],
+      "normalizedKeys": [
+        "fire-emblem-awakening",
+        "fire-emblem-awakening"
+      ]
+    },
+    {
+      "slug": "ghost-trick-phantom-detective",
+      "title": "Ghost Trick: Phantom Detective",
+      "aliases": [
+        "Ghost Trick"
+      ],
+      "normalizedKeys": [
+        "ghost-trick",
+        "ghost-trick-phantom-detective",
+        "ghost-trick-phantom-detective"
+      ]
+    },
+    {
+      "slug": "goldeneye-007",
+      "title": "GoldenEye 007",
+      "aliases": [],
+      "normalizedKeys": [
+        "goldeneye-007",
+        "goldeneye-007"
+      ]
+    },
+    {
+      "slug": "hades",
+      "title": "Hades",
+      "aliases": [],
+      "normalizedKeys": [
+        "hades",
+        "hades"
+      ]
+    },
+    {
+      "slug": "half-life",
+      "title": "Half-Life",
+      "aliases": [],
+      "normalizedKeys": [
+        "half-life",
+        "half-life"
+      ]
+    },
+    {
+      "slug": "hollow-knight",
+      "title": "Hollow Knight",
+      "aliases": [],
+      "normalizedKeys": [
+        "hollow-knight",
+        "hollow-knight"
+      ]
+    },
+    {
+      "slug": "kid-icarus-uprising",
+      "title": "Kid Icarus: Uprising",
+      "aliases": [],
+      "normalizedKeys": [
+        "kid-icarus-uprising",
+        "kid-icarus-uprising"
+      ]
+    },
+    {
+      "slug": "kirby-and-the-forgotten-land",
+      "title": "Kirby and the Forgotten Land",
+      "aliases": [],
+      "normalizedKeys": [
+        "kirby-and-the-forgotten-land",
+        "kirby-and-the-forgotten-land"
+      ]
+    },
+    {
+      "slug": "kirbys-dream-land",
+      "title": "Kirby’s Dream Land",
+      "aliases": [],
+      "normalizedKeys": [
+        "kirby-s-dream-land",
+        "kirbys-dream-land"
+      ]
+    },
+    {
+      "slug": "mario-and-luigi-superstar-saga",
+      "title": "Mario & Luigi: Superstar Saga",
+      "aliases": [],
+      "normalizedKeys": [
+        "mario-and-luigi-superstar-saga",
+        "mario-luigi-superstar-saga"
+      ]
+    },
+    {
+      "slug": "mario-kart-8",
+      "title": "Mario Kart 8",
+      "aliases": [
+        "Mario Kart 8 Wii U"
+      ],
+      "normalizedKeys": [
+        "mario-kart-8",
+        "mario-kart-8",
+        "mario-kart-8-wii-u"
+      ]
+    },
+    {
+      "slug": "mario-kart-double-dash",
+      "title": "Mario Kart: Double Dash!!",
+      "aliases": [
+        "Double Dash"
+      ],
+      "normalizedKeys": [
+        "double-dash",
+        "mario-kart-double-dash",
+        "mario-kart-double-dash"
+      ]
+    },
+    {
+      "slug": "mario-kart-ds",
+      "title": "Mario Kart DS",
+      "aliases": [],
+      "normalizedKeys": [
+        "mario-kart-ds",
+        "mario-kart-ds"
+      ]
+    },
+    {
+      "slug": "mario-kart-super-circuit",
+      "title": "Mario Kart: Super Circuit",
+      "aliases": [
+        "Mario Kart Advance"
+      ],
+      "normalizedKeys": [
+        "mario-kart-advance",
+        "mario-kart-super-circuit",
+        "mario-kart-super-circuit"
+      ]
+    },
+    {
+      "slug": "mario-kart-wii",
+      "title": "Mario Kart Wii",
+      "aliases": [],
+      "normalizedKeys": [
+        "mario-kart-wii",
+        "mario-kart-wii"
+      ]
+    },
+    {
+      "slug": "mario-kart-world",
+      "title": "Mario Kart World",
+      "aliases": [
+        "Mario Kart World Switch 2"
+      ],
+      "normalizedKeys": [
+        "mario-kart-world",
+        "mario-kart-world",
+        "mario-kart-world-switch-2"
+      ]
+    },
+    {
+      "slug": "mario-vs-donkey-kong-minis-march-again",
+      "title": "Mario vs. Donkey Kong: Minis March Again!",
+      "aliases": [
+        "Minis March Again"
+      ],
+      "normalizedKeys": [
+        "mario-vs-donkey-kong-minis-march-again",
+        "mario-vs-donkey-kong-minis-march-again",
+        "minis-march-again"
+      ]
+    },
+    {
+      "slug": "mega-man-2",
+      "title": "Mega Man 2",
+      "aliases": [
+        "Megaman 2"
+      ],
+      "normalizedKeys": [
+        "mega-man-2",
+        "mega-man-2",
+        "megaman-2"
+      ]
+    },
+    {
+      "slug": "metal-gear-ghost-babel",
+      "title": "Metal Gear: Ghost Babel",
+      "aliases": [
+        "Metal Gear Solid"
+      ],
+      "normalizedKeys": [
+        "metal-gear-ghost-babel",
+        "metal-gear-ghost-babel",
+        "metal-gear-solid"
+      ]
+    },
+    {
+      "slug": "metroid",
+      "title": "Metroid",
+      "aliases": [],
+      "normalizedKeys": [
+        "metroid",
+        "metroid"
+      ]
+    },
+    {
+      "slug": "metroid-dread",
+      "title": "Metroid Dread",
+      "aliases": [],
+      "normalizedKeys": [
+        "metroid-dread",
+        "metroid-dread"
+      ]
+    },
+    {
+      "slug": "metroid-fusion",
+      "title": "Metroid Fusion",
+      "aliases": [],
+      "normalizedKeys": [
+        "metroid-fusion",
+        "metroid-fusion"
+      ]
+    },
+    {
+      "slug": "metroid-prime",
+      "title": "Metroid Prime",
+      "aliases": [],
+      "normalizedKeys": [
+        "metroid-prime",
+        "metroid-prime"
+      ]
+    },
+    {
+      "slug": "microsoft-flight-simulator-2020",
+      "title": "Microsoft Flight Simulator",
+      "aliases": [
+        "Flight Simulator"
+      ],
+      "normalizedKeys": [
+        "flight-simulator",
+        "microsoft-flight-simulator",
+        "microsoft-flight-simulator-2020"
+      ]
+    },
+    {
+      "slug": "mighty-flip-champs",
+      "title": "Mighty Flip Champs!",
+      "aliases": [],
+      "normalizedKeys": [
+        "mighty-flip-champs",
+        "mighty-flip-champs"
+      ]
+    },
+    {
+      "slug": "minecraft-new-nintendo-3ds-edition",
+      "title": "Minecraft: New Nintendo 3DS Edition",
+      "aliases": [],
+      "normalizedKeys": [
+        "minecraft-new-nintendo-3ds-edition",
+        "minecraft-new-nintendo-3ds-edition"
+      ]
+    },
+    {
+      "slug": "new-super-mario-bros",
+      "title": "New Super Mario Bros.",
+      "aliases": [],
+      "normalizedKeys": [
+        "new-super-mario-bros",
+        "new-super-mario-bros"
+      ]
+    },
+    {
+      "slug": "nintendogs",
+      "title": "Nintendogs",
+      "aliases": [
+        "Nintendogs DS"
+      ],
+      "normalizedKeys": [
+        "nintendogs",
+        "nintendogs",
+        "nintendogs-ds"
+      ]
+    },
+    {
+      "slug": "outer-wilds",
+      "title": "Outer Wilds",
+      "aliases": [],
+      "normalizedKeys": [
+        "outer-wilds",
+        "outer-wilds"
+      ]
+    },
+    {
+      "slug": "paper-mario",
+      "title": "Paper Mario",
+      "aliases": [],
+      "normalizedKeys": [
+        "paper-mario",
+        "paper-mario"
+      ]
+    },
+    {
+      "slug": "pokemon-black-and-white",
+      "title": "Pokémon Black and White",
+      "aliases": [],
+      "normalizedKeys": [
+        "pokemon-black-and-white",
+        "pokemon-black-and-white"
+      ]
+    },
+    {
+      "slug": "pokemon-crystal-version",
+      "title": "Pokémon Crystal Version",
+      "aliases": [
+        "Pokemon Crystal"
+      ],
+      "normalizedKeys": [
+        "pokemon-crystal",
+        "pokemon-crystal-version",
+        "pokemon-crystal-version"
+      ]
+    },
+    {
+      "slug": "pokemon-gold-and-silver",
+      "title": "Pokémon Gold and Silver",
+      "aliases": [],
+      "normalizedKeys": [
+        "pokemon-gold-and-silver",
+        "pokemon-gold-and-silver"
+      ]
+    },
+    {
+      "slug": "pokemon-red-and-blue",
+      "title": "Pokémon Red and Blue",
+      "aliases": [],
+      "normalizedKeys": [
+        "pokemon-red-and-blue",
+        "pokemon-red-and-blue"
+      ]
+    },
+    {
+      "slug": "portal",
+      "title": "Portal",
+      "aliases": [
+        "Portal 1"
+      ],
+      "normalizedKeys": [
+        "portal",
+        "portal",
+        "portal-1"
+      ]
+    },
+    {
+      "slug": "resident-evil-4",
+      "title": "Resident Evil 4",
+      "aliases": [],
+      "normalizedKeys": [
+        "resident-evil-4",
+        "resident-evil-4"
+      ]
+    },
+    {
+      "slug": "return-of-the-obra-dinn",
+      "title": "Return of the Obra Dinn",
+      "aliases": [],
+      "normalizedKeys": [
+        "return-of-the-obra-dinn",
+        "return-of-the-obra-dinn"
+      ]
+    },
+    {
+      "slug": "shantae-riskys-revenge",
+      "title": "Shantae: Risky’s Revenge",
+      "aliases": [
+        "Risky’s Revenge"
+      ],
+      "normalizedKeys": [
+        "risky-s-revenge",
+        "shantae-risky-s-revenge",
+        "shantae-riskys-revenge"
+      ]
+    },
+    {
+      "slug": "splatoon",
+      "title": "Splatoon",
+      "aliases": [
+        "Splatoon Wii U"
+      ],
+      "normalizedKeys": [
+        "splatoon",
+        "splatoon",
+        "splatoon-wii-u"
+      ]
+    },
+    {
+      "slug": "star-fox-64",
+      "title": "Star Fox 64",
+      "aliases": [
+        "Lylat Wars"
+      ],
+      "normalizedKeys": [
+        "lylat-wars",
+        "star-fox-64",
+        "star-fox-64"
+      ]
+    },
+    {
+      "slug": "stardew-valley",
+      "title": "Stardew Valley",
+      "aliases": [],
+      "normalizedKeys": [
+        "stardew-valley",
+        "stardew-valley"
+      ]
+    },
+    {
+      "slug": "super-mario-3d-land",
+      "title": "Super Mario 3D Land",
+      "aliases": [
+        "SM3DL"
+      ],
+      "normalizedKeys": [
+        "sm3dl",
+        "super-mario-3d-land",
+        "super-mario-3d-land"
+      ]
+    },
+    {
+      "slug": "super-mario-3d-world",
+      "title": "Super Mario 3D World",
+      "aliases": [
+        "Mario 3D World",
+        "3D World"
+      ],
+      "normalizedKeys": [
+        "3d-world",
+        "mario-3d-world",
+        "super-mario-3d-world",
+        "super-mario-3d-world"
+      ]
+    },
+    {
+      "slug": "super-mario-64",
+      "title": "Super Mario 64",
+      "aliases": [
+        "Mario 64"
+      ],
+      "normalizedKeys": [
+        "mario-64",
+        "super-mario-64",
+        "super-mario-64"
+      ]
+    },
+    {
+      "slug": "super-mario-bros",
+      "title": "Super Mario Bros.",
+      "aliases": [
+        "SMB",
+        "Super Mario Brothers"
+      ],
+      "normalizedKeys": [
+        "smb",
+        "super-mario-bros",
+        "super-mario-bros",
+        "super-mario-brothers"
+      ]
+    },
+    {
+      "slug": "super-mario-galaxy",
+      "title": "Super Mario Galaxy",
+      "aliases": [
+        "Mario Galaxy",
+        "Super Mario Galaxy 1"
+      ],
+      "normalizedKeys": [
+        "mario-galaxy",
+        "super-mario-galaxy",
+        "super-mario-galaxy",
+        "super-mario-galaxy-1"
+      ]
+    },
+    {
+      "slug": "super-mario-galaxy-2",
+      "title": "Super Mario Galaxy 2",
+      "aliases": [],
+      "normalizedKeys": [
+        "super-mario-galaxy-2",
+        "super-mario-galaxy-2"
+      ]
+    },
+    {
+      "slug": "super-mario-land",
+      "title": "Super Mario Land",
+      "aliases": [
+        "Super Mario Land 1",
+        "SML"
+      ],
+      "normalizedKeys": [
+        "sml",
+        "super-mario-land",
+        "super-mario-land",
+        "super-mario-land-1"
+      ]
+    },
+    {
+      "slug": "super-mario-maker",
+      "title": "Super Mario Maker",
+      "aliases": [],
+      "normalizedKeys": [
+        "super-mario-maker",
+        "super-mario-maker"
+      ]
+    },
+    {
+      "slug": "super-mario-odyssey",
+      "title": "Super Mario Odyssey",
+      "aliases": [],
+      "normalizedKeys": [
+        "super-mario-odyssey",
+        "super-mario-odyssey"
+      ]
+    },
+    {
+      "slug": "super-mario-world",
+      "title": "Super Mario World",
+      "aliases": [
+        "SMW"
+      ],
+      "normalizedKeys": [
+        "smw",
+        "super-mario-world",
+        "super-mario-world"
+      ]
+    },
+    {
+      "slug": "super-metroid",
+      "title": "Super Metroid",
+      "aliases": [],
+      "normalizedKeys": [
+        "super-metroid",
+        "super-metroid"
+      ]
+    },
+    {
+      "slug": "super-smash-bros-melee",
+      "title": "Super Smash Bros. Melee",
+      "aliases": [
+        "Smash Bros. Melee",
+        "Melee"
+      ],
+      "normalizedKeys": [
+        "melee",
+        "smash-bros-melee",
+        "super-smash-bros-melee",
+        "super-smash-bros-melee"
+      ]
+    },
+    {
+      "slug": "tetris",
+      "title": "Tetris",
+      "aliases": [],
+      "normalizedKeys": [
+        "tetris",
+        "tetris"
+      ]
+    },
+    {
+      "slug": "the-binding-of-isaac-rebirth",
+      "title": "The Binding of Isaac: Rebirth",
+      "aliases": [],
+      "normalizedKeys": [
+        "the-binding-of-isaac-rebirth",
+        "the-binding-of-isaac-rebirth"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda",
+      "title": "The Legend of Zelda",
+      "aliases": [
+        "Zelda"
+      ],
+      "normalizedKeys": [
+        "the-legend-of-zelda",
+        "the-legend-of-zelda",
+        "zelda"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-a-link-between-worlds",
+      "title": "The Legend of Zelda: A Link Between Worlds",
+      "aliases": [
+        "Zelda: A Link Between Worlds"
+      ],
+      "normalizedKeys": [
+        "the-legend-of-zelda-a-link-between-worlds",
+        "the-legend-of-zelda-a-link-between-worlds",
+        "zelda-a-link-between-worlds"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-a-link-to-the-past",
+      "title": "The Legend of Zelda: A Link to the Past",
+      "aliases": [
+        "Zelda: A Link to the Past"
+      ],
+      "normalizedKeys": [
+        "the-legend-of-zelda-a-link-to-the-past",
+        "the-legend-of-zelda-a-link-to-the-past",
+        "zelda-a-link-to-the-past"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-breath-of-the-wild",
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "aliases": [
+        "Zelda: Breath of the Wild",
+        "BOTW"
+      ],
+      "normalizedKeys": [
+        "botw",
+        "the-legend-of-zelda-breath-of-the-wild",
+        "the-legend-of-zelda-breath-of-the-wild",
+        "zelda-breath-of-the-wild"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-links-awakening",
+      "title": "The Legend of Zelda: Link’s Awakening",
+      "aliases": [
+        "Zelda: Link's Awakening"
+      ],
+      "normalizedKeys": [
+        "the-legend-of-zelda-link-s-awakening",
+        "the-legend-of-zelda-links-awakening",
+        "zelda-link-s-awakening"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-majoras-mask",
+      "title": "The Legend of Zelda: Majora’s Mask",
+      "aliases": [
+        "Zelda: Majora's Mask"
+      ],
+      "normalizedKeys": [
+        "the-legend-of-zelda-majora-s-mask",
+        "the-legend-of-zelda-majoras-mask",
+        "zelda-majora-s-mask"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-ocarina-of-time",
+      "title": "The Legend of Zelda: Ocarina of Time",
+      "aliases": [
+        "Ocarina of Time",
+        "Zelda OOT"
+      ],
+      "normalizedKeys": [
+        "ocarina-of-time",
+        "the-legend-of-zelda-ocarina-of-time",
+        "the-legend-of-zelda-ocarina-of-time",
+        "zelda-oot"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-oracle-of-ages",
+      "title": "The Legend of Zelda: Oracle of Ages",
+      "aliases": [
+        "Oracle of Ages",
+        "Zelda Ages"
+      ],
+      "normalizedKeys": [
+        "oracle-of-ages",
+        "the-legend-of-zelda-oracle-of-ages",
+        "the-legend-of-zelda-oracle-of-ages",
+        "zelda-ages"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-oracle-of-seasons",
+      "title": "The Legend of Zelda: Oracle of Seasons",
+      "aliases": [
+        "Oracle of Seasons",
+        "Zelda Seasons"
+      ],
+      "normalizedKeys": [
+        "oracle-of-seasons",
+        "the-legend-of-zelda-oracle-of-seasons",
+        "the-legend-of-zelda-oracle-of-seasons",
+        "zelda-seasons"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-phantom-hourglass",
+      "title": "The Legend of Zelda: Phantom Hourglass",
+      "aliases": [
+        "Zelda: Phantom Hourglass"
+      ],
+      "normalizedKeys": [
+        "the-legend-of-zelda-phantom-hourglass",
+        "the-legend-of-zelda-phantom-hourglass",
+        "zelda-phantom-hourglass"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-skyward-sword",
+      "title": "The Legend of Zelda: Skyward Sword",
+      "aliases": [
+        "Zelda: Skyward Sword"
+      ],
+      "normalizedKeys": [
+        "the-legend-of-zelda-skyward-sword",
+        "the-legend-of-zelda-skyward-sword",
+        "zelda-skyward-sword"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-tears-of-the-kingdom",
+      "title": "The Legend of Zelda: Tears of the Kingdom",
+      "aliases": [
+        "TOTK",
+        "Zelda Tears of the Kingdom"
+      ],
+      "normalizedKeys": [
+        "the-legend-of-zelda-tears-of-the-kingdom",
+        "the-legend-of-zelda-tears-of-the-kingdom",
+        "totk",
+        "zelda-tears-of-the-kingdom"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-the-minish-cap",
+      "title": "The Legend of Zelda: The Minish Cap",
+      "aliases": [
+        "Zelda: The Minish Cap"
+      ],
+      "normalizedKeys": [
+        "the-legend-of-zelda-the-minish-cap",
+        "the-legend-of-zelda-the-minish-cap",
+        "zelda-the-minish-cap"
+      ]
+    },
+    {
+      "slug": "the-legend-of-zelda-the-wind-waker",
+      "title": "The Legend of Zelda: The Wind Waker",
+      "aliases": [
+        "The Wind Waker",
+        "Zelda Wind Waker"
+      ],
+      "normalizedKeys": [
+        "the-legend-of-zelda-the-wind-waker",
+        "the-legend-of-zelda-the-wind-waker",
+        "the-wind-waker",
+        "zelda-wind-waker"
+      ]
+    },
+    {
+      "slug": "undertale",
+      "title": "Undertale",
+      "aliases": [],
+      "normalizedKeys": [
+        "undertale",
+        "undertale"
+      ]
+    },
+    {
+      "slug": "viewtiful-joe",
+      "title": "Viewtiful Joe",
+      "aliases": [],
+      "normalizedKeys": [
+        "viewtiful-joe",
+        "viewtiful-joe"
+      ]
+    },
+    {
+      "slug": "wario-land-3",
+      "title": "Wario Land 3",
+      "aliases": [
+        "Wario Land III",
+        "Wario Land 3 GBC"
+      ],
+      "normalizedKeys": [
+        "wario-land-3",
+        "wario-land-3",
+        "wario-land-3-gbc",
+        "wario-land-iii"
+      ]
+    },
+    {
+      "slug": "wii-sports",
+      "title": "Wii Sports",
+      "aliases": [],
+      "normalizedKeys": [
+        "wii-sports",
+        "wii-sports"
+      ]
+    },
+    {
+      "slug": "xenoblade-chronicles",
+      "title": "Xenoblade Chronicles",
+      "aliases": [
+        "Xenoblade",
+        "Xenoblade Chronicles Wii"
+      ],
+      "normalizedKeys": [
+        "xenoblade",
+        "xenoblade-chronicles",
+        "xenoblade-chronicles",
+        "xenoblade-chronicles-wii"
+      ]
+    },
+    {
+      "slug": "xenoblade-chronicles-3d",
+      "title": "Xenoblade Chronicles 3D",
+      "aliases": [
+        "Xenoblade 3D"
+      ],
+      "normalizedKeys": [
+        "xenoblade-3d",
+        "xenoblade-chronicles-3d",
+        "xenoblade-chronicles-3d"
+      ]
+    },
+    {
+      "slug": "xenoblade-chronicles-x",
+      "title": "Xenoblade Chronicles X",
+      "aliases": [
+        "Xenoblade X",
+        "XCX"
+      ],
+      "normalizedKeys": [
+        "xcx",
+        "xenoblade-chronicles-x",
+        "xenoblade-chronicles-x",
+        "xenoblade-x"
+      ]
+    },
+    {
+      "slug": "zack-and-wiki-quest-for-barbaros-treasure",
+      "title": "Zack & Wiki: Quest for Barbaros’ Treasure",
+      "aliases": [
+        "Zack and Wiki"
+      ],
+      "normalizedKeys": [
+        "zack-and-wiki",
+        "zack-and-wiki-quest-for-barbaros-treasure",
+        "zack-wiki-quest-for-barbaros-treasure"
+      ]
+    }
+  ],
+  "snapshotDigest": "sha256:a31653196f15bfcbbb64bc09ea2909b84cb9da506d377735d90c0f885e034d18"
+}

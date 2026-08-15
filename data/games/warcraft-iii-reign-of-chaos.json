@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "warcraft-iii-reign-of-chaos",
+  "title": "Warcraft III: Reign of Chaos",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Warcraft III: Reign of Chaos is included in GameAtlas's PC (Windows) strategy route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Makes a documented strategy option easier to find in the PC (Windows) path.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2002
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Warcraft III: Reign of Chaos",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the PC (Windows) strategy discovery path using the frozen Wikidata metadata snapshot; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q207948",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q207948.svg",
+      "alt": "Abstract GameAtlas art tile for Warcraft III: Reign of Chaos",
+      "provenanceId": "gameatlas-catalog-1000-q207948"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

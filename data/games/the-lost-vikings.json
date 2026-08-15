@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-lost-vikings",
+  "title": "The Lost Vikings",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "The Lost Vikings is kept in GameAtlas's Super Nintendo Entertainment System platformer and puzzle discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked platformer and puzzle entry in the Super Nintendo Entertainment System browsing path.",
+    "Retains source provenance while keeping the catalog context independently authored."
+  ],
+  "release": {
+    "year": 1993
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "platformer",
+    "puzzle"
+  ],
+  "keywords": [
+    "The Lost Vikings",
+    "nintendo-snes",
+    "platformer",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Indexed for the Super Nintendo Entertainment System platformer and puzzle discovery path using Wikidata-listed platform and genre statements; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1052386",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1052386.svg",
+      "alt": "Abstract GameAtlas art tile for The Lost Vikings",
+      "provenanceId": "gameatlas-catalog-1000-q1052386"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

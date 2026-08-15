@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "simcity",
+  "title": "SimCity",
+  "aliases": [],
+  "emoji": "🌱",
+  "shortDescription": "SimCity helps define a PC (Windows) simulation path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable simulation option into the PC (Windows) discovery path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "simulation"
+  ],
+  "keywords": [
+    "SimCity",
+    "pc-windows",
+    "simulation",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the PC (Windows) simulation discovery path using Wikidata-listed platform and genre statements; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q917647",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q917647.svg",
+      "alt": "Abstract GameAtlas art tile for SimCity",
+      "provenanceId": "gameatlas-catalog-1000-q917647"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

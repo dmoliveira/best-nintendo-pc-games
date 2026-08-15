@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "age-of-empires-the-rise-of-rome",
+  "title": "Age of Empires: The Rise of Rome",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Age of Empires: The Rise of Rome is organized in GameAtlas's PC (Windows) strategy collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Maps a direct-reference strategy entry into the PC (Windows) catalog.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 1998
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Age of Empires: The Rise of Rome",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the PC (Windows) strategy discovery path using a linked Wikidata platform-and-genre statement; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q515876",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q515876.svg",
+      "alt": "Abstract GameAtlas art tile for Age of Empires: The Rise of Rome",
+      "provenanceId": "gameatlas-catalog-1000-q515876"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

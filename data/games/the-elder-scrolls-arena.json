@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-elder-scrolls-arena",
+  "title": "The Elder Scrolls: Arena",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "The Elder Scrolls: Arena is included in GameAtlas's PC (Windows) action route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Builds a traceable action option into the PC (Windows) discovery path.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 1994
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "The Elder Scrolls: Arena",
+    "pc-windows",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the PC (Windows) action discovery path using a direct Wikidata structured-data record; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1798032",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1798032.svg",
+      "alt": "Abstract GameAtlas art tile for The Elder Scrolls: Arena",
+      "provenanceId": "gameatlas-catalog-1000-q1798032"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

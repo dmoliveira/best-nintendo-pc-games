@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "harvest-moon-64",
+  "title": "Harvest Moon 64",
+  "aliases": [],
+  "emoji": "🌱",
+  "shortDescription": "Harvest Moon 64 anchors a Nintendo 64 simulation entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Keeps a documented simulation option visible in the Nintendo 64 collection.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 1999
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "simulation"
+  ],
+  "keywords": [
+    "Harvest Moon 64",
+    "nintendo-64",
+    "simulation",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Nintendo 64 simulation discovery path using the documented Wikidata platform mapping; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2702506",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2702506.svg",
+      "alt": "Abstract GameAtlas art tile for Harvest Moon 64",
+      "provenanceId": "gameatlas-catalog-1000-q2702506"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

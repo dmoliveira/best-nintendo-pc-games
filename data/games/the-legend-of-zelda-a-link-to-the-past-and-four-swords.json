@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-legend-of-zelda-a-link-to-the-past-and-four-swords",
+  "title": "The Legend of Zelda: A Link to the Past and Four Swords",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "The Legend of Zelda: A Link to the Past and Four Swords is organized in GameAtlas's Game Boy Advance family action and adventure collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Maps a direct-reference action and adventure entry into the Game Boy Advance family catalog.",
+    "Retains source provenance while keeping the catalog context independently authored."
+  ],
+  "release": {
+    "year": 2002
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "The Legend of Zelda: A Link to the Past and Four Swords",
+    "game-boy-advance",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Game Boy Advance family action and adventure discovery path using a Wikidata-listed catalog relationship; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1358804",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1358804.svg",
+      "alt": "Abstract GameAtlas art tile for The Legend of Zelda: A Link to the Past and Four Swords",
+      "provenanceId": "gameatlas-catalog-1000-q1358804"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

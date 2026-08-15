@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "dark-souls",
+  "title": "Dark Souls",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Dark Souls joins the Nintendo Switch action and adventure path in GameAtlas with original context and a clearly labeled Wikidata structured-data link.",
+  "highlights": [
+    "Brings a source-aware action and adventure entry to the Nintendo Switch browsing route.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Dark Souls",
+    "nintendo-switch",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the Nintendo Switch action and adventure discovery path using Wikidata-listed platform and genre statements; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1166232",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1166232.svg",
+      "alt": "Abstract GameAtlas art tile for Dark Souls",
+      "provenanceId": "gameatlas-catalog-1000-q1166232"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

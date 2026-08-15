@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "animal-crossing-city-folk",
+  "title": "Animal Crossing: City Folk",
+  "aliases": [],
+  "emoji": "🌱",
+  "shortDescription": "Animal Crossing: City Folk appears in GameAtlas's Wii simulation collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Builds a traceable simulation option into the Wii discovery path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "simulation"
+  ],
+  "keywords": [
+    "Animal Crossing: City Folk",
+    "nintendo-wii",
+    "simulation",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Wii simulation discovery path using a source-linked Wikidata item; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1195260",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1195260.svg",
+      "alt": "Abstract GameAtlas art tile for Animal Crossing: City Folk",
+      "provenanceId": "gameatlas-catalog-1000-q1195260"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "detective-pikachu",
+  "title": "Detective Pikachu",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Detective Pikachu sits in the GameAtlas Nintendo 3DS family adventure collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Keeps a documented adventure option visible in the Nintendo 3DS family collection.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2018
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "adventure"
+  ],
+  "keywords": [
+    "Detective Pikachu",
+    "nintendo-3ds",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Nintendo 3DS family adventure discovery path using a linked Wikidata platform-and-genre statement; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q22635280",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q22635280.svg",
+      "alt": "Abstract GameAtlas art tile for Detective Pikachu",
+      "provenanceId": "gameatlas-catalog-1000-q22635280"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

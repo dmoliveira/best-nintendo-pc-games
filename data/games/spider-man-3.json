@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "spider-man-3",
+  "title": "Spider-Man 3",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Spider-Man 3 is included in GameAtlas's Game Boy Advance family action and adventure route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Adds a clearly sourced action and adventure option to the Game Boy Advance family discovery path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Spider-Man 3",
+    "game-boy-advance",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Game Boy Advance family action and adventure discovery path using a direct Wikidata structured-data record; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2337769",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2337769.svg",
+      "alt": "Abstract GameAtlas art tile for Spider-Man 3",
+      "provenanceId": "gameatlas-catalog-1000-q2337769"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

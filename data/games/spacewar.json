@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "spacewar",
+  "title": "Spacewar!",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Spacewar! sits in the GameAtlas PC (Windows) shooter and simulation collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Maps a direct-reference shooter and simulation entry into the PC (Windows) catalog.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 1962
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter",
+    "simulation"
+  ],
+  "keywords": [
+    "Spacewar!",
+    "pc-windows",
+    "shooter",
+    "simulation",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the PC (Windows) shooter and simulation discovery path using the frozen Wikidata metadata snapshot; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q782919",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q782919.svg",
+      "alt": "Abstract GameAtlas art tile for Spacewar!",
+      "provenanceId": "gameatlas-catalog-1000-q782919"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

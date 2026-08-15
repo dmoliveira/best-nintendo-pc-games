@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "pro-evolution-soccer-2016",
+  "title": "Pro Evolution Soccer 2016",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Pro Evolution Soccer 2016 helps define a PC (Windows) sports path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked sports entry in the PC (Windows) browsing path.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Pro Evolution Soccer 2016",
+    "pc-windows",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the PC (Windows) sports discovery path using a Wikidata-listed catalog relationship; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q20098839",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q20098839.svg",
+      "alt": "Abstract GameAtlas art tile for Pro Evolution Soccer 2016",
+      "provenanceId": "gameatlas-catalog-1000-q20098839"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

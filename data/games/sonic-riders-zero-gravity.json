@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "sonic-riders-zero-gravity",
+  "title": "Sonic Riders: Zero Gravity",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Sonic Riders: Zero Gravity sits in the GameAtlas Wii racing collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Keeps a documented racing option visible in the Wii collection.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Sonic Riders: Zero Gravity",
+    "nintendo-wii",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Wii racing discovery path using a direct Wikidata structured-data record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1150685",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1150685.svg",
+      "alt": "Abstract GameAtlas art tile for Sonic Riders: Zero Gravity",
+      "provenanceId": "gameatlas-catalog-1000-q1150685"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

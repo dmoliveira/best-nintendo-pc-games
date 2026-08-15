@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "live-a-live",
+  "title": "Live A Live",
+  "aliases": [],
+  "emoji": "🫥",
+  "shortDescription": "Live A Live is kept in GameAtlas's Nintendo 3DS family stealth discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable stealth option into the Nintendo 3DS family discovery path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1994
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "stealth"
+  ],
+  "keywords": [
+    "Live A Live",
+    "nintendo-3ds",
+    "stealth",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the Nintendo 3DS family stealth discovery path using a linked Wikidata platform-and-genre statement; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2656776",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2656776.svg",
+      "alt": "Abstract GameAtlas art tile for Live A Live",
+      "provenanceId": "gameatlas-catalog-1000-q2656776"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

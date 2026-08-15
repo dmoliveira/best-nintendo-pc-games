@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-crew",
+  "title": "The Crew",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "The Crew is grouped with GameAtlas's PC (Windows) racing picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked racing entry in the PC (Windows) browsing path.",
+    "Retains source provenance while keeping the catalog context independently authored."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "The Crew",
+    "pc-windows",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the PC (Windows) racing discovery path using a direct Wikidata structured-data record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q13427836",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q13427836.svg",
+      "alt": "Abstract GameAtlas art tile for The Crew",
+      "provenanceId": "gameatlas-catalog-1000-q13427836"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

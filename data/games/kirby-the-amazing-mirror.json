@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "kirby-the-amazing-mirror",
+  "title": "Kirby & the Amazing Mirror",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Kirby & the Amazing Mirror sits in the GameAtlas Game Boy Advance family action collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Makes a documented action option easier to find in the Game Boy Advance family path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Kirby & the Amazing Mirror",
+    "game-boy-advance",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the Game Boy Advance family action discovery path using the frozen Wikidata metadata snapshot; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2306443",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2306443.svg",
+      "alt": "Abstract GameAtlas art tile for Kirby & the Amazing Mirror",
+      "provenanceId": "gameatlas-catalog-1000-q2306443"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

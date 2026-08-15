@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "cuphead",
+  "title": "Cuphead",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Cuphead is cataloged with Nintendo Switch platformer and shooter picks in GameAtlas, keeping its editorial context separate from the linked Wikidata record.",
+  "highlights": [
+    "Keeps a documented platformer and shooter option visible in the Nintendo Switch collection.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "platformer",
+    "shooter"
+  ],
+  "keywords": [
+    "Cuphead",
+    "nintendo-switch",
+    "platformer",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the Nintendo Switch platformer and shooter discovery path using the frozen source metadata record; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q18149495",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q18149495.svg",
+      "alt": "Abstract GameAtlas art tile for Cuphead",
+      "provenanceId": "gameatlas-catalog-1000-q18149495"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

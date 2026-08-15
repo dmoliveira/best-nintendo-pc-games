@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "slug": "aura-aura-climber",
+  "title": "Aura-Aura Climber",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Aura-Aura Climber is kept in GameAtlas's Nintendo DSi family action discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Offers a clearly labeled action route through the Nintendo DSi family collection.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-dsi"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Aura-Aura Climber",
+    "nintendo-dsi",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Nintendo DSi family action discovery path using the preserved Wikidata entity record; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q4822042",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q4822042.svg",
+      "alt": "Abstract GameAtlas art tile for Aura-Aura Climber",
+      "provenanceId": "gameatlas-catalog-1000-q4822042"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ],
+  "releaseFormat": "digital"
+}

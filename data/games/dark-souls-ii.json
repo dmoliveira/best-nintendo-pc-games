@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "dark-souls-ii",
+  "title": "Dark Souls II",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Dark Souls II is kept in GameAtlas's PC (Windows) action discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Keeps a documented action option visible in the PC (Windows) collection.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2014
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Dark Souls II",
+    "pc-windows",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the PC (Windows) action discovery path using a Wikidata-listed catalog relationship; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q3702740",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q3702740.svg",
+      "alt": "Abstract GameAtlas art tile for Dark Souls II",
+      "provenanceId": "gameatlas-catalog-1000-q3702740"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

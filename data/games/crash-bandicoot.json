@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "crash-bandicoot",
+  "title": "Crash Bandicoot",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Crash Bandicoot is included in GameAtlas's PC (Windows) platformer route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Maps a direct-reference platformer entry into the PC (Windows) catalog.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Crash Bandicoot",
+    "pc-windows",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the PC (Windows) platformer discovery path using Wikidata-listed platform and genre statements; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q719176",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q719176.svg",
+      "alt": "Abstract GameAtlas art tile for Crash Bandicoot",
+      "provenanceId": "gameatlas-catalog-1000-q719176"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

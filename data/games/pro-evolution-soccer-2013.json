@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "pro-evolution-soccer-2013",
+  "title": "Pro Evolution Soccer 2013",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Pro Evolution Soccer 2013 is organized in GameAtlas's Wii sports collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Frames a sports pick for source-aware Wii exploration.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Pro Evolution Soccer 2013",
+    "nintendo-wii",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Wii sports discovery path using the frozen Wikidata metadata snapshot; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1987250",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1987250.svg",
+      "alt": "Abstract GameAtlas art tile for Pro Evolution Soccer 2013",
+      "provenanceId": "gameatlas-catalog-1000-q1987250"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "rhythm-heaven",
+  "title": "Rhythm Heaven",
+  "aliases": [],
+  "emoji": "🎵",
+  "shortDescription": "Rhythm Heaven anchors a Nintendo DS family rhythm entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Frames a rhythm pick for source-aware Nintendo DS family exploration.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "rhythm"
+  ],
+  "keywords": [
+    "Rhythm Heaven",
+    "nintendo-ds",
+    "rhythm",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the Nintendo DS family rhythm discovery path using the preserved Wikidata entity record; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q528376",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q528376.svg",
+      "alt": "Abstract GameAtlas art tile for Rhythm Heaven",
+      "provenanceId": "gameatlas-catalog-1000-q528376"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

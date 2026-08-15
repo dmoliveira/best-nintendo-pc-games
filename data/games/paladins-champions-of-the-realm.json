@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "paladins-champions-of-the-realm",
+  "title": "Paladins: Champions of the Realm",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Paladins: Champions of the Realm is included in GameAtlas's Nintendo Switch shooter route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Frames a shooter pick for source-aware Nintendo Switch exploration.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2016
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Paladins: Champions of the Realm",
+    "nintendo-switch",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the Nintendo Switch shooter discovery path using a linked structured-data reference; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q27870279",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q27870279.svg",
+      "alt": "Abstract GameAtlas art tile for Paladins: Champions of the Realm",
+      "provenanceId": "gameatlas-catalog-1000-q27870279"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

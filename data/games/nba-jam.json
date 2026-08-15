@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "nba-jam",
+  "title": "NBA Jam",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "NBA Jam is included in GameAtlas's Super Nintendo Entertainment System sports route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Offers a clearly labeled sports route through the Super Nintendo Entertainment System collection.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 1994
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "NBA Jam",
+    "nintendo-snes",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Super Nintendo Entertainment System sports discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1959943",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1959943.svg",
+      "alt": "Abstract GameAtlas art tile for NBA Jam",
+      "provenanceId": "gameatlas-catalog-1000-q1959943"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-sims-2-university",
+  "title": "The Sims 2: University",
+  "aliases": [],
+  "emoji": "🌱",
+  "shortDescription": "The Sims 2: University anchors a PC (Windows) simulation entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Frames a simulation pick for source-aware PC (Windows) exploration.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2005
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "simulation"
+  ],
+  "keywords": [
+    "The Sims 2: University",
+    "pc-windows",
+    "simulation",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the PC (Windows) simulation discovery path using the documented Wikidata platform mapping; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q727092",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q727092.svg",
+      "alt": "Abstract GameAtlas art tile for The Sims 2: University",
+      "provenanceId": "gameatlas-catalog-1000-q727092"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

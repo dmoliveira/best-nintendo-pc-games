@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "pro-evolution-soccer-2011",
+  "title": "Pro Evolution Soccer 2011",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Pro Evolution Soccer 2011 is grouped with GameAtlas's Wii sports picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked sports entry in the Wii browsing path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Pro Evolution Soccer 2011",
+    "nintendo-wii",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Wii sports discovery path using a linked structured-data reference; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1318106",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1318106.svg",
+      "alt": "Abstract GameAtlas art tile for Pro Evolution Soccer 2011",
+      "provenanceId": "gameatlas-catalog-1000-q1318106"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "antarctic-adventure",
+  "title": "Antarctic Adventure",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Antarctic Adventure is grouped with GameAtlas's Nintendo Entertainment System racing picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Keeps a documented racing option visible in the Nintendo Entertainment System collection.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 1983
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Antarctic Adventure",
+    "nintendo-nes",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the Nintendo Entertainment System racing discovery path using the frozen source metadata record; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1323953",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1323953.svg",
+      "alt": "Abstract GameAtlas art tile for Antarctic Adventure",
+      "provenanceId": "gameatlas-catalog-1000-q1323953"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "silent-hill-2",
+  "title": "Silent Hill 2",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Silent Hill 2 is included in GameAtlas's PC (Windows) horror route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Offers a clearly labeled horror route through the PC (Windows) collection.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "horror"
+  ],
+  "keywords": [
+    "Silent Hill 2",
+    "pc-windows",
+    "horror",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the PC (Windows) horror discovery path using a Wikidata-listed catalog relationship; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q752835",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q752835.svg",
+      "alt": "Abstract GameAtlas art tile for Silent Hill 2",
+      "provenanceId": "gameatlas-catalog-1000-q752835"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

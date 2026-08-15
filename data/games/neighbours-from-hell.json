@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "neighbours-from-hell",
+  "title": "Neighbours from Hell",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Neighbours from Hell is grouped with GameAtlas's Nintendo GameCube strategy picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Offers a clearly labeled strategy route through the Nintendo GameCube collection.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Neighbours from Hell",
+    "nintendo-gamecube",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Nintendo GameCube strategy discovery path using a direct Wikidata structured-data record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q905308",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q905308.svg",
+      "alt": "Abstract GameAtlas art tile for Neighbours from Hell",
+      "provenanceId": "gameatlas-catalog-1000-q905308"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

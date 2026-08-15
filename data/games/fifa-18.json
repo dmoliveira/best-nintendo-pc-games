@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "fifa-18",
+  "title": "FIFA 18",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "FIFA 18 joins the Nintendo Switch sports path in GameAtlas with original context and a clearly labeled Wikidata structured-data link.",
+  "highlights": [
+    "Brings a source-aware sports entry to the Nintendo Switch browsing route.",
+    "Retains source provenance while keeping the catalog context independently authored."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "FIFA 18",
+    "nintendo-switch",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Nintendo Switch sports discovery path using a linked Wikidata platform-and-genre statement; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q30138107",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q30138107.svg",
+      "alt": "Abstract GameAtlas art tile for FIFA 18",
+      "provenanceId": "gameatlas-catalog-1000-q30138107"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

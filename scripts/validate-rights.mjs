@@ -138,6 +138,18 @@ for (const record of source.sources ?? []) {
   if (record.recheckAt === null || record.recheckAt === undefined) fail(`${record.id}.recheckAt: required for source decisions`);
   else requireFutureDate(record.recheckAt, `${record.id}.recheckAt`);
 }
+const wikidata = (source.sources ?? []).find((record) => record.id === "wikidata-fact-reference");
+if (!wikidata) {
+  fail("missing approved wikidata-fact-reference source contract");
+} else {
+  const required = { provider: "Wikidata contributors", role: "CC0 structured-data catalog reference", status: "approved", numericScores: "not-authorized", reviewText: "do-not-copy", images: "do-not-download", termsUrl: "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/en", licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/legalcode", structuredDataPolicyUrl: "https://www.wikidata.org/wiki/Wikidata:Copyright", dataAccessUrl: "https://www.wikidata.org/wiki/Wikidata:Data_access", queryServiceUrl: "https://query.wikidata.org/" };
+  for (const [field, expected] of Object.entries(required)) if (wikidata[field] !== expected) fail("wikidata-fact-reference." + field + " must equal the approved source contract");
+  const allowedFields = ["wikidataTitleLabel", "wikidataReleaseYear", "wikidataListedPlatform", "wikidataListedGenre", "individualSourceUrl"];
+  if (JSON.stringify(wikidata.allowedFields) !== JSON.stringify(allowedFields)) fail("wikidata-fact-reference.allowedFields must be the structured-data whitelist");
+  for (const field of ["attribution", "notes", "coveredProcess"]) if (!nonEmpty(wikidata[field])) fail("wikidata-fact-reference." + field + " must be non-empty");
+  if (!String(wikidata.notes).includes("Not all Wikidata website content is CC0") || !String(wikidata.notes).includes("Do not copy prose") || !String(wikidata.coveredProcess).includes("Frozen local import")) fail("wikidata-fact-reference must scope CC0 to structured data, prohibit copied provider content, and require frozen imports");
+  for (const field of ["termsUrl", "licenseUrl", "structuredDataPolicyUrl", "dataAccessUrl", "queryServiceUrl"]) if (!isValidHttpsUrl(wikidata[field])) fail("wikidata-fact-reference." + field + " must be a valid https URL");
+}
 if (typeof source.support?.url === "string" || JSON.stringify(source).includes("buy.stripe.com") || JSON.stringify(source).includes("Codememory memory_")) fail("actionable support URL or internal tracker reference is public");
 
 const manifestByPath = new Map();
@@ -216,6 +228,7 @@ const publicTextFiles = [
   "data/asset-rights.json",
   "data/assets-manifest.json",
   "data/box-art-formats.json",
+  "public/catalog-search-index.json",
   "docs/rights-and-support-policy.md",
   "docs/guides/game-box-art-workflow.md",
   "README.md",

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "new-super-mario-bros-wii",
+  "title": "New Super Mario Bros. Wii",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "New Super Mario Bros. Wii is organized in GameAtlas's Wii platformer collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Sets a direct-reference platformer marker within the Wii catalog.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-wii"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "New Super Mario Bros. Wii",
+    "nintendo-wii",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the Wii platformer discovery path using a Wikidata-listed catalog relationship; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q170410",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q170410.svg",
+      "alt": "Abstract GameAtlas art tile for New Super Mario Bros. Wii",
+      "provenanceId": "gameatlas-catalog-1000-q170410"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

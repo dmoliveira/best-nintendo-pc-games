@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "warioware-touched",
+  "title": "WarioWare: Touched!",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "WarioWare: Touched! is included in GameAtlas's Nintendo 3DS family action route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Builds a traceable action option into the Nintendo 3DS family discovery path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "WarioWare: Touched!",
+    "nintendo-3ds",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the Nintendo 3DS family action discovery path using a direct Wikidata structured-data record; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1154907",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1154907.svg",
+      "alt": "Abstract GameAtlas art tile for WarioWare: Touched!",
+      "provenanceId": "gameatlas-catalog-1000-q1154907"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

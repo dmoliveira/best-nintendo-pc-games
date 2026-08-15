@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "valorant",
+  "title": "Valorant",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Valorant is kept in GameAtlas's PC (Windows) shooter and strategy discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented shooter and strategy option easier to find in the PC (Windows) path.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2020
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter",
+    "strategy"
+  ],
+  "keywords": [
+    "Valorant",
+    "pc-windows",
+    "shooter",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the PC (Windows) shooter and strategy discovery path using the preserved Wikidata entity record; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q86919275",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q86919275.svg",
+      "alt": "Abstract GameAtlas art tile for Valorant",
+      "provenanceId": "gameatlas-catalog-1000-q86919275"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

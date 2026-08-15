@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "baseball",
+  "title": "Baseball",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Baseball is grouped with GameAtlas's Nintendo Entertainment System sports picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented sports option easier to find in the Nintendo Entertainment System path.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 1983
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Baseball",
+    "nintendo-nes",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the Nintendo Entertainment System sports discovery path using a direct Wikidata structured-data record; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1041292",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1041292.svg",
+      "alt": "Abstract GameAtlas art tile for Baseball",
+      "provenanceId": "gameatlas-catalog-1000-q1041292"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

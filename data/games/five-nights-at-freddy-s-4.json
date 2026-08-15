@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "five-nights-at-freddy-s-4",
+  "title": "Five Nights at Freddy's 4",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Five Nights at Freddy's 4 helps define a Nintendo Switch adventure and horror and survival path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Brings a source-aware adventure and horror and survival entry to the Nintendo Switch browsing route.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "adventure",
+    "horror",
+    "survival"
+  ],
+  "keywords": [
+    "Five Nights at Freddy's 4",
+    "nintendo-switch",
+    "adventure",
+    "horror",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the Nintendo Switch adventure and horror and survival discovery path using a source-linked Wikidata item; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q19900828",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q19900828.svg",
+      "alt": "Abstract GameAtlas art tile for Five Nights at Freddy's 4",
+      "provenanceId": "gameatlas-catalog-1000-q19900828"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

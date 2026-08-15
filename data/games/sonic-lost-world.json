@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "sonic-lost-world",
+  "title": "Sonic Lost World",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Sonic Lost World anchors a Nintendo 3DS family action and adventure entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Keeps a documented action and adventure option visible in the Nintendo 3DS family collection.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Sonic Lost World",
+    "nintendo-3ds",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the Nintendo 3DS family action and adventure discovery path using a direct Wikidata structured-data record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q13357805",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q13357805.svg",
+      "alt": "Abstract GameAtlas art tile for Sonic Lost World",
+      "provenanceId": "gameatlas-catalog-1000-q13357805"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

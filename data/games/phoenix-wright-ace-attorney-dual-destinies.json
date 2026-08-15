@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "phoenix-wright-ace-attorney-dual-destinies",
+  "title": "Phoenix Wright: Ace Attorney – Dual Destinies",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Phoenix Wright: Ace Attorney – Dual Destinies is kept in GameAtlas's Nintendo 3DS family adventure and visual novel discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable adventure and visual novel option into the Nintendo 3DS family discovery path.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "adventure",
+    "visual-novel"
+  ],
+  "keywords": [
+    "Phoenix Wright: Ace Attorney – Dual Destinies",
+    "nintendo-3ds",
+    "adventure",
+    "visual-novel",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Nintendo 3DS family adventure and visual novel discovery path using the frozen source metadata record; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2483051",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2483051.svg",
+      "alt": "Abstract GameAtlas art tile for Phoenix Wright: Ace Attorney – Dual Destinies",
+      "provenanceId": "gameatlas-catalog-1000-q2483051"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

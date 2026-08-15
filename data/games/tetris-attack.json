@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "tetris-attack",
+  "title": "Tetris Attack",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Tetris Attack helps define a Game Boy family puzzle path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference puzzle entry into the Game Boy family catalog.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 1995
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "Tetris Attack",
+    "game-boy",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Game Boy family puzzle discovery path using the documented Wikidata platform mapping; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2316943",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2316943.svg",
+      "alt": "Abstract GameAtlas art tile for Tetris Attack",
+      "provenanceId": "gameatlas-catalog-1000-q2316943"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

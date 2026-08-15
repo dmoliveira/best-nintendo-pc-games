@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "supreme-commander",
+  "title": "Supreme Commander",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Supreme Commander is grouped with GameAtlas's PC (Windows) strategy picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable strategy option into the PC (Windows) discovery path.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2007
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Supreme Commander",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the PC (Windows) strategy discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q728983",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q728983.svg",
+      "alt": "Abstract GameAtlas art tile for Supreme Commander",
+      "provenanceId": "gameatlas-catalog-1000-q728983"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "prototype-2",
+  "title": "Prototype 2",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Prototype 2 helps define a PC (Windows) action and adventure path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Offers a clearly labeled action and adventure route through the PC (Windows) collection.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Prototype 2",
+    "pc-windows",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the PC (Windows) action and adventure discovery path using the preserved Wikidata entity record; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2075296",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2075296.svg",
+      "alt": "Abstract GameAtlas art tile for Prototype 2",
+      "provenanceId": "gameatlas-catalog-1000-q2075296"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

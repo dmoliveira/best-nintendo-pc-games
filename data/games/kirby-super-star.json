@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "kirby-super-star",
+  "title": "Kirby Super Star",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Kirby Super Star is grouped with GameAtlas's Super Nintendo Entertainment System action picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference action entry into the Super Nintendo Entertainment System catalog.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Kirby Super Star",
+    "nintendo-snes",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Super Nintendo Entertainment System action discovery path using a Wikidata-listed catalog relationship; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1871848",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1871848.svg",
+      "alt": "Abstract GameAtlas art tile for Kirby Super Star",
+      "provenanceId": "gameatlas-catalog-1000-q1871848"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -65,6 +65,136 @@
         "Role-playing games"
       ],
       "description": "Games centered on character progression, party development, and authored or systemic journeys."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "strategy",
+      "name": "Strategy",
+      "aliases": [
+        "Strategy games",
+        "Tactics"
+      ],
+      "description": "Games centered on planning, positioning, resource decisions, or long-term tactical choices."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "fighting",
+      "name": "Fighting",
+      "aliases": [
+        "Fighting games",
+        "Versus fighting"
+      ],
+      "description": "Games centered on direct competitive combat, spacing, timing, and character matchups."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "shooter",
+      "name": "Shooter",
+      "aliases": [
+        "Shooters",
+        "Shooting games"
+      ],
+      "description": "Games centered on aiming, projectiles, spatial awareness, and combat encounters."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "sports",
+      "name": "Sports",
+      "aliases": [
+        "Sports games",
+        "Athletics"
+      ],
+      "description": "Games centered on modeled sporting activities, teams, matches, or athletic competition."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "rhythm",
+      "name": "Rhythm",
+      "aliases": [
+        "Music games",
+        "Rhythm games"
+      ],
+      "description": "Games centered on timing actions to music, beats, or repeating performance patterns."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "horror",
+      "name": "Horror",
+      "aliases": [
+        "Horror games",
+        "Survival horror"
+      ],
+      "description": "Games centered on fear, tension, vulnerability, or unsettling exploration."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "stealth",
+      "name": "Stealth",
+      "aliases": [
+        "Stealth games",
+        "Sneaking"
+      ],
+      "description": "Games centered on concealment, observation, evasion, and controlled infiltration."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "visual-novel",
+      "name": "Visual novel",
+      "aliases": [
+        "Visual novels",
+        "Interactive fiction"
+      ],
+      "description": "Games centered on reading, branching narrative, choices, and character relationships."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "sandbox",
+      "name": "Sandbox",
+      "aliases": [
+        "Sandbox games",
+        "Open world"
+      ],
+      "description": "Games centered on open-ended exploration, construction, experimentation, or player-defined goals."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "party",
+      "name": "Party",
+      "aliases": [
+        "Party games",
+        "Minigames"
+      ],
+      "description": "Games centered on social play, short competitive challenges, and shared local or online sessions."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "survival",
+      "name": "Survival",
+      "aliases": [
+        "Survival games",
+        "Crafting survival"
+      ],
+      "description": "Games centered on enduring hostile conditions through gathering, crafting, and risk management."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "educational",
+      "name": "Educational",
+      "aliases": [
+        "Educational games",
+        "Learning games"
+      ],
+      "description": "Games centered on learning, practice, or discovery through interactive systems."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "arcade",
+      "name": "Arcade",
+      "aliases": [
+        "Arcade games",
+        "High-score games"
+      ],
+      "description": "Games centered on immediate rules, repeatable runs, and score- or mastery-led play."
     }
   ]
 }

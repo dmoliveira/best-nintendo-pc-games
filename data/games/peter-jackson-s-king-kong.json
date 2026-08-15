@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "peter-jackson-s-king-kong",
+  "title": "Peter Jackson's King Kong",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Peter Jackson's King Kong joins the Game Boy Advance family action and adventure path in GameAtlas with original context and a clearly labeled Wikidata structured-data link.",
+  "highlights": [
+    "Offers a clearly labeled action and adventure route through the Game Boy Advance family collection.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2005
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Peter Jackson's King Kong",
+    "game-boy-advance",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the Game Boy Advance family action and adventure discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2557419",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2557419.svg",
+      "alt": "Abstract GameAtlas art tile for Peter Jackson's King Kong",
+      "provenanceId": "gameatlas-catalog-1000-q2557419"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

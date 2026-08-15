@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "life-is-strange-true-colors",
+  "title": "Life Is Strange: True Colors",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Life Is Strange: True Colors helps define a Nintendo Switch adventure path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented adventure option easier to find in the Nintendo Switch path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2021
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "adventure"
+  ],
+  "keywords": [
+    "Life Is Strange: True Colors",
+    "nintendo-switch",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the Nintendo Switch adventure discovery path using the frozen Wikidata metadata snapshot; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q106030331",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q106030331.svg",
+      "alt": "Abstract GameAtlas art tile for Life Is Strange: True Colors",
+      "provenanceId": "gameatlas-catalog-1000-q106030331"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "kerbal-space-program",
+  "title": "Kerbal Space Program",
+  "aliases": [],
+  "emoji": "🧱",
+  "shortDescription": "Kerbal Space Program sits in the GameAtlas PC (Windows) sandbox and simulation collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Makes a documented sandbox and simulation option easier to find in the PC (Windows) path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "sandbox",
+    "simulation"
+  ],
+  "keywords": [
+    "Kerbal Space Program",
+    "pc-windows",
+    "sandbox",
+    "simulation",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the PC (Windows) sandbox and simulation discovery path using the frozen Wikidata metadata snapshot; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1471545",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1471545.svg",
+      "alt": "Abstract GameAtlas art tile for Kerbal Space Program",
+      "provenanceId": "gameatlas-catalog-1000-q1471545"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

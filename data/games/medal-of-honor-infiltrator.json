@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "medal-of-honor-infiltrator",
+  "title": "Medal of Honor: Infiltrator",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Medal of Honor: Infiltrator is kept in GameAtlas's Game Boy Advance family shooter discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Places a source-linked shooter entry in the Game Boy Advance family browsing path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2003
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Medal of Honor: Infiltrator",
+    "game-boy-advance",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Game Boy Advance family shooter discovery path using the frozen Wikidata metadata snapshot; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2547348",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2547348.svg",
+      "alt": "Abstract GameAtlas art tile for Medal of Honor: Infiltrator",
+      "provenanceId": "gameatlas-catalog-1000-q2547348"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "mafia-ii",
+  "title": "Mafia II",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Mafia II sits in the GameAtlas PC (Windows) action and adventure and shooter collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Makes a documented action and adventure and shooter option easier to find in the PC (Windows) path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "shooter"
+  ],
+  "keywords": [
+    "Mafia II",
+    "pc-windows",
+    "action",
+    "adventure",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the PC (Windows) action and adventure and shooter discovery path using a linked Wikidata platform-and-genre statement; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q59154",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q59154.svg",
+      "alt": "Abstract GameAtlas art tile for Mafia II",
+      "provenanceId": "gameatlas-catalog-1000-q59154"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "need-for-speed-the-run",
+  "title": "Need for Speed: The Run",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Need for Speed: The Run sits in the GameAtlas Nintendo 3DS family racing collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Frames a racing pick for source-aware Nintendo 3DS family exploration.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Need for Speed: The Run",
+    "nintendo-3ds",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Nintendo 3DS family racing discovery path using the frozen source metadata record; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q281246",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q281246.svg",
+      "alt": "Abstract GameAtlas art tile for Need for Speed: The Run",
+      "provenanceId": "gameatlas-catalog-1000-q281246"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

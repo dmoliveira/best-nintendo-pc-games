@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "pro-evolution-soccer-6",
+  "title": "Pro Evolution Soccer 6",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Pro Evolution Soccer 6 anchors a Nintendo DS family sports entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Builds a traceable sports option into the Nintendo DS family discovery path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Pro Evolution Soccer 6",
+    "nintendo-ds",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Nintendo DS family sports discovery path using a Wikidata-listed catalog relationship; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q739125",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q739125.svg",
+      "alt": "Abstract GameAtlas art tile for Pro Evolution Soccer 6",
+      "provenanceId": "gameatlas-catalog-1000-q739125"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

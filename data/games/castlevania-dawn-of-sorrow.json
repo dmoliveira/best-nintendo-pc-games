@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "castlevania-dawn-of-sorrow",
+  "title": "Castlevania: Dawn of Sorrow",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Castlevania: Dawn of Sorrow is organized in GameAtlas's Nintendo DS family action collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Makes a documented action option easier to find in the Nintendo DS family path.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2005
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Castlevania: Dawn of Sorrow",
+    "nintendo-ds",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the Nintendo DS family action discovery path using the preserved Wikidata entity record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2287853",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2287853.svg",
+      "alt": "Abstract GameAtlas art tile for Castlevania: Dawn of Sorrow",
+      "provenanceId": "gameatlas-catalog-1000-q2287853"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "pro-evolution-soccer-2014",
+  "title": "Pro Evolution Soccer 2014",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Pro Evolution Soccer 2014 sits in the GameAtlas Nintendo 3DS family sports collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Brings a source-aware sports entry to the Nintendo 3DS family browsing route.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 2013
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Pro Evolution Soccer 2014",
+    "nintendo-3ds",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the Nintendo 3DS family sports discovery path using a source-linked Wikidata item; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q7246721",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q7246721.svg",
+      "alt": "Abstract GameAtlas art tile for Pro Evolution Soccer 2014",
+      "provenanceId": "gameatlas-catalog-1000-q7246721"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

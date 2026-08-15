@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "sunset-riders",
+  "title": "Sunset Riders",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Sunset Riders is organized in GameAtlas's Super Nintendo Entertainment System shooter collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Adds a clearly sourced shooter option to the Super Nintendo Entertainment System discovery path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 1991
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Sunset Riders",
+    "nintendo-snes",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Super Nintendo Entertainment System shooter discovery path using a Wikidata-listed catalog relationship; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q941354",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q941354.svg",
+      "alt": "Abstract GameAtlas art tile for Sunset Riders",
+      "provenanceId": "gameatlas-catalog-1000-q941354"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

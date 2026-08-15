@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "ultimate-mortal-kombat-3",
+  "title": "Ultimate Mortal Kombat 3",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Ultimate Mortal Kombat 3 is organized in GameAtlas's Game Boy family fighting collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Sets a direct-reference fighting marker within the Game Boy family catalog.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Ultimate Mortal Kombat 3",
+    "game-boy",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the Game Boy family fighting discovery path using the documented Wikidata platform mapping; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1313980",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1313980.svg",
+      "alt": "Abstract GameAtlas art tile for Ultimate Mortal Kombat 3",
+      "provenanceId": "gameatlas-catalog-1000-q1313980"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

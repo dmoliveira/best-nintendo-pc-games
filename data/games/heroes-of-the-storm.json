@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "heroes-of-the-storm",
+  "title": "Heroes of the Storm",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Heroes of the Storm anchors a PC (Windows) action and strategy entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Frames a action and strategy pick for source-aware PC (Windows) exploration.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "action",
+    "strategy"
+  ],
+  "keywords": [
+    "Heroes of the Storm",
+    "pc-windows",
+    "action",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the PC (Windows) action and strategy discovery path using a linked Wikidata platform-and-genre statement; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q15139655",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q15139655.svg",
+      "alt": "Abstract GameAtlas art tile for Heroes of the Storm",
+      "provenanceId": "gameatlas-catalog-1000-q15139655"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

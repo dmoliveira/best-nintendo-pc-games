@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "saints-row-the-third",
+  "title": "Saints Row: The Third",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Saints Row: The Third sits in the GameAtlas Nintendo Switch action and adventure collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Places a source-linked action and adventure entry in the Nintendo Switch browsing path.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Saints Row: The Third",
+    "nintendo-switch",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the Nintendo Switch action and adventure discovery path using the frozen Wikidata metadata snapshot; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1801455",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1801455.svg",
+      "alt": "Abstract GameAtlas art tile for Saints Row: The Third",
+      "provenanceId": "gameatlas-catalog-1000-q1801455"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

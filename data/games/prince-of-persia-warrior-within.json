@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "prince-of-persia-warrior-within",
+  "title": "Prince of Persia: Warrior Within",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Prince of Persia: Warrior Within sits in the GameAtlas Nintendo GameCube action and adventure collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Places a source-linked action and adventure entry in the Nintendo GameCube browsing path.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2004
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Prince of Persia: Warrior Within",
+    "nintendo-gamecube",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Nintendo GameCube action and adventure discovery path using the frozen source metadata record; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q743155",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q743155.svg",
+      "alt": "Abstract GameAtlas art tile for Prince of Persia: Warrior Within",
+      "provenanceId": "gameatlas-catalog-1000-q743155"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

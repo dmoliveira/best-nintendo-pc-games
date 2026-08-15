@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "killer-instinct",
+  "title": "Killer Instinct",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Killer Instinct is kept in GameAtlas's Game Boy family fighting discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference fighting entry into the Game Boy family catalog.",
+    "Retains source provenance while keeping the catalog context independently authored."
+  ],
+  "release": {
+    "year": 1994
+  },
+  "platforms": [
+    "game-boy"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Killer Instinct",
+    "game-boy",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the Game Boy family fighting discovery path using the preserved Wikidata entity record; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q973459",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q973459.svg",
+      "alt": "Abstract GameAtlas art tile for Killer Instinct",
+      "provenanceId": "gameatlas-catalog-1000-q973459"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "sweet-home",
+  "title": "Sweet Home",
+  "aliases": [],
+  "emoji": "🕯️",
+  "shortDescription": "Sweet Home anchors a Nintendo Entertainment System horror entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Places a source-linked horror entry in the Nintendo Entertainment System browsing path.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 1989
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "horror"
+  ],
+  "keywords": [
+    "Sweet Home",
+    "nintendo-nes",
+    "horror",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Nintendo Entertainment System horror discovery path using a Wikidata-listed catalog relationship; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1523333",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1523333.svg",
+      "alt": "Abstract GameAtlas art tile for Sweet Home",
+      "provenanceId": "gameatlas-catalog-1000-q1523333"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "mega-man-zero",
+  "title": "Mega Man Zero",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Mega Man Zero is included in GameAtlas's Game Boy Advance family action route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Adds a clearly sourced action option to the Game Boy Advance family discovery path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2002
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Mega Man Zero",
+    "game-boy-advance",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Game Boy Advance family action discovery path using the frozen Wikidata metadata snapshot; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2484133",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2484133.svg",
+      "alt": "Abstract GameAtlas art tile for Mega Man Zero",
+      "provenanceId": "gameatlas-catalog-1000-q2484133"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

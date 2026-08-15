@@ -10,6 +10,10 @@ export interface SourcePolicy {
   status: RightsStatus;
   allowedFields: string[];
   termsUrl?: string | null;
+  licenseUrl?: string | null;
+  structuredDataPolicyUrl?: string | null;
+  dataAccessUrl?: string | null;
+  queryServiceUrl?: string | null;
   rightsReviewedAt: string;
   recheckAt: string | null;
   decisionEvidence: string;

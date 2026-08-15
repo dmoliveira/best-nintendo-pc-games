@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "ghostbusters-the-video-game",
+  "title": "Ghostbusters: The Video Game",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Ghostbusters: The Video Game is kept in GameAtlas's Nintendo DS family action and adventure discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Keeps a documented action and adventure option visible in the Nintendo DS family collection.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Ghostbusters: The Video Game",
+    "nintendo-ds",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Nintendo DS family action and adventure discovery path using a linked structured-data reference; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1514853",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1514853.svg",
+      "alt": "Abstract GameAtlas art tile for Ghostbusters: The Video Game",
+      "provenanceId": "gameatlas-catalog-1000-q1514853"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

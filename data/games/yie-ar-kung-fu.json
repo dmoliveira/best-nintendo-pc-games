@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "yie-ar-kung-fu",
+  "title": "Yie Ar Kung-Fu",
+  "aliases": [],
+  "emoji": "🥊",
+  "shortDescription": "Yie Ar Kung-Fu is grouped with GameAtlas's Nintendo Entertainment System fighting picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Brings a source-aware fighting entry to the Nintendo Entertainment System browsing route.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 1985
+  },
+  "platforms": [
+    "nintendo-nes"
+  ],
+  "genres": [
+    "fighting"
+  ],
+  "keywords": [
+    "Yie Ar Kung-Fu",
+    "nintendo-nes",
+    "fighting",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the Nintendo Entertainment System fighting discovery path using a linked structured-data reference; this remains catalog organization rather than provider commentary.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q91220",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q91220.svg",
+      "alt": "Abstract GameAtlas art tile for Yie Ar Kung-Fu",
+      "provenanceId": "gameatlas-catalog-1000-q91220"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

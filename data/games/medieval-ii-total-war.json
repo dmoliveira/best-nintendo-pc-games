@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "medieval-ii-total-war",
+  "title": "Medieval II: Total War",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Medieval II: Total War is organized in GameAtlas's PC (Windows) strategy collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Builds a traceable strategy option into the PC (Windows) discovery path.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2006
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Medieval II: Total War",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the PC (Windows) strategy discovery path using the frozen Wikidata metadata snapshot; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q629626",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q629626.svg",
+      "alt": "Abstract GameAtlas art tile for Medieval II: Total War",
+      "provenanceId": "gameatlas-catalog-1000-q629626"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

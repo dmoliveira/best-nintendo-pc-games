@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "conker-s-bad-fur-day",
+  "title": "Conker's Bad Fur Day",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Conker's Bad Fur Day appears in GameAtlas's Nintendo 64 platformer collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Places a source-linked platformer entry in the Nintendo 64 browsing path.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2001
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Conker's Bad Fur Day",
+    "nintendo-64",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Indexed for the Nintendo 64 platformer discovery path using a source-linked Wikidata item; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q841712",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q841712.svg",
+      "alt": "Abstract GameAtlas art tile for Conker's Bad Fur Day",
+      "provenanceId": "gameatlas-catalog-1000-q841712"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "midnight-club-street-racing",
+  "title": "Midnight Club: Street Racing",
+  "aliases": [],
+  "emoji": "🏁",
+  "shortDescription": "Midnight Club: Street Racing joins the Game Boy Advance family racing path in GameAtlas with original context and a clearly labeled Wikidata structured-data link.",
+  "highlights": [
+    "Offers a clearly labeled racing route through the Game Boy Advance family collection.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2000
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "racing"
+  ],
+  "keywords": [
+    "Midnight Club: Street Racing",
+    "game-boy-advance",
+    "racing",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Game Boy Advance family racing discovery path using a direct Wikidata structured-data record; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2401564",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2401564.svg",
+      "alt": "Abstract GameAtlas art tile for Midnight Club: Street Racing",
+      "provenanceId": "gameatlas-catalog-1000-q2401564"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

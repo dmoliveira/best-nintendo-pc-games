@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "ace-attorney-investigations-miles-edgeworth",
+  "title": "Ace Attorney Investigations: Miles Edgeworth",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Ace Attorney Investigations: Miles Edgeworth is grouped with GameAtlas's Nintendo DS family adventure and visual novel picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference adventure and visual novel entry into the Nintendo DS family catalog.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2009
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "adventure",
+    "visual-novel"
+  ],
+  "keywords": [
+    "Ace Attorney Investigations: Miles Edgeworth",
+    "nintendo-ds",
+    "adventure",
+    "visual-novel",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Nintendo DS family adventure and visual novel discovery path using the documented Wikidata platform mapping; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2734032",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2734032.svg",
+      "alt": "Abstract GameAtlas art tile for Ace Attorney Investigations: Miles Edgeworth",
+      "provenanceId": "gameatlas-catalog-1000-q2734032"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

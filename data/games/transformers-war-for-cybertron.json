@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "transformers-war-for-cybertron",
+  "title": "Transformers: War for Cybertron",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Transformers: War for Cybertron is organized in GameAtlas's Nintendo DS family shooter collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Frames a shooter pick for source-aware Nintendo DS family exploration.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2010
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Transformers: War for Cybertron",
+    "nintendo-ds",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the Nintendo DS family shooter discovery path using a linked structured-data reference; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2412999",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2412999.svg",
+      "alt": "Abstract GameAtlas art tile for Transformers: War for Cybertron",
+      "provenanceId": "gameatlas-catalog-1000-q2412999"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

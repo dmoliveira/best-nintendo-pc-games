@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "hitman-2-silent-assassin",
+  "title": "Hitman 2: Silent Assassin",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Hitman 2: Silent Assassin is grouped with GameAtlas's Nintendo GameCube action and adventure picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Brings a source-aware action and adventure entry to the Nintendo GameCube browsing route.",
+    "Keeps the external item link distinct from original GameAtlas commentary."
+  ],
+  "release": {
+    "year": 2002
+  },
+  "platforms": [
+    "nintendo-gamecube"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Hitman 2: Silent Assassin",
+    "nintendo-gamecube",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the Nintendo GameCube action and adventure discovery path using a direct Wikidata structured-data record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1037042",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1037042.svg",
+      "alt": "Abstract GameAtlas art tile for Hitman 2: Silent Assassin",
+      "provenanceId": "gameatlas-catalog-1000-q1037042"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

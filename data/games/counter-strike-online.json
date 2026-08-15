@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "counter-strike-online",
+  "title": "Counter-Strike Online",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Counter-Strike Online is included in GameAtlas's PC (Windows) shooter route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Builds a traceable shooter option into the PC (Windows) discovery path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Counter-Strike Online",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the PC (Windows) shooter discovery path using the frozen source metadata record; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q483919",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q483919.svg",
+      "alt": "Abstract GameAtlas art tile for Counter-Strike Online",
+      "provenanceId": "gameatlas-catalog-1000-q483919"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

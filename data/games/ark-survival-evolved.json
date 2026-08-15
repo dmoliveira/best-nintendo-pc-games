@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "ark-survival-evolved",
+  "title": "Ark: Survival Evolved",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Ark: Survival Evolved sits in the GameAtlas Nintendo Switch action and adventure and survival collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Sets a direct-reference action and adventure and survival marker within the Nintendo Switch catalog.",
+    "Separates GameAtlas editorial context from the external factual reference."
+  ],
+  "release": {
+    "year": 2017
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "survival"
+  ],
+  "keywords": [
+    "Ark: Survival Evolved",
+    "nintendo-switch",
+    "action",
+    "adventure",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Indexed for the Nintendo Switch action and adventure and survival discovery path using the frozen Wikidata metadata snapshot; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q20031747",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q20031747.svg",
+      "alt": "Abstract GameAtlas art tile for Ark: Survival Evolved",
+      "provenanceId": "gameatlas-catalog-1000-q20031747"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

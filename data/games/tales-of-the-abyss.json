@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "tales-of-the-abyss",
+  "title": "Tales of the Abyss",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Tales of the Abyss is grouped with GameAtlas's Nintendo 3DS family action picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Frames a action pick for source-aware Nintendo 3DS family exploration.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2005
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Tales of the Abyss",
+    "nintendo-3ds",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Indexed for the Nintendo 3DS family action discovery path using Wikidata-listed platform and genre statements; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q82050",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q82050.svg",
+      "alt": "Abstract GameAtlas art tile for Tales of the Abyss",
+      "provenanceId": "gameatlas-catalog-1000-q82050"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

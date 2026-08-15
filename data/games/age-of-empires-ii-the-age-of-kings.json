@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "age-of-empires-ii-the-age-of-kings",
+  "title": "Age of Empires II: The Age of Kings",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Age of Empires II: The Age of Kings anchors a PC (Windows) strategy entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Sets a direct-reference strategy marker within the PC (Windows) catalog.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 1999
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Age of Empires II: The Age of Kings",
+    "pc-windows",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the PC (Windows) strategy discovery path using a direct Wikidata structured-data record; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q34852",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q34852.svg",
+      "alt": "Abstract GameAtlas art tile for Age of Empires II: The Age of Kings",
+      "provenanceId": "gameatlas-catalog-1000-q34852"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

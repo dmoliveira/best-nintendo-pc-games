@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "slug": "lego-batman-2-dc-super-heroes",
+  "title": "Lego Batman 2: DC Super Heroes",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Lego Batman 2: DC Super Heroes is organized in GameAtlas's Nintendo DS family action and adventure collection with a source-linked record and independently written context.",
+  "highlights": [
+    "Brings a source-aware action and adventure entry to the Nintendo DS family browsing route.",
+    "Links the catalog entry to a source record without presenting a rating."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "action",
+    "adventure"
+  ],
+  "keywords": [
+    "Lego Batman 2: DC Super Heroes",
+    "nintendo-ds",
+    "action",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Nintendo DS family action and adventure discovery path using the frozen source metadata record; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q112912",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q112912.svg",
+      "alt": "Abstract GameAtlas art tile for Lego Batman 2: DC Super Heroes",
+      "provenanceId": "gameatlas-catalog-1000-q112912"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

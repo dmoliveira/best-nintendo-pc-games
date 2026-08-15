@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "sega-superstars-tennis",
+  "title": "Sega Superstars Tennis",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "Sega Superstars Tennis is grouped with GameAtlas's Nintendo DS family sports picks, where original catalog context sits beside a direct Wikidata record.",
+  "highlights": [
+    "Makes a documented sports option easier to find in the Nintendo DS family path.",
+    "Keeps third-party commentary and scores out of the linked metadata path."
+  ],
+  "release": {
+    "year": 2008
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "Sega Superstars Tennis",
+    "nintendo-ds",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the Nintendo DS family sports discovery path using a source-linked Wikidata item; this remains a labeled reference path, not a popularity claim.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2451357",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2451357.svg",
+      "alt": "Abstract GameAtlas art tile for Sega Superstars Tennis",
+      "provenanceId": "gameatlas-catalog-1000-q2451357"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

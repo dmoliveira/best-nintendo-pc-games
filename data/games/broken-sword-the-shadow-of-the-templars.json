@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "broken-sword-the-shadow-of-the-templars",
+  "title": "Broken Sword: The Shadow of the Templars",
+  "aliases": [],
+  "emoji": "🧭",
+  "shortDescription": "Broken Sword: The Shadow of the Templars appears in GameAtlas's Game Boy Advance family adventure collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Offers a clearly labeled adventure route through the Game Boy Advance family collection.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "game-boy-advance"
+  ],
+  "genres": [
+    "adventure"
+  ],
+  "keywords": [
+    "Broken Sword: The Shadow of the Templars",
+    "game-boy-advance",
+    "adventure",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Mapped for the Game Boy Advance family adventure discovery path using Wikidata-listed platform and genre statements; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2291123",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2291123.svg",
+      "alt": "Abstract GameAtlas art tile for Broken Sword: The Shadow of the Templars",
+      "provenanceId": "gameatlas-catalog-1000-q2291123"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "tom-clancy-s-ghost-recon-future-soldier",
+  "title": "Tom Clancy's Ghost Recon: Future Soldier",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Tom Clancy's Ghost Recon: Future Soldier appears in GameAtlas's Nintendo DS family shooter collection, paired with independently written context and a linked Wikidata structured-data record.",
+  "highlights": [
+    "Places a source-linked shooter entry in the Nintendo DS family browsing path.",
+    "Labels the source relationship without treating it as a popularity signal."
+  ],
+  "release": {
+    "year": 2012
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Tom Clancy's Ghost Recon: Future Soldier",
+    "nintendo-ds",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Nintendo DS family shooter discovery path using the documented Wikidata platform mapping; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2313070",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2313070.svg",
+      "alt": "Abstract GameAtlas art tile for Tom Clancy's Ghost Recon: Future Soldier",
+      "provenanceId": "gameatlas-catalog-1000-q2313070"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

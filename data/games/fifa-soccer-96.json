@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "fifa-soccer-96",
+  "title": "FIFA Soccer 96",
+  "aliases": [],
+  "emoji": "🏟️",
+  "shortDescription": "FIFA Soccer 96 is included in GameAtlas's Super Nintendo Entertainment System sports route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Makes a documented sports option easier to find in the Super Nintendo Entertainment System path.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 1995
+  },
+  "platforms": [
+    "nintendo-snes"
+  ],
+  "genres": [
+    "sports"
+  ],
+  "keywords": [
+    "FIFA Soccer 96",
+    "nintendo-snes",
+    "sports",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Logged for the Super Nintendo Entertainment System sports discovery path using the frozen Wikidata metadata snapshot; this remains an independently authored entry rather than a provider verdict.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q633461",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q633461.svg",
+      "alt": "Abstract GameAtlas art tile for FIFA Soccer 96",
+      "provenanceId": "gameatlas-catalog-1000-q633461"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

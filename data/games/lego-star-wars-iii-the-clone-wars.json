@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "slug": "lego-star-wars-iii-the-clone-wars",
+  "title": "Lego Star Wars III: The Clone Wars",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Lego Star Wars III: The Clone Wars sits in the GameAtlas Nintendo 3DS family action and adventure and platformer collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Makes a documented action and adventure and platformer option easier to find in the Nintendo 3DS family path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2011
+  },
+  "platforms": [
+    "nintendo-3ds"
+  ],
+  "genres": [
+    "action",
+    "adventure",
+    "platformer"
+  ],
+  "keywords": [
+    "Lego Star Wars III: The Clone Wars",
+    "nintendo-3ds",
+    "action",
+    "adventure",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Grouped for the Nintendo 3DS family action and adventure and platformer discovery path using the preserved Wikidata entity record; this remains a catalog entry with its source kept explicit.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q55228",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q55228.svg",
+      "alt": "Abstract GameAtlas art tile for Lego Star Wars III: The Clone Wars",
+      "provenanceId": "gameatlas-catalog-1000-q55228"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

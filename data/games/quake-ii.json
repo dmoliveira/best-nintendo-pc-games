@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "quake-ii",
+  "title": "Quake II",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Quake II is cataloged with Nintendo 64 shooter picks in GameAtlas, keeping its editorial context separate from the linked Wikidata record.",
+  "highlights": [
+    "Builds a traceable shooter option into the Nintendo 64 discovery path.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 1997
+  },
+  "platforms": [
+    "nintendo-64"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Quake II",
+    "nintendo-64",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Cataloged for the Nintendo 64 shooter discovery path using the frozen source metadata record; this remains a factual-reference workflow rather than a rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q737103",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q737103.svg",
+      "alt": "Abstract GameAtlas art tile for Quake II",
+      "provenanceId": "gameatlas-catalog-1000-q737103"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

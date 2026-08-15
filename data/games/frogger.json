@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "frogger",
+  "title": "Frogger",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Frogger helps define a Game Boy Color action path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Frames a action pick for source-aware Game Boy Color exploration.",
+    "Retains source provenance while keeping the catalog context independently authored."
+  ],
+  "release": {
+    "year": 1981
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "action"
+  ],
+  "keywords": [
+    "Frogger",
+    "game-boy-color",
+    "action",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Game Boy Color action discovery path using a Wikidata-listed catalog relationship; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q524267",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q524267.svg",
+      "alt": "Abstract GameAtlas art tile for Frogger",
+      "provenanceId": "gameatlas-catalog-1000-q524267"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

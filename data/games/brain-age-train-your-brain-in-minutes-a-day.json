@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "brain-age-train-your-brain-in-minutes-a-day",
+  "title": "Brain Age: Train Your Brain in Minutes a Day!",
+  "aliases": [],
+  "emoji": "🧩",
+  "shortDescription": "Brain Age: Train Your Brain in Minutes a Day! is included in GameAtlas's Wii U puzzle route, alongside independently authored context and a linked Wikidata item.",
+  "highlights": [
+    "Makes a documented puzzle option easier to find in the Wii U path.",
+    "Preserves a direct source trail without copying provider prose or media."
+  ],
+  "release": {
+    "year": 2005
+  },
+  "platforms": [
+    "nintendo-wii-u"
+  ],
+  "genres": [
+    "puzzle"
+  ],
+  "keywords": [
+    "Brain Age: Train Your Brain in Minutes a Day!",
+    "nintendo-wii-u",
+    "puzzle",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Listed for the Wii U puzzle discovery path using a source-linked Wikidata item; this remains source-aware discovery without copied review text.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1773171",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1773171.svg",
+      "alt": "Abstract GameAtlas art tile for Brain Age: Train Your Brain in Minutes a Day!",
+      "provenanceId": "gameatlas-catalog-1000-q1773171"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

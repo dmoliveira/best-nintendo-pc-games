@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "heroes-of-might-and-magic-ii",
+  "title": "Heroes of Might and Magic II",
+  "aliases": [],
+  "emoji": "♟️",
+  "shortDescription": "Heroes of Might and Magic II sits in the GameAtlas Game Boy Color strategy collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Keeps a documented strategy option visible in the Game Boy Color collection.",
+    "Pairs original GameAtlas organization with a direct Wikidata structured-data record."
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "strategy"
+  ],
+  "keywords": [
+    "Heroes of Might and Magic II",
+    "game-boy-color",
+    "strategy",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the Game Boy Color strategy discovery path using a linked structured-data reference; this remains a catalog record, never an aggregate score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q532912",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q532912.svg",
+      "alt": "Abstract GameAtlas art tile for Heroes of Might and Magic II",
+      "provenanceId": "gameatlas-catalog-1000-q532912"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

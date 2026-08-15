@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "metroid-prime-pinball",
+  "title": "Metroid Prime Pinball",
+  "aliases": [],
+  "emoji": "🕹️",
+  "shortDescription": "Metroid Prime Pinball sits in the GameAtlas Nintendo DS family arcade collection, pairing a direct structured-data reference with original catalog context.",
+  "highlights": [
+    "Makes a documented arcade option easier to find in the Nintendo DS family path.",
+    "Uses structured metadata as provenance rather than imported review copy."
+  ],
+  "release": {
+    "year": 2005
+  },
+  "platforms": [
+    "nintendo-ds"
+  ],
+  "genres": [
+    "arcade"
+  ],
+  "keywords": [
+    "Metroid Prime Pinball",
+    "nintendo-ds",
+    "arcade",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Registered for the Nintendo DS family arcade discovery path using a direct Wikidata structured-data record; this remains a source-aware catalog entry, not a review or rating.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q2553128",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q2553128.svg",
+      "alt": "Abstract GameAtlas art tile for Metroid Prime Pinball",
+      "provenanceId": "gameatlas-catalog-1000-q2553128"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

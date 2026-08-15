@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "medal-of-honor-allied-assault",
+  "title": "Medal of Honor: Allied Assault",
+  "aliases": [],
+  "emoji": "🎯",
+  "shortDescription": "Medal of Honor: Allied Assault anchors a PC (Windows) shooter entry in GameAtlas, with independently written context and a linked structured-data source.",
+  "highlights": [
+    "Maps a direct-reference shooter entry into the PC (Windows) catalog.",
+    "Uses a factual reference path instead of an aggregate score or review."
+  ],
+  "release": {
+    "year": 2002
+  },
+  "platforms": [
+    "pc-windows"
+  ],
+  "genres": [
+    "shooter"
+  ],
+  "keywords": [
+    "Medal of Honor: Allied Assault",
+    "pc-windows",
+    "shooter",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Documented for the PC (Windows) shooter discovery path using the documented Wikidata platform mapping; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q692360",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q692360.svg",
+      "alt": "Abstract GameAtlas art tile for Medal of Honor: Allied Assault",
+      "provenanceId": "gameatlas-catalog-1000-q692360"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

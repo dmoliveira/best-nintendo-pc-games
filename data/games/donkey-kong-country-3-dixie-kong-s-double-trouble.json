@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "slug": "donkey-kong-country-3-dixie-kong-s-double-trouble",
+  "title": "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
+  "aliases": [],
+  "emoji": "🪜",
+  "shortDescription": "Donkey Kong Country 3: Dixie Kong's Double Trouble! helps define a Game Boy Color platformer path in GameAtlas through original editorial framing and a direct Wikidata record.",
+  "highlights": [
+    "Builds a traceable platformer option into the Game Boy Color discovery path.",
+    "Retains source provenance while keeping the catalog context independently authored."
+  ],
+  "release": {
+    "year": 1996
+  },
+  "platforms": [
+    "game-boy-color"
+  ],
+  "genres": [
+    "platformer"
+  ],
+  "keywords": [
+    "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
+    "game-boy-color",
+    "platformer",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Classified for the Game Boy Color platformer discovery path using the frozen source metadata record; this remains original context with no imported numerical signal.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q1241664",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q1241664.svg",
+      "alt": "Abstract GameAtlas art tile for Donkey Kong Country 3: Dixie Kong's Double Trouble!",
+      "provenanceId": "gameatlas-catalog-1000-q1241664"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}

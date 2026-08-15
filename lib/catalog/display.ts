@@ -79,6 +79,19 @@ const genreTones: Record<string, GenreTone> = {
   simulation: "amber",
   racing: "coral",
   "role-playing": "violet",
+  strategy: "amber",
+  fighting: "coral",
+  shooter: "coral",
+  sports: "lime",
+  rhythm: "violet",
+  horror: "violet",
+  stealth: "cyan",
+  "visual-novel": "violet",
+  sandbox: "lime",
+  party: "amber",
+  survival: "amber",
+  educational: "cyan",
+  arcade: "coral",
 };
 
 export function getPlatformDisplayLabel(platform: Pick<PlatformRecord, "id" | "name" | "aliases">): string {

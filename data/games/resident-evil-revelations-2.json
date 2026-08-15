@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "slug": "resident-evil-revelations-2",
+  "title": "Resident Evil: Revelations 2",
+  "aliases": [],
+  "emoji": "⚡",
+  "shortDescription": "Resident Evil: Revelations 2 is kept in GameAtlas's Nintendo Switch action and horror and shooter and survival discovery path through original editorial organization and a direct Wikidata record.",
+  "highlights": [
+    "Maps a direct-reference action and horror and shooter and survival entry into the Nintendo Switch catalog.",
+    "Retains source provenance while keeping the catalog context independently authored."
+  ],
+  "release": {
+    "year": 2015
+  },
+  "platforms": [
+    "nintendo-switch"
+  ],
+  "genres": [
+    "action",
+    "horror",
+    "shooter",
+    "survival"
+  ],
+  "keywords": [
+    "Resident Evil: Revelations 2",
+    "nintendo-switch",
+    "action",
+    "horror",
+    "shooter",
+    "survival",
+    "source-linked",
+    "wikidata"
+  ],
+  "signals": [
+    {
+      "kind": "editorial",
+      "provider": "GameAtlas",
+      "label": "GameAtlas catalog entry",
+      "rationale": "Recorded for the Nintendo Switch action and horror and shooter and survival discovery path using a linked Wikidata platform-and-genre statement; this remains a browsable catalog record, not a score.",
+      "sourceId": "gameatlas-editorial",
+      "sourceUrl": "https://dmoliveira.github.io/best-nintendo-pc-games/",
+      "capturedAt": "2026-08-15",
+      "verificationStatus": "verified",
+      "rightsStatus": "approved",
+      "reviewedBy": "GameAtlas frozen catalog method",
+      "rightsReviewedAt": "2026-08-15",
+      "recheckAt": "2026-09-15",
+      "evidenceState": "original-editorial"
+    }
+  ],
+  "links": [
+    {
+      "label": "External/reference — Wikidata structured data",
+      "url": "https://www.wikidata.org/wiki/Q18203301",
+      "kind": "reference"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/assets/games/catalog-1000/q18203301.svg",
+      "alt": "Abstract GameAtlas art tile for Resident Evil: Revelations 2",
+      "provenanceId": "gameatlas-catalog-1000-q18203301"
+    }
+  ],
+  "sources": [
+    "wikidata-fact-reference",
+    "gameatlas-editorial"
+  ]
+}
