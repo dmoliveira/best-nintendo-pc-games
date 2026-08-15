@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CatalogBrowser from "./catalog-browser";
 import { createSiteConfig } from "@/lib/site-config";
-import { getCatalogGames, getCatalogSearchRecords, getPopulatedPlatforms } from "@/lib/catalog/site-data";
+import { getCatalogGames, getCatalogSearchRecords, getPlatformHubs, getPopulatedPlatforms } from "@/lib/catalog/site-data";
 
 const site = createSiteConfig(process.env);
 
@@ -20,6 +20,7 @@ const platformTones = ["violet", "coral", "cyan", "lime", "orange", "blue", "vio
 export default function Home() {
   const games = getCatalogGames();
   const populatedPlatforms = getPopulatedPlatforms();
+  const platformHubIds = new Set(getPlatformHubs().map((platform) => platform.id));
 
   return <div className="site-shell">
     <a className="skip-link" href="#main-content">Skip to main content</a>
@@ -46,7 +47,7 @@ export default function Home() {
 
       <section className="signal-strip" aria-label="Catalog facts"><div><b>{games.length}</b><span>reviewed games<br />in this slice</span></div><div><b>{populatedPlatforms.length}</b><span>platform families<br />with records</span></div><div><b>⌁</b><span>context over<br />hype</span></div></section>
 
-      <section className="section-block" id="platforms" aria-labelledby="platform-heading"><div className="section-heading"><div><p className="eyebrow">Your starting point</p><h2 id="platform-heading">Choose an era.</h2></div><p className="section-aside">The taxonomy maps every supported Nintendo family. Populated platforms have reviewed records; planned families stay visible without pretending to be complete.</p></div><div className="platform-grid">{populatedPlatforms.map((platform, index) => <article className={`platform-card platform-card--${platformTones[index % platformTones.length]}`} key={platform.id}><div className="card-topline">RECORDS LIVE</div><div className="platform-emoji" aria-hidden="true">{platform.emoji}</div><h3>{platform.name}</h3><p>{platform.description}</p><span className="card-status">Browse the games below</span></article>)}</div></section>
+      <section className="section-block" id="platforms" aria-labelledby="platform-heading"><div className="section-heading"><div><p className="eyebrow">Your starting point</p><h2 id="platform-heading">Choose an era.</h2></div><p className="section-aside">The taxonomy maps every supported Nintendo family. Populated platforms have reviewed records; planned families stay visible without pretending to be complete.</p></div><div className="platform-grid">{populatedPlatforms.map((platform, index) => <article className={`platform-card platform-card--${platformTones[index % platformTones.length]}`} key={platform.id}><div className="card-topline">RECORDS LIVE</div><div className="platform-emoji" aria-hidden="true">{platform.emoji}</div><h3>{platformHubIds.has(platform.id) ? <Link href={`/platforms/${platform.id}/`}>{platform.name}</Link> : platform.name}</h3><p>{platform.description}</p><span className="card-status">Browse the games below</span></article>)}</div></section>
 
       <section className="section-block section-block--catalog" id="games" aria-labelledby="games-heading"><div className="section-heading"><div><p className="eyebrow">The reviewed catalog</p><h2 id="games-heading">Start with a game.</h2></div><p className="section-aside">Search across titles, people, platforms, genres, and years. These are original GameAtlas selections, not blended ratings.</p></div><CatalogBrowser records={getCatalogSearchRecords()} /></section>
 

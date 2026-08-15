@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { getCatalogGame, getCatalogGames, getEditorialSignals, getPopulatedPlatforms } from "../lib/catalog/site-data";
+import { getCatalogGame, getCatalogGames, getCatalogGenre, getCatalogGenres, getCatalogPlatform, getCatalogPlatforms, getEditorialSignals, getGenreHub, getGenreHubs, getPlatformHub, getPlatformHubs, getPopulatedPlatforms } from "../lib/catalog/site-data";
 
 test("loads every validated game with resolved taxonomy labels", () => {
   const games = getCatalogGames();
@@ -20,4 +20,21 @@ test("reports only platform families with validated records as populated", () =>
   const populated = getPopulatedPlatforms();
   assert.equal(populated.length, 16);
   assert.ok(populated.every((platform) => platform.coverage === "populated"));
+});
+
+
+test("taxonomy hub inventories include only referenced populated entries", () => {
+  const platforms = getCatalogPlatforms();
+  const genres = getCatalogGenres();
+  const records = getCatalogGames();
+  assert.equal(platforms.length, 16);
+  assert.equal(genres.length, 7);
+  assert.ok(platforms.every((platform) => records.some(({ game }) => game.platforms.includes(platform.id))));
+  assert.ok(genres.every((genre) => records.some(({ game }) => game.genres.includes(genre.id))));
+  assert.equal(getPlatformHubs().length, 8);
+  assert.equal(getGenreHubs().length, 7);
+  assert.equal(getPlatformHub("nintendo-nes"), undefined);
+  assert.equal(getGenreHub("missing-genre"), undefined);
+  assert.equal(getCatalogPlatform("missing-platform"), undefined);
+  assert.equal(getCatalogGenre("missing-genre"), undefined);
 });

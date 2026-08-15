@@ -9,8 +9,10 @@ export interface CatalogSearchRecord {
   releaseFormat?: "cartridge" | "digital";
   platformIds: string[];
   platformLabels: string[];
+  platformHubIds: string[];
   genreIds: string[];
   genreLabels: string[];
+  genreHubIds: string[];
   evidenceKinds: string[];
   evidenceLabels: string[];
 }

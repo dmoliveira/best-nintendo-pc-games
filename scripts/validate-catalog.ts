@@ -13,7 +13,7 @@ const platformsDocument = loadJson("data/platforms.json") as { schemaVersion?: n
 const genresDocument = loadJson("data/genres.json") as { schemaVersion?: number; items?: unknown[] };
 const sourceDocument = loadJson("data/source-rights.json") as { sources?: unknown[]; publicNumericSignalPolicy?: { eligiblePredicate?: { approvedCriticProviders?: string[]; minimumScore?: number; requiredScale?: number } }; popularitySignalPolicy?: { eligiblePredicate?: { approvedPopularityProviders?: string[]; publicMode?: string } } };
 const assetDocument = loadJson("data/assets-manifest.json") as { assets?: unknown[] };
-const coverageDocument = loadJson("data/coverage.json") as { schemaVersion?: number; coveragePolicy?: string; sources?: unknown[]; items?: unknown[] };
+const coverageDocument = loadJson("data/coverage.json") as { schemaVersion?: number; coveragePolicy?: string; minimumHubRecords?: number; sources?: unknown[]; items?: unknown[] };
 
 if (platformsDocument.schemaVersion !== 1 || !Array.isArray(platformsDocument.items)) errors.push("data/platforms.json: expected schemaVersion 1 and items array");
 if (genresDocument.schemaVersion !== 1 || !Array.isArray(genresDocument.items)) errors.push("data/genres.json: expected schemaVersion 1 and items array");
@@ -34,7 +34,7 @@ for (const [index, genre] of genreItems.entries()) {
 }
 
 const validCoverage = new Set(["planned", "partial", "populated"]);
-if (coverageDocument.schemaVersion !== 1 || !nonEmpty(coverageDocument.coveragePolicy) || !Array.isArray(coverageDocument.sources) || !Array.isArray(coverageDocument.items)) errors.push("data/coverage.json: expected schemaVersion 1, coveragePolicy, sources, and items");
+if (coverageDocument.schemaVersion !== 1 || !nonEmpty(coverageDocument.coveragePolicy) || !Number.isInteger(coverageDocument.minimumHubRecords) || (coverageDocument.minimumHubRecords ?? 0) < 1 || !Array.isArray(coverageDocument.sources) || !Array.isArray(coverageDocument.items)) errors.push("data/coverage.json: expected schemaVersion 1, coveragePolicy, minimumHubRecords >= 1, sources, and items");
 const coverageSources = coverageDocument.sources ?? [];
 for (const id of findDuplicateRecordIds(coverageSources, "id")) errors.push(`data/coverage.json: duplicate source ${id}`);
 for (const [index, source] of coverageSources.entries()) {
