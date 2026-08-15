@@ -12,11 +12,11 @@ export default function SiteFooter() {
           <GameAtlasMark />
           <span>Game<span className="wordmark-accent">Atlas</span></span>
         </div>
-        <p>Curated picks for discerning players.</p>
+        <p>Source-aware entries for curious players.</p>
       </div>
       <div className="footer-intro">
         <p className="footer-slogan">Less noise.<br /><em>More signal.</em></p>
-        <p>We cut through the clutter so you can find your next great game with confidence.</p>
+        <p>Browse catalog context, platform paths, and documented sources.</p>
       </div>
       <nav className="footer-links" aria-label="Footer navigation">
         <div className="footer-link-group">
@@ -31,7 +31,7 @@ export default function SiteFooter() {
           <a href={site.correctionUrl} target="_blank" rel="noreferrer">Report a correction ↗</a>
         </div>
       </nav>
-      <p className="footer-meta">Built for curious players · 2026 <span aria-hidden="true">/</span> GameAtlas is an independent editorial guide.</p>
+      <p className="footer-meta">Built for curious players · 2026 <span aria-hidden="true">/</span> GameAtlas is an independent source-aware catalog.</p>
     </footer>
   );
 }

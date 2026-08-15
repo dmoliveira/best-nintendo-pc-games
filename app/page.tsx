@@ -16,10 +16,10 @@ const site = createSiteConfig(process.env);
 
 export const metadata: Metadata = {
   title: "Nintendo & PC Games",
-  description: "Find the games worth your time across Nintendo consoles and PC, with platform context and transparent signals.",
+  description: "Browse a source-aware catalog across Nintendo consoles and PC, with platform context and transparent signals.",
   alternates: { canonical: site.canonicalUrl },
-  openGraph: { type: "website", title: "Nintendo & PC Games | GameAtlas", description: "Find the games worth your time.", url: site.canonicalUrl, images: [{ url: site.publicUrl("og-image.png"), width: 1200, height: 630, alt: "GameAtlas — source-aware Nintendo and PC game catalog" }] },
-  twitter: { card: "summary_large_image", title: "Nintendo & PC Games | GameAtlas", description: "Find the games worth your time.", images: [site.publicUrl("og-image.png")] },
+  openGraph: { type: "website", title: "Nintendo & PC Games | GameAtlas", description: "Browse a source-aware Nintendo and PC game catalog.", url: site.canonicalUrl, images: [{ url: site.publicUrl("og-image.png"), width: 1200, height: 630, alt: "GameAtlas — source-aware Nintendo and PC game catalog" }] },
+  twitter: { card: "summary_large_image", title: "Nintendo & PC Games | GameAtlas", description: "Browse a source-aware Nintendo and PC game catalog.", images: [site.publicUrl("og-image.png")] },
   robots: { index: true, follow: true },
 };
 

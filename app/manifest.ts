@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "GameAtlas — Nintendo & PC Games",
     short_name: "GameAtlas",
-    description: "Find games worth your time.",
+    description: "Browse a source-aware Nintendo and PC game catalog.",
     start_url: site.basePath || "/",
     display: "standalone",
     background_color: "#050a12",
