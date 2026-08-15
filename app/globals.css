@@ -2209,3 +2209,53 @@ h1 {
     animation: none !important;
   }
 }
+
+
+/* User-selectable catalog density; Auto keeps the responsive default grid. */
+.browser-layout-row{border-top:1px solid var(--line);display:flex;justify-content:flex-end;margin-top:16px;padding-top:14px}
+.layout-control{align-items:center;border:0;display:flex;gap:11px;margin:0;min-width:0;padding:0}
+.layout-control legend{color:var(--faint);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.58rem;letter-spacing:.07em;padding:0;text-transform:uppercase}
+.layout-options{display:flex;gap:5px}
+.layout-option{border:1px solid var(--strong);border-radius:6px;color:var(--muted);cursor:pointer;display:flex;min-width:52px;position:relative}
+.layout-option input{height:1px;opacity:0;position:absolute;width:1px}
+.layout-option-copy{align-items:center;display:flex;gap:5px;justify-content:center;padding:6px 8px;width:100%}
+.layout-option-copy strong{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.68rem;font-weight:700}
+.layout-option-copy small{font-size:.58rem}
+.layout-option:hover,.layout-option:focus-within{border-color:var(--cyan);color:var(--paper)}
+.layout-option--active{background:rgba(114,230,223,.12);border-color:var(--cyan);color:var(--cyan)}
+.game-card-topline{align-items:flex-start;gap:10px;min-height:0;padding:12px 15px 0;text-transform:none}
+.game-card-topline-platforms{align-items:center;display:flex;flex:1;flex-wrap:wrap;gap:7px;min-width:0}
+.game-card-topline .game-card-platform{font-size:.64rem}
+.game-card-topline .game-card-year{flex:0 0 auto;padding-top:2px}
+.game-card-topline .platform-glyph{height:15px;width:15px}
+.game-card-art-rail{justify-content:flex-start;padding-right:10px}
+.game-card-detail-chips{display:flex;gap:6px;margin:-1px 0 12px}
+.game-grid--columns-1{grid-template-columns:minmax(0,1fr)}
+.game-grid--columns-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.game-grid--columns-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.game-grid--columns-1 .game-card-description{display:block;-webkit-line-clamp:unset}
+.game-grid--columns-3 .game-card-art{height:142px}
+.game-grid--columns-3 .game-card-body{padding:13px}
+.game-grid--columns-3 .game-card-description{-webkit-line-clamp:2}
+@media(min-width:801px){
+  .game-grid--columns-1 .game-card{display:grid;grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr);column-gap:18px}
+  .game-grid--columns-1 .game-card-topline{grid-column:1/-1}
+  .game-grid--columns-1 .game-card-art{grid-column:1;grid-row:2;height:228px;margin:10px 0 0}
+  .game-grid--columns-1 .game-card-body{grid-column:2;grid-row:2;padding:15px 18px 14px 0}
+}
+@media(max-width:800px){
+  .browser-layout-row{justify-content:flex-start}
+  .game-grid--columns-1,.game-grid--columns-2,.game-grid--columns-3{grid-template-columns:1fr}
+  .game-grid--columns-1 .game-card{display:flex}
+  .game-grid--columns-1 .game-card-art{height:160px;margin:10px 0 0}
+  .game-grid--columns-1 .game-card-body{padding:15px 15px 14px}
+}
+
+
+@media (max-width:800px){
+  .game-grid{grid-template-columns:1fr}
+  .layout-control{align-items:flex-start;flex-direction:column;gap:8px;width:100%}
+  .layout-options{grid-template-columns:repeat(4,minmax(0,1fr));display:grid;width:100%}
+  .layout-option{min-width:0}
+  .layout-option-copy small{display:none}
+}

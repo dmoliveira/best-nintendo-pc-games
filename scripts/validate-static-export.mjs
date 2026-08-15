@@ -15,7 +15,7 @@ function checkNoRawEvidence(html, location) { for (const field of forbiddenEvide
 if (!fs.existsSync(outDir)) { fail(`missing output directory ${outDir}`); process.exit(1); }
 for (const file of requiredFiles) if (!fs.existsSync(path.join(outDir, file))) fail(`missing ${file}`);
 const html = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
-for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth your time.", "Start with a game.", "Search games", "Showing", "GameAtlas pick", "platform-glyph", "Score"]) if (!html.includes(expected)) fail(`home page does not contain ${JSON.stringify(expected)}`);
+for (const expected of ["GameAtlas", "Best Nintendo", "Find the games", "worth your time.", "Start with a game.", "Search games", "Showing", "GameAtlas pick", "platform-glyph", "Score", "Card layout", "game-card-topline-platforms"]) if (!html.includes(expected)) fail(`home page does not contain ${JSON.stringify(expected)}`);
 if (!/Showing[\s\S]{0,120}of[\s\S]{0,120}reviewed games/.test(html)) fail("home page is missing the accessible result count");
 if (!html.includes("docs/rights-and-support-policy")) fail("home page is missing the policy link");
 if (html.includes("Catalog search is coming soon") || html.includes("Catalog coming soon") || html.includes("next discovery layer") || html.includes("discovery tools arrive") || html.includes("80+")) fail("home page exposes stale preview or unauthorized numeric messaging");
