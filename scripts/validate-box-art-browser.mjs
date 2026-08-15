@@ -14,7 +14,6 @@ const PROCESS_SHUTDOWN_TIMEOUT_MS = 5_000;
 const BROWSER_START_TIMEOUT_MS = 30_000;
 const PROFILE_CLEANUP_RETRIES = 20;
 const POINTER_EVENT_SETTLE_MS = 50;
-const HYDRATION_SETTLE_MS = 350;
 
 function fail(message) {
   throw new Error(`Box-art browser validation failed: ${message}`);
@@ -271,8 +270,11 @@ async function catalogIndexRequestCount(client) {
 }
 
 async function waitForCatalogShell(client) {
-  await waitFor(() => client.evaluate('Boolean(document.querySelector("#catalog-query")) && document.querySelectorAll(".game-card").length === 24'));
-  await new Promise((resolve) => setTimeout(resolve, HYDRATION_SETTLE_MS));
+  await waitFor(
+    () => client.evaluate('document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus === "idle" && document.querySelector("#catalog-query") && document.querySelectorAll(".game-card").length === 24 && document.querySelector(".result-summary")?.textContent?.includes("Browse or use filters to load the full catalog")'),
+    30_000,
+    "hydrated catalog shell",
+  );
 }
 
 async function waitForCatalogReady(client) {
@@ -285,7 +287,6 @@ async function validateCatalogBrowser(client, preview, catalogUrl, representativ
 
   await client.send("Page.navigate", { url: catalogUrl });
   await waitForCatalogShell(client);
-  await new Promise((resolve) => setTimeout(resolve, 350));
   const idle = await client.evaluate('(() => ({ status: document.querySelector(".catalog-browser")?.dataset.catalogIndexStatus, cards: document.querySelectorAll(".game-card").length, summary: document.querySelector(".result-summary")?.textContent }))()');
   const idleRequests = await catalogIndexRequestCount(client);
   if (idle.status !== "idle" || idle.cards !== 24 || idleRequests !== 0 || !idle.summary?.includes("Browse or use filters to load the full catalog")) fail(`catalog index loaded before intent or viewport proximity: ${JSON.stringify({ idle, idleRequests })}`);
@@ -729,8 +730,8 @@ async function main() {
     const sourceListedPageUrl = `http://127.0.0.1:${preview.port}${basePath}/games/${sourceListedReferenceGame.slug}/`;
     await client.send("Page.navigate", { url: sourceListedPageUrl });
     await waitForGameBoxReady(client, sourceListedReferenceGame.title);
-    const sourceListedDragCoordinates = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center" }); const rect = stage?.getBoundingClientRect(); return rect ? { startX: rect.left + 20, endX: rect.left + 170, y: rect.top + rect.height / 2 } : null; })()');
-    if (!sourceListedDragCoordinates) fail("source-listed reference stage did not expose drag coordinates");
+    const sourceListedDragCoordinates = await client.evaluate('(async () => { const stage = document.querySelector("[data-game-box-stage]"); stage?.scrollIntoView({ block: "center", behavior: "instant" }); await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))); const rect = stage?.getBoundingClientRect(); if (!rect) return null; const centerX = rect.left + rect.width / 2; const startX = centerX - 75; const y = rect.top + rect.height / 2; return { startX, endX: centerX + 75, y, hitInsideStage: Boolean(stage.contains(document.elementFromPoint(startX, y))) }; })()');
+    if (!sourceListedDragCoordinates?.hitInsideStage) fail(`source-listed reference stage did not expose a stable pointer target: ${JSON.stringify(sourceListedDragCoordinates)}`);
     await drag(client, sourceListedDragCoordinates);
     await releaseDrag(client, sourceListedDragCoordinates);
     const sourceListedState = await client.evaluate('(() => { const stage = document.querySelector("[data-game-box-stage]"); const fallback = document.querySelector(".game-box__reference-art"); return { label: stage?.getAttribute("aria-label"), mode: stage?.dataset.presentationMode, kind: stage?.dataset.packageKind, depth: stage?.dataset.packageDepth, restAngle: stage?.dataset.packageRestAngle, hasFront: Boolean(document.querySelector(".game-box__front img")), hasSpine: Boolean(document.querySelector(".game-box__spine")), hasBack: Boolean(document.querySelector(".game-box__back")), hasRotate: Boolean(document.querySelector("[data-box-action=rotate-left]")), angle: stage?.dataset.boxAngle, dragging: stage?.dataset.boxDragging, cursor: stage?.style.cursor, reference: document.body.textContent.includes("GameAtlas reference presentation"), scope: document.body.textContent.includes("do not establish a platform-specific release date"), copy: document.body.textContent.includes("no platform-specific package is implied"), fallbackRole: fallback?.getAttribute("role") }; })()');
@@ -768,7 +769,7 @@ async function main() {
           "ENOTEMPTY",
           "EPERM",
         ].includes(error?.code)) throw error;
-        console.warn(`Chrome profile cleanup remained busy after bounded retries: ${profile}`);
+        fail(`Chrome profile cleanup remained busy after bounded retries: ${profile}`);
       }
     }
   }
