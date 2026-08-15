@@ -30,3 +30,9 @@ test("year-only game records omit an invented publication date", () => {
   const game = createVideoGameStructuredData({ title: "Example", description: "A useful description.", url: site.publicUrl("games/example/"), releaseDate: "1990", platformNames: [], genreNames: [] });
   assert.equal("datePublished" in game, false);
 });
+
+test("source-listed records omit unsupported playability and publication claims", () => {
+  const game = createVideoGameStructuredData({ title: "Example", description: "A useful description.", url: site.publicUrl("games/example/"), releaseDate: "1990-01-02", releaseScope: "earliest-title-release", platformAssociationScope: "source-listed", platformNames: ["Nintendo Switch 2"], genreNames: [] });
+  assert.equal("gamePlatform" in game, false);
+  assert.equal("datePublished" in game, false);
+});

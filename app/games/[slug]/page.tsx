@@ -70,7 +70,7 @@ export default async function GamePage({ params }: GamePageProps) {
   const isCatalogMethodEntry = editorialSignals.some((signal) => signal.evidenceState === "catalog-method");
 
   return <div className="site-shell">
-    <JsonLd data={createVideoGameStructuredData({ title: game.title, description: game.shortDescription, url: gameUrl, releaseDate: game.release.date, platformNames: platforms.map((platform) => getPlatformDisplayLabel(platform)), genreNames: genres.map((genre) => genre.name) })} />
+     <JsonLd data={createVideoGameStructuredData({ title: game.title, description: game.shortDescription, url: gameUrl, releaseDate: game.release.date, releaseScope: semantics.releaseScope, platformAssociationScope: semantics.platformAssociationScope, platformNames: platforms.map((platform) => getPlatformDisplayLabel(platform)), genreNames: genres.map((genre) => genre.name) })} />
     <JsonLd data={createBreadcrumbStructuredData([{ name: "GameAtlas", url: site.canonicalUrl }, { name: game.title, url: gameUrl }])} />
     <a className="skip-link" href="#main-content">Skip to main content</a>
     <SiteHeader />

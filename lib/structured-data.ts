@@ -10,6 +10,8 @@ export interface StructuredGameInput {
   description: string;
   url: string;
   releaseDate?: string;
+  releaseScope?: "earliest-title-release" | "platform-release";
+  platformAssociationScope?: "source-listed" | "verified-release";
   platformNames: readonly string[];
   genreNames: readonly string[];
 }
@@ -30,7 +32,7 @@ export function createWebSiteStructuredData(site: SiteConfig): Record<string, un
     "@id": `${site.canonicalUrl}#website`,
     url: site.canonicalUrl,
     name: "GameAtlas",
-    description: "A source-aware atlas of the best Nintendo and PC games.",
+    description: "A source-aware atlas of Nintendo and PC game catalog entries.",
     inLanguage: "en",
     potentialAction: {
       "@type": "SearchAction",
@@ -66,11 +68,14 @@ export function createVideoGameStructuredData(input: StructuredGameInput): Recor
     url: input.url,
     name: input.title,
     description: input.description,
-    gamePlatform: [...input.platformNames],
     genre: [...input.genreNames],
     inLanguage: "en",
   };
-  if (input.releaseDate && /^\d{4}-\d{2}-\d{2}$/.test(input.releaseDate)) data.datePublished = input.releaseDate;
+  const hasVerifiedReleaseSemantics = input.releaseScope !== "earliest-title-release" && input.platformAssociationScope !== "source-listed";
+  if (hasVerifiedReleaseSemantics) {
+    data.gamePlatform = [...input.platformNames];
+    if (input.releaseDate && /^\d{4}-\d{2}-\d{2}$/.test(input.releaseDate)) data.datePublished = input.releaseDate;
+  }
   return data;
 }
 

@@ -135,6 +135,10 @@ for (const game of gameRecords) {
   if (gameHtml.includes("80+") || /(?:popularity value|popularity rank)/i.test(gameHtml)) fail(`${route} exposes unauthorized numeric evidence messaging`);
   checkNoRawEvidence(gameHtml, route);
   checkStructuredData(gameHtml, route, ["VideoGame", "BreadcrumbList"]);
+  const videoGameStructuredData = structuredDataBlocks(gameHtml, route).find((block) => block?.["@type"] === "VideoGame");
+  const sourceListedGame = game.release?.scope === "earliest-title-release" || game.platformAssociationScope === "source-listed";
+  if (sourceListedGame && ("gamePlatform" in (videoGameStructuredData ?? {}) || "datePublished" in (videoGameStructuredData ?? {}))) fail(`${route} must omit playability and publication-date JSON-LD for source-listed semantics`);
+  if (!sourceListedGame && !Array.isArray(videoGameStructuredData?.gamePlatform)) fail(`${route} must retain verified-release gamePlatform JSON-LD`);
   const boxAssets = Array.isArray(game.assets) ? game.assets.filter((asset) => asset?.role === "box-front") : [];
   const expectedReferenceFallback = game.platformAssociationScope === "source-listed" ? "GameAtlas reference presentation — no platform-specific package is implied" : "GameAtlas reference case";
   if (boxAssets.length === 0 && !gameHtml.includes(expectedReferenceFallback)) fail(`${route} does not retain its safe no-art reference fallback`);
